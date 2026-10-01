@@ -1,0 +1,43 @@
+name: Benchmark smoke
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    env:
+      NIL_ROOT: ${{ github.workspace }}/nil
+      NIL_BENCH_HOME: ${{ runner.temp }}/nil-benchmarks
+      NIL_CLANG: clang-18
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          path: suite
+          persist-credentials: false
+      - id: compiler
+        run: echo "ref=$(cat suite/compiler-ref.txt)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          repository: Ninjacornix/NIL
+          ref: ${{ steps.compiler.outputs.ref }}
+          path: nil
+          persist-credentials: false
+      - run: sudo apt-get update && sudo apt-get install -y clang-18
+      - run: rustup show active-toolchain
+        working-directory: nil
+      - name: Runner tests and smoke checks
+        working-directory: suite
+        run: |
+          python3 -m unittest discover -s tests -v
+          python3 -m unittest discover -s paired/tests -v
+          python3 -m unittest discover -s generation/tests -v
+          python3 bench.py token --smoke
+          python3 bench.py runtime --smoke
+          python3 bench.py generation --mock
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: benchmark-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/nil-benchmarks/runs
+          if-no-files-found: ignore
+          retention-days: 14
