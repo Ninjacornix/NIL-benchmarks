@@ -1,0 +1,2 @@
+(i,s)=!write(b,b(a))
+1:s=@(!bytes(0,0),0,a;b<c;!concat(!concat(a,!format(b)),"\n"),b+1,c;a)

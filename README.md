@@ -81,3 +81,15 @@ and untimed double-transform verification):
 
 These include process startup and cached filesystem I/O. See
 [the measured method and limitations](reports/2026-10-02/APPLICATION_STORAGE.md).
+
+Incremental builders and broader application paths:
+
+```sh
+./scripts/bench.sh runtime --full --workloads --repeats 9
+./scripts/bench.sh runtime --smoke --workloads --repeats 1
+```
+
+This measures append scaling, formatted reports, newline counting and integer
+reduction, with independent output checks. Python uses idiomatic join/count/sum;
+the report states these algorithm differences. Whole-process medians include
+startup and cached file I/O; they do not establish general language parity.

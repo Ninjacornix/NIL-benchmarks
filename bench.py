@@ -112,9 +112,11 @@ def main(argv=None):
     mode.add_argument('--mock',action='store_true');mode.add_argument('--ollama',metavar='MODEL')
     parser.add_argument('--output',type=Path);parser.add_argument('--iterations',type=int,default=1000000)
     parser.add_argument('--repeats',type=int,default=9)
+    parser.add_argument('--workloads',action='store_true',help='Measure append scaling and broad application workloads')
     parser.add_argument('--application',action='store_true',help='Measure expr-v5 whole-file byte loops against C++/Python')
     args=parser.parse_args(argv)
     if args.application and args.kind!='runtime':parser.error('--application requires runtime')
+    if args.workloads and (args.kind!='runtime' or args.application):parser.error('--workloads requires runtime and cannot combine with --application')
     if args.kind!='generation' and (args.mock or args.ollama):parser.error('--mock/--ollama require generation')
     if args.kind=='pipeline' and not args.full:parser.error('Use pipeline --full')
     if args.kind=='generation' and (args.smoke or args.full):parser.error('Use generation --mock or --ollama MODEL')
@@ -128,6 +130,9 @@ def main(argv=None):
             build_helpers('pipeline')
             result=json.loads(subprocess.check_output([str(ROOT/'target/release/examples/pipeline')],cwd=ROOT,text=True))
         elif args.kind=='token': result=token_smoke() if args.smoke else token_full()
+        elif args.kind=='runtime' and args.workloads:
+            from application.workloads.run import run
+            result=run(folder,args.repeats,args.smoke)
         elif args.kind=='runtime' and args.application:
             from application.run import run
             result=run(folder,args.repeats,args.smoke)
