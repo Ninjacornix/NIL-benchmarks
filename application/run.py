@@ -55,18 +55,19 @@ def run(folder, repeats, smoke=False):
         subprocess.run([str(nil), str(output_path), str(roundtrip)], capture_output=True, check=True, timeout=60)
         if roundtrip.read_bytes() != data:
             raise ValueError(f'double transform round-trip failure at size {size}')
+        stage_output = folder/'stage-output.bin'
         stage_samples = {name: [] for name in stages}
         for round_index in range(repeats+1):
             order = list(stages)
             order = order[round_index%2:]+order[:round_index%2]
             for name in order:
-                output_path.write_bytes(b'sentinel')
-                args = [str(input_path)] if name == 'read-only' else [str(input_path), str(output_path)]
+                stage_output.write_bytes(b'sentinel')
+                args = [str(input_path)] if name == 'read-only' else [str(input_path), str(stage_output)]
                 started = time.perf_counter_ns()
                 process = subprocess.run([str(stages[name]), *args], capture_output=True, check=True, timeout=60)
                 elapsed = time.perf_counter_ns()-started
                 expected_output = b'sentinel' if name == 'read-only' else data
-                if process.stdout != f'{size}\n'.encode() or process.stderr or output_path.read_bytes() != expected_output or input_path.read_bytes() != data:
+                if process.stdout != f'{size}\n'.encode() or process.stderr or stage_output.read_bytes() != expected_output or input_path.read_bytes() != data:
                     raise ValueError(f'{name}: stage correctness failure at size {size}')
                 if round_index: stage_samples[name].append(elapsed)
         cases.append(dict(bytes=size, input_sha256=hashlib.sha256(data).hexdigest(), output_sha256=hashlib.sha256(expected).hexdigest(), samples_ns=samples,
