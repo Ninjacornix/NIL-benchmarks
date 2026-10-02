@@ -93,3 +93,7 @@ This measures append scaling, formatted reports, newline counting and integer
 reduction, with independent output checks. Python uses idiomatic join/count/sum;
 the report states these algorithm differences. Whole-process medians include
 startup and cached file I/O; they do not establish general language parity.
+
+The workloads mode also measures 16 MiB byte-sum (branchless scan control) and
+scalar-callee newline counting (the conservative call boundary). Both use the
+same cached file and independent byte-result oracles as the ordinary scan.

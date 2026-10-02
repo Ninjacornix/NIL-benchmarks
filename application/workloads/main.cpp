@@ -7,13 +7,15 @@
 int main(int argc,char **argv) {
     if(argc<3) return 2;
     std::string mode=argv[1];
-    if(mode=="newlines") {
+    if(mode=="newlines" || mode=="byte_sum" || mode=="newlines_call") {
         std::ifstream input(argv[2],std::ios::binary|std::ios::ate);
         if(!input) return 1;
         auto size=input.tellg(); if(size<0) return 1;
         std::string data(static_cast<std::size_t>(size), '\0');
         input.seekg(0);input.read(data.data(),size);if(!input) return 1;
-        std::int64_t count=0;for(unsigned char byte:data) count+=byte==10;
+        std::int64_t count=0;
+        if(mode=="byte_sum") { for(unsigned char byte:data) count+=byte; }
+        else { for(unsigned char byte:data) count+=byte==10; }
         std::cout<<count<<'\n';
     } else {
         auto n=std::stoll(argv[2]); if(n<0) return 2;

@@ -1,9 +1,9 @@
 import sys
 mode = sys.argv[1]
-if mode == 'newlines':
+if mode in ['newlines', 'byte_sum', 'newlines_call']:
     with open(sys.argv[2], 'rb') as source:
         data = source.read()
-    print(data.count(b'\n'))
+    print(sum(data) if mode == 'byte_sum' else data.count(b'\n'))
 else:
     n = int(sys.argv[2])
     if mode == 'reduce':
