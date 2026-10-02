@@ -21,3 +21,5 @@ archives. Never claim interrupted or mock runs as model-efficiency evidence.
 - [expr-v5 file transforms and live storage](2026-10-02/APPLICATION_STORAGE.md)
 
 - [expr-v5 incremental builders and broader workloads](2026-10-02/APPLICATION_BUILDERS.md)
+
+- [scalar lazy-region roots and matched workload controls](2026-10-03/LAZY_REGIONS.md)
