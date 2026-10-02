@@ -70,3 +70,13 @@ python3 -m unittest discover -s generation/tests -v
 Use Conventional Commits. Describe methodology changes and validation in PRs.
 A compiler PR updating the submodule must pin an existing published suite commit.
 Do not claim generation efficiency from source token counts or smoke results.
+
+Application storage measurements (NIL/C++/Python file-transform loops):
+
+```sh
+./scripts/bench.sh runtime --full --application --repeats 9
+./scripts/bench.sh runtime --smoke --application --repeats 1
+```
+
+These include process startup and cached filesystem I/O. See
+[the measured method and limitations](reports/2026-10-02/APPLICATION_STORAGE.md).

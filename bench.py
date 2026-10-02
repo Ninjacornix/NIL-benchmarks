@@ -30,7 +30,7 @@ def output_directory(kind, requested=None):
 def provenance():
     paths=sorted(set([*ROOT.glob('Cargo*'),*HERE.rglob('*.py'),*HERE.rglob('*.json'),
         *HERE.rglob('*.nil'),*HERE.rglob('*.cpp'),*HERE.rglob('*.rs'),*HERE.rglob('*.toml'),
-        *HERE.rglob('*.lock'),*list((ROOT/'crates').rglob('*.rs')),*list((ROOT/'cli').rglob('*.rs'))]))
+        *HERE.rglob('*.lock'),*list((ROOT/'crates').rglob('*.rs')),*list((ROOT/'crates').rglob('*.c')),*list((ROOT/'cli').rglob('*.rs'))]))
     paths=[p for p in paths if not any(part in ['.venv','.cache','__pycache__','results'] for part in p.parts)]
     return dict(git_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         benchmark_suite=suite_provenance(),
@@ -112,7 +112,9 @@ def main(argv=None):
     mode.add_argument('--mock',action='store_true');mode.add_argument('--ollama',metavar='MODEL')
     parser.add_argument('--output',type=Path);parser.add_argument('--iterations',type=int,default=1000000)
     parser.add_argument('--repeats',type=int,default=9)
+    parser.add_argument('--application',action='store_true',help='Measure expr-v5 whole-file byte loops against C++/Python')
     args=parser.parse_args(argv)
+    if args.application and args.kind!='runtime':parser.error('--application requires runtime')
     if args.kind!='generation' and (args.mock or args.ollama):parser.error('--mock/--ollama require generation')
     if args.kind=='pipeline' and not args.full:parser.error('Use pipeline --full')
     if args.kind=='generation' and (args.smoke or args.full):parser.error('Use generation --mock or --ollama MODEL')
@@ -126,6 +128,9 @@ def main(argv=None):
             build_helpers('pipeline')
             result=json.loads(subprocess.check_output([str(ROOT/'target/release/examples/pipeline')],cwd=ROOT,text=True))
         elif args.kind=='token': result=token_smoke() if args.smoke else token_full()
+        elif args.kind=='runtime' and args.application:
+            from application.run import run
+            result=run(folder,args.repeats,args.smoke)
         elif args.kind=='runtime' and args.smoke: result=runtime_smoke(folder)
         elif args.kind=='runtime':
             for name in ['cases','heldout']:

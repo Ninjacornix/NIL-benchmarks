@@ -17,3 +17,5 @@ Those private local files are not required to build, test or reproduce the fixtu
 Future published studies should retain small summaries here and attach full raw
 artifacts to a durable archive. CI smoke artifacts are short-lived, not publication
 archives. Never claim interrupted or mock runs as model-efficiency evidence.
+
+- [expr-v5 file transforms and live storage](2026-10-02/APPLICATION_STORAGE.md)
