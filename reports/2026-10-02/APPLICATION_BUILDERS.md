@@ -105,20 +105,23 @@ Why these losses differ:
 
 ## Unchanged byte-transform workload
 
-Before/after uses the starting revision measured now with the same facade,
-Python interpreter, fixtures and flags. Historical values from
+Correction (2026-10-03): the invocation labelled matched starting-source used
+bench.sh, which overwrites NIL_ROOT. Its manifest records compiler 97b9971, the
+same source as the new run, not ac92743. The following column is therefore a
+same-version repeat, not a before/after baseline. Raw data are retained unchanged.
+The actual old-source exploratory run below used Python 3.14.6. Historical values from
 [the previous report](APPLICATION_RUNTIME.md) are kept separately.
 
-| File bytes | Historical NIL | Starting NIL now | New NIL | C++ now | Python now | New/start |
+| File bytes | Historical NIL | Repeat NIL now | New NIL | C++ now | Python now | New/repeat |
 |---:|---:|---:|---:|---:|---:|---:|
 | 4,096 | 2.603 | 2.688 | 2.615 | 2.531 | 14.658 | 0.973× |
 | 1,048,576 | 4.484 | 4.668 | 4.793 | 3.059 | 61.609 | 1.027× |
 | 16,777,216 | 34.617 | 34.849 | 35.528 | 12.338 | 764.281 | 1.019× |
 
 **Strict non-regression is not proven:** new 1 MiB/16 MiB medians are nominally
-2.7%/1.9% higher than the matched starting run. The sample ranges overlap:
-1 MiB new 4.343–4.956 ms versus starting 4.402–5.224;
-16 MiB new 34.526–36.297 versus starting 34.632–35.680.
+2.7%/1.9% higher than the same-version repeat. The sample ranges overlap:
+1 MiB new 4.343–4.956 ms versus repeat 4.402–5.224;
+16 MiB new 34.526–36.297 versus repeat 34.632–35.680.
 No statistical isolation separates code cost from noise. Charging capacity requires
 an additional header field and read scratch is shrunk before publication; no
 measured percentage is attributed to these changes. It would be incorrect to
@@ -175,7 +178,8 @@ Compiler source revision: `97b9971a46217eac963c21ea83926a9e2ad64943`
 (documentation/gitlink dirty, measured compiler sources exactly hashed).
 Benchmark revision: `8d2e9afeac5d9368b5faa91f8b54f814ff91f65b`
 (clean during measurement; unpublished local commit).
-Starting compiler: `ac92743caa4792413c9a7fa29e1395586e919939`.
+Exploratory old-source compiler only: `ac92743caa4792413c9a7fa29e1395586e919939`;
+the supposed matched baseline actually records `97b9971a46217eac963c21ea83926a9e2ad64943`.
 All current measured source hashes were checked against the final source tree.
 Manifests retain every sample, environment, revisions and source hashes. Disassembly,
 validation logs and boundary/example scripts are retained with raw evidence.
