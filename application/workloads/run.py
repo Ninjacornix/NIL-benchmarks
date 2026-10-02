@@ -13,6 +13,10 @@ sys.path.insert(0, str(HERE.parent.parent))
 from support import ROOT
 
 
+def is_scan(name):
+    return name in ['newlines', 'byte_sum'] or name.startswith('newlines_')
+
+
 def run(folder, repeats, smoke=False, selected=None):
     subprocess.run(['cargo', 'build', '--release', '--locked', '--offline', '-p', 'nil'], cwd=ROOT, check=True)
     compiler = ROOT/'target/release/nil'
@@ -44,7 +48,7 @@ def run(folder, repeats, smoke=False, selected=None):
         for n in values:
             output = folder/(name+'-output.bin')
             expected_file = b'sentinel'
-            if name in ['newlines', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf']:
+            if is_scan(name):
                 pattern = b'alpha,beta,gamma\n'
                 data = (pattern*((n+len(pattern)-1)//len(pattern)))[:n]
                 input_path = folder/'lines-input.bin'
@@ -72,7 +76,7 @@ def run(folder, repeats, smoke=False, selected=None):
                     elapsed = time.perf_counter_ns()-start
                     if process.stdout != f'{result}\n'.encode() or process.stderr or output.read_bytes() != expected_file:
                         raise ValueError(f'{name}/{language}/{n}: output oracle failure')
-                    if name in ['newlines', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf'] and input_path.read_bytes() != data:
+                    if is_scan(name) and input_path.read_bytes() != data:
                         raise ValueError('input mutated')
                     if round_index: samples[language].append(elapsed)
             cases.append(dict(workload=name, input_size=n, result=result, samples_ns=samples,

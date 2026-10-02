@@ -35,3 +35,9 @@ class BenchmarkCommands(unittest.TestCase):
 
     def test_workload_filter_requires_workload_mode(self):
         with self.assertRaises(SystemExit):bench.main(['runtime','--full','--workload','newlines'])
+
+    def test_new_scan_controls_use_file_arguments(self):
+        from application.workloads.run import is_scan
+        self.assertTrue(is_scan('newlines_seq_return'))
+        self.assertTrue(is_scan('newlines_recursive'))
+        self.assertFalse(is_scan('append'))
