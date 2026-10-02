@@ -3,6 +3,7 @@ import hashlib
 import os
 from pathlib import Path
 import statistics
+import shutil
 import subprocess
 import sys
 import time
@@ -20,20 +21,24 @@ def run(folder, repeats, smoke=False):
     cpp = folder/'workloads-cpp'
     subprocess.run([cpp_clang, '-std=c++17', '-O2', str(HERE/'main.cpp'), '-o', str(cpp)], capture_output=True, check=True)
     binaries = {}
-    for name in ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call']:
+    for name in ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested']:
         binary = folder/('workload-'+name)
-        subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(HERE/(name+'.nil')), '-o', str(binary), '-O2'], capture_output=True, check=True)
+        environment = os.environ.copy()
+        if name in ['newlines_noinline', 'newlines_recursive']:
+            environment.update(NIL_CLANG=str(HERE/'noinline.py'), NIL_REAL_CLANG=shutil.which(clang),
+                               NIL_NOINLINE_IR=str(folder/(name+'.ll')))
+        subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(HERE/(name+'.nil')), '-o', str(binary), '-O2'], capture_output=True, check=True, env=environment)
         binaries[name] = binary
     cases = []
     sizes = {'append': [10000, 40000, 160000, 640000, 1048576], 'report': [10000, 40000, 160000],
-             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216]}
+             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216], 'newlines_leaf': [16777216], 'newlines_noinline': [16777216], 'newlines_recursive': [16777216], 'newlines_nested': [16777216]}
     if smoke:
         sizes = {name: values[:1] for name, values in sizes.items()}
     for name, values in sizes.items():
         for n in values:
             output = folder/(name+'-output.bin')
             expected_file = b'sentinel'
-            if name in ['newlines', 'byte_sum', 'newlines_call']:
+            if name in ['newlines', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested']:
                 pattern = b'alpha,beta,gamma\n'
                 data = (pattern*((n+len(pattern)-1)//len(pattern)))[:n]
                 input_path = folder/'lines-input.bin'
@@ -47,8 +52,9 @@ def run(folder, repeats, smoke=False):
             else:
                 args = [str(n)]
                 result = n
-            commands = {'nil': [str(binaries[name]), *args], 'cpp': [str(cpp), name, *args],
-                        'python': [sys.executable, str(HERE/'main.py'), name, *args]}
+            reference = 'newlines' if name.startswith('newlines_') else name
+            commands = {'nil': [str(binaries[name]), *args], 'cpp': [str(cpp), reference, *args],
+                        'python': [sys.executable, str(HERE/'main.py'), reference, *args]}
             samples = {language: [] for language in commands}
             for round_index in range(repeats+1):
                 order = list(commands)
@@ -60,7 +66,7 @@ def run(folder, repeats, smoke=False):
                     elapsed = time.perf_counter_ns()-start
                     if process.stdout != f'{result}\n'.encode() or process.stderr or output.read_bytes() != expected_file:
                         raise ValueError(f'{name}/{language}/{n}: output oracle failure')
-                    if name in ['newlines', 'byte_sum', 'newlines_call'] and input_path.read_bytes() != data:
+                    if name in ['newlines', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested'] and input_path.read_bytes() != data:
                         raise ValueError('input mutated')
                     if round_index: samples[language].append(elapsed)
             cases.append(dict(workload=name, input_size=n, result=result, samples_ns=samples,
@@ -78,4 +84,4 @@ def run(folder, repeats, smoke=False):
             raise ValueError(f'append content failure at {n}')
     return dict(cases=cases, repeats=repeats, warmups=1, append_content_verified=True,
                 clang_version=subprocess.check_output([clang, '--version'], text=True),
-                method='Whole processes, one warmup and rotating NIL/C++/Python order. Compilation and output verification excluded. Cached files, no fsync or CPU isolation. Append loops in all languages; report uses incremental NIL/C++ and idiomatic Python join. Newline count uses a NIL/C++ scan and Python bytes.count; reduce uses a native i64 buffer/vector and Python list/sum. These are semantic equivalents, not identical runtime algorithms. Byte-sum is the branchless scan control; newlines_call preserves a scalar callee in each arm to measure the conservative call boundary. No LLM/token efficiency inference.')
+                method='Whole processes, one warmup and rotating NIL/C++/Python order. Compilation and output verification excluded. Cached files, no fsync or CPU isolation. Append loops in all languages; report uses incremental NIL/C++ and idiomatic Python join. Newline count uses a NIL/C++ scan and Python bytes.count; reduce uses a native i64 buffer/vector and Python list/sum. These are semantic equivalents, not identical runtime algorithms. Byte-sum is the branchless scan control; newlines_call preserves identity helpers in lazy arms; leaf uses a sequence-reading helper. noinline and recursive use a benchmark-only IR hook on helper nil_fn2, with noinline and disable-tail-calls attributes, to preserve actual calls. Nested scans use 256-byte inner loops. C++/Python use the same direct count reference for every scan shape, not matched function shapes. No LLM/token efficiency inference.')
