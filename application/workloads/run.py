@@ -82,6 +82,15 @@ def run(folder, repeats, smoke=False):
         process = subprocess.run([str(content_binary), str(n)], capture_output=True, check=True, timeout=60)
         if process.stdout != b'x'*n+b'\n' or process.stderr:
             raise ValueError(f'append content failure at {n}')
-    return dict(cases=cases, repeats=repeats, warmups=1, append_content_verified=True,
+    # Every scan shape must implement count for arbitrary bytes, not just the
+    # timed text fixture. In particular, recursive control stays equivalent.
+    control = folder/'scan-binary-control.bin'
+    control.write_bytes(bytes(range(256))*4)
+    for name in binaries:
+        if name == 'newlines' or name.startswith('newlines_'):
+            process = subprocess.run([str(binaries[name]), str(control)], capture_output=True, check=True)
+            if process.stdout != b'4\n' or process.stderr:
+                raise ValueError(f'{name}: arbitrary-byte count oracle failure')
+    return dict(scan_binary_control_verified=True, cases=cases, repeats=repeats, warmups=1, append_content_verified=True,
                 clang_version=subprocess.check_output([clang, '--version'], text=True),
                 method='Whole processes, one warmup and rotating NIL/C++/Python order. Compilation and output verification excluded. Cached files, no fsync or CPU isolation. Append loops in all languages; report uses incremental NIL/C++ and idiomatic Python join. Newline count uses a NIL/C++ scan and Python bytes.count; reduce uses a native i64 buffer/vector and Python list/sum. These are semantic equivalents, not identical runtime algorithms. Byte-sum is the branchless scan control; newlines_call preserves identity helpers in lazy arms; leaf uses a scalar comparison helper; seq_leaf passes the sequence into a checked-reading helper. noinline and recursive use a benchmark-only IR hook on helper nil_fn2, with noinline and disable-tail-calls attributes, to preserve actual calls. Nested scans use 256-byte inner loops. C++/Python use the same direct count reference for every scan shape, not matched function shapes. No LLM/token efficiency inference.')
