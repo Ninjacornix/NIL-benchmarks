@@ -71,7 +71,8 @@ Use Conventional Commits. Describe methodology changes and validation in PRs.
 A compiler PR updating the submodule must pin an existing published suite commit.
 Do not claim generation efficiency from source token counts or smoke results.
 
-Application storage measurements (NIL/C++/Python file-transform loops):
+Application measurements (NIL/C++/Python file transforms, NIL read/read+write stages
+and untimed double-transform verification):
 
 ```sh
 ./scripts/bench.sh runtime --full --application --repeats 9

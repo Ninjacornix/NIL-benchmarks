@@ -70,3 +70,9 @@ SHA-256: `48dde77c0f7e9332a6a8987c1476025d1dfc93f41a11c8d260278ba88a6da287`.
 This report is a small summary; raw artifacts remain outside the repository
 under the benchmark suite's existing conventions. The archive is local evidence,
 not a publicly available release artifact.
+
+## Follow-up
+
+The [checked-runtime optimization measurement](APPLICATION_RUNTIME.md) records
+bulk reads, LTO/root changes, directly comparable timings and the new per-stage
+profile. This storage report describes the earlier implementation.
