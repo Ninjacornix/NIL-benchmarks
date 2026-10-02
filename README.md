@@ -41,7 +41,20 @@ paired/.venv/bin/python bench.py runtime --full
 ```
 
 The tokenizer run uses pinned assets; its first execution may download them.
-Runtime measurements include validation before timing. See [paired](paired/README.md)
+Runtime measurements include validation before timing.
+Application workloads can be selected individually from the NIL checkout:
+
+```sh
+./scripts/bench.sh runtime --full --workloads --workload newlines_leaf --workload newlines_noinline
+./scripts/bench.sh runtime --full --application
+```
+
+`--workload` is repeatable and requires `--workloads`. The forced-noinline and
+recursive scan controls modify helper LLVM attributes only during benchmarking;
+NIL has no user-visible inline annotation. See the
+[call-shape study](reports/2026-10-03/CALL_ROOTS.md). To benchmark another compiler
+checkout, set `NIL_ROOT` and invoke `bench.py` directly; the compiler's shell wrapper
+selects its own checkout. See [paired](paired/README.md)
 and [the measurement protocol](PROTOCOL.md) for methodology and limitations.
 
 Generation trials are optional. Read [generation](generation/README.md) first.
