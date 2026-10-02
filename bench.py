@@ -113,8 +113,10 @@ def main(argv=None):
     parser.add_argument('--output',type=Path);parser.add_argument('--iterations',type=int,default=1000000)
     parser.add_argument('--repeats',type=int,default=9)
     parser.add_argument('--workloads',action='store_true',help='Measure append scaling and broad application workloads')
+    parser.add_argument('--workload',action='append',help='Select named application workloads (repeatable)')
     parser.add_argument('--application',action='store_true',help='Measure expr-v5 whole-file byte loops against C++/Python')
     args=parser.parse_args(argv)
+    if args.workload and not args.workloads:parser.error('--workload requires --workloads')
     if args.application and args.kind!='runtime':parser.error('--application requires runtime')
     if args.workloads and (args.kind!='runtime' or args.application):parser.error('--workloads requires runtime and cannot combine with --application')
     if args.kind!='generation' and (args.mock or args.ollama):parser.error('--mock/--ollama require generation')
@@ -132,7 +134,7 @@ def main(argv=None):
         elif args.kind=='token': result=token_smoke() if args.smoke else token_full()
         elif args.kind=='runtime' and args.workloads:
             from application.workloads.run import run
-            result=run(folder,args.repeats,args.smoke)
+            result=run(folder,args.repeats,args.smoke,args.workload)
         elif args.kind=='runtime' and args.application:
             from application.run import run
             result=run(folder,args.repeats,args.smoke)

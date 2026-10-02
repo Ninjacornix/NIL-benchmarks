@@ -13,7 +13,7 @@ sys.path.insert(0, str(HERE.parent.parent))
 from support import ROOT
 
 
-def run(folder, repeats, smoke=False):
+def run(folder, repeats, smoke=False, selected=None):
     subprocess.run(['cargo', 'build', '--release', '--locked', '--offline', '-p', 'nil'], cwd=ROOT, check=True)
     compiler = ROOT/'target/release/nil'
     clang = os.environ.get('NIL_CLANG', 'clang')
@@ -21,7 +21,12 @@ def run(folder, repeats, smoke=False):
     cpp = folder/'workloads-cpp'
     subprocess.run([cpp_clang, '-std=c++17', '-O2', str(HERE/'main.cpp'), '-o', str(cpp)], capture_output=True, check=True)
     binaries = {}
-    for name in ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf']:
+    names = ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf', 'newlines_seq_return']
+    if selected:
+        unknown = set(selected)-set(names)
+        if unknown: raise ValueError(f'Unknown workloads: {sorted(unknown)}')
+        names = [name for name in names if name in selected]
+    for name in names:
         binary = folder/('workload-'+name)
         environment = os.environ.copy()
         if name in ['newlines_noinline', 'newlines_recursive']:
@@ -31,7 +36,8 @@ def run(folder, repeats, smoke=False):
         binaries[name] = binary
     cases = []
     sizes = {'append': [10000, 40000, 160000, 640000, 1048576], 'report': [10000, 40000, 160000],
-             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216], 'newlines_leaf': [16777216], 'newlines_noinline': [16777216], 'newlines_recursive': [16777216], 'newlines_nested': [16777216], 'newlines_seq_leaf': [16777216]}
+             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216], 'newlines_leaf': [16777216], 'newlines_noinline': [16777216], 'newlines_recursive': [16777216], 'newlines_nested': [16777216], 'newlines_seq_leaf': [16777216], 'newlines_seq_return': [16777216]}
+    sizes = {name: values for name, values in sizes.items() if name in names}
     if smoke:
         sizes = {name: values[:1] for name, values in sizes.items()}
     for name, values in sizes.items():
@@ -78,7 +84,7 @@ def run(folder, repeats, smoke=False):
     content_source.write_text('1:s=@(!bytes(0,0),0,a;b<c;!concat(a,"x"),b+1,c;a)\n')
     content_binary = folder/'append-content'
     subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(content_source), '-o', str(content_binary), '-O2'], capture_output=True, check=True)
-    for n in sizes['append']:
+    for n in sizes.get('append', []):
         process = subprocess.run([str(content_binary), str(n)], capture_output=True, check=True, timeout=60)
         if process.stdout != b'x'*n+b'\n' or process.stderr:
             raise ValueError(f'append content failure at {n}')
@@ -93,4 +99,4 @@ def run(folder, repeats, smoke=False):
                 raise ValueError(f'{name}: arbitrary-byte count oracle failure')
     return dict(scan_binary_control_verified=True, cases=cases, repeats=repeats, warmups=1, append_content_verified=True,
                 clang_version=subprocess.check_output([clang, '--version'], text=True),
-                method='Whole processes, one warmup and rotating NIL/C++/Python order. Compilation and output verification excluded. Cached files, no fsync or CPU isolation. Append loops in all languages; report uses incremental NIL/C++ and idiomatic Python join. Newline count uses a NIL/C++ scan and Python bytes.count; reduce uses a native i64 buffer/vector and Python list/sum. These are semantic equivalents, not identical runtime algorithms. Byte-sum is the branchless scan control; newlines_call preserves identity helpers in lazy arms; leaf uses a scalar comparison helper; seq_leaf passes the sequence into a checked-reading helper. noinline and recursive use a benchmark-only IR hook on helper nil_fn2, with noinline and disable-tail-calls attributes, to preserve actual calls. Nested scans use 256-byte inner loops. C++/Python use the same direct count reference for every scan shape, not matched function shapes. No LLM/token efficiency inference.')
+                method='Whole processes, one warmup and rotating NIL/C++/Python order. Compilation and output verification excluded. Cached files, no fsync or CPU isolation. Append loops in all languages; report uses incremental NIL/C++ and idiomatic Python join. Newline count uses a NIL/C++ scan and Python bytes.count; reduce uses a native i64 buffer/vector and Python list/sum. These are semantic equivalents, not identical runtime algorithms. Byte-sum is the branchless scan control; newlines_call preserves identity helpers in lazy arms; leaf uses a scalar comparison helper; seq_leaf passes the sequence into a checked-reading helper. noinline and recursive use a benchmark-only IR hook on helper nil_fn2, with noinline and disable-tail-calls attributes, to preserve actual calls. Nested scans use 256-byte inner loops; seq_return carries a sequence through an identity-returning helper, outside the scalar proof. C++/Python use the same direct count reference for every scan shape, not matched function shapes. No LLM/token efficiency inference.')

@@ -32,3 +32,6 @@ class BenchmarkCommands(unittest.TestCase):
     def test_model_execution_requires_an_explicit_generation_mode(self):
         with self.assertRaises(SystemExit):bench.main(['generation','--smoke'])
         with self.assertRaises(SystemExit):bench.main(['runtime','--ollama','model'])
+
+    def test_workload_filter_requires_workload_mode(self):
+        with self.assertRaises(SystemExit):bench.main(['runtime','--full','--workload','newlines'])
