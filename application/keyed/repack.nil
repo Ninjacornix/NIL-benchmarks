@@ -1,0 +1,1 @@
+1=!size(@(!insert(!bytemap(),"k",""),0,a;b<c;!put(a,"k",!bytes(b,0)),b+1,c;a))

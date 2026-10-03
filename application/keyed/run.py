@@ -1,0 +1,53 @@
+"""Whole-process keyed scaling, including startup, decimal keys and checked ops."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import statistics
+import subprocess
+import time
+
+HERE = Path(__file__).resolve().parent
+ROOT = Path(os.environ.get('NIL_ROOT', HERE.parents[2])).resolve()
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--repeats', type=int, default=9)
+    args = parser.parse_args()
+    output = args.output.resolve()
+    if output.is_relative_to(ROOT):
+        parser.error('Output must be outside source checkouts')
+    output.mkdir(parents=True, exist_ok=True)
+    subprocess.run(['cargo', 'build', '-p', 'nil', '--release', '--locked', '--offline'], cwd=ROOT, check=True)
+    records = []
+    for name, sizes in [('insert', [1000, 4000, 16000, 64000]), ('repack', [1000, 4000, 16000, 64000]), ('repack-held', [4096, 65536, 1048576])]:
+        binary = output / name
+        subprocess.run([str(ROOT / 'target/release/nil'), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(binary)], cwd=ROOT, check=True)
+        for count in sizes:
+            times = []
+            for repeat in range(args.repeats + 1):
+                start = time.perf_counter_ns()
+                result = subprocess.run([str(binary), str(count)], capture_output=True, timeout=60)
+                elapsed = (time.perf_counter_ns() - start) / 1e6
+                expected = count if name == 'insert' else 2 if name == 'repack-held' else 1
+                if result.returncode or result.stdout != f'{expected}\n'.encode() or result.stderr:
+                    raise RuntimeError(f'{name}/{count}: {result.stdout!r} {result.stderr!r}')
+                if repeat:
+                    times.append(elapsed)
+            record = {'workload': name, 'iterations': 1000 if name == 'repack-held' else count, 'held_bytes': count if name == 'repack-held' else None, 'median_ms': statistics.median(times), 'samples_ms': times}
+            records.append(record)
+            print(json.dumps(record), flush=True)
+    boundary = []
+    for count in [262144, 262145, 262146, 524288]:
+        result = subprocess.run([str(output / 'insert'), str(count)], capture_output=True, timeout=60)
+        boundary.append({'iterations': count, 'returncode': result.returncode, 'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
+    report = {'schema': 1, 'methodology': 'Whole-process wall time; one warmup, median of repeats, output verified; no CPU isolation. Includes decimal key formatting and hash table growth. Repack increases an owned byte value by one byte each iteration, deliberately measuring the disclosed quadratic payload copy.', 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(), 'repeats': args.repeats, 'source_hashes': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.nil')}, 'records': records, 'boundary': boundary}
+    (output / 'results.json').write_text(json.dumps(report, indent=2) + '\n')
+    print('BOUNDARY ' + json.dumps(boundary), flush=True)
+
+
+if __name__ == '__main__':
+    main()

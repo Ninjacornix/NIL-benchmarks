@@ -1,0 +1,1 @@
+1=!size(@(!map(),0,a;b<c;!insert(a,!format(b),b),b+1,c;a))
