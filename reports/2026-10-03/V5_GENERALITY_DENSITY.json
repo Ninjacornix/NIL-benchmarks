@@ -1,0 +1,1646 @@
+{
+  "schema": 1,
+  "metric": "raw source tokens; NOT tokens until correctness",
+  "python_version": "3.12.11",
+  "compiler_revision": "7142629e7539b0e439a46b0362d1b0b2291bf3e2",
+  "source_hashes": {
+    "corpora/application-v5/tasks.json": "5d9e7c04c1bdd1f6119964bbe6da30d8f802e35653682b7396f4be1683b96ee5",
+    "corpora/application-v5/oracles.py": "58f761e65286ae01823fa8597075b9e403525ffe3ef00a1f33960aed6714c991",
+    "corpora/application-v5/verify.py": "67fca3a11f2524a0998d46f6c2401ec537761c594c8d2f0ec73f7378711cd865",
+    "corpora/application-v5/driver.cpp": "dc6455348cad08174e361a01542b19afc7240b4abca09e2ac92d4e1146dbe410",
+    "corpora/application-v5/goldens.json": "1217304f7b5a14c3a1d044a6ef30919d21be0ac88b8844c74c6fba943986dd0b",
+    "corpora/application-v5/programs/ascii_lower.cpp": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+    "corpora/application-v5/programs/ascii_lower.nil": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+    "corpora/application-v5/programs/ascii_lower.py": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+    "corpora/application-v5/programs/ascii_upper.cpp": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+    "corpora/application-v5/programs/ascii_upper.nil": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+    "corpora/application-v5/programs/ascii_upper.py": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+    "corpora/application-v5/programs/buffer_dot.cpp": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+    "corpora/application-v5/programs/buffer_dot.nil": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+    "corpora/application-v5/programs/buffer_dot.py": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+    "corpora/application-v5/programs/buffer_sum.cpp": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+    "corpora/application-v5/programs/buffer_sum.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/buffer_sum.py": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+    "corpora/application-v5/programs/copy_file.cpp": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+    "corpora/application-v5/programs/copy_file.nil": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+    "corpora/application-v5/programs/copy_file.py": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+    "corpora/application-v5/programs/count_newlines.cpp": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+    "corpora/application-v5/programs/count_newlines.nil": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+    "corpora/application-v5/programs/count_newlines.py": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.cpp": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.nil": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.py": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+    "corpora/application-v5/programs/env_lookup.cpp": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+    "corpora/application-v5/programs/env_lookup.py": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+    "corpora/application-v5/programs/expand_tabs.cpp": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+    "corpora/application-v5/programs/expand_tabs.nil": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+    "corpora/application-v5/programs/expand_tabs.py": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+    "corpora/application-v5/programs/first_fields_csv.cpp": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+    "corpora/application-v5/programs/first_fields_csv.nil": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+    "corpora/application-v5/programs/first_fields_csv.py": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+    "corpora/application-v5/programs/hex_encode.cpp": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+    "corpora/application-v5/programs/hex_encode.nil": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+    "corpora/application-v5/programs/hex_encode.py": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+    "corpora/application-v5/programs/histogram_digits.cpp": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+    "corpora/application-v5/programs/histogram_digits.nil": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+    "corpora/application-v5/programs/histogram_digits.py": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+    "corpora/application-v5/programs/invert_bytes.cpp": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+    "corpora/application-v5/programs/invert_bytes.nil": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+    "corpora/application-v5/programs/invert_bytes.py": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+    "corpora/application-v5/programs/min_max.cpp": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+    "corpora/application-v5/programs/min_max.nil": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+    "corpora/application-v5/programs/min_max.py": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+    "corpora/application-v5/programs/nonempty_lines.cpp": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+    "corpora/application-v5/programs/nonempty_lines.nil": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+    "corpora/application-v5/programs/nonempty_lines.py": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+    "corpora/application-v5/programs/normalize_crlf.cpp": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+    "corpora/application-v5/programs/normalize_crlf.nil": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+    "corpora/application-v5/programs/normalize_crlf.py": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+    "corpora/application-v5/programs/number_lines.cpp": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+    "corpora/application-v5/programs/number_lines.nil": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+    "corpora/application-v5/programs/number_lines.py": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+    "corpora/application-v5/programs/prefix_lines.cpp": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+    "corpora/application-v5/programs/prefix_lines.nil": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+    "corpora/application-v5/programs/prefix_lines.py": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+    "corpora/application-v5/programs/prefix_sums.cpp": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+    "corpora/application-v5/programs/prefix_sums.nil": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+    "corpora/application-v5/programs/prefix_sums.py": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+    "corpora/application-v5/programs/reverse_bytes.cpp": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+    "corpora/application-v5/programs/reverse_bytes.nil": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+    "corpora/application-v5/programs/reverse_bytes.py": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+    "corpora/application-v5/programs/rot13.cpp": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+    "corpora/application-v5/programs/rot13.nil": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+    "corpora/application-v5/programs/rot13.py": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+    "corpora/application-v5/programs/running_report.cpp": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+    "corpora/application-v5/programs/running_report.nil": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+    "corpora/application-v5/programs/running_report.py": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+    "corpora/application-v5/programs/slice_file.cpp": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+    "corpora/application-v5/programs/slice_file.nil": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+    "corpora/application-v5/programs/slice_file.py": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+    "corpora/application-v5/programs/sum_integers.cpp": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+    "corpora/application-v5/programs/sum_integers.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/sum_integers.py": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+    "corpora/application-v5/programs/sum_pairs.cpp": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+    "corpora/application-v5/programs/sum_pairs.nil": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+    "corpora/application-v5/programs/sum_pairs.py": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+    "generation/application/oracle.py": "5045915a4141d8f9c4e09239fdefa02013af99352c1d6dab20215374cece7e8a",
+    "generation/application/python_driver.py": "47ea25e999fb72c291fcd42c3e86a6ccddc83c3f53b3d9a4276600e93011507d",
+    "helpers/application_check.rs": "ab43ebbb0d472c741c1dca98b40ce6f707c448d7b20e68baa7efabd87f2286d3"
+  },
+  "verification_sha256": "11b437e16c295d09e7322c5a2676e2dcd731590e104a84ffe1108775ac87a28b",
+  "tokenizers": [
+    {
+      "id": "gemma3_4b",
+      "tag": "gemma3/4b",
+      "manifest_sha256": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "gguf_sha256": "aeda25e63ebd698fab8638ffb778e68bed908b960d39d0becc650fa981609d25",
+      "vocabulary_size": 262145,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    },
+    {
+      "id": "qwen2.5_7b_instruct",
+      "tag": "qwen2.5/7b-instruct",
+      "manifest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "gguf_sha256": "2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730",
+      "vocabulary_size": 152064,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    },
+    {
+      "id": "cl100k_base",
+      "backend": "tiktoken",
+      "backend_version": "0.12.0",
+      "add_special": false,
+      "parse_special": false,
+      "mergeable_ranks_sha256": "1ed95da8c64f95d46c2309468b36b36ff085db93cab0ed69726eba15379fec4c"
+    },
+    {
+      "id": "o200k_base",
+      "backend": "tiktoken",
+      "backend_version": "0.12.0",
+      "add_special": false,
+      "parse_special": false,
+      "mergeable_ranks_sha256": "f406a602251cf270bb965e4396fde1106a8abe16a05f54106837001eca781a2d"
+    }
+  ],
+  "probe_ids": {
+    "gemma3_4b": {
+      "(s,s)=!write(b,!read(a))\n": [
+        568,
+        236751,
+        236764,
+        236751,
+        3483,
+        236888,
+        5986,
+        236769,
+        236763,
+        216246,
+        1399,
+        236769,
+        236746,
+        1223,
+        107
+      ],
+      "\u00e9\u0000\n": [
+        1559,
+        238,
+        107
+      ],
+      "<eos><|endoftext|>": [
+        655,
+        211827,
+        1798,
+        236909,
+        643,
+        1340,
+        1005,
+        111038
+      ],
+      "": []
+    },
+    "qwen2.5_7b_instruct": {
+      "(s,s)=!write(b,!read(a))\n": [
+        1141,
+        10671,
+        11730,
+        0,
+        4934,
+        1883,
+        76802,
+        878,
+        2877,
+        1171
+      ],
+      "\u00e9\u0000\n": [
+        963,
+        188,
+        198
+      ],
+      "<eos><|endoftext|>": [
+        27,
+        84399,
+        1784,
+        91,
+        8691,
+        723,
+        427,
+        91,
+        29
+      ],
+      "": []
+    },
+    "cl100k_base": {
+      "(s,s)=!write(b,!read(a))\n": [
+        1161,
+        10900,
+        11992,
+        0,
+        5040,
+        1921,
+        77902,
+        888,
+        2948,
+        1192
+      ],
+      "\u00e9\u0000\n": [
+        978,
+        188,
+        198
+      ],
+      "<eos><|endoftext|>": [
+        27,
+        85499,
+        1822,
+        91,
+        8862,
+        728,
+        428,
+        91,
+        29
+      ],
+      "": []
+    },
+    "o200k_base": {
+      "(s,s)=!write(b,!read(a))\n": [
+        1858,
+        20379,
+        25987,
+        0,
+        9566,
+        3229,
+        108423,
+        1293,
+        6271,
+        2210
+      ],
+      "\u00e9\u0000\n": [
+        377,
+        188,
+        198
+      ],
+      "<eos><|endoftext|>": [
+        27,
+        68,
+        365,
+        3784,
+        91,
+        419,
+        1440,
+        919,
+        91,
+        29
+      ],
+      "": []
+    }
+  },
+  "qwen_crosscheck": {
+    "tokenizers_version": "0.22.1",
+    "asset_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "official_model": "Qwen/Qwen2.5-7B-Instruct",
+    "official_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "comparisons": 74,
+    "mismatches": []
+  },
+  "measurement_script_sha256": "5fe88dfa0083751dc0ba0381922922c501adea8a1f2259cadf98715e22df7c0c",
+  "paired_tasks": [
+    "ascii_upper",
+    "ascii_lower",
+    "rot13",
+    "invert_bytes",
+    "reverse_bytes",
+    "hex_encode",
+    "count_newlines",
+    "nonempty_lines",
+    "normalize_crlf",
+    "prefix_lines",
+    "first_fields_csv",
+    "sum_pairs",
+    "sum_integers",
+    "min_max",
+    "dedupe_adjacent_lines",
+    "running_report",
+    "number_lines",
+    "histogram_digits",
+    "buffer_sum",
+    "buffer_dot",
+    "prefix_sums",
+    "copy_file",
+    "slice_file",
+    "expand_tabs"
+  ],
+  "records": [
+    {
+      "task": "ascii_upper",
+      "category": "byte transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+      "bytes": 96,
+      "characters": 96,
+      "tokens": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 53,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      }
+    },
+    {
+      "task": "ascii_upper",
+      "category": "byte transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+      "bytes": 235,
+      "characters": 235,
+      "tokens": {
+        "gemma3_4b": 81,
+        "qwen2.5_7b_instruct": 64,
+        "cl100k_base": 60,
+        "o200k_base": 60
+      }
+    },
+    {
+      "task": "ascii_upper",
+      "category": "byte transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+      "bytes": 667,
+      "characters": 667,
+      "tokens": {
+        "gemma3_4b": 213,
+        "qwen2.5_7b_instruct": 167,
+        "cl100k_base": 166,
+        "o200k_base": 166
+      }
+    },
+    {
+      "task": "ascii_lower",
+      "category": "byte transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+      "bytes": 95,
+      "characters": 95,
+      "tokens": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 52,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      }
+    },
+    {
+      "task": "ascii_lower",
+      "category": "byte transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+      "bytes": 234,
+      "characters": 234,
+      "tokens": {
+        "gemma3_4b": 80,
+        "qwen2.5_7b_instruct": 63,
+        "cl100k_base": 60,
+        "o200k_base": 60
+      }
+    },
+    {
+      "task": "ascii_lower",
+      "category": "byte transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+      "bytes": 667,
+      "characters": 667,
+      "tokens": {
+        "gemma3_4b": 213,
+        "qwen2.5_7b_instruct": 167,
+        "cl100k_base": 166,
+        "o200k_base": 166
+      }
+    },
+    {
+      "task": "rot13",
+      "category": "byte transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+      "bytes": 170,
+      "characters": 170,
+      "tokens": {
+        "gemma3_4b": 133,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 86,
+        "o200k_base": 85
+      }
+    },
+    {
+      "task": "rot13",
+      "category": "byte transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+      "bytes": 355,
+      "characters": 355,
+      "tokens": {
+        "gemma3_4b": 124,
+        "qwen2.5_7b_instruct": 107,
+        "cl100k_base": 95,
+        "o200k_base": 95
+      }
+    },
+    {
+      "task": "rot13",
+      "category": "byte transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+      "bytes": 778,
+      "characters": 778,
+      "tokens": {
+        "gemma3_4b": 267,
+        "qwen2.5_7b_instruct": 218,
+        "cl100k_base": 214,
+        "o200k_base": 214
+      }
+    },
+    {
+      "task": "invert_bytes",
+      "category": "byte transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "bytes": 66,
+      "characters": 66,
+      "tokens": {
+        "gemma3_4b": 51,
+        "qwen2.5_7b_instruct": 37,
+        "cl100k_base": 35,
+        "o200k_base": 34
+      }
+    },
+    {
+      "task": "invert_bytes",
+      "category": "byte transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+      "bytes": 211,
+      "characters": 211,
+      "tokens": {
+        "gemma3_4b": 68,
+        "qwen2.5_7b_instruct": 52,
+        "cl100k_base": 50,
+        "o200k_base": 50
+      }
+    },
+    {
+      "task": "invert_bytes",
+      "category": "byte transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+      "bytes": 625,
+      "characters": 625,
+      "tokens": {
+        "gemma3_4b": 193,
+        "qwen2.5_7b_instruct": 148,
+        "cl100k_base": 146,
+        "o200k_base": 146
+      }
+    },
+    {
+      "task": "reverse_bytes",
+      "category": "byte transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+      "bytes": 82,
+      "characters": 82,
+      "tokens": {
+        "gemma3_4b": 60,
+        "qwen2.5_7b_instruct": 44,
+        "cl100k_base": 44,
+        "o200k_base": 43
+      }
+    },
+    {
+      "task": "reverse_bytes",
+      "category": "byte transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+      "bytes": 193,
+      "characters": 193,
+      "tokens": {
+        "gemma3_4b": 60,
+        "qwen2.5_7b_instruct": 44,
+        "cl100k_base": 44,
+        "o200k_base": 44
+      }
+    },
+    {
+      "task": "reverse_bytes",
+      "category": "byte transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+      "bytes": 556,
+      "characters": 556,
+      "tokens": {
+        "gemma3_4b": 169,
+        "qwen2.5_7b_instruct": 127,
+        "cl100k_base": 127,
+        "o200k_base": 127
+      }
+    },
+    {
+      "task": "hex_encode",
+      "category": "formatting",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+      "bytes": 148,
+      "characters": 148,
+      "tokens": {
+        "gemma3_4b": 97,
+        "qwen2.5_7b_instruct": 78,
+        "cl100k_base": 69,
+        "o200k_base": 68
+      }
+    },
+    {
+      "task": "hex_encode",
+      "category": "formatting",
+      "language": "python",
+      "status": "verified",
+      "sha256": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+      "bytes": 209,
+      "characters": 209,
+      "tokens": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      }
+    },
+    {
+      "task": "hex_encode",
+      "category": "formatting",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+      "bytes": 668,
+      "characters": 668,
+      "tokens": {
+        "gemma3_4b": 213,
+        "qwen2.5_7b_instruct": 169,
+        "cl100k_base": 161,
+        "o200k_base": 161
+      }
+    },
+    {
+      "task": "count_newlines",
+      "category": "line processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+      "bytes": 96,
+      "characters": 96,
+      "tokens": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 50,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      }
+    },
+    {
+      "task": "count_newlines",
+      "category": "line processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+      "bytes": 230,
+      "characters": 230,
+      "tokens": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 56,
+        "cl100k_base": 56,
+        "o200k_base": 56
+      }
+    },
+    {
+      "task": "count_newlines",
+      "category": "line processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+      "bytes": 617,
+      "characters": 617,
+      "tokens": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 144,
+        "o200k_base": 144
+      }
+    },
+    {
+      "task": "nonempty_lines",
+      "category": "line processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+      "bytes": 142,
+      "characters": 142,
+      "tokens": {
+        "gemma3_4b": 90,
+        "qwen2.5_7b_instruct": 70,
+        "cl100k_base": 68,
+        "o200k_base": 67
+      }
+    },
+    {
+      "task": "nonempty_lines",
+      "category": "line processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+      "bytes": 240,
+      "characters": 240,
+      "tokens": {
+        "gemma3_4b": 80,
+        "qwen2.5_7b_instruct": 61,
+        "cl100k_base": 61,
+        "o200k_base": 62
+      }
+    },
+    {
+      "task": "nonempty_lines",
+      "category": "line processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+      "bytes": 665,
+      "characters": 665,
+      "tokens": {
+        "gemma3_4b": 203,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 155,
+        "o200k_base": 157
+      }
+    },
+    {
+      "task": "normalize_crlf",
+      "category": "line processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+      "bytes": 168,
+      "characters": 168,
+      "tokens": {
+        "gemma3_4b": 108,
+        "qwen2.5_7b_instruct": 85,
+        "cl100k_base": 83,
+        "o200k_base": 83
+      }
+    },
+    {
+      "task": "normalize_crlf",
+      "category": "line processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+      "bytes": 211,
+      "characters": 211,
+      "tokens": {
+        "gemma3_4b": 70,
+        "qwen2.5_7b_instruct": 51,
+        "cl100k_base": 51,
+        "o200k_base": 51
+      }
+    },
+    {
+      "task": "normalize_crlf",
+      "category": "line processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+      "bytes": 698,
+      "characters": 698,
+      "tokens": {
+        "gemma3_4b": 231,
+        "qwen2.5_7b_instruct": 181,
+        "cl100k_base": 181,
+        "o200k_base": 181
+      }
+    },
+    {
+      "task": "prefix_lines",
+      "category": "line processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+      "bytes": 121,
+      "characters": 121,
+      "tokens": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 62,
+        "cl100k_base": 61,
+        "o200k_base": 61
+      }
+    },
+    {
+      "task": "prefix_lines",
+      "category": "line processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+      "bytes": 346,
+      "characters": 346,
+      "tokens": {
+        "gemma3_4b": 119,
+        "qwen2.5_7b_instruct": 93,
+        "cl100k_base": 93,
+        "o200k_base": 93
+      }
+    },
+    {
+      "task": "prefix_lines",
+      "category": "line processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+      "bytes": 671,
+      "characters": 671,
+      "tokens": {
+        "gemma3_4b": 219,
+        "qwen2.5_7b_instruct": 171,
+        "cl100k_base": 171,
+        "o200k_base": 171
+      }
+    },
+    {
+      "task": "first_fields_csv",
+      "category": "field processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+      "bytes": 157,
+      "characters": 157,
+      "tokens": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 77,
+        "cl100k_base": 74,
+        "o200k_base": 73
+      }
+    },
+    {
+      "task": "first_fields_csv",
+      "category": "field processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+      "bytes": 324,
+      "characters": 324,
+      "tokens": {
+        "gemma3_4b": 113,
+        "qwen2.5_7b_instruct": 90,
+        "cl100k_base": 90,
+        "o200k_base": 91
+      }
+    },
+    {
+      "task": "first_fields_csv",
+      "category": "field processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+      "bytes": 672,
+      "characters": 672,
+      "tokens": {
+        "gemma3_4b": 208,
+        "qwen2.5_7b_instruct": 158,
+        "cl100k_base": 158,
+        "o200k_base": 160
+      }
+    },
+    {
+      "task": "sum_pairs",
+      "category": "format parsing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+      "bytes": 120,
+      "characters": 120,
+      "tokens": {
+        "gemma3_4b": 70,
+        "qwen2.5_7b_instruct": 56,
+        "cl100k_base": 56,
+        "o200k_base": 55
+      }
+    },
+    {
+      "task": "sum_pairs",
+      "category": "format parsing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+      "bytes": 282,
+      "characters": 282,
+      "tokens": {
+        "gemma3_4b": 91,
+        "qwen2.5_7b_instruct": 69,
+        "cl100k_base": 69,
+        "o200k_base": 70
+      }
+    },
+    {
+      "task": "sum_pairs",
+      "category": "format parsing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+      "bytes": 780,
+      "characters": 780,
+      "tokens": {
+        "gemma3_4b": 245,
+        "qwen2.5_7b_instruct": 188,
+        "cl100k_base": 188,
+        "o200k_base": 190
+      }
+    },
+    {
+      "task": "sum_integers",
+      "category": "format parsing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "bytes": 100,
+      "characters": 100,
+      "tokens": {
+        "gemma3_4b": 61,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 46
+      }
+    },
+    {
+      "task": "sum_integers",
+      "category": "format parsing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+      "bytes": 245,
+      "characters": 245,
+      "tokens": {
+        "gemma3_4b": 78,
+        "qwen2.5_7b_instruct": 58,
+        "cl100k_base": 58,
+        "o200k_base": 58
+      }
+    },
+    {
+      "task": "sum_integers",
+      "category": "format parsing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+      "bytes": 689,
+      "characters": 689,
+      "tokens": {
+        "gemma3_4b": 211,
+        "qwen2.5_7b_instruct": 162,
+        "cl100k_base": 162,
+        "o200k_base": 164
+      }
+    },
+    {
+      "task": "min_max",
+      "category": "format parsing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+      "bytes": 164,
+      "characters": 164,
+      "tokens": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 75,
+        "cl100k_base": 75,
+        "o200k_base": 76
+      }
+    },
+    {
+      "task": "min_max",
+      "category": "format parsing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+      "bytes": 278,
+      "characters": 278,
+      "tokens": {
+        "gemma3_4b": 88,
+        "qwen2.5_7b_instruct": 67,
+        "cl100k_base": 67,
+        "o200k_base": 67
+      }
+    },
+    {
+      "task": "min_max",
+      "category": "format parsing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+      "bytes": 821,
+      "characters": 821,
+      "tokens": {
+        "gemma3_4b": 259,
+        "qwen2.5_7b_instruct": 204,
+        "cl100k_base": 204,
+        "o200k_base": 206
+      }
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "category": "line processing",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+      "bytes": 373,
+      "characters": 373,
+      "tokens": {
+        "gemma3_4b": 224,
+        "qwen2.5_7b_instruct": 167,
+        "cl100k_base": 163,
+        "o200k_base": 166
+      }
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "category": "line processing",
+      "language": "python",
+      "status": "verified",
+      "sha256": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+      "bytes": 371,
+      "characters": 371,
+      "tokens": {
+        "gemma3_4b": 129,
+        "qwen2.5_7b_instruct": 104,
+        "cl100k_base": 104,
+        "o200k_base": 105
+      }
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "category": "line processing",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+      "bytes": 773,
+      "characters": 773,
+      "tokens": {
+        "gemma3_4b": 232,
+        "qwen2.5_7b_instruct": 180,
+        "cl100k_base": 180,
+        "o200k_base": 182
+      }
+    },
+    {
+      "task": "running_report",
+      "category": "formatting",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+      "bytes": 139,
+      "characters": 139,
+      "tokens": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 58,
+        "cl100k_base": 58,
+        "o200k_base": 58
+      }
+    },
+    {
+      "task": "running_report",
+      "category": "formatting",
+      "language": "python",
+      "status": "verified",
+      "sha256": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+      "bytes": 262,
+      "characters": 262,
+      "tokens": {
+        "gemma3_4b": 91,
+        "qwen2.5_7b_instruct": 72,
+        "cl100k_base": 72,
+        "o200k_base": 73
+      }
+    },
+    {
+      "task": "running_report",
+      "category": "formatting",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+      "bytes": 715,
+      "characters": 715,
+      "tokens": {
+        "gemma3_4b": 233,
+        "qwen2.5_7b_instruct": 183,
+        "cl100k_base": 183,
+        "o200k_base": 183
+      }
+    },
+    {
+      "task": "number_lines",
+      "category": "formatting",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+      "bytes": 161,
+      "characters": 161,
+      "tokens": {
+        "gemma3_4b": 93,
+        "qwen2.5_7b_instruct": 74,
+        "cl100k_base": 72,
+        "o200k_base": 71
+      }
+    },
+    {
+      "task": "number_lines",
+      "category": "formatting",
+      "language": "python",
+      "status": "verified",
+      "sha256": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+      "bytes": 341,
+      "characters": 341,
+      "tokens": {
+        "gemma3_4b": 118,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 94,
+        "o200k_base": 95
+      }
+    },
+    {
+      "task": "number_lines",
+      "category": "formatting",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+      "bytes": 706,
+      "characters": 706,
+      "tokens": {
+        "gemma3_4b": 217,
+        "qwen2.5_7b_instruct": 167,
+        "cl100k_base": 167,
+        "o200k_base": 169
+      }
+    },
+    {
+      "task": "histogram_digits",
+      "category": "numeric buffers",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+      "bytes": 220,
+      "characters": 220,
+      "tokens": {
+        "gemma3_4b": 142,
+        "qwen2.5_7b_instruct": 111,
+        "cl100k_base": 106,
+        "o200k_base": 105
+      }
+    },
+    {
+      "task": "histogram_digits",
+      "category": "numeric buffers",
+      "language": "python",
+      "status": "verified",
+      "sha256": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+      "bytes": 328,
+      "characters": 328,
+      "tokens": {
+        "gemma3_4b": 106,
+        "qwen2.5_7b_instruct": 86,
+        "cl100k_base": 84,
+        "o200k_base": 85
+      }
+    },
+    {
+      "task": "histogram_digits",
+      "category": "numeric buffers",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+      "bytes": 766,
+      "characters": 766,
+      "tokens": {
+        "gemma3_4b": 257,
+        "qwen2.5_7b_instruct": 206,
+        "cl100k_base": 204,
+        "o200k_base": 204
+      }
+    },
+    {
+      "task": "buffer_sum",
+      "category": "numeric buffers",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "bytes": 100,
+      "characters": 100,
+      "tokens": {
+        "gemma3_4b": 61,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 46
+      }
+    },
+    {
+      "task": "buffer_sum",
+      "category": "numeric buffers",
+      "language": "python",
+      "status": "verified",
+      "sha256": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+      "bytes": 333,
+      "characters": 333,
+      "tokens": {
+        "gemma3_4b": 103,
+        "qwen2.5_7b_instruct": 76,
+        "cl100k_base": 76,
+        "o200k_base": 76
+      }
+    },
+    {
+      "task": "buffer_sum",
+      "category": "numeric buffers",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+      "bytes": 905,
+      "characters": 905,
+      "tokens": {
+        "gemma3_4b": 277,
+        "qwen2.5_7b_instruct": 208,
+        "cl100k_base": 208,
+        "o200k_base": 211
+      }
+    },
+    {
+      "task": "buffer_dot",
+      "category": "numeric buffers",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+      "bytes": 195,
+      "characters": 195,
+      "tokens": {
+        "gemma3_4b": 140,
+        "qwen2.5_7b_instruct": 104,
+        "cl100k_base": 104,
+        "o200k_base": 103
+      }
+    },
+    {
+      "task": "buffer_dot",
+      "category": "numeric buffers",
+      "language": "python",
+      "status": "verified",
+      "sha256": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+      "bytes": 447,
+      "characters": 447,
+      "tokens": {
+        "gemma3_4b": 151,
+        "qwen2.5_7b_instruct": 120,
+        "cl100k_base": 120,
+        "o200k_base": 120
+      }
+    },
+    {
+      "task": "buffer_dot",
+      "category": "numeric buffers",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+      "bytes": 1117,
+      "characters": 1117,
+      "tokens": {
+        "gemma3_4b": 362,
+        "qwen2.5_7b_instruct": 280,
+        "cl100k_base": 280,
+        "o200k_base": 282
+      }
+    },
+    {
+      "task": "prefix_sums",
+      "category": "numeric buffers",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+      "bytes": 123,
+      "characters": 123,
+      "tokens": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 57,
+        "cl100k_base": 57,
+        "o200k_base": 56
+      }
+    },
+    {
+      "task": "prefix_sums",
+      "category": "numeric buffers",
+      "language": "python",
+      "status": "verified",
+      "sha256": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+      "bytes": 369,
+      "characters": 369,
+      "tokens": {
+        "gemma3_4b": 115,
+        "qwen2.5_7b_instruct": 89,
+        "cl100k_base": 89,
+        "o200k_base": 89
+      }
+    },
+    {
+      "task": "prefix_sums",
+      "category": "numeric buffers",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+      "bytes": 827,
+      "characters": 827,
+      "tokens": {
+        "gemma3_4b": 254,
+        "qwen2.5_7b_instruct": 196,
+        "cl100k_base": 196,
+        "o200k_base": 198
+      }
+    },
+    {
+      "task": "copy_file",
+      "category": "file pipeline",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+      "bytes": 25,
+      "characters": 25,
+      "tokens": {
+        "gemma3_4b": 15,
+        "qwen2.5_7b_instruct": 10,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      }
+    },
+    {
+      "task": "copy_file",
+      "category": "file pipeline",
+      "language": "python",
+      "status": "verified",
+      "sha256": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+      "bytes": 187,
+      "characters": 187,
+      "tokens": {
+        "gemma3_4b": 57,
+        "qwen2.5_7b_instruct": 42,
+        "cl100k_base": 42,
+        "o200k_base": 42
+      }
+    },
+    {
+      "task": "copy_file",
+      "category": "file pipeline",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+      "bytes": 535,
+      "characters": 535,
+      "tokens": {
+        "gemma3_4b": 162,
+        "qwen2.5_7b_instruct": 122,
+        "cl100k_base": 122,
+        "o200k_base": 122
+      }
+    },
+    {
+      "task": "slice_file",
+      "category": "file pipeline",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+      "bytes": 151,
+      "characters": 151,
+      "tokens": {
+        "gemma3_4b": 103,
+        "qwen2.5_7b_instruct": 74,
+        "cl100k_base": 72,
+        "o200k_base": 73
+      }
+    },
+    {
+      "task": "slice_file",
+      "category": "file pipeline",
+      "language": "python",
+      "status": "verified",
+      "sha256": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+      "bytes": 304,
+      "characters": 304,
+      "tokens": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 73
+      }
+    },
+    {
+      "task": "slice_file",
+      "category": "file pipeline",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+      "bytes": 760,
+      "characters": 760,
+      "tokens": {
+        "gemma3_4b": 236,
+        "qwen2.5_7b_instruct": 186,
+        "cl100k_base": 186,
+        "o200k_base": 186
+      }
+    },
+    {
+      "task": "expand_tabs",
+      "category": "text transform",
+      "language": "expr-v5",
+      "status": "verified",
+      "sha256": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+      "bytes": 98,
+      "characters": 98,
+      "tokens": {
+        "gemma3_4b": 63,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 48,
+        "o200k_base": 48
+      }
+    },
+    {
+      "task": "expand_tabs",
+      "category": "text transform",
+      "language": "python",
+      "status": "verified",
+      "sha256": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+      "bytes": 211,
+      "characters": 211,
+      "tokens": {
+        "gemma3_4b": 68,
+        "qwen2.5_7b_instruct": 50,
+        "cl100k_base": 50,
+        "o200k_base": 50
+      }
+    },
+    {
+      "task": "expand_tabs",
+      "category": "text transform",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+      "bytes": 605,
+      "characters": 605,
+      "tokens": {
+        "gemma3_4b": 189,
+        "qwen2.5_7b_instruct": 148,
+        "cl100k_base": 148,
+        "o200k_base": 148
+      }
+    },
+    {
+      "task": "env_lookup",
+      "language": "expr-v5",
+      "status": "unsupported"
+    },
+    {
+      "task": "env_lookup",
+      "category": "configuration boundary",
+      "language": "python",
+      "status": "verified",
+      "sha256": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+      "bytes": 249,
+      "characters": 249,
+      "tokens": {
+        "gemma3_4b": 78,
+        "qwen2.5_7b_instruct": 58,
+        "cl100k_base": 58,
+        "o200k_base": 58
+      }
+    },
+    {
+      "task": "env_lookup",
+      "category": "configuration boundary",
+      "language": "cpp",
+      "status": "verified",
+      "sha256": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+      "bytes": 619,
+      "characters": 619,
+      "tokens": {
+        "gemma3_4b": 188,
+        "qwen2.5_7b_instruct": 143,
+        "cl100k_base": 143,
+        "o200k_base": 143
+      }
+    }
+  ],
+  "paired_aggregates": {
+    "gemma3_4b": {
+      "expr-v5": 2144,
+      "python": 2227,
+      "cpp": 5454
+    },
+    "qwen2.5_7b_instruct": {
+      "expr-v5": 1634,
+      "python": 1728,
+      "cpp": 4235
+    },
+    "cl100k_base": {
+      "expr-v5": 1582,
+      "python": 1705,
+      "cpp": 4217
+    },
+    "o200k_base": {
+      "expr-v5": 1571,
+      "python": 1712,
+      "cpp": 4238
+    }
+  },
+  "nil_nonwins": {
+    "gemma3_4b": {
+      "python": [
+        {
+          "task": "rot13",
+          "nil": 133,
+          "baseline": 124,
+          "outcome": "loss"
+        },
+        {
+          "task": "reverse_bytes",
+          "nil": 60,
+          "baseline": 60,
+          "outcome": "tie"
+        },
+        {
+          "task": "hex_encode",
+          "nil": 97,
+          "baseline": 64,
+          "outcome": "loss"
+        },
+        {
+          "task": "nonempty_lines",
+          "nil": 90,
+          "baseline": 80,
+          "outcome": "loss"
+        },
+        {
+          "task": "normalize_crlf",
+          "nil": 108,
+          "baseline": 70,
+          "outcome": "loss"
+        },
+        {
+          "task": "min_max",
+          "nil": 98,
+          "baseline": 88,
+          "outcome": "loss"
+        },
+        {
+          "task": "dedupe_adjacent_lines",
+          "nil": 224,
+          "baseline": 129,
+          "outcome": "loss"
+        },
+        {
+          "task": "histogram_digits",
+          "nil": 142,
+          "baseline": 106,
+          "outcome": "loss"
+        },
+        {
+          "task": "slice_file",
+          "nil": 103,
+          "baseline": 98,
+          "outcome": "loss"
+        }
+      ],
+      "cpp": []
+    },
+    "qwen2.5_7b_instruct": {
+      "python": [
+        {
+          "task": "reverse_bytes",
+          "nil": 44,
+          "baseline": 44,
+          "outcome": "tie"
+        },
+        {
+          "task": "hex_encode",
+          "nil": 78,
+          "baseline": 47,
+          "outcome": "loss"
+        },
+        {
+          "task": "nonempty_lines",
+          "nil": 70,
+          "baseline": 61,
+          "outcome": "loss"
+        },
+        {
+          "task": "normalize_crlf",
+          "nil": 85,
+          "baseline": 51,
+          "outcome": "loss"
+        },
+        {
+          "task": "min_max",
+          "nil": 75,
+          "baseline": 67,
+          "outcome": "loss"
+        },
+        {
+          "task": "dedupe_adjacent_lines",
+          "nil": 167,
+          "baseline": 104,
+          "outcome": "loss"
+        },
+        {
+          "task": "histogram_digits",
+          "nil": 111,
+          "baseline": 86,
+          "outcome": "loss"
+        },
+        {
+          "task": "slice_file",
+          "nil": 74,
+          "baseline": 73,
+          "outcome": "loss"
+        }
+      ],
+      "cpp": []
+    },
+    "cl100k_base": {
+      "python": [
+        {
+          "task": "reverse_bytes",
+          "nil": 44,
+          "baseline": 44,
+          "outcome": "tie"
+        },
+        {
+          "task": "hex_encode",
+          "nil": 69,
+          "baseline": 47,
+          "outcome": "loss"
+        },
+        {
+          "task": "nonempty_lines",
+          "nil": 68,
+          "baseline": 61,
+          "outcome": "loss"
+        },
+        {
+          "task": "normalize_crlf",
+          "nil": 83,
+          "baseline": 51,
+          "outcome": "loss"
+        },
+        {
+          "task": "min_max",
+          "nil": 75,
+          "baseline": 67,
+          "outcome": "loss"
+        },
+        {
+          "task": "dedupe_adjacent_lines",
+          "nil": 163,
+          "baseline": 104,
+          "outcome": "loss"
+        },
+        {
+          "task": "histogram_digits",
+          "nil": 106,
+          "baseline": 84,
+          "outcome": "loss"
+        }
+      ],
+      "cpp": []
+    },
+    "o200k_base": {
+      "python": [
+        {
+          "task": "hex_encode",
+          "nil": 68,
+          "baseline": 47,
+          "outcome": "loss"
+        },
+        {
+          "task": "nonempty_lines",
+          "nil": 67,
+          "baseline": 62,
+          "outcome": "loss"
+        },
+        {
+          "task": "normalize_crlf",
+          "nil": 83,
+          "baseline": 51,
+          "outcome": "loss"
+        },
+        {
+          "task": "min_max",
+          "nil": 76,
+          "baseline": 67,
+          "outcome": "loss"
+        },
+        {
+          "task": "dedupe_adjacent_lines",
+          "nil": 166,
+          "baseline": 105,
+          "outcome": "loss"
+        },
+        {
+          "task": "histogram_digits",
+          "nil": 105,
+          "baseline": 85,
+          "outcome": "loss"
+        },
+        {
+          "task": "slice_file",
+          "nil": 73,
+          "baseline": 73,
+          "outcome": "tie"
+        }
+      ],
+      "cpp": []
+    }
+  }
+}

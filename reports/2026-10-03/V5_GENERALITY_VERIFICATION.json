@@ -1,0 +1,791 @@
+{
+  "schema": 1,
+  "compiler_revision": "7142629e7539b0e439a46b0362d1b0b2291bf3e2",
+  "source_hashes": {
+    "corpora/application-v5/tasks.json": "5d9e7c04c1bdd1f6119964bbe6da30d8f802e35653682b7396f4be1683b96ee5",
+    "corpora/application-v5/oracles.py": "58f761e65286ae01823fa8597075b9e403525ffe3ef00a1f33960aed6714c991",
+    "corpora/application-v5/verify.py": "67fca3a11f2524a0998d46f6c2401ec537761c594c8d2f0ec73f7378711cd865",
+    "corpora/application-v5/driver.cpp": "dc6455348cad08174e361a01542b19afc7240b4abca09e2ac92d4e1146dbe410",
+    "corpora/application-v5/goldens.json": "1217304f7b5a14c3a1d044a6ef30919d21be0ac88b8844c74c6fba943986dd0b",
+    "corpora/application-v5/programs/ascii_lower.cpp": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+    "corpora/application-v5/programs/ascii_lower.nil": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+    "corpora/application-v5/programs/ascii_lower.py": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+    "corpora/application-v5/programs/ascii_upper.cpp": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+    "corpora/application-v5/programs/ascii_upper.nil": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+    "corpora/application-v5/programs/ascii_upper.py": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+    "corpora/application-v5/programs/buffer_dot.cpp": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+    "corpora/application-v5/programs/buffer_dot.nil": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+    "corpora/application-v5/programs/buffer_dot.py": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+    "corpora/application-v5/programs/buffer_sum.cpp": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+    "corpora/application-v5/programs/buffer_sum.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/buffer_sum.py": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+    "corpora/application-v5/programs/copy_file.cpp": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+    "corpora/application-v5/programs/copy_file.nil": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+    "corpora/application-v5/programs/copy_file.py": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+    "corpora/application-v5/programs/count_newlines.cpp": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+    "corpora/application-v5/programs/count_newlines.nil": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+    "corpora/application-v5/programs/count_newlines.py": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.cpp": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.nil": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.py": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+    "corpora/application-v5/programs/env_lookup.cpp": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+    "corpora/application-v5/programs/env_lookup.py": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+    "corpora/application-v5/programs/expand_tabs.cpp": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+    "corpora/application-v5/programs/expand_tabs.nil": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+    "corpora/application-v5/programs/expand_tabs.py": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+    "corpora/application-v5/programs/first_fields_csv.cpp": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+    "corpora/application-v5/programs/first_fields_csv.nil": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+    "corpora/application-v5/programs/first_fields_csv.py": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+    "corpora/application-v5/programs/hex_encode.cpp": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+    "corpora/application-v5/programs/hex_encode.nil": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+    "corpora/application-v5/programs/hex_encode.py": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+    "corpora/application-v5/programs/histogram_digits.cpp": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+    "corpora/application-v5/programs/histogram_digits.nil": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+    "corpora/application-v5/programs/histogram_digits.py": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+    "corpora/application-v5/programs/invert_bytes.cpp": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+    "corpora/application-v5/programs/invert_bytes.nil": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+    "corpora/application-v5/programs/invert_bytes.py": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+    "corpora/application-v5/programs/min_max.cpp": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+    "corpora/application-v5/programs/min_max.nil": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+    "corpora/application-v5/programs/min_max.py": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+    "corpora/application-v5/programs/nonempty_lines.cpp": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+    "corpora/application-v5/programs/nonempty_lines.nil": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+    "corpora/application-v5/programs/nonempty_lines.py": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+    "corpora/application-v5/programs/normalize_crlf.cpp": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+    "corpora/application-v5/programs/normalize_crlf.nil": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+    "corpora/application-v5/programs/normalize_crlf.py": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+    "corpora/application-v5/programs/number_lines.cpp": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+    "corpora/application-v5/programs/number_lines.nil": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+    "corpora/application-v5/programs/number_lines.py": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+    "corpora/application-v5/programs/prefix_lines.cpp": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+    "corpora/application-v5/programs/prefix_lines.nil": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+    "corpora/application-v5/programs/prefix_lines.py": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+    "corpora/application-v5/programs/prefix_sums.cpp": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+    "corpora/application-v5/programs/prefix_sums.nil": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+    "corpora/application-v5/programs/prefix_sums.py": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+    "corpora/application-v5/programs/reverse_bytes.cpp": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+    "corpora/application-v5/programs/reverse_bytes.nil": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+    "corpora/application-v5/programs/reverse_bytes.py": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+    "corpora/application-v5/programs/rot13.cpp": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+    "corpora/application-v5/programs/rot13.nil": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+    "corpora/application-v5/programs/rot13.py": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+    "corpora/application-v5/programs/running_report.cpp": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+    "corpora/application-v5/programs/running_report.nil": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+    "corpora/application-v5/programs/running_report.py": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+    "corpora/application-v5/programs/slice_file.cpp": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+    "corpora/application-v5/programs/slice_file.nil": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+    "corpora/application-v5/programs/slice_file.py": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+    "corpora/application-v5/programs/sum_integers.cpp": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+    "corpora/application-v5/programs/sum_integers.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/sum_integers.py": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+    "corpora/application-v5/programs/sum_pairs.cpp": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+    "corpora/application-v5/programs/sum_pairs.nil": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+    "corpora/application-v5/programs/sum_pairs.py": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+    "generation/application/oracle.py": "5045915a4141d8f9c4e09239fdefa02013af99352c1d6dab20215374cece7e8a",
+    "generation/application/python_driver.py": "47ea25e999fb72c291fcd42c3e86a6ccddc83c3f53b3d9a4276600e93011507d",
+    "helpers/application_check.rs": "ab43ebbb0d472c741c1dca98b40ce6f707c448d7b20e68baa7efabd87f2286d3"
+  },
+  "totals": {
+    "tasks": 25,
+    "nil_programs": 24,
+    "unsupported": 1,
+    "reference_checks": 120,
+    "native_checks": 240,
+    "python_checks": 125,
+    "cpp_checks": 125
+  },
+  "results": [
+    {
+      "task": "ascii_upper",
+      "language": "expr-v5",
+      "source_sha256": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ascii_upper",
+      "language": "python",
+      "source_sha256": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_upper",
+      "language": "cpp",
+      "source_sha256": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_lower",
+      "language": "expr-v5",
+      "source_sha256": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ascii_lower",
+      "language": "python",
+      "source_sha256": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_lower",
+      "language": "cpp",
+      "source_sha256": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "rot13",
+      "language": "expr-v5",
+      "source_sha256": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "rot13",
+      "language": "python",
+      "source_sha256": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "rot13",
+      "language": "cpp",
+      "source_sha256": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "invert_bytes",
+      "language": "expr-v5",
+      "source_sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "invert_bytes",
+      "language": "python",
+      "source_sha256": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "invert_bytes",
+      "language": "cpp",
+      "source_sha256": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "expr-v5",
+      "source_sha256": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "python",
+      "source_sha256": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "cpp",
+      "source_sha256": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "hex_encode",
+      "language": "expr-v5",
+      "source_sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "hex_encode",
+      "language": "python",
+      "source_sha256": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "hex_encode",
+      "language": "cpp",
+      "source_sha256": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "count_newlines",
+      "language": "expr-v5",
+      "source_sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "count_newlines",
+      "language": "python",
+      "source_sha256": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "count_newlines",
+      "language": "cpp",
+      "source_sha256": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "expr-v5",
+      "source_sha256": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "python",
+      "source_sha256": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "cpp",
+      "source_sha256": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "expr-v5",
+      "source_sha256": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "python",
+      "source_sha256": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "cpp",
+      "source_sha256": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_lines",
+      "language": "expr-v5",
+      "source_sha256": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "prefix_lines",
+      "language": "python",
+      "source_sha256": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_lines",
+      "language": "cpp",
+      "source_sha256": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "expr-v5",
+      "source_sha256": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "python",
+      "source_sha256": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "cpp",
+      "source_sha256": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_pairs",
+      "language": "expr-v5",
+      "source_sha256": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "sum_pairs",
+      "language": "python",
+      "source_sha256": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_pairs",
+      "language": "cpp",
+      "source_sha256": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_integers",
+      "language": "expr-v5",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "sum_integers",
+      "language": "python",
+      "source_sha256": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_integers",
+      "language": "cpp",
+      "source_sha256": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "min_max",
+      "language": "expr-v5",
+      "source_sha256": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "min_max",
+      "language": "python",
+      "source_sha256": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "min_max",
+      "language": "cpp",
+      "source_sha256": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "expr-v5",
+      "source_sha256": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "python",
+      "source_sha256": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "cpp",
+      "source_sha256": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "running_report",
+      "language": "expr-v5",
+      "source_sha256": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "running_report",
+      "language": "python",
+      "source_sha256": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "running_report",
+      "language": "cpp",
+      "source_sha256": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "number_lines",
+      "language": "expr-v5",
+      "source_sha256": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "number_lines",
+      "language": "python",
+      "source_sha256": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "number_lines",
+      "language": "cpp",
+      "source_sha256": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "histogram_digits",
+      "language": "expr-v5",
+      "source_sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "histogram_digits",
+      "language": "python",
+      "source_sha256": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "histogram_digits",
+      "language": "cpp",
+      "source_sha256": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_sum",
+      "language": "expr-v5",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "buffer_sum",
+      "language": "python",
+      "source_sha256": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_sum",
+      "language": "cpp",
+      "source_sha256": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_dot",
+      "language": "expr-v5",
+      "source_sha256": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "buffer_dot",
+      "language": "python",
+      "source_sha256": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_dot",
+      "language": "cpp",
+      "source_sha256": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_sums",
+      "language": "expr-v5",
+      "source_sha256": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "prefix_sums",
+      "language": "python",
+      "source_sha256": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_sums",
+      "language": "cpp",
+      "source_sha256": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "copy_file",
+      "language": "expr-v5",
+      "source_sha256": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "copy_file",
+      "language": "python",
+      "source_sha256": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "copy_file",
+      "language": "cpp",
+      "source_sha256": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "slice_file",
+      "language": "expr-v5",
+      "source_sha256": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "slice_file",
+      "language": "python",
+      "source_sha256": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "slice_file",
+      "language": "cpp",
+      "source_sha256": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "expand_tabs",
+      "language": "expr-v5",
+      "source_sha256": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "expand_tabs",
+      "language": "python",
+      "source_sha256": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "expand_tabs",
+      "language": "cpp",
+      "source_sha256": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "env_lookup",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The v5 Host exposes only read/write/out, and the language has no environment lookup or external-call intrinsic. Identical files and arguments with differing environment values require differing outputs; the reference evaluator cannot observe that difference. Do not hardcode fixture values."
+    },
+    {
+      "task": "env_lookup",
+      "language": "python",
+      "source_sha256": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "env_lookup",
+      "language": "cpp",
+      "source_sha256": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+      "semantic_ok": true,
+      "tests_passed": 5
+    }
+  ]
+}
