@@ -148,7 +148,8 @@ Actual logged O2 IR invocation (temporary paths are intentionally ephemeral):
 -flto -fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -O2 -Wno-override-module -x ir -c /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/module.ll -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/module.o
 ```
 The same log includes runtime-C and link invocations. `contraction_is_disabled_for_multiply_then_add`
-checks `(1+2^-27)*(1-2^-27)-1` returns +zero bits at O0/O2; a fused `mul_add` returns
+checks `(1+2^-27)*(1-2^-27)-1` with both constants and runtime f64 parameters
+returns +zero bits at O0/O2; a fused `mul_add` returns
 nonzero (−2^-54). Emitted IR contains `fmul`/`fadd`, no fast/contract/reassoc/arcp
 flags and no FMA intrinsic. This witness would fail if an FMA were formed; flags
 are checked through the recorded invocations, not inferred from timing.
@@ -185,8 +186,9 @@ ports must pass these exact gates; tests must not substitute approximate equalit
 [Verbatim command output](V5_NUMERIC_VALIDATION.txt) records every check and the
 Clang argument lists. Debug and release CI each pass **283 tests**, strict Clippy
 has no warnings. Sanitizers pass **88 tests**: application 37, keyed 32, numeric 19;
-`float-cast-overflow` is explicitly added to ASan/UBSan. A supplemental run checks
-new valid float-to-integer boundaries under the same sanitizer wrapper. The wrapper
+`float-cast-overflow` is explicitly added to ASan/UBSan. Supplemental runs check
+new valid float-to-integer boundaries and the runtime-parameter contraction witness
+under the same sanitizer wrapper. The wrapper
 instruments IR, runtime C and linking. LLVM conversion guards are tested before
 fptosi/fptoui; sanitizer success alone is not proof that a poison-forming cast was
 unreachable. Leak checking remains disabled because macOS LeakSanitizer is absent.
@@ -311,3 +313,10 @@ Logical Conventional Commits, no pushes in either repository. ADRs precede type,
 frontend/reference, strict codegen, differential and corpus implementation commits.
 Earlier profiles/default, 64 MiB live-capacity quota, byte/bounds checks, map limits,
 immutable alias behavior and existing intrinsic contracts remain unchanged.
+
+
+Final focused follow-up strengthens the FMA witness with runtime CLI parameters,
+preventing constant-folding from hiding contraction. Both optimization levels pass
+under ordinary strict Clang and ASan/UBSan; strict Clippy also passes. Compiler and
+runtime code are unchanged from the 283-test debug/release checks. The supplemental
+command outputs and recorded Clang invocations are appended to the validation log.
