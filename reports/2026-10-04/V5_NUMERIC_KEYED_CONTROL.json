@@ -1,0 +1,226 @@
+{
+  "schema": 1,
+  "methodology": "Whole-process wall time; one warmup, median of repeats, output verified; no CPU isolation. Includes decimal key formatting and hash table growth. Repack increases an owned byte value by one byte each iteration, deliberately measuring the disclosed quadratic payload copy.",
+  "compiler_revision": "5c2772434385b9ae7d9c0d7bfc9894dceb159597",
+  "repeats": 9,
+  "source_hashes": {
+    "repack.nil": "6967cb987aa97d7cb1bc4715e709f00f00447adba1222c9c697076c79ef04cad",
+    "insert.nil": "b8a98f9cb4cb1cd189a7045bd91b4c3db5f108146373acc97580ef5c15cc43a4",
+    "repack-held.nil": "5437f04a4322075cf0090dc6bc7c722d3bf5a158199546c3d3d519c036e9f24c"
+  },
+  "records": [
+    {
+      "workload": "insert",
+      "iterations": 1000,
+      "held_bytes": null,
+      "median_ms": 5.078,
+      "samples_ms": [
+        9.879458,
+        10.342667,
+        7.425416,
+        5.734083,
+        5.078,
+        4.725416,
+        3.94975,
+        4.294166,
+        3.73825
+      ]
+    },
+    {
+      "workload": "insert",
+      "iterations": 4000,
+      "held_bytes": null,
+      "median_ms": 3.312541,
+      "samples_ms": [
+        3.488959,
+        3.523416,
+        3.345584,
+        3.335584,
+        3.312541,
+        3.213625,
+        2.902417,
+        3.01175,
+        2.785708
+      ]
+    },
+    {
+      "workload": "insert",
+      "iterations": 16000,
+      "held_bytes": null,
+      "median_ms": 4.383291,
+      "samples_ms": [
+        4.54125,
+        4.508,
+        4.383291,
+        4.446417,
+        4.228084,
+        4.394625,
+        4.28425,
+        4.050125,
+        4.276833
+      ]
+    },
+    {
+      "workload": "insert",
+      "iterations": 64000,
+      "held_bytes": null,
+      "median_ms": 10.430792,
+      "samples_ms": [
+        10.430792,
+        10.424209,
+        10.557,
+        10.328208,
+        10.569458,
+        10.50525,
+        10.412375,
+        10.373667,
+        10.437459
+      ]
+    },
+    {
+      "workload": "repack",
+      "iterations": 1000,
+      "held_bytes": null,
+      "median_ms": 4.007833,
+      "samples_ms": [
+        5.32925,
+        4.672417,
+        4.802708,
+        4.093,
+        4.007833,
+        3.7735,
+        3.4505,
+        3.1165,
+        3.135084
+      ]
+    },
+    {
+      "workload": "repack",
+      "iterations": 4000,
+      "held_bytes": null,
+      "median_ms": 3.228791,
+      "samples_ms": [
+        3.549875,
+        3.438583,
+        3.402458,
+        3.037291,
+        3.346,
+        3.228791,
+        3.108875,
+        3.12725,
+        3.081917
+      ]
+    },
+    {
+      "workload": "repack",
+      "iterations": 16000,
+      "held_bytes": null,
+      "median_ms": 7.018959,
+      "samples_ms": [
+        6.964625,
+        6.924292,
+        7.082416,
+        7.018959,
+        7.084,
+        7.148292,
+        6.963625,
+        6.977875,
+        7.033708
+      ]
+    },
+    {
+      "workload": "repack",
+      "iterations": 64000,
+      "held_bytes": null,
+      "median_ms": 82.452292,
+      "samples_ms": [
+        83.354792,
+        80.677541,
+        83.699709,
+        82.9545,
+        80.370875,
+        80.707208,
+        83.19975,
+        78.755584,
+        82.452292
+      ]
+    },
+    {
+      "workload": "repack-held",
+      "iterations": 1000,
+      "held_bytes": 4096,
+      "median_ms": 3.874792,
+      "samples_ms": [
+        5.465834,
+        4.645458,
+        4.247834,
+        4.113667,
+        3.845292,
+        3.874792,
+        3.553,
+        3.391208,
+        3.171209
+      ]
+    },
+    {
+      "workload": "repack-held",
+      "iterations": 1000,
+      "held_bytes": 65536,
+      "median_ms": 4.140792,
+      "samples_ms": [
+        4.72025,
+        4.52075,
+        4.321834,
+        4.140792,
+        4.176375,
+        4.073917,
+        4.118125,
+        3.681791,
+        4.008
+      ]
+    },
+    {
+      "workload": "repack-held",
+      "iterations": 1000,
+      "held_bytes": 1048576,
+      "median_ms": 21.615125,
+      "samples_ms": [
+        21.680792,
+        21.795334,
+        21.562125,
+        21.603958,
+        21.937375,
+        21.173292,
+        21.559458,
+        21.779416,
+        21.615125
+      ]
+    }
+  ],
+  "boundary": [
+    {
+      "iterations": 262144,
+      "returncode": 0,
+      "stdout": "262144\n",
+      "stderr": ""
+    },
+    {
+      "iterations": 262145,
+      "returncode": 0,
+      "stdout": "262145\n",
+      "stderr": ""
+    },
+    {
+      "iterations": 262146,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E013 @25..26 dynamic allocation limit exceeded\n"
+    },
+    {
+      "iterations": 524288,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "E013 @25..26 dynamic allocation limit exceeded\n"
+    }
+  ]
+}

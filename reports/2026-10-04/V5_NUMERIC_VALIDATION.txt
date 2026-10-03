@@ -1,0 +1,1163 @@
+Commands run from /Users/ninjacornix/NIL; stdout/stderr captured verbatim.
+Compiler checks occurred on the implementation working tree, including the local commits.
+No push command was run.
+
+COMMAND: RUST_TEST_THREADS=2 ./scripts/ci.sh
+    Checking nil-fuzz v0.1.0 (/Users/ninjacornix/NIL/tools/nil-fuzz)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.81s
+   Compiling nil-fuzz v0.1.0 (/Users/ninjacornix/NIL/tools/nil-fuzz)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.60s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/main.rs (target/debug/deps/nil-b9043782c930b8dc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (target/debug/deps/cli-7667a2c61da2f914)
+
+running 17 tests
+test application_profile_accepts_text_and_dynamic_buffer_arguments ... ok
+test checks_and_dumps_hir ... ok
+test compact_control_flow_runs_checks_and_dumps_through_cli ... ok
+test default_run_requires_llvm_and_has_no_interpreter_fallback ... ok
+test all_examples_execute_with_checked_in_results ... ok
+test experimental_compact_profiles_execute_through_the_cli ... ok
+test expression_is_implicit_default_and_lines_is_explicit_compatibility ... ok
+test expression_profile_runs_and_checks_sample ... ok
+test help_and_version_match_capabilities ... ok
+test expr_v3_is_explicit_wrapping_native_and_can_be_instrumented ... ok
+test llvm_module_and_native_usage_are_exposed ... ok
+test malformed_file_has_compiler_diagnostic ... ok
+test missing_file_entry_and_wrong_arity_fail ... ok
+test llvm_build_produces_an_independent_executable_and_preserves_files_on_failure ... ok
+test runs_example_and_selected_function ... ok
+test usage_errors_have_exit_two ... ok
+test typed_profile_flattens_array_arguments_and_formats_typed_results ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.71s
+
+     Running unittests src/lib.rs (target/debug/deps/nil_compiler-3c6d17f39b7baca8)
+
+running 6 tests
+test application::tests::geometric_capacity_is_stable_and_clamped_near_the_quota ... ok
+test expr::lexer_tests::comments_and_bare_carriage_returns_are_rejected ... ok
+test expr::lexer_tests::invalid_unicode_reports_the_full_utf8_byte_span ... ok
+test expr::lexer_tests::lexer_emits_punctuation_identifiers_and_byte_spans ... ok
+test parser::tests::lexer_preserves_utf8_byte_offsets_and_crlf ... ok
+test sequence::tests::spare_capacity_and_cow_preserve_immutable_aliases ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/debug/deps/application-60e781619ceef13f)
+
+running 24 tests
+test aliased_entry_arguments_charge_one_distinct_live_allocation ... ok
+test append_grows_without_mutating_external_argument_aliases ... ok
+test append_capacity_is_charged_even_when_logical_payloads_would_fit ... ok
+test bounds_byte_range_parse_and_memory_failures_are_structured ... ok
+test bulk_decimal_parsing_supports_separator_sets_empty_inputs_and_i64_extrema ... ok
+test application_parentheses_and_intrinsics_enforce_depth_before_stack_exhaustion ... ok
+test byte_construction_checks_value_before_quota_but_after_negative_length ... ok
+test bytes_literals_utf8_escapes_slices_and_decimal_conversion_are_exact ... ok
+test byte_transform_reuses_dead_state_but_preserves_live_aliases ... ok
+test dynamic_regions_and_forward_calls_preserve_types_and_lazy_failures ... ok
+test equality_and_search_handle_binary_bytes_buffers_and_end_sentinel ... ok
+test external_hir_cannot_forge_intrinsic_signatures_or_byte_types ... ok
+test hexadecimal_literals_preserve_non_utf8_and_reject_malformed_escapes ... ok
+test host_access_is_explicit_ordered_and_lazy ... ok
+test literal_admission_ignores_hir_vec_spare_capacity ... ok
+test dead_allocations_are_reclaimed_instead_of_charged_cumulatively ... ok
+test new_intrinsics_reject_wrong_types_arity_and_earlier_profiles ... ok
+test parsing_results_compose_with_concat_and_keep_caller_aliases_immutable ... ok
+test runtime_buffers_exceed_fixed_array_capacity_and_keep_aliases ... ok
+test simultaneously_live_dynamic_allocations_still_obey_the_quota ... ok
+test structured_iteration_lowers_to_valid_canonical_loops_and_keeps_following_bindings ... ok
+test structured_iteration_rejects_bad_collection_state_types_and_result_counts ... ok
+test typecheck_and_parser_reject_invalid_application_operations ... ok
+test new_intrinsic_failures_preserve_bounds_byte_and_quota_priority ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests/compile_fail.rs (target/debug/deps/compile_fail-44e8e484efda1f38)
+
+running 8 tests
+test invalid_operation ... ok
+test duplicate_function ... ok
+test malformed ... ok
+test unknown_function ... ok
+test unknown_value ... ok
+test unsupported_parameter ... ok
+test unsupported_return ... ok
+test wrong_arity ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/control_flow.rs (target/debug/deps/control_flow-43c4fa618e655289)
+
+running 17 tests
+test branches_are_lazy_but_both_are_checked ... ok
+test comparisons_are_signed_and_boolean ... ok
+test control_corpus_profiles_lower_to_identical_semantics ... ok
+test control_flow_diagnostics_and_ir_are_golden ... ok
+test each_profile_accepts_only_its_canonical_loop_spelling ... ok
+test empty_and_nonempty_infinite_loops_exhaust_fuel ... ok
+test empty_region_yields_have_exact_fuel_cost ... ok
+test hir_region_limit_is_enforced_at_the_boundary ... ok
+test invalid_control_flow_never_reaches_execution ... ok
+test loop_functions_and_outer_initializers_work_in_each_profile ... ok
+test loop_updates_are_simultaneous_and_nested_loops_are_scoped ... ok
+test nested_branches_precedence_and_region_scope_are_correct ... ok
+test overflow_boundaries_are_preserved ... ok
+test parser_nesting_limit_covers_control_regions ... ok
+test recursive_calls_inside_branches_preserve_continuations_and_call_limits ... ok
+test regions_do_not_consume_function_call_depth ... ok
+test acceptance_programs_match_independent_oracles_over_their_domains ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.92s
+
+     Running tests/examples.rs (target/debug/deps/examples-cac8568974e4af4d)
+
+running 7 tests
+test count_odds_examples_and_problem_boundaries ... ok
+test count_odds_matches_enumeration_for_all_small_intervals ... ok
+test leetcode_bank_published_examples ... ok
+test polynomial_matches_horner_evaluation ... ok
+test smallest_even_multiple_exhausts_the_problem_domain ... ok
+test leetcode_bank_exhausts_the_problem_domain_against_daily_simulation ... ok
+test sum_of_squares_handles_signed_and_zero_arguments ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/expr_compact.rs (target/debug/deps/expr_compact-d417bfd3ddd85c2a)
+
+running 6 tests
+test compact_profiles_preserve_traps_limits_and_signed_division ... ok
+test forward_calls_nested_calls_and_parameter_function_names_are_unambiguous ... ok
+test malformed_headers_calls_and_parameters_are_rejected ... ok
+test multi_letter_references_and_parameters_work ... ok
+test positional_diagnostics_retain_original_byte_spans ... ok
+test all_experiment_profiles_lower_to_identical_hir ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/expr_profile.rs (target/debug/deps/expr_profile-91cc0020dc69eb52)
+
+running 7 tests
+test expression_calls_resolve_forward_and_preserve_traps ... ok
+test expression_profile_is_the_default ... ok
+test expression_fixtures_lower_to_same_hir_as_lines ... ok
+test inferred_types_precedence_and_negative_literals ... ok
+test malformed_expression_profiles_fail_with_diagnostics ... ok
+test public_parser_defaults_to_expr_and_exposes_lines_explicitly ... ok
+test nested_expression_limit_is_enforced ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/expr_v3.rs (target/debug/deps/expr_v3-bcdd6d16c9bde1e2)
+
+running 4 tests
+test v3_type_checking_and_canonical_spelling_remain_strict ... ok
+test v3_reuses_v2_ast_but_explicitly_changes_hir_arithmetic ... ok
+test zero_division_traps_and_inactive_branches_are_lazy ... ok
+test wrapping_arithmetic_is_deterministic_at_signed_boundaries ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/expr_v4.rs (target/debug/deps/expr_v4-38c5f07763b1198b)
+
+running 10 tests
+test array_hir_and_type_diagnostic_match_reviewed_golden_fixtures ... ok
+test bounds_traps_are_structured_and_lazy ... ok
+test construction_length_indexing_and_array_branches ... ok
+test malformed_aliases_and_unsupported_types_are_rejected ... ok
+test every_existing_v3_example_has_identical_v4_hir ... ok
+test replacement_preserves_aliases_and_updates_are_simultaneous ... ok
+test splat_evaluates_its_operand_once_and_honors_limits ... ok
+test typed_entry_checks_exact_array_length_and_bool_type ... ok
+test typed_functions_forward_calls_and_returns ... ok
+test seeded_arrays_agree_with_independent_algorithm_oracles ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/numeric.rs (target/debug/deps/numeric-85ee9b2402373703)
+
+running 7 tests
+test hir_rejects_invalid_unsigned_and_noncanonical_nan_constants ... ok
+test mixed_width_arithmetic_requires_explicit_conversion ... ok
+test numeric_literal_ranges_and_spellings_are_checked ... ok
+test numeric_literals_and_signatures_have_explicit_types ... ok
+test numeric_surface_is_unavailable_in_earlier_profiles ... ok
+test reference_entry_nan_payload_is_canonicalized ... ok
+test numeric_literals_do_not_bypass_the_parser_nesting_limit ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pipeline.rs (target/debug/deps/pipeline-0e1541c7f850da34)
+
+running 18 tests
+test arithmetic_traps_are_structured ... ok
+test all_arithmetic_and_truncating_division ... ok
+test diagnostic_golden_uses_byte_spans ... ok
+test evaluator_rejects_bad_entry_and_arguments ... ok
+test deterministic_lowering_and_debug_golden ... ok
+test instruction_budget_counts_return_and_entry_depth ... ok
+test malformed_programs_are_rejected ... ok
+test mutual_recursion_hits_fuel_limit ... ok
+test nested_forward_calls_preserve_caller_values_and_results ... ok
+test parameters_constants_and_signed_boundaries ... ok
+test recursion_hits_depth_limit_without_host_recursion ... ok
+test rejects_noncanonical_and_out_of_range_numbers ... ok
+test semantic_rejections_include_unused_functions ... ok
+test source_to_ast_to_checked_hir_to_execution ... ok
+test source_size_is_bounded ... ok
+test unsupported_types_in_both_signature_positions ... ok
+test whitespace_crlf_and_final_eof ... ok
+test zero_argument_calls ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/programs.rs (target/debug/deps/programs-c521a9d23696e488)
+
+running 3 tests
+test arguments ... ok
+test arithmetic ... ok
+test nested_calls ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/nil_fuzz-8a72ab326b8dda76)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/nil_fuzz-9202c550ffcdba27)
+
+running 1 test
+test tests::timeout_kills_and_reaps_worker ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/bin/v5.rs (target/debug/deps/v5-1cf21bd561f4ad0a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/debug/deps/application-10ea9b28a6591b1e)
+
+running 4 tests
+test application_generator_and_corpus_are_well_typed ... ok
+test numeric_spelling_mutations_keep_diagnostics_and_hir_deterministic ... ok
+test structured_iteration_source_mutations_have_deterministic_diagnostics_and_hir ... ok
+test application_reference_native_and_host_effects_match ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 54.17s
+
+     Running tests/properties.rs (target/debug/deps/properties-9867dca74388e9af)
+
+running 7 tests
+test externally_constructed_hir_rejects_excessive_region_depth ... ok
+test application_source_mutations_remain_bounded_and_do_not_grant_host_io ... ok
+test malformed_unicode_depth_and_source_size_limits_are_resilient ... ok
+test generation_exercises_every_current_operation_and_nested_loops ... ok
+test typed_hir_mutations_cannot_forge_array_lengths_or_operand_types ... ok
+test typed_source_mutations_preserve_deterministic_frontend_and_diagnostics ... ok
+test seeded_programs_mutations_and_hir_are_reproducible ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.52s
+
+     Running tests/runner.rs (target/debug/deps/runner-bef599b1bd9452b9)
+
+running 3 tests
+test cli_campaign_and_replay_emit_reproducible_reports ... ok
+test native_toolchain_failure_retains_source_mode_and_worker_log ... ok
+test native_campaign_compares_oracle_reference_and_o0_o2_instrumentation_modes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.27s
+
+     Running unittests src/lib.rs (target/debug/deps/nil_hir-4a65778e11540089)
+
+running 3 tests
+test liveness::tests::old_reads_keep_sequence_live_until_their_last_use ... ok
+test liveness::tests::branch_capture_ids_and_loop_state_ids_have_distinct_scopes ... ok
+test liveness::tests::scalar_lazy_proof_preserves_captures_and_rejects_escape_or_allocation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/control_flow.rs (target/debug/deps/control_flow-189124a12f13d4b3)
+
+running 7 tests
+test bool_annotations_and_region_condition_are_checked ... ok
+test branch_values_cannot_escape_to_sibling_or_parent ... ok
+test loop_region_cannot_access_outer_temporaries ... ok
+test loop_region_state_arity_and_types_are_enforced ... ok
+test missing_and_multiple_region_results_are_rejected ... ok
+test external_hir_nesting_is_bounded_independently_of_parser ... ok
+test valid_regions_are_checked_without_source_syntax ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/input_limits.rs (target/debug/deps/input_limits-aa31e56d9f477fb0)
+
+running 2 tests
+test function_input_limits_reject_excess_empty_parameters_and_flattened_slots ... ok
+test function_input_limits_accept_parameter_and_slot_boundaries ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/validation.rs (target/debug/deps/validation-8859dedb551806e1)
+
+running 10 tests
+test accepts_syntax_independent_hir ... ok
+test array_operations_cannot_bypass_operand_or_length_validation ... ok
+test call_arity_diagnostic_is_structured_and_canonical ... ok
+test rejects_empty_program ... ok
+test rejects_forward_self_and_out_of_range_values ... ok
+test rejects_invalid_call_target_and_arity_and_operand ... ok
+test rejects_missing_return_value ... ok
+test rejects_new_intrinsic_mixed_sequences_and_misdeclared_result_types ... ok
+test validates_all_functions_not_only_entry ... ok
+test validates_new_intrinsic_signatures_without_surface_syntax ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/nil_llvm-65d0c3a07050f092)
+
+running 4 tests
+test loop_storage::branch_tests::guarded_updates_and_identity_branches_can_share_a_private_state_buffer ... ok
+test loop_storage::tests::nested_captures_and_state_aliases_force_fallback ... ok
+test loop_storage::tests::only_single_use_chains_are_deferred ... ok
+test loop_storage::tests::retained_roots_require_straight_last_use_chains ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/debug/deps/application-72f9e4997adb608c)
+
+running 37 tests
+test append_ir_extends_dead_operands_and_copies_for_old_reads ... ok
+test allocating_recursive_frames_and_call_aliases_stay_rooted ... ok
+test append_relocations_preserve_binary_data_and_caller_aliases ... ok
+test borrowed_sequence_returns_and_allocating_counterexamples_keep_lifetimes ... ok
+test application_native_matches_reference_at_both_optimization_levels ... ok
+test borrowing_summary_crosses_calls_and_keeps_allocating_callees_conservative ... ok
+test bulk_read_quota_admission_matches_reference_at_exact_boundary ... ok
+test byte_construction_diagnostic_priority_matches_reference ... ok
+test changing_sequence_length_is_not_hoisted ... ok
+test dynamic_ir_keeps_copying_when_original_reads_remain_live ... ok
+test dynamic_ir_reuses_proven_dead_replacements ... ok
+test dynamic_length_is_hoisted_and_dead_roots_are_cleared_once ... ok
+test dynamic_operations_retain_bounded_execution_checks ... ok
+test each_and_sort_preserve_called_lazy_effects_and_left_to_right_state_order ... ok
+test equality_search_are_borrowing_but_bulk_parse_retains_roots_and_concat_reuse ... ok
+test borrowing_recursion_keeps_depth_checks_and_sequence_reads ... ok
+test lazy_allocations_and_sequence_results_keep_conservative_roots ... ok
+test induction_reads_are_direct_but_exit_computed_and_mismatched_ranges_stay_checked ... ok
+test native_append_quota_counts_spare_capacity ... ok
+test native_buffer_length_is_runtime_sized ... ok
+test native_bulk_read_streams_binary_input_through_eof ... ok
+test lazy_host_effects_and_failure_order_match_the_reference ... ok
+test native_file_copy_is_binary_exact_and_missing_files_are_diagnosed ... ok
+test native_hexadecimal_literals_round_trip_non_utf8_bytes ... ok
+test native_live_allocation_quota_and_stdout_effects_are_observable ... ok
+test native_typed_input_validation_and_empty_sequences ... ok
+test native_dynamic_failures_match_reference_codes ... ok
+test nested_scalar_lazy_regions_keep_root_traffic_outside_the_loop ... ok
+test new_operations_preserve_lazy_host_effects_and_aliases_at_o0_and_o2 ... ok
+test new_sequence_failures_match_codes_and_priority_at_o0_and_o2 ... ok
+test one_mib_append_has_exact_content_at_both_optimization_levels ... ok
+test new_sequence_operations_match_reference_at_o0_and_o2 ... ok
+test parsed_buffer_concat_keeps_copying_when_old_reads_are_live ... ok
+test scalar_helpers_and_nested_identity_loops_have_no_root_frame ... ok
+test scalar_lazy_traps_and_short_circuit_stay_on_selected_edges ... ok
+test seeded_runtime_buffer_transforms_match_an_independent_oracle ... ok
+test one_mib_file_transform_preserves_every_byte_in_reference_and_native ... ok
+
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 73.65s
+
+     Running tests/keyed.rs (target/debug/deps/keyed-6c4ada4a901745d4)
+
+running 32 tests
+test caller_alias_survives_callee_map_update ... ok
+test byte_map_alias_survives_equal_and_different_length_updates ... ok
+test duplicate_key_precedes_a_result_quota_failure ... ok
+test each_byte_values_reserve_owned_materialization_even_when_ignored ... ok
+test each_append_state_keeps_unique_proof_while_snapshot_aliases_copy ... ok
+test each_lazy_arms_keep_unselected_traps_unobservable ... ok
+test each_empty_single_and_fixed_inputs_have_typed_finish_bindings ... ok
+test each_map_sorted_order_and_owned_byte_values_match_o0_o2 ... ok
+test each_nested_regions_and_following_expressions_remap_values_correctly ... ok
+test each_snapshot_survives_updates_and_parallel_state_uses_old_values ... ok
+test empty_maps_and_membership_are_typed ... ok
+test invalid_map_field_value_and_operand_types_fail_before_execution ... ok
+test last_use_map_update_emits_unique_path_and_live_alias_emits_copy ... ok
+test loop_state_map_alias_and_returned_alias_remain_immutable ... ok
+test map_argument_traps_precede_missing_and_duplicate_checks ... ok
+test every_allocating_map_operation_checks_its_result_charge ... ok
+test map_byte_values_are_nested_owned_sequences ... ok
+test map_capacity_and_copied_byte_results_respect_quota ... ok
+test map_entry_tooling_accepts_only_empty_maps_and_roots_them ... ok
+test map_growth_and_hash_collisions_preserve_insertion_iteration ... ok
+test map_integer_lookup_and_update_preserve_order ... ok
+test map_keys_compare_all_bytes_including_non_utf8_and_nul ... ok
+test map_lazy_arms_do_not_evaluate_missing_or_duplicate_keys ... ok
+test map_owns_key_and_value_bytes_and_lookup_returns_independent_storage ... ok
+test replaced_map_read_after_update_keeps_old_value ... ok
+test sort_byte_keys_and_values_compare_unsigned_prefixes ... ok
+test missing_duplicate_and_iteration_traps_have_distinct_codes ... ok
+test sort_ir_uses_unique_storage_only_when_last_use_is_proven ... ok
+test sort_map_values_use_key_ties_and_rebuild_lookup ... ok
+test sort_invalid_order_precedes_quota_and_aliases_do_not_bypass_reservation ... ok
+test sort_retained_aliases_and_callers_keep_original_order ... ok
+test sort_signed_extrema_duplicates_and_empty_sequences_matches_o0_o2 ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 32.57s
+
+     Running tests/native.rs (target/debug/deps/native-9d037e1ab2dfd65d)
+
+running 20 tests
+test arithmetic_signed_bounds_division_and_traps_agree_at_both_optimization_levels ... ok
+test array_storage_is_allocated_once_before_loop_labels ... ok
+test bool_function_results_lower_without_surface_syntax_dependencies ... ok
+test all_control_flow_algorithms_and_boundaries_agree ... ok
+test emission_is_deterministic_and_contains_typed_phi_joins ... ok
+test conditional_sparse_updates_are_lazy_parallel_and_preserve_budget_traps ... ok
+test lazy_branches_and_recursive_call_continuations_agree ... ok
+test loop_state_is_parallel_and_bool_state_is_typed ... ok
+test native_argument_validation_rejects_invalid_and_out_of_range_values ... ok
+test repeated_array_reads_use_an_entry_snapshot_without_mutating_aliases ... ok
+test seeded_sparse_update_chains_match_independent_wrapping_oracles ... ok
+test sparse_array_loops_have_no_aggregate_stores_on_the_backedge ... ok
+test exact_fuel_costs_and_call_depth_failures_agree ... ok
+test sparse_update_accounting_and_external_parameter_values_remain_unchanged ... ok
+test sparse_loop_updates_preserve_aliases_old_reads_chains_and_trap_order ... ok
+test typed_native_entry_rejects_invalid_bool_encoding_and_flat_arity ... ok
+test v3_native_resource_instrumentation_is_explicit_and_semantics_are_unchanged ... ok
+test v3_regions_are_lazy_parallel_and_bool_typed_in_both_execution_modes ... ok
+test typed_arrays_and_bools_agree_in_native_and_reference_execution ... ok
+test v3_wrapping_native_matches_reference_for_boundaries_at_o0_and_o2 ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 50.82s
+
+     Running tests/numeric.rs (target/debug/deps/numeric-44b179716e112dac)
+
+running 19 tests
+test contraction_is_disabled_for_multiply_then_add ... ok
+test decimal_halfway_rounding_and_extreme_exponents_match_bits ... ok
+test float_cli_parameters_preserve_bits_and_wide_following_arguments ... ok
+test checked_conversions_guard_before_float_casts ... ok
+test float_conversion_and_lazy_failures_preserve_order ... ok
+test float_division_produces_infinity_and_canonical_nan ... ok
+test nan_comparisons_follow_ieee_ordering ... ok
+test float_special_and_random_patterns_format_and_round_trip_exactly ... ok
+test numeric_conversion_failures_do_not_expose_unselected_host_effects ... ok
+test numeric_formatting_obeys_live_quota ... ok
+test numeric_parse_rejects_incomplete_and_noncanonical_text ... ok
+test random_float_arithmetic_matches_canonical_reference_bits ... ok
+test signed_zero_is_equal_but_bits_and_division_distinguish_it ... ok
+test truncation_is_explicit_low_bits ... ok
+test unsigned_division_zero_retains_integer_trap ... ok
+test unsigned_decimal_format_and_parse_round_trip ... ok
+test unsigned_order_is_not_signed_order ... ok
+test wide_parameters_cross_calls_and_loop_state ... ok
+test unsigned_widths_wrap_without_signed_overflow ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 25.79s
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+   Doc-tests nil_compiler
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_fuzz
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_hir
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_llvm
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+COMMAND: RUST_TEST_THREADS=2 ./scripts/ci.sh release
+   Compiling nil-fuzz v0.1.0 (/Users/ninjacornix/NIL/tools/nil-fuzz)
+   Compiling nil-llvm v0.1.0 (/Users/ninjacornix/NIL/crates/nil-llvm)
+    Finished `release` profile [optimized] target(s) in 1.08s
+    Finished `release` profile [optimized] target(s) in 0.01s
+     Running unittests src/main.rs (target/release/deps/nil-c00f4184b9f12243)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (target/release/deps/cli-c44c25a7a4fa2469)
+
+running 17 tests
+test application_profile_accepts_text_and_dynamic_buffer_arguments ... ok
+test checks_and_dumps_hir ... ok
+test compact_control_flow_runs_checks_and_dumps_through_cli ... ok
+test default_run_requires_llvm_and_has_no_interpreter_fallback ... ok
+test experimental_compact_profiles_execute_through_the_cli ... ok
+test all_examples_execute_with_checked_in_results ... ok
+test expression_is_implicit_default_and_lines_is_explicit_compatibility ... ok
+test expression_profile_runs_and_checks_sample ... ok
+test help_and_version_match_capabilities ... ok
+test llvm_build_produces_an_independent_executable_and_preserves_files_on_failure ... ok
+test llvm_module_and_native_usage_are_exposed ... ok
+test malformed_file_has_compiler_diagnostic ... ok
+test missing_file_entry_and_wrong_arity_fail ... ok
+test expr_v3_is_explicit_wrapping_native_and_can_be_instrumented ... ok
+test runs_example_and_selected_function ... ok
+test usage_errors_have_exit_two ... ok
+test typed_profile_flattens_array_arguments_and_formats_typed_results ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.20s
+
+     Running unittests src/lib.rs (target/release/deps/nil_compiler-7eb25ce26fba18fb)
+
+running 6 tests
+test application::tests::geometric_capacity_is_stable_and_clamped_near_the_quota ... ok
+test expr::lexer_tests::comments_and_bare_carriage_returns_are_rejected ... ok
+test expr::lexer_tests::invalid_unicode_reports_the_full_utf8_byte_span ... ok
+test expr::lexer_tests::lexer_emits_punctuation_identifiers_and_byte_spans ... ok
+test parser::tests::lexer_preserves_utf8_byte_offsets_and_crlf ... ok
+test sequence::tests::spare_capacity_and_cow_preserve_immutable_aliases ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/release/deps/application-a23a46736ddf69ae)
+
+running 24 tests
+test aliased_entry_arguments_charge_one_distinct_live_allocation ... ok
+test append_grows_without_mutating_external_argument_aliases ... ok
+test application_parentheses_and_intrinsics_enforce_depth_before_stack_exhaustion ... ok
+test bounds_byte_range_parse_and_memory_failures_are_structured ... ok
+test bulk_decimal_parsing_supports_separator_sets_empty_inputs_and_i64_extrema ... ok
+test byte_construction_checks_value_before_quota_but_after_negative_length ... ok
+test append_capacity_is_charged_even_when_logical_payloads_would_fit ... ok
+test bytes_literals_utf8_escapes_slices_and_decimal_conversion_are_exact ... ok
+test byte_transform_reuses_dead_state_but_preserves_live_aliases ... ok
+test dynamic_regions_and_forward_calls_preserve_types_and_lazy_failures ... ok
+test equality_and_search_handle_binary_bytes_buffers_and_end_sentinel ... ok
+test external_hir_cannot_forge_intrinsic_signatures_or_byte_types ... ok
+test hexadecimal_literals_preserve_non_utf8_and_reject_malformed_escapes ... ok
+test host_access_is_explicit_ordered_and_lazy ... ok
+test literal_admission_ignores_hir_vec_spare_capacity ... ok
+test dead_allocations_are_reclaimed_instead_of_charged_cumulatively ... ok
+test new_intrinsic_failures_preserve_bounds_byte_and_quota_priority ... ok
+test new_intrinsics_reject_wrong_types_arity_and_earlier_profiles ... ok
+test parsing_results_compose_with_concat_and_keep_caller_aliases_immutable ... ok
+test runtime_buffers_exceed_fixed_array_capacity_and_keep_aliases ... ok
+test structured_iteration_lowers_to_valid_canonical_loops_and_keeps_following_bindings ... ok
+test structured_iteration_rejects_bad_collection_state_types_and_result_counts ... ok
+test typecheck_and_parser_reject_invalid_application_operations ... ok
+test simultaneously_live_dynamic_allocations_still_obey_the_quota ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/compile_fail.rs (target/release/deps/compile_fail-37eaa15cd02e3bb1)
+
+running 8 tests
+test invalid_operation ... ok
+test duplicate_function ... ok
+test malformed ... ok
+test unknown_function ... ok
+test unknown_value ... ok
+test unsupported_parameter ... ok
+test unsupported_return ... ok
+test wrong_arity ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/control_flow.rs (target/release/deps/control_flow-f5c78a8994f4e2f6)
+
+running 17 tests
+test branches_are_lazy_but_both_are_checked ... ok
+test comparisons_are_signed_and_boolean ... ok
+test control_corpus_profiles_lower_to_identical_semantics ... ok
+test control_flow_diagnostics_and_ir_are_golden ... ok
+test each_profile_accepts_only_its_canonical_loop_spelling ... ok
+test empty_and_nonempty_infinite_loops_exhaust_fuel ... ok
+test empty_region_yields_have_exact_fuel_cost ... ok
+test hir_region_limit_is_enforced_at_the_boundary ... ok
+test invalid_control_flow_never_reaches_execution ... ok
+test loop_functions_and_outer_initializers_work_in_each_profile ... ok
+test loop_updates_are_simultaneous_and_nested_loops_are_scoped ... ok
+test nested_branches_precedence_and_region_scope_are_correct ... ok
+test overflow_boundaries_are_preserved ... ok
+test parser_nesting_limit_covers_control_regions ... ok
+test recursive_calls_inside_branches_preserve_continuations_and_call_limits ... ok
+test regions_do_not_consume_function_call_depth ... ok
+test acceptance_programs_match_independent_oracles_over_their_domains ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+
+     Running tests/examples.rs (target/release/deps/examples-a5968b8a7d04f1c8)
+
+running 7 tests
+test count_odds_examples_and_problem_boundaries ... ok
+test leetcode_bank_exhausts_the_problem_domain_against_daily_simulation ... ok
+test leetcode_bank_published_examples ... ok
+test polynomial_matches_horner_evaluation ... ok
+test smallest_even_multiple_exhausts_the_problem_domain ... ok
+test count_odds_matches_enumeration_for_all_small_intervals ... ok
+test sum_of_squares_handles_signed_and_zero_arguments ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/expr_compact.rs (target/release/deps/expr_compact-fa86acc923516875)
+
+running 6 tests
+test compact_profiles_preserve_traps_limits_and_signed_division ... ok
+test forward_calls_nested_calls_and_parameter_function_names_are_unambiguous ... ok
+test malformed_headers_calls_and_parameters_are_rejected ... ok
+test multi_letter_references_and_parameters_work ... ok
+test positional_diagnostics_retain_original_byte_spans ... ok
+test all_experiment_profiles_lower_to_identical_hir ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/expr_profile.rs (target/release/deps/expr_profile-5852e7bb1b8d99b2)
+
+running 7 tests
+test expression_calls_resolve_forward_and_preserve_traps ... ok
+test expression_fixtures_lower_to_same_hir_as_lines ... ok
+test expression_profile_is_the_default ... ok
+test inferred_types_precedence_and_negative_literals ... ok
+test malformed_expression_profiles_fail_with_diagnostics ... ok
+test nested_expression_limit_is_enforced ... ok
+test public_parser_defaults_to_expr_and_exposes_lines_explicitly ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/expr_v3.rs (target/release/deps/expr_v3-1633e69aa1b08757)
+
+running 4 tests
+test v3_type_checking_and_canonical_spelling_remain_strict ... ok
+test v3_reuses_v2_ast_but_explicitly_changes_hir_arithmetic ... ok
+test zero_division_traps_and_inactive_branches_are_lazy ... ok
+test wrapping_arithmetic_is_deterministic_at_signed_boundaries ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/expr_v4.rs (target/release/deps/expr_v4-1b22c29970ebd4d8)
+
+running 10 tests
+test array_hir_and_type_diagnostic_match_reviewed_golden_fixtures ... ok
+test bounds_traps_are_structured_and_lazy ... ok
+test construction_length_indexing_and_array_branches ... ok
+test malformed_aliases_and_unsupported_types_are_rejected ... ok
+test replacement_preserves_aliases_and_updates_are_simultaneous ... ok
+test every_existing_v3_example_has_identical_v4_hir ... ok
+test splat_evaluates_its_operand_once_and_honors_limits ... ok
+test typed_entry_checks_exact_array_length_and_bool_type ... ok
+test typed_functions_forward_calls_and_returns ... ok
+test seeded_arrays_agree_with_independent_algorithm_oracles ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/numeric.rs (target/release/deps/numeric-e63e77137944dd25)
+
+running 7 tests
+test hir_rejects_invalid_unsigned_and_noncanonical_nan_constants ... ok
+test mixed_width_arithmetic_requires_explicit_conversion ... ok
+test numeric_literal_ranges_and_spellings_are_checked ... ok
+test numeric_literals_and_signatures_have_explicit_types ... ok
+test numeric_surface_is_unavailable_in_earlier_profiles ... ok
+test numeric_literals_do_not_bypass_the_parser_nesting_limit ... ok
+test reference_entry_nan_payload_is_canonicalized ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pipeline.rs (target/release/deps/pipeline-86eb6e1a256cc683)
+
+running 18 tests
+test arithmetic_traps_are_structured ... ok
+test all_arithmetic_and_truncating_division ... ok
+test diagnostic_golden_uses_byte_spans ... ok
+test deterministic_lowering_and_debug_golden ... ok
+test evaluator_rejects_bad_entry_and_arguments ... ok
+test instruction_budget_counts_return_and_entry_depth ... ok
+test malformed_programs_are_rejected ... ok
+test mutual_recursion_hits_fuel_limit ... ok
+test nested_forward_calls_preserve_caller_values_and_results ... ok
+test parameters_constants_and_signed_boundaries ... ok
+test recursion_hits_depth_limit_without_host_recursion ... ok
+test rejects_noncanonical_and_out_of_range_numbers ... ok
+test semantic_rejections_include_unused_functions ... ok
+test source_to_ast_to_checked_hir_to_execution ... ok
+test unsupported_types_in_both_signature_positions ... ok
+test source_size_is_bounded ... ok
+test whitespace_crlf_and_final_eof ... ok
+test zero_argument_calls ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/programs.rs (target/release/deps/programs-239e7e72c9687db8)
+
+running 3 tests
+test arithmetic ... ok
+test arguments ... ok
+test nested_calls ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/release/deps/nil_fuzz-3ab5750f7421d26e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/release/deps/nil_fuzz-da3352643f3fb345)
+
+running 1 test
+test tests::timeout_kills_and_reaps_worker ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/bin/v5.rs (target/release/deps/v5-2ec68c9f2e306622)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/release/deps/application-f3920689f3cb0349)
+
+running 4 tests
+test application_generator_and_corpus_are_well_typed ... ok
+test numeric_spelling_mutations_keep_diagnostics_and_hir_deterministic ... ok
+test structured_iteration_source_mutations_have_deterministic_diagnostics_and_hir ... ok
+test application_reference_native_and_host_effects_match ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 52.01s
+
+     Running tests/properties.rs (target/release/deps/properties-695cf6655a77fec9)
+
+running 7 tests
+test externally_constructed_hir_rejects_excessive_region_depth ... ok
+test application_source_mutations_remain_bounded_and_do_not_grant_host_io ... ok
+test malformed_unicode_depth_and_source_size_limits_are_resilient ... ok
+test generation_exercises_every_current_operation_and_nested_loops ... ok
+test typed_hir_mutations_cannot_forge_array_lengths_or_operand_types ... ok
+test typed_source_mutations_preserve_deterministic_frontend_and_diagnostics ... ok
+test seeded_programs_mutations_and_hir_are_reproducible ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.62s
+
+     Running tests/runner.rs (target/release/deps/runner-f824b4b7d83d85c2)
+
+running 3 tests
+test cli_campaign_and_replay_emit_reproducible_reports ... ok
+test native_toolchain_failure_retains_source_mode_and_worker_log ... ok
+test native_campaign_compares_oracle_reference_and_o0_o2_instrumentation_modes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.63s
+
+     Running unittests src/lib.rs (target/release/deps/nil_hir-316596dd5f46bffa)
+
+running 3 tests
+test liveness::tests::old_reads_keep_sequence_live_until_their_last_use ... ok
+test liveness::tests::branch_capture_ids_and_loop_state_ids_have_distinct_scopes ... ok
+test liveness::tests::scalar_lazy_proof_preserves_captures_and_rejects_escape_or_allocation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/control_flow.rs (target/release/deps/control_flow-1157325ce0527728)
+
+running 7 tests
+test bool_annotations_and_region_condition_are_checked ... ok
+test branch_values_cannot_escape_to_sibling_or_parent ... ok
+test loop_region_cannot_access_outer_temporaries ... ok
+test external_hir_nesting_is_bounded_independently_of_parser ... ok
+test loop_region_state_arity_and_types_are_enforced ... ok
+test missing_and_multiple_region_results_are_rejected ... ok
+test valid_regions_are_checked_without_source_syntax ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/input_limits.rs (target/release/deps/input_limits-7775473c47eea165)
+
+running 2 tests
+test function_input_limits_reject_excess_empty_parameters_and_flattened_slots ... ok
+test function_input_limits_accept_parameter_and_slot_boundaries ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/validation.rs (target/release/deps/validation-06d387a932f1e1ca)
+
+running 10 tests
+test accepts_syntax_independent_hir ... ok
+test array_operations_cannot_bypass_operand_or_length_validation ... ok
+test call_arity_diagnostic_is_structured_and_canonical ... ok
+test rejects_empty_program ... ok
+test rejects_forward_self_and_out_of_range_values ... ok
+test rejects_invalid_call_target_and_arity_and_operand ... ok
+test rejects_missing_return_value ... ok
+test rejects_new_intrinsic_mixed_sequences_and_misdeclared_result_types ... ok
+test validates_all_functions_not_only_entry ... ok
+test validates_new_intrinsic_signatures_without_surface_syntax ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/release/deps/nil_llvm-7ad3300df44989d8)
+
+running 4 tests
+test loop_storage::branch_tests::guarded_updates_and_identity_branches_can_share_a_private_state_buffer ... ok
+test loop_storage::tests::nested_captures_and_state_aliases_force_fallback ... ok
+test loop_storage::tests::only_single_use_chains_are_deferred ... ok
+test loop_storage::tests::retained_roots_require_straight_last_use_chains ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/application.rs (target/release/deps/application-7e654cdb666a12ed)
+
+running 37 tests
+test append_ir_extends_dead_operands_and_copies_for_old_reads ... ok
+test allocating_recursive_frames_and_call_aliases_stay_rooted ... ok
+test append_relocations_preserve_binary_data_and_caller_aliases ... ok
+test borrowed_sequence_returns_and_allocating_counterexamples_keep_lifetimes ... ok
+test application_native_matches_reference_at_both_optimization_levels ... ok
+test borrowing_summary_crosses_calls_and_keeps_allocating_callees_conservative ... ok
+test bulk_read_quota_admission_matches_reference_at_exact_boundary ... ok
+test byte_construction_diagnostic_priority_matches_reference ... ok
+test changing_sequence_length_is_not_hoisted ... ok
+test dynamic_ir_keeps_copying_when_original_reads_remain_live ... ok
+test dynamic_ir_reuses_proven_dead_replacements ... ok
+test dynamic_length_is_hoisted_and_dead_roots_are_cleared_once ... ok
+test dynamic_operations_retain_bounded_execution_checks ... ok
+test each_and_sort_preserve_called_lazy_effects_and_left_to_right_state_order ... ok
+test equality_search_are_borrowing_but_bulk_parse_retains_roots_and_concat_reuse ... ok
+test borrowing_recursion_keeps_depth_checks_and_sequence_reads ... ok
+test lazy_allocations_and_sequence_results_keep_conservative_roots ... ok
+test induction_reads_are_direct_but_exit_computed_and_mismatched_ranges_stay_checked ... ok
+test native_append_quota_counts_spare_capacity ... ok
+test native_buffer_length_is_runtime_sized ... ok
+test native_bulk_read_streams_binary_input_through_eof ... ok
+test lazy_host_effects_and_failure_order_match_the_reference ... ok
+test native_file_copy_is_binary_exact_and_missing_files_are_diagnosed ... ok
+test native_hexadecimal_literals_round_trip_non_utf8_bytes ... ok
+test native_live_allocation_quota_and_stdout_effects_are_observable ... ok
+test native_typed_input_validation_and_empty_sequences ... ok
+test nested_scalar_lazy_regions_keep_root_traffic_outside_the_loop ... ok
+test native_dynamic_failures_match_reference_codes ... ok
+test new_operations_preserve_lazy_host_effects_and_aliases_at_o0_and_o2 ... ok
+test new_sequence_failures_match_codes_and_priority_at_o0_and_o2 ... ok
+test one_mib_append_has_exact_content_at_both_optimization_levels ... ok
+test new_sequence_operations_match_reference_at_o0_and_o2 ... ok
+test parsed_buffer_concat_keeps_copying_when_old_reads_are_live ... ok
+test one_mib_file_transform_preserves_every_byte_in_reference_and_native ... ok
+test scalar_helpers_and_nested_identity_loops_have_no_root_frame ... ok
+test seeded_runtime_buffer_transforms_match_an_independent_oracle ... ok
+test scalar_lazy_traps_and_short_circuit_stay_on_selected_edges ... ok
+
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 51.73s
+
+     Running tests/keyed.rs (target/release/deps/keyed-2be80e435c258186)
+
+running 32 tests
+test caller_alias_survives_callee_map_update ... ok
+test byte_map_alias_survives_equal_and_different_length_updates ... ok
+test duplicate_key_precedes_a_result_quota_failure ... ok
+test each_byte_values_reserve_owned_materialization_even_when_ignored ... ok
+test each_append_state_keeps_unique_proof_while_snapshot_aliases_copy ... ok
+test each_lazy_arms_keep_unselected_traps_unobservable ... ok
+test each_empty_single_and_fixed_inputs_have_typed_finish_bindings ... ok
+test each_map_sorted_order_and_owned_byte_values_match_o0_o2 ... ok
+test each_nested_regions_and_following_expressions_remap_values_correctly ... ok
+test each_snapshot_survives_updates_and_parallel_state_uses_old_values ... ok
+test empty_maps_and_membership_are_typed ... ok
+test invalid_map_field_value_and_operand_types_fail_before_execution ... ok
+test last_use_map_update_emits_unique_path_and_live_alias_emits_copy ... ok
+test loop_state_map_alias_and_returned_alias_remain_immutable ... ok
+test map_argument_traps_precede_missing_and_duplicate_checks ... ok
+test every_allocating_map_operation_checks_its_result_charge ... ok
+test map_byte_values_are_nested_owned_sequences ... ok
+test map_capacity_and_copied_byte_results_respect_quota ... ok
+test map_entry_tooling_accepts_only_empty_maps_and_roots_them ... ok
+test map_growth_and_hash_collisions_preserve_insertion_iteration ... ok
+test map_integer_lookup_and_update_preserve_order ... ok
+test map_keys_compare_all_bytes_including_non_utf8_and_nul ... ok
+test map_lazy_arms_do_not_evaluate_missing_or_duplicate_keys ... ok
+test map_owns_key_and_value_bytes_and_lookup_returns_independent_storage ... ok
+test replaced_map_read_after_update_keeps_old_value ... ok
+test sort_byte_keys_and_values_compare_unsigned_prefixes ... ok
+test missing_duplicate_and_iteration_traps_have_distinct_codes ... ok
+test sort_ir_uses_unique_storage_only_when_last_use_is_proven ... ok
+test sort_map_values_use_key_ties_and_rebuild_lookup ... ok
+test sort_invalid_order_precedes_quota_and_aliases_do_not_bypass_reservation ... ok
+test sort_retained_aliases_and_callers_keep_original_order ... ok
+test sort_signed_extrema_duplicates_and_empty_sequences_matches_o0_o2 ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 28.63s
+
+     Running tests/native.rs (target/release/deps/native-1b4e742e2820529b)
+
+running 20 tests
+test arithmetic_signed_bounds_division_and_traps_agree_at_both_optimization_levels ... ok
+test array_storage_is_allocated_once_before_loop_labels ... ok
+test bool_function_results_lower_without_surface_syntax_dependencies ... ok
+test all_control_flow_algorithms_and_boundaries_agree ... ok
+test emission_is_deterministic_and_contains_typed_phi_joins ... ok
+test conditional_sparse_updates_are_lazy_parallel_and_preserve_budget_traps ... ok
+test lazy_branches_and_recursive_call_continuations_agree ... ok
+test loop_state_is_parallel_and_bool_state_is_typed ... ok
+test native_argument_validation_rejects_invalid_and_out_of_range_values ... ok
+test repeated_array_reads_use_an_entry_snapshot_without_mutating_aliases ... ok
+test seeded_sparse_update_chains_match_independent_wrapping_oracles ... ok
+test sparse_array_loops_have_no_aggregate_stores_on_the_backedge ... ok
+test exact_fuel_costs_and_call_depth_failures_agree ... ok
+test sparse_update_accounting_and_external_parameter_values_remain_unchanged ... ok
+test sparse_loop_updates_preserve_aliases_old_reads_chains_and_trap_order ... ok
+test typed_native_entry_rejects_invalid_bool_encoding_and_flat_arity ... ok
+test v3_native_resource_instrumentation_is_explicit_and_semantics_are_unchanged ... ok
+test v3_regions_are_lazy_parallel_and_bool_typed_in_both_execution_modes ... ok
+test typed_arrays_and_bools_agree_in_native_and_reference_execution ... ok
+test v3_wrapping_native_matches_reference_for_boundaries_at_o0_and_o2 ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 42.41s
+
+     Running tests/numeric.rs (target/release/deps/numeric-044bdbf56943a3da)
+
+running 19 tests
+test contraction_is_disabled_for_multiply_then_add ... ok
+test decimal_halfway_rounding_and_extreme_exponents_match_bits ... ok
+test float_cli_parameters_preserve_bits_and_wide_following_arguments ... ok
+test float_conversion_and_lazy_failures_preserve_order ... ok
+test checked_conversions_guard_before_float_casts ... ok
+test float_division_produces_infinity_and_canonical_nan ... ok
+test nan_comparisons_follow_ieee_ordering ... ok
+test float_special_and_random_patterns_format_and_round_trip_exactly ... ok
+test numeric_conversion_failures_do_not_expose_unselected_host_effects ... ok
+test numeric_formatting_obeys_live_quota ... ok
+test numeric_parse_rejects_incomplete_and_noncanonical_text ... ok
+test random_float_arithmetic_matches_canonical_reference_bits ... ok
+test signed_zero_is_equal_but_bits_and_division_distinguish_it ... ok
+test truncation_is_explicit_low_bits ... ok
+test unsigned_decimal_format_and_parse_round_trip ... ok
+test unsigned_division_zero_retains_integer_trap ... ok
+test unsigned_order_is_not_signed_order ... ok
+test wide_parameters_cross_calls_and_loop_state ... ok
+test unsigned_widths_wrap_without_signed_overflow ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.97s
+
+    Finished `release` profile [optimized] target(s) in 0.01s
+   Doc-tests nil_compiler
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_fuzz
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_hir
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nil_llvm
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+COMMAND: ./scripts/sanitize.sh
+    Blocking waiting for file lock on package cache
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/application.rs (target/debug/deps/application-72f9e4997adb608c)
+
+running 37 tests
+test allocating_recursive_frames_and_call_aliases_stay_rooted ... ok
+test append_ir_extends_dead_operands_and_copies_for_old_reads ... ok
+test append_relocations_preserve_binary_data_and_caller_aliases ... ok
+test application_native_matches_reference_at_both_optimization_levels ... ok
+test borrowed_sequence_returns_and_allocating_counterexamples_keep_lifetimes ... ok
+test borrowing_recursion_keeps_depth_checks_and_sequence_reads ... ok
+test borrowing_summary_crosses_calls_and_keeps_allocating_callees_conservative ... ok
+test bulk_read_quota_admission_matches_reference_at_exact_boundary ... ok
+test byte_construction_diagnostic_priority_matches_reference ... ok
+test changing_sequence_length_is_not_hoisted ... ok
+test dynamic_ir_keeps_copying_when_original_reads_remain_live ... ok
+test dynamic_ir_reuses_proven_dead_replacements ... ok
+test dynamic_length_is_hoisted_and_dead_roots_are_cleared_once ... ok
+test dynamic_operations_retain_bounded_execution_checks ... ok
+test each_and_sort_preserve_called_lazy_effects_and_left_to_right_state_order ... ok
+test equality_search_are_borrowing_but_bulk_parse_retains_roots_and_concat_reuse ... ok
+test induction_reads_are_direct_but_exit_computed_and_mismatched_ranges_stay_checked ... ok
+test lazy_allocations_and_sequence_results_keep_conservative_roots ... ok
+test lazy_host_effects_and_failure_order_match_the_reference ... ok
+test native_append_quota_counts_spare_capacity ... ok
+test native_buffer_length_is_runtime_sized ... ok
+test native_bulk_read_streams_binary_input_through_eof ... ok
+test native_dynamic_failures_match_reference_codes ... ok
+test native_file_copy_is_binary_exact_and_missing_files_are_diagnosed ... ok
+test native_hexadecimal_literals_round_trip_non_utf8_bytes ... ok
+test native_live_allocation_quota_and_stdout_effects_are_observable ... ok
+test native_typed_input_validation_and_empty_sequences ... ok
+test nested_scalar_lazy_regions_keep_root_traffic_outside_the_loop ... ok
+test new_operations_preserve_lazy_host_effects_and_aliases_at_o0_and_o2 ... ok
+test new_sequence_failures_match_codes_and_priority_at_o0_and_o2 ... ok
+test new_sequence_operations_match_reference_at_o0_and_o2 ... ok
+test one_mib_append_has_exact_content_at_both_optimization_levels ... ok
+test one_mib_file_transform_preserves_every_byte_in_reference_and_native ... ok
+test parsed_buffer_concat_keeps_copying_when_old_reads_are_live ... ok
+test scalar_helpers_and_nested_identity_loops_have_no_root_frame ... ok
+test scalar_lazy_traps_and_short_circuit_stay_on_selected_edges ... ok
+test seeded_runtime_buffer_transforms_match_an_independent_oracle ... ok
+
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 277.33s
+
+     Running tests/keyed.rs (target/debug/deps/keyed-6c4ada4a901745d4)
+
+running 32 tests
+test byte_map_alias_survives_equal_and_different_length_updates ... ok
+test caller_alias_survives_callee_map_update ... ok
+test duplicate_key_precedes_a_result_quota_failure ... ok
+test each_append_state_keeps_unique_proof_while_snapshot_aliases_copy ... ok
+test each_byte_values_reserve_owned_materialization_even_when_ignored ... ok
+test each_empty_single_and_fixed_inputs_have_typed_finish_bindings ... ok
+test each_lazy_arms_keep_unselected_traps_unobservable ... ok
+test each_map_sorted_order_and_owned_byte_values_match_o0_o2 ... ok
+test each_nested_regions_and_following_expressions_remap_values_correctly ... ok
+test each_snapshot_survives_updates_and_parallel_state_uses_old_values ... ok
+test empty_maps_and_membership_are_typed ... ok
+test every_allocating_map_operation_checks_its_result_charge ... ok
+test invalid_map_field_value_and_operand_types_fail_before_execution ... ok
+test last_use_map_update_emits_unique_path_and_live_alias_emits_copy ... ok
+test loop_state_map_alias_and_returned_alias_remain_immutable ... ok
+test map_argument_traps_precede_missing_and_duplicate_checks ... ok
+test map_byte_values_are_nested_owned_sequences ... ok
+test map_capacity_and_copied_byte_results_respect_quota ... ok
+test map_entry_tooling_accepts_only_empty_maps_and_roots_them ... ok
+test map_growth_and_hash_collisions_preserve_insertion_iteration ... ok
+test map_integer_lookup_and_update_preserve_order ... ok
+test map_keys_compare_all_bytes_including_non_utf8_and_nul ... ok
+test map_lazy_arms_do_not_evaluate_missing_or_duplicate_keys ... ok
+test map_owns_key_and_value_bytes_and_lookup_returns_independent_storage ... ok
+test missing_duplicate_and_iteration_traps_have_distinct_codes ... ok
+test replaced_map_read_after_update_keeps_old_value ... ok
+test sort_byte_keys_and_values_compare_unsigned_prefixes ... ok
+test sort_invalid_order_precedes_quota_and_aliases_do_not_bypass_reservation ... ok
+test sort_ir_uses_unique_storage_only_when_last_use_is_proven ... ok
+test sort_map_values_use_key_ties_and_rebuild_lookup ... ok
+test sort_retained_aliases_and_callers_keep_original_order ... ok
+test sort_signed_extrema_duplicates_and_empty_sequences_matches_o0_o2 ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 78.72s
+
+     Running tests/numeric.rs (target/debug/deps/numeric-44b179716e112dac)
+
+running 19 tests
+test checked_conversions_guard_before_float_casts ... ok
+test contraction_is_disabled_for_multiply_then_add ... ok
+test decimal_halfway_rounding_and_extreme_exponents_match_bits ... ok
+test float_cli_parameters_preserve_bits_and_wide_following_arguments ... ok
+test float_conversion_and_lazy_failures_preserve_order ... ok
+test float_division_produces_infinity_and_canonical_nan ... ok
+test float_special_and_random_patterns_format_and_round_trip_exactly ... ok
+test nan_comparisons_follow_ieee_ordering ... ok
+test numeric_conversion_failures_do_not_expose_unselected_host_effects ... ok
+test numeric_formatting_obeys_live_quota ... ok
+test numeric_parse_rejects_incomplete_and_noncanonical_text ... ok
+test random_float_arithmetic_matches_canonical_reference_bits ... ok
+test signed_zero_is_equal_but_bits_and_division_distinguish_it ... ok
+test truncation_is_explicit_low_bits ... ok
+test unsigned_decimal_format_and_parse_round_trip ... ok
+test unsigned_division_zero_retains_integer_trap ... ok
+test unsigned_order_is_not_signed_order ... ok
+test unsigned_widths_wrap_without_signed_overflow ... ok
+test wide_parameters_cross_calls_and_loop_state ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 325.42s
+
+
+COMMAND: bash /tmp/nil-numeric/sanitize-conversions.sh (same sanitizer wrapper; numeric conversion test only)
+   Compiling nil-llvm v0.1.0 (/Users/ninjacornix/NIL/crates/nil-llvm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.50s
+     Running tests/numeric.rs (target/debug/deps/numeric-44b179716e112dac)
+
+running 1 test
+test checked_conversions_guard_before_float_casts ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 15.88s
+
+
+COMMAND: cargo clippy --workspace --all-targets --all-features --locked --offline -- -D warnings
+    Checking nil-llvm v0.1.0 (/Users/ninjacornix/NIL/crates/nil-llvm)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.74s
+
+COMMAND: cargo test -p nil-llvm --test numeric checked_conversions --locked --offline
+   Compiling nil-llvm v0.1.0 (/Users/ninjacornix/NIL/crates/nil-llvm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.94s
+     Running tests/numeric.rs (target/debug/deps/numeric-44b179716e112dac)
+
+running 1 test
+test checked_conversions_guard_before_float_casts ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 9.84s
+
+
+COMMAND: NIL_CLANG=/tmp/nil-numeric/flags-clang cargo test -p nil-llvm --test numeric contraction_is_disabled --locked --offline
+   Compiling nil-llvm v0.1.0 (/Users/ninjacornix/NIL/crates/nil-llvm)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.28s
+     Running tests/numeric.rs (target/debug/deps/numeric-44b179716e112dac)
+
+running 1 test
+test contraction_is_disabled_for_multiply_then_add ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 13 filtered out; finished in 0.78s
+
+
+COMMAND: benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/corpora/application-v5/tests
+..................FAIL copy_file/python fixture 0: b'', stdout=b'2\n'
+FAIL copy_file/python fixture 0: b'', stdout=b'5\n'
+....
+----------------------------------------------------------------------
+Ran 22 tests in 0.894s
+
+OK
+
+CLANG INVOCATIONS: wrapper records exact argument lists
+-fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -O0 -Wno-override-module -x ir -c /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/module.ll -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/module.o
+-fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -std=c11 -O0 -c /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/runtime.c -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/runtime.o
+-fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -O0 /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/module.o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/runtime.o -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-0/program
+-flto -fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -O2 -Wno-override-module -x ir -c /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/module.ll -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/module.o
+-flto -fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -std=c11 -O2 -c /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/runtime.c -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/runtime.o
+-flto -fno-fast-math -fno-associative-math -fno-reciprocal-math -ffp-contract=off -O2 /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/module.o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/runtime.o -o /var/folders/82/vv914qlx6gq32dyd34vnfg4w0000gn/T/.nil-llvm-22974-1/program
+
+COMMAND: ./scripts/fuzz-v5.sh --seed 5130572 --cases 208 --out /tmp/nil-numeric/fuzz-final-5130572
+   Compiling nil-compiler v0.1.0 (/Users/ninjacornix/NIL/crates/nil-compiler)
+   Compiling nil-fuzz v0.1.0 (/Users/ninjacornix/NIL/tools/nil-fuzz)
+    Finished `release` profile [optimized] target(s) in 4.46s
+{"seed":5130572,"programs":208,"native_builds":416,"divergences":0,"observed_codes":{"E009": 1, "E012": 13, "E013": 12, "E014": 5, "E015": 3, "E016": 9, "E017": 3, "E018": 3, "E019": 1, "E020": 4, "E021": 5, "E022": 3, "OK": 146},"generated_intrinsics":["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"],"call_families":{"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1},"source_mutations":{"each_changed_binding": 18, "each_extra_delimiter": 18, "each_missing_separator": 18, "each_truncated": 18, "each_unknown_operation": 18, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 6, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31}}
+
+COMMAND: ./scripts/fuzz-v5.sh --seed 1729 --cases 208 --out /tmp/nil-numeric/fuzz-final-1729
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.01s
+{"seed":1729,"programs":208,"native_builds":416,"divergences":0,"observed_codes":{"E009": 1, "E012": 13, "E013": 12, "E014": 5, "E015": 3, "E016": 9, "E017": 3, "E018": 3, "E019": 1, "E020": 4, "E021": 5, "E022": 3, "OK": 146},"generated_intrinsics":["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"],"call_families":{"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1},"source_mutations":{"each_changed_binding": 18, "each_extra_delimiter": 18, "each_missing_separator": 18, "each_truncated": 18, "each_unknown_operation": 18, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 6, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31}}
+
+COMMAND: ./scripts/fuzz-v5.sh --seed 8675309 --cases 208 --out /tmp/nil-numeric/fuzz-final-8675309
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 12.80s
+{"seed":8675309,"programs":208,"native_builds":416,"divergences":0,"observed_codes":{"E009": 1, "E012": 13, "E013": 12, "E014": 5, "E015": 3, "E016": 9, "E017": 3, "E018": 3, "E019": 1, "E020": 4, "E021": 5, "E022": 3, "OK": 146},"generated_intrinsics":["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"],"call_families":{"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1},"source_mutations":{"each_changed_binding": 18, "each_extra_delimiter": 18, "each_missing_separator": 18, "each_truncated": 18, "each_unknown_operation": 18, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 4, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31}}
+
