@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!parse(!read(a))))
+1:s=@(a,0,0,"";b<a;a,b+1,c+b,!concat(d,!concat(!format(b),!concat(":",!concat(!format(c+b),"\n"))));d)

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "models": {
+    "gemma3:4b": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+    "qwen2.5:7b-instruct": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e"
+  },
+  "languages": [
+    "expr-v5",
+    "python"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "temperature": 0.2,
+  "num_ctx": 8192,
+  "attempt_limit": 3,
+  "per_attempt_limit": 512,
+  "output_budget": 1536,
+  "steps": 100000,
+  "call_depth": 256,
+  "native_optimizations": [
+    "O0",
+    "O2"
+  ],
+  "task_ids": [
+    "ascii_upper",
+    "nonempty_lines",
+    "sum_pairs",
+    "running_report"
+  ],
+  "adaptation": "fixed language reference plus generic copy-file example, no task solutions or hidden inputs",
+  "metrics": [
+    "failure-inclusive output TCR",
+    "failure-inclusive input+output TCR",
+    "input/output/repair totals",
+    "Solve@budget",
+    "first-pass",
+    "per-task and across-seed variance"
+  ],
+  "infrastructure": "no automatic retries or silent model substitution; missing usage invalidates exact TCR; reasoning outside usage is unknown",
+  "confidence": "task-cluster paired bootstrap 2000 samples; four tasks cannot establish broad generalization"
+}

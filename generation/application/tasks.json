@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "tasks": [
+    {
+      "id": "ascii_upper",
+      "category": "text transformation",
+      "prompt": "Read the input file as arbitrary bytes. Convert ASCII lowercase a..z to A..Z, preserving every other byte including NUL, non-UTF-8 and newlines. Write the transformed bytes to the output file.",
+      "inputs": [
+        "",
+        "48656c6c6f2c204e494c210a",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "615a7a00ff0d0a78"
+      ]
+    },
+    {
+      "id": "nonempty_lines",
+      "category": "file processing",
+      "prompt": "Split the input file on LF (byte 10). Discard empty segments; preserve every byte in every nonempty segment, including CR and spaces. Write each retained segment followed by exactly one LF, including an unterminated final segment. Do not trim or case-convert.",
+      "inputs": [
+        "",
+        "0a0a",
+        "6f6e650a0a74776f0a6c617374",
+        "200a0d0a00ff0a0a"
+      ]
+    },
+    {
+      "id": "sum_pairs",
+      "category": "simple format parsing",
+      "prompt": "The input is empty or LF-separated rows x,y of two canonical signed decimal integers in -100000..100000, with exactly one comma per row, no spaces or blank rows. A final LF is optional. For each row, write its sum in canonical decimal followed by LF. Preserve row order.",
+      "inputs": [
+        "",
+        "312c320a2d342c390a302c30",
+        "2d3130303030302c3130303030300a372c2d390a",
+        "39392c31"
+      ]
+    },
+    {
+      "id": "running_report",
+      "category": "accumulating and formatting output",
+      "prompt": "The input file contains one canonical decimal n in 0..64, with no newline. For i from 0 through n-1, accumulate sum(0..i) and append a row i:sum followed by LF to the output. For n=0 write an empty file.",
+      "inputs": [
+        "30",
+        "31",
+        "35",
+        "3634"
+      ]
+    }
+  ]
+}

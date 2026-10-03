@@ -1,0 +1,9 @@
+Write a complete Python 3.12 program defining solve(input_path, output_path). It receives two str file paths and must return an int. Helpers and standard library imports are allowed. Do not execute solve at module top level; the evaluator calls it. No command-line driver, explanation or markdown.
+Read and write binary files, because tasks define exact bytes rather than Unicode text. Python bytes indexing yields an integer 0..255; byte strings use b"..." and may contain arbitrary bytes. Standard operations such as split, join, slicing, bytearray, enumerate, range, int and str are available. Integers on these task domains fit signed i64. Newlines are LF byte 10; no implicit text newline conversions. Use context managers to close files.
+Complete generic copy-file example:
+def solve(input_path, output_path):
+    with open(input_path, "rb") as f:
+        data = f.read()
+    with open(output_path, "wb") as f:
+        f.write(data)
+    return len(data)
