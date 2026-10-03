@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "unsupported_total": 20,
+  "external_unsupported": 19,
+  "supported_external": 31,
+  "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
+  "blocking_task_counts": {
+    "environment": 1,
+    "higher_order": 1,
+    "maps_records": 4,
+    "unicode": 2,
+    "integer_width": 2,
+    "concurrency": 1,
+    "recursive_values": 1,
+    "nested_collections": 1,
+    "floats": 2,
+    "entropy": 1,
+    "dynamic_dictionary": 1,
+    "calendar": 1,
+    "multi_file_fixture": 1,
+    "reactive": 1
+  },
+  "tasks_by_gap": {
+    "environment": [
+      "env_lookup"
+    ],
+    "higher_order": [
+      "ex_accumulate"
+    ],
+    "maps_records": [
+      "ex_alphametics",
+      "ex_dot_dsl",
+      "ex_etl",
+      "ex_go_counting"
+    ],
+    "unicode": [
+      "ex_anagram",
+      "ex_bob"
+    ],
+    "integer_width": [
+      "ex_armstrong_numbers",
+      "ex_grains"
+    ],
+    "concurrency": [
+      "ex_bank_account"
+    ],
+    "recursive_values": [
+      "ex_binary_search_tree"
+    ],
+    "nested_collections": [
+      "ex_camicia"
+    ],
+    "floats": [
+      "ex_complex_numbers",
+      "ex_darts"
+    ],
+    "entropy": [
+      "ex_diffie_hellman"
+    ],
+    "dynamic_dictionary": [
+      "ex_forth"
+    ],
+    "calendar": [
+      "ex_gigasecond"
+    ],
+    "multi_file_fixture": [
+      "ex_grep"
+    ],
+    "reactive": [
+      "ex_hangman"
+    ]
+  },
+  "notes": {
+    "modules": "0 tasks explicitly require module integration under the adapted property contract.",
+    "recoverable_io": "0 tasks require recovering from failed host I/O; encoded domain errors do not establish recoverable I/O.",
+    "supported_awkwardness": {
+      "numeric_text_and_padding": [
+        "ex_clock",
+        "ex_binary_search",
+        "ex_change"
+      ],
+      "positional_multivalue_state": [
+        "ex_circular_buffer",
+        "ex_grade_school"
+      ],
+      "set_map_sort_operations": [
+        "ex_allergies",
+        "ex_dominoes",
+        "ex_grade_school"
+      ],
+      "graph_grid_neighbor_loops": [
+        "ex_connect",
+        "ex_game_of_life",
+        "ex_flower_field"
+      ],
+      "byte_classification_and_grouping": [
+        "ex_acronym",
+        "ex_affine_cipher",
+        "ex_atbash_cipher",
+        "ex_crypto_square"
+      ]
+    }
+  }
+}

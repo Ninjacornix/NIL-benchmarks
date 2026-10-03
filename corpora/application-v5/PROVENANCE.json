@@ -1,0 +1,780 @@
+{
+  "schema": 1,
+  "tasks": {
+    "ascii_upper": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "ascii_upper",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "ascii_lower": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "ascii_lower",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "rot13": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "rot13",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "invert_bytes": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "invert_bytes",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "reverse_bytes": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "reverse_bytes",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "hex_encode": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "hex_encode",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "count_newlines": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "count_newlines",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "nonempty_lines": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "nonempty_lines",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "normalize_crlf": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "normalize_crlf",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "prefix_lines": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "prefix_lines",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "first_fields_csv": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "first_fields_csv",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "sum_pairs": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "sum_pairs",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "sum_integers": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "sum_integers",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "min_max": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "min_max",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "dedupe_adjacent_lines": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "dedupe_adjacent_lines",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "running_report": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "running_report",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "number_lines": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "number_lines",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "histogram_digits": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "histogram_digits",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "buffer_sum": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "buffer_sum",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "buffer_dot": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "buffer_dot",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "prefix_sums": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "prefix_sums",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "copy_file": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "copy_file",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "slice_file": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "slice_file",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "expand_tabs": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "expand_tabs",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "env_lookup": {
+      "origin": "self-authored",
+      "license": "MIT",
+      "provenance": {
+        "repository": "NIL-benchmarks",
+        "revision": "1d548b2",
+        "path": "corpora/application-v5/tasks.json",
+        "task": "env_lookup",
+        "author": "NIL contributors; task authored within this project"
+      }
+    },
+    "ex_accumulate": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/accumulate",
+        "canonical_sha256": "c19ea3a93d9c832513ac512a8ded9e3d2f2dc22dc63fb5dd669f976e70807b8c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "accumulate"
+    },
+    "ex_acronym": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/acronym",
+        "canonical_sha256": "009b8ae28b2224ea3fd4aac7aa3c4ba37c5a303221cf38df4cfb235afc4d3df6",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "abbreviate"
+    },
+    "ex_affine_cipher": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/affine-cipher",
+        "canonical_sha256": "b8d5b6ba1b57a02afb9a07de9bbfe71f25fce71fc027819ddb00665bbee59fc4",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "encode"
+    },
+    "ex_all_your_base": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/all-your-base",
+        "canonical_sha256": "0c26c0fd4ba9a33fefc5c940c989fffdd9f32952cb139b9df614c78704fee2e7",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "rebase"
+    },
+    "ex_allergies": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/allergies",
+        "canonical_sha256": "3d75ba360afde61bb4f46dbee0def899f0527f1f0e6ce9704c3126af2bcf066b",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "allergicTo"
+    },
+    "ex_alphametics": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/alphametics",
+        "canonical_sha256": "334856909520dd243d36725b57ba78b8c88f51ec5e8a9193eb9713d070926c29",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "solve"
+    },
+    "ex_anagram": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/anagram",
+        "canonical_sha256": "b2bd108a1da86011bccf1fdc13888542399d397ee9711f0d9b7b43bd1aa18bd3",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "findAnagrams"
+    },
+    "ex_armstrong_numbers": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/armstrong-numbers",
+        "canonical_sha256": "e8567a19cfaa0cf711fa2a1b2d4ec92b9fcdfddf42d89b969ce32f99fcc7a1fe",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "isArmstrongNumber"
+    },
+    "ex_atbash_cipher": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/atbash-cipher",
+        "canonical_sha256": "f5e7f43f79968b46b2a786246a1d10c0339e000c28ec4a5868ca4e4aad78481d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "encode"
+    },
+    "ex_baffling_birthdays": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/baffling-birthdays",
+        "canonical_sha256": "6b44f34ae47f738edc9fba07c29e6ba115848a6eb438b2893e287eea305f546f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "sharedBirthday"
+    },
+    "ex_bank_account": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bank-account",
+        "canonical_sha256": "3aede4ade23e78266e24e33115f49c6dbd8d03a6a862e47449c5bfa03120af2a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "bankAccount"
+    },
+    "ex_beer_song": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/beer-song",
+        "canonical_sha256": "4cbf7592251774a71bc12b5bad3495211aa7570927baf513346209264409a664",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "recite"
+    },
+    "ex_binary": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary",
+        "canonical_sha256": "52b96f7ba20ccc028ff06ba8b909d87c488820b1228e3ec51aeec324c98cabf8",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "decimal"
+    },
+    "ex_binary_search": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search",
+        "canonical_sha256": "d224e68b43512d8d394bb5f9e2f209ef6008e9a0abc59ee61a329c4ab2a7f73d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "find"
+    },
+    "ex_binary_search_tree": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search-tree",
+        "canonical_sha256": "768ecb0aac4cb435d7b7115619696f9a6386710da9616fab1f4dc259c84b53b7",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "data"
+    },
+    "ex_bob": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bob",
+        "canonical_sha256": "02b79f535d7613c6faba88cb909462892b101dc799b2df68dd9ffb5ec1d1284d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "response"
+    },
+    "ex_book_store": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/book-store",
+        "canonical_sha256": "f75b045ea36e6a52f113a92548dfccdd263f55c4d8bbb56bb92849e8697130db",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "total"
+    },
+    "ex_bottle_song": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bottle-song",
+        "canonical_sha256": "e5c393399421ccaf92ba3eb67463b23a1c811e394ea305819ba848a9bfe5ea1c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "recite"
+    },
+    "ex_bowling": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bowling",
+        "canonical_sha256": "3470ab86e0e5089dd442e915f56b42acfad022e7258b904f3d1642b67a21c71a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "score"
+    },
+    "ex_camicia": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/camicia",
+        "canonical_sha256": "9386512c91afc7370e17b49e1980d6a0a2d05ca07144ebf4d5ce364f4887f6e4",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "simulateGame"
+    },
+    "ex_change": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/change",
+        "canonical_sha256": "a60728f642b463522c1253374ef487ebd999b378a08adfa88a9d8b2ae98b3229",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "findFewestCoins"
+    },
+    "ex_circular_buffer": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/circular-buffer",
+        "canonical_sha256": "51cb2d53e8c34ea4c505de8441d4aa37e469246f830598ec89b5748b841a47d6",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "run"
+    },
+    "ex_clock": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/clock",
+        "canonical_sha256": "1ece368b234d83e44b145fad15fa6fddacb93c6091d64fad21490467f0f75a13",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "create"
+    },
+    "ex_collatz_conjecture": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/collatz-conjecture",
+        "canonical_sha256": "eeeb1924bd07e698cf43912ae468e243aa3aed41b47bf05f4aa8357def138661",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "steps"
+    },
+    "ex_complex_numbers": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/complex-numbers",
+        "canonical_sha256": "98a5c9fd455ea5df27291117a36007ef46e03f2115fa080fa69a5b7d22626b8f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "real"
+    },
+    "ex_connect": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/connect",
+        "canonical_sha256": "c436979204121707fab9ed8bf547c4064508d07ceea8043b37200c800fab8e84",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "winner"
+    },
+    "ex_crypto_square": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/crypto-square",
+        "canonical_sha256": "7585930498912b220b20df6bb405c35b2edd273cb644e3dbf88d6a0cacb71e17",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "ciphertext"
+    },
+    "ex_custom_set": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/custom-set",
+        "canonical_sha256": "2cffe8f28cedd4f5e73f16506dd7f9b4b8ff5520e04d42fc70d53efaf6b4a34c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "empty"
+    },
+    "ex_darts": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/darts",
+        "canonical_sha256": "bc815b29fafe311db9de8bc752ec42045bb10c081b6082ded22744ccfbb031c9",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "score"
+    },
+    "ex_diamond": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diamond",
+        "canonical_sha256": "463426cdd6166e96518fd3525cf56818fa978b3c4b6497f8ca7f94a04423d73d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "rows"
+    },
+    "ex_difference_of_squares": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/difference-of-squares",
+        "canonical_sha256": "d097c48a4783565372af2a6c67c84ef86f5494d13393e6fd7f42f569f099f40a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "squareOfSum"
+    },
+    "ex_diffie_hellman": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diffie-hellman",
+        "canonical_sha256": "f7f31347af8edbe5882acba74d7db349310da7cdd8b1f2cbe70521e5620a70b2",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "privateKeyIsInRange"
+    },
+    "ex_dnd_character": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dnd-character",
+        "canonical_sha256": "0831484983f9736b29b8071dde5f69e263fa4509950d0dc9ee3f35ae1094e13c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "modifier"
+    },
+    "ex_dominoes": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dominoes",
+        "canonical_sha256": "b7cc1433c8bd9a3fecc7dba6079425e64f0e4cd4f9906dd8ec222b20056def64",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "canChain"
+    },
+    "ex_dot_dsl": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dot-dsl",
+        "canonical_sha256": "0597d83b99c7fee7c7f810b3ad66b753591bfa0205b521a9e3649956f4e58b66",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "parse"
+    },
+    "ex_eliuds_eggs": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/eliuds-eggs",
+        "canonical_sha256": "77272d0886522931b5aa3481ff256d6d50671c9e861ec63ca92bab30920a56cd",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "eggCount"
+    },
+    "ex_etl": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/etl",
+        "canonical_sha256": "293bc1cfb4ad2b9c75a50359520c177c473b307993cf3e1d69fc7473f4396d47",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "transform"
+    },
+    "ex_flatten_array": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flatten-array",
+        "canonical_sha256": "fa6c236333d546ed304e9c93d9b8947b2cdee162248be2393ef118c1b6533316",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "flatten"
+    },
+    "ex_flower_field": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flower-field",
+        "canonical_sha256": "f29b89a783b6f3e16a0e4e69d0362fb81c95ac8f0ea6af9c7b0db17ac2a45695",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "annotate"
+    },
+    "ex_food_chain": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/food-chain",
+        "canonical_sha256": "8fd16b2a7f20e4d055dc63311709fcf1c8e17f4bd6bec207fe29e364961d5d1f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "recite"
+    },
+    "ex_forth": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/forth",
+        "canonical_sha256": "6578301f6345b328b01292fef2925662d0d3c2f946e447dac969c031a089b176",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "evaluate"
+    },
+    "ex_game_of_life": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/game-of-life",
+        "canonical_sha256": "eb09d20472b472af797b4c335a90fd9c053fef03957431acf48bb3a7ba1f0efb",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "tick"
+    },
+    "ex_gigasecond": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/gigasecond",
+        "canonical_sha256": "7ebb939391527537162803154757aa676ed9062d68a011cef5f08a3e7f88076d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "add"
+    },
+    "ex_go_counting": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/go-counting",
+        "canonical_sha256": "610f764fe8de8017c7e2f8976fed5e606ae831f8f7f2412ad613b956c214a3cb",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "territory"
+    },
+    "ex_grade_school": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grade-school",
+        "canonical_sha256": "a6ce57befa0f3a83b6a96446ad9adf476d4ca3a5d77e70a849c0c3b8fc65ecbf",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "roster"
+    },
+    "ex_grains": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grains",
+        "canonical_sha256": "b5c2c1a38ed4527681f0f4dcc09b91fe26f87162188146d919fb478f23d3e473",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "square"
+    },
+    "ex_grep": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grep",
+        "canonical_sha256": "b6eed026aeca970f29c2d5a2881475de0500eddd23f8d207dbe2b7f0c4bcf88a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "grep"
+    },
+    "ex_hamming": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hamming",
+        "canonical_sha256": "c932d8511912c5ca2cc5a15550a266436c637d8c2af4f3a055173808b0fb0086",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "distance"
+    },
+    "ex_hangman": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hangman",
+        "canonical_sha256": "67b922274c541b029f5cea0e6886870f62d1db81fdefc58bd71e6e93a3115fca",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "guess"
+    },
+    "ex_hello_world": {
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hello-world",
+        "canonical_sha256": "e5131e7eeec3a31fa34fa877bcaf3211bf24330dd60f5e105b6e4828808fe5e0",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "selected_property": "hello"
+    }
+  }
+}

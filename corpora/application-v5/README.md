@@ -1,17 +1,29 @@
 # Verified expr-v5 application corpus
 
-**25 tasks; 24 verified NIL programs, 25 Python programs, 25 C++ programs.
-One task (`env_lookup`) is unsupported in NIL and retained.**
-These authored reference solutions are adaptation seeds and source-density samples,
-not model outputs. [Before/after density results](../../reports/2026-10-03/V5_GENERALITY.md) do
-**not** establish model efficiency: the [generation study](../../reports/2026-10-03/V5_GENERATION.md)
-solved 0/24 with NIL versus 11/24 with Python, counting failed attempts and repairs.
+**75 retained tasks: 25 self-authored + 50 externally derived; 55 verified NIL
+programs and 20 unsupported tasks (19 external, one original).**
+
+**The Python density advantage reverses externally:** NIL costs 10.6–19.9% more
+source tokens on the 31 supported external properties, and 5.8–13.6% more on all
+55 paired tasks. The original 24 still cost 3.7–8.2% fewer. See [three-cut results](../../reports/2026-10-03/V5_EXTERNAL_DENSITY.md).
+These authored references are adaptation seeds, not model outputs. Source density
+does not establish model efficiency; the [generation study](../../reports/2026-10-03/V5_GENERATION.md)
+solved 0/24 NIL versus 11/24 Python, including failures and repairs.
+
+External tasks are the first 50 alphabetical Exercism canonical specifications at
+a pinned revision, scoped to their first declared property. This is not full-API
+coverage or a representative random sample. Some unsupported tasks need missing
+primitives; others lack a serialized adapter and are not proven unexpressible.
+[Selection, contracts, licensing and limitations](external/README.md).
 
 ## Layout and contracts
 
-- `tasks.json`: frozen statements, inclusion rationales, categories, four fixtures,
+- `tasks.json`: unchanged original statements, inclusion rationales, categories, four fixtures,
   capability status and earlier-generation overlap. Tasks were chosen before counts.
-- `goldens.json`: one additional independent literal answer per task, including binary
+- `external/`: 50 pinned specifications, MIT notice, selection, adapted contracts,
+  upstream expected values and separate goldens. `PROVENANCE.json` records origin
+  and license for every task; `GENERALITY_GAPS.json` gives blocked counts.
+- `goldens.json`: unchanged original independent literal answers, including binary
   boundaries and environment changes; checked against `oracles.py` and every runner.
 - `programs/<task>.nil|py|cpp`: self-contained reference solutions. All use an
   input file and output file, return the output byte length, preserve input, and
@@ -49,12 +61,13 @@ benchmarks/paired/.venv/bin/python benchmarks/corpora/application-v5/density.py 
 benchmarks/paired/.venv/bin/python benchmarks/corpora/application-v5/export.py --verification /tmp/nil-v5-density/verification.json --output /tmp/nil-v5-density/adaptation.jsonl
 ```
 
-Verification performs 120 reference checks, 120 native O0, 120 native O2,
-125 Python and 125 C++ checks (610 total). It exits nonzero on failure. Counting and
+Verification performs 474 reference checks, 474 native O0, 474 native O2,
+479 Python and 479 C++ checks (2,380 total). `verify.py --group original` retains
+the original 610-check path; `--group external` selects new work only. It exits nonzero on failure. Counting and
 export refuse stale verification hashes or failed references. Results must remain
 outside source checkouts. Density output includes `density.json` and long-form
 `tokens.csv`; unsupported NIL counts are blank, never zero. Aggregates pair only
-the same 24 supported tasks; unsupported baseline sizes remain in the full table.
+the same 55 supported tasks; all three cuts are reported separately; unsupported baseline sizes remain in the full table.
 
 The Gemma/Qwen tokenizer vocabularies come from the **exact frozen GGUFs** used in
 the generation study, under `~/.ollama/models` (override `--model-home`). See the
@@ -64,16 +77,17 @@ only, skips tensors and never creates an inference context. No Ollama service is
 needed or started. Both tiktoken encodings add no BOS/EOS and treat special-looking
 text as ordinary source. First use may fetch tiktoken tables and the existing paired
 Qwen tokenizer JSON into external caches; no inference occurs. The Qwen JSON has the
-same SHA-256 as the official pinned Qwen 7B asset; cross-check all 74 source counts.
+same SHA-256 as the official pinned Qwen 7B asset; cross-check all 167 verified source counts.
 Gemma's upstream Hugging Face files are gated; the frozen local GGUF supplies its
 real vocabulary. Different tokenizer implementations may differ: pins and probe IDs
 are in the measurement record; these are not claimed to be Ollama runtime counters.
 
 ## Reuse and license
 
-Tasks, fixtures, oracles, all authored references, and their exported JSONL are MIT
-licensed; see [LICENSE](LICENSE). No third-party problem statement was copied.
-Retain this license with redistributed data. Dependencies/model vocabularies retain
+Authored tasks/references and code are MIT licensed; see [LICENSE](LICENSE).
+External statements and fixtures derive from MIT-licensed Exercism specifications;
+also retain [EXERCISM_LICENSE](external/EXERCISM_LICENSE) and per-task provenance
+when redistributing. Original tasks remain separately identified. Dependencies/model vocabularies retain
 upstream licenses and are **not** redistributed with the corpus.
 
 JSONL records contain `id`, `profile`, `prompt`, `entry_contract`, `completion`,
@@ -81,7 +95,7 @@ JSONL records contain `id`, `profile`, `prompt`, `entry_contract`, `completion`,
 Use statements/contracts as inputs and verified completions as targets; fixtures are
 oracle data, not part of prompts. Unsupported tasks have no fabricated positive.
 
-24 positives are enough for a few-shot seed and loader smoke test, **not evidence of
+55 positives are enough for a few-shot seed and loader smoke test, **not evidence of
 successful adaptation or a usable fine-tuning set**. Four overlap the previous
 study (`ascii_upper`, `nonempty_lines`, `sum_pairs`, `running_report`). Related
 transform/reduction families also overlap structurally: partition by semantic
@@ -89,10 +103,10 @@ family, hold out new families and oracle fixtures, and never report training-set
 performance as generation improvement. A planning range of 500–2,000 independent
 verified tasks, plus repair/negative trajectories and held-out families, could
 support an initial adaptation pilot; it is a heuristic, not a model-specific sample
-requirement or guarantee. This seed is roughly 20–80x smaller. No model adaptation,
+requirement or guarantee. This seed is roughly 9–36x smaller. No model adaptation,
 inference or new generation trial was run here.
 
-## Generality findings and measured additions
+## Original cohort: measured generality additions
 
 Bulk canonical integer parsing (`parsebuf`) replaces hand-written decimal row scans,
 counting passes and repeated field parsing in six tasks. `find` replaces four
@@ -109,3 +123,20 @@ builders remain absent. `parsebuf` performs two linear scans and fresh allocatio
 it cannot reuse byte storage as an i64 buffer. Environment lookup stays unsupported.
 No task, oracle or golden was relaxed, and no grammar/identifier compression was
 used. Retain these limits when reusing the 24 verified adaptation positives.
+
+## Expanded evidence and remaining gaps
+
+The original generality-addition history above concerns the unchanged 24-task
+cohort. The external audit adds 31 positives and retains 19 unsupported properties;
+the total is 55 verified NIL references, 56 Python and 56 C++ references (the extra
+baseline task is original environment lookup). Finite external oracles are pinned
+upstream expected-value maps, not general algorithms for unknown inputs. Goldens
+remain independent of reference code, and original files are protected by hash locks.
+
+[Current gaps and counts](GENERALITY_GAPS.json) include floats, integer widths,
+Unicode, higher-order callbacks, concurrency, entropy/reactive integration, and
+unimplemented map/tree/dictionary/calendar/multi-file adapters. Record these as
+findings; no compiler feature was added in this expansion. New references and tasks
+were frozen before token counting. No task, oracle, golden or reference was changed
+after observing counts. JSONL now exports 55 verified positives with provenance
+for external tasks; the original metadata has the separate PROVENANCE.json overlay.
