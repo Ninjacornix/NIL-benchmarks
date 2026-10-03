@@ -1,6 +1,23 @@
 # Verified expr-v5 application corpus
 
-## Latest keyed-data result
+## Latest algorithmic result
+
+Sort and snapshot each improve eleven external references against unchanged
+oracles; 2400 checks pass and the original 610 pass separately. **NIL still costs
+4.3–12.3% more tokens than Python externally, 1.2–8.1% more combined.** Joint
+553/401/398/388 token savings (Gemma/Qwen/cl100k/o200k) match preregistration;
+cl100k's external surplus drops from 650 to 252. All original NIL and baseline
+sources remain unchanged. 56 verified programs/exports, 19 unsupported remain.
+[All three cuts, per-task counts and category movement](../../reports/2026-10-03/V5_ALGORITHMS.md).
+
+`algorithms_forecast.py` freezes the before-implementation proposals against
+920e510; `algorithms_results.py` recounts the committed intermediate sort-only
+sources and compares verified final counts. `attribution.py` recognizes each's
+three regions while preserving legacy category accounting. [Retained task review](ALGORITHMS_ATTEMPTS.md).
+Source density is not model efficiency: generation remains NIL 0/24 vs Python
+11/24. These 56 examples are adaptation seeds, not fine-tuning scale.
+
+## Previous keyed-data result
 
 The corpus now has **56 verified NIL positives and 19 unsupported tasks** (18
 external). ETL joins the supported set; grade_school uses maps for duplicate names.
