@@ -1,2 +1,2 @@
-(s,s)=!write(b,b(!read(a)))
-(s):s=@(a,0,0,0;b<#a;a,b+1,a[b]==10?b+1:c,a[b]==10?d+!parse(!slice(a,c,b-c)):d;!concat(!format(b>c?d+!parse(!slice(a,c,b-c)):d),"\n"))
+(s,s)=!write(b,!concat(!format(b(!parsebuf(!read(a),"\n"))),"\n"))
+(v)=@(a,0,0;b<#a;a,b+1,c+a[b];c)

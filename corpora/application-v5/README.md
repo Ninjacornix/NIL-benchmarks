@@ -3,7 +3,7 @@
 **25 tasks; 24 verified NIL programs, 25 Python programs, 25 C++ programs.
 One task (`env_lookup`) is unsupported in NIL and retained.**
 These authored reference solutions are adaptation seeds and source-density samples,
-not model outputs. [Density results](../../reports/2026-10-03/V5_DENSITY.md) do
+not model outputs. [Before/after density results](../../reports/2026-10-03/V5_GENERALITY.md) do
 **not** establish model efficiency: the [generation study](../../reports/2026-10-03/V5_GENERATION.md)
 solved 0/24 with NIL versus 11/24 with Python, counting failed attempts and repairs.
 
@@ -29,7 +29,10 @@ solved 0/24 with NIL versus 11/24 with Python, counting failed attempts and repa
 The authored programs assume successful I/O and valid task input. Numeric domains
 are in each statement; NIL still has its documented quota and execution limits.
 UTF-8 is tested as bytes, not Unicode-aware case folding or grapheme handling.
-No compiler or language changes were made. Python's first-field reference initially
+The initial density study made no compiler changes. Eleven current references use
+the corpus-ranked `parsebuf`, `find` and `equal` additions and require compiler
+`abc6afe` or later. Tasks, oracles, goldens and Python/C++ sources remain unchanged
+from benchmark commit `9be44d6`; that commit retains the original NIL solutions. Python's first-field reference initially
 used `splitlines()`, which violates the LF-only contract for CR; review corrected
 it before the final verification. No compiler bug was observed.
 
@@ -89,17 +92,20 @@ support an initial adaptation pilot; it is a heuristic, not a model-specific sam
 requirement or guarantee. This seed is roughly 20–80x smaller. No model adaptation,
 inference or new generation trial was run here.
 
-## Generality findings (unimplemented)
+## Generality findings and measured additions
 
-Decimal row parsing requires manual delimiter scans, slices and repeated parse
-expressions. Parallel loop state prevents simply binding one parsed field for
-multiple updated accumulators (`min_max`); this reference repeats parsing. Building
-numeric buffers requires a counting pass before allocating, because v5 lacks a
-buffer push/builder operation. Adjacent deduplication needs a hand-written
-byte-equality helper. Hex encoding, line splitting and joins are expanded loops
-where baselines have standard-library operations. No structs/tuples package parser
-results, and typed loop state requires carrying several positional values. These
-are application expressiveness costs, not proof that punctuation compression will
-help. A typed equality or delimiter-processing semantic operation, multi-result
-binding, and builders are design proposals only. Environment access is genuinely
-absent. No proposal was implemented or grammar changed to improve these counts.
+Bulk canonical integer parsing (`parsebuf`) replaces hand-written decimal row scans,
+counting passes and repeated field parsing in six tasks. `find` replaces four
+manual delimiter searches; `equal` removes the adjacent-deduplication comparator.
+All eleven rewrites pass the same 610 checks. Their forecasts were counted and
+committed before implementation; verified counts match exactly. NIL totals fell
+32–33%, from 36.7–43.5% above Python to 3.7–8.2% below it across four tokenizers.
+Thirteen tasks are unchanged; six to eight still lose to Python. Source density
+is not generation efficiency, and no new inference was conducted.
+
+Remaining costs: deduplication repeats slices, hex/CRLF/joins expand into loops,
+parallel positional state cannot package multiple results, and records/buffer
+builders remain absent. `parsebuf` performs two linear scans and fresh allocation;
+it cannot reuse byte storage as an i64 buffer. Environment lookup stays unsupported.
+No task, oracle or golden was relaxed, and no grammar/identifier compression was
+used. Retain these limits when reusing the 24 verified adaptation positives.

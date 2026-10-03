@@ -1,4 +1,4 @@
-(s,s)=!write(b,!concat(!format(b(!read(a))),"\n"))
-(s)=@(a,0,0;b<#a;a,b+1,c+(a[b]==10?1:0);c(a,!buffer(c+(#a==0?0:(a[#a-1]==10?0:1)),0),!buffer(c+(#a==0?0:(a[#a-1]==10?0:1)),0)))
-(s,v,v)=@(a,b,c,0,0,0,0;d<#a;a,a[d]==10?b[g:!parse(!slice(a,e,f-e))]:b,a[d]==10?c[g:!parse(!slice(a,f+1,d-f-1))]:c,d+1,a[d]==10?d+1:e,a[d]==44?d:f,a[d]==10?g+1:g;d>e?d(b[g:!parse(!slice(a,e,f-e))],c[g:!parse(!slice(a,f+1,d-f-1))]):d(b,c))
+(s,s)=!write(b,!concat(!format(b(!parsebuf(!read(a),",\n"))),"\n"))
+(v)=d(c(a,0),c(a,1))
+(v,i):v=@(a,b,!buffer(#a/2,0),0;d<#c;a,b,c[d:a[d*2+b]],d+1;c)
 (v,v)=@(a,b,0,0;c<#a;a,b,c+1,d+a[c]*b[c];d)

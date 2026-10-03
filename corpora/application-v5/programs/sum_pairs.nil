@@ -1,3 +1,2 @@
-(s,s)=!write(b,b(!read(a)))
-(s):s=@(a,0,0,"";b<#a;a,b+1,a[b]==10?b+1:c,a[b]==10?!concat(d,c(!slice(a,c,b-c))):d;b>c?!concat(d,c(!slice(a,c,b-c))):d)
-(s):s=@(a,0;a[b]!=44;a,b+1;!concat(!format(!parse(!slice(a,0,b))+!parse(!slice(a,b+1,#a-b-1))),"\n"))
+(s,s)=!write(b,b(!parsebuf(!read(a),",\n")))
+(v):s=@(a,0,"";b<#a;a,b+2,!concat(c,!concat(!format(a[b]+a[b+1]),"\n"));c)

@@ -1,2 +1,2 @@
 (s,s)=!write(b,b(!read(a)))
-(s):s=@(a,0,0,"",1;b<#a;a,b+1,a[b]==10?b+1:c,a[b]==10?!concat(d,!concat(!format(e),!concat(":",!concat(!slice(a,c,b-c),"\n")))):d,a[b]==10?e+1:e;b>c?!concat(d,!concat(!format(e),!concat(":",!concat(!slice(a,c,b-c),"\n")))):d)
+(s):s=@(a,0,"",1;b<#a;a,!find(a,10,b)+1,!concat(c,!concat(!format(d),!concat(":",!concat(!slice(a,b,!find(a,10,b)-b),"\n")))),d+1;c)
