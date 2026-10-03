@@ -15,7 +15,7 @@
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
         "615a7a00ff0d0a78"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": true
     },
     {
@@ -29,7 +29,7 @@
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
         "41615a00ff"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -43,7 +43,7 @@
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
         "414d4e5a616d6e7a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -57,7 +57,7 @@
         "00ff80",
         "0a746578740d"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -71,7 +71,7 @@
         "61626300ff",
         "c3a94e494c"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -85,7 +85,7 @@
         "0080ff",
         "48656c6c6f0a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -99,7 +99,7 @@
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
         "0d0a0d0a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -113,7 +113,7 @@
         "6f6e650a0a74776f0a6c617374",
         "200a0d0a00ff0a0a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": true
     },
     {
@@ -127,7 +127,7 @@
         "410d420d",
         "0d0d0a0a00ff"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -141,7 +141,7 @@
         "610a0a62",
         "00ff0a6c6173740a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -155,7 +155,7 @@
         "2c780a736f6c6f0a6c6173742c7a",
         "6f6e652c2c7468726565"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -169,7 +169,7 @@
         "2d3130303030302c3130303030300a372c2d390a",
         "39392c31"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": true
     },
     {
@@ -183,7 +183,7 @@
         "310a2d320a330a",
         "2d3130303030300a3130303030300a39"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -197,7 +197,7 @@
         "2d3130303030300a313030303030",
         "350a350a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -211,7 +211,7 @@
         "78",
         "00ff0a00ff0a7a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -225,7 +225,7 @@
         "35",
         "3634"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": true
     },
     {
@@ -239,7 +239,7 @@
         "610a0a62",
         "00ff0a6c6173740a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -253,7 +253,7 @@
         "303031313939390a616263",
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -267,7 +267,7 @@
         "310a2d320a330a",
         "2d3130303030300a3130303030300a39"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -281,7 +281,7 @@
         "312c320a2d332c340a302c39390a",
         "2d313030302c313030300a313030302c2d31303030"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -295,7 +295,7 @@
         "310a2d320a330a",
         "2d3130303030300a3130303030300a39"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -309,7 +309,7 @@
         "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
         "00ff0d0a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -323,7 +323,7 @@
         "342c300a00ff4142",
         "302c340a610a62007a"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -337,7 +337,7 @@
         "6109620a09",
         "00ff0958"
       ],
-      "nil_status": "pending_verification",
+      "nil_status": "supported",
       "adaptation_overlap": false
     },
     {
@@ -362,7 +362,7 @@
         },
         {},
         {
-          "NIL_CORPUS_VALUE": "é"
+          "NIL_CORPUS_VALUE": "\u00e9"
         }
       ],
       "unsupported_reason": "The v5 Host exposes only read/write/out, and the language has no environment lookup or external-call intrinsic. Identical files and arguments with differing environment values require differing outputs; the reference evaluator cannot observe that difference. Do not hardcode fixture values."

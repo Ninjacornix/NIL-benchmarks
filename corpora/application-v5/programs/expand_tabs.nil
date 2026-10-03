@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0,"";b<#a;a,b+1,!concat(c,a[b]==9?"    ":!bytes(1,a[b]));c)

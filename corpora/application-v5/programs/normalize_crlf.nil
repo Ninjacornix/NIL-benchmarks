@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0,"";b<#a;a,b+1,a[b]==13?(b+1<#a?(a[b+1]==10?c:!concat(c,!bytes(1,a[b]))):!concat(c,!bytes(1,a[b]))):!concat(c,!bytes(1,a[b]));c)

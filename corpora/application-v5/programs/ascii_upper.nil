@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0;b<#a;a[b:a[b]>=97?(a[b]<=122?a[b]-32:a[b]):a[b]],b+1;a)

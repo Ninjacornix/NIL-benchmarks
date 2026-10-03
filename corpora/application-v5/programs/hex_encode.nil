@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0,"","0123456789abcdef";b<#a;a,b+1,!concat(c,!concat(!bytes(1,d[a[b]/16]),!bytes(1,d[a[b]-a[b]/16*16]))),d;c)

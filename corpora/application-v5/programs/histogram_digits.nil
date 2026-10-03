@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(@(a,0,!buffer(10,0);b<#a;a,b+1,a[b]>=48?(a[b]<=57?c[a[b]-48:c[a[b]-48]+1]:c):c;c))
+(v):s=@(a,0,"";b<#a;a,b+1,!concat(c,!concat(!format(b),!concat(":",!concat(!format(a[b]),"\n"))));c)

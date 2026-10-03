@@ -1,0 +1,129 @@
+{
+  "ascii_upper": {
+    "input": "615a00ff",
+    "output": "415a00ff",
+    "environment": {}
+  },
+  "ascii_lower": {
+    "input": "615a00ff",
+    "output": "617a00ff",
+    "environment": {}
+  },
+  "rot13": {
+    "input": "414d4e5a616d6e7a21",
+    "output": "4e5a414d6e7a616d21",
+    "environment": {}
+  },
+  "invert_bytes": {
+    "input": "0080ff",
+    "output": "ff7f00",
+    "environment": {}
+  },
+  "reverse_bytes": {
+    "input": "61c3a9",
+    "output": "a9c361",
+    "environment": {}
+  },
+  "hex_encode": {
+    "input": "0080ff",
+    "output": "303038306666",
+    "environment": {}
+  },
+  "count_newlines": {
+    "input": "610d0a0a6c617374",
+    "output": "320a",
+    "environment": {}
+  },
+  "nonempty_lines": {
+    "input": "0a00ff0a0a0d",
+    "output": "00ff0a0d0a",
+    "environment": {}
+  },
+  "normalize_crlf": {
+    "input": "0d0d0a0a000d",
+    "output": "0d0a0a000d",
+    "environment": {}
+  },
+  "prefix_lines": {
+    "input": "610a0a62",
+    "output": "3e610a3e0a3e62",
+    "environment": {}
+  },
+  "first_fields_csv": {
+    "input": "2c780d0a736f6c6f0d",
+    "output": "0a736f6c6f0d0a",
+    "environment": {}
+  },
+  "sum_pairs": {
+    "input": "312c320a2d342c39",
+    "output": "330a350a",
+    "environment": {}
+  },
+  "sum_integers": {
+    "input": "310a2d320a330a",
+    "output": "320a",
+    "environment": {}
+  },
+  "min_max": {
+    "input": "390a2d320a33",
+    "output": "2d322c390a",
+    "environment": {}
+  },
+  "dedupe_adjacent_lines": {
+    "input": "610a610a620a61",
+    "output": "610a620a610a",
+    "environment": {}
+  },
+  "running_report": {
+    "input": "33",
+    "output": "303a300a313a310a323a330a",
+    "environment": {}
+  },
+  "number_lines": {
+    "input": "610a0a620a",
+    "output": "313a610a323a0a333a620a",
+    "environment": {}
+  },
+  "histogram_digits": {
+    "input": "30303139",
+    "output": "303a320a313a310a323a300a333a300a343a300a353a300a363a300a373a300a383a300a393a310a",
+    "environment": {}
+  },
+  "buffer_sum": {
+    "input": "310a2d320a33",
+    "output": "320a",
+    "environment": {}
+  },
+  "buffer_dot": {
+    "input": "312c320a2d332c340a",
+    "output": "2d31300a",
+    "environment": {}
+  },
+  "prefix_sums": {
+    "input": "310a2d320a33",
+    "output": "310a2d310a320a",
+    "environment": {}
+  },
+  "copy_file": {
+    "input": "00ff0d0a",
+    "output": "00ff0d0a",
+    "environment": {}
+  },
+  "slice_file": {
+    "input": "312c330a610a00ff7a",
+    "output": "0a00ff",
+    "environment": {}
+  },
+  "expand_tabs": {
+    "input": "0009ff",
+    "output": "0020202020ff",
+    "environment": {}
+  },
+  "env_lookup": {
+    "input": "4e414d45",
+    "output": "c3a9",
+    "environment": {
+      "NAME": "\u00e9"
+    }
+  }
+}

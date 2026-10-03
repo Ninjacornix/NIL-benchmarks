@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0,0,"","",false;b<#a;a,b+1,a[b]==10?b+1:c,a[b]==10?(f?(c(!slice(a,c,b-c),e)?d:!concat(d,!concat(!slice(a,c,b-c),"\n"))):!concat(d,!concat(!slice(a,c,b-c),"\n"))):d,a[b]==10?!slice(a,c,b-c):e,a[b]==10?true:f;b>c?(f?(c(!slice(a,c,b-c),e)?d:!concat(d,!concat(!slice(a,c,b-c),"\n"))):!concat(d,!concat(!slice(a,c,b-c),"\n"))):d)
+(s,s):b=#a==#b?@(a,b,0,true;c<#a?d:false;a,b,c+1,a[c]==b[c];d):false
