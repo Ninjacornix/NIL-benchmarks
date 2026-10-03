@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=d(c(!parse(a)-10))
+1=a>=0?a/2:(a-1)/2
+1:s=!concat(!format(a),"\n")

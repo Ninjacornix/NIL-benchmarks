@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(@(!parse(a),0;a>0;a/2,b+a-a/2*2;b))
+1:s=!concat(!format(a),"\n")

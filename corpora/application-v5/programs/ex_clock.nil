@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a,","))
+(v):s=d(f(f(a[0]*60+a[1],1440)+1440,1440))
+1:s=!concat(e(a/60),!concat(":",e(f(a,60))))
+1:s=a<10?!concat("0",!format(a)):!format(a)
+2=a-a/b*b

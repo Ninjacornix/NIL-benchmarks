@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a,0,"";b<#a;a,c(a[b])?d(a,b):b+1,c(a[b])?!concat(c,!concat(!slice(a,b,d(a,b)-b),"\n")):c;c)
+1:b=a==45?true:(a>=48?a<=57:false)
+(s,i)=@(a,b+1;b<#a?(a[b]>=48?a[b]<=57:false):false;a,b+1;b)

@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(a,!find(a,10,0))
+(s,i):s=d(!parse(!slice(a,0,b)),!parsebuf(!slice(a,b+1,#a-b-1),","))
+(i,v):s=e(a,b,@(a,b,0,#b;c<d;a,b,b[(c+d)/2]<a?(c+d)/2+1:c,b[(c+d)/2]<a?d:(c+d)/2;c))
+(i,v,i):s=c<#b?(b[c]==a?f(c):"error\n"):"error\n"
+1:s=!concat(!format(a),"\n")

@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a,","))
+(v):s=@(a,0,"";b<a[1];a,b+1,!concat(c,!concat(b>0?"\n":"",d(a[0]-b)));c)
+1:s=!concat(e(a),!concat(e(a),!concat("And if one green bottle should accidentally fall,\nThere'll be ",!concat(g(a-1),!concat(a==2?" green bottle":" green bottles"," hanging on the wall.\n")))))
+1:s=f(g(a),a)
+(s,i):s=!concat(a[0:a[0]-32],!concat(b==1?" green bottle":" green bottles"," hanging on the wall,\n"))
+1:s=a==0?"no":(a==1?"one":(a==2?"two":(a==3?"three":(a==4?"four":(a==5?"five":(a==6?"six":(a==7?"seven":(a==8?"eight":(a==9?"nine":"ten")))))))))

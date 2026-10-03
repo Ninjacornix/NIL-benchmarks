@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=d(c(!parse(a)))
+1=(a*(a+1)/2)*(a*(a+1)/2)
+1:s=!concat(!format(a),"\n")

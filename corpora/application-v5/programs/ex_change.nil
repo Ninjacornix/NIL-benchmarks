@@ -1,0 +1,11 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a,",\n"))
+(v):s=a[0]>=0?i(a,d(a,a[0],#a-1,a[0]+1)):"error\n"
+(v,i,i,i):v=b==0?!buffer(#a,0):(c==0?!buffer(#a,a[0]+1):(e(b,a[c])>=d?!buffer(#a,a[0]+1):@(a,b,c,!buffer(#a,d),b/a[c];e>=0;a,b,c,h(d,f(a,b,c,e,d[0])),e-1;d)))
+2=(a+b-1)/b
+(v,i,i,i,i):v=g(d(a,b-d*a[c],c-1,e-d),c,d)
+(v,i,i):v=a[0:a[0]+c][b:c]
+(v,v):v=b[0]<a[0]?b:a
+(v,v):s=b[0]>a[0]?"error\n":@(a,b,1,"";c<#a;a,b,c+1,!concat(d,j(a[c],b[c]));d)
+2:s=@(a,b,0,"";c<b;a,b,c+1,!concat(d,k(a));d)
+1:s=!concat(!format(a),"\n")

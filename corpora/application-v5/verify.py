@@ -12,7 +12,11 @@ HERE = Path(__file__).resolve().parent
 SUITE = HERE.parents[1]
 sys.path.insert(0, str(SUITE / 'generation' / 'application'))
 import oracle as application
-from oracles import expected
+from oracles import expected as original_expected
+from external_suite import load_tasks, load_goldens, external_expected
+
+def expected(task, data, environment=None):
+    return external_expected(task, data) if task.startswith("ex_") else original_expected(task, data, environment)
 
 
 def digest(path):
@@ -22,6 +26,7 @@ def digest(path):
 def fingerprint():
     paths = [HERE / 'tasks.json', HERE / 'oracles.py', HERE / 'verify.py', HERE / 'driver.cpp', HERE / 'goldens.json']
     paths += sorted((HERE / 'programs').glob('*'))
+    paths += [HERE / 'external_suite.py', HERE / 'external/build_manifest.py'] + sorted((HERE / 'external').glob('*.json'))
     paths += [SUITE / 'generation/application' / name for name in ['oracle.py', 'python_driver.py']]
     paths += [SUITE / 'helpers/application_check.rs']
     return {str(p.relative_to(SUITE)): digest(p) for p in paths}
@@ -58,15 +63,16 @@ def baseline(task, path, folder, language):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--group', choices=['all', 'original', 'external'], default='all')
     args = parser.parse_args()
     output = args.output.expanduser().resolve()
     if output.is_relative_to(SUITE) or output.is_relative_to(application.ROOT):
         parser.error('Results must be outside source checkouts.')
     application.prepare()
     application.expected = expected
-    tasks = json.loads((HERE / 'tasks.json').read_text())['tasks']
+    tasks = load_tasks(args.group)
     results = []
-    goldens = json.loads((HERE / 'goldens.json').read_text())
+    goldens = load_goldens()
     with tempfile.TemporaryDirectory(prefix='nil-corpus-') as directory:
         for frozen in tasks:
             golden = goldens[frozen['id']]
@@ -77,15 +83,15 @@ def main():
             folder = Path(directory) / task['id']
             folder.mkdir()
             for language, extension in [('expr-v5', 'nil'), ('python', 'py'), ('cpp', 'cpp')]:
-                if language == 'expr-v5' and task['nil_status'] == 'unsupported':
+                if (language == 'expr-v5' and task['nil_status'] == 'unsupported') or (language != 'expr-v5' and task.get('baseline_status') == 'unsupported'):
                     results.append({'task': task['id'], 'language': language, 'status': 'unsupported', 'reason': task['unsupported_reason']})
                     continue
                 path = HERE / 'programs' / f"{task['id']}.{extension}"
                 verdict = application.evaluate(path.read_text(), language, task, folder) if language == 'expr-v5' else baseline(task, path, folder, language)
                 results.append({'task': task['id'], 'language': language, 'source_sha256': digest(path), **verdict})
                 print(f"{task['id']}/{language}: {'PASS' if verdict['semantic_ok'] else 'FAIL'} {verdict}", flush=True)
-    totals = dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'))
-    report = {'schema': 1, 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=application.ROOT, text=True).strip(), 'source_hashes': fingerprint(), 'totals': totals, 'results': results}
+    totals = dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r['language'] == 'expr-v5' and r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'))
+    report = {'schema': 1, 'group': args.group, 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=application.ROOT, text=True).strip(), 'source_hashes': fingerprint(), 'totals': totals, 'results': results}
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + '\n')
     print('TOTALS ' + json.dumps(totals), flush=True)

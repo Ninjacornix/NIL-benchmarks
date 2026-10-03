@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 
 from verify import HERE, fingerprint
+from external_suite import load_tasks
 
 MODELS = {
     'gemma3_4b': ('gemma3/4b', 'a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a', 'aeda25e63ebd698fab8638ffb778e68bed908b960d39d0becc650fa981609d25'),
@@ -92,7 +93,7 @@ def main():
         qwen_reference = tokenizers.Tokenizer.from_file(str(qwen_asset))
         crosscheck = {'tokenizers_version': tokenizers.__version__, 'asset_sha256': file_hash(qwen_asset), 'official_model': 'Qwen/Qwen2.5-7B-Instruct', 'official_revision': 'a09a35458c702b33eeacc393d103063234e8bc28', 'comparisons': 0, 'mismatches': []}
         records = []
-        tasks = json.loads((HERE / 'tasks.json').read_text())['tasks']
+        tasks = load_tasks(verification.get('group', 'all'))
         for task in tasks:
             for language, extension in [('expr-v5', 'nil'), ('python', 'py'), ('cpp', 'cpp')]:
                 verdict = verified[task['id'], language]
@@ -107,15 +108,31 @@ def main():
                 crosscheck['comparisons'] += 1
                 if len(qwen_reference.encode(source, add_special_tokens=False).ids) != counts['qwen2.5_7b_instruct']:
                     crosscheck['mismatches'].append(task['id'] + '/' + language)
-                records.append({'task': task['id'], 'category': task['category'], 'language': language, 'status': 'verified', 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw), 'characters': len(source), 'tokens': counts})
+                records.append({'task': task['id'], 'category': task['category'], 'origin': task.get('origin', 'self-authored'), 'language': language, 'status': 'verified', 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw), 'characters': len(source), 'tokens': counts})
         paired = [task['id'] for task in tasks if task['nil_status'] != 'unsupported']
         aggregates = {name: {language: sum(r['tokens'][name] for r in records if r['task'] in paired and r['language'] == language) for language in ['expr-v5', 'python', 'cpp']} for name in [v['id'] for v in metadata]}
+        cuts = {'original': [t for t in tasks if not t['id'].startswith('ex_')],
+                'new_external': [t for t in tasks if t['id'].startswith('ex_')],
+                'combined': tasks}
+        cut_aggregates = {}
+        for label, selected in cuts.items():
+            supported = [t['id'] for t in selected if t['nil_status'] != 'unsupported']
+            cut_aggregates[label] = {
+                'tasks': len(selected), 'paired_tasks': len(supported),
+                'unsupported': len(selected) - len(supported),
+                'tokens': {name: {language: sum(r['tokens'][name] for r in records
+                            if r['status'] == 'verified' and r['task'] in supported and r['language'] == language)
+                            for language in ['expr-v5', 'python', 'cpp']} for name in aggregates},
+                'sizes': {language: {unit: sum(r[unit] for r in records if r['status'] == 'verified'
+                          and r['task'] in supported and r['language'] == language)
+                          for unit in ['bytes', 'characters']} for language in ['expr-v5', 'python', 'cpp']},
+            }
         losses = {}
         for name in aggregates:
             indexed = {(r['task'], r['language']): r['tokens'][name] for r in records if r['status'] == 'verified'}
             losses[name] = {baseline: [{'task': task, 'nil': indexed[task, 'expr-v5'], 'baseline': indexed[task, baseline], 'outcome': 'tie' if indexed[task, 'expr-v5'] == indexed[task, baseline] else 'loss'} for task in paired if indexed[task, 'expr-v5'] >= indexed[task, baseline]] for baseline in ['python', 'cpp']}
         output.mkdir(parents=True, exist_ok=True)
-        report = {'schema': 1, 'metric': 'raw source tokens; NOT tokens until correctness', 'python_version': sys.version.split()[0], 'compiler_revision': verification['compiler_revision'], 'source_hashes': fingerprint(), 'verification_sha256': file_hash(args.verification), 'tokenizers': metadata, 'probe_ids': probe_ids, 'qwen_crosscheck': crosscheck, 'measurement_script_sha256': file_hash(Path(__file__)), 'paired_tasks': paired, 'records': records, 'paired_aggregates': aggregates, 'nil_nonwins': losses}
+        report = {'schema': 1, 'metric': 'raw source tokens; NOT tokens until correctness', 'python_version': sys.version.split()[0], 'compiler_revision': verification['compiler_revision'], 'source_hashes': fingerprint(), 'verification_sha256': file_hash(args.verification), 'tokenizers': metadata, 'probe_ids': probe_ids, 'qwen_crosscheck': crosscheck, 'measurement_script_sha256': file_hash(Path(__file__)), 'paired_tasks': paired, 'records': records, 'paired_aggregates': aggregates, 'cut_aggregates': cut_aggregates, 'nil_nonwins': losses}
         (output / 'density.json').write_text(json.dumps(report, indent=2) + '\n')
         with (output / 'tokens.csv').open('w', newline='') as stream:
             writer = csv.writer(stream, lineterminator='\n')
@@ -130,6 +147,7 @@ def main():
         print('Verified programs: ' + str(verification['totals']))
         print('QWEN_CROSSCHECK ' + json.dumps(crosscheck))
         print('PAIRED_TOTALS ' + json.dumps(aggregates))
+        print('CUT_TOTALS ' + json.dumps(cut_aggregates))
         print('NONWINS ' + json.dumps(losses))
         print('Artifacts: ' + str(output))
     finally:

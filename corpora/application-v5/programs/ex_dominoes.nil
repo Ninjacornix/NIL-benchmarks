@@ -1,0 +1,10 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=j(c(!parsebuf(a,",\n")))
+(v):b=#a==0?true:h(a,e(a),g(a,@(a,!buffer(d(a)+1,0)[a[0]:1];!equal(b,f(a,b))?false:true;a,f(a,b);b)))
+(v)=@(a,0,0;b<#a;a,b+1,a[b]>c?a[b]:c;c)
+(v):v=@(a,0,!buffer(d(a)+1,0);b<#a;a,b+1,c[a[b]:c[a[b]]+1];c)
+(v,v):v=@(a,b,0;c<#a;a,b[a[c]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)][a[c+1]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)],c+2;b)
+(v,v):v=b
+(v,v,v):b=@(a,b,c,0,true;d<#b;a,b,c,d+1,i(b[d],2)==0?(b[d]>0?(c[d]==1?e:false):e):false;e)
+2=a-a/b*b
+(b):s=a?"true\n":"false\n"

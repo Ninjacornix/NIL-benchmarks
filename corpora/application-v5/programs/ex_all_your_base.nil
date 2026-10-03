@@ -1,0 +1,8 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a,",\n"))
+(v):s=a[0]>=2?(a[1]>=2?(d(a)?f(e(a),a[1]):"error\n"):"error\n"):"error\n"
+(v):b=@(a,2,true;b<#a;a,b+1,a[b]>=0?(a[b]<a[0]?c:false):false;c)
+(v)=@(a,2,0;b<#a;a,b+1,c*a[0]+a[b];c)
+2:s=a==0?"0\n":@(a,b,"";a>0;a/b,b,!concat(h(g(a,b)),c);c)
+2=a-a/b*b
+1:s=!concat(!format(a),"\n")

@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(#a==0)
+(b):s=a?"true\n":"false\n"

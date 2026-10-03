@@ -275,7 +275,7 @@
       },
       "source_slug": "armstrong-numbers",
       "selected_property": "isArmstrongNumber",
-      "prompt": "Canonical nonnegative integer input, signed-i64 arithmetic domain. Output true\\n iff sum of digit powers equals input.",
+      "prompt": "Determine whether a nonnegative integer is an Armstrong number, including the upstream 108-bit and 127-bit canonical cases; output true\\n or false\\n.",
       "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
       "inputs": [
         "30",
@@ -289,9 +289,14 @@
         "39393236333134",
         "313836373039393631303031353338373930313030363334313332393736393930"
       ],
-      "nil_status": "supported",
+      "nil_status": "unsupported",
       "adaptation_overlap": false,
-      "canonical_fixture_count": 11
+      "canonical_fixture_count": 11,
+      "unsupported_reason": "Upstream canonical property includes 108-bit and 127-bit Armstrong inputs, outside i64 parsing/arithmetic. Kept all such cases. Hand-rolled arbitrary-precision arithmetic is possible but not implemented.",
+      "missing_capabilities": [
+        "integer_width"
+      ],
+      "baseline_status": "unsupported"
     },
     {
       "id": "ex_atbash_cipher",
@@ -428,7 +433,7 @@
       },
       "source_slug": "binary",
       "selected_property": "decimal",
-      "prompt": "decimal: ASCII binary input; invalid digit returns 0. Signed-i64 result domain. Output decimal followed by LF.",
+      "prompt": "decimal: ASCII binary input; invalid digit returns null (exact bytes, no LF). Signed-i64 result domain. Output decimal followed by LF.",
       "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
       "inputs": [
         "30",

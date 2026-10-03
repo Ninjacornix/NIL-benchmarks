@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(@(a,0,"";b<#a;a,b+1,g(f(a[b]))?!concat(c,!bytes(1,f(a[b]))):c;c))
+(s):s=d(a,@(#a,1;b*b<a;a,b+1;b))
+(s,i):s=@(a,b,0,"";c<b;a,b,c+1,!concat(d,!concat(c>0?" ":"",e(a,b,c)));d)
+(s,i,i):s=@(a,b,c,0,"";d<(#a+b-1)/b;a,b,c,d+1,!concat(e,!bytes(1,d*b+c<#a?a[d*b+c]:32));e)
+1=a>=65?(a<=90?a+32:a):a
+1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)

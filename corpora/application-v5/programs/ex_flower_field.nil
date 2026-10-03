@@ -1,0 +1,8 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(a,!find(a,10,0))
+(s,i):s=b==0?a:@(a,b,0,!bytes(#a,0);c<#a;a,b,c+1,d[c:d(a,b,c)];d)
+(s,i,i)=h(c,b+1)==b?10:g(a[c],e(a,b,c/(b+1),h(c,b+1)))
+(s,i,i,i)=@(a,b,c,d,0,0;e<9;a,b,c,d,e+1,f+(e==4?0:f(a,b,c+e/3-1,d+h(e,3)-1));f)
+(s,i,i,i)=c>=0?(c<#a/(b+1)?(d>=0?(d<b?(a[c*(b+1)+d]==42?1:0):0):0):0):0
+2=a==42?42:(b==0?32:48+b)
+2=a-a/b*b

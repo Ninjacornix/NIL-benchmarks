@@ -1,0 +1,5 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=@(a[0]-65,0,"";b<=a*2;a,b+1,!concat(c,c(a,b));c)
+2:s=d(a,a-e(b-a))
+2:s=!concat(!bytes(a*2+1,32)[a-b:65+b][a+b:65+b],"\n")
+1=a<0?0-a:a

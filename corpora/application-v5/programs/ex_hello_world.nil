@@ -1,0 +1,2 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s="Hello, World!"

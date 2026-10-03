@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a,","))
+(v):s=@(a,a[0],"";b<=a[1];a,b+1,!concat(c,!concat(b>a[0]?"\n":"",d(b)));c)
+1:s=!concat(!concat("I know an old lady who swallowed a ",!concat(f(a),".\n")),!concat(g(a),a==8?"":!concat(@(a,"";a>1;a-1,!concat(b,e(a));b),"I don't know why she swallowed the fly. Perhaps she'll die.\n")))
+1:s=!concat("She swallowed the ",!concat(f(a),!concat(" to catch the ",!concat(f(a-1),a==3?" that wriggled and jiggled and tickled inside her.\n":".\n"))))
+1:s=a==1?"fly":(a==2?"spider":(a==3?"bird":(a==4?"cat":(a==5?"dog":(a==6?"goat":(a==7?"cow":"horse"))))))
+1:s=a==1?"":(a==2?"It wriggled and jiggled and tickled inside her.\n":(a==3?"How absurd to swallow a bird!\n":(a==4?"Imagine that, to swallow a cat!\n":(a==5?"What a hog, to swallow a dog!\n":(a==6?"Just opened her throat and swallowed a goat!\n":(a==7?"I don't know how she swallowed a cow!\n":"She's dead, of course!\n"))))))

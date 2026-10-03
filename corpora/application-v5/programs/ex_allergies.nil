@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(a,!find(a,10,0))
+(s,i):s=f(e(!parse(!slice(a,0,b))/d(!slice(a,b+1,#a-b-1)),2)==1)
+(s)=!equal(a,"eggs")?1:(!equal(a,"peanuts")?2:(!equal(a,"shellfish")?4:(!equal(a,"strawberries")?8:(!equal(a,"tomatoes")?16:(!equal(a,"chocolate")?32:(!equal(a,"pollen")?64:128))))))
+2=a-a/b*b
+(b):s=a?"true\n":"false\n"

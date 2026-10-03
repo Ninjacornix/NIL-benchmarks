@@ -1,0 +1,17 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=d(c(a))
+(s):s=@(a,0,"";b<#a;a,b+1,a[b]==32?c:!concat(c,!bytes(1,a[b]));c)
+(s):s=f(e(a),!find(a,10,0))
+(s):s=@(a,0,"";b<#a;a,b+1,a[b]==10?c:!concat(c,!bytes(1,a[b]));c)
+(s,i):s=#a==0?"":(g(a,b,88)?"X":(g(a,b,79)?"O":""))
+(s,i,i):b=i(a,@(a,b,c,h(#a+2),0;e<#a;a,b,c,a[e]==c?l(a,b,c,d,e):d,e+1;d))
+1:v=@(a,0,!buffer(a,0);b<a;a,b+1,c[b:b];c)
+(s,v):b=j(b,#a)==j(b,#a+1)
+(v,i)=@(a,b;a[b]!=b;a,a[b];b)
+(v,i,i):v=a[j(a,c):j(a,b)]
+(s,i,i,v,i):v=n(a,b,c,m(a,b,c,m(a,b,c,m(a,b,c,d,e,q(e,b)>0?e-1:0-1),e,e>=b?e-b:0-1),e,e>=b?(q(e,b)+1<b?e-b+1:0-1):0-1),e)
+(s,i,i,v,i,i):v=f>=0?(a[f]==c?k(d,e,f):d):d
+(s,i,i,v,i):v=p(a,b,c,o(a,b,c,d,e),e)
+(s,i,i,v,i):v=c==88?(q(e,b)==0?k(d,e,#a):d):(e<b?k(d,e,#a):d)
+(s,i,i,v,i):v=c==88?(q(e,b)==b-1?k(d,e,#a+1):d):(e>=#a-b?k(d,e,#a+1):d)
+2=a-a/b*b
