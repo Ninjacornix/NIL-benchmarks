@@ -1,5 +1,5 @@
 (s,s)=!write(b,b(!read(a)))
-(s):s=@(a,0,true,"";b<#a;a,b+1,c(a[b])?true:(d(a[b])?false:c),d(a[b])?(c?!concat(d,!bytes(1,e(a[b]))):d):d;d)
+(s):s=!each(a,true,"";c(b)?true:(d(b)?false:c),d(b)?(c?!concat(d,!bytes(1,e(b))):d):d;b)
 1:b=a==32?true:(a==45?true:(a==9?true:(a==10?true:a==13)))
 1:b=a>=65?(a<=90?true:(a>=97?a<=122:false)):false
 1=a>=97?(a<=122?a-32:a):a

@@ -6,5 +6,5 @@
 3=a>=97?97+j(b*(a-97)+c,26):a
 1=a>=65?(a<=90?a+32:a):a
 1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)
-(s):s=@(a,0,"";b<#a;a,b+1,!concat(c,!concat(b>0?(j(b,5)==0?" ":""):"",!bytes(1,a[b])));c)
+(s):s=!each(a,"";!concat(c,!concat(a>0?(j(a,5)==0?" ":""):"",!bytes(1,b)));a)
 2=a-a/b*b

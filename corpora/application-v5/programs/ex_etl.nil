@@ -2,4 +2,4 @@
 (s):s=e(!sort(c(a),0))
 (s):m=@(a,!find(a,34,!find(a,123,!find(a,58,0))),0,!map();b<#a;a,!find(a,34,d(a,b)+1),a[d(a,b)+1]==58?!parse(!slice(a,b+1,d(a,b)-b-1)):c,a[d(a,b)+1]==58?d:!put(d,!slice(a,b+1,1)[0:a[b+1]+32],c);d)
 (s,i)=!find(a,34,b+1)
-(m):s=@(a,0,"";b<!size(a);a,b+1,!concat(c,!concat(b>0?",":"",!concat(!concat("\"",!concat(!key(a,b),"\":")),!format(!get(a,!key(a,b))))));!concat("{",!concat(c,"}")))
+(m):s=!each(a,"";!concat(c,!concat(#c>0?",":"",!concat(!concat("\"",!concat(a,"\":")),!format(b))));!concat("{",!concat(a,"}")))

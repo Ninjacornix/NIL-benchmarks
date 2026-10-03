@@ -1,7 +1,7 @@
 (s,s)=!write(b,b(!read(a)))
-(s):s=f(@(a,0,"";b<#a;a,b+1,d(c(a[b]))?!concat(c,!bytes(1,e(c(a[b])))):c;c))
+(s):s=f(!each(a,"";d(c(b))?!concat(c,!bytes(1,e(c(b)))):c;a))
 1=a>=65?(a<=90?a+32:a):a
 1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)
 1=a>=97?219-a:a
-(s):s=@(a,0,"";b<#a;a,b+1,!concat(c,!concat(b>0?(g(b,5)==0?" ":""):"",!bytes(1,a[b])));c)
+(s):s=!each(a,"";!concat(c,!concat(a>0?(g(a,5)==0?" ":""):"",!bytes(1,b)));a)
 2=a-a/b*b

@@ -5,4 +5,4 @@
 (s,i):s=f(a,!find(a,9,b)+1,!find(a,10,b))
 (s,i,i):s=!slice(a,b,c-b)
 (s,i)=!parse(!slice(a,b,!find(a,9,b)-b))
-(m):s=@(a,0,"";b<!size(a);a,b+1,!concat(c,!concat(!key(a,b),"\n"));c)
+(m):s=!each(a,"";!concat(c,!concat(a,"\n"));a)
