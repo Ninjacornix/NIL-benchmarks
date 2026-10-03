@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "profile": "expr-v5",
+  "license": "MIT",
+  "entry_contract": "solve(input_path,output_path) -> output byte count; NIL (s,s)=...; C++ long long solve(const std::string&,const std::string&)",
+  "tasks": [
+    {
+      "id": "ascii_upper",
+      "category": "byte transform",
+      "prompt": "Change ASCII lowercase to uppercase; preserve every other byte. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Case conversion without conflating bytes and Unicode.",
+      "inputs": [
+        "",
+        "48656c6c6f2c204e494c210a",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "615a7a00ff0d0a78"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": true
+    },
+    {
+      "id": "ascii_lower",
+      "category": "byte transform",
+      "prompt": "Change ASCII uppercase to lowercase; preserve every other byte. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Paired case transformation exercises comparisons without extra types.",
+      "inputs": [
+        "",
+        "48656c6c6f2c204e494c210a",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "41615a00ff"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "rot13",
+      "category": "byte transform",
+      "prompt": "Apply ROT13 to ASCII A-Z/a-z; preserve all other bytes. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Multiple ranges and lazy branches rather than a single arithmetic map.",
+      "inputs": [
+        "",
+        "48656c6c6f2c20576f726c64210a",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "414d4e5a616d6e7a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "invert_bytes",
+      "category": "byte transform",
+      "prompt": "Replace each byte x with 255-x. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Binary data and file pipeline independent of text assumptions.",
+      "inputs": [
+        "",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "00ff80",
+        "0a746578740d"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "reverse_bytes",
+      "category": "byte transform",
+      "prompt": "Reverse the input bytes, including multibyte UTF-8 bytes; not character reversal. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Backward indexing and explicit immutable replacement.",
+      "inputs": [
+        "",
+        "61",
+        "61626300ff",
+        "c3a94e494c"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "hex_encode",
+      "category": "formatting",
+      "prompt": "Encode arbitrary input bytes as lowercase hexadecimal, two digits per byte, no newline. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Variable-width output and digit lookup without Unicode conversion.",
+      "inputs": [
+        "",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "0080ff",
+        "48656c6c6f0a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "count_newlines",
+      "category": "line processing",
+      "prompt": "Write the decimal number of LF bytes followed by LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Numeric accumulation over bytes, including unterminated lines.",
+      "inputs": [
+        "",
+        "6f6e650a0a74776f",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "0d0a0d0a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "nonempty_lines",
+      "category": "line processing",
+      "prompt": "Split on LF, discard empty segments, preserve all bytes in other segments, write each with a final LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Filtering retains CR, spaces, binary data and unterminated final segments.",
+      "inputs": [
+        "",
+        "0a0a",
+        "6f6e650a0a74776f0a6c617374",
+        "200a0d0a00ff0a0a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": true
+    },
+    {
+      "id": "normalize_crlf",
+      "category": "line processing",
+      "prompt": "Replace CRLF pairs with LF; preserve bare CR and every other byte. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Two-byte lookahead with a boundary-sensitive conditional.",
+      "inputs": [
+        "",
+        "0d0a410d0a",
+        "410d420d",
+        "0d0d0a0a00ff"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "prefix_lines",
+      "category": "line processing",
+      "prompt": "Prefix each LF-delimited line with >, preserving LF delimiters and an unterminated final line. Empty input has no lines; a final LF does not create an extra line. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Output building and explicit line-boundary policy.",
+      "inputs": [
+        "",
+        "0a",
+        "610a0a62",
+        "00ff0a6c6173740a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "first_fields_csv",
+      "category": "field processing",
+      "prompt": "Input is empty or nonempty CSV rows without quoting or embedded LF. For each row, output bytes before the first comma (or whole row if absent) followed by LF. Final input LF optional. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Delimiters and empty first fields without a hidden CSV library.",
+      "inputs": [
+        "",
+        "612c312c780a622c320a",
+        "2c780a736f6c6f0a6c6173742c7a",
+        "6f6e652c2c7468726565"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "sum_pairs",
+      "category": "format parsing",
+      "prompt": "Input is empty or rows x,y of canonical signed decimal integers in -100000..100000. No blank rows/spaces; final LF optional. Output each sum as decimal followed by LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Prior generation task retained for adaptation overlap, not a fresh holdout.",
+      "inputs": [
+        "",
+        "312c320a2d342c390a302c30",
+        "2d3130303030302c3130303030300a372c2d390a",
+        "39392c31"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": true
+    },
+    {
+      "id": "sum_integers",
+      "category": "format parsing",
+      "prompt": "Input is empty or LF-separated canonical signed integers in -100000..100000; final LF optional. Output their sum as decimal followed by LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Decimal parsing and reduction with empty identity.",
+      "inputs": [
+        "",
+        "30",
+        "310a2d320a330a",
+        "2d3130303030300a3130303030300a39"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "min_max",
+      "category": "format parsing",
+      "prompt": "Input contains one or more LF-separated canonical signed integers in -100000..100000; final LF optional. Output min,max followed by LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Two reductions and a nonempty precondition.",
+      "inputs": [
+        "30",
+        "330a2d320a390a",
+        "2d3130303030300a313030303030",
+        "350a350a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "dedupe_adjacent_lines",
+      "category": "line processing",
+      "prompt": "Input is empty or nonempty LF-delimited byte rows; final LF optional. Collapse consecutive equal rows and output each retained row with LF. Do not merge equal nonadjacent rows. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Sequence equality has to be implemented; exercises helpers and retained aliases.",
+      "inputs": [
+        "",
+        "610a610a620a620a610a",
+        "78",
+        "00ff0a00ff0a7a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "running_report",
+      "category": "formatting",
+      "prompt": "Input is one canonical decimal n in 0..64 with no newline. For i=0..n-1 output i:sum(0..i) followed by LF. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Accumulation plus multiple formatted fields; overlaps the earlier study.",
+      "inputs": [
+        "30",
+        "31",
+        "35",
+        "3634"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": true
+    },
+    {
+      "id": "number_lines",
+      "category": "formatting",
+      "prompt": "Number LF-delimited lines from 1, prefixing number: and writing each followed by LF. Empty file has no lines; final LF creates no extra line; internal empty lines count. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Formatting combined with line extraction and explicit empty cases.",
+      "inputs": [
+        "",
+        "0a",
+        "610a0a62",
+        "00ff0a6c6173740a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "histogram_digits",
+      "category": "numeric buffers",
+      "prompt": "Count ASCII digits in arbitrary bytes; output ten rows digit:count followed by LF, ordered 0..9. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Dynamic integer buffer updates and formatting numeric state.",
+      "inputs": [
+        "",
+        "30313233343536373839",
+        "303031313939390a616263",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "buffer_sum",
+      "category": "numeric buffers",
+      "prompt": "Parse empty or LF-separated canonical signed integers in -100000..100000 into a dynamic integer buffer, then reduce it to a sum and write decimal plus LF. Final LF optional. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Require an actual v-typed buffer across a function boundary, not only scalar parsing.",
+      "inputs": [
+        "",
+        "30",
+        "310a2d320a330a",
+        "2d3130303030300a3130303030300a39"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "buffer_dot",
+      "category": "numeric buffers",
+      "prompt": "Parse empty or canonical x,y integer rows in -1000..1000 into two dynamic buffers, call a helper taking both buffers, compute the dot product, output decimal plus LF. Final LF optional. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Two sequence-typed parameters and multiply/add reduction.",
+      "inputs": [
+        "",
+        "322c33",
+        "312c320a2d332c340a302c39390a",
+        "2d313030302c313030300a313030302c2d31303030"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "prefix_sums",
+      "category": "numeric buffers",
+      "prompt": "Parse empty or LF-separated canonical integers in -100000..100000 into a dynamic buffer, output each inclusive prefix sum as decimal followed by LF. Final LF optional. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Transforming numeric state into incremental textual output.",
+      "inputs": [
+        "",
+        "32",
+        "310a2d320a330a",
+        "2d3130303030300a3130303030300a39"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "copy_file",
+      "category": "file pipeline",
+      "prompt": "Copy arbitrary input bytes exactly to output. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Minimal real I/O cost; deliberately includes a task likely dominated by baseline framing.",
+      "inputs": [
+        "",
+        "61",
+        "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+        "00ff0d0a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "slice_file",
+      "category": "file pipeline",
+      "prompt": "Input begins with canonical nonnegative start,length followed by LF and arbitrary payload bytes. Bounds are valid. Output the specified payload slice. Empty slices at the end are allowed. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Combines metadata parsing and binary file slicing without text-mode corruption.",
+      "inputs": [
+        "302c300a",
+        "312c330a616263646566",
+        "342c300a00ff4142",
+        "302c340a610a62007a"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "expand_tabs",
+      "category": "text transform",
+      "prompt": "Replace each TAB byte with four spaces; preserve every other byte. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Variable-size byte transformation exposes missing builders or views.",
+      "inputs": [
+        "",
+        "09",
+        "6109620a09",
+        "00ff0958"
+      ],
+      "nil_status": "pending_verification",
+      "adaptation_overlap": false
+    },
+    {
+      "id": "env_lookup",
+      "category": "configuration boundary",
+      "prompt": "Input is an ASCII environment variable name. Output its process environment value as UTF-8, or empty if absent. The environment varies independently of input/files; use environment APIs, not OS-specific pseudo-files. Return the exact output byte length, leave input unchanged, emit no extra stdout.",
+      "rationale": "Common application configuration probes a genuine missing host capability.",
+      "inputs": [
+        "4e494c5f434f525055535f56414c5545",
+        "4e494c5f434f525055535f56414c5545",
+        "4e494c5f434f525055535f4d495353494e47",
+        "4e494c5f434f525055535f56414c5545"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "environments": [
+        {
+          "NIL_CORPUS_VALUE": "alpha"
+        },
+        {
+          "NIL_CORPUS_VALUE": "beta"
+        },
+        {},
+        {
+          "NIL_CORPUS_VALUE": "é"
+        }
+      ],
+      "unsupported_reason": "The v5 Host exposes only read/write/out, and the language has no environment lookup or external-call intrinsic. Identical files and arguments with differing environment values require differing outputs; the reference evaluator cannot observe that difference. Do not hardcode fixture values."
+    }
+  ]
+}
