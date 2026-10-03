@@ -1,0 +1,509 @@
+{
+  "schema": 1,
+  "source_revision": "9943fd751b684ba1a6a8673c3700a6e79c10a808",
+  "selection_rule": "First 50 alphabetically sorted exercise directories containing canonical-data.json; selected before implementation/support classification/token counts.",
+  "original_group": "25 self-authored tasks, 24 previously verified NIL; unchanged",
+  "new_group_count": 50,
+  "records": [
+    {
+      "slug": "accumulate",
+      "id": "ex_accumulate",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/accumulate",
+      "canonical_sha256": "c19ea3a93d9c832513ac512a8ded9e3d2f2dc22dc63fb5dd669f976e70807b8c",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nImplement the `accumulate` operation, which, given a collection and an operation to perform on each element of the collection, returns a new collection containing the result of applying that operation to each element of the input collection.\n\nGiven the collection of numbers:\n\n- 1, 2, 3, 4, 5\n\nAnd the operation:\n\n- square a number (`x => x * x`)\n\nYour code should be able to produce the collection of squares:\n\n- 1, 4, 9, 16, 25\n\nCheck out the test suite to see the expected function signature.\n\n## Restrictions\n\nKeep your hands off that collect/map/fmap/whatchamacallit functionality provided by your standard library!\nSolve this one yourself using other basic tools instead.\n"
+    },
+    {
+      "slug": "acronym",
+      "id": "ex_acronym",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/acronym",
+      "canonical_sha256": "009b8ae28b2224ea3fd4aac7aa3c4ba37c5a303221cf38df4cfb235afc4d3df6",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nConvert a phrase to its acronym.\n\nTechies love their TLA (Three Letter Acronyms)!\n\nHelp generate some jargon by writing a program that converts a long name like Portable Network Graphics to its acronym (PNG).\n\nPunctuation is handled as follows: hyphens are word separators (like whitespace); all other punctuation can be removed from the input.\n\nFor example:\n\n| Input                     | Output |\n| ------------------------- | ------ |\n| As Soon As Possible       | ASAP   |\n| Liquid-crystal display    | LCD    |\n| Thank George It's Friday! | TGIF   |\n"
+    },
+    {
+      "slug": "affine-cipher",
+      "id": "ex_affine_cipher",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/affine-cipher",
+      "canonical_sha256": "b8d5b6ba1b57a02afb9a07de9bbfe71f25fce71fc027819ddb00665bbee59fc4",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCreate an implementation of the affine cipher, an ancient encryption system created in the Middle East.\n\nThe affine cipher is a type of monoalphabetic substitution cipher.\nEach character is mapped to its numeric equivalent, encrypted with a mathematical function and then converted to the letter relating to its new numeric value.\nAlthough all monoalphabetic ciphers are weak, the affine cipher is much stronger than the Atbash cipher, because it has many more keys.\n\n[//]: # \" monoalphabetic as spelled by Merriam-Webster, compare to polyalphabetic \"\n\n## Encryption\n\nThe encryption function is:\n\n```text\nE(x) = (ai + b) mod m\n```\n\nWhere:\n\n- `i` is the letter's index from `0` to the length of the alphabet - 1.\n- `m` is the length of the alphabet.\n  For the Latin alphabet `m` is `26`.\n- `a` and `b` are integers which make up the encryption key.\n\nValues `a` and `m` must be _coprime_ (or, _relatively prime_) for automatic decryption to succeed, i.e., they have number `1` as their only common factor (more information can be found in the [Wikipedia article about coprime integers][coprime-integers]).\nIn case `a` is not coprime to `m`, your program should indicate that this is an error.\nOtherwise it should encrypt or decrypt with the provided key.\n\nFor the purpose of this exercise, digits are valid input but they are not encrypted.\nSpaces and punctuation characters are excluded.\nCiphertext is written out in groups of fixed length separated by space, the traditional group size being `5` letters.\nThis is to make it harder to guess encrypted text based on word boundaries.\n\n## Decryption\n\nThe decryption function is:\n\n```text\nD(y) = (a^-1)(y - b) mod m\n```\n\nWhere:\n\n- `y` is the numeric value of an encrypted letter, i.e., `y = E(x)`\n- it is important to note that `a^-1` is the modular multiplicative inverse (MMI) of `a mod m`\n- the modular multiplicative inverse only exists if `a` and `m` are coprime.\n\nThe MMI of `a` is `x` such that the remainder after dividing `ax` by `m` is `1`:\n\n```text\nax mod m = 1\n```\n\nMore information regarding how to find a Modular Multiplicative Inverse and what it means can be found in the [related Wikipedia article][mmi].\n\n## General Examples\n\n- Encrypting `\"test\"` gives `\"ybty\"` with the key `a = 5`, `b = 7`\n- Decrypting `\"ybty\"` gives `\"test\"` with the key `a = 5`, `b = 7`\n- Decrypting `\"ybty\"` gives `\"lqul\"` with the wrong key `a = 11`, `b = 7`\n- Decrypting `\"kqlfd jzvgy tpaet icdhm rtwly kqlon ubstx\"` gives `\"thequickbrownfoxjumpsoverthelazydog\"` with the key `a = 19`, `b = 13`\n- Encrypting `\"test\"` with the key `a = 18`, `b = 13` is an error because `18` and `26` are not coprime\n\n## Example of finding a Modular Multiplicative Inverse (MMI)\n\nFinding MMI for `a = 15`:\n\n- `(15 * x) mod 26 = 1`\n- `(15 * 7) mod 26 = 1`, ie. `105 mod 26 = 1`\n- `7` is the MMI of `15 mod 26`\n\n[mmi]: https://en.wikipedia.org/wiki/Modular_multiplicative_inverse\n[coprime-integers]: https://en.wikipedia.org/wiki/Coprime_integers\n"
+    },
+    {
+      "slug": "all-your-base",
+      "id": "ex_all_your_base",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/all-your-base",
+      "canonical_sha256": "0c26c0fd4ba9a33fefc5c940c989fffdd9f32952cb139b9df614c78704fee2e7",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "allergies",
+      "id": "ex_allergies",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/allergies",
+      "canonical_sha256": "3d75ba360afde61bb4f46dbee0def899f0527f1f0e6ce9704c3126af2bcf066b",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nGiven a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.\n\nAn allergy test produces a single numeric score which contains the information about all the allergies the person has (that they were tested for).\n\nThe list of items (and their value) that were tested are:\n\n- eggs (1)\n- peanuts (2)\n- shellfish (4)\n- strawberries (8)\n- tomatoes (16)\n- chocolate (32)\n- pollen (64)\n- cats (128)\n\nSo if Tom is allergic to peanuts and chocolate, he gets a score of 34.\n\nNow, given just that score of 34, your program should be able to say:\n\n- Whether Tom is allergic to any one of those allergens listed above.\n- All the allergens Tom is allergic to.\n\nNote: a given score may include allergens **not** listed above (i.e. allergens that score 256, 512, 1024, etc.).\nYour program should ignore those components of the score.\nFor example, if the allergy score is 257, your program should only report the eggs (1) allergy.\n"
+    },
+    {
+      "slug": "alphametics",
+      "id": "ex_alphametics",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/alphametics",
+      "canonical_sha256": "334856909520dd243d36725b57ba78b8c88f51ec5e8a9193eb9713d070926c29",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nGiven an alphametics puzzle, find the correct solution.\n\n[Alphametics][alphametics] is a puzzle where letters in words are replaced with numbers.\n\nFor example `SEND + MORE = MONEY`:\n\n```text\n  S E N D\n  M O R E +\n-----------\nM O N E Y\n```\n\nReplacing these with valid numbers gives:\n\n```text\n  9 5 6 7\n  1 0 8 5 +\n-----------\n1 0 6 5 2\n```\n\nThis is correct because every letter is replaced by a different number and the words, translated into numbers, then make a valid sum.\n\nEach letter must represent a different digit, and the leading digit of a multi-digit number must not be zero.\n\n[alphametics]: https://en.wikipedia.org/wiki/Alphametics\n"
+    },
+    {
+      "slug": "anagram",
+      "id": "ex_anagram",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/anagram",
+      "canonical_sha256": "b2bd108a1da86011bccf1fdc13888542399d397ee9711f0d9b7b43bd1aa18bd3",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "armstrong-numbers",
+      "id": "ex_armstrong_numbers",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/armstrong-numbers",
+      "canonical_sha256": "e8567a19cfaa0cf711fa2a1b2d4ec92b9fcdfddf42d89b969ce32f99fcc7a1fe",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nAn [Armstrong number][armstrong-number] is a number that is the sum of its own digits each raised to the power of the number of digits.\n\nFor example:\n\n- 9 is an Armstrong number, because `9 = 9^1 = 9`\n- 10 is _not_ an Armstrong number, because `10 != 1^2 + 0^2 = 1`\n- 153 is an Armstrong number, because: `153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153`\n- 154 is _not_ an Armstrong number, because: `154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190`\n\nWrite some code to determine whether a number is an Armstrong number.\n\n[armstrong-number]: https://en.wikipedia.org/wiki/Narcissistic_number\n"
+    },
+    {
+      "slug": "atbash-cipher",
+      "id": "ex_atbash_cipher",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/atbash-cipher",
+      "canonical_sha256": "f5e7f43f79968b46b2a786246a1d10c0339e000c28ec4a5868ca4e4aad78481d",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCreate an implementation of the Atbash cipher, an ancient encryption system created in the Middle East.\n\nThe Atbash cipher is a simple substitution cipher that relies on transposing all the letters in the alphabet such that the resulting alphabet is backwards.\nThe first letter is replaced with the last letter, the second with the second-last, and so on.\n\nAn Atbash cipher for the Latin alphabet would be as follows:\n\n```text\nPlain:  abcdefghijklmnopqrstuvwxyz\nCipher: zyxwvutsrqponmlkjihgfedcba\n```\n\nIt is a very weak cipher because it only has one possible key, and it is a simple mono-alphabetic substitution cipher.\nHowever, this may not have been an issue in the cipher's time.\n\nCiphertext is written out in groups of fixed length, the traditional group size being 5 letters, leaving numbers unchanged, and punctuation is excluded.\nThis is to make it harder to guess things based on word boundaries.\nAll text will be encoded as lowercase letters.\n\n## Examples\n\n- Encoding `test` gives `gvhg`\n- Encoding `x123 yes` gives `c123b vh`\n- Decoding `gvhg` gives `test`\n- Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`\n"
+    },
+    {
+      "slug": "baffling-birthdays",
+      "id": "ex_baffling_birthdays",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/baffling-birthdays",
+      "canonical_sha256": "6b44f34ae47f738edc9fba07c29e6ba115848a6eb438b2893e287eea305f546f",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "bank-account",
+      "id": "ex_bank_account",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bank-account",
+      "canonical_sha256": "3aede4ade23e78266e24e33115f49c6dbd8d03a6a862e47449c5bfa03120af2a",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "beer-song",
+      "id": "ex_beer_song",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/beer-song",
+      "canonical_sha256": "4cbf7592251774a71bc12b5bad3495211aa7570927baf513346209264409a664",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nRecite the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.\n\nNote that not all verses are identical.\n\n```text\n99 bottles of beer on the wall, 99 bottles of beer.\nTake one down and pass it around, 98 bottles of beer on the wall.\n\n98 bottles of beer on the wall, 98 bottles of beer.\nTake one down and pass it around, 97 bottles of beer on the wall.\n\n97 bottles of beer on the wall, 97 bottles of beer.\nTake one down and pass it around, 96 bottles of beer on the wall.\n\n96 bottles of beer on the wall, 96 bottles of beer.\nTake one down and pass it around, 95 bottles of beer on the wall.\n\n95 bottles of beer on the wall, 95 bottles of beer.\nTake one down and pass it around, 94 bottles of beer on the wall.\n\n94 bottles of beer on the wall, 94 bottles of beer.\nTake one down and pass it around, 93 bottles of beer on the wall.\n\n93 bottles of beer on the wall, 93 bottles of beer.\nTake one down and pass it around, 92 bottles of beer on the wall.\n\n92 bottles of beer on the wall, 92 bottles of beer.\nTake one down and pass it around, 91 bottles of beer on the wall.\n\n91 bottles of beer on the wall, 91 bottles of beer.\nTake one down and pass it around, 90 bottles of beer on the wall.\n\n90 bottles of beer on the wall, 90 bottles of beer.\nTake one down and pass it around, 89 bottles of beer on the wall.\n\n89 bottles of beer on the wall, 89 bottles of beer.\nTake one down and pass it around, 88 bottles of beer on the wall.\n\n88 bottles of beer on the wall, 88 bottles of beer.\nTake one down and pass it around, 87 bottles of beer on the wall.\n\n87 bottles of beer on the wall, 87 bottles of beer.\nTake one down and pass it around, 86 bottles of beer on the wall.\n\n86 bottles of beer on the wall, 86 bottles of beer.\nTake one down and pass it around, 85 bottles of beer on the wall.\n\n85 bottles of beer on the wall, 85 bottles of beer.\nTake one down and pass it around, 84 bottles of beer on the wall.\n\n84 bottles of beer on the wall, 84 bottles of beer.\nTake one down and pass it around, 83 bottles of beer on the wall.\n\n83 bottles of beer on the wall, 83 bottles of beer.\nTake one down and pass it around, 82 bottles of beer on the wall.\n\n82 bottles of beer on the wall, 82 bottles of beer.\nTake one down and pass it around, 81 bottles of beer on the wall.\n\n81 bottles of beer on the wall, 81 bottles of beer.\nTake one down and pass it around, 80 bottles of beer on the wall.\n\n80 bottles of beer on the wall, 80 bottles of beer.\nTake one down and pass it around, 79 bottles of beer on the wall.\n\n79 bottles of beer on the wall, 79 bottles of beer.\nTake one down and pass it around, 78 bottles of beer on the wall.\n\n78 bottles of beer on the wall, 78 bottles of beer.\nTake one down and pass it around, 77 bottles of beer on the wall.\n\n77 bottles of beer on the wall, 77 bottles of beer.\nTake one down and pass it around, 76 bottles of beer on the wall.\n\n76 bottles of beer on the wall, 76 bottles of beer.\nTake one down and pass it around, 75 bottles of beer on the wall.\n\n75 bottles of beer on the wall, 75 bottles of beer.\nTake one down and pass it around, 74 bottles of beer on the wall.\n\n74 bottles of beer on the wall, 74 bottles of beer.\nTake one down and pass it around, 73 bottles of beer on the wall.\n\n73 bottles of beer on the wall, 73 bottles of beer.\nTake one down and pass it around, 72 bottles of beer on the wall.\n\n72 bottles of beer on the wall, 72 bottles of beer.\nTake one down and pass it around, 71 bottles of beer on the wall.\n\n71 bottles of beer on the wall, 71 bottles of beer.\nTake one down and pass it around, 70 bottles of beer on the wall.\n\n70 bottles of beer on the wall, 70 bottles of beer.\nTake one down and pass it around, 69 bottles of beer on the wall.\n\n69 bottles of beer on the wall, 69 bottles of beer.\nTake one down and pass it around, 68 bottles of beer on the wall.\n\n68 bottles of beer on the wall, 68 bottles of beer.\nTake one down and pass it around, 67 bottles of beer on the wall.\n\n67 bottles of beer on the wall, 67 bottles of beer.\nTake one down and pass it around, 66 bottles of beer on the wall.\n\n66 bottles of beer on the wall, 66 bottles of beer.\nTake one down and pass it around, 65 bottles of beer on the wall.\n\n65 bottles of beer on the wall, 65 bottles of beer.\nTake one down and pass it around, 64 bottles of beer on the wall.\n\n64 bottles of beer on the wall, 64 bottles of beer.\nTake one down and pass it around, 63 bottles of beer on the wall.\n\n63 bottles of beer on the wall, 63 bottles of beer.\nTake one down and pass it around, 62 bottles of beer on the wall.\n\n62 bottles of beer on the wall, 62 bottles of beer.\nTake one down and pass it around, 61 bottles of beer on the wall.\n\n61 bottles of beer on the wall, 61 bottles of beer.\nTake one down and pass it around, 60 bottles of beer on the wall.\n\n60 bottles of beer on the wall, 60 bottles of beer.\nTake one down and pass it around, 59 bottles of beer on the wall.\n\n59 bottles of beer on the wall, 59 bottles of beer.\nTake one down and pass it around, 58 bottles of beer on the wall.\n\n58 bottles of beer on the wall, 58 bottles of beer.\nTake one down and pass it around, 57 bottles of beer on the wall.\n\n57 bottles of beer on the wall, 57 bottles of beer.\nTake one down and pass it around, 56 bottles of beer on the wall.\n\n56 bottles of beer on the wall, 56 bottles of beer.\nTake one down and pass it around, 55 bottles of beer on the wall.\n\n55 bottles of beer on the wall, 55 bottles of beer.\nTake one down and pass it around, 54 bottles of beer on the wall.\n\n54 bottles of beer on the wall, 54 bottles of beer.\nTake one down and pass it around, 53 bottles of beer on the wall.\n\n53 bottles of beer on the wall, 53 bottles of beer.\nTake one down and pass it around, 52 bottles of beer on the wall.\n\n52 bottles of beer on the wall, 52 bottles of beer.\nTake one down and pass it around, 51 bottles of beer on the wall.\n\n51 bottles of beer on the wall, 51 bottles of beer.\nTake one down and pass it around, 50 bottles of beer on the wall.\n\n50 bottles of beer on the wall, 50 bottles of beer.\nTake one down and pass it around, 49 bottles of beer on the wall.\n\n49 bottles of beer on the wall, 49 bottles of beer.\nTake one down and pass it around, 48 bottles of beer on the wall.\n\n48 bottles of beer on the wall, 48 bottles of beer.\nTake one down and pass it around, 47 bottles of beer on the wall.\n\n47 bottles of beer on the wall, 47 bottles of beer.\nTake one down and pass it around, 46 bottles of beer on the wall.\n\n46 bottles of beer on the wall, 46 bottles of beer.\nTake one down and pass it around, 45 bottles of beer on the wall.\n\n45 bottles of beer on the wall, 45 bottles of beer.\nTake one down and pass it around, 44 bottles of beer on the wall.\n\n44 bottles of beer on the wall, 44 bottles of beer.\nTake one down and pass it around, 43 bottles of beer on the wall.\n\n43 bottles of beer on the wall, 43 bottles of beer.\nTake one down and pass it around, 42 bottles of beer on the wall.\n\n42 bottles of beer on the wall, 42 bottles of beer.\nTake one down and pass it around, 41 bottles of beer on the wall.\n\n41 bottles of beer on the wall, 41 bottles of beer.\nTake one down and pass it around, 40 bottles of beer on the wall.\n\n40 bottles of beer on the wall, 40 bottles of beer.\nTake one down and pass it around, 39 bottles of beer on the wall.\n\n39 bottles of beer on the wall, 39 bottles of beer.\nTake one down and pass it around, 38 bottles of beer on the wall.\n\n38 bottles of beer on the wall, 38 bottles of beer.\nTake one down and pass it around, 37 bottles of beer on the wall.\n\n37 bottles of beer on the wall, 37 bottles of beer.\nTake one down and pass it around, 36 bottles of beer on the wall.\n\n36 bottles of beer on the wall, 36 bottles of beer.\nTake one down and pass it around, 35 bottles of beer on the wall.\n\n35 bottles of beer on the wall, 35 bottles of beer.\nTake one down and pass it around, 34 bottles of beer on the wall.\n\n34 bottles of beer on the wall, 34 bottles of beer.\nTake one down and pass it around, 33 bottles of beer on the wall.\n\n33 bottles of beer on the wall, 33 bottles of beer.\nTake one down and pass it around, 32 bottles of beer on the wall.\n\n32 bottles of beer on the wall, 32 bottles of beer.\nTake one down and pass it around, 31 bottles of beer on the wall.\n\n31 bottles of beer on the wall, 31 bottles of beer.\nTake one down and pass it around, 30 bottles of beer on the wall.\n\n30 bottles of beer on the wall, 30 bottles of beer.\nTake one down and pass it around, 29 bottles of beer on the wall.\n\n29 bottles of beer on the wall, 29 bottles of beer.\nTake one down and pass it around, 28 bottles of beer on the wall.\n\n28 bottles of beer on the wall, 28 bottles of beer.\nTake one down and pass it around, 27 bottles of beer on the wall.\n\n27 bottles of beer on the wall, 27 bottles of beer.\nTake one down and pass it around, 26 bottles of beer on the wall.\n\n26 bottles of beer on the wall, 26 bottles of beer.\nTake one down and pass it around, 25 bottles of beer on the wall.\n\n25 bottles of beer on the wall, 25 bottles of beer.\nTake one down and pass it around, 24 bottles of beer on the wall.\n\n24 bottles of beer on the wall, 24 bottles of beer.\nTake one down and pass it around, 23 bottles of beer on the wall.\n\n23 bottles of beer on the wall, 23 bottles of beer.\nTake one down and pass it around, 22 bottles of beer on the wall.\n\n22 bottles of beer on the wall, 22 bottles of beer.\nTake one down and pass it around, 21 bottles of beer on the wall.\n\n21 bottles of beer on the wall, 21 bottles of beer.\nTake one down and pass it around, 20 bottles of beer on the wall.\n\n20 bottles of beer on the wall, 20 bottles of beer.\nTake one down and pass it around, 19 bottles of beer on the wall.\n\n19 bottles of beer on the wall, 19 bottles of beer.\nTake one down and pass it around, 18 bottles of beer on the wall.\n\n18 bottles of beer on the wall, 18 bottles of beer.\nTake one down and pass it around, 17 bottles of beer on the wall.\n\n17 bottles of beer on the wall, 17 bottles of beer.\nTake one down and pass it around, 16 bottles of beer on the wall.\n\n16 bottles of beer on the wall, 16 bottles of beer.\nTake one down and pass it around, 15 bottles of beer on the wall.\n\n15 bottles of beer on the wall, 15 bottles of beer.\nTake one down and pass it around, 14 bottles of beer on the wall.\n\n14 bottles of beer on the wall, 14 bottles of beer.\nTake one down and pass it around, 13 bottles of beer on the wall.\n\n13 bottles of beer on the wall, 13 bottles of beer.\nTake one down and pass it around, 12 bottles of beer on the wall.\n\n12 bottles of beer on the wall, 12 bottles of beer.\nTake one down and pass it around, 11 bottles of beer on the wall.\n\n11 bottles of beer on the wall, 11 bottles of beer.\nTake one down and pass it around, 10 bottles of beer on the wall.\n\n10 bottles of beer on the wall, 10 bottles of beer.\nTake one down and pass it around, 9 bottles of beer on the wall.\n\n9 bottles of beer on the wall, 9 bottles of beer.\nTake one down and pass it around, 8 bottles of beer on the wall.\n\n8 bottles of beer on the wall, 8 bottles of beer.\nTake one down and pass it around, 7 bottles of beer on the wall.\n\n7 bottles of beer on the wall, 7 bottles of beer.\nTake one down and pass it around, 6 bottles of beer on the wall.\n\n6 bottles of beer on the wall, 6 bottles of beer.\nTake one down and pass it around, 5 bottles of beer on the wall.\n\n5 bottles of beer on the wall, 5 bottles of beer.\nTake one down and pass it around, 4 bottles of beer on the wall.\n\n4 bottles of beer on the wall, 4 bottles of beer.\nTake one down and pass it around, 3 bottles of beer on the wall.\n\n3 bottles of beer on the wall, 3 bottles of beer.\nTake one down and pass it around, 2 bottles of beer on the wall.\n\n2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and pass it around, 1 bottle of beer on the wall.\n\n1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall.\n\nNo more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall.\n```\n"
+    },
+    {
+      "slug": "binary",
+      "id": "ex_binary",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary",
+      "canonical_sha256": "52b96f7ba20ccc028ff06ba8b909d87c488820b1228e3ec51aeec324c98cabf8",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nConvert a binary number, represented as a string (e.g. '101010'), to its decimal equivalent using first principles.\n\nImplement binary to decimal conversion.\nGiven a binary input string, your program should produce a decimal output.\nThe program should handle invalid inputs.\n\n## Note\n\n- Implement the conversion yourself.\n  Do not use something else to perform the conversion for you.\n\n## About Binary (Base-2)\n\nDecimal is a base-10 system.\n\nA number 23 in base 10 notation can be understood as a linear combination of powers of 10:\n\n- The rightmost digit gets multiplied by 10^0 = 1\n- The next number gets multiplied by 10^1 = 10\n- ...\n- The nth number gets multiplied by 10^_(n-1)_.\n- All these values are summed.\n\nSo: `23 => 2*10^1 + 3*10^0 => 2*10 + 3*1 = 23 base 10`\n\nBinary is similar, but uses powers of 2 rather than powers of 10.\n\nSo: `101 => 1*2^2 + 0*2^1 + 1*2^0 => 1*4 + 0*2 + 1*1 => 4 + 1 => 5 base 10`.\n"
+    },
+    {
+      "slug": "binary-search",
+      "id": "ex_binary_search",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search",
+      "canonical_sha256": "d224e68b43512d8d394bb5f9e2f209ef6008e9a0abc59ee61a329c4ab2a7f73d",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "binary-search-tree",
+      "id": "ex_binary_search_tree",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search-tree",
+      "canonical_sha256": "768ecb0aac4cb435d7b7115619696f9a6386710da9616fab1f4dc259c84b53b7",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nInsert and search for numbers in a binary tree.\n\nWhen we need to represent sorted data, an array does not make a good data structure.\n\nSay we have the array `[1, 3, 4, 5]`, and we add 2 to it so it becomes `[1, 3, 4, 5, 2]`.\nNow we must sort the entire array again!\nWe can improve on this by realizing that we only need to make space for the new item `[1, nil, 3, 4, 5]`, and then adding the item in the space we added.\nBut this still requires us to shift many elements down by one.\n\nBinary Search Trees, however, can operate on sorted data much more efficiently.\n\nA binary search tree consists of a series of connected nodes.\nEach node contains a piece of data (e.g. the number 3), a variable named `left`, and a variable named `right`.\nThe `left` and `right` variables point at `nil`, or other nodes.\nSince these other nodes in turn have other nodes beneath them, we say that the left and right variables are pointing at subtrees.\nAll data in the left subtree is less than or equal to the current node's data, and all data in the right subtree is greater than the current node's data.\n\nFor example, if we had a node containing the data 4, and we added the data 2, our tree would look like this:\n\n![A graph with root node 4 and a single child node 2.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2.svg)\n\n```text\n      4\n     /\n    2\n```\n\nIf we then added 6, it would look like this:\n\n![A graph with root node 4 and two child nodes 2 and 6.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6.svg)\n\n```text\n      4\n     / \\\n    2   6\n```\n\nIf we then added 3, it would look like this\n\n![A graph with root node 4, two child nodes 2 and 6, and a grandchild node 3.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6-3.svg)\n\n```text\n       4\n     /   \\\n    2     6\n     \\\n      3\n```\n\nAnd if we then added 1, 5, and 7, it would look like this\n\n![A graph with root node 4, two child nodes 2 and 6, and four grandchild nodes 1, 3, 5 and 7.](https://assets.exercism.org/images/exercises/binary-search-tree/tree-4-2-6-1-3-5-7.svg)\n\n```text\n          4\n        /   \\\n       /     \\\n      2       6\n     / \\     / \\\n    1   3   5   7\n```\n\n## Credit\n\nThe images were created by [habere-et-dispertire][habere-et-dispertire] using [PGF/TikZ][pgf-tikz] by Till Tantau.\n\n[habere-et-dispertire]: https://exercism.org/profiles/habere-et-dispertire\n[pgf-tikz]: https://en.wikipedia.org/wiki/PGF/TikZ\n"
+    },
+    {
+      "slug": "bob",
+      "id": "ex_bob",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bob",
+      "canonical_sha256": "02b79f535d7613c6faba88cb909462892b101dc799b2df68dd9ffb5ec1d1284d",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "book-store",
+      "id": "ex_book_store",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/book-store",
+      "canonical_sha256": "f75b045ea36e6a52f113a92548dfccdd263f55c4d8bbb56bb92849e8697130db",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nTo try and encourage more sales of different books from a popular 5 book series, a bookshop has decided to offer discounts on multiple book purchases.\n\nOne copy of any of the five books costs $8.\n\nIf, however, you buy two different books, you get a 5% discount on those two books.\n\nIf you buy 3 different books, you get a 10% discount.\n\nIf you buy 4 different books, you get a 20% discount.\n\nIf you buy all 5, you get a 25% discount.\n\nNote that if you buy four books, of which 3 are different titles, you get a 10% discount on the 3 that form part of a set, but the fourth book still costs $8.\n\nYour mission is to write code to calculate the price of any conceivable shopping basket (containing only books of the same series), giving as big a discount as possible.\n\nFor example, how much does this basket of books cost?\n\n- 2 copies of the first book\n- 2 copies of the second book\n- 2 copies of the third book\n- 1 copy of the fourth book\n- 1 copy of the fifth book\n\nOne way of grouping these 8 books is:\n\n- 1 group of 5 (1st, 2nd,3rd, 4th, 5th)\n- 1 group of 3 (1st, 2nd, 3rd)\n\nThis would give a total of:\n\n- 5 books at a 25% discount\n- 3 books at a 10% discount\n\nResulting in:\n\n- 5 \u00d7 (100% - 25%) \u00d7 $8 = 5 \u00d7 $6.00 = $30.00, plus\n- 3 \u00d7 (100% - 10%) \u00d7 $8 = 3 \u00d7 $7.20 = $21.60\n\nWhich equals $51.60.\n\nHowever, a different way to group these 8 books is:\n\n- 1 group of 4 books (1st, 2nd, 3rd, 4th)\n- 1 group of 4 books (1st, 2nd, 3rd, 5th)\n\nThis would give a total of:\n\n- 4 books at a 20% discount\n- 4 books at a 20% discount\n\nResulting in:\n\n- 4 \u00d7 (100% - 20%) \u00d7 $8 = 4 \u00d7 $6.40 = $25.60, plus\n- 4 \u00d7 (100% - 20%) \u00d7 $8 = 4 \u00d7 $6.40 = $25.60\n\nWhich equals $51.20.\n\nAnd $51.20 is the price with the biggest discount.\n"
+    },
+    {
+      "slug": "bottle-song",
+      "id": "ex_bottle_song",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bottle-song",
+      "canonical_sha256": "e5c393399421ccaf92ba3eb67463b23a1c811e394ea305819ba848a9bfe5ea1c",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nRecite the lyrics to that popular children's repetitive song: Ten Green Bottles.\n\nNote that not all verses are identical.\n\n```text\nTen green bottles hanging on the wall,\nTen green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be nine green bottles hanging on the wall.\n\nNine green bottles hanging on the wall,\nNine green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be eight green bottles hanging on the wall.\n\nEight green bottles hanging on the wall,\nEight green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be seven green bottles hanging on the wall.\n\nSeven green bottles hanging on the wall,\nSeven green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be six green bottles hanging on the wall.\n\nSix green bottles hanging on the wall,\nSix green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be five green bottles hanging on the wall.\n\nFive green bottles hanging on the wall,\nFive green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be four green bottles hanging on the wall.\n\nFour green bottles hanging on the wall,\nFour green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be three green bottles hanging on the wall.\n\nThree green bottles hanging on the wall,\nThree green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be two green bottles hanging on the wall.\n\nTwo green bottles hanging on the wall,\nTwo green bottles hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be one green bottle hanging on the wall.\n\nOne green bottle hanging on the wall,\nOne green bottle hanging on the wall,\nAnd if one green bottle should accidentally fall,\nThere'll be no green bottles hanging on the wall.\n```\n"
+    },
+    {
+      "slug": "bowling",
+      "id": "ex_bowling",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bowling",
+      "canonical_sha256": "3470ab86e0e5089dd442e915f56b42acfad022e7258b904f3d1642b67a21c71a",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nScore a bowling game.\n\nBowling is a game where players roll a heavy ball to knock down pins arranged in a triangle.\nWrite code to keep track of the score of a game of bowling.\n\n## Scoring Bowling\n\nThe game consists of 10 frames.\nA frame is composed of one or two ball throws with 10 pins standing at frame initialization.\nThere are three cases for the tabulation of a frame.\n\n- An open frame is where a score of less than 10 is recorded for the frame.\n  In this case the score for the frame is the number of pins knocked down.\n\n- A spare is where all ten pins are knocked down by the second throw.\n  The total value of a spare is 10 plus the number of pins knocked down in their next throw.\n\n- A strike is where all ten pins are knocked down by the first throw.\n  The total value of a strike is 10 plus the number of pins knocked down in the next two throws.\n  If a strike is immediately followed by a second strike, then the value of the first strike cannot be determined until the ball is thrown one more time.\n\nHere is a three frame example:\n\n|  Frame 1   |  Frame 2   |     Frame 3      |\n| :--------: | :--------: | :--------------: |\n| X (strike) | 5/ (spare) | 9 0 (open frame) |\n\nFrame 1 is (10 + 5 + 5) = 20\n\nFrame 2 is (5 + 5 + 9) = 19\n\nFrame 3 is (9 + 0) = 9\n\nThis means the current running total is 48.\n\nThe tenth frame in the game is a special case.\nIf someone throws a spare or a strike then they get one or two fill balls respectively.\nFill balls exist to calculate the total of the 10th frame.\nScoring a strike or spare on the fill ball does not give the player more fill balls.\nThe total value of the 10th frame is the total number of pins knocked down.\n\nFor a tenth frame of X1/ (strike and a spare), the total value is 20.\n\nFor a tenth frame of XXX (three strikes), the total value is 30.\n\n## Requirements\n\nWrite code to keep track of the score of a game of bowling.\nIt should support two operations:\n\n- `roll(pins : int)` is called each time the player rolls a ball.\n  The argument is the number of pins knocked down.\n- `score() : int` is called only at the very end of the game.\n  It returns the total score for that game.\n"
+    },
+    {
+      "slug": "camicia",
+      "id": "ex_camicia",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/camicia",
+      "canonical_sha256": "9386512c91afc7370e17b49e1980d6a0a2d05ca07144ebf4d5ce364f4887f6e4",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "change",
+      "id": "ex_change",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/change",
+      "canonical_sha256": "a60728f642b463522c1253374ef487ebd999b378a08adfa88a9d8b2ae98b3229",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "circular-buffer",
+      "id": "ex_circular_buffer",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/circular-buffer",
+      "canonical_sha256": "51cb2d53e8c34ea4c505de8441d4aa37e469246f830598ec89b5748b841a47d6",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nA circular buffer, cyclic buffer or ring buffer is a data structure that uses a single, fixed-size buffer as if it were connected end-to-end.\n\nA circular buffer first starts empty and of some predefined length.\nFor example, this is a 7-element buffer:\n\n```text\n[ ][ ][ ][ ][ ][ ][ ]\n```\n\nAssume that a 1 is written into the middle of the buffer (exact starting location does not matter in a circular buffer):\n\n```text\n[ ][ ][ ][1][ ][ ][ ]\n```\n\nThen assume that two more elements are added \u2014 2 & 3 \u2014 which get appended after the 1:\n\n```text\n[ ][ ][ ][1][2][3][ ]\n```\n\nIf two elements are then removed from the buffer, the oldest values inside the buffer are removed.\nThe two elements removed, in this case, are 1 & 2, leaving the buffer with just a 3:\n\n```text\n[ ][ ][ ][ ][ ][3][ ]\n```\n\nIf the buffer has 7 elements then it is completely full:\n\n```text\n[5][6][7][8][9][3][4]\n```\n\nWhen the buffer is full an error will be raised, alerting the client that further writes are blocked until a slot becomes free.\n\nWhen the buffer is full, the client can opt to overwrite the oldest data with a forced write.\nIn this case, two more elements \u2014 A & B \u2014 are added and they overwrite the 3 & 4:\n\n```text\n[5][6][7][8][9][A][B]\n```\n\n3 & 4 have been replaced by A & B making 5 now the oldest data in the buffer.\nFinally, if two elements are removed then what would be returned is 5 & 6 yielding the buffer:\n\n```text\n[ ][ ][7][8][9][A][B]\n```\n\nBecause there is space available, if the client again uses overwrite to store C & D then the space where 5 & 6 were stored previously will be used not the location of 7 & 8.\n7 is still the oldest element and the buffer is once again full.\n\n```text\n[C][D][7][8][9][A][B]\n```\n"
+    },
+    {
+      "slug": "clock",
+      "id": "ex_clock",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/clock",
+      "canonical_sha256": "1ece368b234d83e44b145fad15fa6fddacb93c6091d64fad21490467f0f75a13",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nImplement a clock that handles times without dates.\n\nYou should be able to add and subtract minutes to it.\n\nTwo clocks that represent the same time should be equal to each other.\n"
+    },
+    {
+      "slug": "collatz-conjecture",
+      "id": "ex_collatz_conjecture",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/collatz-conjecture",
+      "canonical_sha256": "eeeb1924bd07e698cf43912ae468e243aa3aed41b47bf05f4aa8357def138661",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "complex-numbers",
+      "id": "ex_complex_numbers",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/complex-numbers",
+      "canonical_sha256": "98a5c9fd455ea5df27291117a36007ef46e03f2115fa080fa69a5b7d22626b8f",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nA **complex number** is expressed in the form `z = a + b * i`, where:\n\n- `a` is the **real part** (a real number),\n\n- `b` is the **imaginary part** (also a real number), and\n\n- `i` is the **imaginary unit** satisfying `i^2 = -1`.\n\n## Operations on Complex Numbers\n\n### Conjugate\n\nThe conjugate of the complex number `z = a + b * i` is given by:\n\n```text\nzc = a - b * i\n```\n\n### Absolute Value\n\nThe absolute value (or modulus) of `z` is defined as:\n\n```text\n|z| = sqrt(a^2 + b^2)\n```\n\nThe square of the absolute value is computed as the product of `z` and its conjugate `zc`:\n\n```text\n|z|^2 = z * zc = a^2 + b^2\n```\n\n### Addition\n\nThe sum of two complex numbers `z1 = a + b * i` and `z2 = c + d * i` is computed by adding their real and imaginary parts separately:\n\n```text\nz1 + z2 = (a + b * i) + (c + d * i)\n        = (a + c) + (b + d) * i\n```\n\n### Subtraction\n\nThe difference of two complex numbers is obtained by subtracting their respective parts:\n\n```text\nz1 - z2 = (a + b * i) - (c + d * i)\n        = (a - c) + (b - d) * i\n```\n\n### Multiplication\n\nThe product of two complex numbers is defined as:\n\n```text\nz1 * z2 = (a + b * i) * (c + d * i)\n        = (a * c - b * d) + (b * c + a * d) * i\n```\n\n### Reciprocal\n\nThe reciprocal of a non-zero complex number is given by:\n\n```text\n1 / z = 1 / (a + b * i)\n      = a / (a^2 + b^2) - b / (a^2 + b^2) * i\n```\n\n### Division\n\nThe division of one complex number by another is given by:\n\n```text\nz1 / z2 = z1 * (1 / z2)\n        = (a + b * i) / (c + d * i)\n        = (a * c + b * d) / (c^2 + d^2) + (b * c - a * d) / (c^2 + d^2) * i\n```\n\n### Exponentiation\n\nRaising _e_ (the base of the natural logarithm) to a complex exponent can be expressed using Euler's formula:\n\n```text\ne^(a + b * i) = e^a * e^(b * i)\n              = e^a * (cos(b) + i * sin(b))\n```\n\n## Implementation Requirements\n\nGiven that you should not use built-in support for complex numbers, implement the following operations:\n\n- **addition** of two complex numbers\n- **subtraction** of two complex numbers\n- **multiplication** of two complex numbers\n- **division** of two complex numbers\n- **conjugate** of a complex number\n- **absolute value** of a complex number\n- **exponentiation** of _e_ (the base of the natural logarithm) to a complex number\n"
+    },
+    {
+      "slug": "connect",
+      "id": "ex_connect",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/connect",
+      "canonical_sha256": "c436979204121707fab9ed8bf547c4064508d07ceea8043b37200c800fab8e84",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCompute the result for a game of Hex / Polygon.\n\nThe abstract boardgame known as [Hex][hex] / Polygon / CON-TAC-TIX is quite simple in rules, though complex in practice.\nTwo players place stones on a parallelogram with hexagonal fields.\nThe player to connect his/her stones to the opposite side first wins.\nThe four sides of the parallelogram are divided between the two players (i.e. one player gets assigned a side and the side directly opposite it and the other player gets assigned the two other sides).\n\nYour goal is to build a program that given a simple representation of a board computes the winner (or lack thereof).\nNote that all games need not be \"fair\".\n(For example, players may have mismatched piece counts or the game's board might have a different width and height.)\n\nThe boards look like this:\n\n```text\n. O . X .\n . X X O .\n  O O O X .\n   . X O X O\n    X O O O X\n```\n\n\"Player `O`\" plays from top to bottom, \"Player `X`\" plays from left to right.\nIn the above example `O` has made a connection from left to right but nobody has won since `O` didn't connect top and bottom.\n\n[hex]: https://en.wikipedia.org/wiki/Hex_%28board_game%29\n"
+    },
+    {
+      "slug": "crypto-square",
+      "id": "ex_crypto_square",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/crypto-square",
+      "canonical_sha256": "7585930498912b220b20df6bb405c35b2edd273cb644e3dbf88d6a0cacb71e17",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nImplement the classic method for composing secret messages called a square code.\n\nGiven an English text, output the encoded version of that text.\n\nFirst, the input is normalized: the spaces and punctuation are removed from the English text and the message is down-cased.\n\nThen, the normalized characters are broken into rows.\nThese rows can be regarded as forming a rectangle when printed with intervening newlines.\n\nFor example, the sentence\n\n```text\n\"If man was meant to stay on the ground, god would have given us roots.\"\n```\n\nis normalized to:\n\n```text\n\"ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots\"\n```\n\nThe plaintext should be organized into a rectangle as square as possible.\nThe size of the rectangle should be decided by the length of the message.\n\nIf `c` is the number of columns and `r` is the number of rows, then for the rectangle `r` x `c` find the smallest possible integer `c` such that:\n\n- `r * c >= length of message`,\n- and `c >= r`,\n- and `c - r <= 1`.\n\nOur normalized text is 54 characters long, dictating a rectangle with `c = 8` and `r = 7`:\n\n```text\n\"ifmanwas\"\n\"meanttos\"\n\"tayonthe\"\n\"groundgo\"\n\"dwouldha\"\n\"vegivenu\"\n\"sroots  \"\n```\n\nThe coded message is obtained by reading down the columns going left to right.\n\nThe message above is coded as:\n\n```text\n\"imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau\"\n```\n\nOutput the encoded text in chunks that fill perfect rectangles `(r X c)`, with `c` chunks of `r` length, separated by spaces.\nFor phrases that are `n` characters short of the perfect rectangle, pad each of the last `n` chunks with a single trailing space.\n\n```text\n\"imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau \"\n```\n\nNotice that were we to stack these, we could visually decode the ciphertext back in to the original message:\n\n```text\n\"imtgdvs\"\n\"fearwer\"\n\"mayoogo\"\n\"anouuio\"\n\"ntnnlvt\"\n\"wttddes\"\n\"aohghn \"\n\"sseoau \"\n```\n"
+    },
+    {
+      "slug": "custom-set",
+      "id": "ex_custom_set",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/custom-set",
+      "canonical_sha256": "2cffe8f28cedd4f5e73f16506dd7f9b4b8ff5520e04d42fc70d53efaf6b4a34c",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCreate a custom set type.\n\nSometimes it is necessary to define a custom data structure of some type, like a set.\nIn this exercise you will define your own set.\nHow it works internally doesn't matter, as long as it behaves like a set of unique elements.\n"
+    },
+    {
+      "slug": "darts",
+      "id": "ex_darts",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/darts",
+      "canonical_sha256": "bc815b29fafe311db9de8bc752ec42045bb10c081b6082ded22744ccfbb031c9",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCalculate the points scored in a single toss of a Darts game.\n\n[Darts][darts] is a game where players throw darts at a [target][darts-target].\n\nIn our particular instance of the game, the target rewards 4 different amounts of points, depending on where the dart lands:\n\n![Our dart scoreboard with values from a complete miss to a bullseye](https://assets.exercism.org/images/exercises/darts/darts-scoreboard.svg)\n\n- If the dart lands outside the target, player earns no points (0 points).\n- If the dart lands in the outer circle of the target, player earns 1 point.\n- If the dart lands in the middle circle of the target, player earns 5 points.\n- If the dart lands in the inner circle of the target, player earns 10 points.\n\nThe outer circle has a radius of 10 units (this is equivalent to the total radius for the entire target), the middle circle a radius of 5 units, and the inner circle a radius of 1.\nOf course, they are all centered at the same point \u2014 that is, the circles are [concentric][] defined by the coordinates (0, 0).\n\nGiven a point in the target (defined by its [Cartesian coordinates][cartesian-coordinates] `x` and `y`, where `x` and `y` are [real][real-numbers]), calculate the correct score earned by a dart landing at that point.\n\n## Credit\n\nThe scoreboard image was created by [habere-et-dispertire][habere-et-dispertire] using [Inkscape][inkscape].\n\n[darts]: https://en.wikipedia.org/wiki/Darts\n[darts-target]: https://en.wikipedia.org/wiki/Darts#/media/File:Darts_in_a_dartboard.jpg\n[concentric]: https://mathworld.wolfram.com/ConcentricCircles.html\n[cartesian-coordinates]: https://www.mathsisfun.com/data/cartesian-coordinates.html\n[real-numbers]: https://www.mathsisfun.com/numbers/real-numbers.html\n[habere-et-dispertire]: https://exercism.org/profiles/habere-et-dispertire\n[inkscape]: https://en.wikipedia.org/wiki/Inkscape\n"
+    },
+    {
+      "slug": "diamond",
+      "id": "ex_diamond",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diamond",
+      "canonical_sha256": "463426cdd6166e96518fd3525cf56818fa978b3c4b6497f8ca7f94a04423d73d",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nThe diamond kata takes as its input a letter, and outputs it in a diamond shape.\nGiven a letter, it prints a diamond starting with 'A', with the supplied letter at the widest point.\n\n## Requirements\n\n- The first row contains one 'A'.\n- The last row contains one 'A'.\n- All rows, except the first and last, have exactly two identical letters.\n- All rows have as many trailing spaces as leading spaces. (This might be 0).\n- The diamond is horizontally symmetric.\n- The diamond is vertically symmetric.\n- The diamond has a square shape (width equals height).\n- The letters form a diamond shape.\n- The top half has the letters in ascending order.\n- The bottom half has the letters in descending order.\n- The four corners (containing the spaces) are triangles.\n\n## Examples\n\nIn the following examples, spaces are indicated by `\u00b7` characters.\n\nDiamond for letter 'A':\n\n```text\nA\n```\n\nDiamond for letter 'C':\n\n```text\n\u00b7\u00b7A\u00b7\u00b7\n\u00b7B\u00b7B\u00b7\nC\u00b7\u00b7\u00b7C\n\u00b7B\u00b7B\u00b7\n\u00b7\u00b7A\u00b7\u00b7\n```\n\nDiamond for letter 'E':\n\n```text\n\u00b7\u00b7\u00b7\u00b7A\u00b7\u00b7\u00b7\u00b7\n\u00b7\u00b7\u00b7B\u00b7B\u00b7\u00b7\u00b7\n\u00b7\u00b7C\u00b7\u00b7\u00b7C\u00b7\u00b7\n\u00b7D\u00b7\u00b7\u00b7\u00b7\u00b7D\u00b7\nE\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7\u00b7E\n\u00b7D\u00b7\u00b7\u00b7\u00b7\u00b7D\u00b7\n\u00b7\u00b7C\u00b7\u00b7\u00b7C\u00b7\u00b7\n\u00b7\u00b7\u00b7B\u00b7B\u00b7\u00b7\u00b7\n\u00b7\u00b7\u00b7\u00b7A\u00b7\u00b7\u00b7\u00b7\n```\n"
+    },
+    {
+      "slug": "difference-of-squares",
+      "id": "ex_difference_of_squares",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/difference-of-squares",
+      "canonical_sha256": "d097c48a4783565372af2a6c67c84ef86f5494d13393e6fd7f42f569f099f40a",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nFind the difference between the square of the sum and the sum of the squares of the first N natural numbers.\n\nThe square of the sum of the first ten natural numbers is\n(1 + 2 + ... + 10)\u00b2 = 55\u00b2 = 3025.\n\nThe sum of the squares of the first ten natural numbers is\n1\u00b2 + 2\u00b2 + ... + 10\u00b2 = 385.\n\nHence the difference between the square of the sum of the first ten natural numbers and the sum of the squares of the first ten natural numbers is 3025 - 385 = 2640.\n\nYou are not expected to discover an efficient solution to this yourself from first principles; research is allowed, indeed, encouraged.\nFinding the best algorithm for the problem is a key skill in software engineering.\n"
+    },
+    {
+      "slug": "diffie-hellman",
+      "id": "ex_diffie_hellman",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diffie-hellman",
+      "canonical_sha256": "f7f31347af8edbe5882acba74d7db349310da7cdd8b1f2cbe70521e5620a70b2",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nDiffie-Hellman key exchange.\n\nAlice and Bob use Diffie-Hellman key exchange to share secrets.\nThey start with prime numbers, pick private keys, generate and share public keys, and then generate a shared secret key.\n\n## Step 0\n\nThe test program supplies prime numbers p and g.\n\n## Step 1\n\nAlice picks a private key, a, greater than 1 and less than p.\nBob does the same to pick a private key b.\n\n## Step 2\n\nAlice calculates a public key A.\n\n    A = g\u1d43 mod p\n\nUsing the same p and g, Bob similarly calculates a public key B from his private key b.\n\n## Step 3\n\nAlice and Bob exchange public keys.\nAlice calculates secret key s.\n\n    s = B\u1d43 mod p\n\nBob calculates\n\n    s = A\u1d47 mod p\n\nThe calculations produce the same result!\nAlice and Bob now share secret s.\n"
+    },
+    {
+      "slug": "dnd-character",
+      "id": "ex_dnd_character",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dnd-character",
+      "canonical_sha256": "0831484983f9736b29b8071dde5f69e263fa4509950d0dc9ee3f35ae1094e13c",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "dominoes",
+      "id": "ex_dominoes",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dominoes",
+      "canonical_sha256": "b7cc1433c8bd9a3fecc7dba6079425e64f0e4cd4f9906dd8ec222b20056def64",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "dot-dsl",
+      "id": "ex_dot_dsl",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dot-dsl",
+      "canonical_sha256": "0597d83b99c7fee7c7f810b3ad66b753591bfa0205b521a9e3649956f4e58b66",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nA [Domain Specific Language (DSL)][dsl] is a small language optimized for a specific domain.\nSince a DSL is targeted, it can greatly impact productivity/understanding by allowing the writer to declare _what_ they want rather than _how_.\n\nOne problem area where they are applied are complex customizations/configurations.\n\nFor example the [DOT language][dot-language] allows you to write a textual description of a graph which is then transformed into a picture by one of the [Graphviz][graphviz] tools (such as `dot`).\nA simple graph looks like this:\n\n    graph {\n        graph [bgcolor=\"yellow\"]\n        a [color=\"red\"]\n        b [color=\"blue\"]\n        a -- b [color=\"green\"]\n    }\n\nPutting this in a file `example.dot` and running `dot example.dot -T png -o example.png` creates an image `example.png` with red and blue circle connected by a green line on a yellow background.\n\nWrite a Domain Specific Language similar to the Graphviz dot language.\n\nOur DSL is similar to the Graphviz dot language in that our DSL will be used to create graph data structures.\nHowever, unlike the DOT Language, our DSL will be an internal DSL for use only in our language.\n\n[Learn more about the difference between internal and external DSLs][fowler-dsl].\n\n[dsl]: https://en.wikipedia.org/wiki/Domain-specific_language\n[dot-language]: https://en.wikipedia.org/wiki/DOT_(graph_description_language)\n[graphviz]: https://graphviz.org/\n[fowler-dsl]: https://martinfowler.com/bliki/DomainSpecificLanguage.html\n"
+    },
+    {
+      "slug": "eliuds-eggs",
+      "id": "ex_eliuds_eggs",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/eliuds-eggs",
+      "canonical_sha256": "77272d0886522931b5aa3481ff256d6d50671c9e861ec63ca92bab30920a56cd",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "etl",
+      "id": "ex_etl",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/etl",
+      "canonical_sha256": "293bc1cfb4ad2b9c75a50359520c177c473b307993cf3e1d69fc7473f4396d47",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "flatten-array",
+      "id": "ex_flatten_array",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flatten-array",
+      "canonical_sha256": "fa6c236333d546ed304e9c93d9b8947b2cdee162248be2393ef118c1b6533316",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "flower-field",
+      "id": "ex_flower_field",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flower-field",
+      "canonical_sha256": "f29b89a783b6f3e16a0e4e69d0362fb81c95ac8f0ea6af9c7b0db17ac2a45695",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "food-chain",
+      "id": "ex_food_chain",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/food-chain",
+      "canonical_sha256": "8fd16b2a7f20e4d055dc63311709fcf1c8e17f4bd6bec207fe29e364961d5d1f",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nGenerate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.\n\nWhile you could copy/paste the lyrics, or read them from a file, this problem is much more interesting if you approach it algorithmically.\n\nThis is a [cumulative song][cumulative-song] of unknown origin.\n\nThis is one of many common variants.\n\n```text\nI know an old lady who swallowed a fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a bird.\nHow absurd to swallow a bird!\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a cat.\nImagine that, to swallow a cat!\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a dog.\nWhat a hog, to swallow a dog!\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a goat.\nJust opened her throat and swallowed a goat!\nShe swallowed the goat to catch the dog.\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a cow.\nI don't know how she swallowed a cow!\nShe swallowed the cow to catch the goat.\nShe swallowed the goat to catch the dog.\nShe swallowed the dog to catch the cat.\nShe swallowed the cat to catch the bird.\nShe swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\nShe swallowed the spider to catch the fly.\nI don't know why she swallowed the fly. Perhaps she'll die.\n\nI know an old lady who swallowed a horse.\nShe's dead, of course!\n```\n\n[cumulative-song]: https://en.wikipedia.org/wiki/Cumulative_song\n"
+    },
+    {
+      "slug": "forth",
+      "id": "ex_forth",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/forth",
+      "canonical_sha256": "6578301f6345b328b01292fef2925662d0d3c2f946e447dac969c031a089b176",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nImplement an evaluator for a very simple subset of Forth.\n\n[Forth][forth]\nis a stack-based programming language.\nImplement a very basic evaluator for a small subset of Forth.\n\nYour evaluator has to support the following words:\n\n- `+`, `-`, `*`, `/` (integer arithmetic)\n- `DUP`, `DROP`, `SWAP`, `OVER` (stack manipulation)\n\nYour evaluator also has to support defining new words using the customary syntax: `: word-name definition ;`.\n\nTo keep things simple the only data type you need to support is signed integers of at least 16 bits size.\n\nYou should use the following rules for the syntax: a number is a sequence of one or more (ASCII) digits, a word is a sequence of one or more letters, digits, symbols or punctuation that is not a number.\n(Forth probably uses slightly different rules, but this is close enough.)\n\nWords are case-insensitive.\n\n[forth]: https://en.wikipedia.org/wiki/Forth_%28programming_language%29\n"
+    },
+    {
+      "slug": "game-of-life",
+      "id": "ex_game_of_life",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/game-of-life",
+      "canonical_sha256": "eb09d20472b472af797b4c335a90fd9c053fef03957431acf48bb3a7ba1f0efb",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "gigasecond",
+      "id": "ex_gigasecond",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/gigasecond",
+      "canonical_sha256": "7ebb939391527537162803154757aa676ed9062d68a011cef5f08a3e7f88076d",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "go-counting",
+      "id": "ex_go_counting",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/go-counting",
+      "canonical_sha256": "610f764fe8de8017c7e2f8976fed5e606ae831f8f7f2412ad613b956c214a3cb",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nCount the scored points on a Go board.\n\nIn the game of go (also known as baduk, igo, c\u1edd v\u00e2y and w\u00e9iq\u00ed) points are gained by completely encircling empty intersections with your stones.\nThe encircled intersections of a player are known as its territory.\n\nCalculate the territory of each player.\nYou may assume that any stones that have been stranded in enemy territory have already been taken off the board.\n\nDetermine the territory which includes a specified coordinate.\n\nMultiple empty intersections may be encircled at once and for encircling only horizontal and vertical neighbors count.\nIn the following diagram the stones which matter are marked \"O\" and the stones that don't are marked \"I\" (ignored).\nEmpty spaces represent empty intersections.\n\n```text\n+----+\n|IOOI|\n|O  O|\n|O OI|\n|IOI |\n+----+\n```\n\nTo be more precise an empty intersection is part of a player's territory if all of its neighbors are either stones of that player or empty intersections that are part of that player's territory.\n\nFor more information see [Wikipedia][go-wikipedia] or [Sensei's Library][go-sensei].\n\n[go-wikipedia]: https://en.wikipedia.org/wiki/Go_%28game%29\n[go-sensei]: https://senseis.xmp.net/\n"
+    },
+    {
+      "slug": "grade-school",
+      "id": "ex_grade_school",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grade-school",
+      "canonical_sha256": "a6ce57befa0f3a83b6a96446ad9adf476d4ca3a5d77e70a849c0c3b8fc65ecbf",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nGiven students' names along with the grade they are in, create a roster for the school.\n\nIn the end, you should be able to:\n\n- Add a student's name to the roster for a grade:\n  - \"Add Jim to grade 2.\"\n  - \"OK.\"\n- Get a list of all students enrolled in a grade:\n  - \"Which students are in grade 2?\"\n  - \"We've only got Jim right now.\"\n- Get a sorted list of all students in all grades.\n  Grades should be sorted as 1, 2, 3, etc., and students within a grade should be sorted alphabetically by name.\n  - \"Who is enrolled in school right now?\"\n  - \"Let me think.\n    We have Anna, Barb, and Charlie in grade 1, Alex, Peter, and Zoe in grade 2, and Jim in grade 5.\n    So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe, and Jim.\"\n\nNote that all our students only have one name (it's a small town, what do you want?), and each student cannot be added more than once to a grade or the roster.\nIf a test attempts to add the same student more than once, your implementation should indicate that this is incorrect.\n"
+    },
+    {
+      "slug": "grains",
+      "id": "ex_grains",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grains",
+      "canonical_sha256": "b5c2c1a38ed4527681f0f4dcc09b91fe26f87162188146d919fb478f23d3e473",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "grep",
+      "id": "ex_grep",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grep",
+      "canonical_sha256": "b6eed026aeca970f29c2d5a2881475de0500eddd23f8d207dbe2b7f0c4bcf88a",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "hamming",
+      "id": "ex_hamming",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hamming",
+      "canonical_sha256": "c932d8511912c5ca2cc5a15550a266436c637d8c2af4f3a055173808b0fb0086",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": null
+    },
+    {
+      "slug": "hangman",
+      "id": "ex_hangman",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hangman",
+      "canonical_sha256": "67b922274c541b029f5cea0e6886870f62d1db81fdefc58bd71e6e93a3115fca",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nImplement the logic of the hangman game using functional reactive programming.\n\n[Hangman][hangman] is a simple word guessing game.\n\n[Functional Reactive Programming][frp] is a way to write interactive programs.\nIt differs from the usual perspective in that instead of saying \"when the button is pressed increment the counter\", you write \"the value of the counter is the sum of the number of times the button is pressed.\"\n\nImplement the basic logic behind hangman using functional reactive programming.\nYou'll need to install an FRP library for this, this will be described in the language/track specific files of the exercise.\n\n[hangman]: https://en.wikipedia.org/wiki/Hangman_%28game%29\n[frp]: https://en.wikipedia.org/wiki/Functional_reactive_programming\n"
+    },
+    {
+      "slug": "hello-world",
+      "id": "ex_hello_world",
+      "origin": "external",
+      "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hello-world",
+      "canonical_sha256": "e5131e7eeec3a31fa34fa877bcaf3211bf24330dd60f5e105b6e4828808fe5e0",
+      "license": "MIT",
+      "copyright": "2014, 2019, 2021 Exercism",
+      "description": "# Instructions\n\nThe classical introductory exercise.\nJust say \"Hello, World!\".\n\n[\"Hello, World!\"][hello-world] is the traditional first program for beginning programming in a new language or environment.\n\nThe objectives are simple:\n\n- Modify the provided code so that it produces the string \"Hello, World!\".\n- Run the test suite and make sure that it succeeds.\n- Submit your solution and check it at the website.\n\nIf everything goes well, you will be ready to fetch your first real exercise.\n\n[hello-world]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program\n"
+    }
+  ]
+}
