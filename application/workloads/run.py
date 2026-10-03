@@ -25,7 +25,7 @@ def run(folder, repeats, smoke=False, selected=None):
     cpp = folder/'workloads-cpp'
     subprocess.run([cpp_clang, '-std=c++17', '-O2', str(HERE/'main.cpp'), '-o', str(cpp)], capture_output=True, check=True)
     binaries = {}
-    names = ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf', 'newlines_seq_return']
+    names = ['append', 'report', 'newlines', 'reduce', 'byte_sum', 'newlines_call', 'newlines_leaf', 'newlines_noinline', 'newlines_recursive', 'newlines_nested', 'newlines_seq_leaf', 'newlines_seq_return', 'newlines_slice', 'newlines_fresh', 'newlines_cond_alloc']
     if selected:
         unknown = set(selected)-set(names)
         if unknown: raise ValueError(f'Unknown workloads: {sorted(unknown)}')
@@ -40,7 +40,7 @@ def run(folder, repeats, smoke=False, selected=None):
         binaries[name] = binary
     cases = []
     sizes = {'append': [10000, 40000, 160000, 640000, 1048576], 'report': [10000, 40000, 160000],
-             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216], 'newlines_leaf': [16777216], 'newlines_noinline': [16777216], 'newlines_recursive': [16777216], 'newlines_nested': [16777216], 'newlines_seq_leaf': [16777216], 'newlines_seq_return': [16777216]}
+             'newlines': [4096, 1048576, 16777216], 'reduce': [10000, 100000, 1000000], 'byte_sum': [16777216], 'newlines_call': [16777216], 'newlines_leaf': [16777216], 'newlines_noinline': [16777216], 'newlines_recursive': [16777216], 'newlines_nested': [16777216], 'newlines_seq_leaf': [16777216], 'newlines_seq_return': [16777216], 'newlines_slice': [16777216], 'newlines_fresh': [16777216], 'newlines_cond_alloc': [16777216]}
     sizes = {name: values for name, values in sizes.items() if name in names}
     if smoke:
         sizes = {name: values[:1] for name, values in sizes.items()}
