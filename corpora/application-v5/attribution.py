@@ -286,7 +286,12 @@ def main():
                   'source_hashes': frozen['source_hashes'],
                   'analysis_script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
         (args.output / 'ledger.json').write_text(json.dumps(report, indent=2) + '\n')
+        summary = {k: v for k, v in report.items() if k != 'records'}
+        summary['records'] = [{k: v for k, v in row.items() if k != 'tokens'} for row in all_rows]
+        summary['raw_ledger'] = 'Regenerate ledger.json for every token offset, piece and byte vote.'
+        (args.output / 'summary.json').write_text(json.dumps(summary, indent=2) + '\n')
         print(json.dumps(ranked, indent=2))
+        print('ACCOUNTED ' + json.dumps({'source_files': 2 * len(tasks), 'tokenizer_streams': len(all_rows), 'tokens': sum(sum(r['categories'].values()) for r in all_rows), 'exact_sum_checks': 'passed'}))
     finally:
         for v in vocabularies:
             v.close()

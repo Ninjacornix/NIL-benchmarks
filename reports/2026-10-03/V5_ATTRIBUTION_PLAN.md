@@ -77,7 +77,7 @@ most such constants are already one token, so a shorter spelling cannot help.
 Text literals actually favour NIL (−32.483 fractional tokens). Intrinsic names
 also favour NIL (−36.900); shortening names is not justified by this ranking.
 
-Grade school (+249), Connect (+151), and ETL (+123) contribute 523 of the net650
+Grade school (+249), Connect (+151), and ETL (+123) contribute 523 of the net 650
 surplus (80.5%); all tasks remain in the measurement. Reading both sources shows:
 
 - Grade school: Python sorts tuples and compares byte names directly; NIL scans an
@@ -117,7 +117,7 @@ saves 18 cl100k tokens, not the entire observed signature cost.
 Per-task forecasts and counterfactual source are frozen in `V5_SURFACE_FORECASTS.json`.
 No task was selected/dropped for a forecast. Combined proposals are NOT assumed
 additive: tokenizer merges can interact. Each standalone candidate remains far short
-of650; adding grammar/model-training obligations for these small savings is not
+of 650; adding grammar/model-training obligations for these small savings is not
 justified when the largest algorithm costs remain untouched.
 
 **Implementation gate:** no change this round. Actual implemented saving: **0** for

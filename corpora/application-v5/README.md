@@ -161,3 +161,21 @@ findings; no compiler feature was added in this expansion. New references and ta
 were frozen before token counting. No task, oracle, golden or reference was changed
 after observing counts. JSONL now exports 55 verified positives with provenance
 for external tasks; the original metadata has the separate PROVENANCE.json overlay.
+
+## Current token attribution
+
+The keyed-data snapshot has 56 verified NIL programs, 32 external pairs and 19
+unsupported tasks. The attribution audit leaves every program and frozen oracle
+unchanged: 2,400 checks pass, with the original 610 separately reconfirmed.
+`attribution.py` reconstructs every source token under the four pinned vocabularies
+and writes a full byte-offset ledger plus a compact exact-fraction summary.
+`remediation.py` forecasts two **unimplemented, invalid** syntax proposals outside
+the corpus; these are not adaptation positives. See
+[the decision and rankings](../../reports/2026-10-03/V5_ATTRIBUTION_PLAN.md) and
+[unchanged three-cut measurements](../../reports/2026-10-03/V5_ATTRIBUTION_RESULTS.md).
+The Python density gap remains; source density does not establish model efficiency.
+
+Keep the generated full ledger outside the checkout. Reproduce with the report's
+commands; run `python -m unittest discover -s corpora/application-v5/tests` using
+the paired Python environment from this submodule root. No Rust dependencies or
+model inference are needed.
