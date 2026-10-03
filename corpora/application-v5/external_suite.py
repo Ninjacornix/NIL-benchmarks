@@ -7,6 +7,8 @@ HERE = Path(__file__).resolve().parent
 def load_tasks(group='all'):
     original = json.loads((HERE / 'tasks.json').read_text())['tasks']
     external = json.loads((HERE / 'external/tasks.json').read_text())['tasks']
+    support = json.loads((HERE / 'SUPPORT.json').read_text())['overrides']
+    external = [task | support.get(task['id'], {}) for task in external]
     return original if group == 'original' else external if group == 'external' else original + external
 
 def load_goldens():

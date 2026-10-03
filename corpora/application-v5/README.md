@@ -1,5 +1,26 @@
 # Verified expr-v5 application corpus
 
+## Latest keyed-data result
+
+The corpus now has **56 verified NIL positives and 19 unsupported tasks** (18
+external). ETL joins the supported set; grade_school uses maps for duplicate names.
+Contracts, oracles, goldens, original NIL references and all existing baseline
+sources remain unchanged and hash-locked. SUPPORT.json carries the new status.
+2,400 execution checks pass, including the original 610 separately.
+
+**The external Python density gap persists: 12.0–21.1% more NIL tokens externally,
+6.9–14.6% more combined**, versus 42.2–46.0% fewer than C++ externally. The original
+24 counts are unchanged. Grade_school improves 10–11%, but newly supported ETL
+costs more than twice Python, so expanding support worsens the aggregate.
+[Before/after, three cuts and every per-task count](../../reports/2026-10-03/V5_KEYED_DATA.md).
+Source density is not model efficiency: generation remains unfavourable (0/24
+versus 11/24), with no new inference. 56 exported seeds are not adaptation scale.
+[Remaining task attempts and limits](KEYED_ATTEMPTS.md).
+
+The sections below preserve the historical external expansion and original
+sequence-operation studies, before this keyed extension.
+
+
 **75 retained tasks: 25 self-authored + 50 externally derived; 55 verified NIL
 programs and 20 unsupported tasks (19 external, one original).**
 

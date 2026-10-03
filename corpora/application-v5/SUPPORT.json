@@ -1,0 +1,7 @@
+{
+  "schema": 1,
+  "source": "ADR 023 ordered keyed maps",
+  "overrides": {
+    "ex_etl": {"nil_status": "supported", "baseline_status": "supported"}
+  }
+}

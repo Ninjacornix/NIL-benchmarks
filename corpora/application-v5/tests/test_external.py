@@ -29,10 +29,15 @@ class ExternalContracts(unittest.TestCase):
         for path, expected in locked.items():
             self.assertEqual(hashlib.sha256((HERE.parents[1] / path).read_bytes()).hexdigest(), expected, path)
 
+    def test_keyed_work_preserves_frozen_contracts_and_existing_baselines(self):
+        lock = json.loads((HERE / 'KEYED_LOCK.json').read_text())
+        for path, expected in lock['files'].items():
+            self.assertEqual(hashlib.sha256((HERE.parents[1] / path).read_bytes()).hexdigest(), expected, path)
+
     def test_supported_references_and_unsupported_reasons_are_explicit(self):
         tasks = load_tasks('external')
-        self.assertEqual(sum(t['nil_status'] == 'supported' for t in tasks), 31)
-        self.assertEqual(sum(t['nil_status'] == 'unsupported' for t in tasks), 19)
+        self.assertEqual(sum(t['nil_status'] == 'supported' for t in tasks), 32)
+        self.assertEqual(sum(t['nil_status'] == 'unsupported' for t in tasks), 18)
         for task in tasks:
             if task['nil_status'] == 'unsupported':
                 self.assertTrue(task['missing_capabilities'])

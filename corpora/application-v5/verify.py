@@ -26,7 +26,7 @@ def digest(path):
 def fingerprint():
     paths = [HERE / 'tasks.json', HERE / 'oracles.py', HERE / 'verify.py', HERE / 'driver.cpp', HERE / 'goldens.json']
     paths += sorted((HERE / 'programs').glob('*'))
-    paths += [HERE / 'external_suite.py', HERE / 'external/build_manifest.py'] + sorted((HERE / 'external').glob('*.json'))
+    paths += [HERE / 'SUPPORT.json', HERE / 'external_suite.py', HERE / 'external/build_manifest.py'] + sorted((HERE / 'external').glob('*.json'))
     paths += [SUITE / 'generation/application' / name for name in ['oracle.py', 'python_driver.py']]
     paths += [SUITE / 'helpers/application_check.rs']
     return {str(p.relative_to(SUITE)): digest(p) for p in paths}

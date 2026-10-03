@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "unsupported_total": 20,
-  "external_unsupported": 19,
-  "supported_external": 31,
+  "unsupported_total": 19,
+  "external_unsupported": 18,
+  "supported_external": 32,
   "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
   "blocking_task_counts": {
     "environment": 1,
     "higher_order": 1,
-    "maps_records": 4,
+    "maps_records": 3,
     "unicode": 2,
     "integer_width": 2,
     "concurrency": 1,
@@ -30,7 +30,6 @@
     "maps_records": [
       "ex_alphametics",
       "ex_dot_dsl",
-      "ex_etl",
       "ex_go_counting"
     ],
     "unicode": [
@@ -100,5 +99,22 @@
         "ex_crypto_square"
       ]
     }
+  },
+  "keyed_followup": {
+    "verified_moved_to_supported": [
+      "ex_etl"
+    ],
+    "new_types": [
+      "MapI64 (Bytes -> I64)",
+      "MapBytes (Bytes -> Bytes)"
+    ],
+    "still_unsupported": {
+      "ex_alphametics": "Typed assignment map is now expressible. A verified column/carry search and JSON adapter are not supplied; do not claim maps solve constraint search.",
+      "ex_dot_dsl": "Nested map-valued graph/node/edge attributes still lack a typed representation; serialization/parser adapter remains unimplemented.",
+      "ex_go_counting": "Owner plus a collection of coordinate pairs still lacks a typed product value; a flood-fill/serialized result adapter remains unimplemented.",
+      "ex_forth": "Byte-valued dictionaries can represent words and encoded bodies. Parsing the JSON instruction stream and a verified stack interpreter/definition binding adapter remain unimplemented.",
+      "ex_camicia": "Byte-keyed integer maps can encode a visited-state set, but deck-state encoding and verified game/cycle simulation are not implemented; maps are not recursive collections."
+    },
+    "classification": "Counts retain unsupported adapter tasks; maps_records is a historical cluster label, not a claim that all three require unavailable map lookup. SUPPORT.json records support without mutating frozen contracts."
   }
 }
