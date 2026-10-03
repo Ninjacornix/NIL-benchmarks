@@ -30,6 +30,18 @@ def prepare():
         raise RuntimeError('Application inference requires the documented macOS process sandbox; port it before executing generated host code elsewhere.')
 
 
+def preflight():
+    import json
+    tasks=json.loads((HERE/'tasks.json').read_text())['tasks']
+    with tempfile.TemporaryDirectory(prefix='nil-generation-preflight-') as directory:
+        for task in tasks:
+            for language,extension in [('expr-v5','nil'),('python','py')]:
+                verdict=evaluate((HERE/'solutions'/f"{task['id']}.{extension}").read_text(),language,task,Path(directory))
+                if not verdict['semantic_ok']:
+                    raise RuntimeError('Infrastructure preflight failed: '+task['id']+'/'+language+' '+str(verdict))
+    print('Preflight passed: all four fixtures, reference/native O0/O2/Python '+sys.version.split()[0],flush=True)
+
+
 def sandbox(command, folder, timeout=5):
     # This is a benchmark execution boundary, not a NIL security feature.
     import json
@@ -39,6 +51,11 @@ def sandbox(command, folder, timeout=5):
         if path.is_absolute() and path.is_file():
             allowed.append(str(path.resolve()))
     exceptions = ' '.join('(require-not (literal '+json.dumps(p)+'))' for p in allowed[1:])
+    # uv's pinned interpreter and its stdlib/dylib can live under the user home.
+    # Grant only that installation, never the surrounding user data.
+    python_root=Path(sys.executable).resolve().parent.parent
+    if (python_root/'lib').is_dir():
+        exceptions += ' (require-not (subpath '+json.dumps(str(python_root))+'))'
     # System dyld paths vary across macOS versions; permit reads generally but
     # explicitly deny user data and other /tmp fixtures/artifacts.
     user_deny = '(deny file-read-data (require-all (subpath "/Users") '+exceptions+'))'

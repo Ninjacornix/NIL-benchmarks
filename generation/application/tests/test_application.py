@@ -51,6 +51,7 @@ class ApplicationOracle(unittest.TestCase):
             sentinel=folder/'outside';sentinel.write_bytes(b'secret')
             case=folder/'case';case.mkdir()
             for code in [f'open({str(sentinel)!r}, "rb").read()',
+                         f'open({str(r.core.ROOT / "README.md")!r}, "rb").read()',
                          'import socket; socket.create_connection(("127.0.0.1",11434))',
                          f'open({str(folder/"forbidden")!r}, "wb").write(b"bad")']:
                 result=r.oracle.sandbox([str(Path(sys.executable).resolve()),'-I','-c',code],case)

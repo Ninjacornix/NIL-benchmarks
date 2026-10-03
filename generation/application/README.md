@@ -47,9 +47,11 @@ and 256 frames. NIL must pass reference plus bounded native **O0 and O2** for al
 four inputs. Python executes its `solve(input_path, output_path)` in Python 3.12
 with the identical contract. No acceptance through merely matching file length.
 
-Generated host processes use macOS sandbox-exec: no network, no writes outside
+Before any request, all eight handwritten task/language fixtures must pass using
+the same pinned Python 3.12 interpreter as inference. A preflight failure aborts
+before model access. Generated host processes use macOS sandbox-exec: no network, no writes outside
 the case directory, no reads from user data or other temporary fixtures. System
-loader/runtime reads are permitted. Reference answer artifacts are deleted before
+loader/runtime reads and the exact pinned Python installation are permitted. Reference answer artifacts are deleted before
 native execution. This requires macOS; other platforms must port and validate
 this boundary before running generated host code. NIL's runtime itself remains
 explicitly unsandboxed. Each execution has a five-second timeout and compilation

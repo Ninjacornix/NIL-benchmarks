@@ -28,6 +28,7 @@ def prompt(language, task):
 
 def provenance():
     files=[HERE/'tasks.json',HERE/'experiment.json',HERE/'nil-reference.txt',HERE/'python-reference.txt',HERE/'oracle.py',HERE/'python_driver.py',Path(__file__),Path(core.__file__),core.SUITE/'helpers/application_check.rs',*core.ROOT.glob('Cargo*'),*core.ROOT.glob('rust-toolchain*')]
+    files += list((HERE/'solutions').glob('*'))
     files += list((core.ROOT/'crates').rglob('*.rs'))+list((core.ROOT/'crates').rglob('*.c'))+list((core.ROOT/'cli').rglob('*.rs'))
     return {core.source_key(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 
@@ -47,7 +48,9 @@ def run(output, endpoint, mock=False):
     definition=json.loads((HERE/'experiment.json').read_text())
     tasks=json.loads((HERE/'tasks.json').read_text())['tasks']
     assert [t['id'] for t in tasks]==definition['task_ids']
+    if sys.version_info[:2] != (3,12):raise RuntimeError('Use the pinned Python 3.12 interpreter for inference and stub runs')
     oracle.prepare()
+    oracle.preflight()
     output.mkdir(parents=True)
     metadata={}
     if not mock:
