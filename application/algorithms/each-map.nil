@@ -1,0 +1,2 @@
+1=b(@(!map(),0,a;b<c;!put(a,!format(b),1),b+1,c;a))
+(m)=!each(a,0;c+b;a)

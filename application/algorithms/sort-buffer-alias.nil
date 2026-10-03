@@ -1,0 +1,3 @@
+1=b(@(!buffer(a,0),0,a;b<c;a[b:c-b],b+1,c;a))
+(v)=c(!sort(a,0),a)
+(v,v)=!each(a,true,0;c?(a==0?true:b>d):false,b;a?1:0)+b[0]

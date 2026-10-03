@@ -58,6 +58,21 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual(proposed, '(s):s=@(a,0;b<#a;,b+1;a)\n')
         self.assertEqual(len(spans), 1)
 
+    def test_each_nested_regions_and_passthrough_keep_complete_labels(self):
+        source = '(s)=!each(a,0;c+!each([1],0;c+b;a);a)\n'
+        labels, data = nil_labels(source)
+        self.assertEqual(len(data['loops']), 2)
+        self.assertEqual(labels[source.index('!each')], 'intrinsic_name')
+        self.assertEqual(labels[source.index(';')], 'loop_delimiters')
+        self.assertEqual(len(labels), len(source))
+        source = '(s)=!each(a,0;c;a)\n'
+        _, data = nil_labels(source)
+        self.assertEqual([source[s:e] for s,e in data['passthrough_spans']], ['c'])
+
+    def test_each_inside_a_string_is_not_iteration(self):
+        _, data = nil_labels('0:s="!each(a,0;c;a)"\n')
+        self.assertEqual(data['loops'], [])
+
 
 if __name__ == '__main__':
     unittest.main()

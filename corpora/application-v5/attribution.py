@@ -122,6 +122,27 @@ def nil_labels(source):
         if re.fullmatch(r'[a-z](?:<|<=|>|>=)(?:#[a-z]|[a-z]|\d+)', condition):
             paint(labels, *sections[1], 'loop_index_bound')
         loops.append({'start': match.start(), 'end': end + 1, 'state_count': len(steps)})
+    # Each has three regions and implicit traversal, not a condition/index step.
+    # Keep its name under intrinsic_name; delimiters use the same category as @.
+    for match in NIL_LEX.finditer(source):
+        if match.group() != '!each':
+            continue
+        opening = match.end()
+        assert source[opening] == '('
+        end = closing[opening]
+        sections = split_top(source, opening + 1, end, ';', closing)
+        assert len(sections) == 3
+        initials = split_top(source, *sections[0], ',', closing)
+        steps = split_top(source, *sections[1], ',', closing)
+        assert len(steps) == len(initials) - 1
+        for point in (opening, end, *(part[1] for part in sections[:-1])):
+            paint(labels, point, point + 1, 'loop_delimiters')
+        for index, (start, stop) in enumerate(steps):
+            if source[start:stop].strip() == chr(ord('c') + index):
+                paint(labels, start, stop, 'unchanged_state')
+                passthrough.append([start, stop])
+        loops.append({'start': match.start(), 'end': end + 1,
+                      'state_count': len(steps), 'kind': 'each'})
     return labels, {'loops': loops, 'passthrough_spans': passthrough}
 
 
