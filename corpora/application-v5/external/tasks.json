@@ -1,0 +1,1674 @@
+{
+  "schema": 1,
+  "license": "MIT",
+  "scope": "First declared property per selected exercise; full matching canonical property cases, with disclosed text transport and bounded arithmetic domain. Not complete upstream exercise API.",
+  "tasks": [
+    {
+      "id": "ex_accumulate",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/accumulate",
+        "canonical_sha256": "c19ea3a93d9c832513ac512a8ded9e3d2f2dc22dc63fb5dd669f976e70807b8c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "accumulate",
+      "selected_property": "accumulate",
+      "prompt": "Upstream accumulate accumulate property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22616363756d756c61746f72223a22287829203d3e2078202a2078222c226c697374223a5b5d7d",
+        "7b22616363756d756c61746f72223a22287829203d3e2078202a2078222c226c697374223a5b312c322c335d7d",
+        "7b22616363756d756c61746f72223a22287829203d3e20757063617365287829222c226c697374223a5b2248656c6c6f222c22776f726c64225d7d",
+        "7b22616363756d756c61746f72223a22287829203d3e2072657665727365287829222c226c697374223a5b22746865222c22717569636b222c2262726f776e222c22666f78222c22657463225d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 5,
+      "unsupported_reason": "The upstream collection/operator contract requires typed operation values and heterogeneous collections; neither is available in v5.",
+      "missing_capabilities": [
+        "higher_order"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_acronym",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/acronym",
+        "canonical_sha256": "009b8ae28b2224ea3fd4aac7aa3c4ba37c5a303221cf38df4cfb235afc4d3df6",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "acronym",
+      "selected_property": "abbreviate",
+      "prompt": "UTF-8 phrase containing ASCII letters and separators as in the source; output acronym, hyphen/whitespace separate words, other punctuation removed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "506f727461626c65204e6574776f726b204772617068696373",
+        "52756279206f6e205261696c73",
+        "466972737420496e2c204669727374204f7574",
+        "474e5520496d616765204d616e6970756c6174696f6e2050726f6772616d",
+        "436f6d706c656d656e74617279206d6574616c2d6f786964652073656d69636f6e647563746f72",
+        "526f6c6c696e67204f6e2054686520466c6f6f72204c61756768696e6720536f20486172642054686174204d7920446f67732043616d65204f76657220416e64204c69636b6564204d65",
+        "536f6d657468696e67202d2049206d6164652075702066726f6d207468696e20616972",
+        "48616c6c6579277320436f6d6574"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 9
+    },
+    {
+      "id": "ex_affine_cipher",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/affine-cipher",
+        "canonical_sha256": "b8d5b6ba1b57a02afb9a07de9bbfe71f25fce71fc027819ddb00665bbee59fc4",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "affine-cipher",
+      "selected_property": "encode",
+      "prompt": "Encode only (first declared property). First line a,b (integers), remaining bytes ASCII phrase. Output lowercase alphanumerics in groups of five; noncoprime key gives error\\n.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "352c370a796573",
+        "31352c31380a6e6f",
+        "32312c330a4f4d47",
+        "32352c34370a4f204d2047",
+        "31312c31350a6d696e64626c6f77696e676c79",
+        "332c340a54657374696e672c31203220332c2074657374696e672e",
+        "352c31370a54727574682069732066696374696f6e2e",
+        "31372c33330a54686520717569636b2062726f776e20666f78206a756d7073206f76657220746865206c617a7920646f672e"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 9
+    },
+    {
+      "id": "ex_all_your_base",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/all-your-base",
+        "canonical_sha256": "0c26c0fd4ba9a33fefc5c940c989fffdd9f32952cb139b9df614c78704fee2e7",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "all-your-base",
+      "selected_property": "rebase",
+      "prompt": "First line inputBase,outputBase; remaining comma-separated integer digits, possibly empty. Return rebased digits one per LF; invalid base/digit gives error\\n. Values must fit signed i64.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "322c31300a31",
+        "322c31300a312c302c31",
+        "31302c320a35",
+        "322c31300a312c302c312c302c312c30",
+        "31302c320a342c32",
+        "332c31360a312c312c322c30",
+        "31362c330a322c3130",
+        "39372c37330a332c34362c3630",
+        "322c31300a",
+        "31302c320a30",
+        "31302c320a302c302c30",
+        "372c31300a302c362c30",
+        "312c31300a30",
+        "302c31300a",
+        "2d322c31300a31",
+        "322c31300a312c2d312c312c302c312c30",
+        "322c31300a312c322c312c302c312c30",
+        "322c310a312c302c312c302c312c30",
+        "31302c300a37",
+        "322c2d370a31"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 21
+    },
+    {
+      "id": "ex_allergies",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/allergies",
+        "canonical_sha256": "3d75ba360afde61bb4f46dbee0def899f0527f1f0e6ce9704c3126af2bcf066b",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "allergies",
+      "selected_property": "allergicTo",
+      "prompt": "allergicTo only (first property). Score then LF then allergen name. Output true\\n or false\\n. Ignore bits above 255.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "300a65676773",
+        "310a65676773",
+        "330a65676773",
+        "320a65676773",
+        "3235350a65676773",
+        "300a7065616e757473",
+        "320a7065616e757473",
+        "370a7065616e757473",
+        "350a7065616e757473",
+        "3235350a7065616e757473",
+        "300a7368656c6c66697368",
+        "340a7368656c6c66697368",
+        "31340a7368656c6c66697368",
+        "31300a7368656c6c66697368",
+        "3235350a7368656c6c66697368",
+        "300a737472617762657272696573",
+        "380a737472617762657272696573",
+        "32380a737472617762657272696573",
+        "32300a737472617762657272696573",
+        "3235350a737472617762657272696573",
+        "300a746f6d61746f6573",
+        "31360a746f6d61746f6573",
+        "35360a746f6d61746f6573",
+        "34300a746f6d61746f6573",
+        "3235350a746f6d61746f6573",
+        "300a63686f636f6c617465",
+        "33320a63686f636f6c617465",
+        "3131320a63686f636f6c617465",
+        "38300a63686f636f6c617465",
+        "3235350a63686f636f6c617465",
+        "300a706f6c6c656e",
+        "36340a706f6c6c656e",
+        "3232340a706f6c6c656e",
+        "3136300a706f6c6c656e",
+        "3235350a706f6c6c656e",
+        "300a63617473",
+        "3132380a63617473",
+        "3139320a63617473",
+        "36340a63617473"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 40
+    },
+    {
+      "id": "ex_alphametics",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/alphametics",
+        "canonical_sha256": "334856909520dd243d36725b57ba78b8c88f51ec5e8a9193eb9713d070926c29",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "alphametics",
+      "selected_property": "solve",
+      "prompt": "Upstream alphametics solve property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2270757a7a6c65223a2249202b204242203d3d20494c4c227d",
+        "7b2270757a7a6c65223a2241203d3d2042227d",
+        "7b2270757a7a6c65223a22414341202b204444203d3d204244227d",
+        "7b2270757a7a6c65223a2241202b2041202b2041202b2041202b2041202b2041202b2041202b2041202b2041202b2041202b2041202b2042203d3d20424343227d",
+        "7b2270757a7a6c65223a224153202b2041203d3d204d4f4d227d",
+        "7b2270757a7a6c65223a224e4f202b204e4f202b20544f4f203d3d204c415445227d",
+        "7b2270757a7a6c65223a224845202b2053454553202b20544845203d3d204c49474854227d",
+        "7b2270757a7a6c65223a2253454e44202b204d4f5245203d3d204d4f4e4559227d",
+        "7b2270757a7a6c65223a22414e44202b2041202b205354524f4e47202b204f4646454e5345202b204153202b2041202b20474f4f44203d3d20444546454e5345227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 10,
+      "unsupported_reason": "The upstream result is a dynamically keyed assignment map/null. This corpus does not implement a hand-encoded mapping/search adapter; records/maps are absent. Algorithmic emulation is possible, not proven impossible.",
+      "missing_capabilities": [
+        "maps_records"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_anagram",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/anagram",
+        "canonical_sha256": "b2bd108a1da86011bccf1fdc13888542399d397ee9711f0d9b7b43bd1aa18bd3",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "anagram",
+      "selected_property": "findAnagrams",
+      "prompt": "Upstream anagram findAnagrams property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2263616e64696461746573223a5b2268656c6c6f222c22776f726c64222c227a6f6d62696573222c2270616e7473225d2c227375626a656374223a22646961706572227d",
+        "7b2263616e64696461746573223a5b226c656d6f6e73222c22636865727279222c226d656c6f6e73225d2c227375626a656374223a22736f6c656d6e227d",
+        "7b2263616e64696461746573223a5b22646f67222c22676f6f6479225d2c227375626a656374223a22676f6f64227d",
+        "7b2263616e64696461746573223a5b22656e6c69737473222c22676f6f676c65222c22696e6c657473222c2262616e616e61225d2c227375626a656374223a226c697374656e227d",
+        "7b2263616e64696461746573223a5b2267616c6c657279222c2262616c6c6572696e61222c22726567616c6c79222c22636c65726779222c226c617267656c79222c226c656164696e67225d2c227375626a656374223a22616c6c65726779227d",
+        "7b2263616e64696461746573223a5b22456f6e73222c224f4e4553225d2c227375626a656374223a226e6f7365227d",
+        "7b2263616e64696461746573223a5b226c617374225d2c227375626a656374223a226d617373227d",
+        "7b2263616e64696461746573223a5b22636173687265676973746572222c2243617274686f727365222c227261646973686573225d2c227375626a656374223a224f7263686573747261227d",
+        "7b2263616e64696461746573223a5b22636173687265676973746572222c2263617274686f727365222c227261646973686573225d2c227375626a656374223a224f7263686573747261227d",
+        "7b2263616e64696461746573223a5b22636173687265676973746572222c2243617274686f727365222c227261646973686573225d2c227375626a656374223a226f7263686573747261227d",
+        "7b2263616e64696461746573223a5b22676f476f474f225d2c227375626a656374223a22676f227d",
+        "7b2263616e64696461746573223a5b22706174746572225d2c227375626a656374223a22746170706572227d",
+        "7b2263616e64696461746573223a5b2242414e414e41225d2c227375626a656374223a2242414e414e41227d",
+        "7b2263616e64696461746573223a5b2242616e616e61225d2c227375626a656374223a2242414e414e41227d",
+        "7b2263616e64696461746573223a5b2262616e616e61225d2c227375626a656374223a2242414e414e41227d",
+        "7b2263616e64696461746573223a5b224c495354454e222c2253696c656e74225d2c227375626a656374223a224c495354454e227d",
+        "7b2263616e64696461746573223a5b22ce92ce93ce91222c22ce92ce93ce94222c22ceb3ceb2ceb1222c22ceb1ceb2ceb3225d2c227375626a656374223a22ce91ce92ce93227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 18,
+      "unsupported_reason": "Unicode case-insensitive character comparison is required; no Unicode case database/operations are available. ASCII-only restriction would remove upstream cases.",
+      "missing_capabilities": [
+        "unicode"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_armstrong_numbers",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/armstrong-numbers",
+        "canonical_sha256": "e8567a19cfaa0cf711fa2a1b2d4ec92b9fcdfddf42d89b969ce32f99fcc7a1fe",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "armstrong-numbers",
+      "selected_property": "isArmstrongNumber",
+      "prompt": "Canonical nonnegative integer input, signed-i64 arithmetic domain. Output true\\n iff sum of digit powers equals input.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "30",
+        "35",
+        "3130",
+        "313533",
+        "313030",
+        "39343734",
+        "39343735",
+        "39393236333135",
+        "39393236333134",
+        "313836373039393631303031353338373930313030363334313332393736393930"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 11
+    },
+    {
+      "id": "ex_atbash_cipher",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/atbash-cipher",
+        "canonical_sha256": "f5e7f43f79968b46b2a786246a1d10c0339e000c28ec4a5868ca4e4aad78481d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "atbash-cipher",
+      "selected_property": "encode",
+      "prompt": "Encode only. ASCII phrase becomes reversed-alphabet lowercase alphanumerics, grouped in fives; discard nonalphanumerics.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "796573",
+        "6e6f",
+        "4f4d47",
+        "4f204d2047",
+        "6d696e64626c6f77696e676c79",
+        "54657374696e672c31203220332c2074657374696e672e",
+        "54727574682069732066696374696f6e2e"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 8
+    },
+    {
+      "id": "ex_baffling_birthdays",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/baffling-birthdays",
+        "canonical_sha256": "6b44f34ae47f738edc9fba07c29e6ba115848a6eb438b2893e287eea305f546f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "baffling-birthdays",
+      "selected_property": "sharedBirthday",
+      "prompt": "sharedBirthday only (first property): LF-separated ISO Gregorian dates. True if any two share month/day, ignoring year. Empty list is empty file.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "323030302d30312d3031",
+        "323030302d30312d30310a323030302d30312d3031",
+        "323031322d30352d30390a323031322d30352d3137",
+        "313939392d31302d32330a313938382d31302d3233",
+        "323030372d31322d31390a323030372d30342d3237",
+        "313939372d30382d30340a313936332d31312d3233",
+        "313936362d30372d32390a313937372d30322d31320a323030312d31322d32350a313938302d31312d3130",
+        "313936362d30372d32390a313937372d30322d31320a323030312d30372d32390a313938302d31312d3130"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 9
+    },
+    {
+      "id": "ex_bank_account",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bank-account",
+        "canonical_sha256": "3aede4ade23e78266e24e33115f49c6dbd8d03a6a862e47449c5bfa03120af2a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "bank-account",
+      "selected_property": "bankAccount",
+      "prompt": "Upstream bank-account bankAccount property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a226465706f736974227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a37352c226f7065726174696f6e223a227769746864726177227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a38302c226f7065726174696f6e223a227769746864726177227d2c7b22616d6f756e74223a32302c226f7065726174696f6e223a227769746864726177227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a3131302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a3230302c226f7065726174696f6e223a227769746864726177227d2c7b22616d6f756e74223a36302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a227769746864726177227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a22636c6f7365227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a22636c6f7365227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a226465706f736974227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b22616d6f756e74223a35302c226f7065726174696f6e223a226465706f736974227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a22636c6f7365227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a227769746864726177227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a22636c6f7365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a226f70656e227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a226465706f736974227d2c7b226f7065726174696f6e223a22636c6f7365227d2c7b226f7065726174696f6e223a226f70656e227d2c7b226f7065726174696f6e223a2262616c616e6365227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a32352c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a35302c226f7065726174696f6e223a227769746864726177227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a3130302c226f7065726174696f6e223a226465706f736974227d2c7b22616d6f756e74223a2d35302c226f7065726174696f6e223a227769746864726177227d5d7d",
+        "7b226f7065726174696f6e73223a5b7b226f7065726174696f6e223a226f70656e227d2c7b22616d6f756e74223a2d35302c226f7065726174696f6e223a226465706f736974227d5d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 17,
+      "unsupported_reason": "The published banking contract requires concurrent access to shared mutable account state; v5 has no threads/synchronization/shared-state ABI.",
+      "missing_capabilities": [
+        "concurrency"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_beer_song",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/beer-song",
+        "canonical_sha256": "4cbf7592251774a71bc12b5bad3495211aa7570927baf513346209264409a664",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "beer-song",
+      "selected_property": "recite",
+      "prompt": "recite: startBottles,takeDown. Return upstream verse lines with LF after each line; blank verse separators preserved.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "39392c31",
+        "332c31",
+        "322c31",
+        "312c31",
+        "302c31",
+        "39392c32",
+        "322c33"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 8
+    },
+    {
+      "id": "ex_binary",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary",
+        "canonical_sha256": "52b96f7ba20ccc028ff06ba8b909d87c488820b1228e3ec51aeec324c98cabf8",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "binary",
+      "selected_property": "decimal",
+      "prompt": "decimal: ASCII binary input; invalid digit returns 0. Signed-i64 result domain. Output decimal followed by LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "30",
+        "31",
+        "3130",
+        "3131",
+        "313030",
+        "31303031",
+        "3131303130",
+        "3130303031313031303030",
+        "303030303131313131",
+        "32",
+        "3031323031",
+        "31306e6f7065",
+        "6e6f70653130",
+        "31306e6f70653130"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 15
+    },
+    {
+      "id": "ex_binary_search",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search",
+        "canonical_sha256": "d224e68b43512d8d394bb5f9e2f209ef6008e9a0abc59ee61a329c4ab2a7f73d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "binary-search",
+      "selected_property": "find",
+      "prompt": "find: target on first line, sorted unique comma-separated integer array on remaining line. Return zero-based index followed by LF; absent gives error\\n.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "360a36",
+        "360a312c332c342c362c382c392c3131",
+        "310a312c332c342c362c382c392c3131",
+        "31310a312c332c342c362c382c392c3131",
+        "3134340a312c332c352c382c31332c32312c33342c35352c38392c3134342c3233332c3337372c363334",
+        "32310a312c332c352c382c31332c32312c33342c35352c38392c3134342c3233332c333737",
+        "370a312c332c342c362c382c392c3131",
+        "300a312c332c342c362c382c392c3131",
+        "31330a312c332c342c362c382c392c3131",
+        "310a"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 11
+    },
+    {
+      "id": "ex_binary_search_tree",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/binary-search-tree",
+        "canonical_sha256": "768ecb0aac4cb435d7b7115619696f9a6386710da9616fab1f4dc259c84b53b7",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "binary-search-tree",
+      "selected_property": "data",
+      "prompt": "Upstream binary-search-tree data property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b227472656544617461223a5b2234225d7d",
+        "7b227472656544617461223a5b2234222c2232225d7d",
+        "7b227472656544617461223a5b2234222c2234225d7d",
+        "7b227472656544617461223a5b2234222c2235225d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 5,
+      "unsupported_reason": "The data property returns a recursive typed tree. Native recursive aggregate values are absent; a bespoke serialized-tree adapter is not implemented. This is an adapter gap, not a computability claim.",
+      "missing_capabilities": [
+        "recursive_values"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_bob",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bob",
+        "canonical_sha256": "02b79f535d7613c6faba88cb909462892b101dc799b2df68dd9ffb5ec1d1284d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "bob",
+      "selected_property": "response",
+      "prompt": "Upstream bob response property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22686579426f62223a22446f65732074686973206372796f67656e6963206368616d626572206d616b65206d65206c6f6f6b206661743f227d",
+        "7b22686579426f62223a225741544348204f555421227d",
+        "7b22686579426f62223a2257484154275320474f494e47204f4e3f227d",
+        "7b22686579426f62223a22227d",
+        "7b22686579426f62223a22546f6d2d61792d746f2c20746f6d2d61616161682d746f2e227d",
+        "7b22686579426f62223a22596f75206172652c20776861742c206c696b652031353f227d",
+        "7b22686579426f62223a22666666626263626561623f227d",
+        "7b22686579426f62223a22343f227d",
+        "7b22686579426f62223a223a29203f227d",
+        "7b22686579426f62223a2257616974212048616e67206f6e2e2041726520796f7520676f696e6720746f206265204f4b3f227d",
+        "7b22686579426f62223a224f6b6179206966206c696b65206d7920207370616365626172202071756974652061206269743f202020227d",
+        "7b22686579426f62223a225c6e446f65732074686973206372796f67656e6963206368616d626572206d616b655c6e206d65206c6f6f6b206661743f227d",
+        "7b22686579426f62223a2246434543444643414142227d",
+        "7b22686579426f62223a22444f204c494f4e53204541542050454f504c453f204148484848482e227d",
+        "7b22686579426f62223a22312c20322c203320474f21227d",
+        "7b22686579426f62223a225a4f4d472054484520255e2a402324282a5e205a4f4d424945532041524520434f4d494e472121313121213121227d",
+        "7b22686579426f62223a22492048415445205448452044454e54495354227d",
+        "7b22686579426f62223a2220202020202020202020227d",
+        "7b22686579426f62223a225c745c745c745c745c745c745c745c745c745c74227d",
+        "7b22686579426f62223a225c6e5c72205c74227d",
+        "7b22686579426f62223a22486920746865726521227d",
+        "7b22686579426f62223a2249742773204f4b20696620796f7520646f6e27742077616e7420746f20676f20776f726b20666f72204e4153412e227d",
+        "7b22686579426f62223a22312c20322c2033227d",
+        "7b22686579426f62223a22456e64696e672077697468203f206d65616e732061207175657374696f6e2e227d",
+        "7b22686579426f62223a22202020202020202020686d6d6d6d6d6d6d2e2e2e227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 26,
+      "unsupported_reason": "General Unicode letter/case/whitespace classification lacks standard Unicode operations/data; ASCII-only approximations are not claimed correct.",
+      "missing_capabilities": [
+        "unicode"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_book_store",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/book-store",
+        "canonical_sha256": "f75b045ea36e6a52f113a92548dfccdd263f55c4d8bbb56bb92849e8697130db",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "book-store",
+      "selected_property": "total",
+      "prompt": "total: comma-separated volume IDs 1..5, empty basket allowed. Price 800 cents; discounts for distinct groups 2..5 are 5/10/20/25 percent; minimize total; decimal cents plus LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "31",
+        "322c32",
+        "",
+        "312c32",
+        "312c322c33",
+        "312c322c332c34",
+        "312c322c332c342c35",
+        "312c312c322c322c332c332c342c35",
+        "312c312c322c332c342c342c352c35",
+        "312c312c322c322c332c34",
+        "312c312c322c322c332c332c342c342c35",
+        "312c312c322c322c332c332c342c342c352c35",
+        "312c312c322c322c332c332c342c342c352c352c31",
+        "312c312c322c322c332c332c342c342c352c352c312c32",
+        "312c312c322c322c332c332c342c352c312c312c322c322c332c332c342c35",
+        "312c312c312c312c312c312c322c322c322c322c322c322c332c332c332c332c332c332c342c342c352c35",
+        "312c312c322c332c34"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 18
+    },
+    {
+      "id": "ex_bottle_song",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bottle-song",
+        "canonical_sha256": "e5c393399421ccaf92ba3eb67463b23a1c811e394ea305819ba848a9bfe5ea1c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "bottle-song",
+      "selected_property": "recite",
+      "prompt": "recite: startBottles,takeDown (1..10). Output English-count green-bottle verses, LF after each line and blank separators.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "31302c31",
+        "332c31",
+        "322c31",
+        "312c31",
+        "31302c32",
+        "332c33"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 7
+    },
+    {
+      "id": "ex_bowling",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/bowling",
+        "canonical_sha256": "3470ab86e0e5089dd442e915f56b42acfad022e7258b904f3d1642b67a21c71a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "bowling",
+      "selected_property": "score",
+      "prompt": "score only: comma-separated rolls. Score completed ten-frame game or error\\n for invalid/incomplete rolls. Preserve strike/spare/tenth-frame bonus rules.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "332c362c332c362c332c362c332c362c332c362c332c362c332c362c332c362c332c362c332c36",
+        "362c342c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "362c342c332c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "352c352c332c372c342c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c372c332c37",
+        "31302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "31302c352c332c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c30",
+        "31302c31302c31302c352c332c302c302c302c302c302c302c302c302c302c302c302c30",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c372c31",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c372c33",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c31302c3130",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c31302c302c31",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c372c332c3130",
+        "31302c31302c31302c31302c31302c31302c31302c31302c31302c31302c31302c3130",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c31302c36",
+        "",
+        "302c30",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c3130",
+        "302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c302c31302c3130"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 21
+    },
+    {
+      "id": "ex_camicia",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/camicia",
+        "canonical_sha256": "9386512c91afc7370e17b49e1980d6a0a2d05ca07144ebf4d5ce364f4887f6e4",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "camicia",
+      "selected_property": "simulateGame",
+      "prompt": "Upstream camicia simulateGame property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22706c6179657241223a5b2232225d2c22706c6179657242223a5b2233225d7d",
+        "7b22706c6179657241223a5b2232222c2234225d2c22706c6179657242223a5b2233225d7d",
+        "7b22706c6179657241223a5b2232222c2234225d2c22706c6179657242223a5b2233222c2235222c2236225d7d",
+        "7b22706c6179657241223a5b2232222c2241225d2c22706c6179657242223a5b2233222c2234222c2235222c2236222c2237225d7d",
+        "7b22706c6179657241223a5b2232222c2241225d2c22706c6179657242223a5b2233222c2234222c2235222c2236222c224b225d7d",
+        "7b22706c6179657241223a5b2232222c2241222c2237222c2238222c2251225d2c22706c6179657242223a5b2233222c2234222c2235222c2236222c224b225d7d",
+        "7b22706c6179657241223a5b2232222c2241222c2237222c2238222c2251225d2c22706c6179657242223a5b2233222c2234222c2235222c2236222c224b222c2239222c224a225d7d",
+        "7b22706c6179657241223a5b2232222c2241222c2237222c2238222c2251222c223130225d2c22706c6179657242223a5b2233222c2234222c2235222c2236222c224b222c2239222c224a225d7d",
+        "7b22706c6179657241223a5b224a222c2232222c2233225d2c22706c6179657242223a5b2234222c224a222c2235225d7d",
+        "7b22706c6179657241223a5b2232222c2236222c2236222c224a222c2234222c224b222c2251222c223130222c224b222c224a222c2251222c2232222c2233222c224b222c2235222c2236222c2251222c2251222c2241222c2241222c2236222c2239222c224b222c2241222c2238222c224b222c2232222c2241222c2239222c2241222c2251222c2234222c224b222c224b222c224b222c2233222c2235222c224b222c2238222c2251222c2233222c2251222c2237222c224a222c224b222c224a222c2239222c224a222c2233222c2233222c224b222c224b222c2251222c2241222c224b222c2237222c223130222c2241222c2251222c2237222c223130222c224a222c2234222c2235222c224a222c2239222c223130222c2251222c224a222c224a222c224b222c2236222c223130222c224a222c2236222c2251222c224a222c2235222c224a222c2251222c2251222c2238222c2233222c2238222c2241222c2232222c2236222c2239222c224b222c2237222c224a222c224b222c224b222c2238222c224b222c2251222c2236222c223130222c224a222c223130222c224a222c2251222c224a222c223130222c2233222c2238222c224b222c2241222c2236222c2239222c224b222c2232222c2241222c2241222c223130222c224a222c2236222c2241222c2234222c224a222c2241222c224a222c224a222c2236222c2232222c224a222c2233222c224b222c2232222c2235222c2239222c224a222c2239222c2236222c224b222c2241222c2235222c2251222c224a222c2232222c2251222c224b222c2241222c2233222c224b222c224a222c224b222c2232222c2235222c2236222c2251222c224a222c2251222c2251222c224a222c2232222c224a222c2239222c2251222c2237222c2237222c2241222c2251222c2237222c2251222c224a222c224b222c224a222c2241222c2237222c2237222c2238222c2251222c223130222c224a222c223130222c224a222c224a222c2239222c2232222c2241222c2232225d2c22706c6179657242223a5b2237222c2232222c223130222c224b222c2238222c2232222c224a222c2239222c2241222c2235222c2236222c224a222c2251222c2236222c224b222c2236222c2235222c2241222c2234222c2251222c2237222c224a222c2237222c223130222c2232222c2251222c2238222c2232222c2232222c224b222c224a222c2241222c2235222c2235222c2241222c2234222c2251222c2236222c2251222c224b222c223130222c2238222c2251222c2232222c223130222c224a222c2241222c2251222c2238222c2251222c2251222c224a222c224a222c2241222c2241222c2239222c223130222c224a222c224b222c2234222c2251222c223130222c223130222c224a222c224b222c223130222c2232222c224a222c2237222c2241222c224b222c224b222c224a222c2241222c224a222c223130222c2238222c224b222c2241222c2237222c2251222c2251222c224a222c2233222c2251222c2234222c2241222c2233222c2241222c2251222c2251222c2251222c2235222c2234222c224b222c224a222c223130222c2241222c2251222c224a222c2236222c224a222c2241222c223130222c2241222c2235222c2238222c2233222c224b222c2235222c2239222c2251222c2238222c2237222c2237222c224a222c2237222c2251222c2251222c2251222c2241222c2237222c2238222c2239222c2241222c2251222c2241222c224b222c2238222c2241222c2241222c224a222c2238222c2234222c2238222c224b222c224a222c2241222c223130222c2251222c2238222c224a222c2238222c2236222c223130222c2251222c224a222c224a222c2241222c2241222c224a222c2235222c2251222c2236222c224a222c224b222c2251222c2238222c224b222c2234222c2251222c2251222c2236222c224a222c224b222c2234222c2237222c224a222c224a222c2239222c2239222c2241222c2251222c2251222c224b222c2241222c2236222c2235222c224b225d7d",
+        "7b22706c6179657241223a5b224a225d2c22706c6179657242223a5b2233222c224a225d7d",
+        "7b22706c6179657241223a5b224a222c2232222c2234225d2c22706c6179657242223a5b2233222c224a222c2241225d7d",
+        "7b22706c6179657241223a5b2232222c2233222c224a222c2236225d2c22706c6179657242223a5b224b222c2235222c224a222c2237225d7d",
+        "7b22706c6179657241223a5b2234222c2238222c2237222c2235222c2234222c223130222c2233222c2239222c2237222c2233222c223130222c223130222c2236222c2238222c2232222c2238222c2235222c2234222c2235222c2239222c2236222c2235222c2232222c2238222c223130222c2239225d2c22706c6179657242223a5b2236222c2239222c2234222c2237222c2232222c2232222c2233222c2236222c2237222c2233222c2241222c2241222c2241222c2241222c224b222c224b222c224b222c224b222c2251222c2251222c2251222c2251222c224a222c224a222c224a222c224a225d7d",
+        "7b22706c6179657241223a5b2233222c2233222c2235222c2237222c2233222c2232222c223130222c2237222c2236222c2237222c2241222c2241222c2241222c2241222c224b222c224b222c224b222c224b222c2251222c2251222c2251222c2251222c224a222c224a222c224a222c224a225d2c22706c6179657242223a5b2235222c223130222c2238222c2232222c2236222c2237222c2232222c2234222c2239222c2232222c2236222c223130222c223130222c2235222c2234222c2238222c2234222c2238222c2236222c2239222c2238222c2235222c2239222c2233222c2234222c2239225d7d",
+        "7b22706c6179657241223a5b2232222c2241222c2233222c2241222c2233222c224b222c2234222c224b222c2232222c2251222c2232222c2251222c223130222c224a222c2235222c224a222c2236222c223130222c2232222c2239222c223130222c2237222c2233222c2239222c2236222c2239225d2c22706c6179657242223a5b2236222c2241222c2234222c2241222c2237222c224b222c2234222c224b222c2237222c2251222c2237222c2251222c2235222c224a222c2238222c224a222c2234222c2235222c2238222c2239222c223130222c2236222c2238222c2233222c2238222c2235225d7d",
+        "7b22706c6179657241223a5b2234222c2241222c2239222c2241222c2234222c224b222c2239222c224b222c2236222c2251222c2238222c2251222c2238222c224a222c223130222c224a222c2239222c2238222c2234222c2236222c2233222c2236222c2235222c2232222c2234222c2233225d2c22706c6179657242223a5b223130222c2237222c2233222c2232222c2239222c2232222c2237222c2238222c2237222c2235222c224a222c2237222c224a222c223130222c2251222c223130222c2251222c2233222c224b222c2235222c224b222c2236222c2241222c2232222c2241222c2235225d7d",
+        "7b22706c6179657241223a5b224b222c223130222c2239222c2238222c224a222c2238222c2236222c2239222c2237222c2241222c224b222c2235222c2234222c2234222c224a222c2235222c224a222c2234222c2233222c2235222c2238222c2236222c2237222c2237222c2234222c2239225d2c22706c6179657242223a5b2236222c2233222c224b222c2241222c2251222c223130222c2241222c2232222c2251222c2238222c2232222c223130222c223130222c2232222c2251222c2233222c224b222c2239222c2237222c2241222c2233222c2251222c2235222c224a222c2232222c2236225d7d",
+        "7b22706c6179657241223a5b2238222c2241222c2234222c2238222c2235222c2251222c224a222c2232222c2236222c2232222c2239222c2237222c224b222c2241222c2238222c223130222c224b222c2238222c223130222c2239222c224b222c2236222c2237222c2233222c224b222c2239225d2c22706c6179657242223a5b223130222c2235222c2232222c2236222c2251222c224a222c2241222c2239222c2235222c2235222c2233222c2237222c2233222c224a222c2241222c2232222c2251222c2233222c224a222c2251222c2234222c223130222c2234222c2237222c2234222c2236225d7d",
+        "7b22706c6179657241223a5b2234222c2238222c2239222c224a222c2251222c2238222c2235222c2235222c224b222c2232222c2241222c2239222c2238222c2235222c223130222c2241222c2234222c224a222c2233222c224b222c2236222c2239222c2232222c2251222c224b222c2237225d2c22706c6179657242223a5b223130222c224a222c2233222c2232222c2234222c223130222c2234222c2237222c2235222c2233222c2236222c2236222c2237222c2241222c224a222c2251222c2241222c2237222c2232222c223130222c2233222c224b222c2239222c2236222c2238222c2251225d7d",
+        "7b22706c6179657241223a5b2241222c2238222c2251222c224b222c2239222c223130222c2233222c2237222c2234222c2232222c2251222c2233222c2232222c223130222c2239222c224b222c2241222c2238222c2237222c2237222c2234222c2235222c224a222c2239222c2232222c223130225d2c22706c6179657242223a5b2234222c224a222c2241222c224b222c2238222c2235222c2236222c2236222c2241222c2236222c2235222c2251222c2234222c2236222c223130222c2238222c224a222c2232222c2235222c2237222c2251222c224a222c2233222c2233222c224b222c2239225d7d",
+        "7b22706c6179657241223a5b224b222c2232222c224b222c224b222c2233222c2233222c2236222c223130222c224b222c2236222c2241222c2232222c2235222c2235222c2237222c2239222c224a222c2241222c2241222c2233222c2234222c2251222c2234222c2238222c224a222c2236225d2c22706c6179657242223a5b2234222c2235222c2232222c2251222c2237222c2239222c2239222c2251222c2237222c224a222c2239222c2238222c223130222c2233222c223130222c224a222c2234222c223130222c2238222c2236222c2238222c2237222c2241222c2251222c2235222c2232225d7d",
+        "7b22706c6179657241223a5b223130222c2233222c2236222c2237222c2251222c2232222c2239222c2238222c2232222c2238222c2234222c2241222c223130222c2236222c224b222c2232222c223130222c2241222c2235222c2241222c2232222c2234222c2251222c224a222c224b222c2234225d2c22706c6179657242223a5b223130222c2251222c2234222c2236222c224a222c2239222c2233222c224a222c2239222c2233222c2233222c2251222c224b222c2235222c2239222c2235222c224b222c2236222c2235222c2237222c2238222c224a222c2241222c2237222c2238222c2237225d7d",
+        "7b22706c6179657241223a5b2236222c2237222c2241222c2233222c2251222c2233222c2235222c224a222c2233222c2232222c224a222c2237222c2234222c2235222c2251222c223130222c2235222c2241222c224a222c2232222c224b222c2238222c2239222c2239222c224b222c2233225d2c22706c6179657242223a5b2234222c224a222c2236222c2239222c2238222c2235222c223130222c2237222c2239222c2251222c2232222c2237222c223130222c2238222c2234222c223130222c2241222c2236222c2234222c2241222c2236222c2238222c2251222c224b222c224b222c2232225d7d",
+        "7b22706c6179657241223a5b2238222c224a222c2232222c2239222c2234222c2234222c2235222c2238222c2251222c2233222c2239222c2233222c2236222c2232222c2238222c2241222c2241222c2241222c2239222c2234222c2237222c2232222c2235222c2251222c2251222c2233225d2c22706c6179657242223a5b224b222c2237222c223130222c2236222c2233222c224a222c2241222c2237222c2236222c2235222c2235222c2238222c223130222c2239222c223130222c2234222c2232222c2237222c224b222c2251222c223130222c224b222c2236222c224a222c224a222c224b225d7d",
+        "7b22706c6179657241223a5b2237222c2232222c2233222c2234222c224b222c2239222c2236222c223130222c2241222c2238222c2239222c2251222c2237222c2241222c2234222c2238222c224a222c224a222c2241222c2234222c2233222c2232222c2235222c2236222c2236222c224a225d2c22706c6179657242223a5b2233222c223130222c2238222c2239222c2238222c224b222c224b222c2232222c2235222c2235222c2237222c2236222c2234222c2233222c2235222c2237222c2241222c2239222c224a222c224b222c2232222c2251222c223130222c2251222c223130222c2251225d7d",
+        "7b22706c6179657241223a5b2232222c223130222c223130222c2241222c224a222c2233222c2238222c2251222c2232222c2235222c2235222c2235222c2239222c2232222c2234222c2233222c223130222c2251222c2241222c224b222c2251222c224a222c224a222c2239222c2251222c224b225d2c22706c6179657242223a5b223130222c2237222c2236222c2233222c2236222c2241222c2238222c2239222c2234222c2233222c224b222c224a222c2236222c224b222c2234222c2239222c2237222c2238222c2235222c2237222c2238222c2232222c2241222c2237222c2234222c2236225d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 28,
+      "unsupported_reason": "Game cycle detection needs a set of variable-length deck states. No nested sequence/set representation; hand-encoded state simulation is not implemented. Emulation is possible.",
+      "missing_capabilities": [
+        "nested_collections"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_change",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/change",
+        "canonical_sha256": "a60728f642b463522c1253374ef487ebd999b378a08adfa88a9d8b2ae98b3229",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "change",
+      "selected_property": "findFewestCoins",
+      "prompt": "findFewestCoins: target on first line, positive ascending distinct coins comma-separated on remaining line. Minimum coin count; output ascending coins each followed by LF; impossible/negative target gives error\\n.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "310a312c352c31302c3235",
+        "32350a312c352c31302c32352c313030",
+        "31350a312c352c31302c32352c313030",
+        "32330a312c342c31352c32302c3530",
+        "36330a312c352c31302c32312c3235",
+        "3939390a312c322c352c31302c32302c35302c313030",
+        "32310a322c352c31302c32302c3530",
+        "32370a342c35",
+        "32300a312c31302c3131",
+        "300a312c352c31302c32312c3235",
+        "330a352c3130",
+        "39340a352c3130"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 13
+    },
+    {
+      "id": "ex_circular_buffer",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/circular-buffer",
+        "canonical_sha256": "51cb2d53e8c34ea4c505de8441d4aa37e469246f830598ec89b5748b841a47d6",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "circular-buffer",
+      "selected_property": "run",
+      "prompt": "run: capacity first line; then opcode,item rows (read=0/write=1/overwrite=2/clear=3). For each op emit read value, ok or error followed by LF. Match full/empty and overwrite FIFO semantics.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "310a302c30",
+        "310a312c310a302c30",
+        "310a312c310a302c300a302c30",
+        "320a312c310a312c320a302c300a302c30",
+        "310a312c310a312c32",
+        "310a312c310a302c300a312c320a302c30",
+        "330a312c310a312c320a302c300a312c330a302c300a302c30",
+        "310a312c310a332c300a302c30",
+        "310a312c310a332c300a312c320a302c30",
+        "310a332c300a312c310a302c30",
+        "320a312c310a322c320a302c300a302c30",
+        "320a312c310a312c320a322c330a302c300a302c30",
+        "330a312c310a312c320a312c330a302c300a312c340a322c350a302c300a302c300a302c30"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 14
+    },
+    {
+      "id": "ex_clock",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/clock",
+        "canonical_sha256": "1ece368b234d83e44b145fad15fa6fddacb93c6091d64fad21490467f0f75a13",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "clock",
+      "selected_property": "create",
+      "prompt": "create only: hour,minute integers. Normalize modulo one day, output HH:MM, no LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "382c30",
+        "31312c39",
+        "32342c30",
+        "32352c30",
+        "3130302c30",
+        "312c3630",
+        "302c313630",
+        "302c31373233",
+        "32352c313630",
+        "3230312c33303031",
+        "37322c38363430",
+        "2d312c3135",
+        "2d32352c30",
+        "2d39312c30",
+        "312c2d3430",
+        "312c2d313630",
+        "312c2d34383230",
+        "322c2d3630",
+        "2d32352c2d313630"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 20
+    },
+    {
+      "id": "ex_collatz_conjecture",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/collatz-conjecture",
+        "canonical_sha256": "eeeb1924bd07e698cf43912ae468e243aa3aed41b47bf05f4aa8357def138661",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "collatz-conjecture",
+      "selected_property": "steps",
+      "prompt": "steps: positive canonical i64. Output step count with LF; nonpositive gives error\\n. Domain requires intermediates and steps within runtime limits.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "31",
+        "3136",
+        "3132",
+        "31303030303030",
+        "30"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 6
+    },
+    {
+      "id": "ex_complex_numbers",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/complex-numbers",
+        "canonical_sha256": "98a5c9fd455ea5df27291117a36007ef46e03f2115fa080fa69a5b7d22626b8f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "complex-numbers",
+      "selected_property": "real",
+      "prompt": "Upstream complex-numbers real property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b227a223a5b312c305d7d",
+        "7b227a223a5b302c315d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 3,
+      "unsupported_reason": "The real-part property accepts real-number complex components; v5 has no float type or parsing/formatting contract.",
+      "missing_capabilities": [
+        "floats"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_connect",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/connect",
+        "canonical_sha256": "c436979204121707fab9ed8bf547c4064508d07ceea8043b37200c800fab8e84",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "connect",
+      "selected_property": "winner",
+      "prompt": "winner: LF-separated Hex rows with indentation spaces; strip spaces. Output X, O or empty bytes. Rectangular boards; X left-right, O top-bottom.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "2e202e202e202e202e0a202e202e202e202e202e0a20202e202e202e202e202e0a2020202e202e202e202e202e0a202020202e202e202e202e202e",
+        "58",
+        "4f",
+        "4f204f204f20580a2058202e202e20580a202058202e202e20580a20202058204f204f204f",
+        "58204f202e202e0a204f2058205820580a20204f2058204f202e0a2020202e204f2058202e0a20202020582058204f204f",
+        "58202e202e202e0a202e2058204f202e0a20204f202e2058204f0a2020202e204f202e20580a202020202e202e204f202e",
+        "2e204f202e202e0a204f2058205820580a20204f2058204f202e0a202020582058204f20580a202020202e204f2058202e",
+        "2e202e2058202e0a20582058202e202e0a20202e2058205820580a2020204f204f204f204f",
+        "2e202e205820580a20582058202e202e0a20202e20582058202e0a2020204f204f204f204f",
+        "2e204f202e202e0a204f2058205820580a20204f204f204f202e0a202020582058204f20580a202020202e204f2058202e",
+        "2e20582058202e202e0a2058202e2058202e20580a20202e2058202e2058202e0a2020202e20582058202e202e0a202020204f204f204f204f204f"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 12
+    },
+    {
+      "id": "ex_crypto_square",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/crypto-square",
+        "canonical_sha256": "7585930498912b220b20df6bb405c35b2edd273cb644e3dbf88d6a0cacb71e17",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "crypto-square",
+      "selected_property": "ciphertext",
+      "prompt": "ciphertext: English ASCII phrase. Lowercase alphanumerics form minimum enclosing rectangle; read columns with trailing padding, separate groups by space.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "",
+        "2e2e2e202d2d2d202e2e2e",
+        "41",
+        "20206220",
+        "40312c2521",
+        "546869732069732066756e21",
+        "4368696c6c206f75742e"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 8
+    },
+    {
+      "id": "ex_custom_set",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/custom-set",
+        "canonical_sha256": "2cffe8f28cedd4f5e73f16506dd7f9b4b8ff5520e04d42fc70d53efaf6b4a34c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "custom-set",
+      "selected_property": "empty",
+      "prompt": "empty only (first property): comma-separated integer set. Output true\\n iff empty. Other set API methods are explicitly outside this adapted task.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        ""
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 2
+    },
+    {
+      "id": "ex_darts",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/darts",
+        "canonical_sha256": "bc815b29fafe311db9de8bc752ec42045bb10c081b6082ded22744ccfbb031c9",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "darts",
+      "selected_property": "score",
+      "prompt": "Upstream darts score property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2278223a2d392c2279223a397d",
+        "7b2278223a302c2279223a31307d",
+        "7b2278223a2d352c2279223a307d",
+        "7b2278223a302c2279223a2d317d",
+        "7b2278223a302c2279223a307d",
+        "7b2278223a2d302e312c2279223a2d302e317d",
+        "7b2278223a302e372c2279223a302e377d",
+        "7b2278223a302e382c2279223a2d302e387d",
+        "7b2278223a2d332e352c2279223a332e357d",
+        "7b2278223a2d332e362c2279223a2d332e367d",
+        "7b2278223a2d372e302c2279223a372e307d",
+        "7b2278223a372e312c2279223a2d372e317d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 13,
+      "unsupported_reason": "Real Cartesian coordinates and squared-radius comparisons require floating-point semantics; integer-only restriction would remove upstream cases.",
+      "missing_capabilities": [
+        "floats"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_diamond",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diamond",
+        "canonical_sha256": "463426cdd6166e96518fd3525cf56818fa978b3c4b6497f8ca7f94a04423d73d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "diamond",
+      "selected_property": "rows",
+      "prompt": "rows: single uppercase A..Z. Output symmetric square of letters/spaces with LF after each row.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "41",
+        "42",
+        "43",
+        "44"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 5
+    },
+    {
+      "id": "ex_difference_of_squares",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/difference-of-squares",
+        "canonical_sha256": "d097c48a4783565372af2a6c67c84ef86f5494d13393e6fd7f42f569f099f40a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "difference-of-squares",
+      "selected_property": "squareOfSum",
+      "prompt": "squareOfSum only (first property): nonnegative i64 N within arithmetic bounds. Output square of sum 1..N with LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "31",
+        "35"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 3
+    },
+    {
+      "id": "ex_diffie_hellman",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/diffie-hellman",
+        "canonical_sha256": "f7f31347af8edbe5882acba74d7db349310da7cdd8b1f2cbe70521e5620a70b2",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "diffie-hellman",
+      "selected_property": "privateKeyIsInRange",
+      "prompt": "Upstream diffie-hellman privateKeyIsInRange property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 1,
+      "unsupported_reason": "The selected privateKeyIsInRange property generates a random private key; v5 Host has no randomness capability. Supplying a fixed key would change the task.",
+      "missing_capabilities": [
+        "entropy"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_dnd_character",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dnd-character",
+        "canonical_sha256": "0831484983f9736b29b8071dde5f69e263fa4509950d0dc9ee3f35ae1094e13c",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "dnd-character",
+      "selected_property": "modifier",
+      "prompt": "modifier only (first property): score 3..18. Output floor((score-10)/2) with LF. Random ability generation is not included in this property.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "3130",
+        "3131",
+        "3132",
+        "3133",
+        "3134",
+        "3135",
+        "3136",
+        "3137"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 16
+    },
+    {
+      "id": "ex_dominoes",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dominoes",
+        "canonical_sha256": "b7cc1433c8bd9a3fecc7dba6079425e64f0e4cd4f9906dd8ec222b20056def64",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "dominoes",
+      "selected_property": "canChain",
+      "prompt": "canChain: LF-separated nonnegative integer pairs x,y. Output true\\n iff all tiles can form a closed chain (empty allowed).",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "",
+        "312c31",
+        "312c32",
+        "312c320a332c310a322c33",
+        "312c320a312c330a322c33",
+        "312c320a342c310a322c33",
+        "312c310a322c32",
+        "312c320a322c310a332c340a342c33",
+        "312c320a322c330a332c310a342c34",
+        "312c320a322c330a332c310a322c340a322c34",
+        "312c320a322c330a332c310a312c310a322c320a332c33",
+        "312c320a352c330a332c310a312c320a322c340a312c360a322c330a332c340a352c36"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 13
+    },
+    {
+      "id": "ex_dot_dsl",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/dot-dsl",
+        "canonical_sha256": "0597d83b99c7fee7c7f810b3ad66b753591bfa0205b521a9e3649956f4e58b66",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "dot-dsl",
+      "selected_property": "parse",
+      "prompt": "Upstream dot-dsl parse property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2274657874223a5b226772617068207b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c2220202020613b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061205b636f6c6f723d677265656e5d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d20623b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c22202020205b666f6f3d315d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c22202020202f2f206120432d6c696b6520636f6d6d656e74222c2220202020232061207368656c6c2d6c696b6520636f6d6d656e74222c22202020205b666f6f3d315d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c22202020205b666f6f3d315d3b222c22202020205b7469746c653d5c2254657374696e672041747472735c225d3b222c222020202061205b636f6c6f723d677265656e5d3b222c222020202062205b6c6162656c3d5c2242657461215c225d3b222c222020202062202d2d20633b222c222020202061202d2d2062205b636f6c6f723d626c75655d3b222c22202020205b6261723d747275655d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d2062202d2d2063202d2d2064205b7374796c653d646f747465645d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d20623b222c222020202061202d2d20623b222c222020202062202d2d2061205b636f6c6f723d626c75655d3b222c227d225d7d",
+        "7b2274657874223a5b2267726170686963616c207b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c22202020206120623b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061203d3d20623b222c227d20225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d2062202d2d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061202d2d206220633b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061205b5d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061205b6e616d655d3b222c227d225d7d",
+        "7b2274657874223a5b226772617068207b222c222020202061205b3d76616c75655d3b222c227d225d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 19,
+      "unsupported_reason": "The selected parse property returns graph/node/edge attribute maps; no typed maps/records or reusable parser adapter. Serialized emulation is possible but not implemented.",
+      "missing_capabilities": [
+        "maps_records"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_eliuds_eggs",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/eliuds-eggs",
+        "canonical_sha256": "77272d0886522931b5aa3481ff256d6d50671c9e861ec63ca92bab30920a56cd",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "eliuds-eggs",
+      "selected_property": "eggCount",
+      "prompt": "eggCount: nonnegative i64 input. Output population count with LF; no bitwise primitive assumed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "30",
+        "3136",
+        "3839"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 4
+    },
+    {
+      "id": "ex_etl",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/etl",
+        "canonical_sha256": "293bc1cfb4ad2b9c75a50359520c177c473b307993cf3e1d69fc7473f4396d47",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "etl",
+      "selected_property": "transform",
+      "prompt": "Upstream etl transform property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b226c6567616379223a7b2231223a5b2241225d7d7d",
+        "7b226c6567616379223a7b2231223a5b2241222c2245222c2249222c224f222c2255225d7d7d",
+        "7b226c6567616379223a7b2231223a5b2241222c2245225d2c2232223a5b2244222c2247225d7d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 4,
+      "unsupported_reason": "Dynamic old/new score maps need a mapping adapter; no typed maps/records. Byte-encoded emulation is possible but not implemented.",
+      "missing_capabilities": [
+        "maps_records"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_flatten_array",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flatten-array",
+        "canonical_sha256": "fa6c236333d546ed304e9c93d9b8947b2cdee162248be2393ef118c1b6533316",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "flatten-array",
+      "selected_property": "flatten",
+      "prompt": "flatten: JSON nested arrays of i64 integers and null only. Discard null and return integers in traversal order, each with LF. Strings/objects are outside source canonical domain.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "5b5d",
+        "5b302c312c325d",
+        "5b5b5b5d5d5d",
+        "5b312c5b322c332c342c352c362c375d2c385d",
+        "5b302c322c5b5b322c335d2c382c3130302c342c5b5b5b35305d5d5d5d2c2d325d",
+        "5b312c5b322c5b5b335d5d2c5b342c5b5b355d5d5d2c362c375d2c385d",
+        "5b312c322c6e756c6c5d",
+        "5b6e756c6c2c6e756c6c2c335d",
+        "5b312c6e756c6c2c6e756c6c2c345d",
+        "5b302c322c5b5b322c335d2c382c5b5b3130305d5d2c6e756c6c2c5b5b6e756c6c5d5d5d2c2d325d"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 11
+    },
+    {
+      "id": "ex_flower_field",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/flower-field",
+        "canonical_sha256": "f29b89a783b6f3e16a0e4e69d0362fb81c95ac8f0ea6af9c7b0db17ac2a45695",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "flower-field",
+      "selected_property": "annotate",
+      "prompt": "annotate: rectangular LF-terminated rows of spaces/stars, empty file means no rows. Replace nonstars by neighboring star count (zero stays space); LF after each row.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "",
+        "0a",
+        "2020200a2020200a2020200a",
+        "2a2a2a0a2a2a2a0a2a2a2a0a",
+        "2020200a202a200a2020200a",
+        "2a2a2a0a2a202a0a2a2a2a0a",
+        "202a202a200a",
+        "2a2020202a0a",
+        "200a2a0a200a2a0a200a",
+        "2a0a200a200a200a2a0a",
+        "20202a20200a20202a20200a2a2a2a2a2a0a20202a20200a20202a20200a",
+        "202a20202a200a20202a2020200a202020202a200a2020202a202a0a202a20202a200a2020202020200a"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 13
+    },
+    {
+      "id": "ex_food_chain",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/food-chain",
+        "canonical_sha256": "8fd16b2a7f20e4d055dc63311709fcf1c8e17f4bd6bec207fe29e364961d5d1f",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "food-chain",
+      "selected_property": "recite",
+      "prompt": "recite: startVerse,endVerse in 1..8. Return source cumulative song lines, LF after each, blank verse separators.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "312c31",
+        "322c32",
+        "332c33",
+        "342c34",
+        "352c35",
+        "362c36",
+        "372c37",
+        "382c38",
+        "312c33"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 10
+    },
+    {
+      "id": "ex_forth",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/forth",
+        "canonical_sha256": "6578301f6345b328b01292fef2925662d0d3c2f946e447dac969c031a089b176",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "forth",
+      "selected_property": "evaluate",
+      "prompt": "Upstream forth evaluate property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22696e737472756374696f6e73223a5b22312032203320342035225d7d",
+        "7b22696e737472756374696f6e73223a5b222d31202d32202d33202d34202d35225d7d",
+        "7b22696e737472756374696f6e73223a5b22312032202b225d7d",
+        "7b22696e737472756374696f6e73223a5b222b225d7d",
+        "7b22696e737472756374696f6e73223a5b2231202b225d7d",
+        "7b22696e737472756374696f6e73223a5b223120322033202b225d7d",
+        "7b22696e737472756374696f6e73223a5b22332034202d225d7d",
+        "7b22696e737472756374696f6e73223a5b222d225d7d",
+        "7b22696e737472756374696f6e73223a5b2231202d225d7d",
+        "7b22696e737472756374696f6e73223a5b22312031322033202d225d7d",
+        "7b22696e737472756374696f6e73223a5b22322034202a225d7d",
+        "7b22696e737472756374696f6e73223a5b222a225d7d",
+        "7b22696e737472756374696f6e73223a5b2231202a225d7d",
+        "7b22696e737472756374696f6e73223a5b223120322033202a225d7d",
+        "7b22696e737472756374696f6e73223a5b2231322033202f225d7d",
+        "7b22696e737472756374696f6e73223a5b22382033202f225d7d",
+        "7b22696e737472756374696f6e73223a5b22342030202f225d7d",
+        "7b22696e737472756374696f6e73223a5b222f225d7d",
+        "7b22696e737472756374696f6e73223a5b2231202f225d7d",
+        "7b22696e737472756374696f6e73223a5b22312031322033202f225d7d",
+        "7b22696e737472756374696f6e73223a5b22312032202b2034202d225d7d",
+        "7b22696e737472756374696f6e73223a5b22322034202a2033202f225d7d",
+        "7b22696e737472756374696f6e73223a5b223120332034202a202b225d7d",
+        "7b22696e737472756374696f6e73223a5b223120332034202b202a225d7d",
+        "7b22696e737472756374696f6e73223a5b223120647570225d7d",
+        "7b22696e737472756374696f6e73223a5b2231203220647570225d7d",
+        "7b22696e737472756374696f6e73223a5b22647570225d7d",
+        "7b22696e737472756374696f6e73223a5b22312064726f70225d7d",
+        "7b22696e737472756374696f6e73223a5b223120322064726f70225d7d",
+        "7b22696e737472756374696f6e73223a5b2264726f70225d7d",
+        "7b22696e737472756374696f6e73223a5b223120322073776170225d7d",
+        "7b22696e737472756374696f6e73223a5b2231203220332073776170225d7d",
+        "7b22696e737472756374696f6e73223a5b2273776170225d7d",
+        "7b22696e737472756374696f6e73223a5b22312073776170225d7d",
+        "7b22696e737472756374696f6e73223a5b22312032206f766572225d7d",
+        "7b22696e737472756374696f6e73223a5b223120322033206f766572225d7d",
+        "7b22696e737472756374696f6e73223a5b226f766572225d7d",
+        "7b22696e737472756374696f6e73223a5b2231206f766572225d7d",
+        "7b22696e737472756374696f6e73223a5b223a206475702d74776963652064757020647570203b222c2231206475702d7477696365225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20636f756e747570203120322033203b222c22636f756e747570225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20666f6f20647570203b222c223a20666f6f2064757020647570203b222c223120666f6f225d7d",
+        "7b22696e737472756374696f6e73223a5b223a207377617020647570203b222c22312073776170225d7d",
+        "7b22696e737472756374696f6e73223a5b223a202b202a203b222c22332034202b225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20666f6f2035203b222c223a2062617220666f6f203b222c223a20666f6f2036203b222c2262617220666f6f225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20666f6f203130203b222c223a20666f6f20666f6f2031202b203b222c22666f6f225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20312032203b225d7d",
+        "7b22696e737472756374696f6e73223a5b223a202d312032203b225d7d",
+        "7b22696e737472756374696f6e73223a5b22666f6f225d7d",
+        "7b22696e737472756374696f6e73223a5b2231204455502044757020647570225d7d",
+        "7b22696e737472756374696f6e73223a5b22312032203320342044524f502044726f702064726f70225d7d",
+        "7b22696e737472756374696f6e73223a5b2231203220535741502033205377617020342073776170225d7d",
+        "7b22696e737472756374696f6e73223a5b22312032204f564552204f766572206f766572225d7d",
+        "7b22696e737472756374696f6e73223a5b223a20666f6f20647570203b222c223120464f4f20466f6f20666f6f225d7d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 54,
+      "unsupported_reason": "Definitions and case-insensitive words require a runtime dictionary/code representation. A bespoke dictionary/interpreter is not implemented; this is a library/adapter gap, not theoretical impossibility.",
+      "missing_capabilities": [
+        "dynamic_dictionary"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_game_of_life",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/game-of-life",
+        "canonical_sha256": "eb09d20472b472af797b4c335a90fd9c053fef03957431acf48bb3a7ba1f0efb",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "game-of-life",
+      "selected_property": "tick",
+      "prompt": "tick: rectangular LF-terminated ASCII 0/1 rows. One finite-board generation with dead exterior; LF after each output row.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "",
+        "3030300a3031300a3030300a",
+        "3030300a3031300a3031300a",
+        "3130310a3130310a3130310a",
+        "3031300a3130300a3131300a",
+        "3131300a3030300a3130300a",
+        "3131310a3131310a3131310a"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 8
+    },
+    {
+      "id": "ex_gigasecond",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/gigasecond",
+        "canonical_sha256": "7ebb939391527537162803154757aa676ed9062d68a011cef5f08a3e7f88076d",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "gigasecond",
+      "selected_property": "add",
+      "prompt": "Upstream gigasecond add property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b226d6f6d656e74223a22323031312d30342d3235227d",
+        "7b226d6f6d656e74223a22313937372d30362d3133227d",
+        "7b226d6f6d656e74223a22313935392d30372d3139227d",
+        "7b226d6f6d656e74223a22323031352d30312d32345432323a30303a3030227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 5,
+      "unsupported_reason": "No date/time parsing/calendar arithmetic operation; a hand-written Gregorian adapter is not implemented. Integer/byte emulation is possible.",
+      "missing_capabilities": [
+        "calendar"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_go_counting",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/go-counting",
+        "canonical_sha256": "610f764fe8de8017c7e2f8976fed5e606ae831f8f7f2412ad613b956c214a3cb",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "go-counting",
+      "selected_property": "territory",
+      "prompt": "Upstream go-counting territory property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a302c2279223a317d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a322c2279223a337d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a312c2279223a347d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a312c2279223a317d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a2d312c2279223a317d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a352c2279223a317d",
+        "7b22626f617264223a5b222020422020222c222042204220222c224220572042222c222057205720222c222020572020225d2c2278223a312c2279223a2d317d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 8,
+      "unsupported_reason": "Region result has an owner and collection of coordinate pairs. No typed multi-result/record representation; a serialized flood-fill adapter is not implemented. Emulation is possible.",
+      "missing_capabilities": [
+        "maps_records"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_grade_school",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grade-school",
+        "canonical_sha256": "a6ce57befa0f3a83b6a96446ad9adf476d4ca3a5d77e70a849c0c3b8fc65ecbf",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "grade-school",
+      "selected_property": "roster",
+      "prompt": "roster only (first property): LF-separated grade TAB name records (ASCII names, positive grades). Ignore repeated names after first accepted enrollment. Output roster sorted by grade then name, each name with LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "",
+        "320941696d6565",
+        "3209426c6169720a32094a616d65730a32095061756c",
+        "3209426c6169720a32094a616d65730a32094a616d65730a32095061756c",
+        "33094368656c7365610a37094c6f67616e",
+        "3209426c6169720a32094a616d65730a33094a616d65730a33095061756c",
+        "33094a696d0a320950657465720a3109416e6e61",
+        "320950657465720a32095a6f650a3209416c6578"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 9
+    },
+    {
+      "id": "ex_grains",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grains",
+        "canonical_sha256": "b5c2c1a38ed4527681f0f4dcc09b91fe26f87162188146d919fb478f23d3e473",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "grains",
+      "selected_property": "square",
+      "prompt": "Upstream grains square property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b22737175617265223a317d",
+        "7b22737175617265223a327d",
+        "7b22737175617265223a337d",
+        "7b22737175617265223a347d",
+        "7b22737175617265223a31367d",
+        "7b22737175617265223a33327d",
+        "7b22737175617265223a36347d",
+        "7b22737175617265223a307d",
+        "7b22737175617265223a2d317d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 10,
+      "unsupported_reason": "Square 64 yields 2^63, outside signed i64. No unsigned64/big-integer arithmetic/formatting. Hand-rolled decimal arithmetic could emulate it but is not implemented.",
+      "missing_capabilities": [
+        "integer_width"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_grep",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/grep",
+        "canonical_sha256": "b6eed026aeca970f29c2d5a2881475de0500eddd23f8d207dbe2b7f0c4bcf88a",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "grep",
+      "selected_property": "grep",
+      "prompt": "Upstream grep grep property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b5d2c227061747465726e223a224167616d656d6e6f6e227d",
+        "7b2266696c6573223a5b2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6e225d2c227061747465726e223a22466f7262696464656e227d",
+        "7b2266696c6573223a5b2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d69225d2c227061747465726e223a22464f5242494444454e227d",
+        "7b2266696c6573223a5b2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6c225d2c227061747465726e223a22466f7262696464656e227d",
+        "7b2266696c6573223a5b2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d78225d2c227061747465726e223a2257697468206c6f7373206f66204564656e2c2074696c6c206f6e652067726561746572204d616e227d",
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b222d6e222c222d69222c222d78225d2c227061747465726e223a224f46204154524555532c204167616d656d6e6f6e2c204b496e67206f66204d454e2e227d",
+        "7b2266696c6573223a5b226d696473756d6d65722d6e696768742e747874225d2c22666c616773223a5b5d2c227061747465726e223a226d6179227d",
+        "7b2266696c6573223a5b226d696473756d6d65722d6e696768742e747874225d2c22666c616773223a5b222d6e225d2c227061747465726e223a226d6179227d",
+        "7b2266696c6573223a5b226d696473756d6d65722d6e696768742e747874225d2c22666c616773223a5b222d78225d2c227061747465726e223a226d6179227d",
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b222d69225d2c227061747465726e223a22414348494c4c4553227d",
+        "7b2266696c6573223a5b2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d76225d2c227061747465726e223a224f66227d",
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b222d6e222c222d6c222c222d78222c222d69225d2c227061747465726e223a2247616e64616c66227d",
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b222d6e222c222d6c225d2c227061747465726e223a2274656e227d",
+        "7b2266696c6573223a5b22696c6961642e747874225d2c22666c616773223a5b222d78222c222d76225d2c227061747465726e223a22496c6c75737472696f757320696e746f2041646573207072656d61747572652c227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b5d2c227061747465726e223a224167616d656d6e6f6e227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b5d2c227061747465726e223a226d6179227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6e225d2c227061747465726e223a2274686174227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6c225d2c227061747465726e223a2277686f227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d69225d2c227061747465726e223a22544f227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d76225d2c227061747465726e223a2261227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d78225d2c227061747465726e223a224275742049206265736565636820796f757220677261636520746861742049206d6179206b6e6f77227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6e222c222d69222c222d78225d2c227061747465726e223a2257495448204c4f5353204f46204544454e2c2054494c4c204f4e452047524541544552204d414e227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6e222c222d6c222c222d78222c222d69225d2c227061747465726e223a2246726f646f227d",
+        "7b2266696c6573223a5b22696c6961642e747874222c226d696473756d6d65722d6e696768742e747874222c2270617261646973652d6c6f73742e747874225d2c22666c616773223a5b222d6e222c222d6c225d2c227061747465726e223a2277686f227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 25,
+      "unsupported_reason": "Upstream multi-file flags/fixtures require a multi-file Host/runner contract; the current reusable corpus harness provisions a single input file. A packed emulation would change the I/O contract.",
+      "missing_capabilities": [
+        "multi_file_fixture"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_hamming",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hamming",
+        "canonical_sha256": "c932d8511912c5ca2cc5a15550a266436c637d8c2af4f3a055173808b0fb0086",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "hamming",
+      "selected_property": "distance",
+      "prompt": "distance: first strand then LF then second. Equal-length DNA strings. Return mismatched positions with LF; unequal length gives error\\n.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "0a",
+        "410a41",
+        "470a54",
+        "474741435447414141544354470a47474143544741414154435447",
+        "4747414347474154544354470a414747414347474154544354",
+        "414154470a414141",
+        "4154410a41475447",
+        "0a47"
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 9
+    },
+    {
+      "id": "ex_hangman",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hangman",
+        "canonical_sha256": "67b922274c541b029f5cea0e6886870f62d1db81fdefc58bd71e6e93a3115fca",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "hangman",
+      "selected_property": "guess",
+      "prompt": "Upstream hangman guess property; JSON input/output according to pinned canonical cases. No reduced substitute is claimed.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        "7b2267756573736573223a5b5d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2261222c2262222c2263222c2264222c2265222c2266222c2267222c2268222c2269222c226a225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2274222c226f222c2261222c2262222c2263222c2264222c2265222c2266222c2267222c2268222c2269222c226a225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2274225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2274222c2274225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2274222c2274222c226f225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2274222c2274222c226f222c226c225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2261222c2262222c2263222c2264222c2265222c2266222c2267222c2268222c2269222c2274222c226f222c226c225d2c22776f7264223a226c6f6f74227d",
+        "7b2267756573736573223a5b2261222c2262222c2263222c2264222c2265222c2266222c2267222c2268222c2269222c226a222c226b225d2c22776f7264223a226c6f6f74227d"
+      ],
+      "nil_status": "unsupported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 10,
+      "unsupported_reason": "Published task explicitly requires functional reactive programming/library integration. No first-class signals/events or integration ABI; a sequential transcript would not verify that requirement.",
+      "missing_capabilities": [
+        "reactive"
+      ],
+      "baseline_status": "unsupported"
+    },
+    {
+      "id": "ex_hello_world",
+      "category": "external exercise",
+      "origin": "external",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/exercism/problem-specifications/tree/9943fd751b684ba1a6a8673c3700a6e79c10a808/exercises/hello-world",
+        "canonical_sha256": "e5131e7eeec3a31fa34fa877bcaf3211bf24330dd60f5e105b6e4828808fe5e0",
+        "copyright": "2014, 2019, 2021 Exercism"
+      },
+      "source_slug": "hello-world",
+      "selected_property": "hello",
+      "prompt": "hello: input ignored. Output exactly Hello, World! with no LF.",
+      "rationale": "Mechanically selected in the first 50 alphabetical canonical-data exercises; not selected by support or token count.",
+      "inputs": [
+        ""
+      ],
+      "nil_status": "supported",
+      "adaptation_overlap": false,
+      "canonical_fixture_count": 1
+    }
+  ]
+}
