@@ -57,6 +57,13 @@ checkout, set `NIL_ROOT` and invoke `bench.py` directly; the compiler's shell wr
 selects its own checkout. See [paired](paired/README.md)
 and [the measurement protocol](PROTOCOL.md) for methodology and limitations.
 
+The [verified v5 application corpus](corpora/application-v5/README.md) includes
+24 NIL programs and 25 Python/C++ baselines, executable oracles, a positive JSONL
+exporter, and [four-tokenizer density results](reports/2026-10-03/V5_DENSITY.md).
+Its runners reuse the generation evaluator/native path and paired tokenizer asset;
+Gemma vocabulary-only counting adds a pinned benchmark Python binding because the
+existing paired runner had no Gemma tokenizer. Density counting never runs inference.
+
 Generation trials are optional. Read [generation](generation/README.md) first.
 The explicit `generation --ollama MODEL` mode uses an already running server and
 installed model. Smoke checks never start Ollama or install model weights.
