@@ -196,3 +196,17 @@ Keep the generated full ledger outside the checkout. Reproduce with the report's
 commands; run `python -m unittest discover -s corpora/application-v5/tests` using
 the paired Python environment from this submodule root. No Rust dependencies or
 model inference are needed.
+
+## Numeric expansion (ADR 027)
+
+Four previously unsupported frozen external contracts now have verified solutions:
+Armstrong Numbers (u128 with accumulation overflow detection), Grains (u64),
+Darts (binary64 squared-distance comparisons), and Complex Numbers' selected
+real-part property (not the full complex API). There are **60 verified NIL
+programs**, 36 external, with 15 unsupported tasks remaining (14 external).
+All original contracts, fixtures, goldens and existing baseline sources remain
+unchanged; new baselines fill previously absent paths. Numeric JSON adapters cover
+the pinned minified contracts; they are not general JSON parsers. No float/unsigned
+collections, records or complex type were introduced. Each task's upstream MIT
+provenance and corpus license continue to apply. Export produces 60 adaptation
+seeds, still far below a credible training set. No inference or training occurred.

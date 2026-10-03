@@ -36,8 +36,8 @@ class ExternalContracts(unittest.TestCase):
 
     def test_supported_references_and_unsupported_reasons_are_explicit(self):
         tasks = load_tasks('external')
-        self.assertEqual(sum(t['nil_status'] == 'supported' for t in tasks), 32)
-        self.assertEqual(sum(t['nil_status'] == 'unsupported' for t in tasks), 18)
+        self.assertEqual(sum(t['nil_status'] == 'supported' for t in tasks), 36)
+        self.assertEqual(sum(t['nil_status'] == 'unsupported' for t in tasks), 14)
         for task in tasks:
             if task['nil_status'] == 'unsupported':
                 self.assertTrue(task['missing_capabilities'])

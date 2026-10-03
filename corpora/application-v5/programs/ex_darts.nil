@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsef64(!slice(a,5,!find(a,44,5)-5)),!parsef64(!slice(a,!find(a,58,6)+1,#a-!find(a,58,6)-2)))),"\n")
+(f64,f64)=d(a*a+b*b)
+(f64)=a<=1.0?10:(a<=25.0?5:(a<=100.0?1:0))

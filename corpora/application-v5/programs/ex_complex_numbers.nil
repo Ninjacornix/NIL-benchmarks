@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!slice(a,6,!find(a,44,6)-6))
+(s):s=d(a,!parsef64(a))
+(s,f64):s=!concat(b==b?a:"null","\n")

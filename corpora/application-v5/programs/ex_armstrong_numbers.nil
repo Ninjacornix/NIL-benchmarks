@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(a,!parseu128(a))?"true\n":"false\n"
+(s,u128):b=@(a,0,0u128,false;b<#a;a,b+1,c+d(!u128(a[b]-48),#a),d?true:c+d(!u128(a[b]-48),#a)<c;d?false:c==!parseu128(a))
+(u128,i):u128=@(a,b,1u128,0;d<b;a,b,c*a,d+1;c)

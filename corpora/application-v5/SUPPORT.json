@@ -1,7 +1,26 @@
 {
   "schema": 1,
-  "source": "ADR 023 ordered keyed maps",
+  "source": "ADR 023 keyed maps; ADR 027 numeric types",
   "overrides": {
-    "ex_etl": {"nil_status": "supported", "baseline_status": "supported"}
+    "ex_etl": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    },
+    "ex_darts": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    },
+    "ex_complex_numbers": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    },
+    "ex_grains": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    },
+    "ex_armstrong_numbers": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    }
   }
 }

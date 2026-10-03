@@ -1,19 +1,17 @@
 {
   "schema": 1,
-  "unsupported_total": 19,
-  "external_unsupported": 18,
-  "supported_external": 32,
+  "unsupported_total": 15,
+  "external_unsupported": 14,
+  "supported_external": 36,
   "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
   "blocking_task_counts": {
     "environment": 1,
     "higher_order": 1,
     "maps_records": 3,
     "unicode": 2,
-    "integer_width": 2,
     "concurrency": 1,
     "recursive_values": 1,
     "nested_collections": 1,
-    "floats": 2,
     "entropy": 1,
     "dynamic_dictionary": 1,
     "calendar": 1,
@@ -36,10 +34,6 @@
       "ex_anagram",
       "ex_bob"
     ],
-    "integer_width": [
-      "ex_armstrong_numbers",
-      "ex_grains"
-    ],
     "concurrency": [
       "ex_bank_account"
     ],
@@ -48,10 +42,6 @@
     ],
     "nested_collections": [
       "ex_camicia"
-    ],
-    "floats": [
-      "ex_complex_numbers",
-      "ex_darts"
     ],
     "entropy": [
       "ex_diffie_hellman"
@@ -116,5 +106,20 @@
       "ex_camicia": "Byte-keyed integer maps can encode a visited-state set, but deck-state encoding and verified game/cycle simulation are not implemented; maps are not recursive collections."
     },
     "classification": "Counts retain unsupported adapter tasks; maps_records is a historical cluster label, not a claim that all three require unavailable map lookup. SUPPORT.json records support without mutating frozen contracts."
+  },
+  "numeric_followup": {
+    "adr": "027",
+    "verified_moved_to_supported": [
+      "ex_armstrong_numbers",
+      "ex_complex_numbers",
+      "ex_darts",
+      "ex_grains"
+    ],
+    "types": [
+      "u64",
+      "u128",
+      "f64"
+    ],
+    "limitation": "The selected complex-number real-part property is supported; no record/complex type or full complex arithmetic API is claimed. Other widths/float collections remain deferred."
   }
 }
