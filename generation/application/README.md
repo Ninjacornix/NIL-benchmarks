@@ -29,6 +29,11 @@ Python may use its standard library; NIL uses its existing core/intrinsics. This
 measures the available pretrained models with fixed in-context NIL instruction,
 not a NIL-trained model or syntax under a hypothetical tokenizer.
 
+The frozen source extractor accepts plain source or one fenced block labelled
+`nil`, `python` or `text` (or unlabelled). Other labels, including `expr-v5`,
+remain in the source and fail parsing. This presentation-policy limitation must
+be stated when interpreting validity rates; it is not changed during inference.
+
 Initial and repair requests/responses are retained. Repairs include actual parse/
 type/compiler diagnostics (capped at 800 characters) or generic semantic feedback,
 never failing inputs, expected bytes or task solutions. Full conversation history

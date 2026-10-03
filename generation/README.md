@@ -1,5 +1,9 @@
 # NIL generation and repair experiment
 
+For the frozen expr-v5/Python file-task study, use [the application adapter](application/README.md).
+It reuses this transport, accounting and paired bootstrap; it has separate application
+oracles and budgets. Do not pool its results with the numerical pilot.
+
 Status: optional tooling; the local pilot was interrupted at the user’s request.
 It provides no completed model-efficiency result. Raw artifacts are archived outside
 the repository. Use `./scripts/bench.sh generation --mock` from the repository root for offline checks.
@@ -46,7 +50,8 @@ and runtime measurements remain null. Existing paired benchmarks measure runtime
 ## Run
 
 ```sh
-cargo build --release --locked --offline -p nil-compiler --example generation_check -p nil
+benchmarks/paired/.venv/bin/python -c "import sys; sys.path.insert(0, 'benchmarks'); from support import build_helpers; build_helpers('generation_check')"
+cargo build --release --locked --offline -p nil
 benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/generation/tests -v
 # Start Ollama separately if needed: ollama serve
 benchmarks/paired/.venv/bin/python benchmarks/generation/experiment.py --output /external/path/nil-pilot
