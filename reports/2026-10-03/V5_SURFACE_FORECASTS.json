@@ -1,0 +1,2133 @@
+{
+  "schema": 1,
+  "scope": "32 external paired tasks; original sources remain locked",
+  "warning": "Pre-implementation whole-source token forecasts; writes no corpus sources.\n\nSignature references and empty loop steps are deliberately INVALID in the frozen\ncompiler. These are counterfactual spellings, not verified reference solutions.\n",
+  "selection_rule": "same complete signature, earliest prior declaration, strictly shorter source header; no task selection",
+  "totals": {
+    "signature_references": {
+      "gemma3_4b": 78,
+      "qwen2.5_7b_instruct": 32,
+      "cl100k_base": 32,
+      "o200k_base": 32
+    },
+    "empty_loop_steps": {
+      "gemma3_4b": 131,
+      "qwen2.5_7b_instruct": 9,
+      "cl100k_base": 9,
+      "o200k_base": 9
+    }
+  },
+  "records": [
+    {
+      "task": "ex_acronym",
+      "candidate": "signature_references",
+      "source_sha256": "03f41181d22732a9567df6c61abfde06d3098e6838a0a6b360023aabebdc0753",
+      "before": {
+        "gemma3_4b": 182,
+        "qwen2.5_7b_instruct": 147,
+        "cl100k_base": 134,
+        "o200k_base": 134
+      },
+      "after": {
+        "gemma3_4b": 181,
+        "qwen2.5_7b_instruct": 147,
+        "cl100k_base": 134,
+        "o200k_base": 134
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 3,
+          "reference": 2,
+          "before": "1:b=",
+          "after": "^c="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,true,\"\";b<#a;a,b+1,c(a[b])?true:(d(a[b])?false:c),d(a[b])?(c?!concat(d,!bytes(1,e(a[b]))):d):d;d)\n1:b=a==32?true:(a==45?true:(a==9?true:(a==10?true:a==13)))\n^c=a>=65?(a<=90?true:(a>=97?a<=122:false)):false\n1=a>=97?(a<=122?a-32:a):a\n"
+    },
+    {
+      "task": "ex_acronym",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "03f41181d22732a9567df6c61abfde06d3098e6838a0a6b360023aabebdc0753",
+      "before": {
+        "gemma3_4b": 182,
+        "qwen2.5_7b_instruct": 147,
+        "cl100k_base": 134,
+        "o200k_base": 134
+      },
+      "after": {
+        "gemma3_4b": 180,
+        "qwen2.5_7b_instruct": 147,
+        "cl100k_base": 134,
+        "o200k_base": 134
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          53,
+          54
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,true,\"\";b<#a;,b+1,c(a[b])?true:(d(a[b])?false:c),d(a[b])?(c?!concat(d,!bytes(1,e(a[b]))):d):d;d)\n1:b=a==32?true:(a==45?true:(a==9?true:(a==10?true:a==13)))\n1:b=a>=65?(a<=90?true:(a>=97?a<=122:false)):false\n1=a>=97?(a<=122?a-32:a):a\n"
+    },
+    {
+      "task": "ex_affine_cipher",
+      "candidate": "signature_references",
+      "source_sha256": "7a4e8f7b96a885c37f853c17f2420ad269ce18f81f0da464093132cdc92949ff",
+      "before": {
+        "gemma3_4b": 325,
+        "qwen2.5_7b_instruct": 253,
+        "cl100k_base": 239,
+        "o200k_base": 240
+      },
+      "after": {
+        "gemma3_4b": 323,
+        "qwen2.5_7b_instruct": 252,
+        "cl100k_base": 238,
+        "o200k_base": 239
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 8,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=d(!parsebuf(!slice(a,0,b),\",\"),!slice(a,b+1,#a-b-1))\n(v,s):s=e(a[0],26)==1?i(@(a,b,0,\"\";c<#b;a,b,c+1,h(g(b[c]))?!concat(d,!bytes(1,f(g(b[c]),a[0],a[1]))):d;d)):\"error\\n\"\n2=@(a,b;b!=0;b,j(a,b);a)\n3=a>=97?97+j(b*(a-97)+c,26):a\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n^b=@(a,0,\"\";b<#a;a,b+1,!concat(c,!concat(b>0?(j(b,5)==0?\" \":\"\"):\"\",!bytes(1,a[b])));c)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_affine_cipher",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "7a4e8f7b96a885c37f853c17f2420ad269ce18f81f0da464093132cdc92949ff",
+      "before": {
+        "gemma3_4b": 325,
+        "qwen2.5_7b_instruct": 253,
+        "cl100k_base": 239,
+        "o200k_base": 240
+      },
+      "after": {
+        "gemma3_4b": 320,
+        "qwen2.5_7b_instruct": 253,
+        "cl100k_base": 239,
+        "o200k_base": 240
+      },
+      "savings": {
+        "gemma3_4b": 5,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          154,
+          155
+        ],
+        [
+          156,
+          157
+        ],
+        [
+          381,
+          382
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=d(!parsebuf(!slice(a,0,b),\",\"),!slice(a,b+1,#a-b-1))\n(v,s):s=e(a[0],26)==1?i(@(a,b,0,\"\";c<#b;,,c+1,h(g(b[c]))?!concat(d,!bytes(1,f(g(b[c]),a[0],a[1]))):d;d)):\"error\\n\"\n2=@(a,b;b!=0;b,j(a,b);a)\n3=a>=97?97+j(b*(a-97)+c,26):a\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n(s):s=@(a,0,\"\";b<#a;,b+1,!concat(c,!concat(b>0?(j(b,5)==0?\" \":\"\"):\"\",!bytes(1,a[b])));c)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_all_your_base",
+      "candidate": "signature_references",
+      "source_sha256": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+      "before": {
+        "gemma3_4b": 230,
+        "qwen2.5_7b_instruct": 170,
+        "cl100k_base": 170,
+        "o200k_base": 168
+      },
+      "after": {
+        "gemma3_4b": 230,
+        "qwen2.5_7b_instruct": 170,
+        "cl100k_base": 170,
+        "o200k_base": 168
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=a[0]>=2?(a[1]>=2?(d(a)?f(e(a),a[1]):\"error\\n\"):\"error\\n\"):\"error\\n\"\n(v):b=@(a,2,true;b<#a;a,b+1,a[b]>=0?(a[b]<a[0]?c:false):false;c)\n(v)=@(a,2,0;b<#a;a,b+1,c*a[0]+a[b];c)\n2:s=a==0?\"0\\n\":@(a,b,\"\";a>0;a/b,b,!concat(h(g(a,b)),c);c)\n2=a-a/b*b\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_all_your_base",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+      "before": {
+        "gemma3_4b": 230,
+        "qwen2.5_7b_instruct": 170,
+        "cl100k_base": 170,
+        "o200k_base": 168
+      },
+      "after": {
+        "gemma3_4b": 225,
+        "qwen2.5_7b_instruct": 170,
+        "cl100k_base": 170,
+        "o200k_base": 168
+      },
+      "savings": {
+        "gemma3_4b": 5,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          152,
+          153
+        ],
+        [
+          212,
+          213
+        ],
+        [
+          265,
+          266
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=a[0]>=2?(a[1]>=2?(d(a)?f(e(a),a[1]):\"error\\n\"):\"error\\n\"):\"error\\n\"\n(v):b=@(a,2,true;b<#a;,b+1,a[b]>=0?(a[b]<a[0]?c:false):false;c)\n(v)=@(a,2,0;b<#a;,b+1,c*a[0]+a[b];c)\n2:s=a==0?\"0\\n\":@(a,b,\"\";a>0;a/b,,!concat(h(g(a,b)),c);c)\n2=a-a/b*b\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_allergies",
+      "candidate": "signature_references",
+      "source_sha256": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+      "before": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 149,
+        "o200k_base": 149
+      },
+      "after": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 149,
+        "o200k_base": 149
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=f(e(!parse(!slice(a,0,b))/d(!slice(a,b+1,#a-b-1)),2)==1)\n(s)=!equal(a,\"eggs\")?1:(!equal(a,\"peanuts\")?2:(!equal(a,\"shellfish\")?4:(!equal(a,\"strawberries\")?8:(!equal(a,\"tomatoes\")?16:(!equal(a,\"chocolate\")?32:(!equal(a,\"pollen\")?64:128))))))\n2=a-a/b*b\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_allergies",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+      "before": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 149,
+        "o200k_base": 149
+      },
+      "after": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 149,
+        "o200k_base": 149
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=f(e(!parse(!slice(a,0,b))/d(!slice(a,b+1,#a-b-1)),2)==1)\n(s)=!equal(a,\"eggs\")?1:(!equal(a,\"peanuts\")?2:(!equal(a,\"shellfish\")?4:(!equal(a,\"strawberries\")?8:(!equal(a,\"tomatoes\")?16:(!equal(a,\"chocolate\")?32:(!equal(a,\"pollen\")?64:128))))))\n2=a-a/b*b\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "candidate": "signature_references",
+      "source_sha256": "9d60164465d31ffce6e82395fbcfd18f6a320e671a09e4ef2330148cd5f8fab8",
+      "before": {
+        "gemma3_4b": 205,
+        "qwen2.5_7b_instruct": 159,
+        "cl100k_base": 148,
+        "o200k_base": 148
+      },
+      "after": {
+        "gemma3_4b": 203,
+        "qwen2.5_7b_instruct": 158,
+        "cl100k_base": 147,
+        "o200k_base": 147
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 5,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=f(@(a,0,\"\";b<#a;a,b+1,d(c(a[b]))?!concat(c,!bytes(1,e(c(a[b])))):c;c))\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n1=a>=97?219-a:a\n^b=@(a,0,\"\";b<#a;a,b+1,!concat(c,!concat(b>0?(g(b,5)==0?\" \":\"\"):\"\",!bytes(1,a[b])));c)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "9d60164465d31ffce6e82395fbcfd18f6a320e671a09e4ef2330148cd5f8fab8",
+      "before": {
+        "gemma3_4b": 205,
+        "qwen2.5_7b_instruct": 159,
+        "cl100k_base": 148,
+        "o200k_base": 148
+      },
+      "after": {
+        "gemma3_4b": 201,
+        "qwen2.5_7b_instruct": 159,
+        "cl100k_base": 148,
+        "o200k_base": 148
+      },
+      "savings": {
+        "gemma3_4b": 4,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          50,
+          51
+        ],
+        [
+          216,
+          217
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=f(@(a,0,\"\";b<#a;,b+1,d(c(a[b]))?!concat(c,!bytes(1,e(c(a[b])))):c;c))\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n1=a>=97?219-a:a\n(s):s=@(a,0,\"\";b<#a;,b+1,!concat(c,!concat(b>0?(g(b,5)==0?\" \":\"\"):\"\",!bytes(1,a[b])));c)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "candidate": "signature_references",
+      "source_sha256": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+      "before": {
+        "gemma3_4b": 190,
+        "qwen2.5_7b_instruct": 132,
+        "cl100k_base": 131,
+        "o200k_base": 132
+      },
+      "after": {
+        "gemma3_4b": 187,
+        "qwen2.5_7b_instruct": 131,
+        "cl100k_base": 130,
+        "o200k_base": 131
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 3,
+          "reference": 2,
+          "before": "(s,i)=",
+          "after": "^c="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=f(@(a,0,false;b<#a;a,c(a,b),c?true:e(a,b);c))\n(s,i)=d(a,b)<#a?d(a,b)+1:#a\n^c=!find(a,10,b)\n(s,i):b=@(a,b,0,false;c<b;a,b,c(a,c),d?true:!equal(!slice(a,c+5,d(a,c)-c-5),!slice(a,b+5,d(a,b)-b-5));d)\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+      "before": {
+        "gemma3_4b": 190,
+        "qwen2.5_7b_instruct": 132,
+        "cl100k_base": 131,
+        "o200k_base": 132
+      },
+      "after": {
+        "gemma3_4b": 185,
+        "qwen2.5_7b_instruct": 132,
+        "cl100k_base": 131,
+        "o200k_base": 132
+      },
+      "savings": {
+        "gemma3_4b": 5,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          53,
+          54
+        ],
+        [
+          154,
+          155
+        ],
+        [
+          156,
+          157
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=f(@(a,0,false;b<#a;,c(a,b),c?true:e(a,b);c))\n(s,i)=d(a,b)<#a?d(a,b)+1:#a\n(s,i)=!find(a,10,b)\n(s,i):b=@(a,b,0,false;c<b;,,c(a,c),d?true:!equal(!slice(a,c+5,d(a,c)-c-5),!slice(a,b+5,d(a,b)-b-5));d)\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_beer_song",
+      "candidate": "signature_references",
+      "source_sha256": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+      "before": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 194,
+        "cl100k_base": 193,
+        "o200k_base": 193
+      },
+      "after": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 194,
+        "cl100k_base": 193,
+        "o200k_base": 193
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,0,\"\";b<a[1];a,b+1,!concat(c,!concat(b>0?\"\\n\":\"\",d(a[0]-b)));c)\n1:s=!concat(e(a,true),!concat(\" of beer on the wall, \",!concat(e(a,false),!concat(\" of beer.\\n\",a==0?\"Go to the store and buy some more, 99 bottles of beer on the wall.\\n\":!concat(a==1?\"Take it down and pass it around, \":\"Take one down and pass it around, \",!concat(e(a-1,false),\" of beer on the wall.\\n\"))))))\n(i,b):s=a==0?(b?\"No more bottles\":\"no more bottles\"):(a==1?\"1 bottle\":!concat(!format(a),\" bottles\"))\n"
+    },
+    {
+      "task": "ex_beer_song",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+      "before": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 194,
+        "cl100k_base": 193,
+        "o200k_base": 193
+      },
+      "after": {
+        "gemma3_4b": 227,
+        "qwen2.5_7b_instruct": 194,
+        "cl100k_base": 193,
+        "o200k_base": 193
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          76,
+          77
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,0,\"\";b<a[1];,b+1,!concat(c,!concat(b>0?\"\\n\":\"\",d(a[0]-b)));c)\n1:s=!concat(e(a,true),!concat(\" of beer on the wall, \",!concat(e(a,false),!concat(\" of beer.\\n\",a==0?\"Go to the store and buy some more, 99 bottles of beer on the wall.\\n\":!concat(a==1?\"Take it down and pass it around, \":\"Take one down and pass it around, \",!concat(e(a-1,false),\" of beer on the wall.\\n\"))))))\n(i,b):s=a==0?(b?\"No more bottles\":\"no more bottles\"):(a==1?\"1 bottle\":!concat(!format(a),\" bottles\"))\n"
+    },
+    {
+      "task": "ex_binary",
+      "candidate": "signature_references",
+      "source_sha256": "4f989f26165d756a1ec3ce7eae8b78ee9c9d0d69d75bc3a59af5ca5287618100",
+      "before": {
+        "gemma3_4b": 99,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 70,
+        "o200k_base": 70
+      },
+      "after": {
+        "gemma3_4b": 99,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 70,
+        "o200k_base": 70
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,0,true;b<#a;a,b+1,c*2+a[b]-48,a[b]>=48?(a[b]<=49?d:false):false;d?c(c):\"null\")\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_binary",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "4f989f26165d756a1ec3ce7eae8b78ee9c9d0d69d75bc3a59af5ca5287618100",
+      "before": {
+        "gemma3_4b": 99,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 70,
+        "o200k_base": 70
+      },
+      "after": {
+        "gemma3_4b": 97,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 70,
+        "o200k_base": 70
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          52,
+          53
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,0,true;b<#a;,b+1,c*2+a[b]-48,a[b]>=48?(a[b]<=49?d:false):false;d?c(c):\"null\")\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_binary_search",
+      "candidate": "signature_references",
+      "source_sha256": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+      "before": {
+        "gemma3_4b": 196,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 143,
+        "o200k_base": 144
+      },
+      "after": {
+        "gemma3_4b": 196,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 143,
+        "o200k_base": 144
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=d(!parse(!slice(a,0,b)),!parsebuf(!slice(a,b+1,#a-b-1),\",\"))\n(i,v):s=e(a,b,@(a,b,0,#b;c<d;a,b,b[(c+d)/2]<a?(c+d)/2+1:c,b[(c+d)/2]<a?d:(c+d)/2;c))\n(i,v,i):s=c<#b?(b[c]==a?f(c):\"error\\n\"):\"error\\n\"\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_binary_search",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+      "before": {
+        "gemma3_4b": 196,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 143,
+        "o200k_base": 144
+      },
+      "after": {
+        "gemma3_4b": 193,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 143,
+        "o200k_base": 144
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          151,
+          152
+        ],
+        [
+          153,
+          154
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=d(!parse(!slice(a,0,b)),!parsebuf(!slice(a,b+1,#a-b-1),\",\"))\n(i,v):s=e(a,b,@(a,b,0,#b;c<d;,,b[(c+d)/2]<a?(c+d)/2+1:c,b[(c+d)/2]<a?d:(c+d)/2;c))\n(i,v,i):s=c<#b?(b[c]==a?f(c):\"error\\n\"):\"error\\n\"\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_book_store",
+      "candidate": "signature_references",
+      "source_sha256": "8398d686ca532249e295b2beca8ca641c172260b46c0946162dea8cc68e1cccf",
+      "before": {
+        "gemma3_4b": 285,
+        "qwen2.5_7b_instruct": 227,
+        "cl100k_base": 216,
+        "o200k_base": 213
+      },
+      "after": {
+        "gemma3_4b": 281,
+        "qwen2.5_7b_instruct": 226,
+        "cl100k_base": 215,
+        "o200k_base": 212
+      },
+      "savings": {
+        "gemma3_4b": 4,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 3,
+          "reference": 2,
+          "before": "(v):v=",
+          "after": "^c="
+        },
+        {
+          "function": 5,
+          "reference": 2,
+          "before": "(v):v=",
+          "after": "^c="
+        },
+        {
+          "function": 6,
+          "reference": 4,
+          "before": "(v)=",
+          "after": "^e="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=h(g(d(c(!parsebuf(a,\",\")))))\n(v):v=@(a,0,!buffer(5,0);b<#a;a,b+1,c[a[b]-1:c[a[b]-1]+1];c)\n^c=@(a,!buffer(6,0);e(a)>0;f(a),b[e(a):b[e(a)]+1];b)\n(v)=@(a,0,0;b<#a;a,b+1,c+(a[b]>0?1:0);c)\n^c=@(a,0;b<#a;a[b:a[b]>0?a[b]-1:0],b+1;a)\n^e=800*a[1]+1520*a[2]+2160*a[3]+2560*a[4]+3000*a[5]-40*(a[3]<a[5]?a[3]:a[5])\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_book_store",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "8398d686ca532249e295b2beca8ca641c172260b46c0946162dea8cc68e1cccf",
+      "before": {
+        "gemma3_4b": 285,
+        "qwen2.5_7b_instruct": 227,
+        "cl100k_base": 216,
+        "o200k_base": 213
+      },
+      "after": {
+        "gemma3_4b": 281,
+        "qwen2.5_7b_instruct": 227,
+        "cl100k_base": 216,
+        "o200k_base": 213
+      },
+      "savings": {
+        "gemma3_4b": 4,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          93,
+          94
+        ],
+        [
+          197,
+          198
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=h(g(d(c(!parsebuf(a,\",\")))))\n(v):v=@(a,0,!buffer(5,0);b<#a;,b+1,c[a[b]-1:c[a[b]-1]+1];c)\n(v):v=@(a,!buffer(6,0);e(a)>0;f(a),b[e(a):b[e(a)]+1];b)\n(v)=@(a,0,0;b<#a;,b+1,c+(a[b]>0?1:0);c)\n(v):v=@(a,0;b<#a;a[b:a[b]>0?a[b]-1:0],b+1;a)\n(v)=800*a[1]+1520*a[2]+2160*a[3]+2560*a[4]+3000*a[5]-40*(a[3]<a[5]?a[3]:a[5])\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_bottle_song",
+      "candidate": "signature_references",
+      "source_sha256": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+      "before": {
+        "gemma3_4b": 268,
+        "qwen2.5_7b_instruct": 236,
+        "cl100k_base": 235,
+        "o200k_base": 235
+      },
+      "after": {
+        "gemma3_4b": 266,
+        "qwen2.5_7b_instruct": 236,
+        "cl100k_base": 235,
+        "o200k_base": 235
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 4,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        },
+        {
+          "function": 6,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,0,\"\";b<a[1];a,b+1,!concat(c,!concat(b>0?\"\\n\":\"\",d(a[0]-b)));c)\n1:s=!concat(e(a),!concat(e(a),!concat(\"And if one green bottle should accidentally fall,\\nThere'll be \",!concat(g(a-1),!concat(a==2?\" green bottle\":\" green bottles\",\" hanging on the wall.\\n\")))))\n^d=f(g(a),a)\n(s,i):s=!concat(a[0:a[0]-32],!concat(b==1?\" green bottle\":\" green bottles\",\" hanging on the wall,\\n\"))\n^d=a==0?\"no\":(a==1?\"one\":(a==2?\"two\":(a==3?\"three\":(a==4?\"four\":(a==5?\"five\":(a==6?\"six\":(a==7?\"seven\":(a==8?\"eight\":(a==9?\"nine\":\"ten\")))))))))\n"
+    },
+    {
+      "task": "ex_bottle_song",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+      "before": {
+        "gemma3_4b": 268,
+        "qwen2.5_7b_instruct": 236,
+        "cl100k_base": 235,
+        "o200k_base": 235
+      },
+      "after": {
+        "gemma3_4b": 267,
+        "qwen2.5_7b_instruct": 236,
+        "cl100k_base": 235,
+        "o200k_base": 235
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          76,
+          77
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,0,\"\";b<a[1];,b+1,!concat(c,!concat(b>0?\"\\n\":\"\",d(a[0]-b)));c)\n1:s=!concat(e(a),!concat(e(a),!concat(\"And if one green bottle should accidentally fall,\\nThere'll be \",!concat(g(a-1),!concat(a==2?\" green bottle\":\" green bottles\",\" hanging on the wall.\\n\")))))\n1:s=f(g(a),a)\n(s,i):s=!concat(a[0:a[0]-32],!concat(b==1?\" green bottle\":\" green bottles\",\" hanging on the wall,\\n\"))\n1:s=a==0?\"no\":(a==1?\"one\":(a==2?\"two\":(a==3?\"three\":(a==4?\"four\":(a==5?\"five\":(a==6?\"six\":(a==7?\"seven\":(a==8?\"eight\":(a==9?\"nine\":\"ten\")))))))))\n"
+    },
+    {
+      "task": "ex_bowling",
+      "candidate": "signature_references",
+      "source_sha256": "5d7ab0ee665ab7f463d6bfe06b8ef6d04382ef6ed3c448ee9000ca0f96a046d5",
+      "before": {
+        "gemma3_4b": 481,
+        "qwen2.5_7b_instruct": 387,
+        "cl100k_base": 374,
+        "o200k_base": 368
+      },
+      "after": {
+        "gemma3_4b": 480,
+        "qwen2.5_7b_instruct": 387,
+        "cl100k_base": 374,
+        "o200k_base": 368
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 8,
+          "reference": 4,
+          "before": "1:s=",
+          "after": "^e="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=d(a)?e(f(a,0,0)):\"error\\n\"\n(v):b=@(a,0,true;b<#a;a,b+1,a[b]>=0?(a[b]<=10?c:false):false;c)\n1:s=a<0?\"error\\n\":i(a)\n(v,i,i)=b==9?h(a,c):(c+1<#a?(a[c]==10?(c+2<#a?g(f(a,b+1,c+1),a[c]+a[c+1]+a[c+2]):0-1):(a[c]+a[c+1]<=10?(a[c]+a[c+1]==10?(c+2<#a?g(f(a,b+1,c+2),10+a[c+2]):0-1):g(f(a,b+1,c+2),a[c]+a[c+1])):0-1)):0-1)\n2=a<0?0-1:a+b\n(v,i)=b+1<#a?(a[b]==10?(b+3==#a?(a[b+1]==10?10+a[b+1]+a[b+2]:(a[b+1]+a[b+2]<=10?10+a[b+1]+a[b+2]:0-1)):0-1):(a[b]+a[b+1]<10?(b+2==#a?a[b]+a[b+1]:0-1):(a[b]+a[b+1]==10?(b+3==#a?10+a[b+2]:0-1):0-1))):0-1\n^e=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_bowling",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "5d7ab0ee665ab7f463d6bfe06b8ef6d04382ef6ed3c448ee9000ca0f96a046d5",
+      "before": {
+        "gemma3_4b": 481,
+        "qwen2.5_7b_instruct": 387,
+        "cl100k_base": 374,
+        "o200k_base": 368
+      },
+      "after": {
+        "gemma3_4b": 479,
+        "qwen2.5_7b_instruct": 387,
+        "cl100k_base": 374,
+        "o200k_base": 368
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          109,
+          110
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=d(a)?e(f(a,0,0)):\"error\\n\"\n(v):b=@(a,0,true;b<#a;,b+1,a[b]>=0?(a[b]<=10?c:false):false;c)\n1:s=a<0?\"error\\n\":i(a)\n(v,i,i)=b==9?h(a,c):(c+1<#a?(a[c]==10?(c+2<#a?g(f(a,b+1,c+1),a[c]+a[c+1]+a[c+2]):0-1):(a[c]+a[c+1]<=10?(a[c]+a[c+1]==10?(c+2<#a?g(f(a,b+1,c+2),10+a[c+2]):0-1):g(f(a,b+1,c+2),a[c]+a[c+1])):0-1)):0-1)\n2=a<0?0-1:a+b\n(v,i)=b+1<#a?(a[b]==10?(b+3==#a?(a[b+1]==10?10+a[b+1]+a[b+2]:(a[b+1]+a[b+2]<=10?10+a[b+1]+a[b+2]:0-1)):0-1):(a[b]+a[b+1]<10?(b+2==#a?a[b]+a[b+1]:0-1):(a[b]+a[b+1]==10?(b+3==#a?10+a[b+2]:0-1):0-1))):0-1\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_change",
+      "candidate": "signature_references",
+      "source_sha256": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+      "before": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 281,
+        "cl100k_base": 281,
+        "o200k_base": 282
+      },
+      "after": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 281,
+        "cl100k_base": 281,
+        "o200k_base": 282
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=a[0]>=0?i(a,d(a,a[0],#a-1,a[0]+1)):\"error\\n\"\n(v,i,i,i):v=b==0?!buffer(#a,0):(c==0?!buffer(#a,a[0]+1):(e(b,a[c])>=d?!buffer(#a,a[0]+1):@(a,b,c,!buffer(#a,d),b/a[c];e>=0;a,b,c,h(d,f(a,b,c,e,d[0])),e-1;d)))\n2=(a+b-1)/b\n(v,i,i,i,i):v=g(d(a,b-d*a[c],c-1,e-d),c,d)\n(v,i,i):v=a[0:a[0]+c][b:c]\n(v,v):v=b[0]<a[0]?b:a\n(v,v):s=b[0]>a[0]?\"error\\n\":@(a,b,1,\"\";c<#a;a,b,c+1,!concat(d,j(a[c],b[c]));d)\n2:s=@(a,b,0,\"\";c<b;a,b,c+1,!concat(d,k(a));d)\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_change",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+      "before": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 281,
+        "cl100k_base": 281,
+        "o200k_base": 282
+      },
+      "after": {
+        "gemma3_4b": 373,
+        "qwen2.5_7b_instruct": 280,
+        "cl100k_base": 280,
+        "o200k_base": 281
+      },
+      "savings": {
+        "gemma3_4b": 11,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        [
+          230,
+          231
+        ],
+        [
+          232,
+          233
+        ],
+        [
+          234,
+          235
+        ],
+        [
+          414,
+          415
+        ],
+        [
+          416,
+          417
+        ],
+        [
+          468,
+          469
+        ],
+        [
+          470,
+          471
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=a[0]>=0?i(a,d(a,a[0],#a-1,a[0]+1)):\"error\\n\"\n(v,i,i,i):v=b==0?!buffer(#a,0):(c==0?!buffer(#a,a[0]+1):(e(b,a[c])>=d?!buffer(#a,a[0]+1):@(a,b,c,!buffer(#a,d),b/a[c];e>=0;,,,h(d,f(a,b,c,e,d[0])),e-1;d)))\n2=(a+b-1)/b\n(v,i,i,i,i):v=g(d(a,b-d*a[c],c-1,e-d),c,d)\n(v,i,i):v=a[0:a[0]+c][b:c]\n(v,v):v=b[0]<a[0]?b:a\n(v,v):s=b[0]>a[0]?\"error\\n\":@(a,b,1,\"\";c<#a;,,c+1,!concat(d,j(a[c],b[c]));d)\n2:s=@(a,b,0,\"\";c<b;,,c+1,!concat(d,k(a));d)\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_circular_buffer",
+      "candidate": "signature_references",
+      "source_sha256": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+      "before": {
+        "gemma3_4b": 309,
+        "qwen2.5_7b_instruct": 250,
+        "cl100k_base": 250,
+        "o200k_base": 251
+      },
+      "after": {
+        "gemma3_4b": 309,
+        "qwen2.5_7b_instruct": 250,
+        "cl100k_base": 250,
+        "o200k_base": 251
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=@(a,!buffer(a[0]+2,0),1,\"\";c<#a;a,e(b,a[c],a[c+1]),c+2,!concat(d,d(b,a[c]));d)\n(v,i):s=b==0?(a[1]>0?g(a[2+a[0]]):\"error\\n\"):(b==1?(a[1]==#a-2?\"error\\n\":\"ok\\n\"):\"ok\\n\")\n(v,i,i):v=b==0?(a[1]>0?a[0:f(a[0]+1,#a-2)][1:a[1]-1]:a):(b==3?a[0:0][1:0]:(a[1]==#a-2?(b==1?a:a[2+a[0]:c][0:f(a[0]+1,#a-2)]):a[2+f(a[0]+a[1],#a-2):c][1:a[1]+1]))\n2=a-a/b*b\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_circular_buffer",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+      "before": {
+        "gemma3_4b": 309,
+        "qwen2.5_7b_instruct": 250,
+        "cl100k_base": 250,
+        "o200k_base": 251
+      },
+      "after": {
+        "gemma3_4b": 307,
+        "qwen2.5_7b_instruct": 250,
+        "cl100k_base": 250,
+        "o200k_base": 251
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          94,
+          95
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\\n\"))\n(v):s=@(a,!buffer(a[0]+2,0),1,\"\";c<#a;,e(b,a[c],a[c+1]),c+2,!concat(d,d(b,a[c]));d)\n(v,i):s=b==0?(a[1]>0?g(a[2+a[0]]):\"error\\n\"):(b==1?(a[1]==#a-2?\"error\\n\":\"ok\\n\"):\"ok\\n\")\n(v,i,i):v=b==0?(a[1]>0?a[0:f(a[0]+1,#a-2)][1:a[1]-1]:a):(b==3?a[0:0][1:0]:(a[1]==#a-2?(b==1?a:a[2+a[0]:c][0:f(a[0]+1,#a-2)]):a[2+f(a[0]+a[1],#a-2):c][1:a[1]+1]))\n2=a-a/b*b\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_clock",
+      "candidate": "signature_references",
+      "source_sha256": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+      "before": {
+        "gemma3_4b": 131,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      },
+      "after": {
+        "gemma3_4b": 130,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 4,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=d(f(f(a[0]*60+a[1],1440)+1440,1440))\n1:s=!concat(e(a/60),!concat(\":\",e(f(a,60))))\n^d=a<10?!concat(\"0\",!format(a)):!format(a)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_clock",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+      "before": {
+        "gemma3_4b": 131,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      },
+      "after": {
+        "gemma3_4b": 131,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=d(f(f(a[0]*60+a[1],1440)+1440,1440))\n1:s=!concat(e(a/60),!concat(\":\",e(f(a,60))))\n1:s=a<10?!concat(\"0\",!format(a)):!format(a)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "candidate": "signature_references",
+      "source_sha256": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+      "before": {
+        "gemma3_4b": 102,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 75
+      },
+      "after": {
+        "gemma3_4b": 101,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 75
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 4,
+          "reference": 2,
+          "before": "1:s=",
+          "after": "^c="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parse(a))\n1:s=a>0?e(@(a,0;a!=1;d(a,2)==0?a/2:a*3+1,b+1;b)):\"error\\n\"\n2=a-a/b*b\n^c=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+      "before": {
+        "gemma3_4b": 102,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 75
+      },
+      "after": {
+        "gemma3_4b": 102,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 75
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parse(a))\n1:s=a>0?e(@(a,0;a!=1;d(a,2)==0?a/2:a*3+1,b+1;b)):\"error\\n\"\n2=a-a/b*b\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_connect",
+      "candidate": "signature_references",
+      "source_sha256": "d71e8a0b28ffe0d81209ef05a5eb610f5bc7f6a40e27f2750ac3e0efc844ef14",
+      "before": {
+        "gemma3_4b": 660,
+        "qwen2.5_7b_instruct": 470,
+        "cl100k_base": 463,
+        "o200k_base": 459
+      },
+      "after": {
+        "gemma3_4b": 624,
+        "qwen2.5_7b_instruct": 452,
+        "cl100k_base": 445,
+        "o200k_base": 441
+      },
+      "savings": {
+        "gemma3_4b": 36,
+        "qwen2.5_7b_instruct": 18,
+        "cl100k_base": 18,
+        "o200k_base": 18
+      },
+      "edits": [
+        {
+          "function": 2,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        },
+        {
+          "function": 3,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        },
+        {
+          "function": 4,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        },
+        {
+          "function": 13,
+          "reference": 11,
+          "before": "(s,i,i,v,i):v=",
+          "after": "^l="
+        },
+        {
+          "function": 14,
+          "reference": 11,
+          "before": "(s,i,i,v,i):v=",
+          "after": "^l="
+        },
+        {
+          "function": 15,
+          "reference": 11,
+          "before": "(s,i,i,v,i):v=",
+          "after": "^l="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(a))\n^b=@(a,0,\"\";b<#a;a,b+1,a[b]==32?c:!concat(c,!bytes(1,a[b]));c)\n^b=f(e(a),!find(a,10,0))\n^b=@(a,0,\"\";b<#a;a,b+1,a[b]==10?c:!concat(c,!bytes(1,a[b]));c)\n(s,i):s=#a==0?\"\":(g(a,b,88)?\"X\":(g(a,b,79)?\"O\":\"\"))\n(s,i,i):b=i(a,@(a,b,c,h(#a+2),0;e<#a;a,b,c,a[e]==c?l(a,b,c,d,e):d,e+1;d))\n1:v=@(a,0,!buffer(a,0);b<a;a,b+1,c[b:b];c)\n(s,v):b=j(b,#a)==j(b,#a+1)\n(v,i)=@(a,b;a[b]!=b;a,a[b];b)\n(v,i,i):v=a[j(a,c):j(a,b)]\n(s,i,i,v,i):v=n(a,b,c,m(a,b,c,m(a,b,c,m(a,b,c,d,e,q(e,b)>0?e-1:0-1),e,e>=b?e-b:0-1),e,e>=b?(q(e,b)+1<b?e-b+1:0-1):0-1),e)\n(s,i,i,v,i,i):v=f>=0?(a[f]==c?k(d,e,f):d):d\n^l=p(a,b,c,o(a,b,c,d,e),e)\n^l=c==88?(q(e,b)==0?k(d,e,#a):d):(e<b?k(d,e,#a):d)\n^l=c==88?(q(e,b)==b-1?k(d,e,#a+1):d):(e>=#a-b?k(d,e,#a+1):d)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_connect",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "d71e8a0b28ffe0d81209ef05a5eb610f5bc7f6a40e27f2750ac3e0efc844ef14",
+      "before": {
+        "gemma3_4b": 660,
+        "qwen2.5_7b_instruct": 470,
+        "cl100k_base": 463,
+        "o200k_base": 459
+      },
+      "after": {
+        "gemma3_4b": 647,
+        "qwen2.5_7b_instruct": 469,
+        "cl100k_base": 462,
+        "o200k_base": 458
+      },
+      "savings": {
+        "gemma3_4b": 13,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        [
+          62,
+          63
+        ],
+        [
+          156,
+          157
+        ],
+        [
+          291,
+          292
+        ],
+        [
+          293,
+          294
+        ],
+        [
+          295,
+          296
+        ],
+        [
+          355,
+          356
+        ],
+        [
+          418,
+          419
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(a))\n(s):s=@(a,0,\"\";b<#a;,b+1,a[b]==32?c:!concat(c,!bytes(1,a[b]));c)\n(s):s=f(e(a),!find(a,10,0))\n(s):s=@(a,0,\"\";b<#a;,b+1,a[b]==10?c:!concat(c,!bytes(1,a[b]));c)\n(s,i):s=#a==0?\"\":(g(a,b,88)?\"X\":(g(a,b,79)?\"O\":\"\"))\n(s,i,i):b=i(a,@(a,b,c,h(#a+2),0;e<#a;,,,a[e]==c?l(a,b,c,d,e):d,e+1;d))\n1:v=@(a,0,!buffer(a,0);b<a;,b+1,c[b:b];c)\n(s,v):b=j(b,#a)==j(b,#a+1)\n(v,i)=@(a,b;a[b]!=b;,a[b];b)\n(v,i,i):v=a[j(a,c):j(a,b)]\n(s,i,i,v,i):v=n(a,b,c,m(a,b,c,m(a,b,c,m(a,b,c,d,e,q(e,b)>0?e-1:0-1),e,e>=b?e-b:0-1),e,e>=b?(q(e,b)+1<b?e-b+1:0-1):0-1),e)\n(s,i,i,v,i,i):v=f>=0?(a[f]==c?k(d,e,f):d):d\n(s,i,i,v,i):v=p(a,b,c,o(a,b,c,d,e),e)\n(s,i,i,v,i):v=c==88?(q(e,b)==0?k(d,e,#a):d):(e<b?k(d,e,#a):d)\n(s,i,i,v,i):v=c==88?(q(e,b)==b-1?k(d,e,#a+1):d):(e>=#a-b?k(d,e,#a+1):d)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_crypto_square",
+      "candidate": "signature_references",
+      "source_sha256": "865b294e3c4183bcdb50f55c3c06728da4e4e92dcca94171f25de32d110d8df8",
+      "before": {
+        "gemma3_4b": 273,
+        "qwen2.5_7b_instruct": 201,
+        "cl100k_base": 192,
+        "o200k_base": 191
+      },
+      "after": {
+        "gemma3_4b": 271,
+        "qwen2.5_7b_instruct": 200,
+        "cl100k_base": 191,
+        "o200k_base": 190
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 2,
+          "reference": 1,
+          "before": "(s):s=",
+          "after": "^b="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(@(a,0,\"\";b<#a;a,b+1,g(f(a[b]))?!concat(c,!bytes(1,f(a[b]))):c;c))\n^b=d(a,@(#a,1;b*b<a;a,b+1;b))\n(s,i):s=@(a,b,0,\"\";c<b;a,b,c+1,!concat(d,!concat(c>0?\" \":\"\",e(a,b,c)));d)\n(s,i,i):s=@(a,b,c,0,\"\";d<(#a+b-1)/b;a,b,c,d+1,!concat(e,!bytes(1,d*b+c<#a?a[d*b+c]:32));e)\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n"
+    },
+    {
+      "task": "ex_crypto_square",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "865b294e3c4183bcdb50f55c3c06728da4e4e92dcca94171f25de32d110d8df8",
+      "before": {
+        "gemma3_4b": 273,
+        "qwen2.5_7b_instruct": 201,
+        "cl100k_base": 192,
+        "o200k_base": 191
+      },
+      "after": {
+        "gemma3_4b": 261,
+        "qwen2.5_7b_instruct": 200,
+        "cl100k_base": 191,
+        "o200k_base": 190
+      },
+      "savings": {
+        "gemma3_4b": 12,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        [
+          50,
+          51
+        ],
+        [
+          125,
+          126
+        ],
+        [
+          158,
+          159
+        ],
+        [
+          160,
+          161
+        ],
+        [
+          245,
+          246
+        ],
+        [
+          247,
+          248
+        ],
+        [
+          249,
+          250
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(@(a,0,\"\";b<#a;,b+1,g(f(a[b]))?!concat(c,!bytes(1,f(a[b]))):c;c))\n(s):s=d(a,@(#a,1;b*b<a;,b+1;b))\n(s,i):s=@(a,b,0,\"\";c<b;,,c+1,!concat(d,!concat(c>0?\" \":\"\",e(a,b,c)));d)\n(s,i,i):s=@(a,b,c,0,\"\";d<(#a+b-1)/b;,,,d+1,!concat(e,!bytes(1,d*b+c<#a?a[d*b+c]:32));e)\n1=a>=65?(a<=90?a+32:a):a\n1:b=a>=97?(a<=122?true:false):(a>=48?a<=57:false)\n"
+    },
+    {
+      "task": "ex_custom_set",
+      "candidate": "signature_references",
+      "source_sha256": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+      "before": {
+        "gemma3_4b": 45,
+        "qwen2.5_7b_instruct": 31,
+        "cl100k_base": 31,
+        "o200k_base": 31
+      },
+      "after": {
+        "gemma3_4b": 45,
+        "qwen2.5_7b_instruct": 31,
+        "cl100k_base": 31,
+        "o200k_base": 31
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(#a==0)\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_custom_set",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+      "before": {
+        "gemma3_4b": 45,
+        "qwen2.5_7b_instruct": 31,
+        "cl100k_base": 31,
+        "o200k_base": 31
+      },
+      "after": {
+        "gemma3_4b": 45,
+        "qwen2.5_7b_instruct": 31,
+        "cl100k_base": 31,
+        "o200k_base": 31
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(#a==0)\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_diamond",
+      "candidate": "signature_references",
+      "source_sha256": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+      "before": {
+        "gemma3_4b": 126,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 90,
+        "o200k_base": 90
+      },
+      "after": {
+        "gemma3_4b": 125,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 90,
+        "o200k_base": 90
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 3,
+          "reference": 2,
+          "before": "2:s=",
+          "after": "^c="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a[0]-65,0,\"\";b<=a*2;a,b+1,!concat(c,c(a,b));c)\n2:s=d(a,a-e(b-a))\n^c=!concat(!bytes(a*2+1,32)[a-b:65+b][a+b:65+b],\"\\n\")\n1=a<0?0-a:a\n"
+    },
+    {
+      "task": "ex_diamond",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+      "before": {
+        "gemma3_4b": 126,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 90,
+        "o200k_base": 90
+      },
+      "after": {
+        "gemma3_4b": 124,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 90,
+        "o200k_base": 90
+      },
+      "savings": {
+        "gemma3_4b": 2,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          56,
+          57
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a[0]-65,0,\"\";b<=a*2;,b+1,!concat(c,c(a,b));c)\n2:s=d(a,a-e(b-a))\n2:s=!concat(!bytes(a*2+1,32)[a-b:65+b][a+b:65+b],\"\\n\")\n1=a<0?0-a:a\n"
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "candidate": "signature_references",
+      "source_sha256": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+      "before": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 49
+      },
+      "after": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 49
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(!parse(a)))\n1=(a*(a+1)/2)*(a*(a+1)/2)\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+      "before": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 49
+      },
+      "after": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 49
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(!parse(a)))\n1=(a*(a+1)/2)*(a*(a+1)/2)\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_dnd_character",
+      "candidate": "signature_references",
+      "source_sha256": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+      "before": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "after": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(!parse(a)-10))\n1=a>=0?a/2:(a-1)/2\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_dnd_character",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+      "before": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "after": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=d(c(!parse(a)-10))\n1=a>=0?a/2:(a-1)/2\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_dominoes",
+      "candidate": "signature_references",
+      "source_sha256": "c7667d7a59d7cb31a97053c215cc8cc6c9cf41865d2bdd08453706b1e6fe0acf",
+      "before": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 284,
+        "cl100k_base": 284,
+        "o200k_base": 281
+      },
+      "after": {
+        "gemma3_4b": 380,
+        "qwen2.5_7b_instruct": 282,
+        "cl100k_base": 282,
+        "o200k_base": 279
+      },
+      "savings": {
+        "gemma3_4b": 4,
+        "qwen2.5_7b_instruct": 2,
+        "cl100k_base": 2,
+        "o200k_base": 2
+      },
+      "edits": [
+        {
+          "function": 6,
+          "reference": 5,
+          "before": "(v,v):v=",
+          "after": "^f="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=j(c(!parsebuf(a,\",\\n\")))\n(v):b=#a==0?true:h(a,e(a),g(a,@(a,!buffer(d(a)+1,0)[a[0]:1];!equal(b,f(a,b))?false:true;a,f(a,b);b)))\n(v)=@(a,0,0;b<#a;a,b+1,a[b]>c?a[b]:c;c)\n(v):v=@(a,0,!buffer(d(a)+1,0);b<#a;a,b+1,c[a[b]:c[a[b]]+1];c)\n(v,v):v=@(a,b,0;c<#a;a,b[a[c]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)][a[c+1]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)],c+2;b)\n^f=b\n(v,v,v):b=@(a,b,c,0,true;d<#b;a,b,c,d+1,i(b[d],2)==0?(b[d]>0?(c[d]==1?e:false):e):false;e)\n2=a-a/b*b\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_dominoes",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "c7667d7a59d7cb31a97053c215cc8cc6c9cf41865d2bdd08453706b1e6fe0acf",
+      "before": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 284,
+        "cl100k_base": 284,
+        "o200k_base": 281
+      },
+      "after": {
+        "gemma3_4b": 371,
+        "qwen2.5_7b_instruct": 283,
+        "cl100k_base": 283,
+        "o200k_base": 280
+      },
+      "savings": {
+        "gemma3_4b": 13,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        [
+          147,
+          148
+        ],
+        [
+          178,
+          179
+        ],
+        [
+          236,
+          237
+        ],
+        [
+          284,
+          285
+        ],
+        [
+          417,
+          418
+        ],
+        [
+          419,
+          420
+        ],
+        [
+          421,
+          422
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=j(c(!parsebuf(a,\",\\n\")))\n(v):b=#a==0?true:h(a,e(a),g(a,@(a,!buffer(d(a)+1,0)[a[0]:1];!equal(b,f(a,b))?false:true;,f(a,b);b)))\n(v)=@(a,0,0;b<#a;,b+1,a[b]>c?a[b]:c;c)\n(v):v=@(a,0,!buffer(d(a)+1,0);b<#a;,b+1,c[a[b]:c[a[b]]+1];c)\n(v,v):v=@(a,b,0;c<#a;,b[a[c]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)][a[c+1]:b[a[c]]==1?(1):(b[a[c+1]]==1?1:0)],c+2;b)\n(v,v):v=b\n(v,v,v):b=@(a,b,c,0,true;d<#b;,,,d+1,i(b[d],2)==0?(b[d]>0?(c[d]==1?e:false):e):false;e)\n2=a-a/b*b\n(b):s=a?\"true\\n\":\"false\\n\"\n"
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "candidate": "signature_references",
+      "source_sha256": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+      "before": {
+        "gemma3_4b": 66,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "after": {
+        "gemma3_4b": 66,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(@(!parse(a),0;a>0;a/2,b+a-a/2*2;b))\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+      "before": {
+        "gemma3_4b": 66,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "after": {
+        "gemma3_4b": 66,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(@(!parse(a),0;a>0;a/2,b+a-a/2*2;b))\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_etl",
+      "candidate": "signature_references",
+      "source_sha256": "1dbf475714a082d4a174db7dc1e2654de524be08163504ad196b1cb5d01c9498",
+      "before": {
+        "gemma3_4b": 278,
+        "qwen2.5_7b_instruct": 222,
+        "cl100k_base": 210,
+        "o200k_base": 211
+      },
+      "after": {
+        "gemma3_4b": 278,
+        "qwen2.5_7b_instruct": 222,
+        "cl100k_base": 210,
+        "o200k_base": 211
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=e(c(a))\n(s):m=@(a,!find(a,34,!find(a,123,!find(a,58,0))),0,!map();b<#a;a,!find(a,34,d(a,b)+1),a[d(a,b)+1]==58?!parse(!slice(a,b+1,d(a,b)-b-1)):c,a[d(a,b)+1]==58?d:!put(d,!slice(a,b+1,1)[0:a[b+1]+32],c);d)\n(s,i)=!find(a,34,b+1)\n(m):s=@(a,97,\"\";b<123;a,b+1,!has(a,!bytes(1,b))?!concat(c,!concat(#c>0?\",\":\"\",!concat(!concat(\"\\\"\",!concat(!bytes(1,b),\"\\\":\")),!format(!get(a,!bytes(1,b)))))):c;!concat(\"{\",!concat(c,\"}\")))\n"
+    },
+    {
+      "task": "ex_etl",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "1dbf475714a082d4a174db7dc1e2654de524be08163504ad196b1cb5d01c9498",
+      "before": {
+        "gemma3_4b": 278,
+        "qwen2.5_7b_instruct": 222,
+        "cl100k_base": 210,
+        "o200k_base": 211
+      },
+      "after": {
+        "gemma3_4b": 275,
+        "qwen2.5_7b_instruct": 222,
+        "cl100k_base": 210,
+        "o200k_base": 211
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          105,
+          106
+        ],
+        [
+          283,
+          284
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=e(c(a))\n(s):m=@(a,!find(a,34,!find(a,123,!find(a,58,0))),0,!map();b<#a;,!find(a,34,d(a,b)+1),a[d(a,b)+1]==58?!parse(!slice(a,b+1,d(a,b)-b-1)):c,a[d(a,b)+1]==58?d:!put(d,!slice(a,b+1,1)[0:a[b+1]+32],c);d)\n(s,i)=!find(a,34,b+1)\n(m):s=@(a,97,\"\";b<123;,b+1,!has(a,!bytes(1,b))?!concat(c,!concat(#c>0?\",\":\"\",!concat(!concat(\"\\\"\",!concat(!bytes(1,b),\"\\\":\")),!format(!get(a,!bytes(1,b)))))):c;!concat(\"{\",!concat(c,\"}\")))\n"
+    },
+    {
+      "task": "ex_flatten_array",
+      "candidate": "signature_references",
+      "source_sha256": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+      "before": {
+        "gemma3_4b": 157,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 110,
+        "o200k_base": 108
+      },
+      "after": {
+        "gemma3_4b": 157,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 110,
+        "o200k_base": 108
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,\"\";b<#a;a,c(a[b])?d(a,b):b+1,c(a[b])?!concat(c,!concat(!slice(a,b,d(a,b)-b),\"\\n\")):c;c)\n1:b=a==45?true:(a>=48?a<=57:false)\n(s,i)=@(a,b+1;b<#a?(a[b]>=48?a[b]<=57:false):false;a,b+1;b)\n"
+    },
+    {
+      "task": "ex_flatten_array",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+      "before": {
+        "gemma3_4b": 157,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 110,
+        "o200k_base": 108
+      },
+      "after": {
+        "gemma3_4b": 153,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 110,
+        "o200k_base": 108
+      },
+      "savings": {
+        "gemma3_4b": 4,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          48,
+          49
+        ],
+        [
+          214,
+          215
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=@(a,0,\"\";b<#a;,c(a[b])?d(a,b):b+1,c(a[b])?!concat(c,!concat(!slice(a,b,d(a,b)-b),\"\\n\")):c;c)\n1:b=a==45?true:(a>=48?a<=57:false)\n(s,i)=@(a,b+1;b<#a?(a[b]>=48?a[b]<=57:false):false;,b+1;b)\n"
+    },
+    {
+      "task": "ex_flower_field",
+      "candidate": "signature_references",
+      "source_sha256": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+      "before": {
+        "gemma3_4b": 299,
+        "qwen2.5_7b_instruct": 225,
+        "cl100k_base": 218,
+        "o200k_base": 216
+      },
+      "after": {
+        "gemma3_4b": 293,
+        "qwen2.5_7b_instruct": 222,
+        "cl100k_base": 215,
+        "o200k_base": 213
+      },
+      "savings": {
+        "gemma3_4b": 6,
+        "qwen2.5_7b_instruct": 3,
+        "cl100k_base": 3,
+        "o200k_base": 3
+      },
+      "edits": [
+        {
+          "function": 5,
+          "reference": 4,
+          "before": "(s,i,i,i)=",
+          "after": "^e="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==0?a:@(a,b,0,!bytes(#a,0);c<#a;a,b,c+1,d[c:d(a,b,c)];d)\n(s,i,i)=h(c,b+1)==b?10:g(a[c],e(a,b,c/(b+1),h(c,b+1)))\n(s,i,i,i)=@(a,b,c,d,0,0;e<9;a,b,c,d,e+1,f+(e==4?0:f(a,b,c+e/3-1,d+h(e,3)-1));f)\n^e=c>=0?(c<#a/(b+1)?(d>=0?(d<b?(a[c*(b+1)+d]==42?1:0):0):0):0):0\n2=a==42?42:(b==0?32:48+b)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_flower_field",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+      "before": {
+        "gemma3_4b": 299,
+        "qwen2.5_7b_instruct": 225,
+        "cl100k_base": 218,
+        "o200k_base": 216
+      },
+      "after": {
+        "gemma3_4b": 289,
+        "qwen2.5_7b_instruct": 223,
+        "cl100k_base": 216,
+        "o200k_base": 214
+      },
+      "savings": {
+        "gemma3_4b": 10,
+        "qwen2.5_7b_instruct": 2,
+        "cl100k_base": 2,
+        "o200k_base": 2
+      },
+      "edits": [
+        [
+          94,
+          95
+        ],
+        [
+          96,
+          97
+        ],
+        [
+          202,
+          203
+        ],
+        [
+          204,
+          205
+        ],
+        [
+          206,
+          207
+        ],
+        [
+          208,
+          209
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==0?a:@(a,b,0,!bytes(#a,0);c<#a;,,c+1,d[c:d(a,b,c)];d)\n(s,i,i)=h(c,b+1)==b?10:g(a[c],e(a,b,c/(b+1),h(c,b+1)))\n(s,i,i,i)=@(a,b,c,d,0,0;e<9;,,,,e+1,f+(e==4?0:f(a,b,c+e/3-1,d+h(e,3)-1));f)\n(s,i,i,i)=c>=0?(c<#a/(b+1)?(d>=0?(d<b?(a[c*(b+1)+d]==42?1:0):0):0):0):0\n2=a==42?42:(b==0?32:48+b)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_food_chain",
+      "candidate": "signature_references",
+      "source_sha256": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+      "before": {
+        "gemma3_4b": 389,
+        "qwen2.5_7b_instruct": 357,
+        "cl100k_base": 357,
+        "o200k_base": 356
+      },
+      "after": {
+        "gemma3_4b": 386,
+        "qwen2.5_7b_instruct": 357,
+        "cl100k_base": 357,
+        "o200k_base": 356
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        {
+          "function": 4,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        },
+        {
+          "function": 5,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        },
+        {
+          "function": 6,
+          "reference": 3,
+          "before": "1:s=",
+          "after": "^d="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,a[0],\"\";b<=a[1];a,b+1,!concat(c,!concat(b>a[0]?\"\\n\":\"\",d(b)));c)\n1:s=!concat(!concat(\"I know an old lady who swallowed a \",!concat(f(a),\".\\n\")),!concat(g(a),a==8?\"\":!concat(@(a,\"\";a>1;a-1,!concat(b,e(a));b),\"I don't know why she swallowed the fly. Perhaps she'll die.\\n\")))\n^d=!concat(\"She swallowed the \",!concat(f(a),!concat(\" to catch the \",!concat(f(a-1),a==3?\" that wriggled and jiggled and tickled inside her.\\n\":\".\\n\"))))\n^d=a==1?\"fly\":(a==2?\"spider\":(a==3?\"bird\":(a==4?\"cat\":(a==5?\"dog\":(a==6?\"goat\":(a==7?\"cow\":\"horse\"))))))\n^d=a==1?\"\":(a==2?\"It wriggled and jiggled and tickled inside her.\\n\":(a==3?\"How absurd to swallow a bird!\\n\":(a==4?\"Imagine that, to swallow a cat!\\n\":(a==5?\"What a hog, to swallow a dog!\\n\":(a==6?\"Just opened her throat and swallowed a goat!\\n\":(a==7?\"I don't know how she swallowed a cow!\\n\":\"She's dead, of course!\\n\"))))))\n"
+    },
+    {
+      "task": "ex_food_chain",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+      "before": {
+        "gemma3_4b": 389,
+        "qwen2.5_7b_instruct": 357,
+        "cl100k_base": 357,
+        "o200k_base": 356
+      },
+      "after": {
+        "gemma3_4b": 388,
+        "qwen2.5_7b_instruct": 357,
+        "cl100k_base": 357,
+        "o200k_base": 356
+      },
+      "savings": {
+        "gemma3_4b": 1,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          80,
+          81
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(!parsebuf(a,\",\"))\n(v):s=@(a,a[0],\"\";b<=a[1];,b+1,!concat(c,!concat(b>a[0]?\"\\n\":\"\",d(b)));c)\n1:s=!concat(!concat(\"I know an old lady who swallowed a \",!concat(f(a),\".\\n\")),!concat(g(a),a==8?\"\":!concat(@(a,\"\";a>1;a-1,!concat(b,e(a));b),\"I don't know why she swallowed the fly. Perhaps she'll die.\\n\")))\n1:s=!concat(\"She swallowed the \",!concat(f(a),!concat(\" to catch the \",!concat(f(a-1),a==3?\" that wriggled and jiggled and tickled inside her.\\n\":\".\\n\"))))\n1:s=a==1?\"fly\":(a==2?\"spider\":(a==3?\"bird\":(a==4?\"cat\":(a==5?\"dog\":(a==6?\"goat\":(a==7?\"cow\":\"horse\"))))))\n1:s=a==1?\"\":(a==2?\"It wriggled and jiggled and tickled inside her.\\n\":(a==3?\"How absurd to swallow a bird!\\n\":(a==4?\"Imagine that, to swallow a cat!\\n\":(a==5?\"What a hog, to swallow a dog!\\n\":(a==6?\"Just opened her throat and swallowed a goat!\\n\":(a==7?\"I don't know how she swallowed a cow!\\n\":\"She's dead, of course!\\n\"))))))\n"
+    },
+    {
+      "task": "ex_game_of_life",
+      "candidate": "signature_references",
+      "source_sha256": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+      "before": {
+        "gemma3_4b": 304,
+        "qwen2.5_7b_instruct": 231,
+        "cl100k_base": 223,
+        "o200k_base": 221
+      },
+      "after": {
+        "gemma3_4b": 298,
+        "qwen2.5_7b_instruct": 228,
+        "cl100k_base": 220,
+        "o200k_base": 218
+      },
+      "savings": {
+        "gemma3_4b": 6,
+        "qwen2.5_7b_instruct": 3,
+        "cl100k_base": 3,
+        "o200k_base": 3
+      },
+      "edits": [
+        {
+          "function": 5,
+          "reference": 4,
+          "before": "(s,i,i,i)=",
+          "after": "^e="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==0?a:@(a,b,0,!bytes(#a,0);c<#a;a,b,c+1,d[c:d(a,b,c)];d)\n(s,i,i)=h(c,b+1)==b?10:g(a[c],e(a,b,c/(b+1),h(c,b+1)))\n(s,i,i,i)=@(a,b,c,d,0,0;e<9;a,b,c,d,e+1,f+(e==4?0:f(a,b,c+e/3-1,d+h(e,3)-1));f)\n^e=c>=0?(c<#a/(b+1)?(d>=0?(d<b?(a[c*(b+1)+d]==49?1:0):0):0):0):0\n2=b==3?49:(a==49?(b==2?49:48):48)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_game_of_life",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+      "before": {
+        "gemma3_4b": 304,
+        "qwen2.5_7b_instruct": 231,
+        "cl100k_base": 223,
+        "o200k_base": 221
+      },
+      "after": {
+        "gemma3_4b": 294,
+        "qwen2.5_7b_instruct": 229,
+        "cl100k_base": 221,
+        "o200k_base": 219
+      },
+      "savings": {
+        "gemma3_4b": 10,
+        "qwen2.5_7b_instruct": 2,
+        "cl100k_base": 2,
+        "o200k_base": 2
+      },
+      "edits": [
+        [
+          94,
+          95
+        ],
+        [
+          96,
+          97
+        ],
+        [
+          202,
+          203
+        ],
+        [
+          204,
+          205
+        ],
+        [
+          206,
+          207
+        ],
+        [
+          208,
+          209
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==0?a:@(a,b,0,!bytes(#a,0);c<#a;,,c+1,d[c:d(a,b,c)];d)\n(s,i,i)=h(c,b+1)==b?10:g(a[c],e(a,b,c/(b+1),h(c,b+1)))\n(s,i,i,i)=@(a,b,c,d,0,0;e<9;,,,,e+1,f+(e==4?0:f(a,b,c+e/3-1,d+h(e,3)-1));f)\n(s,i,i,i)=c>=0?(c<#a/(b+1)?(d>=0?(d<b?(a[c*(b+1)+d]==49?1:0):0):0):0):0\n2=b==3?49:(a==49?(b==2?49:48):48)\n2=a-a/b*b\n"
+    },
+    {
+      "task": "ex_grade_school",
+      "candidate": "signature_references",
+      "source_sha256": "dd8951ef7428aacf17f4f24c0ae71b9136309684e0485c27b8a787ae5771ebcc",
+      "before": {
+        "gemma3_4b": 529,
+        "qwen2.5_7b_instruct": 372,
+        "cl100k_base": 369,
+        "o200k_base": 367
+      },
+      "after": {
+        "gemma3_4b": 526,
+        "qwen2.5_7b_instruct": 371,
+        "cl100k_base": 368,
+        "o200k_base": 366
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        {
+          "function": 6,
+          "reference": 3,
+          "before": "(s,i)=",
+          "after": "^d="
+        }
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=h(a,c(a))\n(s):v=@(a,0,!map(),!buffer(0,0);b<#a;a,d(a,b),!has(c,e(a,b))?c:!insert(c,e(a,b),g(a,b)),!has(c,e(a,b))?d:!concat(d,!buffer(1,b));d)\n(s,i)=!find(a,10,b)<#a?!find(a,10,b)+1:#a\n(s,i):s=f(a,!find(a,9,b)+1,!find(a,10,b))\n(s,i,i):s=!slice(a,b,c-b)\n^d=!parse(!slice(a,b,!find(a,9,b)-b))\n(s,v):s=i(a,b,!buffer(#b,0))\n(s,v,v):s=@(a,b,c,\"\";j(a,b,c)<#b;a,b,c[j(a,b,c):1],!concat(d,!concat(e(a,b[j(a,b,c)]),\"\\n\"));d)\n(s,v,v)=@(a,b,c,0,#b;d<#b;a,b,c,d+1,c[d]==0?(e==#b?d:(k(a,b[d],b[e])?d:e)):e;e)\n(s,i,i):b=g(a,b)<g(a,c)?true:(g(a,b)>g(a,c)?false:l(e(a,b),e(a,c)))\n(s,s):b=m(a,b,@(a,b,0;c<#a?(c<#b?a[c]==b[c]:false):false;a,b,c+1;c))\n(s,s,i):b=c==#a?#a<#b:(c==#b?false:a[c]<b[c])\n"
+    },
+    {
+      "task": "ex_grade_school",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "dd8951ef7428aacf17f4f24c0ae71b9136309684e0485c27b8a787ae5771ebcc",
+      "before": {
+        "gemma3_4b": 529,
+        "qwen2.5_7b_instruct": 372,
+        "cl100k_base": 369,
+        "o200k_base": 367
+      },
+      "after": {
+        "gemma3_4b": 516,
+        "qwen2.5_7b_instruct": 371,
+        "cl100k_base": 368,
+        "o200k_base": 366
+      },
+      "savings": {
+        "gemma3_4b": 13,
+        "qwen2.5_7b_instruct": 1,
+        "cl100k_base": 1,
+        "o200k_base": 1
+      },
+      "edits": [
+        [
+          81,
+          82
+        ],
+        [
+          389,
+          390
+        ],
+        [
+          391,
+          392
+        ],
+        [
+          478,
+          479
+        ],
+        [
+          480,
+          481
+        ],
+        [
+          482,
+          483
+        ],
+        [
+          657,
+          658
+        ],
+        [
+          659,
+          660
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=h(a,c(a))\n(s):v=@(a,0,!map(),!buffer(0,0);b<#a;,d(a,b),!has(c,e(a,b))?c:!insert(c,e(a,b),g(a,b)),!has(c,e(a,b))?d:!concat(d,!buffer(1,b));d)\n(s,i)=!find(a,10,b)<#a?!find(a,10,b)+1:#a\n(s,i):s=f(a,!find(a,9,b)+1,!find(a,10,b))\n(s,i,i):s=!slice(a,b,c-b)\n(s,i)=!parse(!slice(a,b,!find(a,9,b)-b))\n(s,v):s=i(a,b,!buffer(#b,0))\n(s,v,v):s=@(a,b,c,\"\";j(a,b,c)<#b;,,c[j(a,b,c):1],!concat(d,!concat(e(a,b[j(a,b,c)]),\"\\n\"));d)\n(s,v,v)=@(a,b,c,0,#b;d<#b;,,,d+1,c[d]==0?(e==#b?d:(k(a,b[d],b[e])?d:e)):e;e)\n(s,i,i):b=g(a,b)<g(a,c)?true:(g(a,b)>g(a,c)?false:l(e(a,b),e(a,c)))\n(s,s):b=m(a,b,@(a,b,0;c<#a?(c<#b?a[c]==b[c]:false):false;,,c+1;c))\n(s,s,i):b=c==#a?#a<#b:(c==#b?false:a[c]<b[c])\n"
+    },
+    {
+      "task": "ex_hamming",
+      "candidate": "signature_references",
+      "source_sha256": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+      "before": {
+        "gemma3_4b": 115,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 83,
+        "o200k_base": 84
+      },
+      "after": {
+        "gemma3_4b": 115,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 83,
+        "o200k_base": 84
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==#a-b-1?d(@(a,b,0,0;c<b;a,b,c+1,d+(a[c]==a[b+1+c]?0:1);d)):\"error\\n\"\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_hamming",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+      "before": {
+        "gemma3_4b": 115,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 83,
+        "o200k_base": 84
+      },
+      "after": {
+        "gemma3_4b": 112,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 83,
+        "o200k_base": 84
+      },
+      "savings": {
+        "gemma3_4b": 3,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [
+        [
+          87,
+          88
+        ],
+        [
+          89,
+          90
+        ]
+      ],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=c(a,!find(a,10,0))\n(s,i):s=b==#a-b-1?d(@(a,b,0,0;c<b;,,c+1,d+(a[c]==a[b+1+c]?0:1);d)):\"error\\n\"\n1:s=!concat(!format(a),\"\\n\")\n"
+    },
+    {
+      "task": "ex_hello_world",
+      "candidate": "signature_references",
+      "source_sha256": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+      "before": {
+        "gemma3_4b": 27,
+        "qwen2.5_7b_instruct": 19,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "after": {
+        "gemma3_4b": 27,
+        "qwen2.5_7b_instruct": 19,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=\"Hello, World!\"\n"
+    },
+    {
+      "task": "ex_hello_world",
+      "candidate": "empty_loop_steps",
+      "source_sha256": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+      "before": {
+        "gemma3_4b": 27,
+        "qwen2.5_7b_instruct": 19,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "after": {
+        "gemma3_4b": 27,
+        "qwen2.5_7b_instruct": 19,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "savings": {
+        "gemma3_4b": 0,
+        "qwen2.5_7b_instruct": 0,
+        "cl100k_base": 0,
+        "o200k_base": 0
+      },
+      "edits": [],
+      "counterfactual_source": "(s,s)=!write(b,b(!read(a)))\n(s):s=\"Hello, World!\"\n"
+    }
+  ]
+}
