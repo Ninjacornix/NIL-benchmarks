@@ -120,4 +120,3 @@ b11:
   call void @nil_root_store(ptr %v23, ptr null)
   br label %b1
 }
-

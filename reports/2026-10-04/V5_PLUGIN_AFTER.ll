@@ -158,4 +158,3 @@ b9:
   %v10 = phi i1 [ %v8, %b7 ], [ false, %b8 ]
   br i1 %v10, label %b5, label %b6
 }
-
