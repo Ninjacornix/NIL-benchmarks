@@ -22,7 +22,7 @@ def export(report_path, output):
             if not verdict.get('semantic_ok') or verdict['native_tests_passed'] != 2 * verdict['tests_total']:
                 raise ValueError('Unverified NIL completion')
             path = HERE / 'programs' / (task['id'] + '.nil')
-            stream.write(json.dumps({'id': task['id'], 'profile': 'expr-v5', 'license': task.get('license', 'MIT'), 'origin': task.get('origin', 'self-authored'), 'provenance': task.get('provenance'), 'selected_property': task.get('selected_property'), 'prompt': task['prompt'], 'entry_contract': '(s,s)=...; file path parameters, return written byte count; no extra stdout', 'rationale': task['rationale'], 'completion': path.read_text(), 'source_sha256': digest(path), 'verification_sha256': digest(report_path), 'generation_study_overlap': task['adaptation_overlap']}, ensure_ascii=False) + '\n')
+            stream.write(json.dumps({'id': task['id'], 'profile': 'expr-v5', 'license': task.get('license', 'MIT'), 'origin': task.get('origin', 'self-authored'), 'provenance': task.get('provenance'), 'selected_property': task.get('selected_property'), 'prompt': task['prompt'], 'entry_contract': '(s,s)=...; file path parameters, return written byte count; no extra stdout', 'rationale': task['rationale'], 'completion': path.read_text(), 'source_sha256': digest(path), 'verification_sha256': digest(report_path), 'generation_study_overlap': task.get('adaptation_overlap', False)}, ensure_ascii=False) + '\n')
             count += 1
     return count
 
