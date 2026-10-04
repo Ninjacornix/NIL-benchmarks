@@ -179,7 +179,7 @@ were frozen before token counting. No task, oracle, golden or reference was chan
 after observing counts. JSONL now exports 55 verified positives with provenance
 for external tasks; the original metadata has the separate PROVENANCE.json overlay.
 
-## Current token attribution
+## Keyed-data token attribution snapshot
 
 The keyed-data snapshot has 56 verified NIL programs, 32 external pairs and 19
 unsupported tasks. The attribution audit leaves every program and frozen oracle
@@ -210,3 +210,22 @@ the pinned minified contracts; they are not general JSON parsers. No float/unsig
 collections, records or complex type were introduced. Each task's upstream MIT
 provenance and corpus license continue to apply. Export produces 60 adaptation
 seeds, still far below a credible training set. No inference or training occurred.
+
+## Records (ADR 028): current corpus state
+
+Go counting now has verified expr-v5, Python and C++ references under its existing
+MIT upstream provenance and the corpus's MIT licence. Compact JSON input/output
+adapters implement the frozen contract; NIL uses fixed-point flood-fill, baselines
+use queue/set traversal. No original task, oracle, golden, baseline or old NIL
+source changed. **75 tasks, 61 verified NIL programs (37 external), 14 unsupported
+(13 external)**; export emits **61 JSONL positives** in the existing reusable format.
+This remains a small, nonrandom partial-API seed, not a sufficient training dataset.
+
+All 2,625 checks pass, with the original 610 separately confirmed. Records unblock
+one of five candidates; the gap catalogue distinguishes unavailable types from
+unimplemented adapters. The density gap **worsens**: external +12.9–23.3% against
+Python, combined +8.0–16.8%, while the old 60 sources/counts are unchanged. Go loses
+to both baselines under all four vocabularies. No model inference occurred, and
+source density does not overturn the unfavourable generation study. See
+[the record report](../../reports/2026-10-04/V5_RECORDS.md) for every task's counts,
+bytes/characters, refreshed attribution, provenance and reproduction commands.

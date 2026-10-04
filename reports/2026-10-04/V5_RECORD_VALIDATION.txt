@@ -1,0 +1,143 @@
+$ ./scripts/ci.sh
+Exit 0; 311 tests passed; zero compiler/clippy warnings.
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.90s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.55s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 43.54s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.19s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.84s
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.43s
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 14.90s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.02s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.57s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+$ ./scripts/ci.sh release
+Exit 0; 311 tests passed; zero compiler/clippy warnings.
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.93s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 42.51s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.23s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 16.66s
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.12s
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 14.16s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.11s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.18s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+$ ./scripts/sanitize.sh
+Exit 0; 105 tests passed; zero compiler/clippy warnings.
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 144.85s
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 65.91s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 212.10s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 17.65s
+$ paired/.venv/bin/python -m unittest discover -s corpora/application-v5/tests
+Ran 22 tests; OK (intentional negative controls print FAIL for a deliberately incorrect copy).
+--- corpus.log ---
+ex_grains/cpp: PASS {'semantic_ok': True, 'tests_passed': 10}
+ex_hamming/expr-v5: PASS {'parse_ok': True, 'typecheck_ok': True, 'compile_ok': True, 'semantic_ok': True, 'tests_total': 9, 'tests_passed': 9, 'native_tests_passed': 18, 'failure_reason': None, 'feedback': 'Correct.'}
+ex_hamming/python: PASS {'semantic_ok': True, 'tests_passed': 9}
+ex_hamming/cpp: PASS {'semantic_ok': True, 'tests_passed': 9}
+ex_hello_world/expr-v5: PASS {'parse_ok': True, 'typecheck_ok': True, 'compile_ok': True, 'semantic_ok': True, 'tests_total': 2, 'tests_passed': 2, 'native_tests_passed': 4, 'failure_reason': None, 'feedback': 'Correct.'}
+ex_hello_world/python: PASS {'semantic_ok': True, 'tests_passed': 2}
+ex_hello_world/cpp: PASS {'semantic_ok': True, 'tests_passed': 2}
+TOTALS {"tasks": 75, "nil_programs": 61, "unsupported": 14, "reference_checks": 523, "native_checks": 1046, "python_checks": 528, "cpp_checks": 528}
+--- original.log ---
+slice_file/python: PASS {'semantic_ok': True, 'tests_passed': 5}
+slice_file/cpp: PASS {'semantic_ok': True, 'tests_passed': 5}
+expand_tabs/expr-v5: PASS {'parse_ok': True, 'typecheck_ok': True, 'compile_ok': True, 'semantic_ok': True, 'tests_total': 5, 'tests_passed': 5, 'native_tests_passed': 10, 'failure_reason': None, 'feedback': 'Correct.'}
+expand_tabs/python: PASS {'semantic_ok': True, 'tests_passed': 5}
+expand_tabs/cpp: PASS {'semantic_ok': True, 'tests_passed': 5}
+env_lookup/python: PASS {'semantic_ok': True, 'tests_passed': 5}
+env_lookup/cpp: PASS {'semantic_ok': True, 'tests_passed': 5}
+TOTALS {"tasks": 25, "nil_programs": 24, "unsupported": 1, "reference_checks": 120, "native_checks": 240, "python_checks": 125, "cpp_checks": 125}
+--- attribution-before.log ---
+      "nil": 30,
+      "python": 719,
+      "difference": -689,
+      "fractional_difference": "-2062/3"
+    }
+  ]
+}
+ACCOUNTED {"source_files": 72, "tokenizer_streams": 288, "tokens": 47631, "exact_sum_checks": "passed"}
+--- attribution-after.log ---
+      "nil": 32,
+      "python": 753,
+      "difference": -721,
+      "fractional_difference": "-2158/3"
+    }
+  ]
+}
+ACCOUNTED {"source_files": 74, "tokenizer_streams": 296, "tokens": 52644, "exact_sum_checks": "passed"}
+$ ./scripts/fuzz-v5.sh --seed 5130572 --cases 240 --out /tmp/nil-records/fuzz-final-5130572
+{"seed": 5130572, "programs": 240, "native_builds": 480, "divergences": 0, "observed_codes": {"E009": 1, "E012": 14, "E013": 14, "E014": 5, "E015": 3, "E016": 10, "E017": 3, "E018": 4, "E019": 2, "E020": 5, "E021": 5, "E022": 3, "OK": 171}, "generated_intrinsics": ["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"], "call_families": {"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "record_buffer_alias": 1, "record_called_lifetime": 1, "record_construct": 1, "record_dead_quota": 1, "record_duplicate_fields": 1, "record_each_state": 1, "record_field_effect_order": 1, "record_field_trap_order": 1, "record_lazy_called_effect": 1, "record_lazy_trap_effect": 1, "record_lazy_update": 1, "record_live_quota": 1, "record_loop_state": 1, "record_map_alias": 1, "record_map_binary_key": 1, "record_map_bits": 1, "record_map_builder": 1, "record_map_duplicate": 1, "record_map_each_snapshot": 1, "record_map_each_sort": 1, "record_map_empty_each": 1, "record_map_invalid_mode": 1, "record_map_missing": 1, "record_map_quota": 1, "record_map_sort_mode": 1, "record_mixed_chain": 1, "record_mutual_recursion": 1, "record_nested_lifetime": 1, "record_returned_alias": 1, "record_self_recursion": 1, "record_sort_field": 1, "record_update_alias": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1}, "source_mutations": {"each_changed_binding": 24, "each_extra_delimiter": 24, "each_missing_separator": 24, "each_truncated": 24, "each_unknown_operation": 24, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 6, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31, "record_duplicate_field": 32, "record_dynamic_map_value": 11, "record_missing_update_colon": 3, "record_truncated_declaration": 32, "record_unknown_field": 15, "record_unknown_type": 32}}
+$ ./scripts/fuzz-v5.sh --seed 1729 --cases 240 --out /tmp/nil-records/fuzz-final-1729
+{"seed": 1729, "programs": 240, "native_builds": 480, "divergences": 0, "observed_codes": {"E009": 1, "E012": 14, "E013": 14, "E014": 5, "E015": 3, "E016": 10, "E017": 3, "E018": 4, "E019": 2, "E020": 5, "E021": 5, "E022": 3, "OK": 171}, "generated_intrinsics": ["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"], "call_families": {"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "record_buffer_alias": 1, "record_called_lifetime": 1, "record_construct": 1, "record_dead_quota": 1, "record_duplicate_fields": 1, "record_each_state": 1, "record_field_effect_order": 1, "record_field_trap_order": 1, "record_lazy_called_effect": 1, "record_lazy_trap_effect": 1, "record_lazy_update": 1, "record_live_quota": 1, "record_loop_state": 1, "record_map_alias": 1, "record_map_binary_key": 1, "record_map_bits": 1, "record_map_builder": 1, "record_map_duplicate": 1, "record_map_each_snapshot": 1, "record_map_each_sort": 1, "record_map_empty_each": 1, "record_map_invalid_mode": 1, "record_map_missing": 1, "record_map_quota": 1, "record_map_sort_mode": 1, "record_mixed_chain": 1, "record_mutual_recursion": 1, "record_nested_lifetime": 1, "record_returned_alias": 1, "record_self_recursion": 1, "record_sort_field": 1, "record_update_alias": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1}, "source_mutations": {"each_changed_binding": 24, "each_extra_delimiter": 24, "each_missing_separator": 24, "each_truncated": 24, "each_unknown_operation": 24, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 6, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31, "record_duplicate_field": 32, "record_dynamic_map_value": 11, "record_missing_update_colon": 3, "record_truncated_declaration": 32, "record_unknown_field": 15, "record_unknown_type": 32}}
+$ ./scripts/fuzz-v5.sh --seed 8675309 --cases 240 --out /tmp/nil-records/fuzz-8675309
+{"seed": 8675309, "programs": 240, "native_builds": 480, "divergences": 0, "observed_codes": {"E009": 1, "E012": 14, "E013": 14, "E014": 5, "E015": 3, "E016": 10, "E017": 3, "E018": 4, "E019": 2, "E020": 5, "E021": 5, "E022": 3, "OK": 171}, "generated_intrinsics": ["bits", "buffer", "bytemap", "bytes", "concat", "each", "equal", "f64", "find", "floatbits", "format", "get", "has", "i64", "insert", "key", "map", "out", "parse", "parsebuf", "parsef64", "parseu128", "parseu64", "put", "read", "size", "slice", "sort", "trunci64", "truncu64", "u128", "u64", "write"], "call_families": {"called_effect_lazy": 1, "calls_lazy": 1, "computed_start": 1, "conditional_sequence_alloc": 1, "each_append_snapshot_alias": 1, "each_buffer_reduce": 1, "each_called_effect": 1, "each_empty": 1, "each_ignored_key_quota": 1, "each_ignored_value_quota": 1, "each_inherited_bounds_priority": 1, "each_lazy_called_effect": 1, "each_map_order": 1, "each_nested_loop": 1, "each_owned_byte_values": 1, "each_parallel_state": 1, "each_returned_sequence_alias": 1, "each_single_binary": 1, "each_snapshot_map_update": 1, "each_snapshot_replace": 1, "each_sort_update_chain": 1, "each_sorted_empty_map": 1, "equal_buffer": 1, "equal_bytes": 1, "equal_called_effects": 1, "equal_replacement_alias": 1, "exit_index": 1, "find_bounds_priority": 1, "find_buffer": 1, "find_byte_range": 1, "find_bytes": 1, "find_end_bounds": 1, "find_leaf_loop": 1, "float_add_bits": 1, "float_called_loop": 1, "float_comparison_nan": 1, "float_contraction": 1, "float_decimal_parse": 1, "float_div_bits": 1, "float_format_exact": 1, "float_inf_nan": 1, "float_lazy_trap": 1, "float_max_finite": 1, "float_min_normal": 1, "float_mul_bits": 1, "float_nan_payload": 1, "float_parse_invalid": 1, "float_parse_overflow": 1, "float_parse_underflow": 1, "float_roundtrip_bits": 1, "float_signed_zero": 1, "float_sub_bits": 1, "float_subnormal": 1, "float_to_integer_edge": 1, "float_to_integer_fraction": 1, "float_to_integer_nan": 1, "float_to_unsigned_negative": 1, "float_to_wide_edge": 1, "float_unselected_host": 1, "float_zero_comparison": 1, "integer_float_rounding": 1, "leaf_loop": 1, "map_alias_old_read": 1, "map_binary_keys": 1, "map_byte_constructor_quota": 1, "map_byte_repack": 1, "map_byte_result_lifetime": 1, "map_byte_update_alias": 1, "map_byte_values_calls": 1, "map_caller_alias": 1, "map_constructor_quota": 1, "map_duplicate_argument_effect": 1, "map_duplicate_before_quota": 1, "map_duplicate_key": 1, "map_empty": 1, "map_insert_loop": 1, "map_iteration_bounds": 1, "map_key_iteration": 1, "map_key_result_quota": 1, "map_lazy_alias": 1, "map_lazy_called_effect": 1, "map_lookup": 1, "map_lookup_result_quota": 1, "map_loop_alias": 1, "map_missing_key": 1, "map_nested_byte_values": 1, "map_nested_loop": 1, "map_order_growth": 1, "map_put_quota": 1, "map_quota_boundary": 1, "map_recursive_alias": 1, "map_returned_alias": 1, "mixed_width_explicit": 1, "mutual_recursion_reads": 1, "negative_start": 1, "negative_zero_trip": 1, "nested_call_loop": 1, "parsebuf_argument_effect": 1, "parsebuf_binary_separators": 1, "parsebuf_caller_alias": 1, "parsebuf_canonical_failure": 1, "parsebuf_empty_equal": 1, "parsebuf_fields": 1, "parsebuf_internal_empty": 1, "parsebuf_lazy": 1, "parsebuf_leading_empty": 1, "parsebuf_loop_alias": 1, "parsebuf_quota_priority": 1, "parsebuf_recursive_alias": 1, "parsebuf_return_alias": 1, "parsebuf_trailing_empty": 1, "record_buffer_alias": 1, "record_called_lifetime": 1, "record_construct": 1, "record_dead_quota": 1, "record_duplicate_fields": 1, "record_each_state": 1, "record_field_effect_order": 1, "record_field_trap_order": 1, "record_lazy_called_effect": 1, "record_lazy_trap_effect": 1, "record_lazy_update": 1, "record_live_quota": 1, "record_loop_state": 1, "record_map_alias": 1, "record_map_binary_key": 1, "record_map_bits": 1, "record_map_builder": 1, "record_map_duplicate": 1, "record_map_each_snapshot": 1, "record_map_each_sort": 1, "record_map_empty_each": 1, "record_map_invalid_mode": 1, "record_map_missing": 1, "record_map_quota": 1, "record_map_sort_mode": 1, "record_mixed_chain": 1, "record_mutual_recursion": 1, "record_nested_lifetime": 1, "record_returned_alias": 1, "record_self_recursion": 1, "record_sort_field": 1, "record_update_alias": 1, "recursion_reads": 1, "recursive_allocation": 1, "recursive_sequence_alias": 1, "sequence_return_loop": 1, "shifted_index": 1, "slice_return_alias_live": 1, "sort_alias_old_read": 1, "sort_binary_bytes": 1, "sort_buffer": 1, "sort_byte_value_prefix": 1, "sort_bytes": 1, "sort_caller_alias": 1, "sort_duplicate_before_order": 1, "sort_empty": 1, "sort_equal_elements": 1, "sort_invalid_order_before_quota": 1, "sort_lazy_alias": 1, "sort_loop_state": 1, "sort_quota": 1, "sort_rebuilt_lookup": 1, "sort_signed_extrema": 1, "sort_value_key_ties": 1, "unsigned_order": 1, "unsigned_parse_invalid": 1, "unsigned_parse_roundtrip": 1, "unsigned_wrap_add": 1, "unsigned_wrap_sub": 1, "unsigned_zero_division": 1, "wide_called_loop": 1, "wide_checked_narrow": 1, "wide_explicit_trunc": 1, "wide_parse_overflow": 1, "wide_wrap_mul": 1}, "source_mutations": {"each_changed_binding": 24, "each_extra_delimiter": 24, "each_missing_separator": 24, "each_truncated": 24, "each_unknown_operation": 24, "numeric_incomplete_exponent": 8, "numeric_incomplete_fraction": 8, "numeric_mixed_width": 4, "numeric_unknown_conversion": 20, "numeric_unknown_width": 31, "record_duplicate_field": 32, "record_dynamic_map_value": 11, "record_missing_update_colon": 3, "record_truncated_declaration": 32, "record_unknown_field": 15, "record_unknown_type": 32}}
+
+Documented CLI examples (release binary):
+examples/add.nil: exit 0, output '42\n'
+examples/expr-v3/weighted.nil: exit 0, output '33\n'
+examples/expr-v4/reverse.nil: exit 0, output '[8,7,6,5,4,3,2,1]\n'
+examples/expr-v5/record.nil: exit 0, output '42\n'
+examples/expr-v5/greet.nil: exit 0, output 'Hello, World\n'
+examples/expr-v5/sum.nil: exit 0, output '10\n'
+examples/expr-v5/uppercase.nil: exit 0, output 'HELLO, NIL!\n'
+examples/expr-v5/parse.nil: exit 0, output '-42\n'
+examples/expr-v5/buffer.nil: exit 0, output '[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]\n'
+examples/expr-v5/integer_file.nil: exit 0, output '42\n'
+examples/expr-v5/file_size.nil: exit 0, output '256\n'
+examples/expr-v5/copy.nil: exit 0, output '256\n'
+examples/expr-v5/transform_file.nil: exit 0, output '256\n'
+Built copy: exit 0, 256 bytes, binary output exact.
+Protected example source diff against 78b88f8: empty.

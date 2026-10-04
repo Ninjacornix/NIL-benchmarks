@@ -117,3 +117,10 @@ startup and cached file I/O; they do not establish general language parity.
 The workloads mode also measures 16 MiB byte-sum (branchless scan control) and
 scalar-callee newline counting (the conservative call boundary). Both use the
 same cached file and independent byte-result oracles as the ordinary scan.
+
+The record follow-up can be reproduced with
+`paired/.venv/bin/python application/keyed/run.py --records --repeats 25 --output /tmp/nil-record-controls`
+from this submodule, after the parent compiler is built. It adds scalar-record map
+insertion and record-field append controls without changing the existing keyed
+workloads. The latter deliberately exposes conservative copying; it is not a claim
+of linear field append. See [records evidence](reports/2026-10-04/V5_RECORDS.md).

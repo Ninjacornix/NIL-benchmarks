@@ -1,0 +1,2231 @@
+{
+  "schema": 1,
+  "group": "all",
+  "compiler_revision": "a64473f733ba2597cb1f203eec8fb6f381e6b795",
+  "source_hashes": {
+    "corpora/application-v5/tasks.json": "5d9e7c04c1bdd1f6119964bbe6da30d8f802e35653682b7396f4be1683b96ee5",
+    "corpora/application-v5/oracles.py": "58f761e65286ae01823fa8597075b9e403525ffe3ef00a1f33960aed6714c991",
+    "corpora/application-v5/verify.py": "2fb9cc7cd9bd6459dea3871e8af4e1cf86b1408587acc9a580c9af760a52cef9",
+    "corpora/application-v5/driver.cpp": "dc6455348cad08174e361a01542b19afc7240b4abca09e2ac92d4e1146dbe410",
+    "corpora/application-v5/goldens.json": "1217304f7b5a14c3a1d044a6ef30919d21be0ac88b8844c74c6fba943986dd0b",
+    "corpora/application-v5/programs/ascii_lower.cpp": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+    "corpora/application-v5/programs/ascii_lower.nil": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+    "corpora/application-v5/programs/ascii_lower.py": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+    "corpora/application-v5/programs/ascii_upper.cpp": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+    "corpora/application-v5/programs/ascii_upper.nil": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+    "corpora/application-v5/programs/ascii_upper.py": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+    "corpora/application-v5/programs/buffer_dot.cpp": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+    "corpora/application-v5/programs/buffer_dot.nil": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+    "corpora/application-v5/programs/buffer_dot.py": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+    "corpora/application-v5/programs/buffer_sum.cpp": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+    "corpora/application-v5/programs/buffer_sum.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/buffer_sum.py": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+    "corpora/application-v5/programs/copy_file.cpp": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+    "corpora/application-v5/programs/copy_file.nil": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+    "corpora/application-v5/programs/copy_file.py": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+    "corpora/application-v5/programs/count_newlines.cpp": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+    "corpora/application-v5/programs/count_newlines.nil": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+    "corpora/application-v5/programs/count_newlines.py": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.cpp": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.nil": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+    "corpora/application-v5/programs/dedupe_adjacent_lines.py": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+    "corpora/application-v5/programs/env_lookup.cpp": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+    "corpora/application-v5/programs/env_lookup.py": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+    "corpora/application-v5/programs/ex_acronym.cpp": "b745c9bf240705763edc63446a990d9327cf892972368e60782b592ba9d4aade",
+    "corpora/application-v5/programs/ex_acronym.nil": "e6d91e0d01aea0891b737f147a6c69b809c83230d515e6123fa59a1c71ea8f56",
+    "corpora/application-v5/programs/ex_acronym.py": "79f0b0b2a8efbd0428fd5d1e9980e1f5ef143f3985692c15c89b9fcb4b6e3d4d",
+    "corpora/application-v5/programs/ex_affine_cipher.cpp": "37cd5f4a58b4f187ef2d73c5513619828e78dfc741649713fb83066dcba102d4",
+    "corpora/application-v5/programs/ex_affine_cipher.nil": "80be8585750ed7756f80c42deda0caf03979d55dc44bf0b4ce6243be2e01b6b6",
+    "corpora/application-v5/programs/ex_affine_cipher.py": "50cc2d73803f34d8c89eb269febc3db90d7f7ab7ebc5ddc1e427e4055580b619",
+    "corpora/application-v5/programs/ex_all_your_base.cpp": "99f2efc4cd32217e4d4eb05993d51a4caf548d8d5ffcafcd742ca41fe03b2822",
+    "corpora/application-v5/programs/ex_all_your_base.nil": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+    "corpora/application-v5/programs/ex_all_your_base.py": "56764f7cfd0c786bf5d15f1f133482b8fb372e79a45d4332982459ee063e9f0d",
+    "corpora/application-v5/programs/ex_allergies.cpp": "95f0c9aceed739648cf43acbfb88f066c62f54bcf9a1eb4b7794683d327c6d2e",
+    "corpora/application-v5/programs/ex_allergies.nil": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+    "corpora/application-v5/programs/ex_allergies.py": "d263dae1ce32414a5d901afda460c3140d5b51ae6643218b086afd3359debc16",
+    "corpora/application-v5/programs/ex_armstrong_numbers.cpp": "b941a60d7b5a518ee4d620b282f659b1a8ad191a7b6e7c2cc38d4e094d5c7ac5",
+    "corpora/application-v5/programs/ex_armstrong_numbers.nil": "a18e4d43f2c4890f40388b2581bb0811fd61ccef13e94532410c5b607ed56a87",
+    "corpora/application-v5/programs/ex_armstrong_numbers.py": "c1d8c3eb0bdf27ed639baf177d8b38fdb673e22f4af892bda9c125232e6214dd",
+    "corpora/application-v5/programs/ex_atbash_cipher.cpp": "ec04885c2154e3ba437f726e1dbf0b3c5e05283cff23ccc5b869d268794f2fe4",
+    "corpora/application-v5/programs/ex_atbash_cipher.nil": "3325d122aec9c657c6f64510fa0bb3d01cc17c7024bcef5e1a930c33fa348e0b",
+    "corpora/application-v5/programs/ex_atbash_cipher.py": "ef9f5e2f78aead4d8860228f0e4eb1a9e08f8dafd82b389a89862cbee6b8a7a8",
+    "corpora/application-v5/programs/ex_baffling_birthdays.cpp": "40f6dbfdf9e4c6b839143d9cb90ced9d6cedc52bdefef863439687fcfd153c3a",
+    "corpora/application-v5/programs/ex_baffling_birthdays.nil": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+    "corpora/application-v5/programs/ex_baffling_birthdays.py": "b0b764492e483b13ed99c30e04f80ebbbda3e0361e71f7002e17edba53fa2a2c",
+    "corpora/application-v5/programs/ex_beer_song.cpp": "85c2940d9f669813985ad696e195d64de71bc9abb5c458d9f50d5c14463c29b8",
+    "corpora/application-v5/programs/ex_beer_song.nil": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+    "corpora/application-v5/programs/ex_beer_song.py": "b645ea6acd8b119768e68a2470c01dd6acb2028da4a7632f6f2111de8eeb28ae",
+    "corpora/application-v5/programs/ex_binary.cpp": "9332f38042d335be7e56f6eb0c85ad3e3c39c747eac41703d972ecf9cc3adf9d",
+    "corpora/application-v5/programs/ex_binary.nil": "470ecf087ee33d7f0ae5f6555d7094601e61e8288d07efde2a1931ab3bec2fa8",
+    "corpora/application-v5/programs/ex_binary.py": "4989b2a488ba29d82933b629b77855e575324591b93edc81228fa894ab06d872",
+    "corpora/application-v5/programs/ex_binary_search.cpp": "90ef9ae2241dd2afe79c78c6654d5a01456456c7d6c028068cc838a9c273e182",
+    "corpora/application-v5/programs/ex_binary_search.nil": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+    "corpora/application-v5/programs/ex_binary_search.py": "96422f5758cc1c3300adcf7964a7019d22273cbae48fe1d361e7be314bcc5367",
+    "corpora/application-v5/programs/ex_book_store.cpp": "7f9975669c213bad4a8b5f9e68c7aa1989ac10b815142c522541f08241ad8594",
+    "corpora/application-v5/programs/ex_book_store.nil": "276af945eab8cb06fd13fd7c4d191eae0f0c007f8acea257d30e67543f14bb0b",
+    "corpora/application-v5/programs/ex_book_store.py": "c88ed00448bbdc3d3afa7d05b5446abab45b32293f2685d4ff1efe722ab946ce",
+    "corpora/application-v5/programs/ex_bottle_song.cpp": "84b2f03da748b0d66c3ffcc470aaded1f07b87e9ce5a70b0feb6e56536c777e5",
+    "corpora/application-v5/programs/ex_bottle_song.nil": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+    "corpora/application-v5/programs/ex_bottle_song.py": "e6f3fe6f2d499593f293374270d0a305ebf1484f5d35f5f9c6d1035c720bd91a",
+    "corpora/application-v5/programs/ex_bowling.cpp": "690f24f993c126bc59f3a9459a76a0f240f4dcfa45b189b14704ce16f2423a3b",
+    "corpora/application-v5/programs/ex_bowling.nil": "63c2ed40454fa34d110a5049a0844b0484861a246b5ea8896580062f763f31d8",
+    "corpora/application-v5/programs/ex_bowling.py": "07d05d37a2525d8c7a501d6148e7c9cb7589750d4eee41bb3d7c8091560e1dbe",
+    "corpora/application-v5/programs/ex_change.cpp": "d6f379113536a3360e10e145d414ed4d62fb0ae74192bd214190eac667f5940f",
+    "corpora/application-v5/programs/ex_change.nil": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+    "corpora/application-v5/programs/ex_change.py": "d5bb5944cd08a834e01d9341be75e66a8b67328252c27e976e605424a6540852",
+    "corpora/application-v5/programs/ex_circular_buffer.cpp": "d9d2a9c48b76b4dc38fd29b56930d8f0e0235c2972d78893eb42db110b78819d",
+    "corpora/application-v5/programs/ex_circular_buffer.nil": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+    "corpora/application-v5/programs/ex_circular_buffer.py": "6c878e7635a04faa275d3e0b977089db239bda003cbe30dd474cc20130ead349",
+    "corpora/application-v5/programs/ex_clock.cpp": "9947bc68b3db6bd2e794fef10e285dc1450d0a84b53025512964f0427d25c525",
+    "corpora/application-v5/programs/ex_clock.nil": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+    "corpora/application-v5/programs/ex_clock.py": "de0f0a5b121753164bc404b9104ca004f5381c06e5159c8720746419cb3c119b",
+    "corpora/application-v5/programs/ex_collatz_conjecture.cpp": "537ed1538346ecafa20a8f33f702a7b1495729fb9769d803a1b0e25d2dd66c3e",
+    "corpora/application-v5/programs/ex_collatz_conjecture.nil": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+    "corpora/application-v5/programs/ex_collatz_conjecture.py": "9e55d82c9ce8fcbb8fc2abb5a7e02d368906391a4faee49f8fee5790cbc8d8cc",
+    "corpora/application-v5/programs/ex_complex_numbers.cpp": "c5ae48cd951f5b79ed153725935d5cb6ecb57f25d5e1e50e2e954fa4b141dd75",
+    "corpora/application-v5/programs/ex_complex_numbers.nil": "a2fc3809b577544b5e55e466a54d741e09487b881c2c93370ce298fc20937ef2",
+    "corpora/application-v5/programs/ex_complex_numbers.py": "8750dfdb37117b1800ea92485133fcb80220ae5adf6430ba85229a9aa8a507ef",
+    "corpora/application-v5/programs/ex_connect.cpp": "4311f7105723aaf544fc42cc3a99bd23988a49ae9b6b1bf7d5fd0c368339e110",
+    "corpora/application-v5/programs/ex_connect.nil": "f9dbbcd703e4ad0f60b40c4686f7d2f2084cc94525afbf1715269c75bdab0e2a",
+    "corpora/application-v5/programs/ex_connect.py": "d9948e1e9dcb2e6602385eecb330d79a9824d72901c798cb10ea1b219255509a",
+    "corpora/application-v5/programs/ex_crypto_square.cpp": "def0b5a425bd1aa7608c8d2ca479989250ce9e70474afe075de10aa6c9938bef",
+    "corpora/application-v5/programs/ex_crypto_square.nil": "03e82e4bc7cf8dc4911816e85def4ecb63c1907fd219ffcebb048ded1c62dead",
+    "corpora/application-v5/programs/ex_crypto_square.py": "e4aa24af7fd24a4402a9a2717b9c0e57262f253fca872da303394fc09f795f5b",
+    "corpora/application-v5/programs/ex_custom_set.cpp": "672f28de72b58b5b2db260df24cb8b90be7feb62d3647eeb57588f88f10a13fb",
+    "corpora/application-v5/programs/ex_custom_set.nil": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+    "corpora/application-v5/programs/ex_custom_set.py": "df60e1355ceb45c71b45bf95d328dd74920070981da4b0d0ca7864df50413cb2",
+    "corpora/application-v5/programs/ex_darts.cpp": "8083b89e87e6bdc449d4081a3f1e6f4ed1f5db7c478ece6036538463e3206ef1",
+    "corpora/application-v5/programs/ex_darts.nil": "7eb26b096da6bf7e7e1dd0872838063c911cf3480841a881619380aee9553c37",
+    "corpora/application-v5/programs/ex_darts.py": "e4ebffc94b361d79026b76a40b35bd54275258bf5c4510a0b45dca0fedad363c",
+    "corpora/application-v5/programs/ex_diamond.cpp": "985ece356dc2595103b7a1a4b32d890aca0af0d9e770086bafc6325f4ddcc5e0",
+    "corpora/application-v5/programs/ex_diamond.nil": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+    "corpora/application-v5/programs/ex_diamond.py": "9200b750528476f989fc163aec1a86dee182e64e27e3ac20e087e32fb3dadf1b",
+    "corpora/application-v5/programs/ex_difference_of_squares.cpp": "8bd0cc0f0d31c00d2bac873946d2daa1b2b7ac2e7cef0eeda8f5144fd6837ba6",
+    "corpora/application-v5/programs/ex_difference_of_squares.nil": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+    "corpora/application-v5/programs/ex_difference_of_squares.py": "a4fbbd2e10179c061d5a2f8290ff3f5a0b5b95af870a9d5be77da7508dcd8a84",
+    "corpora/application-v5/programs/ex_dnd_character.cpp": "81bbc8e9b2fa27e687dc016fe7d0dc171de9e4e9c679bce328c878a6993110dd",
+    "corpora/application-v5/programs/ex_dnd_character.nil": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+    "corpora/application-v5/programs/ex_dnd_character.py": "8dea1acfdcda79d182688c3afb519113af927c1bbd7e6d1b3ad10f85b7c01e73",
+    "corpora/application-v5/programs/ex_dominoes.cpp": "173903fc1e1a23f3bb988e92ce7bf6fc42ac410a52e90132186ecaabca3fd189",
+    "corpora/application-v5/programs/ex_dominoes.nil": "1034ee08fc32d9b3361a1c9375e844753b1d65082b5b52c1b556549811e8a7e7",
+    "corpora/application-v5/programs/ex_dominoes.py": "2dcc20052b5f09219f184174f7cea764aafdc47ab390ad0082624ec843528f0f",
+    "corpora/application-v5/programs/ex_eliuds_eggs.cpp": "c0d7190b53d72f5b76e8173f8c4bb540ba5a7411eb58027ae9a5759a2fba538a",
+    "corpora/application-v5/programs/ex_eliuds_eggs.nil": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+    "corpora/application-v5/programs/ex_eliuds_eggs.py": "6c059beda2eb8a3b258cc8e6313d1361ce8a8f6e1b342834fb1e49fbf8869e00",
+    "corpora/application-v5/programs/ex_etl.cpp": "b3990ac651d3d962a674518d1c52f0dcba4a211db0f06255d0df696b508da021",
+    "corpora/application-v5/programs/ex_etl.nil": "aeb5769061c1643733971c7cfd814f4432132c777116fc4cc7f6a637374c382e",
+    "corpora/application-v5/programs/ex_etl.py": "0660f7da4d40a0b76b1cc84ada5137db0e3104ad7881c3e0a0da69998762c5c8",
+    "corpora/application-v5/programs/ex_flatten_array.cpp": "8496f7bb876edfacf751602d599bdc12536f9970bb8cf0c433fdc26718684bb9",
+    "corpora/application-v5/programs/ex_flatten_array.nil": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+    "corpora/application-v5/programs/ex_flatten_array.py": "c96d8041d2008c53f4fcc72c2ff177b045e59b8a76eaa32597d89ca3195e75da",
+    "corpora/application-v5/programs/ex_flower_field.cpp": "c806eeb2e872337eea9fd64d5f55b74c35656ed321771dcbc775fdc401612717",
+    "corpora/application-v5/programs/ex_flower_field.nil": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+    "corpora/application-v5/programs/ex_flower_field.py": "2e67c8327a8b5ccec7482df90acbfdd954f3aadd7faaedf8cc36adbdf7c29a64",
+    "corpora/application-v5/programs/ex_food_chain.cpp": "aa7552ea09287a6c5e21a87f5fad6bb3b794a08e57e761b325ee154e6b71af88",
+    "corpora/application-v5/programs/ex_food_chain.nil": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+    "corpora/application-v5/programs/ex_food_chain.py": "37904b3a8024ea18fd101f77f3690cbf7c6eccc5a9e6cd3a0425b017452ebf83",
+    "corpora/application-v5/programs/ex_game_of_life.cpp": "adb04f61173eb3edca7421132faecbffc0edd6f725f8298da529f81ad1a3c852",
+    "corpora/application-v5/programs/ex_game_of_life.nil": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+    "corpora/application-v5/programs/ex_game_of_life.py": "c54d26e0361ec63c962d679471564a12ed09a789f4f6dfce960cbb13ab1d55f5",
+    "corpora/application-v5/programs/ex_go_counting.cpp": "0bf99eb38fe1b8412f28f5acd3890e38b7b37c0e7d54f60a862f7270e0afa33e",
+    "corpora/application-v5/programs/ex_go_counting.nil": "3c477fc727c8cc674985b820ed81501d2bc079979db358bfb25129fda5822a7e",
+    "corpora/application-v5/programs/ex_go_counting.py": "746ce34c10dcde8d02f33f1f0baa958597d30ede7e3183b6fe9a2c038a5a2bb5",
+    "corpora/application-v5/programs/ex_grade_school.cpp": "fdaa5445e87355cadc4d8d204adef8ade429388c85cafd15a52f2c476108cff3",
+    "corpora/application-v5/programs/ex_grade_school.nil": "c0376c960ee2885563350b6053b8996c99fe8162cd9620347031c69d62bafaca",
+    "corpora/application-v5/programs/ex_grade_school.py": "dca7a6cfa5960b7e207c0ac57e47ab0c4e694b6e680544d835d274850ed4f3f3",
+    "corpora/application-v5/programs/ex_grains.cpp": "5b0d1f3131e2b7b34db17da7b07513cd3cfaee14b08ab032ce558e2371cf112d",
+    "corpora/application-v5/programs/ex_grains.nil": "018081f35feb0b0c945fd7eb029901d9df4cbd792b53ea8071fe6db5fd17668b",
+    "corpora/application-v5/programs/ex_grains.py": "b313bd71c9e054425b642c38a82beb4867caeb49080634bf38a2b4c2e9c9a70a",
+    "corpora/application-v5/programs/ex_hamming.cpp": "0086afd79081043c61b3f52a740406b9a2a42787c5b49aedcf1da5fd2e23b06a",
+    "corpora/application-v5/programs/ex_hamming.nil": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+    "corpora/application-v5/programs/ex_hamming.py": "15f934f6f26b7f66002ce48a92050973ce3c98a4e4ae589b641a7307de03a901",
+    "corpora/application-v5/programs/ex_hello_world.cpp": "cc2fcf67b38202f01df610b892afb9e3faa882d85c9a34b78aa3b30a9f3bfca4",
+    "corpora/application-v5/programs/ex_hello_world.nil": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+    "corpora/application-v5/programs/ex_hello_world.py": "ed1d549ad3dcf42ee978388529f199697cf3149a95f4f31afa36098b23dcd9cd",
+    "corpora/application-v5/programs/expand_tabs.cpp": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+    "corpora/application-v5/programs/expand_tabs.nil": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+    "corpora/application-v5/programs/expand_tabs.py": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+    "corpora/application-v5/programs/first_fields_csv.cpp": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+    "corpora/application-v5/programs/first_fields_csv.nil": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+    "corpora/application-v5/programs/first_fields_csv.py": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+    "corpora/application-v5/programs/hex_encode.cpp": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+    "corpora/application-v5/programs/hex_encode.nil": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+    "corpora/application-v5/programs/hex_encode.py": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+    "corpora/application-v5/programs/histogram_digits.cpp": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+    "corpora/application-v5/programs/histogram_digits.nil": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+    "corpora/application-v5/programs/histogram_digits.py": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+    "corpora/application-v5/programs/invert_bytes.cpp": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+    "corpora/application-v5/programs/invert_bytes.nil": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+    "corpora/application-v5/programs/invert_bytes.py": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+    "corpora/application-v5/programs/min_max.cpp": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+    "corpora/application-v5/programs/min_max.nil": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+    "corpora/application-v5/programs/min_max.py": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+    "corpora/application-v5/programs/nonempty_lines.cpp": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+    "corpora/application-v5/programs/nonempty_lines.nil": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+    "corpora/application-v5/programs/nonempty_lines.py": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+    "corpora/application-v5/programs/normalize_crlf.cpp": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+    "corpora/application-v5/programs/normalize_crlf.nil": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+    "corpora/application-v5/programs/normalize_crlf.py": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+    "corpora/application-v5/programs/number_lines.cpp": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+    "corpora/application-v5/programs/number_lines.nil": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+    "corpora/application-v5/programs/number_lines.py": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+    "corpora/application-v5/programs/prefix_lines.cpp": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+    "corpora/application-v5/programs/prefix_lines.nil": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+    "corpora/application-v5/programs/prefix_lines.py": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+    "corpora/application-v5/programs/prefix_sums.cpp": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+    "corpora/application-v5/programs/prefix_sums.nil": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+    "corpora/application-v5/programs/prefix_sums.py": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+    "corpora/application-v5/programs/reverse_bytes.cpp": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+    "corpora/application-v5/programs/reverse_bytes.nil": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+    "corpora/application-v5/programs/reverse_bytes.py": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+    "corpora/application-v5/programs/rot13.cpp": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+    "corpora/application-v5/programs/rot13.nil": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+    "corpora/application-v5/programs/rot13.py": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+    "corpora/application-v5/programs/running_report.cpp": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+    "corpora/application-v5/programs/running_report.nil": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+    "corpora/application-v5/programs/running_report.py": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+    "corpora/application-v5/programs/slice_file.cpp": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+    "corpora/application-v5/programs/slice_file.nil": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+    "corpora/application-v5/programs/slice_file.py": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+    "corpora/application-v5/programs/sum_integers.cpp": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+    "corpora/application-v5/programs/sum_integers.nil": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+    "corpora/application-v5/programs/sum_integers.py": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+    "corpora/application-v5/programs/sum_pairs.cpp": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+    "corpora/application-v5/programs/sum_pairs.nil": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+    "corpora/application-v5/programs/sum_pairs.py": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+    "corpora/application-v5/SUPPORT.json": "7caa3d7ac8d00e90ef7f68f02da8d8a970d1e150420bea0513e15a998f293173",
+    "corpora/application-v5/external_suite.py": "4cd07f9367fbf9ff66d9b461f8b35d73cba6cca8cb4d713397d85958ef2de67f",
+    "corpora/application-v5/external/build_manifest.py": "b532c8e04679ddeacfb78e0149c05549ce5e12bd070d6efcd14a8f5863770301",
+    "corpora/application-v5/external/accumulate.json": "c19ea3a93d9c832513ac512a8ded9e3d2f2dc22dc63fb5dd669f976e70807b8c",
+    "corpora/application-v5/external/acronym.json": "009b8ae28b2224ea3fd4aac7aa3c4ba37c5a303221cf38df4cfb235afc4d3df6",
+    "corpora/application-v5/external/affine-cipher.json": "b8d5b6ba1b57a02afb9a07de9bbfe71f25fce71fc027819ddb00665bbee59fc4",
+    "corpora/application-v5/external/all-your-base.json": "0c26c0fd4ba9a33fefc5c940c989fffdd9f32952cb139b9df614c78704fee2e7",
+    "corpora/application-v5/external/allergies.json": "3d75ba360afde61bb4f46dbee0def899f0527f1f0e6ce9704c3126af2bcf066b",
+    "corpora/application-v5/external/alphametics.json": "334856909520dd243d36725b57ba78b8c88f51ec5e8a9193eb9713d070926c29",
+    "corpora/application-v5/external/anagram.json": "b2bd108a1da86011bccf1fdc13888542399d397ee9711f0d9b7b43bd1aa18bd3",
+    "corpora/application-v5/external/answers.json": "7c182125da1c6d52c1a4560d36d2fb83597620db6fec5da361ad66cc4428010b",
+    "corpora/application-v5/external/armstrong-numbers.json": "e8567a19cfaa0cf711fa2a1b2d4ec92b9fcdfddf42d89b969ce32f99fcc7a1fe",
+    "corpora/application-v5/external/atbash-cipher.json": "f5e7f43f79968b46b2a786246a1d10c0339e000c28ec4a5868ca4e4aad78481d",
+    "corpora/application-v5/external/baffling-birthdays.json": "6b44f34ae47f738edc9fba07c29e6ba115848a6eb438b2893e287eea305f546f",
+    "corpora/application-v5/external/bank-account.json": "3aede4ade23e78266e24e33115f49c6dbd8d03a6a862e47449c5bfa03120af2a",
+    "corpora/application-v5/external/beer-song.json": "4cbf7592251774a71bc12b5bad3495211aa7570927baf513346209264409a664",
+    "corpora/application-v5/external/binary-search-tree.json": "768ecb0aac4cb435d7b7115619696f9a6386710da9616fab1f4dc259c84b53b7",
+    "corpora/application-v5/external/binary-search.json": "d224e68b43512d8d394bb5f9e2f209ef6008e9a0abc59ee61a329c4ab2a7f73d",
+    "corpora/application-v5/external/binary.json": "52b96f7ba20ccc028ff06ba8b909d87c488820b1228e3ec51aeec324c98cabf8",
+    "corpora/application-v5/external/bob.json": "02b79f535d7613c6faba88cb909462892b101dc799b2df68dd9ffb5ec1d1284d",
+    "corpora/application-v5/external/book-store.json": "f75b045ea36e6a52f113a92548dfccdd263f55c4d8bbb56bb92849e8697130db",
+    "corpora/application-v5/external/bottle-song.json": "e5c393399421ccaf92ba3eb67463b23a1c811e394ea305819ba848a9bfe5ea1c",
+    "corpora/application-v5/external/bowling.json": "3470ab86e0e5089dd442e915f56b42acfad022e7258b904f3d1642b67a21c71a",
+    "corpora/application-v5/external/camicia.json": "9386512c91afc7370e17b49e1980d6a0a2d05ca07144ebf4d5ce364f4887f6e4",
+    "corpora/application-v5/external/change.json": "a60728f642b463522c1253374ef487ebd999b378a08adfa88a9d8b2ae98b3229",
+    "corpora/application-v5/external/circular-buffer.json": "51cb2d53e8c34ea4c505de8441d4aa37e469246f830598ec89b5748b841a47d6",
+    "corpora/application-v5/external/clock.json": "1ece368b234d83e44b145fad15fa6fddacb93c6091d64fad21490467f0f75a13",
+    "corpora/application-v5/external/collatz-conjecture.json": "eeeb1924bd07e698cf43912ae468e243aa3aed41b47bf05f4aa8357def138661",
+    "corpora/application-v5/external/complex-numbers.json": "98a5c9fd455ea5df27291117a36007ef46e03f2115fa080fa69a5b7d22626b8f",
+    "corpora/application-v5/external/connect.json": "c436979204121707fab9ed8bf547c4064508d07ceea8043b37200c800fab8e84",
+    "corpora/application-v5/external/crypto-square.json": "7585930498912b220b20df6bb405c35b2edd273cb644e3dbf88d6a0cacb71e17",
+    "corpora/application-v5/external/custom-set.json": "2cffe8f28cedd4f5e73f16506dd7f9b4b8ff5520e04d42fc70d53efaf6b4a34c",
+    "corpora/application-v5/external/darts.json": "bc815b29fafe311db9de8bc752ec42045bb10c081b6082ded22744ccfbb031c9",
+    "corpora/application-v5/external/diamond.json": "463426cdd6166e96518fd3525cf56818fa978b3c4b6497f8ca7f94a04423d73d",
+    "corpora/application-v5/external/difference-of-squares.json": "d097c48a4783565372af2a6c67c84ef86f5494d13393e6fd7f42f569f099f40a",
+    "corpora/application-v5/external/diffie-hellman.json": "f7f31347af8edbe5882acba74d7db349310da7cdd8b1f2cbe70521e5620a70b2",
+    "corpora/application-v5/external/dnd-character.json": "0831484983f9736b29b8071dde5f69e263fa4509950d0dc9ee3f35ae1094e13c",
+    "corpora/application-v5/external/dominoes.json": "b7cc1433c8bd9a3fecc7dba6079425e64f0e4cd4f9906dd8ec222b20056def64",
+    "corpora/application-v5/external/dot-dsl.json": "0597d83b99c7fee7c7f810b3ad66b753591bfa0205b521a9e3649956f4e58b66",
+    "corpora/application-v5/external/eliuds-eggs.json": "77272d0886522931b5aa3481ff256d6d50671c9e861ec63ca92bab30920a56cd",
+    "corpora/application-v5/external/etl.json": "293bc1cfb4ad2b9c75a50359520c177c473b307993cf3e1d69fc7473f4396d47",
+    "corpora/application-v5/external/flatten-array.json": "fa6c236333d546ed304e9c93d9b8947b2cdee162248be2393ef118c1b6533316",
+    "corpora/application-v5/external/flower-field.json": "f29b89a783b6f3e16a0e4e69d0362fb81c95ac8f0ea6af9c7b0db17ac2a45695",
+    "corpora/application-v5/external/food-chain.json": "8fd16b2a7f20e4d055dc63311709fcf1c8e17f4bd6bec207fe29e364961d5d1f",
+    "corpora/application-v5/external/forth.json": "6578301f6345b328b01292fef2925662d0d3c2f946e447dac969c031a089b176",
+    "corpora/application-v5/external/game-of-life.json": "eb09d20472b472af797b4c335a90fd9c053fef03957431acf48bb3a7ba1f0efb",
+    "corpora/application-v5/external/gigasecond.json": "7ebb939391527537162803154757aa676ed9062d68a011cef5f08a3e7f88076d",
+    "corpora/application-v5/external/go-counting.json": "610f764fe8de8017c7e2f8976fed5e606ae831f8f7f2412ad613b956c214a3cb",
+    "corpora/application-v5/external/goldens.json": "aaa87dd60103f46afb89f8c817ed669cbe4ceac99f4ccac8cd83c64aa0a195ab",
+    "corpora/application-v5/external/grade-school.json": "a6ce57befa0f3a83b6a96446ad9adf476d4ca3a5d77e70a849c0c3b8fc65ecbf",
+    "corpora/application-v5/external/grains.json": "b5c2c1a38ed4527681f0f4dcc09b91fe26f87162188146d919fb478f23d3e473",
+    "corpora/application-v5/external/grep.json": "b6eed026aeca970f29c2d5a2881475de0500eddd23f8d207dbe2b7f0c4bcf88a",
+    "corpora/application-v5/external/hamming.json": "c932d8511912c5ca2cc5a15550a266436c637d8c2af4f3a055173808b0fb0086",
+    "corpora/application-v5/external/hangman.json": "67b922274c541b029f5cea0e6886870f62d1db81fdefc58bd71e6e93a3115fca",
+    "corpora/application-v5/external/hello-world.json": "e5131e7eeec3a31fa34fa877bcaf3211bf24330dd60f5e105b6e4828808fe5e0",
+    "corpora/application-v5/external/original-lock.json": "dfdde8cf67ae3fc758f45db337a1ad05b7358ce17a73dc014cf966abb2f97dca",
+    "corpora/application-v5/external/selection.json": "4a750be53cc35ce8403769ad1f7c18484ffaf0624597ce6a95fdb48b0c3486cb",
+    "corpora/application-v5/external/tasks.json": "e725976f678610046823d9a714de3c883c4f3195379bfa16104d2e9b67f48ac5",
+    "generation/application/oracle.py": "5045915a4141d8f9c4e09239fdefa02013af99352c1d6dab20215374cece7e8a",
+    "generation/application/python_driver.py": "47ea25e999fb72c291fcd42c3e86a6ccddc83c3f53b3d9a4276600e93011507d",
+    "helpers/application_check.rs": "ab43ebbb0d472c741c1dca98b40ce6f707c448d7b20e68baa7efabd87f2286d3"
+  },
+  "totals": {
+    "tasks": 75,
+    "nil_programs": 61,
+    "unsupported": 14,
+    "reference_checks": 523,
+    "native_checks": 1046,
+    "python_checks": 528,
+    "cpp_checks": 528
+  },
+  "results": [
+    {
+      "task": "ascii_upper",
+      "language": "expr-v5",
+      "source_sha256": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ascii_upper",
+      "language": "python",
+      "source_sha256": "aea1866e3912db29c782a1a986452aecb6bbf2ff2c893f6ca23addb3b77d3c00",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_upper",
+      "language": "cpp",
+      "source_sha256": "64c1fc1388f1c87ae5b4beca7fda651938cf84ed9e1f4029410271e07a9515e5",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_lower",
+      "language": "expr-v5",
+      "source_sha256": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ascii_lower",
+      "language": "python",
+      "source_sha256": "2b1e4545c915a20c29c074e69e4169dc4f41af94ad373bd77815e2867b11c245",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ascii_lower",
+      "language": "cpp",
+      "source_sha256": "f797e990c8da4063b33535d049897e2a3774dde5e1fe96d68a0a599f2935bd32",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "rot13",
+      "language": "expr-v5",
+      "source_sha256": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "rot13",
+      "language": "python",
+      "source_sha256": "dded72c27e8dd1b5f9440c33f5b5c95e9a6672918cebbabb49ae4e9f446f8f7d",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "rot13",
+      "language": "cpp",
+      "source_sha256": "dca87b9f6af2f0d212d8db10bac3f1f595980c59fb433154718cc352f2f44ffa",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "invert_bytes",
+      "language": "expr-v5",
+      "source_sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "invert_bytes",
+      "language": "python",
+      "source_sha256": "ac558248bc329ddf857b20dfc7e274fb2a6c6d59523335e78cb24dac459fdee9",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "invert_bytes",
+      "language": "cpp",
+      "source_sha256": "be780987a1a282fb7a7ce51734167928c37ad0bc561f76895567a5b21d0df06f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "expr-v5",
+      "source_sha256": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "python",
+      "source_sha256": "5543c0f25c74d8fda130789b10959d915b113288359c4ea4e655f4483637ac06",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "reverse_bytes",
+      "language": "cpp",
+      "source_sha256": "de9ced845e08c056a566970bcb0c338b2331d5b03c1f931cb8142a6c742100a8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "hex_encode",
+      "language": "expr-v5",
+      "source_sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "hex_encode",
+      "language": "python",
+      "source_sha256": "a6b36d01a11cb8039731ed197df5ac601e10e81dc9bf13d107bc80b5ab634866",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "hex_encode",
+      "language": "cpp",
+      "source_sha256": "a319e94d8c61fe430b2da9c93050670aeca7fdd928dc656234f049769a8f4851",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "count_newlines",
+      "language": "expr-v5",
+      "source_sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "count_newlines",
+      "language": "python",
+      "source_sha256": "0a80efd4d36789053f9d87deeb56791864fb9ac47e7ff3d65056035e048bb44b",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "count_newlines",
+      "language": "cpp",
+      "source_sha256": "fcbe926c7a48eb43f3b9969a866b6a05385d63ea0b76a954729addaff0042951",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "expr-v5",
+      "source_sha256": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "python",
+      "source_sha256": "5d87727c5f1878d8033c07a069be8f8b611816222f35c8ec7ea1406af9508c5f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "nonempty_lines",
+      "language": "cpp",
+      "source_sha256": "97d5a8395cc586e38af951750c46242e2afda27e5b3471e1c35e3a2c1a926b8d",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "expr-v5",
+      "source_sha256": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "python",
+      "source_sha256": "fdeea197218d24c099987ad31bd13d3df823e5341ad6bd121d6121f1611e04b8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "normalize_crlf",
+      "language": "cpp",
+      "source_sha256": "9c78dfb5c3897d50afc4012ec831fea2c6a5453ea591c2c9f3931438b5d31cce",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_lines",
+      "language": "expr-v5",
+      "source_sha256": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "prefix_lines",
+      "language": "python",
+      "source_sha256": "3d749f9d6eeca08a5ae14327c572f96b766e7d3967deb9ee4e70f7e5d4a4427e",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_lines",
+      "language": "cpp",
+      "source_sha256": "d29f8f475aba43e1ae9d95057be2b2fa3a1bffac4cc7e30ce89527152d4e7953",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "expr-v5",
+      "source_sha256": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "python",
+      "source_sha256": "93bb7ba8d5cfea257aa89d75f29d7fdfeacde18c8c463e4873b334ba1bbe194f",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "first_fields_csv",
+      "language": "cpp",
+      "source_sha256": "898a86e2027a478a8130c6cdd036646d98f54b0148a275ef9da4111a8f9a3ccf",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_pairs",
+      "language": "expr-v5",
+      "source_sha256": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "sum_pairs",
+      "language": "python",
+      "source_sha256": "2f0c9eec505668b49a039a95efb39e0379009ccc919cd2868c3ec778741622ac",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_pairs",
+      "language": "cpp",
+      "source_sha256": "a4f423250b980dc269df8fb1ca857efa569f5dde15edac207b945e5840da2455",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_integers",
+      "language": "expr-v5",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "sum_integers",
+      "language": "python",
+      "source_sha256": "6be3471e6a55bdbf6f14e46c9ca338a35e22ff46d508a61bfe83a50df838a8ed",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "sum_integers",
+      "language": "cpp",
+      "source_sha256": "5ba16ed8917b40a2c3713cdbd35014ec1c7ef70ce09e9385c1d5cfb4dc08d855",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "min_max",
+      "language": "expr-v5",
+      "source_sha256": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "min_max",
+      "language": "python",
+      "source_sha256": "ca89a6f6307d05c66fdd4fe8862eb14923fad3ed0202c21f409216d1e377bfa6",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "min_max",
+      "language": "cpp",
+      "source_sha256": "52a61d9c0e645075d3e15a00ff61d55a911dc726279f6fa51b767f9bb82b1312",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "expr-v5",
+      "source_sha256": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "python",
+      "source_sha256": "e5ceb845b3acc54f12de6a6bfa107b9c4158f058809576e8587624e216cf890a",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "language": "cpp",
+      "source_sha256": "4fb5fcf96c58f07b2ddc03ddfbd3828d88d3c213eee22e9c46c5f4da09e28c80",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "running_report",
+      "language": "expr-v5",
+      "source_sha256": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "running_report",
+      "language": "python",
+      "source_sha256": "591560c530c1dfea97156aaa4e863d9f6fac15266989e5a1969a978b88710eed",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "running_report",
+      "language": "cpp",
+      "source_sha256": "44782b1d4671448bd874abb8d5f346292f50f63cc913f073202bd13caa17f6c4",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "number_lines",
+      "language": "expr-v5",
+      "source_sha256": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "number_lines",
+      "language": "python",
+      "source_sha256": "15193d1b78d17606bdd02a34a42c8c5cea34d394f18674f884f33dd66a96d125",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "number_lines",
+      "language": "cpp",
+      "source_sha256": "39123be34f0de5b6d3b6bcc1712f39935e5087bfa84c5675aa7f36a763b1da1a",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "histogram_digits",
+      "language": "expr-v5",
+      "source_sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "histogram_digits",
+      "language": "python",
+      "source_sha256": "95072107b2369dcc7a3c01f671d3d3b76220675158a1b90572dcfc053d227116",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "histogram_digits",
+      "language": "cpp",
+      "source_sha256": "1c87c9eba45d5fdcede26b3afe8cfef2f5e9d965ba99ff2a1fddaa423d1e77d8",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_sum",
+      "language": "expr-v5",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "buffer_sum",
+      "language": "python",
+      "source_sha256": "0c821dd1737ea627132bd83f879f56eafa654d7d8cd103478ec6f5c349f03add",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_sum",
+      "language": "cpp",
+      "source_sha256": "97f4bd1b84aaa12f5a80e7df4c59eb8df832523bc04f7dd0f59bd90b65b4c52e",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_dot",
+      "language": "expr-v5",
+      "source_sha256": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "buffer_dot",
+      "language": "python",
+      "source_sha256": "89e0576540e87f4c377d5289ada17089f6db86937a87199a81a878d4cfbbfe6b",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "buffer_dot",
+      "language": "cpp",
+      "source_sha256": "5109b6c790113dc199a4e39f3b156e63dc37c2bd9059a7f8de02a5610aa31e71",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_sums",
+      "language": "expr-v5",
+      "source_sha256": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "prefix_sums",
+      "language": "python",
+      "source_sha256": "a4927f7d502e9b33f41c60f8a9088f8e5442130f73bb9acbf28f1142141c3d93",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "prefix_sums",
+      "language": "cpp",
+      "source_sha256": "f88427a9d38f93315bcbd995ab83d6b235ebc0b3c39391083dc03dd88fa8cf69",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "copy_file",
+      "language": "expr-v5",
+      "source_sha256": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "copy_file",
+      "language": "python",
+      "source_sha256": "8b6dd6a7bccf7def65f9ef603f60a7d0939a0949195114b83469b42bdbce9fe0",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "copy_file",
+      "language": "cpp",
+      "source_sha256": "f7cf59ac2d8cd578a3cef4afecb26c84240924eccc3275c8aaa4e1ee5b1124dd",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "slice_file",
+      "language": "expr-v5",
+      "source_sha256": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "slice_file",
+      "language": "python",
+      "source_sha256": "2fff3fd9829f7e370290a00727691d8bebabdacf83297089cc9d114d82773917",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "slice_file",
+      "language": "cpp",
+      "source_sha256": "073336efdd9976d7cf92f22a59b33db01c80e43c29c8a61f993d068b553a4d37",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "expand_tabs",
+      "language": "expr-v5",
+      "source_sha256": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "expand_tabs",
+      "language": "python",
+      "source_sha256": "7bcb63b477e5654fac0e09d4c77ceb67ebf8a7a3e50d8b308834308b33fabe42",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "expand_tabs",
+      "language": "cpp",
+      "source_sha256": "6bd3a3a93c0fe9d6fad06d24226c21d7d50dc0ab2a20d923ca8398ebeef0bef7",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "env_lookup",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The v5 Host exposes only read/write/out, and the language has no environment lookup or external-call intrinsic. Identical files and arguments with differing environment values require differing outputs; the reference evaluator cannot observe that difference. Do not hardcode fixture values."
+    },
+    {
+      "task": "env_lookup",
+      "language": "python",
+      "source_sha256": "bb1d60e30378fb7f11e99fba28c57984ebef23dd2f244656693787694616cfe3",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "env_lookup",
+      "language": "cpp",
+      "source_sha256": "98fed493a3c651db80b663cd84f4d2f31a7666a6c23b35591b08296326d11058",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ex_accumulate",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The upstream collection/operator contract requires typed operation values and heterogeneous collections; neither is available in v5."
+    },
+    {
+      "task": "ex_accumulate",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The upstream collection/operator contract requires typed operation values and heterogeneous collections; neither is available in v5."
+    },
+    {
+      "task": "ex_accumulate",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The upstream collection/operator contract requires typed operation values and heterogeneous collections; neither is available in v5."
+    },
+    {
+      "task": "ex_acronym",
+      "language": "expr-v5",
+      "source_sha256": "e6d91e0d01aea0891b737f147a6c69b809c83230d515e6123fa59a1c71ea8f56",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 9,
+      "tests_passed": 9,
+      "native_tests_passed": 18,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_acronym",
+      "language": "python",
+      "source_sha256": "79f0b0b2a8efbd0428fd5d1e9980e1f5ef143f3985692c15c89b9fcb4b6e3d4d",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_acronym",
+      "language": "cpp",
+      "source_sha256": "b745c9bf240705763edc63446a990d9327cf892972368e60782b592ba9d4aade",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_affine_cipher",
+      "language": "expr-v5",
+      "source_sha256": "80be8585750ed7756f80c42deda0caf03979d55dc44bf0b4ce6243be2e01b6b6",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 9,
+      "tests_passed": 9,
+      "native_tests_passed": 18,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_affine_cipher",
+      "language": "python",
+      "source_sha256": "50cc2d73803f34d8c89eb269febc3db90d7f7ab7ebc5ddc1e427e4055580b619",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_affine_cipher",
+      "language": "cpp",
+      "source_sha256": "37cd5f4a58b4f187ef2d73c5513619828e78dfc741649713fb83066dcba102d4",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_all_your_base",
+      "language": "expr-v5",
+      "source_sha256": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 21,
+      "tests_passed": 21,
+      "native_tests_passed": 42,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_all_your_base",
+      "language": "python",
+      "source_sha256": "56764f7cfd0c786bf5d15f1f133482b8fb372e79a45d4332982459ee063e9f0d",
+      "semantic_ok": true,
+      "tests_passed": 21
+    },
+    {
+      "task": "ex_all_your_base",
+      "language": "cpp",
+      "source_sha256": "99f2efc4cd32217e4d4eb05993d51a4caf548d8d5ffcafcd742ca41fe03b2822",
+      "semantic_ok": true,
+      "tests_passed": 21
+    },
+    {
+      "task": "ex_allergies",
+      "language": "expr-v5",
+      "source_sha256": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 40,
+      "tests_passed": 40,
+      "native_tests_passed": 80,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_allergies",
+      "language": "python",
+      "source_sha256": "d263dae1ce32414a5d901afda460c3140d5b51ae6643218b086afd3359debc16",
+      "semantic_ok": true,
+      "tests_passed": 40
+    },
+    {
+      "task": "ex_allergies",
+      "language": "cpp",
+      "source_sha256": "95f0c9aceed739648cf43acbfb88f066c62f54bcf9a1eb4b7794683d327c6d2e",
+      "semantic_ok": true,
+      "tests_passed": 40
+    },
+    {
+      "task": "ex_alphametics",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The upstream result is a dynamically keyed assignment map/null. This corpus does not implement a hand-encoded mapping/search adapter; records/maps are absent. Algorithmic emulation is possible, not proven impossible."
+    },
+    {
+      "task": "ex_alphametics",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The upstream result is a dynamically keyed assignment map/null. This corpus does not implement a hand-encoded mapping/search adapter; records/maps are absent. Algorithmic emulation is possible, not proven impossible."
+    },
+    {
+      "task": "ex_alphametics",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The upstream result is a dynamically keyed assignment map/null. This corpus does not implement a hand-encoded mapping/search adapter; records/maps are absent. Algorithmic emulation is possible, not proven impossible."
+    },
+    {
+      "task": "ex_anagram",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "Unicode case-insensitive character comparison is required; no Unicode case database/operations are available. ASCII-only restriction would remove upstream cases."
+    },
+    {
+      "task": "ex_anagram",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "Unicode case-insensitive character comparison is required; no Unicode case database/operations are available. ASCII-only restriction would remove upstream cases."
+    },
+    {
+      "task": "ex_anagram",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "Unicode case-insensitive character comparison is required; no Unicode case database/operations are available. ASCII-only restriction would remove upstream cases."
+    },
+    {
+      "task": "ex_armstrong_numbers",
+      "language": "expr-v5",
+      "source_sha256": "a18e4d43f2c4890f40388b2581bb0811fd61ccef13e94532410c5b607ed56a87",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 11,
+      "tests_passed": 11,
+      "native_tests_passed": 22,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_armstrong_numbers",
+      "language": "python",
+      "source_sha256": "c1d8c3eb0bdf27ed639baf177d8b38fdb673e22f4af892bda9c125232e6214dd",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_armstrong_numbers",
+      "language": "cpp",
+      "source_sha256": "b941a60d7b5a518ee4d620b282f659b1a8ad191a7b6e7c2cc38d4e094d5c7ac5",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "language": "expr-v5",
+      "source_sha256": "3325d122aec9c657c6f64510fa0bb3d01cc17c7024bcef5e1a930c33fa348e0b",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 8,
+      "tests_passed": 8,
+      "native_tests_passed": 16,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "language": "python",
+      "source_sha256": "ef9f5e2f78aead4d8860228f0e4eb1a9e08f8dafd82b389a89862cbee6b8a7a8",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "language": "cpp",
+      "source_sha256": "ec04885c2154e3ba437f726e1dbf0b3c5e05283cff23ccc5b869d268794f2fe4",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "language": "expr-v5",
+      "source_sha256": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 9,
+      "tests_passed": 9,
+      "native_tests_passed": 18,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "language": "python",
+      "source_sha256": "b0b764492e483b13ed99c30e04f80ebbbda3e0361e71f7002e17edba53fa2a2c",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "language": "cpp",
+      "source_sha256": "40f6dbfdf9e4c6b839143d9cb90ced9d6cedc52bdefef863439687fcfd153c3a",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_bank_account",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The published banking contract requires concurrent access to shared mutable account state; v5 has no threads/synchronization/shared-state ABI."
+    },
+    {
+      "task": "ex_bank_account",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The published banking contract requires concurrent access to shared mutable account state; v5 has no threads/synchronization/shared-state ABI."
+    },
+    {
+      "task": "ex_bank_account",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The published banking contract requires concurrent access to shared mutable account state; v5 has no threads/synchronization/shared-state ABI."
+    },
+    {
+      "task": "ex_beer_song",
+      "language": "expr-v5",
+      "source_sha256": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 8,
+      "tests_passed": 8,
+      "native_tests_passed": 16,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_beer_song",
+      "language": "python",
+      "source_sha256": "b645ea6acd8b119768e68a2470c01dd6acb2028da4a7632f6f2111de8eeb28ae",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_beer_song",
+      "language": "cpp",
+      "source_sha256": "85c2940d9f669813985ad696e195d64de71bc9abb5c458d9f50d5c14463c29b8",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_binary",
+      "language": "expr-v5",
+      "source_sha256": "470ecf087ee33d7f0ae5f6555d7094601e61e8288d07efde2a1931ab3bec2fa8",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 15,
+      "tests_passed": 15,
+      "native_tests_passed": 30,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_binary",
+      "language": "python",
+      "source_sha256": "4989b2a488ba29d82933b629b77855e575324591b93edc81228fa894ab06d872",
+      "semantic_ok": true,
+      "tests_passed": 15
+    },
+    {
+      "task": "ex_binary",
+      "language": "cpp",
+      "source_sha256": "9332f38042d335be7e56f6eb0c85ad3e3c39c747eac41703d972ecf9cc3adf9d",
+      "semantic_ok": true,
+      "tests_passed": 15
+    },
+    {
+      "task": "ex_binary_search",
+      "language": "expr-v5",
+      "source_sha256": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 11,
+      "tests_passed": 11,
+      "native_tests_passed": 22,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_binary_search",
+      "language": "python",
+      "source_sha256": "96422f5758cc1c3300adcf7964a7019d22273cbae48fe1d361e7be314bcc5367",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_binary_search",
+      "language": "cpp",
+      "source_sha256": "90ef9ae2241dd2afe79c78c6654d5a01456456c7d6c028068cc838a9c273e182",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_binary_search_tree",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The data property returns a recursive typed tree. Native recursive aggregate values are absent; a bespoke serialized-tree adapter is not implemented. This is an adapter gap, not a computability claim."
+    },
+    {
+      "task": "ex_binary_search_tree",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The data property returns a recursive typed tree. Native recursive aggregate values are absent; a bespoke serialized-tree adapter is not implemented. This is an adapter gap, not a computability claim."
+    },
+    {
+      "task": "ex_binary_search_tree",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The data property returns a recursive typed tree. Native recursive aggregate values are absent; a bespoke serialized-tree adapter is not implemented. This is an adapter gap, not a computability claim."
+    },
+    {
+      "task": "ex_bob",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "General Unicode letter/case/whitespace classification lacks standard Unicode operations/data; ASCII-only approximations are not claimed correct."
+    },
+    {
+      "task": "ex_bob",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "General Unicode letter/case/whitespace classification lacks standard Unicode operations/data; ASCII-only approximations are not claimed correct."
+    },
+    {
+      "task": "ex_bob",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "General Unicode letter/case/whitespace classification lacks standard Unicode operations/data; ASCII-only approximations are not claimed correct."
+    },
+    {
+      "task": "ex_book_store",
+      "language": "expr-v5",
+      "source_sha256": "276af945eab8cb06fd13fd7c4d191eae0f0c007f8acea257d30e67543f14bb0b",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 18,
+      "tests_passed": 18,
+      "native_tests_passed": 36,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_book_store",
+      "language": "python",
+      "source_sha256": "c88ed00448bbdc3d3afa7d05b5446abab45b32293f2685d4ff1efe722ab946ce",
+      "semantic_ok": true,
+      "tests_passed": 18
+    },
+    {
+      "task": "ex_book_store",
+      "language": "cpp",
+      "source_sha256": "7f9975669c213bad4a8b5f9e68c7aa1989ac10b815142c522541f08241ad8594",
+      "semantic_ok": true,
+      "tests_passed": 18
+    },
+    {
+      "task": "ex_bottle_song",
+      "language": "expr-v5",
+      "source_sha256": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 7,
+      "tests_passed": 7,
+      "native_tests_passed": 14,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_bottle_song",
+      "language": "python",
+      "source_sha256": "e6f3fe6f2d499593f293374270d0a305ebf1484f5d35f5f9c6d1035c720bd91a",
+      "semantic_ok": true,
+      "tests_passed": 7
+    },
+    {
+      "task": "ex_bottle_song",
+      "language": "cpp",
+      "source_sha256": "84b2f03da748b0d66c3ffcc470aaded1f07b87e9ce5a70b0feb6e56536c777e5",
+      "semantic_ok": true,
+      "tests_passed": 7
+    },
+    {
+      "task": "ex_bowling",
+      "language": "expr-v5",
+      "source_sha256": "63c2ed40454fa34d110a5049a0844b0484861a246b5ea8896580062f763f31d8",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 21,
+      "tests_passed": 21,
+      "native_tests_passed": 42,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_bowling",
+      "language": "python",
+      "source_sha256": "07d05d37a2525d8c7a501d6148e7c9cb7589750d4eee41bb3d7c8091560e1dbe",
+      "semantic_ok": true,
+      "tests_passed": 21
+    },
+    {
+      "task": "ex_bowling",
+      "language": "cpp",
+      "source_sha256": "690f24f993c126bc59f3a9459a76a0f240f4dcfa45b189b14704ce16f2423a3b",
+      "semantic_ok": true,
+      "tests_passed": 21
+    },
+    {
+      "task": "ex_camicia",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "Game cycle detection needs a set of variable-length deck states. No nested sequence/set representation; hand-encoded state simulation is not implemented. Emulation is possible."
+    },
+    {
+      "task": "ex_camicia",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "Game cycle detection needs a set of variable-length deck states. No nested sequence/set representation; hand-encoded state simulation is not implemented. Emulation is possible."
+    },
+    {
+      "task": "ex_camicia",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "Game cycle detection needs a set of variable-length deck states. No nested sequence/set representation; hand-encoded state simulation is not implemented. Emulation is possible."
+    },
+    {
+      "task": "ex_change",
+      "language": "expr-v5",
+      "source_sha256": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 13,
+      "tests_passed": 13,
+      "native_tests_passed": 26,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_change",
+      "language": "python",
+      "source_sha256": "d5bb5944cd08a834e01d9341be75e66a8b67328252c27e976e605424a6540852",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_change",
+      "language": "cpp",
+      "source_sha256": "d6f379113536a3360e10e145d414ed4d62fb0ae74192bd214190eac667f5940f",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_circular_buffer",
+      "language": "expr-v5",
+      "source_sha256": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 14,
+      "tests_passed": 14,
+      "native_tests_passed": 28,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_circular_buffer",
+      "language": "python",
+      "source_sha256": "6c878e7635a04faa275d3e0b977089db239bda003cbe30dd474cc20130ead349",
+      "semantic_ok": true,
+      "tests_passed": 14
+    },
+    {
+      "task": "ex_circular_buffer",
+      "language": "cpp",
+      "source_sha256": "d9d2a9c48b76b4dc38fd29b56930d8f0e0235c2972d78893eb42db110b78819d",
+      "semantic_ok": true,
+      "tests_passed": 14
+    },
+    {
+      "task": "ex_clock",
+      "language": "expr-v5",
+      "source_sha256": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 20,
+      "tests_passed": 20,
+      "native_tests_passed": 40,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_clock",
+      "language": "python",
+      "source_sha256": "de0f0a5b121753164bc404b9104ca004f5381c06e5159c8720746419cb3c119b",
+      "semantic_ok": true,
+      "tests_passed": 20
+    },
+    {
+      "task": "ex_clock",
+      "language": "cpp",
+      "source_sha256": "9947bc68b3db6bd2e794fef10e285dc1450d0a84b53025512964f0427d25c525",
+      "semantic_ok": true,
+      "tests_passed": 20
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "language": "expr-v5",
+      "source_sha256": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 6,
+      "tests_passed": 6,
+      "native_tests_passed": 12,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "language": "python",
+      "source_sha256": "9e55d82c9ce8fcbb8fc2abb5a7e02d368906391a4faee49f8fee5790cbc8d8cc",
+      "semantic_ok": true,
+      "tests_passed": 6
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "language": "cpp",
+      "source_sha256": "537ed1538346ecafa20a8f33f702a7b1495729fb9769d803a1b0e25d2dd66c3e",
+      "semantic_ok": true,
+      "tests_passed": 6
+    },
+    {
+      "task": "ex_complex_numbers",
+      "language": "expr-v5",
+      "source_sha256": "a2fc3809b577544b5e55e466a54d741e09487b881c2c93370ce298fc20937ef2",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 3,
+      "tests_passed": 3,
+      "native_tests_passed": 6,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_complex_numbers",
+      "language": "python",
+      "source_sha256": "8750dfdb37117b1800ea92485133fcb80220ae5adf6430ba85229a9aa8a507ef",
+      "semantic_ok": true,
+      "tests_passed": 3
+    },
+    {
+      "task": "ex_complex_numbers",
+      "language": "cpp",
+      "source_sha256": "c5ae48cd951f5b79ed153725935d5cb6ecb57f25d5e1e50e2e954fa4b141dd75",
+      "semantic_ok": true,
+      "tests_passed": 3
+    },
+    {
+      "task": "ex_connect",
+      "language": "expr-v5",
+      "source_sha256": "f9dbbcd703e4ad0f60b40c4686f7d2f2084cc94525afbf1715269c75bdab0e2a",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 12,
+      "tests_passed": 12,
+      "native_tests_passed": 24,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_connect",
+      "language": "python",
+      "source_sha256": "d9948e1e9dcb2e6602385eecb330d79a9824d72901c798cb10ea1b219255509a",
+      "semantic_ok": true,
+      "tests_passed": 12
+    },
+    {
+      "task": "ex_connect",
+      "language": "cpp",
+      "source_sha256": "4311f7105723aaf544fc42cc3a99bd23988a49ae9b6b1bf7d5fd0c368339e110",
+      "semantic_ok": true,
+      "tests_passed": 12
+    },
+    {
+      "task": "ex_crypto_square",
+      "language": "expr-v5",
+      "source_sha256": "03e82e4bc7cf8dc4911816e85def4ecb63c1907fd219ffcebb048ded1c62dead",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 8,
+      "tests_passed": 8,
+      "native_tests_passed": 16,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_crypto_square",
+      "language": "python",
+      "source_sha256": "e4aa24af7fd24a4402a9a2717b9c0e57262f253fca872da303394fc09f795f5b",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_crypto_square",
+      "language": "cpp",
+      "source_sha256": "def0b5a425bd1aa7608c8d2ca479989250ce9e70474afe075de10aa6c9938bef",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_custom_set",
+      "language": "expr-v5",
+      "source_sha256": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 2,
+      "tests_passed": 2,
+      "native_tests_passed": 4,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_custom_set",
+      "language": "python",
+      "source_sha256": "df60e1355ceb45c71b45bf95d328dd74920070981da4b0d0ca7864df50413cb2",
+      "semantic_ok": true,
+      "tests_passed": 2
+    },
+    {
+      "task": "ex_custom_set",
+      "language": "cpp",
+      "source_sha256": "672f28de72b58b5b2db260df24cb8b90be7feb62d3647eeb57588f88f10a13fb",
+      "semantic_ok": true,
+      "tests_passed": 2
+    },
+    {
+      "task": "ex_darts",
+      "language": "expr-v5",
+      "source_sha256": "7eb26b096da6bf7e7e1dd0872838063c911cf3480841a881619380aee9553c37",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 13,
+      "tests_passed": 13,
+      "native_tests_passed": 26,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_darts",
+      "language": "python",
+      "source_sha256": "e4ebffc94b361d79026b76a40b35bd54275258bf5c4510a0b45dca0fedad363c",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_darts",
+      "language": "cpp",
+      "source_sha256": "8083b89e87e6bdc449d4081a3f1e6f4ed1f5db7c478ece6036538463e3206ef1",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_diamond",
+      "language": "expr-v5",
+      "source_sha256": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_diamond",
+      "language": "python",
+      "source_sha256": "9200b750528476f989fc163aec1a86dee182e64e27e3ac20e087e32fb3dadf1b",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ex_diamond",
+      "language": "cpp",
+      "source_sha256": "985ece356dc2595103b7a1a4b32d890aca0af0d9e770086bafc6325f4ddcc5e0",
+      "semantic_ok": true,
+      "tests_passed": 5
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "language": "expr-v5",
+      "source_sha256": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 3,
+      "tests_passed": 3,
+      "native_tests_passed": 6,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "language": "python",
+      "source_sha256": "a4fbbd2e10179c061d5a2f8290ff3f5a0b5b95af870a9d5be77da7508dcd8a84",
+      "semantic_ok": true,
+      "tests_passed": 3
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "language": "cpp",
+      "source_sha256": "8bd0cc0f0d31c00d2bac873946d2daa1b2b7ac2e7cef0eeda8f5144fd6837ba6",
+      "semantic_ok": true,
+      "tests_passed": 3
+    },
+    {
+      "task": "ex_diffie_hellman",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The selected privateKeyIsInRange property generates a random private key; v5 Host has no randomness capability. Supplying a fixed key would change the task."
+    },
+    {
+      "task": "ex_diffie_hellman",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The selected privateKeyIsInRange property generates a random private key; v5 Host has no randomness capability. Supplying a fixed key would change the task."
+    },
+    {
+      "task": "ex_diffie_hellman",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The selected privateKeyIsInRange property generates a random private key; v5 Host has no randomness capability. Supplying a fixed key would change the task."
+    },
+    {
+      "task": "ex_dnd_character",
+      "language": "expr-v5",
+      "source_sha256": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 16,
+      "tests_passed": 16,
+      "native_tests_passed": 32,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_dnd_character",
+      "language": "python",
+      "source_sha256": "8dea1acfdcda79d182688c3afb519113af927c1bbd7e6d1b3ad10f85b7c01e73",
+      "semantic_ok": true,
+      "tests_passed": 16
+    },
+    {
+      "task": "ex_dnd_character",
+      "language": "cpp",
+      "source_sha256": "81bbc8e9b2fa27e687dc016fe7d0dc171de9e4e9c679bce328c878a6993110dd",
+      "semantic_ok": true,
+      "tests_passed": 16
+    },
+    {
+      "task": "ex_dominoes",
+      "language": "expr-v5",
+      "source_sha256": "1034ee08fc32d9b3361a1c9375e844753b1d65082b5b52c1b556549811e8a7e7",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 13,
+      "tests_passed": 13,
+      "native_tests_passed": 26,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_dominoes",
+      "language": "python",
+      "source_sha256": "2dcc20052b5f09219f184174f7cea764aafdc47ab390ad0082624ec843528f0f",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_dominoes",
+      "language": "cpp",
+      "source_sha256": "173903fc1e1a23f3bb988e92ce7bf6fc42ac410a52e90132186ecaabca3fd189",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_dot_dsl",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "The selected parse property returns graph/node/edge attribute maps; no typed maps/records or reusable parser adapter. Serialized emulation is possible but not implemented."
+    },
+    {
+      "task": "ex_dot_dsl",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "The selected parse property returns graph/node/edge attribute maps; no typed maps/records or reusable parser adapter. Serialized emulation is possible but not implemented."
+    },
+    {
+      "task": "ex_dot_dsl",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "The selected parse property returns graph/node/edge attribute maps; no typed maps/records or reusable parser adapter. Serialized emulation is possible but not implemented."
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "language": "expr-v5",
+      "source_sha256": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 4,
+      "tests_passed": 4,
+      "native_tests_passed": 8,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "language": "python",
+      "source_sha256": "6c059beda2eb8a3b258cc8e6313d1361ce8a8f6e1b342834fb1e49fbf8869e00",
+      "semantic_ok": true,
+      "tests_passed": 4
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "language": "cpp",
+      "source_sha256": "c0d7190b53d72f5b76e8173f8c4bb540ba5a7411eb58027ae9a5759a2fba538a",
+      "semantic_ok": true,
+      "tests_passed": 4
+    },
+    {
+      "task": "ex_etl",
+      "language": "expr-v5",
+      "source_sha256": "aeb5769061c1643733971c7cfd814f4432132c777116fc4cc7f6a637374c382e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 4,
+      "tests_passed": 4,
+      "native_tests_passed": 8,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_etl",
+      "language": "python",
+      "source_sha256": "0660f7da4d40a0b76b1cc84ada5137db0e3104ad7881c3e0a0da69998762c5c8",
+      "semantic_ok": true,
+      "tests_passed": 4
+    },
+    {
+      "task": "ex_etl",
+      "language": "cpp",
+      "source_sha256": "b3990ac651d3d962a674518d1c52f0dcba4a211db0f06255d0df696b508da021",
+      "semantic_ok": true,
+      "tests_passed": 4
+    },
+    {
+      "task": "ex_flatten_array",
+      "language": "expr-v5",
+      "source_sha256": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 11,
+      "tests_passed": 11,
+      "native_tests_passed": 22,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_flatten_array",
+      "language": "python",
+      "source_sha256": "c96d8041d2008c53f4fcc72c2ff177b045e59b8a76eaa32597d89ca3195e75da",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_flatten_array",
+      "language": "cpp",
+      "source_sha256": "8496f7bb876edfacf751602d599bdc12536f9970bb8cf0c433fdc26718684bb9",
+      "semantic_ok": true,
+      "tests_passed": 11
+    },
+    {
+      "task": "ex_flower_field",
+      "language": "expr-v5",
+      "source_sha256": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 13,
+      "tests_passed": 13,
+      "native_tests_passed": 26,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_flower_field",
+      "language": "python",
+      "source_sha256": "2e67c8327a8b5ccec7482df90acbfdd954f3aadd7faaedf8cc36adbdf7c29a64",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_flower_field",
+      "language": "cpp",
+      "source_sha256": "c806eeb2e872337eea9fd64d5f55b74c35656ed321771dcbc775fdc401612717",
+      "semantic_ok": true,
+      "tests_passed": 13
+    },
+    {
+      "task": "ex_food_chain",
+      "language": "expr-v5",
+      "source_sha256": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 10,
+      "tests_passed": 10,
+      "native_tests_passed": 20,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_food_chain",
+      "language": "python",
+      "source_sha256": "37904b3a8024ea18fd101f77f3690cbf7c6eccc5a9e6cd3a0425b017452ebf83",
+      "semantic_ok": true,
+      "tests_passed": 10
+    },
+    {
+      "task": "ex_food_chain",
+      "language": "cpp",
+      "source_sha256": "aa7552ea09287a6c5e21a87f5fad6bb3b794a08e57e761b325ee154e6b71af88",
+      "semantic_ok": true,
+      "tests_passed": 10
+    },
+    {
+      "task": "ex_forth",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "Definitions and case-insensitive words require a runtime dictionary/code representation. A bespoke dictionary/interpreter is not implemented; this is a library/adapter gap, not theoretical impossibility."
+    },
+    {
+      "task": "ex_forth",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "Definitions and case-insensitive words require a runtime dictionary/code representation. A bespoke dictionary/interpreter is not implemented; this is a library/adapter gap, not theoretical impossibility."
+    },
+    {
+      "task": "ex_forth",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "Definitions and case-insensitive words require a runtime dictionary/code representation. A bespoke dictionary/interpreter is not implemented; this is a library/adapter gap, not theoretical impossibility."
+    },
+    {
+      "task": "ex_game_of_life",
+      "language": "expr-v5",
+      "source_sha256": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 8,
+      "tests_passed": 8,
+      "native_tests_passed": 16,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_game_of_life",
+      "language": "python",
+      "source_sha256": "c54d26e0361ec63c962d679471564a12ed09a789f4f6dfce960cbb13ab1d55f5",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_game_of_life",
+      "language": "cpp",
+      "source_sha256": "adb04f61173eb3edca7421132faecbffc0edd6f725f8298da529f81ad1a3c852",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_gigasecond",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "No date/time parsing/calendar arithmetic operation; a hand-written Gregorian adapter is not implemented. Integer/byte emulation is possible."
+    },
+    {
+      "task": "ex_gigasecond",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "No date/time parsing/calendar arithmetic operation; a hand-written Gregorian adapter is not implemented. Integer/byte emulation is possible."
+    },
+    {
+      "task": "ex_gigasecond",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "No date/time parsing/calendar arithmetic operation; a hand-written Gregorian adapter is not implemented. Integer/byte emulation is possible."
+    },
+    {
+      "task": "ex_go_counting",
+      "language": "expr-v5",
+      "source_sha256": "3c477fc727c8cc674985b820ed81501d2bc079979db358bfb25129fda5822a7e",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 8,
+      "tests_passed": 8,
+      "native_tests_passed": 16,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_go_counting",
+      "language": "python",
+      "source_sha256": "746ce34c10dcde8d02f33f1f0baa958597d30ede7e3183b6fe9a2c038a5a2bb5",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_go_counting",
+      "language": "cpp",
+      "source_sha256": "0bf99eb38fe1b8412f28f5acd3890e38b7b37c0e7d54f60a862f7270e0afa33e",
+      "semantic_ok": true,
+      "tests_passed": 8
+    },
+    {
+      "task": "ex_grade_school",
+      "language": "expr-v5",
+      "source_sha256": "c0376c960ee2885563350b6053b8996c99fe8162cd9620347031c69d62bafaca",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 9,
+      "tests_passed": 9,
+      "native_tests_passed": 18,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_grade_school",
+      "language": "python",
+      "source_sha256": "dca7a6cfa5960b7e207c0ac57e47ab0c4e694b6e680544d835d274850ed4f3f3",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_grade_school",
+      "language": "cpp",
+      "source_sha256": "fdaa5445e87355cadc4d8d204adef8ade429388c85cafd15a52f2c476108cff3",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_grains",
+      "language": "expr-v5",
+      "source_sha256": "018081f35feb0b0c945fd7eb029901d9df4cbd792b53ea8071fe6db5fd17668b",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 10,
+      "tests_passed": 10,
+      "native_tests_passed": 20,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_grains",
+      "language": "python",
+      "source_sha256": "b313bd71c9e054425b642c38a82beb4867caeb49080634bf38a2b4c2e9c9a70a",
+      "semantic_ok": true,
+      "tests_passed": 10
+    },
+    {
+      "task": "ex_grains",
+      "language": "cpp",
+      "source_sha256": "5b0d1f3131e2b7b34db17da7b07513cd3cfaee14b08ab032ce558e2371cf112d",
+      "semantic_ok": true,
+      "tests_passed": 10
+    },
+    {
+      "task": "ex_grep",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "Upstream multi-file flags/fixtures require a multi-file Host/runner contract; the current reusable corpus harness provisions a single input file. A packed emulation would change the I/O contract."
+    },
+    {
+      "task": "ex_grep",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "Upstream multi-file flags/fixtures require a multi-file Host/runner contract; the current reusable corpus harness provisions a single input file. A packed emulation would change the I/O contract."
+    },
+    {
+      "task": "ex_grep",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "Upstream multi-file flags/fixtures require a multi-file Host/runner contract; the current reusable corpus harness provisions a single input file. A packed emulation would change the I/O contract."
+    },
+    {
+      "task": "ex_hamming",
+      "language": "expr-v5",
+      "source_sha256": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 9,
+      "tests_passed": 9,
+      "native_tests_passed": 18,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_hamming",
+      "language": "python",
+      "source_sha256": "15f934f6f26b7f66002ce48a92050973ce3c98a4e4ae589b641a7307de03a901",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_hamming",
+      "language": "cpp",
+      "source_sha256": "0086afd79081043c61b3f52a740406b9a2a42787c5b49aedcf1da5fd2e23b06a",
+      "semantic_ok": true,
+      "tests_passed": 9
+    },
+    {
+      "task": "ex_hangman",
+      "language": "expr-v5",
+      "status": "unsupported",
+      "reason": "Published task explicitly requires functional reactive programming/library integration. No first-class signals/events or integration ABI; a sequential transcript would not verify that requirement."
+    },
+    {
+      "task": "ex_hangman",
+      "language": "python",
+      "status": "unsupported",
+      "reason": "Published task explicitly requires functional reactive programming/library integration. No first-class signals/events or integration ABI; a sequential transcript would not verify that requirement."
+    },
+    {
+      "task": "ex_hangman",
+      "language": "cpp",
+      "status": "unsupported",
+      "reason": "Published task explicitly requires functional reactive programming/library integration. No first-class signals/events or integration ABI; a sequential transcript would not verify that requirement."
+    },
+    {
+      "task": "ex_hello_world",
+      "language": "expr-v5",
+      "source_sha256": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 2,
+      "tests_passed": 2,
+      "native_tests_passed": 4,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "ex_hello_world",
+      "language": "python",
+      "source_sha256": "ed1d549ad3dcf42ee978388529f199697cf3149a95f4f31afa36098b23dcd9cd",
+      "semantic_ok": true,
+      "tests_passed": 2
+    },
+    {
+      "task": "ex_hello_world",
+      "language": "cpp",
+      "source_sha256": "cc2fcf67b38202f01df610b892afb9e3faa882d85c9a34b78aa3b30a9f3bfca4",
+      "semantic_ok": true,
+      "tests_passed": 2
+    }
+  ]
+}
