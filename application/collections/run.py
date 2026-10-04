@@ -28,7 +28,7 @@ def main():
               ('update', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('nested-build', [1000, 4000, 16000]),
               ('nested-build-shared', [1000, 4000, 16000]),
-              ('nested-update', [1000, 4000, 16000]),
+              ('nested-update', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('alias-build', [1000, 4000, 16000])]
     if args.workload:
         if set(args.workload) - {name for name, _ in shapes}:

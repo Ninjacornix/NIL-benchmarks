@@ -1,0 +1,2 @@
+record Cell(text:s,value:i)
+1=#!buffer[Cell](a,Cell("x",0))
