@@ -1,0 +1,22 @@
+{
+  "ex_algo_linked_list": {
+    "input": "392c2d310a382c2d310a",
+    "output": "5b395d",
+    "environment": {}
+  },
+  "ex_algo_bst_walk": {
+    "input": "392c382c372c362c352c342c332c322c310a",
+    "output": "5b312c322c332c342c352c362c372c382c395d",
+    "environment": {}
+  },
+  "ex_algo_graph_bfs": {
+    "input": "332c322c312c322c312c332c312c332c300a",
+    "output": "5b302c322c312c335d",
+    "environment": {}
+  },
+  "ex_algo_interval_merge": {
+    "input": "2d352c2d322c2d322c302c332c330a",
+    "output": "5b5b2d352c305d2c5b332c335d5d",
+    "environment": {}
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": 1,
+  "tasks": [
+    {
+      "id": "ex_algo_linked_list",
+      "category": "structured algorithm",
+      "origin": "external-derived",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/TheAlgorithms/Python/blob/ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50/data_structures/linked_list/singly_linked_list.py",
+        "revision": "ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50",
+        "source_sha256": "e5341b73e219458d59a99155837687e85860773d1a9c791397bda81f9d712d06",
+        "copyright": "2016-2022 TheAlgorithms and contributors",
+        "adaptation": "Original task wording, text protocol and fixtures; algorithm intent derived from cited MIT implementation. No upstream solution copied."
+      },
+      "prompt": "Input is rows value,next of indexed nodes. Head is index zero; -1 ends the chain. Input links are in range and the reachable chain is acyclic. Traverse only that chain and write its values as compact JSON. Empty input gives []. Preserve input, emit no extra stdout, return output length.",
+      "rationale": "Typed nodes and index links, including unreachable nodes.",
+      "inputs": [
+        "",
+        "372c2d310a",
+        "372c320a392c2d310a332c310a",
+        "2d322c310a302c320a342c2d310a",
+        "392c2d310a382c2d310a"
+      ],
+      "nil_status": "supported",
+      "new_cohort": "adr030"
+    },
+    {
+      "id": "ex_algo_bst_walk",
+      "category": "structured algorithm",
+      "origin": "external-derived",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/TheAlgorithms/Python/blob/ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50/data_structures/binary_tree/binary_search_tree.py",
+        "revision": "ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50",
+        "source_sha256": "6125cd03f0d882369ca12ffc47bdd855e55f17f1e95d805e4d84e9e0b30edf87",
+        "copyright": "2016-2022 TheAlgorithms and contributors",
+        "adaptation": "Original task wording, text protocol and fixtures; algorithm intent derived from cited MIT implementation. No upstream solution copied."
+      },
+      "prompt": "Insert the input comma/newline-delimited integers in an initially empty binary search tree, duplicates to the left. Write its in-order traversal as compact JSON. Empty input gives []. Preserve input, emit no extra stdout, return output length.",
+      "rationale": "Functional tree insertion and recursive in-order walk with index references.",
+      "inputs": [
+        "",
+        "340a",
+        "342c322c362c312c332c352c370a",
+        "342c342c342c2d312c392c300a",
+        "392c382c372c362c352c342c332c322c310a"
+      ],
+      "nil_status": "supported",
+      "new_cohort": "adr030"
+    },
+    {
+      "id": "ex_algo_graph_bfs",
+      "category": "structured algorithm",
+      "origin": "external-derived",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/TheAlgorithms/Python/blob/ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50/graphs/breadth_first_search.py",
+        "revision": "ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50",
+        "source_sha256": "621e11bd4a320c7437bba42e29715608b05e84a5939562715cde8e32a576a529",
+        "copyright": "2016-2022 TheAlgorithms and contributors",
+        "adaptation": "Original task wording, text protocol and fixtures; algorithm intent derived from cited MIT implementation. No upstream solution copied."
+      },
+      "prompt": "Input encodes adjacency rows: degree then that many neighbor indices, comma/newline delimited. Run BFS from vertex zero, visiting each reachable vertex once in discovery order and following neighbors in their input order. Write compact JSON indices. Empty input gives []. Indices are in range; graph cycles and repeated edges are permitted. Preserve input, emit no extra stdout, return output length.",
+      "rationale": "Nested record adjacency rows with sharing and cyclic integer links.",
+      "inputs": [
+        "",
+        "300a",
+        "322c312c322c312c322c312c300a",
+        "312c312c302c300a",
+        "332c322c312c322c312c332c312c332c300a"
+      ],
+      "nil_status": "supported",
+      "new_cohort": "adr030"
+    },
+    {
+      "id": "ex_algo_interval_merge",
+      "category": "structured algorithm",
+      "origin": "external-derived",
+      "license": "MIT",
+      "provenance": {
+        "source": "https://github.com/TheAlgorithms/Python/blob/ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50/data_structures/arrays/merge_intervals.py",
+        "revision": "ef2ecc4d34d17ce6249ba5d3f3c17822dfd7bd50",
+        "source_sha256": "af3ae62a436979f4023b8492605b3b2d12c385147ad8621563e03e958e2cb7de",
+        "copyright": "2016-2022 TheAlgorithms and contributors",
+        "adaptation": "Original task wording, text protocol and fixtures; algorithm intent derived from cited MIT implementation. No upstream solution copied."
+      },
+      "prompt": "Input gives unsorted closed intervals as comma/newline-delimited start,end pairs, start <= end. Merge overlapping or touching intervals and write compact JSON pairs sorted by start. Empty input gives []. Preserve input, emit no extra stdout, return output length.",
+      "rationale": "Dynamic pairs, sorting and merge state; exposes missing record ordering.",
+      "inputs": [
+        "",
+        "312c340a",
+        "312c342c322c352c382c390a",
+        "372c382c322c332c352c390a",
+        "312c342c322c362c332c350a",
+        "2d352c2d322c2d322c302c332c330a"
+      ],
+      "nil_status": "supported",
+      "new_cohort": "adr030"
+    }
+  ]
+}
