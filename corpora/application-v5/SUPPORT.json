@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "source": "ADR 023 keyed maps; ADR 027 numeric types; ADR 028 records",
+  "source": "ADR 023 keyed maps; ADR 027 numeric types; ADR 028 records; ADR 030 record buffers",
   "overrides": {
     "ex_etl": {
       "nil_status": "supported",
@@ -25,6 +25,11 @@
     "ex_go_counting": {
       "nil_status": "supported",
       "baseline_status": "supported"
+    },
+    "ex_binary_search_tree": {
+      "nil_status": "supported",
+      "baseline_status": "supported",
+      "support_note": "ADR 030 index-linked record-buffer tree and unescaped canonical string JSON adapter, verified against unchanged selected data fixtures."
     }
   }
 }

@@ -1,0 +1,8 @@
+record Interval(lo:i,hi:i)
+(s,s)=!write(b,g(f(c(b(!parsebuf(!read(a),",\n"))))))
+(v):v[Interval]=@(a,0,!buffer[Interval](0,Interval(0,0));b<#a;a,b+2,!concat(c,!buffer[Interval](1,Interval(a[b],a[b+1])));c)
+(v[Interval]):v[Interval]=@(a,1;b<#a;d(a,b),b+1;a)
+(v[Interval],i):v[Interval]=@(a,b;b>0?a[b].lo<a[b-1].lo:false;e(a,b),b-1;a)
+(v[Interval],i):v[Interval]=a[b:a[b-1]][b-1:a[b]]
+(v[Interval]):v[Interval]=!each(a,!buffer[Interval](0,Interval(0,0));(#c==0?true:c[#c-1].hi<b.lo)?!concat(c,!buffer[Interval](1,b)):c[#c-1:c[#c-1]{hi:c[#c-1].hi>b.hi?c[#c-1].hi:b.hi}];a)
+(v[Interval]):s=!concat("[",!concat(!each(a,"";!concat(c,!concat(#c==0?"":",",!concat("[",!concat(!format(b.lo),!concat(",",!concat(!format(b.hi),"]"))))));a),"]"))

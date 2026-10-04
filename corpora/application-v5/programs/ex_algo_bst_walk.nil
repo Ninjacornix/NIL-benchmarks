@@ -1,0 +1,7 @@
+record Node(value:i,left:i,right:i)
+(s,s)=!write(b,c(f(b(!parsebuf(!read(a),",\n")),0)))
+(v):v[Node]=!each(a,!buffer[Node](0,Node(0,-1,-1));d(c,b);a)
+(v):s=!concat("[",!concat(!each(a,"";!concat(c,!concat(#c==0?"":",",!format(b)));a),"]"))
+(v[Node],i):v[Node]=#a==0?!buffer[Node](1,Node(b,-1,-1)):e(a,b,0)
+(v[Node],i,i):v[Node]=b<=a[c].value?(a[c].left<0?!concat(a[c:a[c]{left:#a}],!buffer[Node](1,Node(b,-1,-1))):e(a,b,a[c].left)):(a[c].right<0?!concat(a[c:a[c]{right:#a}],!buffer[Node](1,Node(b,-1,-1))):e(a,b,a[c].right))
+(v[Node],i):v=(#a==0?true:b<0)?!buffer(0,0):!concat(!concat(f(a,a[b].left),!buffer(1,a[b].value)),f(a,a[b].right))

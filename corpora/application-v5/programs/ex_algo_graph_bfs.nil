@@ -1,0 +1,8 @@
+record Edge(to:i)
+record Row(edges:v[Edge])
+record State(queue:v,seen:v,out:v,head:i)
+(s,s)=!write(b,c(d(b(!parsebuf(!read(a),",\n")))))
+(v):v[Row]=@(a,0,!buffer[Row](0,Row(!buffer[Edge](0,Edge(0))));b<#a;a,b+a[b]+1,!concat(c,!buffer[Row](1,Row(!each(!slice(a,b+1,a[b]),!buffer[Edge](0,Edge(0));!concat(c,!buffer[Edge](1,Edge(b)));a))));c)
+(v):s=!concat("[",!concat(!each(a,"";!concat(c,!concat(#c==0?"":",",!format(b)));a),"]"))
+(v[Row]):v=#a==0?!buffer(0,0):@(a,State(!buffer(1,0),!buffer(#a,0)[0:1],!buffer(0,0),0);b.head<#b.queue;a,e(a[b.queue[b.head]].edges,b{head:b.head+1}{out:!concat(b.out,!buffer(1,b.queue[b.head]))});b.out)
+(v[Edge],State):State=!each(a,b;c.seen[b.to]==0?c{queue:!concat(c.queue,!buffer(1,b.to))}{seen:c.seen[b.to:1]}:c;a)

@@ -1,0 +1,5 @@
+record Node(value:i,next:i)
+(s,s)=!write(b,d(c(b(!parsebuf(!read(a),",\n")))))
+(v):v[Node]=@(a,0,!buffer[Node](0,Node(0,-1));b<#a;a,b+2,!concat(c,!buffer[Node](1,Node(a[b],a[b+1])));c)
+(v[Node]):v=@(a,#a==0?-1:0,!buffer(0,0);b!=-1;a,a[b].next,!concat(c,!buffer(1,a[b].value));c)
+(v):s=!concat("[",!concat(!each(a,"";!concat(c,!concat(#c==0?"":",",!format(b)));a),"]"))

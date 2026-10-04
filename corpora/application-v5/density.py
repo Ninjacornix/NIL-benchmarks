@@ -113,7 +113,9 @@ def main():
         aggregates = {name: {language: sum(r['tokens'][name] for r in records if r['task'] in paired and r['language'] == language) for language in ['expr-v5', 'python', 'cpp']} for name in [v['id'] for v in metadata]}
         cuts = {'original': [t for t in tasks if not t['id'].startswith('ex_')],
                 'new_external': [t for t in tasks if t['id'].startswith('ex_')],
-                'combined': tasks}
+                'combined': tasks,
+                'preexisting_external': [t for t in tasks if t['id'].startswith('ex_') and not t['id'].startswith('ex_algo_')],
+                'algorithm_new': [t for t in tasks if t['id'].startswith('ex_algo_')]}
         cut_aggregates = {}
         for label, selected in cuts.items():
             supported = [t['id'] for t in selected if t['nil_status'] != 'unsupported']

@@ -229,3 +229,20 @@ to both baselines under all four vocabularies. No model inference occurred, and
 source density does not overturn the unfavourable generation study. See
 [the record report](../../reports/2026-10-04/V5_RECORDS.md) for every task's counts,
 bytes/characters, refreshed attribution, provenance and reproduction commands.
+
+## Structured collections (ADR 030)
+
+The frozen four-task [algorithm cohort](algorithms/README.md) adds typed linked lists,
+index-linked BSTs, nested graph adjacency/BFS and interval merging. The previously
+unsupported frozen BST contract now also has a reference. **79 tasks, 66 verified
+NIL programs, 42 external, 13 unsupported (12 external)**; JSONL exports 66 positives.
+This remains seed data, not adaptation scale or evidence of generation efficiency.
+Old task statements, oracles, goldens and existing baseline sources remain unchanged.
+The BST JSON adapter handles the frozen canonical unescaped string fixtures; it is
+not a general JSON/Unicode API. Intervals require insertion sort, and all four
+references manually format output. Native structures do not imply new library algorithms.
+
+See GENERALITY_GAPS.json for the remaining blockers. Camicia/Forth/Alphametics lack
+verified simulation/interpreter/search adapters; newly expressible storage alone
+does not satisfy their unchanged contracts. Dot DSL also lacks a verified adapter;
+sequence-bearing record maps and nested keyed values remain deferred.

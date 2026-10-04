@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "unsupported_total": 14,
-  "external_unsupported": 13,
-  "supported_external": 37,
+  "unsupported_total": 13,
+  "external_unsupported": 12,
+  "supported_external": 42,
   "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
   "blocking_task_counts": {
     "environment": 1,
@@ -10,7 +10,6 @@
     "maps_records": 2,
     "unicode": 2,
     "concurrency": 1,
-    "recursive_values": 1,
     "nested_collections": 1,
     "entropy": 1,
     "dynamic_dictionary": 1,
@@ -35,9 +34,6 @@
     ],
     "concurrency": [
       "ex_bank_account"
-    ],
-    "recursive_values": [
-      "ex_binary_search_tree"
     ],
     "nested_collections": [
       "ex_camicia"
@@ -163,5 +159,29 @@
         "ex_hangman"
       ]
     }
+  },
+  "collections_followup": {
+    "adr": "030",
+    "verified_moved_to_supported": [
+      "ex_binary_search_tree"
+    ],
+    "new_algorithm_tasks": [
+      "ex_algo_linked_list",
+      "ex_algo_bst_walk",
+      "ex_algo_graph_bfs",
+      "ex_algo_interval_merge"
+    ],
+    "representation": "Acyclic record buffers; integer links, nested adjacency wrappers, no recursive types.",
+    "still_unsupported": {
+      "ex_alphametics": "Assignment storage already available. Verified search/carry and JSON adapter remain unimplemented.",
+      "ex_dot_dsl": "Record-buffer attribute rows now expressible, but sequence-bearing map entries still deferred; complete graph DSL parser/serializer not supplied.",
+      "ex_camicia": "Nested deck/state storage now available; verified cycle simulation and JSON adapter still unimplemented.",
+      "ex_forth": "Dictionary bodies and stack storage already expressible. Verified parser/interpreter/definition-binding adapter remains unimplemented."
+    },
+    "limitations": [
+      "No record sorting/comparator contract; interval reference uses insertion sort.",
+      "No sequence-bearing record map values, generic buffer-valued maps or nested map values.",
+      "No recursive type graph; integer links require application validation."
+    ]
   }
 }

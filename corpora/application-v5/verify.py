@@ -28,7 +28,8 @@ def fingerprint():
     paths += sorted((HERE / 'programs').glob('*'))
     paths += [HERE / 'SUPPORT.json', HERE / 'external_suite.py', HERE / 'external/build_manifest.py'] + sorted((HERE / 'external').glob('*.json'))
     paths += [SUITE / 'generation/application' / name for name in ['oracle.py', 'python_driver.py']]
-    paths += [SUITE / 'helpers/application_check.rs']
+    paths += [SUITE / 'helpers/application_check.rs'] + sorted((HERE / 'algorithms').glob('*'))
+    paths = [p for p in paths if p.is_file()]
     return {str(p.relative_to(SUITE)): digest(p) for p in paths}
 
 
@@ -63,6 +64,7 @@ def baseline(task, path, folder, language):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--task', action='append', help='Optional task IDs for development checks')
     parser.add_argument('--group', choices=['all', 'original', 'external'], default='all')
     args = parser.parse_args()
     output = args.output.expanduser().resolve()
@@ -71,6 +73,10 @@ def main():
     application.prepare()
     application.expected = expected
     tasks = load_tasks(args.group)
+    if args.task:
+        tasks = [t for t in tasks if t['id'] in args.task]
+        if {t['id'] for t in tasks} != set(args.task):
+            parser.error('Unknown task ID')
     results = []
     goldens = load_goldens()
     with tempfile.TemporaryDirectory(prefix='nil-corpus-') as directory:

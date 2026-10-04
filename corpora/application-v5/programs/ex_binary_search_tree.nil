@@ -1,0 +1,8 @@
+record Node(data:s,left:i,right:i)
+(s,s)=!write(b,g(c(b(!read(a))),0))
+(s):v[Node]=@(a,!find(a,91,0)+1,false,"",!buffer[Node](0,Node("",-1,-1));b<#a?a[b]!=93:false;a,b+1,a[b]==34?(c?false:true):c,a[b]==34?"":(c?!concat(d,!slice(a,b,1)):d),a[b]==34?(c?!concat(e,!buffer[Node](1,Node(d,-1,-1))):e):e;e)
+(v[Node]):v[Node]=!each(a,!buffer[Node](0,Node("",-1,-1));d(c,b.data);a)
+(v[Node],s):v[Node]=#a==0?!buffer[Node](1,Node(b,-1,-1)):e(a,b,0)
+(v[Node],s,i):v[Node]=f(b,a[c].data)?(a[c].left<0?!concat(a[c:a[c]{left:#a}],!buffer[Node](1,Node(b,-1,-1))):e(a,b,a[c].left)):(a[c].right<0?!concat(a[c:a[c]{right:#a}],!buffer[Node](1,Node(b,-1,-1))):e(a,b,a[c].right))
+(s,s):b=@(a,b,0;c<#a?(c<#b?a[c]==b[c]:false):false;a,b,c+1;c==#a?true:(c==#b?false:a[c]<=b[c]))
+(v[Node],i):s=b<0?"null":!concat("{\"data\":\"",!concat(a[b].data,!concat("\",\"left\":",!concat(g(a,a[b].left),!concat(",\"right\":",!concat(g(a,a[b].right),"}"))))))
