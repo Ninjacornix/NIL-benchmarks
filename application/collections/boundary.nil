@@ -1,2 +1,2 @@
 record Pair(left:i,right:i)
-(i)=#!buffer[Pair](a,Pair(0,0))
+1=#!buffer[Pair](a,Pair(0,0))
