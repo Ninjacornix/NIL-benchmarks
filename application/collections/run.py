@@ -16,6 +16,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, default=25)
+    parser.add_argument('--workload', action='append', help='Select a controlled shape; omit to run all')
     args = parser.parse_args()
     out = args.output.resolve()
     if out.is_relative_to(ROOT):
@@ -26,8 +27,13 @@ def main():
     shapes = [('build', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('update', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('nested-build', [1000, 4000, 16000]),
+              ('nested-build-shared', [1000, 4000, 16000, 64000, 256000]),
               ('nested-update', [1000, 4000, 16000]),
               ('alias-build', [1000, 4000, 16000])]
+    if args.workload:
+        if set(args.workload) - {name for name, _ in shapes}:
+            parser.error('Unknown workload')
+        shapes = [(name, sizes) for name, sizes in shapes if name in args.workload]
     for name, sizes in shapes + [('boundary', [])]:
         exe = out / name
         subprocess.run([str(ROOT / 'target/release/nil'), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(exe)], cwd=ROOT, check=True)
@@ -46,7 +52,7 @@ def main():
             rows.append(row)
             print(json.dumps(row), flush=True)
     boundary = []
-    for name, counts in [('boundary', [4194300,4194301]), ('update', [2097148,2097149]), ('build', [2097146,2097147])]:
+    for name, counts in ([] if args.workload else [('boundary', [4194300,4194301]), ('update', [2097148,2097149]), ('build', [2097146,2097147])]):
         for n in counts:
             result = subprocess.run([str(out/name), str(n)], capture_output=True, timeout=120)
             row = dict(workload=name, elements=n, returncode=result.returncode, stdout=result.stdout.decode(), stderr=result.stderr.decode())

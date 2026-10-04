@@ -14,3 +14,8 @@ checks row contents rather than merely the container length. The nested builder
 includes a byte literal in each iteration; nested replacement reuses the existing
 child, separating allocation from conservative root-transfer costs. Nested and
 aliased curves stop at 16k to measure their potentially quadratic cost explicitly.
+
+`--workload nested-build-shared` isolates growth with one shared child allocation
+from `nested-build`, which creates one live byte allocation per record. This
+control separates increasing live-arena traversal costs from collection length
+alone. Both preserve immutable child aliases; no lifetime proof is relaxed.
