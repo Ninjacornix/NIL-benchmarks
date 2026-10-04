@@ -1,0 +1,2 @@
+record Pair(left:i,right:i)
+(i)=@(a,0,!buffer[Pair](a,Pair(0,0));b<a;a,b+1,c[b:Pair(b,b)];#c==0?0:c[#c-1].left)
