@@ -1,0 +1,255 @@
+[
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/greet.nil",
+      "0",
+      "World"
+    ],
+    "returncode": 0,
+    "stdout": "Hello, World\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/sum.nil",
+      "0",
+      "[1,2,3,4]"
+    ],
+    "returncode": 0,
+    "stdout": "10\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/uppercase.nil",
+      "0",
+      "Hello, NIL!"
+    ],
+    "returncode": 0,
+    "stdout": "HELLO, NIL!\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/parse.nil",
+      "0",
+      "-42"
+    ],
+    "returncode": 0,
+    "stdout": "-42\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/integer_file.nil",
+      "0",
+      "number.txt"
+    ],
+    "returncode": 0,
+    "stdout": "-42\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/file_size.nil",
+      "0",
+      "input.bin"
+    ],
+    "returncode": 0,
+    "stdout": "4096\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/copy.nil",
+      "0",
+      "input.bin",
+      "output.bin"
+    ],
+    "returncode": 0,
+    "stdout": "4096\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/transform_file.nil",
+      "0",
+      "input.bin",
+      "inverted.bin"
+    ],
+    "returncode": 0,
+    "stdout": "4096\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/record.nil",
+      "0"
+    ],
+    "returncode": 0,
+    "stdout": "42\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/line_count.nil",
+      "0",
+      "a\nb\n"
+    ],
+    "returncode": 0,
+    "stdout": "2\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v5/buffer.nil",
+      "0",
+      "300"
+    ],
+    "returncode": 0,
+    "stdout": "[3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "run",
+      "/Users/ninjacornix/NIL/examples/add.nil"
+    ],
+    "returncode": 0,
+    "stdout": "42\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v3",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v3/weighted.nil"
+    ],
+    "returncode": 0,
+    "stdout": "33\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v4",
+      "run",
+      "/Users/ninjacornix/NIL/examples/expr-v4/reverse.nil",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "returncode": 0,
+    "stdout": "[8,7,6,5,4,3,2,1]\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v0",
+      "build",
+      "/Users/ninjacornix/NIL/examples/add.nil",
+      "-o",
+      "/tmp/nil-collections/final-examples/add"
+    ],
+    "returncode": 0,
+    "stdout": "built /tmp/nil-collections/final-examples/add\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/nil-collections/final-examples/add"
+    ],
+    "returncode": 0,
+    "stdout": "42\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "--profile",
+      "expr-v5",
+      "build",
+      "/Users/ninjacornix/NIL/examples/expr-v5/copy.nil",
+      "-o",
+      "/tmp/nil-collections/final-examples/copy"
+    ],
+    "returncode": 0,
+    "stdout": "built /tmp/nil-collections/final-examples/copy\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "/tmp/nil-collections/final-examples/copy"
+    ],
+    "returncode": 0,
+    "stdout": "4096\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "check",
+      "/Users/ninjacornix/NIL/examples/add.nil"
+    ],
+    "returncode": 0,
+    "stdout": "ok\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "hir",
+      "/Users/ninjacornix/NIL/examples/add.nil"
+    ],
+    "returncode": 0,
+    "stdout": "function 0 [] -> I64\n  v0: I64 = Constant(20)\n  v1: I64 = Constant(22)\n  v2: I64 = Call { function: FunctionId(1), arguments: [ValueId(0), ValueId(1)] }\n  return v2\nfunction 1 [I64, I64] -> I64\n  v2: I64 = Binary { op: Add, lhs: ValueId(0), rhs: ValueId(1) }\n  return v2\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "llvm",
+      "/Users/ninjacornix/NIL/examples/add.nil"
+    ],
+    "returncode": 0,
+    "stdout": "; NIL LLVM AOT prototype: runtime context = fuel, depth, depth limit.\n%nil.ctx = type { i64, i64, i64 }\ndeclare void @nil_fail(i32, i64, i64) noreturn\ndeclare { i64, i1 } @llvm.sadd.with.overflow.i64(i64, i64)\ndeclare { i64, i1 } @llvm.ssub.with.overflow.i64(i64, i64)\ndeclare { i64, i1 } @llvm.smul.with.overflow.i64(i64, i64)\n\ndefine internal void @nil_tick(ptr %ctx, i64 %start, i64 %end) {\nentry:\n  %fuel_ptr = getelementptr %nil.ctx, ptr %ctx, i32 0, i32 0\n  %fuel = load i64, ptr %fuel_ptr, align 8\n  %empty = icmp eq i64 %fuel, 0\n  br i1 %empty, label %fail, label %ok\nfail:\n  call void @nil_fail(i32 0, i64 %start, i64 %end)\n  unreachable\nok:\n  %next = sub i64 %fuel, 1\n  store i64 %next, ptr %fuel_ptr, align 8\n  ret void\n}\ndefine internal void @nil_enter(ptr %ctx, i64 %start, i64 %end) {\nentry:\n  %depth_ptr = getelementptr %nil.ctx, ptr %ctx, i32 0, i32 1\n  %limit_ptr = getelementptr %nil.ctx, ptr %ctx, i32 0, i32 2\n  %depth = load i64, ptr %depth_ptr, align 8\n  %limit = load i64, ptr %limit_ptr, align 8\n  %full = icmp uge i64 %depth, %limit\n  br i1 %full, label %fail, label %ok\nfail:\n  call void @nil_fail(i32 1, i64 %start, i64 %end)\n  unreachable\nok:\n  %next = add i64 %depth, 1\n  store i64 %next, ptr %depth_ptr, align 8\n  ret void\n}\ndefine internal void @nil_leave(ptr %ctx) {\nentry:\n  %depth_ptr = getelementptr %nil.ctx, ptr %ctx, i32 0, i32 1\n  %depth = load i64, ptr %depth_ptr, align 8\n  %next = sub i64 %depth, 1\n  store i64 %next, ptr %depth_ptr, align 8\n  ret void\n}\n\n!0 = !{!\"branch_weights\", i32 1, i32 1024}\n; arithmetic: Checked; resource instrumentation: true\ndefine i64 @nil_fn0(ptr %ctx, i64 %call_start, i64 %call_end) {\nb0:\n  call void @nil_enter(ptr %ctx, i64 %call_start, i64 %call_end)\n  call void @nil_tick(ptr %ctx, i64 8, i64 10)\n  call void @nil_tick(ptr %ctx, i64 11, i64 13)\n  call void @nil_tick(ptr %ctx, i64 5, i64 14)\n  %v0 = call i64 @nil_fn1(ptr %ctx, i64 5, i64 14, i64 20, i64 22)\n  call void @nil_tick(ptr %ctx, i64 5, i64 14)\n  call void @nil_leave(ptr %ctx)\n  ret i64 %v0\n}\n\ndefine i64 @nil_fn1(ptr %ctx, i64 %call_start, i64 %call_end, i64 %p0, i64 %p1) {\nb0:\n  call void @nil_enter(ptr %ctx, i64 %call_start, i64 %call_end)\n  call void @nil_tick(ptr %ctx, i64 24, i64 25)\n  %v0 = call { i64, i1 } @llvm.sadd.with.overflow.i64(i64 %p0, i64 %p1)\n  %v1 = extractvalue { i64, i1 } %v0, 0\n  %v2 = extractvalue { i64, i1 } %v0, 1\n  br i1 %v2, label %b1, label %b2\nb1:\n  call void @nil_fail(i32 2, i64 24, i64 25)\n  unreachable\nb2:\n  call void @nil_tick(ptr %ctx, i64 23, i64 26)\n  call void @nil_leave(ptr %ctx)\n  ret i64 %v1\n}\n\n",
+    "stderr": ""
+  }
+]

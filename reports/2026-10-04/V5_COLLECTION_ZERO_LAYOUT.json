@@ -1,0 +1,102 @@
+{
+  "source": "record Zero(empty:0)\n=#!buffer[Zero](3,Zero([]))\n",
+  "note": "Pre-fix binary retained from the final audit, not recompiled after the fix; overseer separately observed exit 133 for uninstrumented O2.",
+  "returncode": -6,
+  "stdout": "",
+  "stderr": "/tmp/nil-collections/zero-layout/.nil-llvm-19054-0/runtime.c:554:62: runtime error: division by zero\nSUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /tmp/nil-collections/zero-layout/.nil-llvm-19054-0/runtime.c:554:62 \n",
+  "after": [
+    {
+      "command": [
+        "/tmp/nil-collections/continuation-zero/reference",
+        "/tmp/nil-collections/continuation-zero/zero.nil"
+      ],
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "build",
+        "/tmp/nil-collections/continuation-zero/zero.nil",
+        "-O0",
+        "-o",
+        "/tmp/nil-collections/continuation-zero/final-O0-False"
+      ],
+      "sanitized": false,
+      "build_stdout": "built /tmp/nil-collections/continuation-zero/final-O0-False\n",
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "build",
+        "/tmp/nil-collections/continuation-zero/zero.nil",
+        "-O2",
+        "-o",
+        "/tmp/nil-collections/continuation-zero/final-O2-False"
+      ],
+      "sanitized": false,
+      "build_stdout": "built /tmp/nil-collections/continuation-zero/final-O2-False\n",
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "build",
+        "/tmp/nil-collections/continuation-zero/zero.nil",
+        "-O0",
+        "-o",
+        "/tmp/nil-collections/continuation-zero/final-O0-True"
+      ],
+      "sanitized": true,
+      "build_stdout": "built /tmp/nil-collections/continuation-zero/final-O0-True\n",
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "build",
+        "/tmp/nil-collections/continuation-zero/zero.nil",
+        "-O2",
+        "-o",
+        "/tmp/nil-collections/continuation-zero/final-O2-True"
+      ],
+      "sanitized": true,
+      "build_stdout": "built /tmp/nil-collections/continuation-zero/final-O2-True\n",
+      "returncode": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    }
+  ],
+  "post_fix_source": "record Z(x:0)\n=#!buffer[Z](2,Z([]))\n",
+  "reference_driver_source": "use nil_compiler::{compile_with_profile, SourceProfile, evaluator::{execute, Limits}};\nuse nil_hir::FunctionId;\nfn main() {\n let source=std::fs::read_to_string(std::env::args().nth(1).unwrap()).unwrap();\n let p=compile_with_profile(&source,SourceProfile::ExprV5).unwrap();\n println!(\"{}\",execute(&p.hir,FunctionId(0),&[],Limits::default()).unwrap());\n}\n",
+  "reference_build_command": [
+    "rustc",
+    "--edition=2024",
+    "/tmp/nil-collections/continuation-zero/reference.rs",
+    "-L",
+    "dependency=target/release/deps",
+    "--extern",
+    "nil_compiler=target/release/libnil_compiler.rlib",
+    "--extern",
+    "nil_hir=target/release/libnil_hir.rlib",
+    "-o",
+    "/tmp/nil-collections/continuation-zero/reference"
+  ],
+  "compiler_revision": "27a8c9c4f0726d4b7368acdf0f46692ad185a035"
+}

@@ -2,7 +2,7 @@
   "schema": 1,
   "metric": "raw source tokens; NOT tokens until correctness",
   "python_version": "3.12.11",
-  "compiler_revision": "ae61be052f8b4424cb2529f63582191db84ebb93",
+  "compiler_revision": "27a8c9c4f0726d4b7368acdf0f46692ad185a035",
   "source_hashes": {
     "corpora/application-v5/tasks.json": "5d9e7c04c1bdd1f6119964bbe6da30d8f802e35653682b7396f4be1683b96ee5",
     "corpora/application-v5/oracles.py": "58f761e65286ae01823fa8597075b9e403525ffe3ef00a1f33960aed6714c991",
@@ -277,7 +277,7 @@
     "corpora/application-v5/algorithms/oracle.py": "3cd0e47c72935eb655165cf667dc47ade30ced6dde448034618e8de2484f3b35",
     "corpora/application-v5/algorithms/tasks.json": "fad6f1750c4d01c1a1707377f026f382a836e5f308f002f722c55015e822bcc0"
   },
-  "verification_sha256": "7b0cf4ca883ac68239b5fe081c34aabaeb0cc307da387c881d702252a2e1c435",
+  "verification_sha256": "2578baa55f61a25e85081eae41389b0deb5388cd998f98905fab4daeb96610c3",
   "tokenizers": [
     {
       "id": "gemma3_4b",

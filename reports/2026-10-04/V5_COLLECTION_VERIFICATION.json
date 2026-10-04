@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "group": "all",
-  "compiler_revision": "ae61be052f8b4424cb2529f63582191db84ebb93",
+  "compiler_revision": "27a8c9c4f0726d4b7368acdf0f46692ad185a035",
   "source_hashes": {
     "corpora/application-v5/tasks.json": "5d9e7c04c1bdd1f6119964bbe6da30d8f802e35653682b7396f4be1683b96ee5",
     "corpora/application-v5/oracles.py": "58f761e65286ae01823fa8597075b9e403525ffe3ef00a1f33960aed6714c991",

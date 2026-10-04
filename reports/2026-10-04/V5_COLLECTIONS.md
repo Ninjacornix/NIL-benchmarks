@@ -7,8 +7,8 @@ on three vocabularies. Every old source/count is unchanged. This is cohort movem
 not a fixed-task saving or an irreducible language lower bound.
 
 **There are material performance limits:** nested builders are quadratic even with
-a shared child; ordinary byte append regresses about **59%** in a paired runtime
-A/B control. Single-use scalar-record growth and scalar/nested replacement scale
+a shared child; ordinary byte append
+initially regressed **59%**, now restored by validated runtime specialization. Single-use scalar-record growth and scalar/nested replacement scale
 linearly in the measured range. Correctness and immutable aliases were preserved;
 no root/byte/bounds/quota check was removed to conceal these costs.
 
@@ -42,7 +42,7 @@ Plugin manifests optionally declare `types record-buffer`; old-type bundles rema
 compatible, while using the new type without capability fails E024.
 
 Packed slots are 8 bytes (u128 two). The unchanged 40-byte header plus one metadata
-row makes charge **40+(capacity+1)*W**, with children charged once per identity.
+row makes charge **40+(capacity+1)*W**, W=8*max(1, logical slots), with children charged once per identity.
 Existing arena root counters include transitive child-edge multiplicity; collection
 remains at allocation boundaries. This is count-based liveness bookkeeping, not a
 new ownership API, free-on-drop collector, RC library or cycle collector. Acyclic
@@ -132,6 +132,19 @@ with BST added. `algorithm_new` isolates the new four. On the unchanged previous
 paired 37 external tasks, counts still reproduce the prior +12.9–23.3% Python gap;
 the extra 411 cl100k BST tokens plus 1,064 new algorithm tokens cause the movement.
 
+The net external NIL-minus-Python surplus is attributable exactly by cohort:
+
+| Tokenizer | Unchanged old 37 | Newly supported old BST | Four new algorithms | Current external 42 |
+|---|---:|---:|---:|---:|
+| Gemma | 1651 | 343 | 522 | 2516 |
+| Qwen | 888 | 272 | 429 | 1589 |
+| cl100k | 767 | 267 | 429 | 1463 |
+| o200k | 738 | 265 | 424 | 1427 |
+
+Columns sum exactly. No old paired solution grew; widening reflects added hard
+solutions, not compiler fixes or edits to the old corpus. This does not establish
+that these particular reference algorithms are optimally compact.
+
 | Cut | NIL bytes / chars | Python bytes / chars | C++ bytes / chars |
 |---|---:|---:|---:|
 | original | 3310 / 3310 | 6746 / 6746 | 17283 / 17283 |
@@ -178,40 +191,40 @@ CI/fuzz/sanitizers running. These are native primitive measurements, not referen
 evaluator timings or a cross-language algorithm speed claim. Raw samples/source
 hashes are committed; startup dominates small cases.
 
-| Shape | Elements | Median ms |
-|---|---:|---:|
-| build | 1000 | 2.310 |
-| build | 4000 | 2.488 |
-| build | 16000 | 3.180 |
-| build | 64000 | 5.926 |
-| build | 256000 | 16.018 |
-| build | 1048576 | 56.877 |
-| update | 1000 | 2.353 |
-| update | 4000 | 2.250 |
-| update | 16000 | 2.351 |
-| update | 64000 | 2.860 |
-| update | 256000 | 4.743 |
-| update | 1048576 | 13.015 |
-| nested-build | 1000 | 8.203 |
-| nested-build | 4000 | 107.513 |
-| nested-build | 16000 | 1635.808 |
-| alias-build | 1000 | 2.725 |
-| alias-build | 4000 | 4.520 |
-| alias-build | 16000 | 49.157 |
-| nested-update | 1000 | 2.616 |
-| nested-update | 4000 | 2.461 |
-| nested-update | 16000 | 2.761 |
-| nested-update | 64000 | 4.632 |
-| nested-update | 256000 | 12.615 |
-| nested-update | 1048576 | 44.446 |
-| nested-build-shared | 1000 | 6.550 |
-| nested-build-shared | 4000 | 65.664 |
-| nested-build-shared | 16000 | 1008.405 |
+| Shape | Elements | Before ms | Final ms |
+|---|---:|---:|---:|
+| build | 1000 | 2.310 | 2.651 |
+| build | 4000 | 2.488 | 2.486 |
+| build | 16000 | 3.180 | 3.216 |
+| build | 64000 | 5.926 | 5.666 |
+| build | 256000 | 16.018 | 15.748 |
+| build | 1048576 | 56.877 | 56.659 |
+| update | 1000 | 2.353 | 2.478 |
+| update | 4000 | 2.250 | 2.257 |
+| update | 16000 | 2.351 | 2.377 |
+| update | 64000 | 2.860 | 3.124 |
+| update | 256000 | 4.743 | 4.903 |
+| update | 1048576 | 13.015 | 12.880 |
+| nested-build | 1000 | 8.203 | 8.312 |
+| nested-build | 4000 | 107.513 | 107.222 |
+| nested-build | 16000 | 1635.808 | 1663.409 |
+| nested-build-shared | 1000 | 6.550 | 6.329 |
+| nested-build-shared | 4000 | 65.664 | 65.535 |
+| nested-build-shared | 16000 | 1008.405 | 1008.033 |
+| nested-update | 1000 | 2.616 | 2.540 |
+| nested-update | 4000 | 2.461 | 2.353 |
+| nested-update | 16000 | 2.761 | 2.839 |
+| nested-update | 64000 | 4.632 | 4.706 |
+| nested-update | 256000 | 12.615 | 12.473 |
+| nested-update | 1048576 | 44.446 | 44.356 |
+| alias-build | 1000 | 2.725 | 2.694 |
+| alias-build | 4000 | 4.520 | 4.678 |
+| alias-build | 16000 | 49.157 | 53.996 |
 
 Scalar build/update are consistent with linear growth after startup. Nested
-nonallocating replacement remains linear through 1 Mi rows (44.45 ms), reusing
-children and outer storage. Nested fresh-child build is quadratic (8.20 → 107.51
-→ 1,635.81 ms); shared-child build is also quadratic (6.55 → 65.66 → 1,008.40).
+nonallocating replacement remains linear through 1 Mi rows (44.36 ms), reusing
+children and outer storage. Nested fresh-child build is quadratic (8.31 → 107.22
+→ 1,663.41 ms); shared-child build is also quadratic (6.33 → 65.54 → 1,008.03).
 The shared control removes growing child-allocation count, exposing conservative
 transitive root transfers; fresh-child allocation additionally makes arena collection
 walk an increasing live allocation list. Outer concat reuse still happens: this
@@ -229,89 +242,142 @@ limits: files, other roots, child identities and geometric capacity affect admis
 The conservative copy/growth reservation remains even on unique reuse, so quota
 semantics do not depend on optimization success. No 64 MiB increase.
 
-## Existing performance controls and regression
+## Existing performance controls and continuation
 
-Same cached-file methodology as the previous reports; rotated NIL/C++/Python order,
-one warmup, 25 repeats, outputs checked. Transform also verifies byte-exact inverse
-and double-transform round-trip.
+All final timings use compiler 27a8c9c, O2/LTO, 25 repeats after one warmup,
+whole-process wall time, warm cached files and verified output. NIL/C++/Python
+order rotates; runtime A/B order alternates. Runs were sequential after all
+functional jobs ended, with no CPU isolation. Startup dominates small cases.
+Before columns are the initial collections measurements; six-round historical
+byte append was 23.91–24.69 ms, scan about 7.58–7.98 ms, transform 34.77–41.24 ms.
+The overseer reproduced pre-fix byte append 38.81 ms and transform 44.53 ms.
 
-| Workload | Size | NIL ms | C++ ms | Python ms |
-|---|---:|---:|---:|---:|
-| append | 10000 | 2.927 | 2.424 | 14.366 |
-| append | 40000 | 3.901 | 2.441 | 15.073 |
-| append | 160000 | 8.096 | 2.780 | 18.919 |
-| append | 640000 | 24.522 | 3.788 | 31.925 |
-| append | 1048576 | 38.538 | 4.775 | 43.393 |
-| newlines | 4096 | 2.438 | 2.431 | 14.021 |
-| newlines | 1048576 | 2.783 | 2.829 | 14.614 |
-| newlines | 16777216 | 7.577 | 10.169 | 23.946 |
-| transform | 4096 | 2.560 | 2.510 | 14.167 |
-| transform | 1048576 | 4.809 | 3.316 | 65.540 |
-| transform | 16777216 | 38.030 | 15.890 | 796.677 |
+**Ordinary byte append is restored, not accepted as a permanent 59% tax.**
+The root selector scans all validated signatures, nested regions, callees and
+plugin providers, recursively following reachable record fields. With no record
+buffers, transitive child roots and tagged-record quota sizing compile out.
+A record-buffer allocation is the only source of tagged sequence storage; the
+closed-world validated NIL-provider boundary cannot manufacture one invisibly.
+All record-buffer programs keep the original child-aware path and all quota,
+alias, trap/effect checks. Unused type declarations do not activate it. Mixed
+programs that actually use record buffers remain conservative; this is not a
+per-value specialization within those programs.
 
-| Keyed / conservative record control | Iterations (or held bytes) | NIL ms |
-|---|---:|---:|
-| insert | 1000 | 2.789 |
-| insert | 4000 | 2.698 |
-| insert | 16000 | 4.422 |
-| insert | 64000 | 11.084 |
-| repack | 1000 | 2.906 |
-| repack | 4000 | 2.974 |
-| repack | 16000 | 7.146 |
-| repack | 64000 | 73.204 |
-| repack-held | 4096 | 2.597 |
-| repack-held | 65536 | 3.838 |
-| repack-held | 1048576 | 21.117 |
-| record-insert | 1000 | 2.719 |
-| record-insert | 4000 | 2.756 |
-| record-insert | 16000 | 4.551 |
-| record-insert | 64000 | 11.761 |
-| record-append | 10000 | 3.720 |
-| record-append | 40000 | 16.888 |
-| record-append | 160000 | 322.691 |
+The first fix removed recursive helpers but left a 3.3% residual size-check cost
+(24.58→25.39 ms against historical runtime on identical IR). The second fix
+also compiles out impossible tagged sizes. Final historical A/B is
+**24.463→24.545 ms (+0.34%)**; immediate pre-fix A/B is
+**39.158→24.540 ms (-37.3%)**. No root or quota guarantee was weakened.
 
-Integer-map ceiling remains 262,145; scalar-record map ceiling 262,144, each next
-value E013. Record-field append remains superlinear: 3.72 / 16.89 / 322.69 ms
-for 10k / 40k / 160k. The session's scan16MiB is 7.577 ms versus prior 7.581;
-transform16MiB 38.030 versus prior 35.357 (current IQR 35.057–39.295, overlapping
-prior median; not enough to attribute a compiler regression). Append1MiB is
-38.538 versus prior 24.616, with a separate paired A/B confirming a real loss.
+| Workload | Size | Before NIL ms | Final NIL ms | Final C++ ms | Final Python ms |
+|---|---:|---:|---:|---:|---:|
+| append | 10000 | 2.927 | 2.853 | 2.454 | 14.803 |
+| append | 40000 | 3.901 | 3.519 | 2.601 | 15.733 |
+| append | 160000 | 8.096 | 6.071 | 2.900 | 19.170 |
+| append | 640000 | 24.522 | 16.157 | 4.053 | 32.940 |
+| append | 1048576 | 38.538 | 24.764 | 4.999 | 44.776 |
+| newlines | 4096 | 2.438 | 2.551 | 2.489 | 14.427 |
+| newlines | 1048576 | 2.783 | 2.890 | 2.973 | 15.131 |
+| newlines | 16777216 | 7.577 | 7.836 | 10.447 | 24.476 |
+| transform | 4096 | 2.560 | 2.651 | 2.507 | 14.751 |
+| transform | 1048576 | 4.809 | 5.143 | 3.441 | 63.833 |
+| transform | 16777216 | 38.030 | 37.922 | 13.828 | 810.024 |
 
-`legacy_control.py` compiles identical current LLVM IR and changes ONLY the
-application C runtime to starting revision 1689ffe. Same O2/LTO flags, alternating
-paired samples, output checked. This isolates runtime composition, not a historical
-whole-compiler build. Scan/transform use a 16 MiB bytes(range(256)) input; the normal
-newline corpus pattern differs, so absolute scan times are not interchanged.
+Transform output is byte-exact and a double transform round-trips. The final
+16 MiB standard median is **37.922 ms**, inside the historical range. A same-IR
+runtime A/B is **40.289→39.878 ms (-1.0%)**: these data do not attribute the
+overseer's transform elevation to a compulsory child-root cost. They do not
+explain every cross-session fluctuation; warm I/O, scheduling and compiler-code
+layout remain uncontrolled. The scan A/B is 7.745→7.624 ms. Every raw sample is
+retained; no faster run replaces a slower result or changes the timed protocol.
 
-| Runtime A/B | Before ms | After ms | Delta |
+Read-only/read-write stage profiles are retained in V5_COLLECTION_TRANSFORM_CONTROL.json.
+
+| Input bytes | Read-only ms | Read+write ms | Full transform ms |
 |---|---:|---:|---:|
-| append 1MiB | 24.463 | 38.852 | +58.81% |
-| scan 16MiB | 8.305 | 8.278 | -0.32% |
-| transform 16MiB | 42.872 | 43.821 | +2.21% |
+| 4096 | 2.359 | 2.437 | 2.651 |
+| 1048576 | 2.552 | 2.866 | 5.143 |
+| 16777216 | 5.157 | 11.403 | 37.922 |
 
-Append IQRs are before 24.301–24.685 versus after 38.458–39.122 ms. After disassembly
-contains out-of-line nil_retain/nil_drop calls; before has none. Recursive child
-retention makes the generic hot root helpers opaque, explaining the confirmed
-append loss. Recommend an independently validated ordinary-sequence fast path /
-out-of-line nested traversal follow-up; do not remove retention checks. Nested
-builder retention/arena scanning likewise need a separate proof/performance workstream.
-The known bulk equality plugin regression remains outstanding and was not fixed.
+
+| Keyed path | Iterations / held bytes | Before ms | Final ms |
+|---|---:|---:|---:|
+| insert | 1000 | 2.789 | 2.520 |
+| insert | 4000 | 2.698 | 2.723 |
+| insert | 16000 | 4.422 | 4.352 |
+| insert | 64000 | 11.084 | 10.633 |
+| repack | 1000 | 2.906 | 2.666 |
+| repack | 4000 | 2.974 | 2.856 |
+| repack | 16000 | 7.146 | 7.063 |
+| repack | 64000 | 73.204 | 74.495 |
+| repack-held | 4096 | 2.597 | 2.508 |
+| repack-held | 65536 | 3.838 | 3.922 |
+| repack-held | 1048576 | 21.117 | 22.191 |
+| record-insert | 1000 | 2.719 | 2.535 |
+| record-insert | 4000 | 2.756 | 2.836 |
+| record-insert | 16000 | 4.551 | 4.547 |
+| record-insert | 64000 | 11.761 | 11.469 |
+| record-append | 10000 | 3.720 | 3.609 |
+| record-append | 40000 | 16.888 | 16.948 |
+| record-append | 160000 | 322.691 | 409.224 |
+
+**Record-field append remains superlinear and unresolved.** Its 160k standard
+median rises 322.691→409.224 ms. A same-IR comparison against pre-fix collections
+is 337.367→402.060 ms (+19.2%), while against the historical pre-collection runtime
+it is 381.623→379.299 ms (-0.6%). Both controls are retained. The additional
+revision/code-shape-dependent difference is not isolated further or declared
+noise/unavoidable. Field-sensitive reuse remains deferred; old field aliases still
+force payload copies. This does not undo the restored ordinary append path or
+establish C++-class performance for field builders.
+
+Accepted limits: fresh/shared nested builders remain quadratic; aliased builders
+copy; record-field append is superlinear; keyed payload repacking remains
+superlinear. The reference evaluator traverses live graphs and is not a fast
+execution backend. Mixed record-buffer programs keep conservative child-aware
+root operations. Record sorting/comparators, sequence-bearing record map values,
+generic nested maps and complete JSON/domain adapters remain deferred. Bulk
+equality's **~16.96 ms** plugin-round regression is outstanding and unchanged.
+No equality lowering was modified or new corpus task added in the continuation.
+Map ceilings stay 262,145 integer entries / 262,144 scalar-record entries for the
+measured workloads; each next value traps E013. Nonzero record-buffer boundaries
+above are rechecked unchanged. 64 MiB still includes conservative copy/growth peaks.
+
+## Zero-slot proof and reproduced failure
+
+`record Z(x:0)` with `=#!buffer[Z](2,Z([]))` now returns **2** in the reference,
+O0, O2, sanitized O0 and sanitized O2, all exit 0 with empty stderr. The retained
+pre-fix binary still produces UBSan division-by-zero and aborts; the overseer's
+uninstrumented O2 reproduction exits 133. See V5_COLLECTION_ZERO_LAYOUT.json
+for source, reference driver, commands and outputs. Initial 353-test/131-sanitizer/
+864-program campaigns did not cover this class and are superseded, not completion
+evidence. All listed final gates were repeated after the last C change.
+
+Logical slots remain zero. Physical rows/metadata use at least one initialized
+word, so division denominators are ≥8 and the descriptor pointer fits. A zero-slot
+product cannot contain a dynamic child, since every dynamic handle contributes
+one slot. Embedding its buffer in an outer record contributes a handle and uses
+the unchanged transitive-edge proof. Mixed products keep their unpadded logical
+field offsets; scalar-record maps retain zero-byte value encodings. Quota charging
+matches native/reference physical width, including metadata and reserved capacity.
+No valid empty-field type was rejected to narrow coverage.
 
 ## Validation and findings
 
-- `./scripts/ci.sh` and `./scripts/ci.sh release`: **353 tests**, no warnings.
-- `./scripts/sanitize.sh`: **131 native tests**, all six suites, ASan/UBSan/float-cast
+- `./scripts/ci.sh` and `./scripts/ci.sh release`: **358 tests**, no warnings.
+- `./scripts/sanitize.sh`: **135 native tests**, all six suites, ASan/UBSan/float-cast
   checks clean; macOS LeakSanitizer unavailable, no leak claim. Includes strengthened
   record snapshot updates, packed scalar bits, nested aliases and quota reclamation.
-- Three final seeds 1729/8675309/5130572: **864 programs / 1,728 O0/O2 builds**,
-  zero divergences. All 24 new collection families run once per seed, including
+- Three final seeds 1729/8675309/5130572: **924 programs / 1,848 O0/O2 builds**,
+  zero divergences. All 44 collection families run once per seed, including
   nested lifetime, child/old aliases, growth, calls/loops, lazy effects, provider
   transfer, nested each/sort/maps and quota. This is bounded template coverage,
-  not exhaustive arbitrary type/schema fuzzing.
-- Per seed: OK207, E0092, E01217, E01320, E0145, E0154, E01610, E0173, E0185,
-  E0192, E0205, E0215, E0223. Aggregate counts are triple; frontend source-mutation
-  counts are separate, including 360 new collection mutations. Some substitutions
-  leave a template unchanged; those counts are not a claim of 360 rejected programs.
+  not exhaustive arbitrary type/schema fuzzing. The 20 degenerate families cover
+  single/all-zero fields, mixed fields, nested zero products, maps, buffers,
+  aliasing, construction/update/growth, calls/loop state, lazy arms and failures.
+- Per seed: OK222, E0092, E01218, E01322, E0145, E0154, E01610, E0173, E0185,
+  E0193, E0206, E0215, E0223. Aggregate counts are triple; frontend source-mutation
+  counts are separate, including 540 collection mutations. Some substitutions
+  leave a template unchanged; those counts are not a claim of 540 rejected programs.
 - **2,775 frozen corpus checks pass**, original **610 separately**; supplemental
   random algorithms **600** and type-layout probes **12** pass. Corpus unittest
   suite passes 23, including untouched source/oracle/baseline hash locks.
@@ -319,7 +385,13 @@ The known bulk equality plugin regression remains outstanding and was not fixed.
   single-use loop and `i1 false` with a live alias. Runtime roots==1 still guards
   the fast path. See V5_COLLECTION_STORAGE_IR.txt.
 
-No memory-safety defect, runtime divergence or compiler semantic bug was found.
+A real compiler/runtime defect was found after the first clean campaigns:
+zero-slot record-buffer rows caused division by zero, a process crash at O2,
+and O0/O2 divergence. The overseer reproduced exit 133; local UBSan identified
+the division. This was a generator coverage gap, not merely an instrumented UB
+warning. The continuation pads rows/metadata to one initialized word, preserves
+logical empty fields, and adds 20 degenerate-layout families covering all-zero,
+nested-zero and mixed records in buffers, maps, aliases and loop state.
 Development fixtures had incorrect function labels/return types, noncanonical
 `(i)` arity and unsupported &&/||; they were corrected rather than adding syntax.
 Two earlier sanitizer/fuzz campaigns overlapped a plugin-manifest capability edit
@@ -327,7 +399,7 @@ and old binaries rejected its directive E024. Those runs were invalidated/discar
 then all final gates were repeated against stable code. Harness tests caught stale
 75-task assumptions and JSONL's missing overlap metadata; only integration code/
 tests changed, never frozen oracles/goldens. Timing exposes real remaining costs
-and a real append regression; clean correctness runs are not evidence of fast
+and the repaired ordinary append regression plus unresolved field-builder costs; clean correctness runs are not evidence of fast
 nested builders or complete general-purpose library coverage.
 
 ## Reproduce (repository root)
@@ -336,9 +408,9 @@ nested builders or complete general-purpose library coverage.
 ./scripts/ci.sh
 ./scripts/ci.sh release
 ./scripts/sanitize.sh
-./scripts/fuzz-v5.sh --seed 1729 --cases 288 --out /tmp/nil-v5-1729
-./scripts/fuzz-v5.sh --seed 8675309 --cases 288 --out /tmp/nil-v5-8675309
-./scripts/fuzz-v5.sh --seed 5130572 --cases 288 --out /tmp/nil-v5-5130572
+./scripts/fuzz-v5.sh --seed 1729 --cases 308 --out /tmp/nil-v5-1729
+./scripts/fuzz-v5.sh --seed 8675309 --cases 308 --out /tmp/nil-v5-8675309
+./scripts/fuzz-v5.sh --seed 5130572 --cases 308 --out /tmp/nil-v5-5130572
 benchmarks/paired/.venv/bin/python benchmarks/corpora/application-v5/verify.py --output /tmp/nil-verify.json
 benchmarks/paired/.venv/bin/python benchmarks/corpora/application-v5/verify.py --group original --output /tmp/nil-original.json
 benchmarks/paired/.venv/bin/python benchmarks/corpora/application-v5/algorithms/check_random.py --seed 30030 --cases 30 --output /tmp/nil-random.json
@@ -349,9 +421,12 @@ benchmarks/paired/.venv/bin/python benchmarks/application/collections/run.py --r
 ./scripts/bench.sh runtime --full --workloads --workload newlines --workload append --repeats 25 --output /tmp/nil-controls
 ./scripts/bench.sh runtime --full --application --repeats 25 --output /tmp/nil-transform
 benchmarks/paired/.venv/bin/python benchmarks/application/keyed/run.py --records --repeats 25 --output /tmp/nil-keyed
-benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --repeats 25 --output /tmp/nil-root-ab
-benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --workload newlines --repeats 25 --output /tmp/nil-scan-ab
-benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --workload transform --repeats 25 --output /tmp/nil-transform-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before d72a23d --repeats 25 --output /tmp/nil-root-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before d72a23d --workload newlines --repeats 25 --output /tmp/nil-scan-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before d72a23d --workload transform --repeats 25 --output /tmp/nil-transform-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before 1689ffe --repeats 25 --output /tmp/nil-historical-root-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before d72a23d --workload record-append --repeats 25 --output /tmp/nil-field-ab
+benchmarks/paired/.venv/bin/python benchmarks/application/collections/legacy_control.py --before 1689ffe --workload record-append --repeats 25 --output /tmp/nil-historical-field-ab
 ./target/release/nil --profile expr-v5 build benchmarks/application/collections/boundary-nested.nil -O2 -o /tmp/nil-nested-boundary
 /tmp/nil-nested-boundary 4194297
 /tmp/nil-nested-boundary 4194298 # E013 expected
