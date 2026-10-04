@@ -19,3 +19,8 @@ aliased curves stop at 16k to measure their potentially quadratic cost explicitl
 from `nested-build`, which creates one live byte allocation per record. This
 control separates increasing live-arena traversal costs from collection length
 alone. Both preserve immutable child aliases; no lifetime proof is relaxed.
+
+The shared-child control also proved quadratic at 1k/4k, so its final range stops
+at 16k like the fresh-child shape. An initial oversized 64k/256k control was
+stopped after this evidence; this changes timing practicality, not the reuse or
+lifetime proof. Report both the root-transfer cost and live-arena traversal cost.
