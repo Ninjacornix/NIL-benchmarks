@@ -1,0 +1,5 @@
+record Instr(op:i,value:i)
+record Word(name:s,body:v[Instr])
+record Dict(ids:m,words:v[Word])
+(s,s)=!write(b,!format(b(Dict(!insert(!map(),"one",0),!buffer[Word](1,Word("one",!buffer[Instr](1,Instr(0,1))))))))
+(Dict)=a.words[!get(a.ids,"one")].body[0].value

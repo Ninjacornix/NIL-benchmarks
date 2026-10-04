@@ -1,0 +1,5 @@
+record Attr(key:s,value:s)
+record Node(name:s,attrs:v[Attr])
+record Graph(nodes:v[Node],edges:v,attrs:v[Attr])
+(s,s)=!write(b,!format(b(Graph(!buffer[Node](1,Node("n",!buffer[Attr](1,Attr("color","red")))),!buffer(0,0),!buffer[Attr](0,Attr("",""))))))
+(Graph)=#a.nodes+#a.nodes[0].attrs+a.nodes[0].attrs[0].value[0]

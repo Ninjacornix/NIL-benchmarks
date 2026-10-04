@@ -1,0 +1,4 @@
+record Frame(assign:m,carry:i)
+record Search(frames:v[Frame])
+(s,s)=!write(b,!format(b(Search(!buffer[Frame](1,Frame(!insert(!insert(!map(),"I",1),"B",9),0))))))
+(Search)=!get(a.frames[0].assign,"I")+!get(a.frames[0].assign,"B")
