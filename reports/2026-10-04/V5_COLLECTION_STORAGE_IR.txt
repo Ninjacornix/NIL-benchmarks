@@ -1,0 +1,31 @@
+Scalar unique loop:
+  %v10 = call ptr @nil_record_set(ptr %v3, i64 %v4, ptr %v7, i1 true, i64 71, i64 82)
+
+Live alias:
+  %v5 = call ptr @nil_record_set(ptr %p0, i64 0, ptr %v2, i1 false, i64 65, i64 76)
+
+New runtime append disassembly (selected out-of-line root calls; before has none):
+00000001000005f8	bl	_nil_retain
+0000000100000654	bl	_nil_retain
+00000001000006c0	bl	_nil_retain
+0000000100000720	bl	_nil_retain
+0000000100000788	bl	_nil_retain
+00000001000007e8	bl	_nil_retain
+0000000100000850	bl	_nil_retain
+0000000100000b70	bl	_nil_retain
+0000000100000bc8	bl	_nil_retain
+0000000100000c20	bl	_nil_retain
+0000000100000cd0	bl	_nil_drop
+0000000100000d3c	bl	_nil_drop
+0000000100000da8	bl	_nil_drop
+0000000100000e14	bl	_nil_drop
+0000000100000e80	bl	_nil_drop
+0000000100000eec	bl	_nil_drop
+0000000100000f58	bl	_nil_drop
+0000000100000fc4	bl	_nil_drop
+000000010000102c	bl	_nil_retain
+000000010000108c	bl	_nil_retain
+00000001000010f0	bl	_nil_retain
+0000000100001178	bl	_nil_drop
+00000001000011e4	bl	_nil_drop
+0000000100001250	bl	_nil_drop

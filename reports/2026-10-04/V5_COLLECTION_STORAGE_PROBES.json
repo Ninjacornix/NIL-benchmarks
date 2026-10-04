@@ -1,0 +1,53 @@
+{
+  "scope": "Type/storage feasibility only, not complete task adapters; unsupported statuses unchanged.",
+  "results": [
+    {
+      "candidate": "dot",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 1,
+      "tests_passed": 1,
+      "native_tests_passed": 2,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "candidate": "camicia",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 1,
+      "tests_passed": 1,
+      "native_tests_passed": 2,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "candidate": "forth",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 1,
+      "tests_passed": 1,
+      "native_tests_passed": 2,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "candidate": "alphametics",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 1,
+      "tests_passed": 1,
+      "native_tests_passed": 2,
+      "failure_reason": null,
+      "feedback": "Correct."
+    }
+  ]
+}

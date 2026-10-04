@@ -1,0 +1,72 @@
+{
+  "before_revision": "1689ffe9d7479c1f450847c4aad7dcab62d0588a",
+  "after_revision": "ae61be052f8b4424cb2529f63582191db84ebb93",
+  "methodology": "Identical current emitted append IR, only application.c replaced by pre-collection runtime; O2/LTO compiler flags unchanged; alternating paired whole-process timing, one warmup, output verified, no CPU isolation. This isolates runtime composition, not a whole historical compiler comparison.",
+  "repeats": 25,
+  "samples_ms": {
+    "before": [
+      25.379708,
+      25.695292,
+      26.407708,
+      24.777916,
+      24.305042,
+      24.22525,
+      24.427209,
+      24.297625,
+      24.41875,
+      24.461709,
+      24.126792,
+      23.780708,
+      24.463458,
+      24.518667,
+      24.222416,
+      24.513541,
+      24.47275,
+      24.423,
+      24.49975,
+      24.525041,
+      24.690042,
+      24.381917,
+      24.6795,
+      27.748125,
+      24.281959
+    ],
+    "after": [
+      40.302291,
+      40.643834,
+      40.9735,
+      38.920541,
+      38.720042,
+      38.738084,
+      38.841208,
+      38.36925,
+      38.321667,
+      38.460958,
+      38.517583,
+      38.342542,
+      38.307541,
+      38.8515,
+      38.439875,
+      38.454375,
+      39.018958,
+      39.1165,
+      39.066459,
+      39.202125,
+      38.786625,
+      39.128125,
+      39.267666,
+      38.954541,
+      38.935209
+    ]
+  },
+  "median_ms": {
+    "before": 24.463458,
+    "after": 38.8515
+  },
+  "ir_sha256": "763ad45f568d16055a998c8aa990ead80ae4004f6264151e833b6cce72b8a06a",
+  "source_sha256": "acd2aad94015f2c1793e0144fa84786aa0a62848756728503ee78bebed25aa79",
+  "runtime_sha256": {
+    "before": "4bf1d90bbbc160c1b4050164ff371bdbffbeda7a2651275afd24544cdce4fb85",
+    "after": "2ef4c1b8b959e8bd2c663626379b5c55d014ad11ddbc0690e168906f6c8e56ef"
+  }
+}

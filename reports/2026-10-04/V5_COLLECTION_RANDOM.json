@@ -1,0 +1,10 @@
+{
+  "seed": 30030,
+  "cases_per_task": 30,
+  "totals": {
+    "reference": 120,
+    "native": 240,
+    "python": 120,
+    "cpp": 120
+  }
+}

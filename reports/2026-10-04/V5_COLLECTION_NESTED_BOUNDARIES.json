@@ -1,0 +1,30 @@
+[
+  {
+    "workload": "boundary-nested",
+    "elements": 4194297,
+    "returncode": 0,
+    "stdout": "4194297\n",
+    "stderr": ""
+  },
+  {
+    "workload": "boundary-nested",
+    "elements": 4194298,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "E013 @31..32 dynamic allocation limit exceeded\n"
+  },
+  {
+    "workload": "nested-update",
+    "elements": 2097147,
+    "returncode": 0,
+    "stdout": "2199011721231\n",
+    "stderr": ""
+  },
+  {
+    "workload": "nested-update",
+    "elements": 2097148,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "E013 @78..99 dynamic allocation limit exceeded\n"
+  }
+]
