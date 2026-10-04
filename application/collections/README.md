@@ -8,3 +8,7 @@ Scalar builders/replacements, dynamic-child builders/replacements and deliberate
 live aliases are separated. The latter two expose conservative transitive-root/copy
 costs instead of claiming every nested pattern is linear. Boundary probes use
 16-byte scalar rows and the unchanged 64 MiB live-capacity limit.
+
+Timed builders and replacements finish with an all-row checksum, so verification
+checks row contents rather than merely the container length. Dynamic-child shapes
+include byte literals in each iteration; their allocation/root cost is part of the workload.

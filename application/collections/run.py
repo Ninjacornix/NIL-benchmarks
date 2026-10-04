@@ -33,7 +33,7 @@ def main():
         subprocess.run([str(ROOT / 'target/release/nil'), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(exe)], cwd=ROOT, check=True)
         for n in sizes:
             samples = []
-            expected = n - 1 if name.endswith('update') else n + n*(n-1)//2 if name == 'alias-build' else n
+            expected = n*(n-1) if name == 'alias-build' else n*(n-1)//2
             for rep in range(args.repeats + 1):
                 start = time.perf_counter_ns()
                 result = subprocess.run([str(exe), str(n)], capture_output=True, timeout=120)
