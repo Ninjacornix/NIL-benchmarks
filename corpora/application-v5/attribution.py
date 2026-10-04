@@ -25,8 +25,8 @@ from verify import HERE
 
 CATEGORIES = ('signature', 'loop_delimiters', 'unchanged_state', 'loop_index_bound',
               'intrinsic_name', 'call_identifier', 'identifier', 'operator',
-              'numeric_literal', 'text_literal', 'boolean_literal', 'separator', 'keyword', 'comment', 'whitespace')
-NIL_LEX = re.compile(r'"(?:\\.|[^"\\])*"|![a-z]+|\d+|[a-z]+|==|!=|<=|>=|\s+|.', re.S)
+              'record_definition', 'numeric_literal', 'text_literal', 'boolean_literal', 'separator', 'keyword', 'comment', 'whitespace')
+NIL_LEX = re.compile(r'"(?:\\.|[^"\\])*"|![a-z][a-z0-9]*|\d+(?:\.\d*)?(?:[eE][+-]?\d+)?(?:u64|u128)?|[A-Za-z_][A-Za-z_0-9]*|==|!=|<=|>=|\s+|.', re.S)
 
 
 def paint(labels, start, end, category):
@@ -41,7 +41,7 @@ def lexical_nil(source):
             category = 'whitespace'
         elif text.startswith('"'):
             category = 'text_literal'
-        elif text.isdecimal():
+        elif text[0].isdigit():
             category = 'numeric_literal'
         elif text in ('true', 'false'):
             category = 'boolean_literal'
@@ -91,7 +91,10 @@ def nil_labels(source):
     loops, passthrough = [], []
     # All corpus declarations occupy one line. Fail rather than misclassify a new layout.
     for line in re.finditer(r'[^\n]+', source):
-        header = re.match(r'(?:\([^\n]*?\)|\d+)(?::(?:[isbvmt]|\d+))?=', line.group())
+        if line.group().startswith('record '):
+            paint(labels,line.start(),line.end(),'record_definition')
+            continue
+        header = re.match(r'(?:\([^\n]*?\)|\d+)(?::(?:[A-Za-z_][A-Za-z_0-9]*|\d+))?=', line.group())
         if not header:
             raise ValueError('Unsupported NIL declaration layout: ' + line.group())
         paint(labels, line.start(), line.start() + header.end(), 'signature')
@@ -266,7 +269,7 @@ def main():
     import tiktoken
     frozen = json.loads(args.density.read_text())
     records = {(r['task'], r['language']): r for r in frozen['records'] if r['status'] == 'verified'}
-    tasks = [t for t in load_tasks('external') if t['nil_status'] != 'unsupported']
+    tasks = [t for t in load_tasks('external') if (t['id'], 'expr-v5') in records]
     vocabularies = [Vocabulary(key, Path.home() / '.ollama/models') for key in MODELS]
     encodings = {key: tiktoken.get_encoding(key) for key in ('cl100k_base', 'o200k_base')}
     totals = {name: {lang: Counter() for lang in ('expr-v5', 'python')} for name in (*MODELS, *encodings)}
@@ -300,7 +303,7 @@ def main():
             assert sum(Fraction(r['fractional_difference']) for r in rows) == expected['expr-v5'] - expected['python']
             ranked[name] = sorted(rows, key=lambda r: -Fraction(r['fractional_difference']))
         args.output.mkdir(parents=True, exist_ok=True)
-        report = {'schema': 1, 'scope': '32 external paired tasks; immutable current source hashes',
+        report = {'schema': 1, 'scope': f'{len(tasks)} external paired tasks; immutable current source hashes',
                   'method': __doc__, 'source_density_sha256': hashlib.sha256(args.density.read_bytes()).hexdigest(),
                   'tokenizers': frozen['tokenizers'], 'categories': CATEGORIES, 'ranked': ranked,
                   'structures': structures, 'records': all_rows,

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "source": "ADR 023 keyed maps; ADR 027 numeric types",
+  "source": "ADR 023 keyed maps; ADR 027 numeric types; ADR 028 records",
   "overrides": {
     "ex_etl": {
       "nil_status": "supported",
@@ -19,6 +19,10 @@
       "baseline_status": "supported"
     },
     "ex_armstrong_numbers": {
+      "nil_status": "supported",
+      "baseline_status": "supported"
+    },
+    "ex_go_counting": {
       "nil_status": "supported",
       "baseline_status": "supported"
     }

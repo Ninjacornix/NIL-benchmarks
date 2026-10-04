@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "unsupported_total": 15,
-  "external_unsupported": 14,
-  "supported_external": 36,
+  "unsupported_total": 14,
+  "external_unsupported": 13,
+  "supported_external": 37,
   "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
   "blocking_task_counts": {
     "environment": 1,
     "higher_order": 1,
-    "maps_records": 3,
+    "maps_records": 2,
     "unicode": 2,
     "concurrency": 1,
     "recursive_values": 1,
@@ -27,8 +27,7 @@
     ],
     "maps_records": [
       "ex_alphametics",
-      "ex_dot_dsl",
-      "ex_go_counting"
+      "ex_dot_dsl"
     ],
     "unicode": [
       "ex_anagram",
@@ -121,5 +120,48 @@
       "f64"
     ],
     "limitation": "The selected complex-number real-part property is supported; no record/complex type or full complex arithmetic API is claimed. Other widths/float collections remain deferred."
+  },
+  "records_followup": {
+    "adr": "028",
+    "verified_moved_to_supported": [
+      "ex_go_counting"
+    ],
+    "still_unsupported": {
+      "ex_alphametics": "Search/JSON adapter remains missing; assignment storage already expressible before records.",
+      "ex_dot_dsl": "Sequence-bearing record map values and collections of attribute records remain unsupported; parser adapter not supplied.",
+      "ex_camicia": "Two decks and scalar game state now fit a record. Verified game/cycle simulation and JSON adapter remain unimplemented, not a claim of theoretical unexpressibility.",
+      "ex_binary_search_tree": "Recursive types/optional recursive children remain unsupported; encoded tree adapter not implemented."
+    },
+    "nested_collections_boundary": "Record fields can contain sequences and maps; Buffer remains i64-only, map record values remain scalar/fixed-array-only.",
+    "other_blockers": {
+      "environment": [
+        "env_lookup"
+      ],
+      "higher_order": [
+        "ex_accumulate"
+      ],
+      "unicode": [
+        "ex_anagram",
+        "ex_bob"
+      ],
+      "concurrency": [
+        "ex_bank_account"
+      ],
+      "entropy": [
+        "ex_diffie_hellman"
+      ],
+      "dynamic_dictionary": [
+        "ex_forth"
+      ],
+      "calendar": [
+        "ex_gigasecond"
+      ],
+      "multi_file_fixture": [
+        "ex_grep"
+      ],
+      "reactive": [
+        "ex_hangman"
+      ]
+    }
   }
 }
