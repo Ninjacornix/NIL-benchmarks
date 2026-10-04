@@ -26,7 +26,7 @@ def main():
     shapes = [('build', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('update', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('nested-build', [1000, 4000, 16000]),
-              ('nested-update', [1000, 4000, 16000, 64000, 256000]),
+              ('nested-update', [1000, 4000, 16000]),
               ('alias-build', [1000, 4000, 16000])]
     for name, sizes in shapes + [('boundary', [])]:
         exe = out / name

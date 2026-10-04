@@ -10,5 +10,7 @@ costs instead of claiming every nested pattern is linear. Boundary probes use
 16-byte scalar rows and the unchanged 64 MiB live-capacity limit.
 
 Timed builders and replacements finish with an all-row checksum, so verification
-checks row contents rather than merely the container length. Dynamic-child shapes
-include byte literals in each iteration; their allocation/root cost is part of the workload.
+checks row contents rather than merely the container length. The nested builder
+includes a byte literal in each iteration; nested replacement reuses the existing
+child, separating allocation from conservative root-transfer costs. Nested and
+aliased curves stop at 16k to measure their potentially quadratic cost explicitly.

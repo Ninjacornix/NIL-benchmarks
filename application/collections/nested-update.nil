@@ -1,3 +1,3 @@
 record Cell(text:s,value:i)
-(i)=b(@(a,0,!buffer[Cell](a,Cell("x",0));b<a;a,b+1,c[b:Cell("x",b)];c))
+(i)=b(@(a,0,!buffer[Cell](a,Cell("x",0));b<a;a,b+1,c[b:Cell(c[b].text,b)];c))
 (v[Cell])=!each(a,0;c+b.value;a)
