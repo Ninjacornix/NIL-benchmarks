@@ -1,0 +1,2 @@
+record Text(data:s,count:i)
+1=@(Text("",0),a;a.count<b;a{data:!concat(a.data,"x")}{count:a.count+1},b;#a.data)

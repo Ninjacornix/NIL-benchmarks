@@ -1,0 +1,2 @@
+record Pair(left:i,right:i)
+1=!size(@(!map[Pair](),0,a;b<c;!insert(a,!format(b),Pair(b,b+1)),b+1,c;a))
