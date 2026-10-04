@@ -18,7 +18,7 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, default=25)
     parser.add_argument('--before', default='1689ffe')
-    parser.add_argument('--workload', choices=['append','newlines','transform'], default='append')
+    parser.add_argument('--workload', choices=['append','newlines','transform','record-append'], default='append')
     args = parser.parse_args()
     out = args.output.resolve()
     if out.is_relative_to(ROOT):
@@ -45,15 +45,16 @@ os.execv(os.environ['NIL_CONTROL_CLANG'],[os.environ['NIL_CONTROL_CLANG'],*args]
 ''')
     wrapper.chmod(0o755)
     env = dict(os.environ,NIL_CLANG=str(wrapper),NIL_CONTROL_CURRENT=str(current),NIL_CONTROL_BEFORE=str(before),NIL_CONTROL_CLANG=shutil.which('clang'))
-    source = HERE.parent/'transform.nil' if args.workload=='transform' else HERE.parent/'workloads'/(args.workload+'.nil')
+    source = (HERE.parent/'keyed/record-append.nil' if args.workload=='record-append' else HERE.parent/'transform.nil' if args.workload=='transform' else HERE.parent/'workloads'/(args.workload+'.nil'))
     for variant in ['before','after']:
         env['NIL_CONTROL_VARIANT']=variant
         env['NIL_CONTROL_IR']=str(out/(variant+'.ll'))
         subprocess.run([str(ROOT/'target/release/nil'),'--profile','expr-v5','build',str(source),'-O2','-o',str(out/variant)],env=env,cwd=ROOT,check=True)
     assert (out/'before.ll').read_bytes()==(out/'after.ll').read_bytes(), 'IR changed'
     samples={k:[] for k in ['before','after']}
-    if args.workload=='append':
-        arguments=['1048576'];expected_stdout=b'1048576\n';expected_file=None
+    if args.workload in ['append','record-append']:
+        count=1048576 if args.workload=='append' else 160000
+        arguments=[str(count)];expected_stdout=f'{count}\n'.encode();expected_file=None
     else:
         data=bytes(range(256))*65536
         input_file=out/'input.bin';input_file.write_bytes(data)
@@ -72,9 +73,9 @@ os.execv(os.environ['NIL_CONTROL_CLANG'],[os.environ['NIL_CONTROL_CLANG'],*args]
             ms=(time.perf_counter_ns()-start)/1e6
             assert (result.returncode,result.stdout,result.stderr)==(0,expected_stdout,b''), result
             if expected_file is not None:assert output_file.read_bytes()==expected_file
-            if args.workload!='append':assert input_file.read_bytes()==data
+            if args.workload not in ['append','record-append']:assert input_file.read_bytes()==data
             if rep:samples[variant].append(ms)
-    report=dict(workload=args.workload,input_size=1048576 if args.workload=='append' else 16777216,before_revision=subprocess.check_output(['git','rev-parse',args.before],cwd=ROOT,text=True).strip(),after_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),methodology='Identical current emitted workload IR, only application.c replaced by pre-collection runtime; O2/LTO compiler flags unchanged; alternating paired whole-process timing, one warmup, output verified, no CPU isolation. This isolates runtime composition, not a whole historical compiler comparison.',repeats=args.repeats,samples_ms=samples,median_ms={k:statistics.median(v) for k,v in samples.items()},ir_sha256=hashlib.sha256((out/'after.ll').read_bytes()).hexdigest(),source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),runtime_sha256={'before':hashlib.sha256(before.read_bytes()).hexdigest(),'after':hashlib.sha256(current.read_bytes()).hexdigest()})
+    report=dict(workload=args.workload,input_size=160000 if args.workload=='record-append' else 1048576 if args.workload=='append' else 16777216,before_revision=subprocess.check_output(['git','rev-parse',args.before],cwd=ROOT,text=True).strip(),after_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),methodology='Identical current emitted workload IR, only application.c replaced by the requested --before runtime; O2/LTO compiler flags unchanged; alternating paired whole-process timing, one warmup, output verified, no CPU isolation. This isolates runtime composition, not a whole historical compiler comparison.',repeats=args.repeats,samples_ms=samples,median_ms={k:statistics.median(v) for k,v in samples.items()},ir_sha256=hashlib.sha256((out/'after.ll').read_bytes()).hexdigest(),source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),runtime_sha256={'before':hashlib.sha256(before.read_bytes()).hexdigest(),'after':hashlib.sha256(current.read_bytes()).hexdigest()})
     (out/'results.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report),flush=True)
 
