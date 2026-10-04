@@ -24,6 +24,7 @@ def main():
     parser.add_argument('--before-compiler', type=Path, required=True)
     parser.add_argument('--before-revision', default='c4ffcfb')
     parser.add_argument('--repeats', type=int, default=25)
+    parser.add_argument('--workload', action='append', choices=['hot', 'hot-file', 'whole-file'])
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     if args.repeats < 5:
@@ -41,6 +42,8 @@ def main():
     tasks = [('hot', [str(size)], b'65536\n', size),
              ('hot-file', [str(input_file)], b'65536\n', size + 1),
              ('whole-file', [str(input_file)], b'true\n', 1)]
+    if args.workload:
+        tasks = [task for task in tasks if task[0] in args.workload]
     cases = []
     for task, values, expected, calls in tasks:
         for opt in ['O0', 'O2']:
@@ -51,7 +54,7 @@ def main():
                 subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(HERE / (task + '.nil')), '-' + opt, '-o', str(binary)], check=True)
                 ir = subprocess.check_output([str(compiler), '--profile', 'expr-v5', 'llvm', str(HERE / (task + '.nil'))], text=True)
                 (out / f'{task}-{name}.ll').write_text(ir)
-                ir_counts[name] = {key: ir.count(key) for key in ['call ptr @nil_roots_enter(', 'call void @nil_root_store(', 'call ptr @nil_set_unique(', 'call ptr @nil_set(', 'call i1 @nil_equal(', 'call i1 @nil_plugin0_fn0(']}
+                ir_counts[name] = {key: ir.count(key) for key in ['call ptr @nil_roots_enter(', 'call void @nil_root_store(', 'call ptr @nil_set_unique(', 'call ptr @nil_set(', 'call i1 @nil_equal(', 'call i1 @nil_plugin0_fn0(', 'call i1 @nil_bulk_compare(']}
                 binaries[name] = binary
             samples = {name: [] for name in compilers}
             # Paired, alternating order avoids timing every old binary first.

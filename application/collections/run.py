@@ -17,12 +17,15 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, default=25)
     parser.add_argument('--workload', action='append', help='Select a controlled shape; omit to run all')
+    parser.add_argument('--compiler', type=Path, help='Use a frozen compiler for paired historical comparisons')
     args = parser.parse_args()
     out = args.output.resolve()
     if out.is_relative_to(ROOT):
         parser.error('Output must be outside source checkouts')
     out.mkdir(parents=True, exist_ok=True)
-    subprocess.run(['cargo', 'build', '-p', 'nil', '--release', '--locked', '--offline'], cwd=ROOT, check=True)
+    if args.compiler is None:
+        subprocess.run(['cargo', 'build', '-p', 'nil', '--release', '--locked', '--offline'], cwd=ROOT, check=True)
+    compiler = args.compiler.resolve() if args.compiler else ROOT / 'target/release/nil'
     rows = []
     shapes = [('build', [1000, 4000, 16000, 64000, 256000, 1048576]),
               ('update', [1000, 4000, 16000, 64000, 256000, 1048576]),
@@ -36,7 +39,7 @@ def main():
         shapes = [(name, sizes) for name, sizes in shapes if name in args.workload]
     for name, sizes in shapes + [('boundary', [])]:
         exe = out / name
-        subprocess.run([str(ROOT / 'target/release/nil'), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(exe)], cwd=ROOT, check=True)
+        subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(exe)], cwd=ROOT, check=True)
         for n in sizes:
             samples = []
             expected = n*(n-1) if name == 'alias-build' else n*(n-1)//2
@@ -58,7 +61,7 @@ def main():
             row = dict(workload=name, elements=n, returncode=result.returncode, stdout=result.stdout.decode(), stderr=result.stderr.decode())
             boundary.append(row)
             print('BOUNDARY '+json.dumps(row), flush=True)
-    report = dict(schema=1, methodology='O2 whole-process wall time, one warmup, median of repeats, verified output, no CPU isolation; native only', repeats=args.repeats, compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(), source_hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.nil')}, records=rows, boundary=boundary)
+    report = dict(schema=1, methodology='O2 whole-process wall time, one warmup, median of repeats, verified output, no CPU isolation; native only', repeats=args.repeats, compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(), compiler_sha256=hashlib.sha256(compiler.read_bytes()).hexdigest(), source_hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.nil')}, records=rows, boundary=boundary)
     (out/'results.json').write_text(json.dumps(report,indent=2)+'\n')
 
 

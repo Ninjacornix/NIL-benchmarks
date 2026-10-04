@@ -17,19 +17,22 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--repeats', type=int, default=9)
     parser.add_argument('--records', action='store_true', help='also measure scalar-record insertion and the conservative record-field append boundary')
+    parser.add_argument('--compiler', type=Path, help='Use a frozen compiler for paired historical comparisons')
     args = parser.parse_args()
     output = args.output.resolve()
     if output.is_relative_to(ROOT):
         parser.error('Output must be outside source checkouts')
     output.mkdir(parents=True, exist_ok=True)
-    subprocess.run(['cargo', 'build', '-p', 'nil', '--release', '--locked', '--offline'], cwd=ROOT, check=True)
+    if args.compiler is None:
+        subprocess.run(['cargo', 'build', '-p', 'nil', '--release', '--locked', '--offline'], cwd=ROOT, check=True)
+    compiler = args.compiler.resolve() if args.compiler else ROOT / 'target/release/nil'
     records = []
     workloads = [('insert', [1000, 4000, 16000, 64000]), ('repack', [1000, 4000, 16000, 64000]), ('repack-held', [4096, 65536, 1048576])]
     if args.records:
         workloads += [('record-insert', [1000, 4000, 16000, 64000]), ('record-append', [10000, 40000, 160000])]
     for name, sizes in workloads:
         binary = output / name
-        subprocess.run([str(ROOT / 'target/release/nil'), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(binary)], cwd=ROOT, check=True)
+        subprocess.run([str(compiler), '--profile', 'expr-v5', 'build', str(HERE / (name + '.nil')), '-O2', '-o', str(binary)], cwd=ROOT, check=True)
         for count in sizes:
             times = []
             for repeat in range(args.repeats + 1):
@@ -53,7 +56,7 @@ def main():
         for count in [262143, 262144, 262145, 262146]:
             result = subprocess.run([str(output / 'record-insert'), str(count)], capture_output=True, timeout=60)
             record_boundary.append({'iterations': count, 'returncode': result.returncode, 'stdout': result.stdout.decode(), 'stderr': result.stderr.decode()})
-    report = {'record_boundary': record_boundary, 'schema': 1, 'methodology': 'Whole-process wall time; one warmup, median of repeats, output verified; no CPU isolation. Includes decimal key formatting and hash table growth. Repack increases an owned byte value by one byte each iteration, deliberately measuring the disclosed quadratic payload copy.', 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(), 'repeats': args.repeats, 'source_hashes': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.nil')}, 'records': records, 'boundary': boundary}
+    report = {'record_boundary': record_boundary, 'schema': 1, 'methodology': 'Whole-process wall time; one warmup, median of repeats, output verified; no CPU isolation. Includes decimal key formatting and hash table growth. Repack increases an owned byte value by one byte each iteration, deliberately measuring the disclosed quadratic payload copy.', 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(), 'repeats': args.repeats, 'compiler_sha256': hashlib.sha256(compiler.read_bytes()).hexdigest(), 'source_hashes': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.nil')}, 'records': records, 'boundary': boundary}
     (output / 'results.json').write_text(json.dumps(report, indent=2) + '\n')
     print('BOUNDARY ' + json.dumps(boundary), flush=True)
     if args.records:
