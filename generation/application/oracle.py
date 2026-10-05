@@ -42,7 +42,7 @@ def preflight():
     print('Preflight passed: all four fixtures, reference/native O0/O2/Python '+sys.version.split()[0],flush=True)
 
 
-def sandbox(command, folder, timeout=5):
+def sandbox(command, folder, timeout=5, environment=None):
     # This is a benchmark execution boundary, not a NIL security feature.
     import json
     allowed = [str(folder.resolve()), str(HERE/'python_driver.py')]
@@ -62,7 +62,7 @@ def sandbox(command, folder, timeout=5):
     temp_deny = ''.join('(deny file-read-data (require-all (subpath '+json.dumps(root)+') (require-not (subpath '+json.dumps(allowed[0])+')) '+exceptions+'))' for root in ['/private/tmp',str(Path(tempfile.gettempdir()).resolve())])
     profile = '(version 1)(deny default)(allow process-exec)(allow sysctl-read)(allow mach-lookup)(allow process-info*)(allow file-read*)(allow file-write* (subpath '+json.dumps(str(folder.resolve()))+'))'+user_deny+temp_deny
     env = {'PATH':os.environ.get('PATH','/usr/bin:/bin'), 'HOME':str(folder), 'TMPDIR':str(folder),
-           'PYTHONDONTWRITEBYTECODE':'1', 'PYTHONHASHSEED':'0'}
+           'PYTHONDONTWRITEBYTECODE':'1', 'PYTHONHASHSEED':'0', **(environment or {})}
     return subprocess.run(['/usr/bin/sandbox-exec','-p',profile,*map(str,command)], cwd=folder,
                           env=env,capture_output=True,timeout=timeout)
 
@@ -107,13 +107,14 @@ def evaluate(source, language, task, folder, manifests=()):
             outcome['compile_ok']=True
         else:
             raise ValueError('unknown language')
-        for data_hex in task['inputs']:
-            data=bytes.fromhex(data_hex); answer=expected(task['id'],data)
+        for index, data_hex in enumerate(task['inputs']):
+            environment = task.get('environments', [{}] * len(task['inputs']))[index]
+            data=bytes.fromhex(data_hex); answer=expected(task['id'],data,environment) if 'environments' in task else expected(task['id'],data)
             with tempfile.TemporaryDirectory(dir=folder) as directory:
                 work=Path(directory); inp=work/'input.bin'; output=work/'output.bin'
                 inp.write_bytes(data)
                 if language == 'expr-v5':
-                    ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(inp),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],capture_output=True,timeout=5)
+                    ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(inp),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**environment},capture_output=True,timeout=5)
                     ref_ok=ref.returncode==0 and ref.stdout==f'VALUE\t{len(answer)}\n'.encode() and (work/'reference.bin').exists() and (work/'reference.bin').read_bytes()==answer and (work/'stdout.bin').read_bytes()==b''
                     outcome['tests_passed']+=int(ref_ok)
                     for artifact in ['reference.bin','stdout.bin']:
@@ -121,7 +122,7 @@ def evaluate(source, language, task, folder, manifests=()):
                         if artifact_path.exists():artifact_path.unlink()
                     for binary in binaries:
                         if output.exists():output.unlink()
-                        native=sandbox([binary,'input.bin','output.bin'],work)
+                        native=sandbox([binary,'input.bin','output.bin'],work,environment=environment)
                         good=native.returncode==0 and native.stdout==f'{len(answer)}\n'.encode() and output.exists() and output.read_bytes()==answer
                         outcome['native_tests_passed']+=int(good)
                 else:

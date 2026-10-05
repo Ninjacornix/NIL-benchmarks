@@ -30,6 +30,10 @@
       "nil_status": "supported",
       "baseline_status": "supported",
       "support_note": "ADR 030 index-linked record-buffer tree and unescaped canonical string JSON adapter, verified against unchanged selected data fixtures."
+    },
+    "env_lookup": {
+      "nil_status": "supported",
+      "support_note": "ADR 033 environment host effect; original per-fixture environment and golden unchanged."
     }
   }
 }

@@ -14,6 +14,10 @@ struct MemoryHost {
     stdout: Vec<u8>,
 }
 impl Host for MemoryHost {
+    fn env(&mut self, name: &[u8]) -> Result<Vec<u8>, Diagnostic> {
+        // The runner supplies a scrubbed fixture environment, never the user's.
+        nil_compiler::application::FileHost::default().env(name)
+    }
     fn read(&mut self, path: &[u8]) -> Result<Vec<u8>, Diagnostic> {
         if path == b"input.bin" {
             Ok(self.input.clone())

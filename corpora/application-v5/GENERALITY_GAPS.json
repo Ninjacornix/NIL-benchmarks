@@ -1,11 +1,10 @@
 {
   "schema": 1,
-  "unsupported_total": 13,
+  "unsupported_total": 12,
   "external_unsupported": 12,
   "supported_external": 42,
-  "classification": "Includes native capability gaps AND unimplemented adapters; no theoretical unexpressibility claim for encoded-data algorithms.",
+  "classification": "ADR 033: historical gap labels distinguish core contracts from unfinished plugin/library adapters; entropy and multi_file_fixture remain unsupported under frozen oracle contracts.",
   "blocking_task_counts": {
-    "environment": 1,
     "higher_order": 1,
     "maps_records": 2,
     "unicode": 2,
@@ -18,9 +17,6 @@
     "reactive": 1
   },
   "tasks_by_gap": {
-    "environment": [
-      "env_lookup"
-    ],
     "higher_order": [
       "ex_accumulate"
     ],
@@ -83,7 +79,8 @@
         "ex_atbash_cipher",
         "ex_crypto_square"
       ]
-    }
+    },
+    "host_effects": "env_lookup newly verified using unchanged environment fixtures; ex_diffie_hellman golden is a symbolic predicate without a numeric p/key property oracle; ex_grep poem fixtures exist, but JSON/flag adapter and fixture mounting remain."
   },
   "keyed_followup": {
     "verified_moved_to_supported": [
@@ -183,5 +180,19 @@
       "No sequence-bearing record map values, generic buffer-valued maps or nested map values.",
       "No recursive type graph; integer links require application validation."
     ]
+  },
+  "placement_by_task": {
+    "ex_accumulate": "core",
+    "ex_alphametics": "plugin",
+    "ex_dot_dsl": "plugin",
+    "ex_anagram": "plugin",
+    "ex_bob": "plugin",
+    "ex_bank_account": "core",
+    "ex_camicia": "plugin",
+    "ex_diffie_hellman": "core",
+    "ex_forth": "plugin",
+    "ex_gigasecond": "plugin",
+    "ex_grep": "plugin/harness (core runtime file access exists; directory capability now added)",
+    "ex_hangman": "core"
   }
 }
