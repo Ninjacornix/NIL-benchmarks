@@ -1,0 +1,56 @@
+{
+  "inline": {
+    "loop_fn": 1,
+    "root_store_calls": 0,
+    "root_frame_calls": 0,
+    "checked_accessor_calls": 0,
+    "byte_loads": 1,
+    "length_queries": 1,
+    "vector_compare_in_entry": true,
+    "callback_calls_in_entry": []
+  },
+  "direct": {
+    "loop_fn": 1,
+    "root_store_calls": 0,
+    "root_frame_calls": 0,
+    "checked_accessor_calls": 0,
+    "byte_loads": 1,
+    "length_queries": 1,
+    "vector_compare_in_entry": true,
+    "callback_calls_in_entry": []
+  },
+  "map": {
+    "loop_fn": 2,
+    "root_store_calls": 0,
+    "root_frame_calls": 0,
+    "checked_accessor_calls": 0,
+    "byte_loads": 1,
+    "length_queries": 1,
+    "vector_compare_in_entry": true,
+    "callback_calls_in_entry": []
+  },
+  "direct_noinline": {
+    "loop_fn": 1,
+    "root_store_calls": 0,
+    "root_frame_calls": 0,
+    "checked_accessor_calls": 0,
+    "byte_loads": 1,
+    "length_queries": 1,
+    "vector_compare_in_entry": false,
+    "callback_calls_in_entry": [
+      "bl\t_nil_fn2"
+    ]
+  },
+  "map_noinline": {
+    "loop_fn": 2,
+    "root_store_calls": 0,
+    "root_frame_calls": 0,
+    "checked_accessor_calls": 0,
+    "byte_loads": 1,
+    "length_queries": 1,
+    "vector_compare_in_entry": false,
+    "callback_calls_in_entry": [
+      "bl\t_nil_fn1"
+    ]
+  }
+}

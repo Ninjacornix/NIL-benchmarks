@@ -1,0 +1,50 @@
+[
+  {
+    "n": 10,
+    "optimization": "-O0",
+    "reference": "Ok(I64(10))",
+    "status": 0,
+    "stdout": "10\n",
+    "stderr": ""
+  },
+  {
+    "n": 10,
+    "optimization": "-O2",
+    "reference": "Ok(I64(10))",
+    "status": 0,
+    "stdout": "10\n",
+    "stderr": ""
+  },
+  {
+    "n": 126,
+    "optimization": "-O0",
+    "reference": "Ok(I64(126))",
+    "status": 0,
+    "stdout": "126\n",
+    "stderr": ""
+  },
+  {
+    "n": 126,
+    "optimization": "-O2",
+    "reference": "Ok(I64(126))",
+    "status": 0,
+    "stdout": "126\n",
+    "stderr": ""
+  },
+  {
+    "n": 128,
+    "optimization": "-O0",
+    "reference": "Err(Diagnostic { code: \"E008\", phase: Execute, span: Some(Span { start: 10, end: 15 }), message: \"call depth limit exceeded\", expected: None, actual: None })",
+    "status": 1,
+    "stdout": "",
+    "stderr": "E008 @10..15 call depth limit exceeded\n"
+  },
+  {
+    "n": 128,
+    "optimization": "-O2",
+    "reference": "Err(Diagnostic { code: \"E008\", phase: Execute, span: Some(Span { start: 10, end: 15 }), message: \"call depth limit exceeded\", expected: None, actual: None })",
+    "status": 1,
+    "stdout": "",
+    "stderr": "E008 @10..15 call depth limit exceeded\n"
+  }
+]

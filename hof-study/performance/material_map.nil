@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(&c,!read(a)))
+([i:i],s):s=@(b,0;b<#a;a[b:^a(a[b])],b+1;a)
+1=255-a

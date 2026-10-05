@@ -1,0 +1,41 @@
+{
+  "baseline": "07b1ee2",
+  "comparisons": [
+    {
+      "profile": "expr-v5",
+      "file": "benchmarks/application/workloads/append.nil",
+      "ir_identical": true,
+      "sha256": "65f574d3fffa1f5a2c3f5f888960794254d7cbd22a4a26510c2214398685a921"
+    },
+    {
+      "profile": "expr-v5",
+      "file": "benchmarks/application/workloads/newlines.nil",
+      "ir_identical": true,
+      "sha256": "5dc57ab3b1e822514716040a0b6122d1583c99abf8b284e5f6269571229464ef"
+    },
+    {
+      "profile": "expr-v5",
+      "file": "benchmarks/application/transform.nil",
+      "ir_identical": true,
+      "sha256": "ee351dd38d9bce1a56c495fe645ba60d60964f63fa052ae2a4f7de7dbb8b873e"
+    },
+    {
+      "profile": "expr-v0",
+      "file": "examples/add.nil",
+      "ir_identical": true,
+      "sha256": "c9648df175bffb35f342afa2a06c3399a27ea69efd36f909d122bf2afcb83b04"
+    },
+    {
+      "profile": "expr-v3",
+      "file": "examples/expr-v3/weighted.nil",
+      "ir_identical": true,
+      "sha256": "1a6db0b776aafa4766dfda29a6675cc0ce963f10e7ac6595903343b1fc1df67c"
+    },
+    {
+      "profile": "expr-v4",
+      "file": "examples/expr-v4/reverse.nil",
+      "ir_identical": true,
+      "sha256": "f6838e52bcd55647f700728546171277b026cf0fd63a22a9d406bd7d423cb685"
+    }
+  ]
+}

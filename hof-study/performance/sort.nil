@@ -1,0 +1,6 @@
+1:v=b(&c,d(a))
+([i,i:b],v):v=@(b,1;b<#a;e(^a,a,b),b+1;a)
+2:b=a<b
+1:v=@(!buffer(a,0),0,a;b<c;a[b:c-b],b+1,c;a)
+([i,i:b],v,i):v=@(b,c;b>0?^a(a[b],a[b-1]):false;f(a,b),b-1;a)
+(v,i):v=a[b-1:a[b]][b:a[b-1]]

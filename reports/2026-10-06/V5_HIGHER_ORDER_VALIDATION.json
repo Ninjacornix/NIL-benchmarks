@@ -1,0 +1,4657 @@
+{
+  "debug": {
+    "exit_code": 0,
+    "tests_passed": 422,
+    "log_sha256": "9354e1dbdcfca09cc6def1ccfccc84939480c40b7cb8b5b62519c6bf6259dc16",
+    "warnings": 0
+  },
+  "release": {
+    "exit_code": 0,
+    "tests_passed": 422,
+    "log_sha256": "09e0aed9921553311342fb129c3394d25ec3e6c10682ee7dc5be372f718fb5a3",
+    "warnings": 0
+  },
+  "sanitizers": {
+    "exit_code": 0,
+    "tests_passed": 169,
+    "log_sha256": "ef53f99136d1454c04e3fbae0191f63102d9b4a54a0ee03647416b208173c892",
+    "warnings": 0
+  },
+  "fuzz": [
+    {
+      "seed": 5130572,
+      "programs": 418,
+      "native_builds": 836,
+      "divergences": 0,
+      "observed_codes": {
+        "E009": 3,
+        "E012": 20,
+        "E013": 30,
+        "E014": 6,
+        "E015": 8,
+        "E016": 13,
+        "E017": 10,
+        "E018": 11,
+        "E019": 3,
+        "E020": 6,
+        "E021": 5,
+        "E022": 3,
+        "OK": 300
+      },
+      "generated_intrinsics": [
+        "bits",
+        "buffer",
+        "bytemap",
+        "bytes",
+        "concat",
+        "directory",
+        "each",
+        "env",
+        "equal",
+        "f64",
+        "find",
+        "floatbits",
+        "format",
+        "get",
+        "has",
+        "i64",
+        "insert",
+        "key",
+        "map",
+        "out",
+        "parse",
+        "parsebuf",
+        "parsef64",
+        "parseu128",
+        "parseu64",
+        "plugin",
+        "put",
+        "random",
+        "read",
+        "size",
+        "slice",
+        "sort",
+        "trunci64",
+        "truncu64",
+        "u128",
+        "u64",
+        "write"
+      ],
+      "call_families": {
+        "bulk_alias_identity": 1,
+        "bulk_call_loop_alias": 1,
+        "bulk_empty": 1,
+        "bulk_first_mismatch": 1,
+        "bulk_full_equal": 1,
+        "bulk_integer_equal": 1,
+        "bulk_integer_extremes": 1,
+        "bulk_last_mismatch": 1,
+        "bulk_lazy_trap": 1,
+        "bulk_length_mismatch": 1,
+        "bulk_quota_failure": 1,
+        "bulk_quota_live_success": 1,
+        "called_effect_lazy": 1,
+        "calls_lazy": 1,
+        "collection_append": 1,
+        "collection_child_alias": 1,
+        "collection_concat_alias": 1,
+        "collection_concat_empty": 1,
+        "collection_construct": 1,
+        "collection_dead_children_quota": 1,
+        "collection_each": 1,
+        "collection_effects": 1,
+        "collection_empty": 1,
+        "collection_growth_loop": 1,
+        "collection_index_error": 1,
+        "collection_lazy": 1,
+        "collection_live_children_quota": 1,
+        "collection_negative_length": 1,
+        "collection_nested_each_sort_map": 1,
+        "collection_nested_lifetime": 1,
+        "collection_old_alias": 1,
+        "collection_plugin_nested": 1,
+        "collection_quota": 1,
+        "collection_slice": 1,
+        "collection_slice_priority": 1,
+        "collection_sort_deferred": 1,
+        "collection_sort_mode": 1,
+        "collection_update_loop_alias": 1,
+        "collection_zero_bounds": 1,
+        "collection_zero_concat_slice_update": 1,
+        "collection_zero_layout": 1,
+        "collection_zero_quota": 1,
+        "computed_start": 1,
+        "conditional_sequence_alloc": 1,
+        "each_append_snapshot_alias": 1,
+        "each_buffer_reduce": 1,
+        "each_called_effect": 1,
+        "each_empty": 1,
+        "each_ignored_key_quota": 1,
+        "each_ignored_value_quota": 1,
+        "each_inherited_bounds_priority": 1,
+        "each_lazy_called_effect": 1,
+        "each_map_order": 1,
+        "each_nested_loop": 1,
+        "each_owned_byte_values": 1,
+        "each_parallel_state": 1,
+        "each_returned_sequence_alias": 1,
+        "each_single_binary": 1,
+        "each_snapshot_map_update": 1,
+        "each_snapshot_replace": 1,
+        "each_sort_update_chain": 1,
+        "each_sorted_empty_map": 1,
+        "equal_buffer": 1,
+        "equal_bytes": 1,
+        "equal_called_effects": 1,
+        "equal_replacement_alias": 1,
+        "exit_index": 1,
+        "field_append_allocation_before_scalar_read": 1,
+        "field_append_caller_alias": 1,
+        "field_append_dead_edge": 1,
+        "field_append_old_read": 1,
+        "field_append_quota_alias": 1,
+        "field_collection_old_read": 1,
+        "find_bounds_priority": 1,
+        "find_buffer": 1,
+        "find_byte_range": 1,
+        "find_bytes": 1,
+        "find_end_bounds": 1,
+        "find_leaf_loop": 1,
+        "float_add_bits": 1,
+        "float_called_loop": 1,
+        "float_comparison_nan": 1,
+        "float_contraction": 1,
+        "float_decimal_parse": 1,
+        "float_div_bits": 1,
+        "float_format_exact": 1,
+        "float_inf_nan": 1,
+        "float_lazy_trap": 1,
+        "float_max_finite": 1,
+        "float_min_normal": 1,
+        "float_mul_bits": 1,
+        "float_nan_payload": 1,
+        "float_parse_invalid": 1,
+        "float_parse_overflow": 1,
+        "float_parse_underflow": 1,
+        "float_roundtrip_bits": 1,
+        "float_signed_zero": 1,
+        "float_sub_bits": 1,
+        "float_subnormal": 1,
+        "float_to_integer_edge": 1,
+        "float_to_integer_fraction": 1,
+        "float_to_integer_nan": 1,
+        "float_to_unsigned_negative": 1,
+        "float_to_wide_edge": 1,
+        "float_unselected_host": 1,
+        "float_zero_comparison": 1,
+        "hof_allocation_alias": 1,
+        "hof_bounds": 1,
+        "hof_buffer_map": 1,
+        "hof_bytes_map": 1,
+        "hof_comparator": 1,
+        "hof_each": 1,
+        "hof_effect_denial": 1,
+        "hof_effect_order": 1,
+        "hof_env": 1,
+        "hof_env_denial": 1,
+        "hof_forwarding": 1,
+        "hof_lazy_allocation": 1,
+        "hof_module_callback": 1,
+        "hof_module_template": 1,
+        "hof_mutual_recursion": 1,
+        "hof_nested_zero_slot_record": 1,
+        "hof_quota": 1,
+        "hof_random": 1,
+        "hof_read": 1,
+        "hof_recursion": 1,
+        "hof_recursive_sequence": 1,
+        "hof_selected_effect": 1,
+        "hof_trap_order": 1,
+        "hof_unselected_effect": 1,
+        "hof_write": 1,
+        "hof_zero_slot_record": 1,
+        "host_directory_alias": 1,
+        "host_directory_denial": 1,
+        "host_directory_empty": 1,
+        "host_directory_entry_kinds": 1,
+        "host_directory_file": 1,
+        "host_directory_key": 1,
+        "host_directory_large": 1,
+        "host_directory_lazy": 1,
+        "host_directory_loop_state": 1,
+        "host_directory_missing": 1,
+        "host_directory_nul": 1,
+        "host_directory_order": 1,
+        "host_directory_quota": 1,
+        "host_directory_unreadable": 1,
+        "host_env_absent": 1,
+        "host_env_denial": 1,
+        "host_env_empty": 1,
+        "host_env_empty_name": 1,
+        "host_env_equals_name": 1,
+        "host_env_loop_state": 1,
+        "host_env_nul_name": 1,
+        "host_env_present": 1,
+        "host_env_quota": 1,
+        "host_env_raw": 1,
+        "host_env_return_alias": 1,
+        "host_invalid_before_denial": 1,
+        "host_random_callee": 1,
+        "host_random_denial": 1,
+        "host_random_first": 1,
+        "host_random_lazy": 1,
+        "host_random_live_quota": 1,
+        "host_random_loop": 1,
+        "host_random_seed_boundary": 1,
+        "host_random_seed_failure": 1,
+        "host_random_sequence": 1,
+        "host_trap_order": 1,
+        "integer_float_rounding": 1,
+        "layout_all_zero_fields": 1,
+        "layout_all_zero_map_update": 1,
+        "layout_mixed_zero_each": 1,
+        "layout_mixed_zero_nonzero_array": 1,
+        "layout_mixed_zero_scalar": 1,
+        "layout_nested_zero_buffer": 1,
+        "layout_nested_zero_loop_update": 1,
+        "layout_nested_zero_map": 1,
+        "layout_nested_zero_map_loop": 1,
+        "layout_nested_zero_negative": 1,
+        "layout_zero_alias": 1,
+        "layout_zero_duplicate_key": 1,
+        "layout_zero_lazy": 1,
+        "layout_zero_loop_append": 1,
+        "layout_zero_map": 1,
+        "layout_zero_missing_key": 1,
+        "leaf_loop": 1,
+        "map_alias_old_read": 1,
+        "map_binary_keys": 1,
+        "map_byte_constructor_quota": 1,
+        "map_byte_repack": 1,
+        "map_byte_result_lifetime": 1,
+        "map_byte_update_alias": 1,
+        "map_byte_values_calls": 1,
+        "map_caller_alias": 1,
+        "map_constructor_quota": 1,
+        "map_duplicate_argument_effect": 1,
+        "map_duplicate_before_quota": 1,
+        "map_duplicate_key": 1,
+        "map_empty": 1,
+        "map_insert_loop": 1,
+        "map_iteration_bounds": 1,
+        "map_key_iteration": 1,
+        "map_key_result_quota": 1,
+        "map_lazy_alias": 1,
+        "map_lazy_called_effect": 1,
+        "map_lookup": 1,
+        "map_lookup_result_quota": 1,
+        "map_loop_alias": 1,
+        "map_missing_key": 1,
+        "map_nested_byte_values": 1,
+        "map_nested_loop": 1,
+        "map_order_growth": 1,
+        "map_put_quota": 1,
+        "map_quota_boundary": 1,
+        "map_recursive_alias": 1,
+        "map_returned_alias": 1,
+        "mixed_width_explicit": 1,
+        "module_alias_after_return": 1,
+        "module_allocation": 1,
+        "module_borrowed_calls_loop": 1,
+        "module_bounds_failure": 1,
+        "module_byte_range_failure": 1,
+        "module_dead_quota": 1,
+        "module_denied_host": 1,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_effect_trap_order": 1,
+        "module_file_pipeline": 1,
+        "module_host_effects": 1,
+        "module_import_cycle": 1,
+        "module_io_failure": 1,
+        "module_lazy_unselected": 1,
+        "module_live_quota": 1,
+        "module_local_name_collision": 1,
+        "module_loop_state_allocation": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_multiple_functions": 1,
+        "module_noncanonical_namespace": 1,
+        "module_parse_failure": 1,
+        "module_path_failure": 1,
+        "module_quota_boundary": 1,
+        "module_record_buffer_children": 1,
+        "module_record_return": 1,
+        "module_recursive_live_sequence": 1,
+        "module_sort_each_plugin": 1,
+        "module_transitive_import": 1,
+        "module_unknown_version": 1,
+        "mutual_recursion_reads": 1,
+        "negative_start": 1,
+        "negative_zero_trip": 1,
+        "nested_builder_fresh": 1,
+        "nested_builder_lazy": 1,
+        "nested_builder_old_alias": 1,
+        "nested_builder_plugin_held": 1,
+        "nested_builder_quota": 1,
+        "nested_builder_shared": 1,
+        "nested_call_loop": 1,
+        "parsebuf_argument_effect": 1,
+        "parsebuf_binary_separators": 1,
+        "parsebuf_caller_alias": 1,
+        "parsebuf_canonical_failure": 1,
+        "parsebuf_empty_equal": 1,
+        "parsebuf_fields": 1,
+        "parsebuf_internal_empty": 1,
+        "parsebuf_lazy": 1,
+        "parsebuf_leading_empty": 1,
+        "parsebuf_loop_alias": 1,
+        "parsebuf_quota_priority": 1,
+        "parsebuf_recursive_alias": 1,
+        "parsebuf_return_alias": 1,
+        "parsebuf_trailing_empty": 1,
+        "plugin_argument_division": 1,
+        "plugin_argument_order": 1,
+        "plugin_argument_quota_order": 1,
+        "plugin_call_held_alias": 1,
+        "plugin_dead_quota": 1,
+        "plugin_each_state": 1,
+        "plugin_effect_around_call": 1,
+        "plugin_effect_order": 1,
+        "plugin_equal_binary": 1,
+        "plugin_equal_bounds_order": 1,
+        "plugin_equal_buffer": 1,
+        "plugin_equal_bytes": 1,
+        "plugin_equal_empty": 1,
+        "plugin_equal_length": 1,
+        "plugin_equal_returned": 1,
+        "plugin_lazy_selected": 1,
+        "plugin_lazy_unselected": 1,
+        "plugin_live_quota": 1,
+        "plugin_loop_alias": 1,
+        "plugin_loop_state": 1,
+        "plugin_record_alias": 1,
+        "plugin_record_construct": 1,
+        "plugin_returned_buffer": 1,
+        "plugin_returned_sequence": 1,
+        "record_buffer_alias": 1,
+        "record_called_lifetime": 1,
+        "record_construct": 1,
+        "record_dead_quota": 1,
+        "record_duplicate_fields": 1,
+        "record_each_state": 1,
+        "record_field_effect_order": 1,
+        "record_field_trap_order": 1,
+        "record_lazy_called_effect": 1,
+        "record_lazy_trap_effect": 1,
+        "record_lazy_update": 1,
+        "record_live_quota": 1,
+        "record_loop_state": 1,
+        "record_map_alias": 1,
+        "record_map_binary_key": 1,
+        "record_map_bits": 1,
+        "record_map_builder": 1,
+        "record_map_duplicate": 1,
+        "record_map_each_snapshot": 1,
+        "record_map_each_sort": 1,
+        "record_map_empty_each": 1,
+        "record_map_invalid_mode": 1,
+        "record_map_missing": 1,
+        "record_map_quota": 1,
+        "record_map_sort_mode": 1,
+        "record_mixed_chain": 1,
+        "record_mutual_recursion": 1,
+        "record_nested_lifetime": 1,
+        "record_returned_alias": 1,
+        "record_self_recursion": 1,
+        "record_sort_field": 1,
+        "record_update_alias": 1,
+        "recursion_reads": 1,
+        "recursive_allocation": 1,
+        "recursive_sequence_alias": 1,
+        "sequence_return_loop": 1,
+        "shifted_index": 1,
+        "slice_return_alias_live": 1,
+        "sort_alias_old_read": 1,
+        "sort_binary_bytes": 1,
+        "sort_buffer": 1,
+        "sort_byte_value_prefix": 1,
+        "sort_bytes": 1,
+        "sort_caller_alias": 1,
+        "sort_duplicate_before_order": 1,
+        "sort_empty": 1,
+        "sort_equal_elements": 1,
+        "sort_invalid_order_before_quota": 1,
+        "sort_lazy_alias": 1,
+        "sort_loop_state": 1,
+        "sort_quota": 1,
+        "sort_rebuilt_lookup": 1,
+        "sort_signed_extrema": 1,
+        "sort_value_key_ties": 1,
+        "unsigned_order": 1,
+        "unsigned_parse_invalid": 1,
+        "unsigned_parse_roundtrip": 1,
+        "unsigned_wrap_add": 1,
+        "unsigned_wrap_sub": 1,
+        "unsigned_zero_division": 1,
+        "wide_called_loop": 1,
+        "wide_checked_narrow": 1,
+        "wide_explicit_trunc": 1,
+        "wide_parse_overflow": 1,
+        "wide_wrap_mul": 1
+      },
+      "source_mutations": {
+        "collection_missing_bracket": 31,
+        "collection_self_type": 154,
+        "collection_truncated": 154,
+        "collection_unknown_type": 154,
+        "collection_wrong_element": 31,
+        "each_changed_binding": 32,
+        "each_extra_delimiter": 32,
+        "each_missing_separator": 32,
+        "each_truncated": 32,
+        "each_unknown_operation": 32,
+        "hof_function_escape": 26,
+        "hof_malformed_type": 26,
+        "hof_unknown_parameter": 26,
+        "hof_unknown_reference": 26,
+        "hof_wrong_signature": 26,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_import_cycle": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_noncanonical_namespace": 1,
+        "module_unknown_version": 1,
+        "numeric_incomplete_exponent": 8,
+        "numeric_incomplete_fraction": 8,
+        "numeric_mixed_width": 6,
+        "numeric_unknown_conversion": 20,
+        "numeric_unknown_width": 31,
+        "plugin_missing_separator": 20,
+        "plugin_noncanonical_id": 20,
+        "plugin_truncated": 178,
+        "plugin_unknown_id": 20,
+        "plugin_unknown_operation": 20,
+        "record_duplicate_field": 32,
+        "record_dynamic_map_value": 11,
+        "record_missing_update_colon": 3,
+        "record_truncated_declaration": 32,
+        "record_unknown_field": 15,
+        "record_unknown_type": 32
+      },
+      "static_codes": {
+        "E002": 26,
+        "E004": 26,
+        "E005": 26,
+        "E007": 52
+      },
+      "family_codes": {
+        "bulk_alias_identity": {
+          "OK": 1
+        },
+        "bulk_call_loop_alias": {
+          "OK": 1
+        },
+        "bulk_empty": {
+          "OK": 1
+        },
+        "bulk_first_mismatch": {
+          "OK": 1
+        },
+        "bulk_full_equal": {
+          "OK": 1
+        },
+        "bulk_integer_equal": {
+          "OK": 1
+        },
+        "bulk_integer_extremes": {
+          "OK": 1
+        },
+        "bulk_last_mismatch": {
+          "OK": 1
+        },
+        "bulk_lazy_trap": {
+          "OK": 1
+        },
+        "bulk_length_mismatch": {
+          "OK": 1
+        },
+        "bulk_quota_failure": {
+          "E013": 1
+        },
+        "bulk_quota_live_success": {
+          "OK": 1
+        },
+        "called_effect_lazy": {
+          "OK": 1
+        },
+        "calls_lazy": {
+          "OK": 1
+        },
+        "collection_append": {
+          "OK": 1
+        },
+        "collection_child_alias": {
+          "OK": 1
+        },
+        "collection_concat_alias": {
+          "OK": 1
+        },
+        "collection_concat_empty": {
+          "OK": 1
+        },
+        "collection_construct": {
+          "OK": 1
+        },
+        "collection_dead_children_quota": {
+          "OK": 1
+        },
+        "collection_each": {
+          "OK": 1
+        },
+        "collection_effects": {
+          "OK": 1
+        },
+        "collection_empty": {
+          "OK": 1
+        },
+        "collection_growth_loop": {
+          "OK": 1
+        },
+        "collection_index_error": {
+          "E012": 1
+        },
+        "collection_lazy": {
+          "OK": 1
+        },
+        "collection_live_children_quota": {
+          "E013": 1
+        },
+        "collection_negative_length": {
+          "E013": 1
+        },
+        "collection_nested_each_sort_map": {
+          "OK": 1
+        },
+        "collection_nested_lifetime": {
+          "OK": 1
+        },
+        "collection_old_alias": {
+          "OK": 1
+        },
+        "collection_plugin_nested": {
+          "OK": 1
+        },
+        "collection_quota": {
+          "E013": 1
+        },
+        "collection_slice": {
+          "OK": 1
+        },
+        "collection_slice_priority": {
+          "E012": 1
+        },
+        "collection_sort_deferred": {
+          "E018": 1
+        },
+        "collection_sort_mode": {
+          "E012": 1
+        },
+        "collection_update_loop_alias": {
+          "OK": 1
+        },
+        "collection_zero_bounds": {
+          "E012": 1
+        },
+        "collection_zero_concat_slice_update": {
+          "OK": 1
+        },
+        "collection_zero_layout": {
+          "OK": 1
+        },
+        "collection_zero_quota": {
+          "E013": 1
+        },
+        "computed_start": {
+          "OK": 1
+        },
+        "conditional_sequence_alloc": {
+          "OK": 1
+        },
+        "each_append_snapshot_alias": {
+          "OK": 1
+        },
+        "each_buffer_reduce": {
+          "OK": 1
+        },
+        "each_called_effect": {
+          "OK": 1
+        },
+        "each_empty": {
+          "OK": 1
+        },
+        "each_ignored_key_quota": {
+          "OK": 1
+        },
+        "each_ignored_value_quota": {
+          "E013": 1
+        },
+        "each_inherited_bounds_priority": {
+          "E012": 1
+        },
+        "each_lazy_called_effect": {
+          "OK": 1
+        },
+        "each_map_order": {
+          "OK": 1
+        },
+        "each_nested_loop": {
+          "OK": 1
+        },
+        "each_owned_byte_values": {
+          "OK": 1
+        },
+        "each_parallel_state": {
+          "OK": 1
+        },
+        "each_returned_sequence_alias": {
+          "OK": 1
+        },
+        "each_single_binary": {
+          "OK": 1
+        },
+        "each_snapshot_map_update": {
+          "OK": 1
+        },
+        "each_snapshot_replace": {
+          "OK": 1
+        },
+        "each_sort_update_chain": {
+          "OK": 1
+        },
+        "each_sorted_empty_map": {
+          "OK": 1
+        },
+        "equal_buffer": {
+          "OK": 1
+        },
+        "equal_bytes": {
+          "OK": 1
+        },
+        "equal_called_effects": {
+          "OK": 1
+        },
+        "equal_replacement_alias": {
+          "OK": 1
+        },
+        "exit_index": {
+          "E012": 1
+        },
+        "field_append_allocation_before_scalar_read": {
+          "OK": 1
+        },
+        "field_append_caller_alias": {
+          "OK": 1
+        },
+        "field_append_dead_edge": {
+          "OK": 1
+        },
+        "field_append_old_read": {
+          "OK": 1
+        },
+        "field_append_quota_alias": {
+          "E013": 1
+        },
+        "field_collection_old_read": {
+          "OK": 1
+        },
+        "find_bounds_priority": {
+          "E012": 1
+        },
+        "find_buffer": {
+          "OK": 1
+        },
+        "find_byte_range": {
+          "E014": 1
+        },
+        "find_bytes": {
+          "OK": 1
+        },
+        "find_end_bounds": {
+          "E012": 1
+        },
+        "find_leaf_loop": {
+          "OK": 1
+        },
+        "float_add_bits": {
+          "OK": 1
+        },
+        "float_called_loop": {
+          "OK": 1
+        },
+        "float_comparison_nan": {
+          "OK": 1
+        },
+        "float_contraction": {
+          "OK": 1
+        },
+        "float_decimal_parse": {
+          "OK": 1
+        },
+        "float_div_bits": {
+          "OK": 1
+        },
+        "float_format_exact": {
+          "OK": 1
+        },
+        "float_inf_nan": {
+          "OK": 1
+        },
+        "float_lazy_trap": {
+          "OK": 1
+        },
+        "float_max_finite": {
+          "OK": 1
+        },
+        "float_min_normal": {
+          "OK": 1
+        },
+        "float_mul_bits": {
+          "OK": 1
+        },
+        "float_nan_payload": {
+          "OK": 1
+        },
+        "float_parse_invalid": {
+          "E022": 1
+        },
+        "float_parse_overflow": {
+          "OK": 1
+        },
+        "float_parse_underflow": {
+          "OK": 1
+        },
+        "float_roundtrip_bits": {
+          "OK": 1
+        },
+        "float_signed_zero": {
+          "OK": 1
+        },
+        "float_sub_bits": {
+          "OK": 1
+        },
+        "float_subnormal": {
+          "OK": 1
+        },
+        "float_to_integer_edge": {
+          "E021": 1
+        },
+        "float_to_integer_fraction": {
+          "OK": 1
+        },
+        "float_to_integer_nan": {
+          "E021": 1
+        },
+        "float_to_unsigned_negative": {
+          "E021": 1
+        },
+        "float_to_wide_edge": {
+          "E021": 1
+        },
+        "float_unselected_host": {
+          "OK": 1
+        },
+        "float_zero_comparison": {
+          "OK": 1
+        },
+        "hof_allocation_alias": {
+          "OK": 1
+        },
+        "hof_bounds": {
+          "E012": 1
+        },
+        "hof_buffer_map": {
+          "OK": 1
+        },
+        "hof_bytes_map": {
+          "OK": 1
+        },
+        "hof_comparator": {
+          "OK": 1
+        },
+        "hof_each": {
+          "OK": 1
+        },
+        "hof_effect_denial": {
+          "E018": 1
+        },
+        "hof_effect_order": {
+          "OK": 1
+        },
+        "hof_env": {
+          "OK": 1
+        },
+        "hof_env_denial": {
+          "E018": 1
+        },
+        "hof_forwarding": {
+          "OK": 1
+        },
+        "hof_lazy_allocation": {
+          "OK": 1
+        },
+        "hof_module_callback": {
+          "OK": 1
+        },
+        "hof_module_template": {
+          "OK": 1
+        },
+        "hof_mutual_recursion": {
+          "OK": 1
+        },
+        "hof_nested_zero_slot_record": {
+          "OK": 1
+        },
+        "hof_quota": {
+          "E013": 1
+        },
+        "hof_random": {
+          "OK": 1
+        },
+        "hof_read": {
+          "OK": 1
+        },
+        "hof_recursion": {
+          "OK": 1
+        },
+        "hof_recursive_sequence": {
+          "OK": 1
+        },
+        "hof_selected_effect": {
+          "OK": 1
+        },
+        "hof_trap_order": {
+          "E009": 1
+        },
+        "hof_unselected_effect": {
+          "OK": 1
+        },
+        "hof_write": {
+          "OK": 1
+        },
+        "hof_zero_slot_record": {
+          "OK": 1
+        },
+        "host_directory_alias": {
+          "OK": 1
+        },
+        "host_directory_denial": {
+          "E018": 1
+        },
+        "host_directory_empty": {
+          "OK": 1
+        },
+        "host_directory_entry_kinds": {
+          "OK": 1
+        },
+        "host_directory_file": {
+          "E015": 1
+        },
+        "host_directory_key": {
+          "OK": 1
+        },
+        "host_directory_large": {
+          "OK": 1
+        },
+        "host_directory_lazy": {
+          "OK": 1
+        },
+        "host_directory_loop_state": {
+          "OK": 1
+        },
+        "host_directory_missing": {
+          "E015": 1
+        },
+        "host_directory_nul": {
+          "E017": 1
+        },
+        "host_directory_order": {
+          "OK": 1
+        },
+        "host_directory_quota": {
+          "E013": 1
+        },
+        "host_directory_unreadable": {
+          "E015": 1
+        },
+        "host_env_absent": {
+          "OK": 1
+        },
+        "host_env_denial": {
+          "E018": 1
+        },
+        "host_env_empty": {
+          "OK": 1
+        },
+        "host_env_empty_name": {
+          "E017": 1
+        },
+        "host_env_equals_name": {
+          "E017": 1
+        },
+        "host_env_loop_state": {
+          "OK": 1
+        },
+        "host_env_nul_name": {
+          "E017": 1
+        },
+        "host_env_present": {
+          "OK": 1
+        },
+        "host_env_quota": {
+          "E013": 1
+        },
+        "host_env_raw": {
+          "OK": 1
+        },
+        "host_env_return_alias": {
+          "OK": 1
+        },
+        "host_invalid_before_denial": {
+          "E017": 1
+        },
+        "host_random_callee": {
+          "OK": 1
+        },
+        "host_random_denial": {
+          "E018": 1
+        },
+        "host_random_first": {
+          "OK": 1
+        },
+        "host_random_lazy": {
+          "OK": 1
+        },
+        "host_random_live_quota": {
+          "OK": 1
+        },
+        "host_random_loop": {
+          "OK": 1
+        },
+        "host_random_seed_boundary": {
+          "OK": 1
+        },
+        "host_random_seed_failure": {
+          "E016": 1
+        },
+        "host_random_sequence": {
+          "OK": 1
+        },
+        "host_trap_order": {
+          "E017": 1
+        },
+        "integer_float_rounding": {
+          "OK": 1
+        },
+        "layout_all_zero_fields": {
+          "OK": 1
+        },
+        "layout_all_zero_map_update": {
+          "OK": 1
+        },
+        "layout_mixed_zero_each": {
+          "OK": 1
+        },
+        "layout_mixed_zero_nonzero_array": {
+          "OK": 1
+        },
+        "layout_mixed_zero_scalar": {
+          "OK": 1
+        },
+        "layout_nested_zero_buffer": {
+          "OK": 1
+        },
+        "layout_nested_zero_loop_update": {
+          "OK": 1
+        },
+        "layout_nested_zero_map": {
+          "OK": 1
+        },
+        "layout_nested_zero_map_loop": {
+          "OK": 1
+        },
+        "layout_nested_zero_negative": {
+          "E013": 1
+        },
+        "layout_zero_alias": {
+          "OK": 1
+        },
+        "layout_zero_duplicate_key": {
+          "E020": 1
+        },
+        "layout_zero_lazy": {
+          "OK": 1
+        },
+        "layout_zero_loop_append": {
+          "OK": 1
+        },
+        "layout_zero_map": {
+          "OK": 1
+        },
+        "layout_zero_missing_key": {
+          "E019": 1
+        },
+        "leaf_loop": {
+          "OK": 1
+        },
+        "map_alias_old_read": {
+          "OK": 1
+        },
+        "map_binary_keys": {
+          "OK": 1
+        },
+        "map_byte_constructor_quota": {
+          "E013": 1
+        },
+        "map_byte_repack": {
+          "OK": 1
+        },
+        "map_byte_result_lifetime": {
+          "OK": 1
+        },
+        "map_byte_update_alias": {
+          "OK": 1
+        },
+        "map_byte_values_calls": {
+          "OK": 1
+        },
+        "map_caller_alias": {
+          "OK": 1
+        },
+        "map_constructor_quota": {
+          "E013": 1
+        },
+        "map_duplicate_argument_effect": {
+          "E020": 1
+        },
+        "map_duplicate_before_quota": {
+          "E020": 1
+        },
+        "map_duplicate_key": {
+          "E020": 1
+        },
+        "map_empty": {
+          "OK": 1
+        },
+        "map_insert_loop": {
+          "OK": 1
+        },
+        "map_iteration_bounds": {
+          "E012": 1
+        },
+        "map_key_iteration": {
+          "OK": 1
+        },
+        "map_key_result_quota": {
+          "E013": 1
+        },
+        "map_lazy_alias": {
+          "OK": 1
+        },
+        "map_lazy_called_effect": {
+          "OK": 1
+        },
+        "map_lookup": {
+          "OK": 1
+        },
+        "map_lookup_result_quota": {
+          "E013": 1
+        },
+        "map_loop_alias": {
+          "OK": 1
+        },
+        "map_missing_key": {
+          "E019": 1
+        },
+        "map_nested_byte_values": {
+          "OK": 1
+        },
+        "map_nested_loop": {
+          "OK": 1
+        },
+        "map_order_growth": {
+          "OK": 1
+        },
+        "map_put_quota": {
+          "E013": 1
+        },
+        "map_quota_boundary": {
+          "E013": 1
+        },
+        "map_recursive_alias": {
+          "OK": 1
+        },
+        "map_returned_alias": {
+          "OK": 1
+        },
+        "mixed_width_explicit": {
+          "OK": 1
+        },
+        "module_alias_after_return": {
+          "OK": 1
+        },
+        "module_allocation": {
+          "OK": 1
+        },
+        "module_borrowed_calls_loop": {
+          "OK": 1
+        },
+        "module_bounds_failure": {
+          "E012": 1
+        },
+        "module_byte_range_failure": {
+          "E014": 1
+        },
+        "module_dead_quota": {
+          "OK": 1
+        },
+        "module_denied_host": {
+          "E018": 1
+        },
+        "module_effect_trap_order": {
+          "E016": 1
+        },
+        "module_file_pipeline": {
+          "OK": 1
+        },
+        "module_host_effects": {
+          "OK": 1
+        },
+        "module_io_failure": {
+          "E015": 1
+        },
+        "module_lazy_unselected": {
+          "OK": 1
+        },
+        "module_live_quota": {
+          "E013": 1
+        },
+        "module_local_name_collision": {
+          "OK": 1
+        },
+        "module_loop_state_allocation": {
+          "OK": 1
+        },
+        "module_multiple_functions": {
+          "OK": 1
+        },
+        "module_parse_failure": {
+          "E016": 1
+        },
+        "module_path_failure": {
+          "E017": 1
+        },
+        "module_quota_boundary": {
+          "E013": 1
+        },
+        "module_record_buffer_children": {
+          "OK": 1
+        },
+        "module_record_return": {
+          "OK": 1
+        },
+        "module_recursive_live_sequence": {
+          "OK": 1
+        },
+        "module_sort_each_plugin": {
+          "OK": 1
+        },
+        "module_transitive_import": {
+          "OK": 1
+        },
+        "mutual_recursion_reads": {
+          "OK": 1
+        },
+        "negative_start": {
+          "E012": 1
+        },
+        "negative_zero_trip": {
+          "OK": 1
+        },
+        "nested_builder_fresh": {
+          "OK": 1
+        },
+        "nested_builder_lazy": {
+          "OK": 1
+        },
+        "nested_builder_old_alias": {
+          "OK": 1
+        },
+        "nested_builder_plugin_held": {
+          "OK": 1
+        },
+        "nested_builder_quota": {
+          "E013": 1
+        },
+        "nested_builder_shared": {
+          "OK": 1
+        },
+        "nested_call_loop": {
+          "OK": 1
+        },
+        "parsebuf_argument_effect": {
+          "E016": 1
+        },
+        "parsebuf_binary_separators": {
+          "OK": 1
+        },
+        "parsebuf_caller_alias": {
+          "OK": 1
+        },
+        "parsebuf_canonical_failure": {
+          "E016": 1
+        },
+        "parsebuf_empty_equal": {
+          "OK": 1
+        },
+        "parsebuf_fields": {
+          "OK": 1
+        },
+        "parsebuf_internal_empty": {
+          "E016": 1
+        },
+        "parsebuf_lazy": {
+          "OK": 1
+        },
+        "parsebuf_leading_empty": {
+          "E016": 1
+        },
+        "parsebuf_loop_alias": {
+          "OK": 1
+        },
+        "parsebuf_quota_priority": {
+          "E013": 1
+        },
+        "parsebuf_recursive_alias": {
+          "OK": 1
+        },
+        "parsebuf_return_alias": {
+          "OK": 1
+        },
+        "parsebuf_trailing_empty": {
+          "E016": 1
+        },
+        "plugin_argument_division": {
+          "E009": 1
+        },
+        "plugin_argument_order": {
+          "E015": 1
+        },
+        "plugin_argument_quota_order": {
+          "E013": 1
+        },
+        "plugin_call_held_alias": {
+          "OK": 1
+        },
+        "plugin_dead_quota": {
+          "OK": 1
+        },
+        "plugin_each_state": {
+          "OK": 1
+        },
+        "plugin_effect_around_call": {
+          "OK": 1
+        },
+        "plugin_effect_order": {
+          "OK": 1
+        },
+        "plugin_equal_binary": {
+          "OK": 1
+        },
+        "plugin_equal_bounds_order": {
+          "E013": 1
+        },
+        "plugin_equal_buffer": {
+          "OK": 1
+        },
+        "plugin_equal_bytes": {
+          "OK": 1
+        },
+        "plugin_equal_empty": {
+          "OK": 1
+        },
+        "plugin_equal_length": {
+          "OK": 1
+        },
+        "plugin_equal_returned": {
+          "OK": 1
+        },
+        "plugin_lazy_selected": {
+          "OK": 1
+        },
+        "plugin_lazy_unselected": {
+          "OK": 1
+        },
+        "plugin_live_quota": {
+          "E013": 1
+        },
+        "plugin_loop_alias": {
+          "OK": 1
+        },
+        "plugin_loop_state": {
+          "OK": 1
+        },
+        "plugin_record_alias": {
+          "OK": 1
+        },
+        "plugin_record_construct": {
+          "OK": 1
+        },
+        "plugin_returned_buffer": {
+          "OK": 1
+        },
+        "plugin_returned_sequence": {
+          "OK": 1
+        },
+        "record_buffer_alias": {
+          "OK": 1
+        },
+        "record_called_lifetime": {
+          "OK": 1
+        },
+        "record_construct": {
+          "OK": 1
+        },
+        "record_dead_quota": {
+          "OK": 1
+        },
+        "record_duplicate_fields": {
+          "OK": 1
+        },
+        "record_each_state": {
+          "OK": 1
+        },
+        "record_field_effect_order": {
+          "OK": 1
+        },
+        "record_field_trap_order": {
+          "E016": 1
+        },
+        "record_lazy_called_effect": {
+          "OK": 1
+        },
+        "record_lazy_trap_effect": {
+          "OK": 1
+        },
+        "record_lazy_update": {
+          "OK": 1
+        },
+        "record_live_quota": {
+          "E013": 1
+        },
+        "record_loop_state": {
+          "OK": 1
+        },
+        "record_map_alias": {
+          "OK": 1
+        },
+        "record_map_binary_key": {
+          "OK": 1
+        },
+        "record_map_bits": {
+          "OK": 1
+        },
+        "record_map_builder": {
+          "OK": 1
+        },
+        "record_map_duplicate": {
+          "E020": 1
+        },
+        "record_map_each_snapshot": {
+          "OK": 1
+        },
+        "record_map_each_sort": {
+          "OK": 1
+        },
+        "record_map_empty_each": {
+          "OK": 1
+        },
+        "record_map_invalid_mode": {
+          "E012": 1
+        },
+        "record_map_missing": {
+          "E019": 1
+        },
+        "record_map_quota": {
+          "E013": 1
+        },
+        "record_map_sort_mode": {
+          "E018": 1
+        },
+        "record_mixed_chain": {
+          "OK": 1
+        },
+        "record_mutual_recursion": {
+          "OK": 1
+        },
+        "record_nested_lifetime": {
+          "OK": 1
+        },
+        "record_returned_alias": {
+          "OK": 1
+        },
+        "record_self_recursion": {
+          "OK": 1
+        },
+        "record_sort_field": {
+          "OK": 1
+        },
+        "record_update_alias": {
+          "OK": 1
+        },
+        "recursion_reads": {
+          "OK": 1
+        },
+        "recursive_allocation": {
+          "OK": 1
+        },
+        "recursive_sequence_alias": {
+          "OK": 1
+        },
+        "sequence_return_loop": {
+          "OK": 1
+        },
+        "shifted_index": {
+          "E012": 1
+        },
+        "slice_return_alias_live": {
+          "OK": 1
+        },
+        "sort_alias_old_read": {
+          "OK": 1
+        },
+        "sort_binary_bytes": {
+          "OK": 1
+        },
+        "sort_buffer": {
+          "OK": 1
+        },
+        "sort_byte_value_prefix": {
+          "OK": 1
+        },
+        "sort_bytes": {
+          "OK": 1
+        },
+        "sort_caller_alias": {
+          "OK": 1
+        },
+        "sort_duplicate_before_order": {
+          "E020": 1
+        },
+        "sort_empty": {
+          "OK": 1
+        },
+        "sort_equal_elements": {
+          "OK": 1
+        },
+        "sort_invalid_order_before_quota": {
+          "E012": 1
+        },
+        "sort_lazy_alias": {
+          "OK": 1
+        },
+        "sort_loop_state": {
+          "OK": 1
+        },
+        "sort_quota": {
+          "E013": 1
+        },
+        "sort_rebuilt_lookup": {
+          "OK": 1
+        },
+        "sort_signed_extrema": {
+          "OK": 1
+        },
+        "sort_value_key_ties": {
+          "OK": 1
+        },
+        "unsigned_order": {
+          "OK": 1
+        },
+        "unsigned_parse_invalid": {
+          "E022": 1
+        },
+        "unsigned_parse_roundtrip": {
+          "OK": 1
+        },
+        "unsigned_wrap_add": {
+          "OK": 1
+        },
+        "unsigned_wrap_sub": {
+          "OK": 1
+        },
+        "unsigned_zero_division": {
+          "E009": 1
+        },
+        "wide_called_loop": {
+          "OK": 1
+        },
+        "wide_checked_narrow": {
+          "E021": 1
+        },
+        "wide_explicit_trunc": {
+          "OK": 1
+        },
+        "wide_parse_overflow": {
+          "E022": 1
+        },
+        "wide_wrap_mul": {
+          "OK": 1
+        }
+      }
+    },
+    {
+      "seed": 1729,
+      "programs": 418,
+      "native_builds": 836,
+      "divergences": 0,
+      "observed_codes": {
+        "E009": 3,
+        "E012": 20,
+        "E013": 30,
+        "E014": 6,
+        "E015": 8,
+        "E016": 13,
+        "E017": 10,
+        "E018": 11,
+        "E019": 3,
+        "E020": 6,
+        "E021": 5,
+        "E022": 3,
+        "OK": 300
+      },
+      "generated_intrinsics": [
+        "bits",
+        "buffer",
+        "bytemap",
+        "bytes",
+        "concat",
+        "directory",
+        "each",
+        "env",
+        "equal",
+        "f64",
+        "find",
+        "floatbits",
+        "format",
+        "get",
+        "has",
+        "i64",
+        "insert",
+        "key",
+        "map",
+        "out",
+        "parse",
+        "parsebuf",
+        "parsef64",
+        "parseu128",
+        "parseu64",
+        "plugin",
+        "put",
+        "random",
+        "read",
+        "size",
+        "slice",
+        "sort",
+        "trunci64",
+        "truncu64",
+        "u128",
+        "u64",
+        "write"
+      ],
+      "call_families": {
+        "bulk_alias_identity": 1,
+        "bulk_call_loop_alias": 1,
+        "bulk_empty": 1,
+        "bulk_first_mismatch": 1,
+        "bulk_full_equal": 1,
+        "bulk_integer_equal": 1,
+        "bulk_integer_extremes": 1,
+        "bulk_last_mismatch": 1,
+        "bulk_lazy_trap": 1,
+        "bulk_length_mismatch": 1,
+        "bulk_quota_failure": 1,
+        "bulk_quota_live_success": 1,
+        "called_effect_lazy": 1,
+        "calls_lazy": 1,
+        "collection_append": 1,
+        "collection_child_alias": 1,
+        "collection_concat_alias": 1,
+        "collection_concat_empty": 1,
+        "collection_construct": 1,
+        "collection_dead_children_quota": 1,
+        "collection_each": 1,
+        "collection_effects": 1,
+        "collection_empty": 1,
+        "collection_growth_loop": 1,
+        "collection_index_error": 1,
+        "collection_lazy": 1,
+        "collection_live_children_quota": 1,
+        "collection_negative_length": 1,
+        "collection_nested_each_sort_map": 1,
+        "collection_nested_lifetime": 1,
+        "collection_old_alias": 1,
+        "collection_plugin_nested": 1,
+        "collection_quota": 1,
+        "collection_slice": 1,
+        "collection_slice_priority": 1,
+        "collection_sort_deferred": 1,
+        "collection_sort_mode": 1,
+        "collection_update_loop_alias": 1,
+        "collection_zero_bounds": 1,
+        "collection_zero_concat_slice_update": 1,
+        "collection_zero_layout": 1,
+        "collection_zero_quota": 1,
+        "computed_start": 1,
+        "conditional_sequence_alloc": 1,
+        "each_append_snapshot_alias": 1,
+        "each_buffer_reduce": 1,
+        "each_called_effect": 1,
+        "each_empty": 1,
+        "each_ignored_key_quota": 1,
+        "each_ignored_value_quota": 1,
+        "each_inherited_bounds_priority": 1,
+        "each_lazy_called_effect": 1,
+        "each_map_order": 1,
+        "each_nested_loop": 1,
+        "each_owned_byte_values": 1,
+        "each_parallel_state": 1,
+        "each_returned_sequence_alias": 1,
+        "each_single_binary": 1,
+        "each_snapshot_map_update": 1,
+        "each_snapshot_replace": 1,
+        "each_sort_update_chain": 1,
+        "each_sorted_empty_map": 1,
+        "equal_buffer": 1,
+        "equal_bytes": 1,
+        "equal_called_effects": 1,
+        "equal_replacement_alias": 1,
+        "exit_index": 1,
+        "field_append_allocation_before_scalar_read": 1,
+        "field_append_caller_alias": 1,
+        "field_append_dead_edge": 1,
+        "field_append_old_read": 1,
+        "field_append_quota_alias": 1,
+        "field_collection_old_read": 1,
+        "find_bounds_priority": 1,
+        "find_buffer": 1,
+        "find_byte_range": 1,
+        "find_bytes": 1,
+        "find_end_bounds": 1,
+        "find_leaf_loop": 1,
+        "float_add_bits": 1,
+        "float_called_loop": 1,
+        "float_comparison_nan": 1,
+        "float_contraction": 1,
+        "float_decimal_parse": 1,
+        "float_div_bits": 1,
+        "float_format_exact": 1,
+        "float_inf_nan": 1,
+        "float_lazy_trap": 1,
+        "float_max_finite": 1,
+        "float_min_normal": 1,
+        "float_mul_bits": 1,
+        "float_nan_payload": 1,
+        "float_parse_invalid": 1,
+        "float_parse_overflow": 1,
+        "float_parse_underflow": 1,
+        "float_roundtrip_bits": 1,
+        "float_signed_zero": 1,
+        "float_sub_bits": 1,
+        "float_subnormal": 1,
+        "float_to_integer_edge": 1,
+        "float_to_integer_fraction": 1,
+        "float_to_integer_nan": 1,
+        "float_to_unsigned_negative": 1,
+        "float_to_wide_edge": 1,
+        "float_unselected_host": 1,
+        "float_zero_comparison": 1,
+        "hof_allocation_alias": 1,
+        "hof_bounds": 1,
+        "hof_buffer_map": 1,
+        "hof_bytes_map": 1,
+        "hof_comparator": 1,
+        "hof_each": 1,
+        "hof_effect_denial": 1,
+        "hof_effect_order": 1,
+        "hof_env": 1,
+        "hof_env_denial": 1,
+        "hof_forwarding": 1,
+        "hof_lazy_allocation": 1,
+        "hof_module_callback": 1,
+        "hof_module_template": 1,
+        "hof_mutual_recursion": 1,
+        "hof_nested_zero_slot_record": 1,
+        "hof_quota": 1,
+        "hof_random": 1,
+        "hof_read": 1,
+        "hof_recursion": 1,
+        "hof_recursive_sequence": 1,
+        "hof_selected_effect": 1,
+        "hof_trap_order": 1,
+        "hof_unselected_effect": 1,
+        "hof_write": 1,
+        "hof_zero_slot_record": 1,
+        "host_directory_alias": 1,
+        "host_directory_denial": 1,
+        "host_directory_empty": 1,
+        "host_directory_entry_kinds": 1,
+        "host_directory_file": 1,
+        "host_directory_key": 1,
+        "host_directory_large": 1,
+        "host_directory_lazy": 1,
+        "host_directory_loop_state": 1,
+        "host_directory_missing": 1,
+        "host_directory_nul": 1,
+        "host_directory_order": 1,
+        "host_directory_quota": 1,
+        "host_directory_unreadable": 1,
+        "host_env_absent": 1,
+        "host_env_denial": 1,
+        "host_env_empty": 1,
+        "host_env_empty_name": 1,
+        "host_env_equals_name": 1,
+        "host_env_loop_state": 1,
+        "host_env_nul_name": 1,
+        "host_env_present": 1,
+        "host_env_quota": 1,
+        "host_env_raw": 1,
+        "host_env_return_alias": 1,
+        "host_invalid_before_denial": 1,
+        "host_random_callee": 1,
+        "host_random_denial": 1,
+        "host_random_first": 1,
+        "host_random_lazy": 1,
+        "host_random_live_quota": 1,
+        "host_random_loop": 1,
+        "host_random_seed_boundary": 1,
+        "host_random_seed_failure": 1,
+        "host_random_sequence": 1,
+        "host_trap_order": 1,
+        "integer_float_rounding": 1,
+        "layout_all_zero_fields": 1,
+        "layout_all_zero_map_update": 1,
+        "layout_mixed_zero_each": 1,
+        "layout_mixed_zero_nonzero_array": 1,
+        "layout_mixed_zero_scalar": 1,
+        "layout_nested_zero_buffer": 1,
+        "layout_nested_zero_loop_update": 1,
+        "layout_nested_zero_map": 1,
+        "layout_nested_zero_map_loop": 1,
+        "layout_nested_zero_negative": 1,
+        "layout_zero_alias": 1,
+        "layout_zero_duplicate_key": 1,
+        "layout_zero_lazy": 1,
+        "layout_zero_loop_append": 1,
+        "layout_zero_map": 1,
+        "layout_zero_missing_key": 1,
+        "leaf_loop": 1,
+        "map_alias_old_read": 1,
+        "map_binary_keys": 1,
+        "map_byte_constructor_quota": 1,
+        "map_byte_repack": 1,
+        "map_byte_result_lifetime": 1,
+        "map_byte_update_alias": 1,
+        "map_byte_values_calls": 1,
+        "map_caller_alias": 1,
+        "map_constructor_quota": 1,
+        "map_duplicate_argument_effect": 1,
+        "map_duplicate_before_quota": 1,
+        "map_duplicate_key": 1,
+        "map_empty": 1,
+        "map_insert_loop": 1,
+        "map_iteration_bounds": 1,
+        "map_key_iteration": 1,
+        "map_key_result_quota": 1,
+        "map_lazy_alias": 1,
+        "map_lazy_called_effect": 1,
+        "map_lookup": 1,
+        "map_lookup_result_quota": 1,
+        "map_loop_alias": 1,
+        "map_missing_key": 1,
+        "map_nested_byte_values": 1,
+        "map_nested_loop": 1,
+        "map_order_growth": 1,
+        "map_put_quota": 1,
+        "map_quota_boundary": 1,
+        "map_recursive_alias": 1,
+        "map_returned_alias": 1,
+        "mixed_width_explicit": 1,
+        "module_alias_after_return": 1,
+        "module_allocation": 1,
+        "module_borrowed_calls_loop": 1,
+        "module_bounds_failure": 1,
+        "module_byte_range_failure": 1,
+        "module_dead_quota": 1,
+        "module_denied_host": 1,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_effect_trap_order": 1,
+        "module_file_pipeline": 1,
+        "module_host_effects": 1,
+        "module_import_cycle": 1,
+        "module_io_failure": 1,
+        "module_lazy_unselected": 1,
+        "module_live_quota": 1,
+        "module_local_name_collision": 1,
+        "module_loop_state_allocation": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_multiple_functions": 1,
+        "module_noncanonical_namespace": 1,
+        "module_parse_failure": 1,
+        "module_path_failure": 1,
+        "module_quota_boundary": 1,
+        "module_record_buffer_children": 1,
+        "module_record_return": 1,
+        "module_recursive_live_sequence": 1,
+        "module_sort_each_plugin": 1,
+        "module_transitive_import": 1,
+        "module_unknown_version": 1,
+        "mutual_recursion_reads": 1,
+        "negative_start": 1,
+        "negative_zero_trip": 1,
+        "nested_builder_fresh": 1,
+        "nested_builder_lazy": 1,
+        "nested_builder_old_alias": 1,
+        "nested_builder_plugin_held": 1,
+        "nested_builder_quota": 1,
+        "nested_builder_shared": 1,
+        "nested_call_loop": 1,
+        "parsebuf_argument_effect": 1,
+        "parsebuf_binary_separators": 1,
+        "parsebuf_caller_alias": 1,
+        "parsebuf_canonical_failure": 1,
+        "parsebuf_empty_equal": 1,
+        "parsebuf_fields": 1,
+        "parsebuf_internal_empty": 1,
+        "parsebuf_lazy": 1,
+        "parsebuf_leading_empty": 1,
+        "parsebuf_loop_alias": 1,
+        "parsebuf_quota_priority": 1,
+        "parsebuf_recursive_alias": 1,
+        "parsebuf_return_alias": 1,
+        "parsebuf_trailing_empty": 1,
+        "plugin_argument_division": 1,
+        "plugin_argument_order": 1,
+        "plugin_argument_quota_order": 1,
+        "plugin_call_held_alias": 1,
+        "plugin_dead_quota": 1,
+        "plugin_each_state": 1,
+        "plugin_effect_around_call": 1,
+        "plugin_effect_order": 1,
+        "plugin_equal_binary": 1,
+        "plugin_equal_bounds_order": 1,
+        "plugin_equal_buffer": 1,
+        "plugin_equal_bytes": 1,
+        "plugin_equal_empty": 1,
+        "plugin_equal_length": 1,
+        "plugin_equal_returned": 1,
+        "plugin_lazy_selected": 1,
+        "plugin_lazy_unselected": 1,
+        "plugin_live_quota": 1,
+        "plugin_loop_alias": 1,
+        "plugin_loop_state": 1,
+        "plugin_record_alias": 1,
+        "plugin_record_construct": 1,
+        "plugin_returned_buffer": 1,
+        "plugin_returned_sequence": 1,
+        "record_buffer_alias": 1,
+        "record_called_lifetime": 1,
+        "record_construct": 1,
+        "record_dead_quota": 1,
+        "record_duplicate_fields": 1,
+        "record_each_state": 1,
+        "record_field_effect_order": 1,
+        "record_field_trap_order": 1,
+        "record_lazy_called_effect": 1,
+        "record_lazy_trap_effect": 1,
+        "record_lazy_update": 1,
+        "record_live_quota": 1,
+        "record_loop_state": 1,
+        "record_map_alias": 1,
+        "record_map_binary_key": 1,
+        "record_map_bits": 1,
+        "record_map_builder": 1,
+        "record_map_duplicate": 1,
+        "record_map_each_snapshot": 1,
+        "record_map_each_sort": 1,
+        "record_map_empty_each": 1,
+        "record_map_invalid_mode": 1,
+        "record_map_missing": 1,
+        "record_map_quota": 1,
+        "record_map_sort_mode": 1,
+        "record_mixed_chain": 1,
+        "record_mutual_recursion": 1,
+        "record_nested_lifetime": 1,
+        "record_returned_alias": 1,
+        "record_self_recursion": 1,
+        "record_sort_field": 1,
+        "record_update_alias": 1,
+        "recursion_reads": 1,
+        "recursive_allocation": 1,
+        "recursive_sequence_alias": 1,
+        "sequence_return_loop": 1,
+        "shifted_index": 1,
+        "slice_return_alias_live": 1,
+        "sort_alias_old_read": 1,
+        "sort_binary_bytes": 1,
+        "sort_buffer": 1,
+        "sort_byte_value_prefix": 1,
+        "sort_bytes": 1,
+        "sort_caller_alias": 1,
+        "sort_duplicate_before_order": 1,
+        "sort_empty": 1,
+        "sort_equal_elements": 1,
+        "sort_invalid_order_before_quota": 1,
+        "sort_lazy_alias": 1,
+        "sort_loop_state": 1,
+        "sort_quota": 1,
+        "sort_rebuilt_lookup": 1,
+        "sort_signed_extrema": 1,
+        "sort_value_key_ties": 1,
+        "unsigned_order": 1,
+        "unsigned_parse_invalid": 1,
+        "unsigned_parse_roundtrip": 1,
+        "unsigned_wrap_add": 1,
+        "unsigned_wrap_sub": 1,
+        "unsigned_zero_division": 1,
+        "wide_called_loop": 1,
+        "wide_checked_narrow": 1,
+        "wide_explicit_trunc": 1,
+        "wide_parse_overflow": 1,
+        "wide_wrap_mul": 1
+      },
+      "source_mutations": {
+        "collection_missing_bracket": 31,
+        "collection_self_type": 154,
+        "collection_truncated": 154,
+        "collection_unknown_type": 154,
+        "collection_wrong_element": 31,
+        "each_changed_binding": 32,
+        "each_extra_delimiter": 32,
+        "each_missing_separator": 32,
+        "each_truncated": 32,
+        "each_unknown_operation": 32,
+        "hof_function_escape": 26,
+        "hof_malformed_type": 26,
+        "hof_unknown_parameter": 26,
+        "hof_unknown_reference": 26,
+        "hof_wrong_signature": 26,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_import_cycle": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_noncanonical_namespace": 1,
+        "module_unknown_version": 1,
+        "numeric_incomplete_exponent": 8,
+        "numeric_incomplete_fraction": 8,
+        "numeric_mixed_width": 6,
+        "numeric_unknown_conversion": 20,
+        "numeric_unknown_width": 31,
+        "plugin_missing_separator": 20,
+        "plugin_noncanonical_id": 20,
+        "plugin_truncated": 178,
+        "plugin_unknown_id": 20,
+        "plugin_unknown_operation": 20,
+        "record_duplicate_field": 32,
+        "record_dynamic_map_value": 11,
+        "record_missing_update_colon": 3,
+        "record_truncated_declaration": 32,
+        "record_unknown_field": 15,
+        "record_unknown_type": 32
+      },
+      "static_codes": {
+        "E002": 26,
+        "E004": 26,
+        "E005": 26,
+        "E007": 52
+      },
+      "family_codes": {
+        "bulk_alias_identity": {
+          "OK": 1
+        },
+        "bulk_call_loop_alias": {
+          "OK": 1
+        },
+        "bulk_empty": {
+          "OK": 1
+        },
+        "bulk_first_mismatch": {
+          "OK": 1
+        },
+        "bulk_full_equal": {
+          "OK": 1
+        },
+        "bulk_integer_equal": {
+          "OK": 1
+        },
+        "bulk_integer_extremes": {
+          "OK": 1
+        },
+        "bulk_last_mismatch": {
+          "OK": 1
+        },
+        "bulk_lazy_trap": {
+          "OK": 1
+        },
+        "bulk_length_mismatch": {
+          "OK": 1
+        },
+        "bulk_quota_failure": {
+          "E013": 1
+        },
+        "bulk_quota_live_success": {
+          "OK": 1
+        },
+        "called_effect_lazy": {
+          "OK": 1
+        },
+        "calls_lazy": {
+          "OK": 1
+        },
+        "collection_append": {
+          "OK": 1
+        },
+        "collection_child_alias": {
+          "OK": 1
+        },
+        "collection_concat_alias": {
+          "OK": 1
+        },
+        "collection_concat_empty": {
+          "OK": 1
+        },
+        "collection_construct": {
+          "OK": 1
+        },
+        "collection_dead_children_quota": {
+          "OK": 1
+        },
+        "collection_each": {
+          "OK": 1
+        },
+        "collection_effects": {
+          "OK": 1
+        },
+        "collection_empty": {
+          "OK": 1
+        },
+        "collection_growth_loop": {
+          "OK": 1
+        },
+        "collection_index_error": {
+          "E012": 1
+        },
+        "collection_lazy": {
+          "OK": 1
+        },
+        "collection_live_children_quota": {
+          "E013": 1
+        },
+        "collection_negative_length": {
+          "E013": 1
+        },
+        "collection_nested_each_sort_map": {
+          "OK": 1
+        },
+        "collection_nested_lifetime": {
+          "OK": 1
+        },
+        "collection_old_alias": {
+          "OK": 1
+        },
+        "collection_plugin_nested": {
+          "OK": 1
+        },
+        "collection_quota": {
+          "E013": 1
+        },
+        "collection_slice": {
+          "OK": 1
+        },
+        "collection_slice_priority": {
+          "E012": 1
+        },
+        "collection_sort_deferred": {
+          "E018": 1
+        },
+        "collection_sort_mode": {
+          "E012": 1
+        },
+        "collection_update_loop_alias": {
+          "OK": 1
+        },
+        "collection_zero_bounds": {
+          "E012": 1
+        },
+        "collection_zero_concat_slice_update": {
+          "OK": 1
+        },
+        "collection_zero_layout": {
+          "OK": 1
+        },
+        "collection_zero_quota": {
+          "E013": 1
+        },
+        "computed_start": {
+          "OK": 1
+        },
+        "conditional_sequence_alloc": {
+          "OK": 1
+        },
+        "each_append_snapshot_alias": {
+          "OK": 1
+        },
+        "each_buffer_reduce": {
+          "OK": 1
+        },
+        "each_called_effect": {
+          "OK": 1
+        },
+        "each_empty": {
+          "OK": 1
+        },
+        "each_ignored_key_quota": {
+          "OK": 1
+        },
+        "each_ignored_value_quota": {
+          "E013": 1
+        },
+        "each_inherited_bounds_priority": {
+          "E012": 1
+        },
+        "each_lazy_called_effect": {
+          "OK": 1
+        },
+        "each_map_order": {
+          "OK": 1
+        },
+        "each_nested_loop": {
+          "OK": 1
+        },
+        "each_owned_byte_values": {
+          "OK": 1
+        },
+        "each_parallel_state": {
+          "OK": 1
+        },
+        "each_returned_sequence_alias": {
+          "OK": 1
+        },
+        "each_single_binary": {
+          "OK": 1
+        },
+        "each_snapshot_map_update": {
+          "OK": 1
+        },
+        "each_snapshot_replace": {
+          "OK": 1
+        },
+        "each_sort_update_chain": {
+          "OK": 1
+        },
+        "each_sorted_empty_map": {
+          "OK": 1
+        },
+        "equal_buffer": {
+          "OK": 1
+        },
+        "equal_bytes": {
+          "OK": 1
+        },
+        "equal_called_effects": {
+          "OK": 1
+        },
+        "equal_replacement_alias": {
+          "OK": 1
+        },
+        "exit_index": {
+          "E012": 1
+        },
+        "field_append_allocation_before_scalar_read": {
+          "OK": 1
+        },
+        "field_append_caller_alias": {
+          "OK": 1
+        },
+        "field_append_dead_edge": {
+          "OK": 1
+        },
+        "field_append_old_read": {
+          "OK": 1
+        },
+        "field_append_quota_alias": {
+          "E013": 1
+        },
+        "field_collection_old_read": {
+          "OK": 1
+        },
+        "find_bounds_priority": {
+          "E012": 1
+        },
+        "find_buffer": {
+          "OK": 1
+        },
+        "find_byte_range": {
+          "E014": 1
+        },
+        "find_bytes": {
+          "OK": 1
+        },
+        "find_end_bounds": {
+          "E012": 1
+        },
+        "find_leaf_loop": {
+          "OK": 1
+        },
+        "float_add_bits": {
+          "OK": 1
+        },
+        "float_called_loop": {
+          "OK": 1
+        },
+        "float_comparison_nan": {
+          "OK": 1
+        },
+        "float_contraction": {
+          "OK": 1
+        },
+        "float_decimal_parse": {
+          "OK": 1
+        },
+        "float_div_bits": {
+          "OK": 1
+        },
+        "float_format_exact": {
+          "OK": 1
+        },
+        "float_inf_nan": {
+          "OK": 1
+        },
+        "float_lazy_trap": {
+          "OK": 1
+        },
+        "float_max_finite": {
+          "OK": 1
+        },
+        "float_min_normal": {
+          "OK": 1
+        },
+        "float_mul_bits": {
+          "OK": 1
+        },
+        "float_nan_payload": {
+          "OK": 1
+        },
+        "float_parse_invalid": {
+          "E022": 1
+        },
+        "float_parse_overflow": {
+          "OK": 1
+        },
+        "float_parse_underflow": {
+          "OK": 1
+        },
+        "float_roundtrip_bits": {
+          "OK": 1
+        },
+        "float_signed_zero": {
+          "OK": 1
+        },
+        "float_sub_bits": {
+          "OK": 1
+        },
+        "float_subnormal": {
+          "OK": 1
+        },
+        "float_to_integer_edge": {
+          "E021": 1
+        },
+        "float_to_integer_fraction": {
+          "OK": 1
+        },
+        "float_to_integer_nan": {
+          "E021": 1
+        },
+        "float_to_unsigned_negative": {
+          "E021": 1
+        },
+        "float_to_wide_edge": {
+          "E021": 1
+        },
+        "float_unselected_host": {
+          "OK": 1
+        },
+        "float_zero_comparison": {
+          "OK": 1
+        },
+        "hof_allocation_alias": {
+          "OK": 1
+        },
+        "hof_bounds": {
+          "E012": 1
+        },
+        "hof_buffer_map": {
+          "OK": 1
+        },
+        "hof_bytes_map": {
+          "OK": 1
+        },
+        "hof_comparator": {
+          "OK": 1
+        },
+        "hof_each": {
+          "OK": 1
+        },
+        "hof_effect_denial": {
+          "E018": 1
+        },
+        "hof_effect_order": {
+          "OK": 1
+        },
+        "hof_env": {
+          "OK": 1
+        },
+        "hof_env_denial": {
+          "E018": 1
+        },
+        "hof_forwarding": {
+          "OK": 1
+        },
+        "hof_lazy_allocation": {
+          "OK": 1
+        },
+        "hof_module_callback": {
+          "OK": 1
+        },
+        "hof_module_template": {
+          "OK": 1
+        },
+        "hof_mutual_recursion": {
+          "OK": 1
+        },
+        "hof_nested_zero_slot_record": {
+          "OK": 1
+        },
+        "hof_quota": {
+          "E013": 1
+        },
+        "hof_random": {
+          "OK": 1
+        },
+        "hof_read": {
+          "OK": 1
+        },
+        "hof_recursion": {
+          "OK": 1
+        },
+        "hof_recursive_sequence": {
+          "OK": 1
+        },
+        "hof_selected_effect": {
+          "OK": 1
+        },
+        "hof_trap_order": {
+          "E009": 1
+        },
+        "hof_unselected_effect": {
+          "OK": 1
+        },
+        "hof_write": {
+          "OK": 1
+        },
+        "hof_zero_slot_record": {
+          "OK": 1
+        },
+        "host_directory_alias": {
+          "OK": 1
+        },
+        "host_directory_denial": {
+          "E018": 1
+        },
+        "host_directory_empty": {
+          "OK": 1
+        },
+        "host_directory_entry_kinds": {
+          "OK": 1
+        },
+        "host_directory_file": {
+          "E015": 1
+        },
+        "host_directory_key": {
+          "OK": 1
+        },
+        "host_directory_large": {
+          "OK": 1
+        },
+        "host_directory_lazy": {
+          "OK": 1
+        },
+        "host_directory_loop_state": {
+          "OK": 1
+        },
+        "host_directory_missing": {
+          "E015": 1
+        },
+        "host_directory_nul": {
+          "E017": 1
+        },
+        "host_directory_order": {
+          "OK": 1
+        },
+        "host_directory_quota": {
+          "E013": 1
+        },
+        "host_directory_unreadable": {
+          "E015": 1
+        },
+        "host_env_absent": {
+          "OK": 1
+        },
+        "host_env_denial": {
+          "E018": 1
+        },
+        "host_env_empty": {
+          "OK": 1
+        },
+        "host_env_empty_name": {
+          "E017": 1
+        },
+        "host_env_equals_name": {
+          "E017": 1
+        },
+        "host_env_loop_state": {
+          "OK": 1
+        },
+        "host_env_nul_name": {
+          "E017": 1
+        },
+        "host_env_present": {
+          "OK": 1
+        },
+        "host_env_quota": {
+          "E013": 1
+        },
+        "host_env_raw": {
+          "OK": 1
+        },
+        "host_env_return_alias": {
+          "OK": 1
+        },
+        "host_invalid_before_denial": {
+          "E017": 1
+        },
+        "host_random_callee": {
+          "OK": 1
+        },
+        "host_random_denial": {
+          "E018": 1
+        },
+        "host_random_first": {
+          "OK": 1
+        },
+        "host_random_lazy": {
+          "OK": 1
+        },
+        "host_random_live_quota": {
+          "OK": 1
+        },
+        "host_random_loop": {
+          "OK": 1
+        },
+        "host_random_seed_boundary": {
+          "OK": 1
+        },
+        "host_random_seed_failure": {
+          "E016": 1
+        },
+        "host_random_sequence": {
+          "OK": 1
+        },
+        "host_trap_order": {
+          "E017": 1
+        },
+        "integer_float_rounding": {
+          "OK": 1
+        },
+        "layout_all_zero_fields": {
+          "OK": 1
+        },
+        "layout_all_zero_map_update": {
+          "OK": 1
+        },
+        "layout_mixed_zero_each": {
+          "OK": 1
+        },
+        "layout_mixed_zero_nonzero_array": {
+          "OK": 1
+        },
+        "layout_mixed_zero_scalar": {
+          "OK": 1
+        },
+        "layout_nested_zero_buffer": {
+          "OK": 1
+        },
+        "layout_nested_zero_loop_update": {
+          "OK": 1
+        },
+        "layout_nested_zero_map": {
+          "OK": 1
+        },
+        "layout_nested_zero_map_loop": {
+          "OK": 1
+        },
+        "layout_nested_zero_negative": {
+          "E013": 1
+        },
+        "layout_zero_alias": {
+          "OK": 1
+        },
+        "layout_zero_duplicate_key": {
+          "E020": 1
+        },
+        "layout_zero_lazy": {
+          "OK": 1
+        },
+        "layout_zero_loop_append": {
+          "OK": 1
+        },
+        "layout_zero_map": {
+          "OK": 1
+        },
+        "layout_zero_missing_key": {
+          "E019": 1
+        },
+        "leaf_loop": {
+          "OK": 1
+        },
+        "map_alias_old_read": {
+          "OK": 1
+        },
+        "map_binary_keys": {
+          "OK": 1
+        },
+        "map_byte_constructor_quota": {
+          "E013": 1
+        },
+        "map_byte_repack": {
+          "OK": 1
+        },
+        "map_byte_result_lifetime": {
+          "OK": 1
+        },
+        "map_byte_update_alias": {
+          "OK": 1
+        },
+        "map_byte_values_calls": {
+          "OK": 1
+        },
+        "map_caller_alias": {
+          "OK": 1
+        },
+        "map_constructor_quota": {
+          "E013": 1
+        },
+        "map_duplicate_argument_effect": {
+          "E020": 1
+        },
+        "map_duplicate_before_quota": {
+          "E020": 1
+        },
+        "map_duplicate_key": {
+          "E020": 1
+        },
+        "map_empty": {
+          "OK": 1
+        },
+        "map_insert_loop": {
+          "OK": 1
+        },
+        "map_iteration_bounds": {
+          "E012": 1
+        },
+        "map_key_iteration": {
+          "OK": 1
+        },
+        "map_key_result_quota": {
+          "E013": 1
+        },
+        "map_lazy_alias": {
+          "OK": 1
+        },
+        "map_lazy_called_effect": {
+          "OK": 1
+        },
+        "map_lookup": {
+          "OK": 1
+        },
+        "map_lookup_result_quota": {
+          "E013": 1
+        },
+        "map_loop_alias": {
+          "OK": 1
+        },
+        "map_missing_key": {
+          "E019": 1
+        },
+        "map_nested_byte_values": {
+          "OK": 1
+        },
+        "map_nested_loop": {
+          "OK": 1
+        },
+        "map_order_growth": {
+          "OK": 1
+        },
+        "map_put_quota": {
+          "E013": 1
+        },
+        "map_quota_boundary": {
+          "E013": 1
+        },
+        "map_recursive_alias": {
+          "OK": 1
+        },
+        "map_returned_alias": {
+          "OK": 1
+        },
+        "mixed_width_explicit": {
+          "OK": 1
+        },
+        "module_alias_after_return": {
+          "OK": 1
+        },
+        "module_allocation": {
+          "OK": 1
+        },
+        "module_borrowed_calls_loop": {
+          "OK": 1
+        },
+        "module_bounds_failure": {
+          "E012": 1
+        },
+        "module_byte_range_failure": {
+          "E014": 1
+        },
+        "module_dead_quota": {
+          "OK": 1
+        },
+        "module_denied_host": {
+          "E018": 1
+        },
+        "module_effect_trap_order": {
+          "E016": 1
+        },
+        "module_file_pipeline": {
+          "OK": 1
+        },
+        "module_host_effects": {
+          "OK": 1
+        },
+        "module_io_failure": {
+          "E015": 1
+        },
+        "module_lazy_unselected": {
+          "OK": 1
+        },
+        "module_live_quota": {
+          "E013": 1
+        },
+        "module_local_name_collision": {
+          "OK": 1
+        },
+        "module_loop_state_allocation": {
+          "OK": 1
+        },
+        "module_multiple_functions": {
+          "OK": 1
+        },
+        "module_parse_failure": {
+          "E016": 1
+        },
+        "module_path_failure": {
+          "E017": 1
+        },
+        "module_quota_boundary": {
+          "E013": 1
+        },
+        "module_record_buffer_children": {
+          "OK": 1
+        },
+        "module_record_return": {
+          "OK": 1
+        },
+        "module_recursive_live_sequence": {
+          "OK": 1
+        },
+        "module_sort_each_plugin": {
+          "OK": 1
+        },
+        "module_transitive_import": {
+          "OK": 1
+        },
+        "mutual_recursion_reads": {
+          "OK": 1
+        },
+        "negative_start": {
+          "E012": 1
+        },
+        "negative_zero_trip": {
+          "OK": 1
+        },
+        "nested_builder_fresh": {
+          "OK": 1
+        },
+        "nested_builder_lazy": {
+          "OK": 1
+        },
+        "nested_builder_old_alias": {
+          "OK": 1
+        },
+        "nested_builder_plugin_held": {
+          "OK": 1
+        },
+        "nested_builder_quota": {
+          "E013": 1
+        },
+        "nested_builder_shared": {
+          "OK": 1
+        },
+        "nested_call_loop": {
+          "OK": 1
+        },
+        "parsebuf_argument_effect": {
+          "E016": 1
+        },
+        "parsebuf_binary_separators": {
+          "OK": 1
+        },
+        "parsebuf_caller_alias": {
+          "OK": 1
+        },
+        "parsebuf_canonical_failure": {
+          "E016": 1
+        },
+        "parsebuf_empty_equal": {
+          "OK": 1
+        },
+        "parsebuf_fields": {
+          "OK": 1
+        },
+        "parsebuf_internal_empty": {
+          "E016": 1
+        },
+        "parsebuf_lazy": {
+          "OK": 1
+        },
+        "parsebuf_leading_empty": {
+          "E016": 1
+        },
+        "parsebuf_loop_alias": {
+          "OK": 1
+        },
+        "parsebuf_quota_priority": {
+          "E013": 1
+        },
+        "parsebuf_recursive_alias": {
+          "OK": 1
+        },
+        "parsebuf_return_alias": {
+          "OK": 1
+        },
+        "parsebuf_trailing_empty": {
+          "E016": 1
+        },
+        "plugin_argument_division": {
+          "E009": 1
+        },
+        "plugin_argument_order": {
+          "E015": 1
+        },
+        "plugin_argument_quota_order": {
+          "E013": 1
+        },
+        "plugin_call_held_alias": {
+          "OK": 1
+        },
+        "plugin_dead_quota": {
+          "OK": 1
+        },
+        "plugin_each_state": {
+          "OK": 1
+        },
+        "plugin_effect_around_call": {
+          "OK": 1
+        },
+        "plugin_effect_order": {
+          "OK": 1
+        },
+        "plugin_equal_binary": {
+          "OK": 1
+        },
+        "plugin_equal_bounds_order": {
+          "E013": 1
+        },
+        "plugin_equal_buffer": {
+          "OK": 1
+        },
+        "plugin_equal_bytes": {
+          "OK": 1
+        },
+        "plugin_equal_empty": {
+          "OK": 1
+        },
+        "plugin_equal_length": {
+          "OK": 1
+        },
+        "plugin_equal_returned": {
+          "OK": 1
+        },
+        "plugin_lazy_selected": {
+          "OK": 1
+        },
+        "plugin_lazy_unselected": {
+          "OK": 1
+        },
+        "plugin_live_quota": {
+          "E013": 1
+        },
+        "plugin_loop_alias": {
+          "OK": 1
+        },
+        "plugin_loop_state": {
+          "OK": 1
+        },
+        "plugin_record_alias": {
+          "OK": 1
+        },
+        "plugin_record_construct": {
+          "OK": 1
+        },
+        "plugin_returned_buffer": {
+          "OK": 1
+        },
+        "plugin_returned_sequence": {
+          "OK": 1
+        },
+        "record_buffer_alias": {
+          "OK": 1
+        },
+        "record_called_lifetime": {
+          "OK": 1
+        },
+        "record_construct": {
+          "OK": 1
+        },
+        "record_dead_quota": {
+          "OK": 1
+        },
+        "record_duplicate_fields": {
+          "OK": 1
+        },
+        "record_each_state": {
+          "OK": 1
+        },
+        "record_field_effect_order": {
+          "OK": 1
+        },
+        "record_field_trap_order": {
+          "E016": 1
+        },
+        "record_lazy_called_effect": {
+          "OK": 1
+        },
+        "record_lazy_trap_effect": {
+          "OK": 1
+        },
+        "record_lazy_update": {
+          "OK": 1
+        },
+        "record_live_quota": {
+          "E013": 1
+        },
+        "record_loop_state": {
+          "OK": 1
+        },
+        "record_map_alias": {
+          "OK": 1
+        },
+        "record_map_binary_key": {
+          "OK": 1
+        },
+        "record_map_bits": {
+          "OK": 1
+        },
+        "record_map_builder": {
+          "OK": 1
+        },
+        "record_map_duplicate": {
+          "E020": 1
+        },
+        "record_map_each_snapshot": {
+          "OK": 1
+        },
+        "record_map_each_sort": {
+          "OK": 1
+        },
+        "record_map_empty_each": {
+          "OK": 1
+        },
+        "record_map_invalid_mode": {
+          "E012": 1
+        },
+        "record_map_missing": {
+          "E019": 1
+        },
+        "record_map_quota": {
+          "E013": 1
+        },
+        "record_map_sort_mode": {
+          "E018": 1
+        },
+        "record_mixed_chain": {
+          "OK": 1
+        },
+        "record_mutual_recursion": {
+          "OK": 1
+        },
+        "record_nested_lifetime": {
+          "OK": 1
+        },
+        "record_returned_alias": {
+          "OK": 1
+        },
+        "record_self_recursion": {
+          "OK": 1
+        },
+        "record_sort_field": {
+          "OK": 1
+        },
+        "record_update_alias": {
+          "OK": 1
+        },
+        "recursion_reads": {
+          "OK": 1
+        },
+        "recursive_allocation": {
+          "OK": 1
+        },
+        "recursive_sequence_alias": {
+          "OK": 1
+        },
+        "sequence_return_loop": {
+          "OK": 1
+        },
+        "shifted_index": {
+          "E012": 1
+        },
+        "slice_return_alias_live": {
+          "OK": 1
+        },
+        "sort_alias_old_read": {
+          "OK": 1
+        },
+        "sort_binary_bytes": {
+          "OK": 1
+        },
+        "sort_buffer": {
+          "OK": 1
+        },
+        "sort_byte_value_prefix": {
+          "OK": 1
+        },
+        "sort_bytes": {
+          "OK": 1
+        },
+        "sort_caller_alias": {
+          "OK": 1
+        },
+        "sort_duplicate_before_order": {
+          "E020": 1
+        },
+        "sort_empty": {
+          "OK": 1
+        },
+        "sort_equal_elements": {
+          "OK": 1
+        },
+        "sort_invalid_order_before_quota": {
+          "E012": 1
+        },
+        "sort_lazy_alias": {
+          "OK": 1
+        },
+        "sort_loop_state": {
+          "OK": 1
+        },
+        "sort_quota": {
+          "E013": 1
+        },
+        "sort_rebuilt_lookup": {
+          "OK": 1
+        },
+        "sort_signed_extrema": {
+          "OK": 1
+        },
+        "sort_value_key_ties": {
+          "OK": 1
+        },
+        "unsigned_order": {
+          "OK": 1
+        },
+        "unsigned_parse_invalid": {
+          "E022": 1
+        },
+        "unsigned_parse_roundtrip": {
+          "OK": 1
+        },
+        "unsigned_wrap_add": {
+          "OK": 1
+        },
+        "unsigned_wrap_sub": {
+          "OK": 1
+        },
+        "unsigned_zero_division": {
+          "E009": 1
+        },
+        "wide_called_loop": {
+          "OK": 1
+        },
+        "wide_checked_narrow": {
+          "E021": 1
+        },
+        "wide_explicit_trunc": {
+          "OK": 1
+        },
+        "wide_parse_overflow": {
+          "E022": 1
+        },
+        "wide_wrap_mul": {
+          "OK": 1
+        }
+      }
+    },
+    {
+      "seed": 4294967295,
+      "programs": 418,
+      "native_builds": 836,
+      "divergences": 0,
+      "observed_codes": {
+        "E009": 3,
+        "E012": 20,
+        "E013": 30,
+        "E014": 6,
+        "E015": 8,
+        "E016": 13,
+        "E017": 10,
+        "E018": 11,
+        "E019": 3,
+        "E020": 6,
+        "E021": 5,
+        "E022": 3,
+        "OK": 300
+      },
+      "generated_intrinsics": [
+        "bits",
+        "buffer",
+        "bytemap",
+        "bytes",
+        "concat",
+        "directory",
+        "each",
+        "env",
+        "equal",
+        "f64",
+        "find",
+        "floatbits",
+        "format",
+        "get",
+        "has",
+        "i64",
+        "insert",
+        "key",
+        "map",
+        "out",
+        "parse",
+        "parsebuf",
+        "parsef64",
+        "parseu128",
+        "parseu64",
+        "plugin",
+        "put",
+        "random",
+        "read",
+        "size",
+        "slice",
+        "sort",
+        "trunci64",
+        "truncu64",
+        "u128",
+        "u64",
+        "write"
+      ],
+      "call_families": {
+        "bulk_alias_identity": 1,
+        "bulk_call_loop_alias": 1,
+        "bulk_empty": 1,
+        "bulk_first_mismatch": 1,
+        "bulk_full_equal": 1,
+        "bulk_integer_equal": 1,
+        "bulk_integer_extremes": 1,
+        "bulk_last_mismatch": 1,
+        "bulk_lazy_trap": 1,
+        "bulk_length_mismatch": 1,
+        "bulk_quota_failure": 1,
+        "bulk_quota_live_success": 1,
+        "called_effect_lazy": 1,
+        "calls_lazy": 1,
+        "collection_append": 1,
+        "collection_child_alias": 1,
+        "collection_concat_alias": 1,
+        "collection_concat_empty": 1,
+        "collection_construct": 1,
+        "collection_dead_children_quota": 1,
+        "collection_each": 1,
+        "collection_effects": 1,
+        "collection_empty": 1,
+        "collection_growth_loop": 1,
+        "collection_index_error": 1,
+        "collection_lazy": 1,
+        "collection_live_children_quota": 1,
+        "collection_negative_length": 1,
+        "collection_nested_each_sort_map": 1,
+        "collection_nested_lifetime": 1,
+        "collection_old_alias": 1,
+        "collection_plugin_nested": 1,
+        "collection_quota": 1,
+        "collection_slice": 1,
+        "collection_slice_priority": 1,
+        "collection_sort_deferred": 1,
+        "collection_sort_mode": 1,
+        "collection_update_loop_alias": 1,
+        "collection_zero_bounds": 1,
+        "collection_zero_concat_slice_update": 1,
+        "collection_zero_layout": 1,
+        "collection_zero_quota": 1,
+        "computed_start": 1,
+        "conditional_sequence_alloc": 1,
+        "each_append_snapshot_alias": 1,
+        "each_buffer_reduce": 1,
+        "each_called_effect": 1,
+        "each_empty": 1,
+        "each_ignored_key_quota": 1,
+        "each_ignored_value_quota": 1,
+        "each_inherited_bounds_priority": 1,
+        "each_lazy_called_effect": 1,
+        "each_map_order": 1,
+        "each_nested_loop": 1,
+        "each_owned_byte_values": 1,
+        "each_parallel_state": 1,
+        "each_returned_sequence_alias": 1,
+        "each_single_binary": 1,
+        "each_snapshot_map_update": 1,
+        "each_snapshot_replace": 1,
+        "each_sort_update_chain": 1,
+        "each_sorted_empty_map": 1,
+        "equal_buffer": 1,
+        "equal_bytes": 1,
+        "equal_called_effects": 1,
+        "equal_replacement_alias": 1,
+        "exit_index": 1,
+        "field_append_allocation_before_scalar_read": 1,
+        "field_append_caller_alias": 1,
+        "field_append_dead_edge": 1,
+        "field_append_old_read": 1,
+        "field_append_quota_alias": 1,
+        "field_collection_old_read": 1,
+        "find_bounds_priority": 1,
+        "find_buffer": 1,
+        "find_byte_range": 1,
+        "find_bytes": 1,
+        "find_end_bounds": 1,
+        "find_leaf_loop": 1,
+        "float_add_bits": 1,
+        "float_called_loop": 1,
+        "float_comparison_nan": 1,
+        "float_contraction": 1,
+        "float_decimal_parse": 1,
+        "float_div_bits": 1,
+        "float_format_exact": 1,
+        "float_inf_nan": 1,
+        "float_lazy_trap": 1,
+        "float_max_finite": 1,
+        "float_min_normal": 1,
+        "float_mul_bits": 1,
+        "float_nan_payload": 1,
+        "float_parse_invalid": 1,
+        "float_parse_overflow": 1,
+        "float_parse_underflow": 1,
+        "float_roundtrip_bits": 1,
+        "float_signed_zero": 1,
+        "float_sub_bits": 1,
+        "float_subnormal": 1,
+        "float_to_integer_edge": 1,
+        "float_to_integer_fraction": 1,
+        "float_to_integer_nan": 1,
+        "float_to_unsigned_negative": 1,
+        "float_to_wide_edge": 1,
+        "float_unselected_host": 1,
+        "float_zero_comparison": 1,
+        "hof_allocation_alias": 1,
+        "hof_bounds": 1,
+        "hof_buffer_map": 1,
+        "hof_bytes_map": 1,
+        "hof_comparator": 1,
+        "hof_each": 1,
+        "hof_effect_denial": 1,
+        "hof_effect_order": 1,
+        "hof_env": 1,
+        "hof_env_denial": 1,
+        "hof_forwarding": 1,
+        "hof_lazy_allocation": 1,
+        "hof_module_callback": 1,
+        "hof_module_template": 1,
+        "hof_mutual_recursion": 1,
+        "hof_nested_zero_slot_record": 1,
+        "hof_quota": 1,
+        "hof_random": 1,
+        "hof_read": 1,
+        "hof_recursion": 1,
+        "hof_recursive_sequence": 1,
+        "hof_selected_effect": 1,
+        "hof_trap_order": 1,
+        "hof_unselected_effect": 1,
+        "hof_write": 1,
+        "hof_zero_slot_record": 1,
+        "host_directory_alias": 1,
+        "host_directory_denial": 1,
+        "host_directory_empty": 1,
+        "host_directory_entry_kinds": 1,
+        "host_directory_file": 1,
+        "host_directory_key": 1,
+        "host_directory_large": 1,
+        "host_directory_lazy": 1,
+        "host_directory_loop_state": 1,
+        "host_directory_missing": 1,
+        "host_directory_nul": 1,
+        "host_directory_order": 1,
+        "host_directory_quota": 1,
+        "host_directory_unreadable": 1,
+        "host_env_absent": 1,
+        "host_env_denial": 1,
+        "host_env_empty": 1,
+        "host_env_empty_name": 1,
+        "host_env_equals_name": 1,
+        "host_env_loop_state": 1,
+        "host_env_nul_name": 1,
+        "host_env_present": 1,
+        "host_env_quota": 1,
+        "host_env_raw": 1,
+        "host_env_return_alias": 1,
+        "host_invalid_before_denial": 1,
+        "host_random_callee": 1,
+        "host_random_denial": 1,
+        "host_random_first": 1,
+        "host_random_lazy": 1,
+        "host_random_live_quota": 1,
+        "host_random_loop": 1,
+        "host_random_seed_boundary": 1,
+        "host_random_seed_failure": 1,
+        "host_random_sequence": 1,
+        "host_trap_order": 1,
+        "integer_float_rounding": 1,
+        "layout_all_zero_fields": 1,
+        "layout_all_zero_map_update": 1,
+        "layout_mixed_zero_each": 1,
+        "layout_mixed_zero_nonzero_array": 1,
+        "layout_mixed_zero_scalar": 1,
+        "layout_nested_zero_buffer": 1,
+        "layout_nested_zero_loop_update": 1,
+        "layout_nested_zero_map": 1,
+        "layout_nested_zero_map_loop": 1,
+        "layout_nested_zero_negative": 1,
+        "layout_zero_alias": 1,
+        "layout_zero_duplicate_key": 1,
+        "layout_zero_lazy": 1,
+        "layout_zero_loop_append": 1,
+        "layout_zero_map": 1,
+        "layout_zero_missing_key": 1,
+        "leaf_loop": 1,
+        "map_alias_old_read": 1,
+        "map_binary_keys": 1,
+        "map_byte_constructor_quota": 1,
+        "map_byte_repack": 1,
+        "map_byte_result_lifetime": 1,
+        "map_byte_update_alias": 1,
+        "map_byte_values_calls": 1,
+        "map_caller_alias": 1,
+        "map_constructor_quota": 1,
+        "map_duplicate_argument_effect": 1,
+        "map_duplicate_before_quota": 1,
+        "map_duplicate_key": 1,
+        "map_empty": 1,
+        "map_insert_loop": 1,
+        "map_iteration_bounds": 1,
+        "map_key_iteration": 1,
+        "map_key_result_quota": 1,
+        "map_lazy_alias": 1,
+        "map_lazy_called_effect": 1,
+        "map_lookup": 1,
+        "map_lookup_result_quota": 1,
+        "map_loop_alias": 1,
+        "map_missing_key": 1,
+        "map_nested_byte_values": 1,
+        "map_nested_loop": 1,
+        "map_order_growth": 1,
+        "map_put_quota": 1,
+        "map_quota_boundary": 1,
+        "map_recursive_alias": 1,
+        "map_returned_alias": 1,
+        "mixed_width_explicit": 1,
+        "module_alias_after_return": 1,
+        "module_allocation": 1,
+        "module_borrowed_calls_loop": 1,
+        "module_bounds_failure": 1,
+        "module_byte_range_failure": 1,
+        "module_dead_quota": 1,
+        "module_denied_host": 1,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_effect_trap_order": 1,
+        "module_file_pipeline": 1,
+        "module_host_effects": 1,
+        "module_import_cycle": 1,
+        "module_io_failure": 1,
+        "module_lazy_unselected": 1,
+        "module_live_quota": 1,
+        "module_local_name_collision": 1,
+        "module_loop_state_allocation": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_multiple_functions": 1,
+        "module_noncanonical_namespace": 1,
+        "module_parse_failure": 1,
+        "module_path_failure": 1,
+        "module_quota_boundary": 1,
+        "module_record_buffer_children": 1,
+        "module_record_return": 1,
+        "module_recursive_live_sequence": 1,
+        "module_sort_each_plugin": 1,
+        "module_transitive_import": 1,
+        "module_unknown_version": 1,
+        "mutual_recursion_reads": 1,
+        "negative_start": 1,
+        "negative_zero_trip": 1,
+        "nested_builder_fresh": 1,
+        "nested_builder_lazy": 1,
+        "nested_builder_old_alias": 1,
+        "nested_builder_plugin_held": 1,
+        "nested_builder_quota": 1,
+        "nested_builder_shared": 1,
+        "nested_call_loop": 1,
+        "parsebuf_argument_effect": 1,
+        "parsebuf_binary_separators": 1,
+        "parsebuf_caller_alias": 1,
+        "parsebuf_canonical_failure": 1,
+        "parsebuf_empty_equal": 1,
+        "parsebuf_fields": 1,
+        "parsebuf_internal_empty": 1,
+        "parsebuf_lazy": 1,
+        "parsebuf_leading_empty": 1,
+        "parsebuf_loop_alias": 1,
+        "parsebuf_quota_priority": 1,
+        "parsebuf_recursive_alias": 1,
+        "parsebuf_return_alias": 1,
+        "parsebuf_trailing_empty": 1,
+        "plugin_argument_division": 1,
+        "plugin_argument_order": 1,
+        "plugin_argument_quota_order": 1,
+        "plugin_call_held_alias": 1,
+        "plugin_dead_quota": 1,
+        "plugin_each_state": 1,
+        "plugin_effect_around_call": 1,
+        "plugin_effect_order": 1,
+        "plugin_equal_binary": 1,
+        "plugin_equal_bounds_order": 1,
+        "plugin_equal_buffer": 1,
+        "plugin_equal_bytes": 1,
+        "plugin_equal_empty": 1,
+        "plugin_equal_length": 1,
+        "plugin_equal_returned": 1,
+        "plugin_lazy_selected": 1,
+        "plugin_lazy_unselected": 1,
+        "plugin_live_quota": 1,
+        "plugin_loop_alias": 1,
+        "plugin_loop_state": 1,
+        "plugin_record_alias": 1,
+        "plugin_record_construct": 1,
+        "plugin_returned_buffer": 1,
+        "plugin_returned_sequence": 1,
+        "record_buffer_alias": 1,
+        "record_called_lifetime": 1,
+        "record_construct": 1,
+        "record_dead_quota": 1,
+        "record_duplicate_fields": 1,
+        "record_each_state": 1,
+        "record_field_effect_order": 1,
+        "record_field_trap_order": 1,
+        "record_lazy_called_effect": 1,
+        "record_lazy_trap_effect": 1,
+        "record_lazy_update": 1,
+        "record_live_quota": 1,
+        "record_loop_state": 1,
+        "record_map_alias": 1,
+        "record_map_binary_key": 1,
+        "record_map_bits": 1,
+        "record_map_builder": 1,
+        "record_map_duplicate": 1,
+        "record_map_each_snapshot": 1,
+        "record_map_each_sort": 1,
+        "record_map_empty_each": 1,
+        "record_map_invalid_mode": 1,
+        "record_map_missing": 1,
+        "record_map_quota": 1,
+        "record_map_sort_mode": 1,
+        "record_mixed_chain": 1,
+        "record_mutual_recursion": 1,
+        "record_nested_lifetime": 1,
+        "record_returned_alias": 1,
+        "record_self_recursion": 1,
+        "record_sort_field": 1,
+        "record_update_alias": 1,
+        "recursion_reads": 1,
+        "recursive_allocation": 1,
+        "recursive_sequence_alias": 1,
+        "sequence_return_loop": 1,
+        "shifted_index": 1,
+        "slice_return_alias_live": 1,
+        "sort_alias_old_read": 1,
+        "sort_binary_bytes": 1,
+        "sort_buffer": 1,
+        "sort_byte_value_prefix": 1,
+        "sort_bytes": 1,
+        "sort_caller_alias": 1,
+        "sort_duplicate_before_order": 1,
+        "sort_empty": 1,
+        "sort_equal_elements": 1,
+        "sort_invalid_order_before_quota": 1,
+        "sort_lazy_alias": 1,
+        "sort_loop_state": 1,
+        "sort_quota": 1,
+        "sort_rebuilt_lookup": 1,
+        "sort_signed_extrema": 1,
+        "sort_value_key_ties": 1,
+        "unsigned_order": 1,
+        "unsigned_parse_invalid": 1,
+        "unsigned_parse_roundtrip": 1,
+        "unsigned_wrap_add": 1,
+        "unsigned_wrap_sub": 1,
+        "unsigned_zero_division": 1,
+        "wide_called_loop": 1,
+        "wide_checked_narrow": 1,
+        "wide_explicit_trunc": 1,
+        "wide_parse_overflow": 1,
+        "wide_wrap_mul": 1
+      },
+      "source_mutations": {
+        "collection_missing_bracket": 31,
+        "collection_self_type": 154,
+        "collection_truncated": 154,
+        "collection_unknown_type": 154,
+        "collection_wrong_element": 31,
+        "each_changed_binding": 32,
+        "each_extra_delimiter": 32,
+        "each_missing_separator": 32,
+        "each_truncated": 32,
+        "each_unknown_operation": 32,
+        "hof_function_escape": 26,
+        "hof_malformed_type": 26,
+        "hof_unknown_parameter": 26,
+        "hof_unknown_reference": 26,
+        "hof_wrong_signature": 26,
+        "module_duplicate_export": 1,
+        "module_duplicate_import": 1,
+        "module_duplicate_namespace": 1,
+        "module_import_cycle": 1,
+        "module_missing_export": 1,
+        "module_missing_function": 1,
+        "module_missing_import": 1,
+        "module_noncanonical_namespace": 1,
+        "module_unknown_version": 1,
+        "numeric_incomplete_exponent": 8,
+        "numeric_incomplete_fraction": 8,
+        "numeric_mixed_width": 7,
+        "numeric_unknown_conversion": 20,
+        "numeric_unknown_width": 31,
+        "plugin_missing_separator": 20,
+        "plugin_noncanonical_id": 20,
+        "plugin_truncated": 178,
+        "plugin_unknown_id": 20,
+        "plugin_unknown_operation": 20,
+        "record_duplicate_field": 32,
+        "record_dynamic_map_value": 11,
+        "record_missing_update_colon": 3,
+        "record_truncated_declaration": 32,
+        "record_unknown_field": 15,
+        "record_unknown_type": 32
+      },
+      "static_codes": {
+        "E002": 26,
+        "E004": 26,
+        "E005": 26,
+        "E007": 52
+      },
+      "family_codes": {
+        "bulk_alias_identity": {
+          "OK": 1
+        },
+        "bulk_call_loop_alias": {
+          "OK": 1
+        },
+        "bulk_empty": {
+          "OK": 1
+        },
+        "bulk_first_mismatch": {
+          "OK": 1
+        },
+        "bulk_full_equal": {
+          "OK": 1
+        },
+        "bulk_integer_equal": {
+          "OK": 1
+        },
+        "bulk_integer_extremes": {
+          "OK": 1
+        },
+        "bulk_last_mismatch": {
+          "OK": 1
+        },
+        "bulk_lazy_trap": {
+          "OK": 1
+        },
+        "bulk_length_mismatch": {
+          "OK": 1
+        },
+        "bulk_quota_failure": {
+          "E013": 1
+        },
+        "bulk_quota_live_success": {
+          "OK": 1
+        },
+        "called_effect_lazy": {
+          "OK": 1
+        },
+        "calls_lazy": {
+          "OK": 1
+        },
+        "collection_append": {
+          "OK": 1
+        },
+        "collection_child_alias": {
+          "OK": 1
+        },
+        "collection_concat_alias": {
+          "OK": 1
+        },
+        "collection_concat_empty": {
+          "OK": 1
+        },
+        "collection_construct": {
+          "OK": 1
+        },
+        "collection_dead_children_quota": {
+          "OK": 1
+        },
+        "collection_each": {
+          "OK": 1
+        },
+        "collection_effects": {
+          "OK": 1
+        },
+        "collection_empty": {
+          "OK": 1
+        },
+        "collection_growth_loop": {
+          "OK": 1
+        },
+        "collection_index_error": {
+          "E012": 1
+        },
+        "collection_lazy": {
+          "OK": 1
+        },
+        "collection_live_children_quota": {
+          "E013": 1
+        },
+        "collection_negative_length": {
+          "E013": 1
+        },
+        "collection_nested_each_sort_map": {
+          "OK": 1
+        },
+        "collection_nested_lifetime": {
+          "OK": 1
+        },
+        "collection_old_alias": {
+          "OK": 1
+        },
+        "collection_plugin_nested": {
+          "OK": 1
+        },
+        "collection_quota": {
+          "E013": 1
+        },
+        "collection_slice": {
+          "OK": 1
+        },
+        "collection_slice_priority": {
+          "E012": 1
+        },
+        "collection_sort_deferred": {
+          "E018": 1
+        },
+        "collection_sort_mode": {
+          "E012": 1
+        },
+        "collection_update_loop_alias": {
+          "OK": 1
+        },
+        "collection_zero_bounds": {
+          "E012": 1
+        },
+        "collection_zero_concat_slice_update": {
+          "OK": 1
+        },
+        "collection_zero_layout": {
+          "OK": 1
+        },
+        "collection_zero_quota": {
+          "E013": 1
+        },
+        "computed_start": {
+          "OK": 1
+        },
+        "conditional_sequence_alloc": {
+          "OK": 1
+        },
+        "each_append_snapshot_alias": {
+          "OK": 1
+        },
+        "each_buffer_reduce": {
+          "OK": 1
+        },
+        "each_called_effect": {
+          "OK": 1
+        },
+        "each_empty": {
+          "OK": 1
+        },
+        "each_ignored_key_quota": {
+          "OK": 1
+        },
+        "each_ignored_value_quota": {
+          "E013": 1
+        },
+        "each_inherited_bounds_priority": {
+          "E012": 1
+        },
+        "each_lazy_called_effect": {
+          "OK": 1
+        },
+        "each_map_order": {
+          "OK": 1
+        },
+        "each_nested_loop": {
+          "OK": 1
+        },
+        "each_owned_byte_values": {
+          "OK": 1
+        },
+        "each_parallel_state": {
+          "OK": 1
+        },
+        "each_returned_sequence_alias": {
+          "OK": 1
+        },
+        "each_single_binary": {
+          "OK": 1
+        },
+        "each_snapshot_map_update": {
+          "OK": 1
+        },
+        "each_snapshot_replace": {
+          "OK": 1
+        },
+        "each_sort_update_chain": {
+          "OK": 1
+        },
+        "each_sorted_empty_map": {
+          "OK": 1
+        },
+        "equal_buffer": {
+          "OK": 1
+        },
+        "equal_bytes": {
+          "OK": 1
+        },
+        "equal_called_effects": {
+          "OK": 1
+        },
+        "equal_replacement_alias": {
+          "OK": 1
+        },
+        "exit_index": {
+          "E012": 1
+        },
+        "field_append_allocation_before_scalar_read": {
+          "OK": 1
+        },
+        "field_append_caller_alias": {
+          "OK": 1
+        },
+        "field_append_dead_edge": {
+          "OK": 1
+        },
+        "field_append_old_read": {
+          "OK": 1
+        },
+        "field_append_quota_alias": {
+          "E013": 1
+        },
+        "field_collection_old_read": {
+          "OK": 1
+        },
+        "find_bounds_priority": {
+          "E012": 1
+        },
+        "find_buffer": {
+          "OK": 1
+        },
+        "find_byte_range": {
+          "E014": 1
+        },
+        "find_bytes": {
+          "OK": 1
+        },
+        "find_end_bounds": {
+          "E012": 1
+        },
+        "find_leaf_loop": {
+          "OK": 1
+        },
+        "float_add_bits": {
+          "OK": 1
+        },
+        "float_called_loop": {
+          "OK": 1
+        },
+        "float_comparison_nan": {
+          "OK": 1
+        },
+        "float_contraction": {
+          "OK": 1
+        },
+        "float_decimal_parse": {
+          "OK": 1
+        },
+        "float_div_bits": {
+          "OK": 1
+        },
+        "float_format_exact": {
+          "OK": 1
+        },
+        "float_inf_nan": {
+          "OK": 1
+        },
+        "float_lazy_trap": {
+          "OK": 1
+        },
+        "float_max_finite": {
+          "OK": 1
+        },
+        "float_min_normal": {
+          "OK": 1
+        },
+        "float_mul_bits": {
+          "OK": 1
+        },
+        "float_nan_payload": {
+          "OK": 1
+        },
+        "float_parse_invalid": {
+          "E022": 1
+        },
+        "float_parse_overflow": {
+          "OK": 1
+        },
+        "float_parse_underflow": {
+          "OK": 1
+        },
+        "float_roundtrip_bits": {
+          "OK": 1
+        },
+        "float_signed_zero": {
+          "OK": 1
+        },
+        "float_sub_bits": {
+          "OK": 1
+        },
+        "float_subnormal": {
+          "OK": 1
+        },
+        "float_to_integer_edge": {
+          "E021": 1
+        },
+        "float_to_integer_fraction": {
+          "OK": 1
+        },
+        "float_to_integer_nan": {
+          "E021": 1
+        },
+        "float_to_unsigned_negative": {
+          "E021": 1
+        },
+        "float_to_wide_edge": {
+          "E021": 1
+        },
+        "float_unselected_host": {
+          "OK": 1
+        },
+        "float_zero_comparison": {
+          "OK": 1
+        },
+        "hof_allocation_alias": {
+          "OK": 1
+        },
+        "hof_bounds": {
+          "E012": 1
+        },
+        "hof_buffer_map": {
+          "OK": 1
+        },
+        "hof_bytes_map": {
+          "OK": 1
+        },
+        "hof_comparator": {
+          "OK": 1
+        },
+        "hof_each": {
+          "OK": 1
+        },
+        "hof_effect_denial": {
+          "E018": 1
+        },
+        "hof_effect_order": {
+          "OK": 1
+        },
+        "hof_env": {
+          "OK": 1
+        },
+        "hof_env_denial": {
+          "E018": 1
+        },
+        "hof_forwarding": {
+          "OK": 1
+        },
+        "hof_lazy_allocation": {
+          "OK": 1
+        },
+        "hof_module_callback": {
+          "OK": 1
+        },
+        "hof_module_template": {
+          "OK": 1
+        },
+        "hof_mutual_recursion": {
+          "OK": 1
+        },
+        "hof_nested_zero_slot_record": {
+          "OK": 1
+        },
+        "hof_quota": {
+          "E013": 1
+        },
+        "hof_random": {
+          "OK": 1
+        },
+        "hof_read": {
+          "OK": 1
+        },
+        "hof_recursion": {
+          "OK": 1
+        },
+        "hof_recursive_sequence": {
+          "OK": 1
+        },
+        "hof_selected_effect": {
+          "OK": 1
+        },
+        "hof_trap_order": {
+          "E009": 1
+        },
+        "hof_unselected_effect": {
+          "OK": 1
+        },
+        "hof_write": {
+          "OK": 1
+        },
+        "hof_zero_slot_record": {
+          "OK": 1
+        },
+        "host_directory_alias": {
+          "OK": 1
+        },
+        "host_directory_denial": {
+          "E018": 1
+        },
+        "host_directory_empty": {
+          "OK": 1
+        },
+        "host_directory_entry_kinds": {
+          "OK": 1
+        },
+        "host_directory_file": {
+          "E015": 1
+        },
+        "host_directory_key": {
+          "OK": 1
+        },
+        "host_directory_large": {
+          "OK": 1
+        },
+        "host_directory_lazy": {
+          "OK": 1
+        },
+        "host_directory_loop_state": {
+          "OK": 1
+        },
+        "host_directory_missing": {
+          "E015": 1
+        },
+        "host_directory_nul": {
+          "E017": 1
+        },
+        "host_directory_order": {
+          "OK": 1
+        },
+        "host_directory_quota": {
+          "E013": 1
+        },
+        "host_directory_unreadable": {
+          "E015": 1
+        },
+        "host_env_absent": {
+          "OK": 1
+        },
+        "host_env_denial": {
+          "E018": 1
+        },
+        "host_env_empty": {
+          "OK": 1
+        },
+        "host_env_empty_name": {
+          "E017": 1
+        },
+        "host_env_equals_name": {
+          "E017": 1
+        },
+        "host_env_loop_state": {
+          "OK": 1
+        },
+        "host_env_nul_name": {
+          "E017": 1
+        },
+        "host_env_present": {
+          "OK": 1
+        },
+        "host_env_quota": {
+          "E013": 1
+        },
+        "host_env_raw": {
+          "OK": 1
+        },
+        "host_env_return_alias": {
+          "OK": 1
+        },
+        "host_invalid_before_denial": {
+          "E017": 1
+        },
+        "host_random_callee": {
+          "OK": 1
+        },
+        "host_random_denial": {
+          "E018": 1
+        },
+        "host_random_first": {
+          "OK": 1
+        },
+        "host_random_lazy": {
+          "OK": 1
+        },
+        "host_random_live_quota": {
+          "OK": 1
+        },
+        "host_random_loop": {
+          "OK": 1
+        },
+        "host_random_seed_boundary": {
+          "OK": 1
+        },
+        "host_random_seed_failure": {
+          "E016": 1
+        },
+        "host_random_sequence": {
+          "OK": 1
+        },
+        "host_trap_order": {
+          "E017": 1
+        },
+        "integer_float_rounding": {
+          "OK": 1
+        },
+        "layout_all_zero_fields": {
+          "OK": 1
+        },
+        "layout_all_zero_map_update": {
+          "OK": 1
+        },
+        "layout_mixed_zero_each": {
+          "OK": 1
+        },
+        "layout_mixed_zero_nonzero_array": {
+          "OK": 1
+        },
+        "layout_mixed_zero_scalar": {
+          "OK": 1
+        },
+        "layout_nested_zero_buffer": {
+          "OK": 1
+        },
+        "layout_nested_zero_loop_update": {
+          "OK": 1
+        },
+        "layout_nested_zero_map": {
+          "OK": 1
+        },
+        "layout_nested_zero_map_loop": {
+          "OK": 1
+        },
+        "layout_nested_zero_negative": {
+          "E013": 1
+        },
+        "layout_zero_alias": {
+          "OK": 1
+        },
+        "layout_zero_duplicate_key": {
+          "E020": 1
+        },
+        "layout_zero_lazy": {
+          "OK": 1
+        },
+        "layout_zero_loop_append": {
+          "OK": 1
+        },
+        "layout_zero_map": {
+          "OK": 1
+        },
+        "layout_zero_missing_key": {
+          "E019": 1
+        },
+        "leaf_loop": {
+          "OK": 1
+        },
+        "map_alias_old_read": {
+          "OK": 1
+        },
+        "map_binary_keys": {
+          "OK": 1
+        },
+        "map_byte_constructor_quota": {
+          "E013": 1
+        },
+        "map_byte_repack": {
+          "OK": 1
+        },
+        "map_byte_result_lifetime": {
+          "OK": 1
+        },
+        "map_byte_update_alias": {
+          "OK": 1
+        },
+        "map_byte_values_calls": {
+          "OK": 1
+        },
+        "map_caller_alias": {
+          "OK": 1
+        },
+        "map_constructor_quota": {
+          "E013": 1
+        },
+        "map_duplicate_argument_effect": {
+          "E020": 1
+        },
+        "map_duplicate_before_quota": {
+          "E020": 1
+        },
+        "map_duplicate_key": {
+          "E020": 1
+        },
+        "map_empty": {
+          "OK": 1
+        },
+        "map_insert_loop": {
+          "OK": 1
+        },
+        "map_iteration_bounds": {
+          "E012": 1
+        },
+        "map_key_iteration": {
+          "OK": 1
+        },
+        "map_key_result_quota": {
+          "E013": 1
+        },
+        "map_lazy_alias": {
+          "OK": 1
+        },
+        "map_lazy_called_effect": {
+          "OK": 1
+        },
+        "map_lookup": {
+          "OK": 1
+        },
+        "map_lookup_result_quota": {
+          "E013": 1
+        },
+        "map_loop_alias": {
+          "OK": 1
+        },
+        "map_missing_key": {
+          "E019": 1
+        },
+        "map_nested_byte_values": {
+          "OK": 1
+        },
+        "map_nested_loop": {
+          "OK": 1
+        },
+        "map_order_growth": {
+          "OK": 1
+        },
+        "map_put_quota": {
+          "E013": 1
+        },
+        "map_quota_boundary": {
+          "E013": 1
+        },
+        "map_recursive_alias": {
+          "OK": 1
+        },
+        "map_returned_alias": {
+          "OK": 1
+        },
+        "mixed_width_explicit": {
+          "OK": 1
+        },
+        "module_alias_after_return": {
+          "OK": 1
+        },
+        "module_allocation": {
+          "OK": 1
+        },
+        "module_borrowed_calls_loop": {
+          "OK": 1
+        },
+        "module_bounds_failure": {
+          "E012": 1
+        },
+        "module_byte_range_failure": {
+          "E014": 1
+        },
+        "module_dead_quota": {
+          "OK": 1
+        },
+        "module_denied_host": {
+          "E018": 1
+        },
+        "module_effect_trap_order": {
+          "E016": 1
+        },
+        "module_file_pipeline": {
+          "OK": 1
+        },
+        "module_host_effects": {
+          "OK": 1
+        },
+        "module_io_failure": {
+          "E015": 1
+        },
+        "module_lazy_unselected": {
+          "OK": 1
+        },
+        "module_live_quota": {
+          "E013": 1
+        },
+        "module_local_name_collision": {
+          "OK": 1
+        },
+        "module_loop_state_allocation": {
+          "OK": 1
+        },
+        "module_multiple_functions": {
+          "OK": 1
+        },
+        "module_parse_failure": {
+          "E016": 1
+        },
+        "module_path_failure": {
+          "E017": 1
+        },
+        "module_quota_boundary": {
+          "E013": 1
+        },
+        "module_record_buffer_children": {
+          "OK": 1
+        },
+        "module_record_return": {
+          "OK": 1
+        },
+        "module_recursive_live_sequence": {
+          "OK": 1
+        },
+        "module_sort_each_plugin": {
+          "OK": 1
+        },
+        "module_transitive_import": {
+          "OK": 1
+        },
+        "mutual_recursion_reads": {
+          "OK": 1
+        },
+        "negative_start": {
+          "E012": 1
+        },
+        "negative_zero_trip": {
+          "OK": 1
+        },
+        "nested_builder_fresh": {
+          "OK": 1
+        },
+        "nested_builder_lazy": {
+          "OK": 1
+        },
+        "nested_builder_old_alias": {
+          "OK": 1
+        },
+        "nested_builder_plugin_held": {
+          "OK": 1
+        },
+        "nested_builder_quota": {
+          "E013": 1
+        },
+        "nested_builder_shared": {
+          "OK": 1
+        },
+        "nested_call_loop": {
+          "OK": 1
+        },
+        "parsebuf_argument_effect": {
+          "E016": 1
+        },
+        "parsebuf_binary_separators": {
+          "OK": 1
+        },
+        "parsebuf_caller_alias": {
+          "OK": 1
+        },
+        "parsebuf_canonical_failure": {
+          "E016": 1
+        },
+        "parsebuf_empty_equal": {
+          "OK": 1
+        },
+        "parsebuf_fields": {
+          "OK": 1
+        },
+        "parsebuf_internal_empty": {
+          "E016": 1
+        },
+        "parsebuf_lazy": {
+          "OK": 1
+        },
+        "parsebuf_leading_empty": {
+          "E016": 1
+        },
+        "parsebuf_loop_alias": {
+          "OK": 1
+        },
+        "parsebuf_quota_priority": {
+          "E013": 1
+        },
+        "parsebuf_recursive_alias": {
+          "OK": 1
+        },
+        "parsebuf_return_alias": {
+          "OK": 1
+        },
+        "parsebuf_trailing_empty": {
+          "E016": 1
+        },
+        "plugin_argument_division": {
+          "E009": 1
+        },
+        "plugin_argument_order": {
+          "E015": 1
+        },
+        "plugin_argument_quota_order": {
+          "E013": 1
+        },
+        "plugin_call_held_alias": {
+          "OK": 1
+        },
+        "plugin_dead_quota": {
+          "OK": 1
+        },
+        "plugin_each_state": {
+          "OK": 1
+        },
+        "plugin_effect_around_call": {
+          "OK": 1
+        },
+        "plugin_effect_order": {
+          "OK": 1
+        },
+        "plugin_equal_binary": {
+          "OK": 1
+        },
+        "plugin_equal_bounds_order": {
+          "E013": 1
+        },
+        "plugin_equal_buffer": {
+          "OK": 1
+        },
+        "plugin_equal_bytes": {
+          "OK": 1
+        },
+        "plugin_equal_empty": {
+          "OK": 1
+        },
+        "plugin_equal_length": {
+          "OK": 1
+        },
+        "plugin_equal_returned": {
+          "OK": 1
+        },
+        "plugin_lazy_selected": {
+          "OK": 1
+        },
+        "plugin_lazy_unselected": {
+          "OK": 1
+        },
+        "plugin_live_quota": {
+          "E013": 1
+        },
+        "plugin_loop_alias": {
+          "OK": 1
+        },
+        "plugin_loop_state": {
+          "OK": 1
+        },
+        "plugin_record_alias": {
+          "OK": 1
+        },
+        "plugin_record_construct": {
+          "OK": 1
+        },
+        "plugin_returned_buffer": {
+          "OK": 1
+        },
+        "plugin_returned_sequence": {
+          "OK": 1
+        },
+        "record_buffer_alias": {
+          "OK": 1
+        },
+        "record_called_lifetime": {
+          "OK": 1
+        },
+        "record_construct": {
+          "OK": 1
+        },
+        "record_dead_quota": {
+          "OK": 1
+        },
+        "record_duplicate_fields": {
+          "OK": 1
+        },
+        "record_each_state": {
+          "OK": 1
+        },
+        "record_field_effect_order": {
+          "OK": 1
+        },
+        "record_field_trap_order": {
+          "E016": 1
+        },
+        "record_lazy_called_effect": {
+          "OK": 1
+        },
+        "record_lazy_trap_effect": {
+          "OK": 1
+        },
+        "record_lazy_update": {
+          "OK": 1
+        },
+        "record_live_quota": {
+          "E013": 1
+        },
+        "record_loop_state": {
+          "OK": 1
+        },
+        "record_map_alias": {
+          "OK": 1
+        },
+        "record_map_binary_key": {
+          "OK": 1
+        },
+        "record_map_bits": {
+          "OK": 1
+        },
+        "record_map_builder": {
+          "OK": 1
+        },
+        "record_map_duplicate": {
+          "E020": 1
+        },
+        "record_map_each_snapshot": {
+          "OK": 1
+        },
+        "record_map_each_sort": {
+          "OK": 1
+        },
+        "record_map_empty_each": {
+          "OK": 1
+        },
+        "record_map_invalid_mode": {
+          "E012": 1
+        },
+        "record_map_missing": {
+          "E019": 1
+        },
+        "record_map_quota": {
+          "E013": 1
+        },
+        "record_map_sort_mode": {
+          "E018": 1
+        },
+        "record_mixed_chain": {
+          "OK": 1
+        },
+        "record_mutual_recursion": {
+          "OK": 1
+        },
+        "record_nested_lifetime": {
+          "OK": 1
+        },
+        "record_returned_alias": {
+          "OK": 1
+        },
+        "record_self_recursion": {
+          "OK": 1
+        },
+        "record_sort_field": {
+          "OK": 1
+        },
+        "record_update_alias": {
+          "OK": 1
+        },
+        "recursion_reads": {
+          "OK": 1
+        },
+        "recursive_allocation": {
+          "OK": 1
+        },
+        "recursive_sequence_alias": {
+          "OK": 1
+        },
+        "sequence_return_loop": {
+          "OK": 1
+        },
+        "shifted_index": {
+          "E012": 1
+        },
+        "slice_return_alias_live": {
+          "OK": 1
+        },
+        "sort_alias_old_read": {
+          "OK": 1
+        },
+        "sort_binary_bytes": {
+          "OK": 1
+        },
+        "sort_buffer": {
+          "OK": 1
+        },
+        "sort_byte_value_prefix": {
+          "OK": 1
+        },
+        "sort_bytes": {
+          "OK": 1
+        },
+        "sort_caller_alias": {
+          "OK": 1
+        },
+        "sort_duplicate_before_order": {
+          "E020": 1
+        },
+        "sort_empty": {
+          "OK": 1
+        },
+        "sort_equal_elements": {
+          "OK": 1
+        },
+        "sort_invalid_order_before_quota": {
+          "E012": 1
+        },
+        "sort_lazy_alias": {
+          "OK": 1
+        },
+        "sort_loop_state": {
+          "OK": 1
+        },
+        "sort_quota": {
+          "E013": 1
+        },
+        "sort_rebuilt_lookup": {
+          "OK": 1
+        },
+        "sort_signed_extrema": {
+          "OK": 1
+        },
+        "sort_value_key_ties": {
+          "OK": 1
+        },
+        "unsigned_order": {
+          "OK": 1
+        },
+        "unsigned_parse_invalid": {
+          "E022": 1
+        },
+        "unsigned_parse_roundtrip": {
+          "OK": 1
+        },
+        "unsigned_wrap_add": {
+          "OK": 1
+        },
+        "unsigned_wrap_sub": {
+          "OK": 1
+        },
+        "unsigned_zero_division": {
+          "E009": 1
+        },
+        "wide_called_loop": {
+          "OK": 1
+        },
+        "wide_checked_narrow": {
+          "E021": 1
+        },
+        "wide_explicit_trunc": {
+          "OK": 1
+        },
+        "wide_parse_overflow": {
+          "E022": 1
+        },
+        "wide_wrap_mul": {
+          "OK": 1
+        }
+      }
+    }
+  ],
+  "all": {
+    "tasks": 79,
+    "nil_programs": 68,
+    "unsupported": 11,
+    "reference_checks": 563,
+    "native_checks": 1126,
+    "python_checks": 563,
+    "cpp_checks": 563
+  },
+  "original": {
+    "tasks": 25,
+    "nil_programs": 24,
+    "unsupported": 1,
+    "reference_checks": 120,
+    "native_checks": 240,
+    "python_checks": 125,
+    "cpp_checks": 125
+  },
+  "benchmark_unit_tests": {
+    "command": "benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/tests",
+    "passed": 10,
+    "exit_code": 0
+  },
+  "compiler_revision": "6cf7e486c3a381259ccfc5056c403a9553c2ea4b"
+}

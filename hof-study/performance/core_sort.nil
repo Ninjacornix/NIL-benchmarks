@@ -1,0 +1,2 @@
+1:v=!sort(b(a),0)
+1:v=@(!buffer(a,0),0,a;b<c;a[b:c-b],b+1,c;a)
