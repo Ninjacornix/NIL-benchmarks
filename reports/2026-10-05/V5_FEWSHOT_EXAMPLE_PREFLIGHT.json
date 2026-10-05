@@ -1,0 +1,50 @@
+[
+  {
+    "task": "invert_bytes",
+    "parse_ok": true,
+    "typecheck_ok": true,
+    "compile_ok": true,
+    "semantic_ok": true,
+    "tests_total": 5,
+    "tests_passed": 5,
+    "native_tests_passed": 10,
+    "failure_reason": null,
+    "feedback": "Correct."
+  },
+  {
+    "task": "histogram_digits",
+    "parse_ok": true,
+    "typecheck_ok": true,
+    "compile_ok": true,
+    "semantic_ok": true,
+    "tests_total": 5,
+    "tests_passed": 5,
+    "native_tests_passed": 10,
+    "failure_reason": null,
+    "feedback": "Correct."
+  },
+  {
+    "task": "count_newlines",
+    "parse_ok": true,
+    "typecheck_ok": true,
+    "compile_ok": true,
+    "semantic_ok": true,
+    "tests_total": 5,
+    "tests_passed": 5,
+    "native_tests_passed": 10,
+    "failure_reason": null,
+    "feedback": "Correct."
+  },
+  {
+    "task": "hex_encode",
+    "parse_ok": true,
+    "typecheck_ok": true,
+    "compile_ok": true,
+    "semantic_ok": true,
+    "tests_total": 5,
+    "tests_passed": 5,
+    "native_tests_passed": 10,
+    "failure_reason": null,
+    "feedback": "Correct."
+  }
+]

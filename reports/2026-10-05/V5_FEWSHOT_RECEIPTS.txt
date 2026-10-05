@@ -1,0 +1,552 @@
+$ benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/generation/application/fewshot/tests -v
+test_fixed_selection_excludes_evaluated_answers_and_new_capabilities (test_exposure.Exposure.test_fixed_selection_excludes_evaluated_answers_and_new_capabilities) ... ok
+test_original_prompt_is_unchanged (test_exposure.Exposure.test_original_prompt_is_unchanged) ... ok
+test_validity_counts_distinguish_unknown_and_failed_stages (test_exposure.Exposure.test_validity_counts_distinguish_unknown_and_failed_stages) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.022s
+
+OK
+
+$ benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/generation/application/tests -v
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+test_all_frozen_fixtures_reference_native_o0_o2_and_python (test_application.ApplicationOracle.test_all_frozen_fixtures_reference_native_o0_o2_and_python) ... ok
+test_literal_contract_edges_independent_of_solutions (test_application.ApplicationOracle.test_literal_contract_edges_independent_of_solutions) ... ok
+test_parse_type_wrong_bytes_stdout_and_input_mutation_fail (test_application.ApplicationOracle.test_parse_type_wrong_bytes_stdout_and_input_mutation_fail) ... ok
+test_sandbox_denies_other_fixtures_home_writes_and_network (test_application.ApplicationOracle.test_sandbox_denies_other_fixtures_home_writes_and_network) ... ok
+test_single_fence_extraction_keeps_unrequested_prose (test_application.ApplicationOracle.test_single_fence_extraction_keeps_unrequested_prose) ... ok
+test_stub_runs_real_oracles_repair_and_unsolved_cells_then_audits_usage (test_application.ApplicationOracle.test_stub_runs_real_oracles_repair_and_unsolved_cells_then_audits_usage) ...     Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+STUB-NOT-A-MODEL-ascii_upper-17-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-python 1 11 correct
+STUB-NOT-A-MODEL-sum_pairs-17-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-17-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-python 1 11 correct
+Audit passed: 24 trials; 54 attempts; STUB ONLY
+Audit passed: 24 trials; 54 attempts; STUB ONLY
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 18.092s
+
+OK
+
+$ benchmarks/paired/.venv/bin/python benchmarks/generation/application/fewshot/run.py --mock --output /tmp/nil-fewshot-exposure/stub-final
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Selected examples verified: 4 reference checks 20 native O0/O2 checks 40
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+STUB-NOT-A-MODEL-ascii_upper-17-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-python 1 11 correct
+STUB-NOT-A-MODEL-sum_pairs-17-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-17-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-python 1 11 correct
+Audit passed: 24 trials; 54 attempts; STUB ONLY
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-expr-v5 1 11 correct
+Audit passed: 12 trials; 27 attempts; STUB ONLY
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+STUB-NOT-A-MODEL-ascii_upper-17-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-python 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-python 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-python 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-python 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-python 1 11 correct
+STUB-NOT-A-MODEL-sum_pairs-17-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-python 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-17-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-python 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-python 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-python 1 11 correct
+Audit passed: 24 trials; 54 attempts; STUB ONLY
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-ascii_upper-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-nonempty_lines-43-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-17-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-29-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 1 11 parse
+STUB-NOT-A-MODEL-sum_pairs-43-expr-v5 2 12 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-17-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-29-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-29-expr-v5 1 11 correct
+STUB-NOT-A-MODEL-running_report-43-expr-v5 0 10 parse
+STUB-NOT-A-MODEL-running_report-43-expr-v5 1 11 correct
+Audit passed: 12 trials; 27 attempts; STUB ONLY
+Exposure audit passed: 72 trials; 162 attempts; STUB ONLY
+{"model": "STUB-NOT-A-MODEL", "profile": "expr-v5", "trials": 24, "solved": 18, "solve_rate": 0.75, "first_pass": 0.0, "output_tokens": 576, "input_tokens": 1116, "tcr": 32.0, "tcr_total": 94.0, "median_solved_ttCP": 21.0, "repair_tokens": 336, "condition": "control", "validity": {"attempts": 54, "parse_pass": 18, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36, "correct": 18}}, "final_outcomes": {"attempts": 24, "parse_pass": 18, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 6, "compile_unknown": 6, "outcomes": {"correct": 18, "parse": 6}}}
+{"model": "STUB-NOT-A-MODEL", "profile": "python", "trials": 24, "solved": 18, "solve_rate": 0.75, "first_pass": 0.0, "output_tokens": 576, "input_tokens": 1116, "tcr": 32.0, "tcr_total": 94.0, "median_solved_ttCP": 21.0, "repair_tokens": 336, "condition": "control", "validity": {"attempts": 54, "parse_pass": 18, "typecheck_pass": 0, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 54, "compile_unknown": 36, "outcomes": {"parse": 36, "correct": 18}}, "final_outcomes": {"attempts": 24, "parse_pass": 18, "typecheck_pass": 0, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 24, "compile_unknown": 6, "outcomes": {"correct": 18, "parse": 6}}}
+{"model": "STUB-NOT-A-MODEL", "profile": "expr-v5", "trials": 24, "solved": 18, "solve_rate": 0.75, "first_pass": 0.0, "output_tokens": 576, "input_tokens": 1116, "tcr": 32.0, "tcr_total": 94.0, "median_solved_ttCP": 21.0, "repair_tokens": 336, "condition": "fewshot", "validity": {"attempts": 54, "parse_pass": 18, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36, "correct": 18}}, "final_outcomes": {"attempts": 24, "parse_pass": 18, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 6, "compile_unknown": 6, "outcomes": {"correct": 18, "parse": 6}}}
+
+$ benchmarks/paired/.venv/bin/python benchmarks/generation/application/fewshot/run.py --output /tmp/nil-fewshot-exposure/measured
+    Finished `release` profile [optimized] target(s) in 0.04s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Selected examples verified: 4 reference checks 20 native O0/O2 checks 40
+    Finished `release` profile [optimized] target(s) in 0.00s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+gemma3-4b-ascii_upper-17-python 0 134 correct
+gemma3-4b-ascii_upper-17-expr-v5 0 23 parse
+gemma3-4b-ascii_upper-17-expr-v5 1 23 parse
+gemma3-4b-ascii_upper-17-expr-v5 2 23 parse
+gemma3-4b-ascii_upper-29-python 0 134 correct
+gemma3-4b-ascii_upper-29-expr-v5 0 23 parse
+gemma3-4b-ascii_upper-29-expr-v5 1 23 parse
+gemma3-4b-ascii_upper-29-expr-v5 2 23 parse
+gemma3-4b-ascii_upper-43-python 0 143 correct
+gemma3-4b-ascii_upper-43-expr-v5 0 23 parse
+gemma3-4b-ascii_upper-43-expr-v5 1 23 parse
+gemma3-4b-ascii_upper-43-expr-v5 2 23 parse
+gemma3-4b-nonempty_lines-17-expr-v5 0 512 parse
+gemma3-4b-nonempty_lines-17-expr-v5 1 512 parse
+gemma3-4b-nonempty_lines-17-expr-v5 2 512 parse
+gemma3-4b-nonempty_lines-17-python 0 222 semantic_or_execution
+gemma3-4b-nonempty_lines-17-python 1 222 semantic_or_execution
+gemma3-4b-nonempty_lines-17-python 2 222 semantic_or_execution
+gemma3-4b-nonempty_lines-29-expr-v5 0 512 parse
+gemma3-4b-nonempty_lines-29-expr-v5 1 512 parse
+gemma3-4b-nonempty_lines-29-expr-v5 2 512 parse
+gemma3-4b-nonempty_lines-29-python 0 222 semantic_or_execution
+gemma3-4b-nonempty_lines-29-python 1 222 semantic_or_execution
+gemma3-4b-nonempty_lines-29-python 2 222 semantic_or_execution
+gemma3-4b-nonempty_lines-43-expr-v5 0 512 parse
+gemma3-4b-nonempty_lines-43-expr-v5 1 512 parse
+gemma3-4b-nonempty_lines-43-expr-v5 2 512 parse
+gemma3-4b-nonempty_lines-43-python 0 222 semantic_or_execution
+gemma3-4b-nonempty_lines-43-python 1 222 semantic_or_execution
+gemma3-4b-nonempty_lines-43-python 2 222 semantic_or_execution
+gemma3-4b-sum_pairs-17-python 0 185 correct
+gemma3-4b-sum_pairs-17-expr-v5 0 512 parse
+gemma3-4b-sum_pairs-17-expr-v5 1 512 parse
+gemma3-4b-sum_pairs-17-expr-v5 2 512 parse
+gemma3-4b-sum_pairs-29-python 0 210 semantic_or_execution
+gemma3-4b-sum_pairs-29-python 1 227 semantic_or_execution
+gemma3-4b-sum_pairs-29-python 2 227 semantic_or_execution
+gemma3-4b-sum_pairs-29-expr-v5 0 512 parse
+gemma3-4b-sum_pairs-29-expr-v5 1 512 parse
+gemma3-4b-sum_pairs-29-expr-v5 2 512 parse
+gemma3-4b-sum_pairs-43-python 0 196 semantic_or_execution
+gemma3-4b-sum_pairs-43-python 1 196 semantic_or_execution
+gemma3-4b-sum_pairs-43-python 2 196 semantic_or_execution
+gemma3-4b-sum_pairs-43-expr-v5 0 512 parse
+gemma3-4b-sum_pairs-43-expr-v5 1 512 parse
+gemma3-4b-sum_pairs-43-expr-v5 2 512 parse
+gemma3-4b-running_report-17-expr-v5 0 48 parse
+gemma3-4b-running_report-17-expr-v5 1 48 parse
+gemma3-4b-running_report-17-expr-v5 2 48 parse
+gemma3-4b-running_report-17-python 0 260 semantic_or_execution
+gemma3-4b-running_report-17-python 1 258 semantic_or_execution
+gemma3-4b-running_report-17-python 2 258 semantic_or_execution
+gemma3-4b-running_report-29-expr-v5 0 48 parse
+gemma3-4b-running_report-29-expr-v5 1 48 parse
+gemma3-4b-running_report-29-expr-v5 2 48 parse
+gemma3-4b-running_report-29-python 0 229 semantic_or_execution
+gemma3-4b-running_report-29-python 1 229 semantic_or_execution
+gemma3-4b-running_report-29-python 2 229 semantic_or_execution
+gemma3-4b-running_report-43-expr-v5 0 48 parse
+gemma3-4b-running_report-43-expr-v5 1 48 parse
+gemma3-4b-running_report-43-expr-v5 2 48 parse
+gemma3-4b-running_report-43-python 0 229 semantic_or_execution
+gemma3-4b-running_report-43-python 1 229 semantic_or_execution
+gemma3-4b-running_report-43-python 2 229 semantic_or_execution
+Audit passed: 24 trials; 64 attempts; REAL MODEL USAGE
+    Finished `release` profile [optimized] target(s) in 0.05s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+gemma3-4b-ascii_upper-17-expr-v5 0 68 semantic_or_execution
+gemma3-4b-ascii_upper-17-expr-v5 1 68 semantic_or_execution
+gemma3-4b-ascii_upper-17-expr-v5 2 68 semantic_or_execution
+gemma3-4b-ascii_upper-29-expr-v5 0 68 semantic_or_execution
+gemma3-4b-ascii_upper-29-expr-v5 1 68 semantic_or_execution
+gemma3-4b-ascii_upper-29-expr-v5 2 68 semantic_or_execution
+gemma3-4b-ascii_upper-43-expr-v5 0 68 semantic_or_execution
+gemma3-4b-ascii_upper-43-expr-v5 1 68 semantic_or_execution
+gemma3-4b-ascii_upper-43-expr-v5 2 68 semantic_or_execution
+gemma3-4b-nonempty_lines-17-expr-v5 0 59 type
+gemma3-4b-nonempty_lines-17-expr-v5 1 59 type
+gemma3-4b-nonempty_lines-17-expr-v5 2 59 type
+gemma3-4b-nonempty_lines-29-expr-v5 0 59 type
+gemma3-4b-nonempty_lines-29-expr-v5 1 59 type
+gemma3-4b-nonempty_lines-29-expr-v5 2 59 type
+gemma3-4b-nonempty_lines-43-expr-v5 0 59 type
+gemma3-4b-nonempty_lines-43-expr-v5 1 59 type
+gemma3-4b-nonempty_lines-43-expr-v5 2 59 type
+gemma3-4b-sum_pairs-17-expr-v5 0 59 type
+gemma3-4b-sum_pairs-17-expr-v5 1 59 type
+gemma3-4b-sum_pairs-17-expr-v5 2 59 type
+gemma3-4b-sum_pairs-29-expr-v5 0 59 type
+gemma3-4b-sum_pairs-29-expr-v5 1 59 type
+gemma3-4b-sum_pairs-29-expr-v5 2 59 type
+gemma3-4b-sum_pairs-43-expr-v5 0 59 type
+gemma3-4b-sum_pairs-43-expr-v5 1 59 type
+gemma3-4b-sum_pairs-43-expr-v5 2 59 type
+gemma3-4b-running_report-17-expr-v5 0 68 semantic_or_execution
+gemma3-4b-running_report-17-expr-v5 1 68 semantic_or_execution
+gemma3-4b-running_report-17-expr-v5 2 68 semantic_or_execution
+gemma3-4b-running_report-29-expr-v5 0 68 semantic_or_execution
+gemma3-4b-running_report-29-expr-v5 1 68 semantic_or_execution
+gemma3-4b-running_report-29-expr-v5 2 68 semantic_or_execution
+gemma3-4b-running_report-43-expr-v5 0 68 semantic_or_execution
+gemma3-4b-running_report-43-expr-v5 1 68 semantic_or_execution
+gemma3-4b-running_report-43-expr-v5 2 68 semantic_or_execution
+Audit passed: 12 trials; 36 attempts; REAL MODEL USAGE
+    Finished `release` profile [optimized] target(s) in 0.04s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+qwen2.5-7b-instruct-ascii_upper-17-python 0 120 correct
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 0 80 parse
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 1 80 parse
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 2 80 parse
+qwen2.5-7b-instruct-ascii_upper-29-python 0 120 correct
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 0 59 parse
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 1 59 parse
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 2 59 parse
+qwen2.5-7b-instruct-ascii_upper-43-python 0 122 correct
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 0 91 parse
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 1 91 parse
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 2 91 parse
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 0 72 parse
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 1 72 parse
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 2 74 parse
+qwen2.5-7b-instruct-nonempty_lines-17-python 0 114 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-17-python 1 151 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-17-python 2 151 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 0 144 parse
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 1 154 parse
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 2 144 parse
+qwen2.5-7b-instruct-nonempty_lines-29-python 0 118 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-29-python 1 118 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-29-python 2 118 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 0 119 parse
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 1 119 parse
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 2 119 parse
+qwen2.5-7b-instruct-nonempty_lines-43-python 0 114 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-43-python 1 151 semantic_or_execution
+qwen2.5-7b-instruct-nonempty_lines-43-python 2 151 semantic_or_execution
+qwen2.5-7b-instruct-sum_pairs-17-python 0 119 correct
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 0 89 parse
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 1 89 parse
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 2 91 parse
+qwen2.5-7b-instruct-sum_pairs-29-python 0 125 correct
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 0 86 parse
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 1 86 parse
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 2 86 parse
+qwen2.5-7b-instruct-sum_pairs-43-python 0 125 correct
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 0 116 parse
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 1 116 parse
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 2 116 parse
+qwen2.5-7b-instruct-running_report-17-expr-v5 0 80 parse
+qwen2.5-7b-instruct-running_report-17-expr-v5 1 79 parse
+qwen2.5-7b-instruct-running_report-17-expr-v5 2 79 parse
+qwen2.5-7b-instruct-running_report-17-python 0 203 semantic_or_execution
+qwen2.5-7b-instruct-running_report-17-python 1 201 semantic_or_execution
+qwen2.5-7b-instruct-running_report-17-python 2 201 semantic_or_execution
+qwen2.5-7b-instruct-running_report-29-expr-v5 0 75 parse
+qwen2.5-7b-instruct-running_report-29-expr-v5 1 75 parse
+qwen2.5-7b-instruct-running_report-29-expr-v5 2 75 parse
+qwen2.5-7b-instruct-running_report-29-python 0 109 correct
+qwen2.5-7b-instruct-running_report-43-expr-v5 0 83 parse
+qwen2.5-7b-instruct-running_report-43-expr-v5 1 84 parse
+qwen2.5-7b-instruct-running_report-43-expr-v5 2 75 parse
+qwen2.5-7b-instruct-running_report-43-python 0 126 semantic_or_execution
+qwen2.5-7b-instruct-running_report-43-python 1 126 semantic_or_execution
+qwen2.5-7b-instruct-running_report-43-python 2 126 semantic_or_execution
+Audit passed: 24 trials; 58 attempts; REAL MODEL USAGE
+    Finished `release` profile [optimized] target(s) in 0.04s
+    Finished `release` profile [optimized] target(s) in 0.00s
+Preflight passed: all four fixtures, reference/native O0/O2/Python 3.12.11
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 0 71 parse
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 1 69 parse
+qwen2.5-7b-instruct-ascii_upper-17-expr-v5 2 90 parse
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 0 57 type
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 1 64 parse
+qwen2.5-7b-instruct-ascii_upper-29-expr-v5 2 67 type
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 0 58 type
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 1 56 parse
+qwen2.5-7b-instruct-ascii_upper-43-expr-v5 2 56 parse
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 0 101 type
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 1 95 parse
+qwen2.5-7b-instruct-nonempty_lines-17-expr-v5 2 95 parse
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 0 92 parse
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 1 92 parse
+qwen2.5-7b-instruct-nonempty_lines-29-expr-v5 2 92 parse
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 0 147 type
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 1 147 type
+qwen2.5-7b-instruct-nonempty_lines-43-expr-v5 2 147 type
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 0 512 type
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 1 512 type
+qwen2.5-7b-instruct-sum_pairs-17-expr-v5 2 195 type
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 0 512 parse
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 1 512 parse
+qwen2.5-7b-instruct-sum_pairs-29-expr-v5 2 61 type
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 0 85 type
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 1 83 type
+qwen2.5-7b-instruct-sum_pairs-43-expr-v5 2 87 type
+qwen2.5-7b-instruct-running_report-17-expr-v5 0 512 type
+qwen2.5-7b-instruct-running_report-17-expr-v5 1 512 type
+qwen2.5-7b-instruct-running_report-17-expr-v5 2 512 type
+qwen2.5-7b-instruct-running_report-29-expr-v5 0 512 parse
+qwen2.5-7b-instruct-running_report-29-expr-v5 1 512 parse
+qwen2.5-7b-instruct-running_report-29-expr-v5 2 512 parse
+qwen2.5-7b-instruct-running_report-43-expr-v5 0 355 parse
+qwen2.5-7b-instruct-running_report-43-expr-v5 1 512 parse
+qwen2.5-7b-instruct-running_report-43-expr-v5 2 512 parse
+Audit passed: 12 trials; 36 attempts; REAL MODEL USAGE
+Exposure audit passed: 72 trials; 194 attempts; REAL MODEL USAGE
+{"model": "gemma3:4b", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 9855, "input_tokens": 40056, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 6570, "condition": "control", "validity": {"attempts": 36, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36}}, "final_outcomes": {"attempts": 12, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 12, "outcomes": {"parse": 12}}}
+{"model": "gemma3:4b", "profile": "python", "trials": 12, "solved": 4, "solve_rate": 0.3333333333333333, "first_pass": 0.3333333333333333, "output_tokens": 5996, "input_tokens": 17496, "tcr": 1499.0, "tcr_total": 5873.0, "median_solved_ttCP": 138.5, "repair_tokens": 3610, "condition": "control", "validity": {"attempts": 28, "parse_pass": 28, "typecheck_pass": 0, "compile_pass": 28, "parse_unknown": 0, "typecheck_unknown": 28, "compile_unknown": 0, "outcomes": {"correct": 4, "semantic_or_execution": 24}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 0, "compile_pass": 12, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 0, "outcomes": {"correct": 4, "semantic_or_execution": 8}}}
+{"model": "qwen2.5:7b-instruct", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 3287, "input_tokens": 32353, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 2193, "condition": "control", "validity": {"attempts": 36, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36}}, "final_outcomes": {"attempts": 12, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 12, "outcomes": {"parse": 12}}}
+{"model": "qwen2.5:7b-instruct", "profile": "python", "trials": 12, "solved": 7, "solve_rate": 0.5833333333333334, "first_pass": 0.5833333333333334, "output_tokens": 3009, "input_tokens": 11251, "tcr": 429.85714285714283, "tcr_total": 2037.142857142857, "median_solved_ttCP": 120, "repair_tokens": 1494, "condition": "control", "validity": {"attempts": 22, "parse_pass": 22, "typecheck_pass": 0, "compile_pass": 22, "parse_unknown": 0, "typecheck_unknown": 22, "compile_unknown": 0, "outcomes": {"correct": 7, "semantic_or_execution": 15}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 0, "compile_pass": 12, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 0, "outcomes": {"correct": 7, "semantic_or_execution": 5}}}
+{"model": "gemma3:4b", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 2286, "input_tokens": 52047, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 1524, "condition": "fewshot", "validity": {"attempts": 36, "parse_pass": 36, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 0, "compile_unknown": 18, "outcomes": {"semantic_or_execution": 18, "type": 18}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 6, "compile_pass": 6, "parse_unknown": 0, "typecheck_unknown": 0, "compile_unknown": 6, "outcomes": {"semantic_or_execution": 6, "type": 6}}}
+{"model": "qwen2.5:7b-instruct", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 8606, "input_tokens": 54162, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 5592, "condition": "fewshot", "validity": {"attempts": 36, "parse_pass": 17, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 19, "compile_unknown": 36, "outcomes": {"parse": 19, "type": 17}}, "final_outcomes": {"attempts": 12, "parse_pass": 6, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 6, "compile_unknown": 12, "outcomes": {"parse": 6, "type": 6}}}
+
+$ ./scripts/ci.sh
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.17s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.18s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.47s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 56.34s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.10s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.07s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 37 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 23.78s
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.59s
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.31s
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 15.32s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 8.78s
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.31s
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.38s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Total 368 tests, zero warnings.
+
+$ benchmarks/paired/.venv/bin/python benchmarks/generation/application/fewshot/run.py --report-only --output /tmp/nil-fewshot-exposure/measured
+Exposure audit passed: 72 trials; 194 attempts; REAL MODEL USAGE
+{"model": "gemma3:4b", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 9855, "input_tokens": 40056, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 6570, "condition": "control", "validity": {"attempts": 36, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36}}, "final_outcomes": {"attempts": 12, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 12, "outcomes": {"parse": 12}}}
+{"model": "gemma3:4b", "profile": "python", "trials": 12, "solved": 4, "solve_rate": 0.3333333333333333, "first_pass": 0.3333333333333333, "output_tokens": 5996, "input_tokens": 17496, "tcr": 1499.0, "tcr_total": 5873.0, "median_solved_ttCP": 138.5, "repair_tokens": 3610, "condition": "control", "validity": {"attempts": 28, "parse_pass": 28, "typecheck_pass": 0, "compile_pass": 28, "parse_unknown": 0, "typecheck_unknown": 28, "compile_unknown": 0, "outcomes": {"correct": 4, "semantic_or_execution": 24}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 0, "compile_pass": 12, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 0, "outcomes": {"correct": 4, "semantic_or_execution": 8}}}
+{"model": "qwen2.5:7b-instruct", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 3287, "input_tokens": 32353, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 2193, "condition": "control", "validity": {"attempts": 36, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 36, "compile_unknown": 36, "outcomes": {"parse": 36}}, "final_outcomes": {"attempts": 12, "parse_pass": 0, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 12, "outcomes": {"parse": 12}}}
+{"model": "qwen2.5:7b-instruct", "profile": "python", "trials": 12, "solved": 7, "solve_rate": 0.5833333333333334, "first_pass": 0.5833333333333334, "output_tokens": 3009, "input_tokens": 11251, "tcr": 429.85714285714283, "tcr_total": 2037.142857142857, "median_solved_ttCP": 120, "repair_tokens": 1494, "condition": "control", "validity": {"attempts": 22, "parse_pass": 22, "typecheck_pass": 0, "compile_pass": 22, "parse_unknown": 0, "typecheck_unknown": 22, "compile_unknown": 0, "outcomes": {"correct": 7, "semantic_or_execution": 15}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 0, "compile_pass": 12, "parse_unknown": 0, "typecheck_unknown": 12, "compile_unknown": 0, "outcomes": {"correct": 7, "semantic_or_execution": 5}}}
+{"model": "gemma3:4b", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 2286, "input_tokens": 52047, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 1524, "condition": "fewshot", "validity": {"attempts": 36, "parse_pass": 36, "typecheck_pass": 18, "compile_pass": 18, "parse_unknown": 0, "typecheck_unknown": 0, "compile_unknown": 18, "outcomes": {"semantic_or_execution": 18, "type": 18}}, "final_outcomes": {"attempts": 12, "parse_pass": 12, "typecheck_pass": 6, "compile_pass": 6, "parse_unknown": 0, "typecheck_unknown": 0, "compile_unknown": 6, "outcomes": {"semantic_or_execution": 6, "type": 6}}}
+{"model": "qwen2.5:7b-instruct", "profile": "expr-v5", "trials": 12, "solved": 0, "solve_rate": 0.0, "first_pass": 0.0, "output_tokens": 8606, "input_tokens": 54162, "tcr": null, "tcr_total": null, "median_solved_ttCP": null, "repair_tokens": 5592, "condition": "fewshot", "validity": {"attempts": 36, "parse_pass": 17, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 19, "compile_unknown": 36, "outcomes": {"parse": 19, "type": 17}}, "final_outcomes": {"attempts": 12, "parse_pass": 6, "typecheck_pass": 0, "compile_pass": 0, "parse_unknown": 0, "typecheck_unknown": 6, "compile_unknown": 12, "outcomes": {"parse": 6, "type": 6}}}
+
+Owned Ollama server PID 61379 (started 2026-10-05 12:11:18) stopped after both model unloads.
