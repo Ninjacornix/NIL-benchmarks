@@ -26,10 +26,11 @@ def prompt(language, task):
             '\nTask: '+task['prompt']+'\nFor both languages: read the file given by the first parameter, write the file given by the second, return exactly its byte length, emit no stdout, and do not modify the input. Complete every valid input within 100000 execution steps and 256 call frames. Input paths are relative filenames. No task answers or hidden inputs are provided.')
 
 
-def provenance():
+def provenance(extra_sources=()):
     files=[HERE/'tasks.json',HERE/'experiment.json',HERE/'nil-reference.txt',HERE/'python-reference.txt',HERE/'oracle.py',HERE/'python_driver.py',Path(__file__),Path(core.__file__),core.SUITE/'helpers/application_check.rs',*core.ROOT.glob('Cargo*'),*core.ROOT.glob('rust-toolchain*')]
     files += list((HERE/'solutions').glob('*'))
     files += list((core.ROOT/'crates').rglob('*.rs'))+list((core.ROOT/'crates').rglob('*.c'))+list((core.ROOT/'cli').rglob('*.rs'))
+    files += list(extra_sources)
     return {core.source_key(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 
 
@@ -40,12 +41,13 @@ def stub(task,language,attempt):
     return (HERE/'solutions'/f"{task['id']}.{'nil' if language=='expr-v5' else 'py'}").read_text()
 
 
-def run(output, endpoint, mock=False):
+def run(output, endpoint, mock=False, *, definition=None, prompt_factory=None, extra_sources=()):
     output=output.expanduser().resolve()
     if any(output==p or p in output.parents for p in [core.ROOT,core.SUITE]):
         raise ValueError('Output must be outside both repositories')
     if output.exists():raise ValueError('Choose a fresh output directory')
-    definition=json.loads((HERE/'experiment.json').read_text())
+    definition=json.loads((HERE/'experiment.json').read_text()) if definition is None else json.loads(json.dumps(definition))
+    prompt_factory = prompt if prompt_factory is None else prompt_factory
     tasks=json.loads((HERE/'tasks.json').read_text())['tasks']
     assert [t['id'] for t in tasks]==definition['task_ids']
     if sys.version_info[:2] != (3,12):raise RuntimeError('Use the pinned Python 3.12 interpreter for inference and stub runs')
@@ -59,7 +61,7 @@ def run(output, endpoint, mock=False):
             if name not in tags or tags[name]['digest']!=digest:
                 raise ValueError('Frozen model missing or digest mismatch: '+name)
         metadata=dict(server=core.post(endpoint,'/api/version'),models={name:tags[name] for name in definition['models']},details={name:core.post(endpoint,'/api/show',{'model':name}) for name in definition['models']})
-    config=definition | dict(mock=mock,model_metadata=metadata,compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=core.ROOT,text=True).strip(),benchmark_suite=core.suite_provenance(),python=sys.version,source_hashes=provenance(),source_tokens=None,source_token_note='Not collected; exact provider input/output usage is the central metric. Source characters and UTF-8 bytes recorded separately.')
+    config=definition | dict(mock=mock,model_metadata=metadata,compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=core.ROOT,text=True).strip(),benchmark_suite=core.suite_provenance(),python=sys.version,source_hashes=provenance(extra_sources),source_tokens=None,source_token_note='Not collected; exact provider input/output usage is the central metric. Source characters and UTF-8 bytes recorded separately.')
     if mock:config['models']={'STUB-NOT-A-MODEL':'synthetic-test-only'}
     (output/'config.json').write_text(json.dumps(config,indent=2)+'\n')
     trials=[]
@@ -71,7 +73,7 @@ def run(output, endpoint, mock=False):
                     for language in langs[offset:]+langs[:offset]:
                         trial_id=f'{model.replace(":","-")}-{task["id"]}-{seed}-{language}'
                         folder=output/trial_id;folder.mkdir()
-                        messages=[{'role':'user','content':prompt(language,task)}]
+                        messages=[{'role':'user','content':prompt_factory(language,task)}]
                         spent=inputs=repairs=0;output_known=input_known=True;solved=False;attempt_count=0
                         for attempt in range(config['attempt_limit']):
                             remaining=config['output_budget']-spent
@@ -145,6 +147,8 @@ def report(root):
     per_task={t:core.summary([r for r in trials if r['task']==t]) for t in config['task_ids']}
     intervals=[]
     for model in config['models']:
+        if not {'python', 'expr-v5'} <= set(config['languages']):
+            continue  # NIL-only exposure arm; paired conditions are reported by its adapter.
         out=core.paired_interval(trials,model,'python','expr-v5')
         total_rows=[r|{'output_tokens':r['output_tokens']+r['input_tokens'] if r['output_tokens'] is not None and r['input_tokens'] is not None else None,'input_tokens':0,'repair_tokens':0} for r in trials]
         total=core.paired_interval(total_rows,model,'python','expr-v5')
