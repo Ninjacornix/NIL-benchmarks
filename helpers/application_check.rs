@@ -2,7 +2,7 @@
 use nil_compiler::{
     SourceProfile,
     application::Host,
-    compile_with_profile,
+    compile_with_plugins,
     evaluator::{Limits, Value, execute_values_with_host},
 };
 use nil_hir::{Diagnostic, FunctionId, Phase};
@@ -46,7 +46,7 @@ impl Host for MemoryHost {
 fn main() {
     let args = env::args().skip(1).collect::<Vec<_>>();
     let source = fs::read_to_string(&args[0]).expect("source");
-    let program = match compile_with_profile(&source, SourceProfile::ExprV5) {
+    let program = match compile_with_plugins(&source, SourceProfile::ExprV5, &args[4..]) {
         Ok(p) => p,
         Err(d) => {
             println!("ERR\t{:?}\t{}", d.phase, d);
