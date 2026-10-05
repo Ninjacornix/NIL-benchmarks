@@ -1,0 +1,1058 @@
+{
+  "methodology": "Runtime-only field-append attribution, with identical LLVM IR.\nCounters/timers instrument allocation, reclamation and payload copying. These\nperturb code generation, so component timings are diagnosis, not headline results.\nUninstrumented paired controls remain the performance evidence.\n",
+  "records": [
+    {
+      "runtime": "historical",
+      "revision": "1689ffe",
+      "iterations": 10000,
+      "samples": [
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 655000,
+          "free_count": 20003,
+          "free_ns": 614000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1212000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 646000,
+          "free_count": 20003,
+          "free_ns": 604000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1349000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 588000,
+          "free_count": 20003,
+          "free_ns": 563000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1268000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 595000,
+          "free_count": 20003,
+          "free_ns": 617000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1306000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 626000,
+          "free_count": 20003,
+          "free_ns": 571000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1255000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 645000,
+          "free_count": 20003,
+          "free_ns": 643000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1227000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 578000,
+          "free_count": 20003,
+          "free_ns": 576000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1277000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 703000,
+          "free_count": 20003,
+          "free_ns": 584000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1271000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 659000,
+          "free_count": 20003,
+          "free_ns": 573000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1288000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 20003,
+        "malloc_ns": 645000,
+        "free_count": 20003,
+        "free_ns": 584000,
+        "copy_count": 30000,
+        "copy_bytes": 50015000,
+        "copy_ns": 1271000,
+        "collect_visits": 49998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "historical",
+      "revision": "1689ffe",
+      "iterations": 40000,
+      "samples": [
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3313000,
+          "free_count": 80003,
+          "free_ns": 3456000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 14786000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3810000,
+          "free_count": 80003,
+          "free_ns": 3778000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 19388000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3251000,
+          "free_count": 80003,
+          "free_ns": 3382000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 14374000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3436000,
+          "free_count": 80003,
+          "free_ns": 3297000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 14340000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3044000,
+          "free_count": 80003,
+          "free_ns": 3399000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13634000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3016000,
+          "free_count": 80003,
+          "free_ns": 3263000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13495000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 2988000,
+          "free_count": 80003,
+          "free_ns": 3106000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12672000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 2948000,
+          "free_count": 80003,
+          "free_ns": 3134000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12866000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 2988000,
+          "free_count": 80003,
+          "free_ns": 3011000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13008000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 80003,
+        "malloc_ns": 3044000,
+        "free_count": 80003,
+        "free_ns": 3297000,
+        "copy_count": 120000,
+        "copy_bytes": 800060000,
+        "copy_ns": 13634000,
+        "collect_visits": 199998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "historical",
+      "revision": "1689ffe",
+      "iterations": 160000,
+      "samples": [
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13314000,
+          "free_count": 320003,
+          "free_ns": 15141000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 310896000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13451000,
+          "free_count": 320003,
+          "free_ns": 15290000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 323408000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13012000,
+          "free_count": 320003,
+          "free_ns": 15321000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 310589000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 12922000,
+          "free_count": 320003,
+          "free_ns": 14936000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 310673000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 12989000,
+          "free_count": 320003,
+          "free_ns": 15116000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 313106000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13759000,
+          "free_count": 320003,
+          "free_ns": 15588000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 315686000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13511000,
+          "free_count": 320003,
+          "free_ns": 15614000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 319485000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13586000,
+          "free_count": 320003,
+          "free_ns": 15489000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 315336000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13847000,
+          "free_count": 320003,
+          "free_ns": 15471000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 311348000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 320003,
+        "malloc_ns": 13451000,
+        "free_count": 320003,
+        "free_ns": 15321000,
+        "copy_count": 480000,
+        "copy_bytes": 12800240000,
+        "copy_ns": 313106000,
+        "collect_visits": 799998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "collections",
+      "revision": "d72a23d",
+      "iterations": 10000,
+      "samples": [
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 924000,
+          "free_count": 20003,
+          "free_ns": 957000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1883000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 866000,
+          "free_count": 20003,
+          "free_ns": 825000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1605000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 1089000,
+          "free_count": 20003,
+          "free_ns": 731000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1549000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 676000,
+          "free_count": 20003,
+          "free_ns": 669000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1454000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 961000,
+          "free_count": 20003,
+          "free_ns": 705000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1356000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 678000,
+          "free_count": 20003,
+          "free_ns": 611000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1235000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 646000,
+          "free_count": 20003,
+          "free_ns": 619000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1169000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 583000,
+          "free_count": 20003,
+          "free_ns": 613000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1171000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 636000,
+          "free_count": 20003,
+          "free_ns": 622000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1262000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 20003,
+        "malloc_ns": 678000,
+        "free_count": 20003,
+        "free_ns": 669000,
+        "copy_count": 30000,
+        "copy_bytes": 50015000,
+        "copy_ns": 1356000,
+        "collect_visits": 49998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "collections",
+      "revision": "d72a23d",
+      "iterations": 40000,
+      "samples": [
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3212000,
+          "free_count": 80003,
+          "free_ns": 3264000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12754000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3114000,
+          "free_count": 80003,
+          "free_ns": 3557000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13739000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3115000,
+          "free_count": 80003,
+          "free_ns": 3297000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13121000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3038000,
+          "free_count": 80003,
+          "free_ns": 3208000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12818000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3164000,
+          "free_count": 80003,
+          "free_ns": 3249000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13051000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3019000,
+          "free_count": 80003,
+          "free_ns": 3243000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12803000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3050000,
+          "free_count": 80003,
+          "free_ns": 3235000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12689000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3044000,
+          "free_count": 80003,
+          "free_ns": 3229000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12871000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3113000,
+          "free_count": 80003,
+          "free_ns": 3194000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13029000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 80003,
+        "malloc_ns": 3113000,
+        "free_count": 80003,
+        "free_ns": 3243000,
+        "copy_count": 120000,
+        "copy_bytes": 800060000,
+        "copy_ns": 12871000,
+        "collect_visits": 199998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "collections",
+      "revision": "d72a23d",
+      "iterations": 160000,
+      "samples": [
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13521000,
+          "free_count": 320003,
+          "free_ns": 16307000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 295572000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13167000,
+          "free_count": 320003,
+          "free_ns": 16222000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 292239000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13180000,
+          "free_count": 320003,
+          "free_ns": 15989000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 288840000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 12999000,
+          "free_count": 320003,
+          "free_ns": 16139000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 291008000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13426000,
+          "free_count": 320003,
+          "free_ns": 16048000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 289313000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13393000,
+          "free_count": 320003,
+          "free_ns": 15929000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 289786000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13061000,
+          "free_count": 320003,
+          "free_ns": 16118000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 293108000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13063000,
+          "free_count": 320003,
+          "free_ns": 16111000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 291461000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13174000,
+          "free_count": 320003,
+          "free_ns": 15969000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 289869000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 320003,
+        "malloc_ns": 13174000,
+        "free_count": 320003,
+        "free_ns": 16111000,
+        "copy_count": 480000,
+        "copy_bytes": 12800240000,
+        "copy_ns": 291008000,
+        "collect_visits": 799998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "current",
+      "revision": null,
+      "iterations": 10000,
+      "samples": [
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 608000,
+          "free_count": 20003,
+          "free_ns": 646000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1314000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 638000,
+          "free_count": 20003,
+          "free_ns": 597000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1299000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 601000,
+          "free_count": 20003,
+          "free_ns": 576000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1239000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 563000,
+          "free_count": 20003,
+          "free_ns": 568000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1224000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 588000,
+          "free_count": 20003,
+          "free_ns": 546000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1207000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 597000,
+          "free_count": 20003,
+          "free_ns": 582000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1239000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 574000,
+          "free_count": 20003,
+          "free_ns": 566000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1226000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 588000,
+          "free_count": 20003,
+          "free_ns": 544000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1206000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 20003,
+          "malloc_ns": 626000,
+          "free_count": 20003,
+          "free_ns": 546000,
+          "copy_count": 30000,
+          "copy_bytes": 50015000,
+          "copy_ns": 1179000,
+          "collect_visits": 49998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 20003,
+        "malloc_ns": 597000,
+        "free_count": 20003,
+        "free_ns": 568000,
+        "copy_count": 30000,
+        "copy_bytes": 50015000,
+        "copy_ns": 1226000,
+        "collect_visits": 49998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "current",
+      "revision": null,
+      "iterations": 40000,
+      "samples": [
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3090000,
+          "free_count": 80003,
+          "free_ns": 3134000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 13018000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3136000,
+          "free_count": 80003,
+          "free_ns": 3120000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12768000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 2980000,
+          "free_count": 80003,
+          "free_ns": 3026000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12840000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3044000,
+          "free_count": 80003,
+          "free_ns": 3041000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12804000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3019000,
+          "free_count": 80003,
+          "free_ns": 3151000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12698000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3052000,
+          "free_count": 80003,
+          "free_ns": 3041000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12754000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3144000,
+          "free_count": 80003,
+          "free_ns": 2929000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12641000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3014000,
+          "free_count": 80003,
+          "free_ns": 3067000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12885000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 80003,
+          "malloc_ns": 3072000,
+          "free_count": 80003,
+          "free_ns": 3070000,
+          "copy_count": 120000,
+          "copy_bytes": 800060000,
+          "copy_ns": 12721000,
+          "collect_visits": 199998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 80003,
+        "malloc_ns": 3052000,
+        "free_count": 80003,
+        "free_ns": 3067000,
+        "copy_count": 120000,
+        "copy_bytes": 800060000,
+        "copy_ns": 12768000,
+        "collect_visits": 199998,
+        "child_visits": 0
+      }
+    },
+    {
+      "runtime": "current",
+      "revision": null,
+      "iterations": 160000,
+      "samples": [
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13023000,
+          "free_count": 320003,
+          "free_ns": 14684000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 297957000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13177000,
+          "free_count": 320003,
+          "free_ns": 15062000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 307479000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13282000,
+          "free_count": 320003,
+          "free_ns": 14984000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 308167000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13273000,
+          "free_count": 320003,
+          "free_ns": 14945000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 308770000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13059000,
+          "free_count": 320003,
+          "free_ns": 15173000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 310160000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13593000,
+          "free_count": 320003,
+          "free_ns": 15143000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 306125000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13103000,
+          "free_count": 320003,
+          "free_ns": 14889000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 310423000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13195000,
+          "free_count": 320003,
+          "free_ns": 15736000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 317445000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        },
+        {
+          "malloc_count": 320003,
+          "malloc_ns": 13187000,
+          "free_count": 320003,
+          "free_ns": 15262000,
+          "copy_count": 480000,
+          "copy_bytes": 12800240000,
+          "copy_ns": 306802000,
+          "collect_visits": 799998,
+          "child_visits": 0
+        }
+      ],
+      "medians": {
+        "malloc_count": 320003,
+        "malloc_ns": 13187000,
+        "free_count": 320003,
+        "free_ns": 15062000,
+        "copy_count": 480000,
+        "copy_bytes": 12800240000,
+        "copy_ns": 308167000,
+        "collect_visits": 799998,
+        "child_visits": 0
+      }
+    }
+  ]
+}

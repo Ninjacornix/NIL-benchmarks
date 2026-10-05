@@ -1,0 +1,149 @@
+LLVM IR excerpts from the frozen starting compiler and delivered compiler.
+These are pre-optimization IR; C helpers inline under LTO.
+
+
+Equality before: whole-file-before.ll
+
+  call void @nil_root_store(ptr %v0, ptr %p0)
+  %v1 = call ptr @nil_read(ptr %p0, i64 13, i64 14)
+  call void @nil_root_store(ptr %v2, ptr %v1)
+  %v3 = call ptr @nil_read(ptr %p0, i64 22, i64 23)
+  call void @nil_root_store(ptr %v4, ptr %v3)
+  call void @nil_root_store(ptr %v0, ptr null)
+  %v5 = call i1 @nil_plugin0_fn0(ptr %ctx, i64 6, i64 7, ptr %v1, ptr %v3)
+  call void @nil_root_store(ptr %v2, ptr null)
+  call void @nil_root_store(ptr %v4, ptr null)
+  call void @nil_roots_leave(ptr %nil_root_frame)
+  ret i1 %v5
+}
+
+
+Equality after: whole-file-after.ll
+
+  call void @nil_root_store(ptr %v0, ptr %p0)
+  %v1 = call ptr @nil_read(ptr %p0, i64 13, i64 14)
+  call void @nil_root_store(ptr %v2, ptr %v1)
+  %v3 = call ptr @nil_read(ptr %p0, i64 22, i64 23)
+  call void @nil_root_store(ptr %v4, ptr %v3)
+  call void @nil_root_store(ptr %v0, ptr null)
+  %v5 = call i1 @nil_bulk_compare(ptr %v1, ptr %v3)
+  call void @nil_root_store(ptr %v2, ptr null)
+  call void @nil_root_store(ptr %v4, ptr null)
+  call void @nil_roots_leave(ptr %nil_root_frame)
+  ret i1 %v5
+}
+
+
+Record field before: record-append-before.ll
+
+  %v13 = icmp slt i64 %v12, %v7
+  br i1 %v13, label %b2, label %b3
+b2:
+  call void @nil_root_store(ptr %v9, ptr null)
+  %v14 = extractvalue %nil.record0 %v6, 0
+  call void @nil_root_store(ptr %v15, ptr %v14)
+  %v16 = extractvalue %nil.record0 %v6, 0
+  call void @nil_root_store(ptr %v17, ptr %v16)
+  %v18 = call ptr @nil_literal(ptr @nil_bytes_0_18, i64 1, i64 77, i64 80)
+  call void @nil_root_store(ptr %v19, ptr %v18)
+  %v20 = call ptr @nil_concat_unique(ptr %v16, ptr %v18, i64 62, i64 63)
+  call void @nil_root_store(ptr %v21, ptr %v20)
+  call void @nil_root_store(ptr %v17, ptr null)
+  call void @nil_root_store(ptr %v19, ptr null)
+  %v22 = insertvalue %nil.record0 %v6, ptr %v20, 0
+  %v23 = extractvalue %nil.record0 %v22, 0
+  call void @nil_root_store(ptr %v24, ptr %v23)
+  call void @nil_root_store(ptr %v21, ptr null)
+  %v25 = extractvalue %nil.record0 %v6, 1
+  call void @nil_root_store(ptr %v15, ptr null)
+  %v26 = add i64 %v25, 1
+
+Record field after: record-append-after.ll
+
+  %v12 = extractvalue %nil.record0 %v6, 1
+  call void @nil_root_store(ptr %v11, ptr null)
+  %v13 = icmp slt i64 %v12, %v7
+  br i1 %v13, label %b2, label %b3
+b2:
+  call void @nil_root_store(ptr %v9, ptr null)
+  %v14 = extractvalue %nil.record0 %v6, 0
+  call void @nil_root_store(ptr %v15, ptr %v14)
+  %v16 = extractvalue %nil.record0 %v6, 0
+  call void @nil_root_store(ptr %v17, ptr %v16)
+  ; proved dead record field edge 0
+  call void @nil_root_store(ptr %v15, ptr null)
+  %v18 = call ptr @nil_literal(ptr @nil_bytes_0_18, i64 1, i64 77, i64 80)
+  call void @nil_root_store(ptr %v19, ptr %v18)
+  %v20 = call ptr @nil_concat_unique(ptr %v16, ptr %v18, i64 62, i64 63)
+  call void @nil_root_store(ptr %v21, ptr %v20)
+  call void @nil_root_store(ptr %v17, ptr null)
+  call void @nil_root_store(ptr %v19, ptr null)
+  %v22 = insertvalue %nil.record0 %v6, ptr %v20, 0
+  %v23 = extractvalue %nil.record0 %v22, 0
+  call void @nil_root_store(ptr %v24, ptr %v23)
+
+Old-field alias counterexample (transfer marker absent; copy fallback retained):
+record Text(data:s,count:i)
+=b(Text("old",0))
+(Text)=c(a{data:!concat(a.data,"x")},a.data)
+(Text,s)=#a.data*10+#b
+
+
+  %v5 = getelementptr [6 x ptr], ptr %nil_root_slots, i64 0, i64 2
+  %v7 = getelementptr [6 x ptr], ptr %nil_root_slots, i64 0, i64 3
+  %v10 = getelementptr [6 x ptr], ptr %nil_root_slots, i64 0, i64 4
+  %v12 = getelementptr [6 x ptr], ptr %nil_root_slots, i64 0, i64 5
+  %v0 = extractvalue %nil.record0 %p0, 0
+  call void @nil_root_store(ptr %v1, ptr %v0)
+  %v2 = extractvalue %nil.record0 %p0, 0
+  call void @nil_root_store(ptr %v3, ptr %v2)
+  %v4 = call ptr @nil_literal(ptr @nil_bytes_1_4, i64 1, i64 77, i64 80)
+  call void @nil_root_store(ptr %v5, ptr %v4)
+  %v6 = call ptr @nil_concat_unique(ptr %v2, ptr %v4, i64 62, i64 63)
+  call void @nil_root_store(ptr %v7, ptr %v6)
+  call void @nil_root_store(ptr %v3, ptr null)
+  call void @nil_root_store(ptr %v5, ptr null)
+  %v8 = insertvalue %nil.record0 %p0, ptr %v6, 0
+  %v9 = extractvalue %nil.record0 %v8, 0
+  call void @nil_root_store(ptr %v10, ptr %v9)
+  call void @nil_root_store(ptr %v7, ptr null)
+  %v11 = extractvalue %nil.record0 %p0, 0
+  call void @nil_root_store(ptr %v12, ptr %v11)
+  call void @nil_root_store(ptr %v1, ptr null)
+
+General proved comparison helper, independent of provider identity:
+
+__attribute__((always_inline)) bool nil_bulk_compare(const NilSequence *a,const NilSequence *b) {
+    if(a->length!=b->length) return false;
+    return a->length==0 || memcmp(a->data,b->data,(size_t)a->length*a->width)==0;
+}
+
+Concat runtime uniqueness/alias and quota guards:
+
+__attribute__((always_inline)) void *nil_concat_unique(NilSequence *a,const NilSequence *b,uint64_t start,uint64_t end) {
+    uint64_t capacity=nil_concat_capacity(a,b,start,end);
+    uint64_t bytes=capacity*a->width;
+    if(nil_live>NIL_MEMORY_LIMIT-bytes-NIL_SEQUENCE_OVERHEAD) nil_fail(6,start,end);
+    if(a->roots==0) abort();
+    if(a->roots!=1 || a==b) return nil_concat(a,b,start,end);
+    if(capacity!=a->capacity) {
+        nil_collect();
+        NilSequence **link=&nil_allocations;
+        while(*link && *link!=a) link=&(*link)->next;
+        if(!*link) abort();
+        NilSequence **root=NULL;
+        for(NilRoots *frame=nil_roots;frame;frame=frame->previous)
+            for(uint64_t i=0;i<frame->count;i++) if(frame->slots[i]==a) root=&frame->slots[i];
+        if(!root) abort();
+        uint64_t delta=(capacity-a->capacity)*a->width;
+        NilSequence *grown=realloc(a,sizeof(*a)+(size_t)bytes);
+        if(!grown) nil_fail(6,start,end);
+        grown->capacity=capacity; *link=grown; *root=grown;
+        nil_live+=delta; nil_allocated+=delta; a=grown;
+    }
+    memcpy(a->data+(size_t)a->length*a->width,b->data,(size_t)b->length*b->width);
+    a->length+=b->length;
+    return a;
+}
+
+Named evidence: bulk_scan_proof_optimizes_third_party_source_and_rejects_near_misses, overwritten_field_root_is_transferred_before_concat_in_ir, last_use_field_append_transfers_only_the_overwritten_edge. Full O0/O2 parity and sanitizer results are in V5_DEBTS_RECEIPTS.txt.

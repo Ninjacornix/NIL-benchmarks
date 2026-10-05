@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "methodology": "Before/after equality migration: repeated calls and whole-sequence sensitivity.\nWhole-process wall time, warmup, verified outputs, no CPU isolation. Neither a\npure dispatch microbenchmark nor a claim about an opaque native ABI.\n",
+  "repeats": 25,
+  "warmups": 1,
+  "before_revision": "21db415",
+  "after_revision": "52e6fd04264475323287d39ee55a544105e360aa",
+  "compiler_sha256": {
+    "before": "284704f65bcaf7e86c1e368e17828722f24a3567b94990c2db311b3e7f724f72",
+    "after": "ebdd981b53008324f1ff542694cfbe358549c3095e68fa9dde0774402e16fd42"
+  },
+  "source_sha256": {
+    "hot.nil": "c9d51e09eca990c8eae5d4338d4eaafe590ae70d3e041313b207e397280710c6",
+    "hot-file.nil": "991add2fccbbee15061180b5702ce0face7c2aa0ef6297858bbc05d1375ca9e2",
+    "whole-file.nil": "564d5ddc903ced0ac3a0fc68cceb524b62cb12e60539bff6c5016c283caec8b1"
+  },
+  "input_sha256": "341aacac661ccb210720bedaa9ead5d668fe5ea41a73532fc147c71e34040df1",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "clang": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "cases": [
+    {
+      "workload": "whole-file",
+      "optimization": "O0",
+      "input_bytes": 16777216,
+      "working_set": "16 MiB file plus scratch or second read",
+      "calls": 1,
+      "output": "true\n",
+      "samples_ns": {
+        "before": [
+          100231959,
+          96555333,
+          95803458,
+          96390166,
+          95570125,
+          99552875,
+          95953458,
+          96152625,
+          96208917,
+          95956500,
+          96374917,
+          96008958,
+          95873750,
+          96185000,
+          96087333,
+          95684500,
+          95955458,
+          95794125,
+          95852334,
+          96321375,
+          96156417,
+          96837709,
+          97022541,
+          96361875,
+          95861125
+        ],
+        "after": [
+          10797458,
+          7830167,
+          7503292,
+          8269000,
+          7437041,
+          8090667,
+          8017750,
+          7951208,
+          7477833,
+          8101667,
+          7569084,
+          7630959,
+          7281959,
+          8100750,
+          8037375,
+          7737834,
+          7612333,
+          8095916,
+          7691958,
+          7795167,
+          7462417,
+          8181583,
+          7724333,
+          7452791,
+          6994500
+        ]
+      },
+      "median_ns": {
+        "before": 96152625,
+        "after": 7737834
+      },
+      "effective_delta_ns_per_call": -88414791.0,
+      "ir_counts": {
+        "before": {
+          "call ptr @nil_roots_enter(": 1,
+          "call void @nil_root_store(": 6,
+          "call ptr @nil_set_unique(": 0,
+          "call ptr @nil_set(": 0,
+          "call i1 @nil_equal(": 0,
+          "call i1 @nil_plugin0_fn0(": 1,
+          "call i1 @nil_bulk_compare(": 0
+        },
+        "after": {
+          "call ptr @nil_roots_enter(": 1,
+          "call void @nil_root_store(": 6,
+          "call ptr @nil_set_unique(": 0,
+          "call ptr @nil_set(": 0,
+          "call i1 @nil_equal(": 0,
+          "call i1 @nil_plugin0_fn0(": 0,
+          "call i1 @nil_bulk_compare(": 1
+        }
+      }
+    },
+    {
+      "workload": "whole-file",
+      "optimization": "O2",
+      "input_bytes": 16777216,
+      "working_set": "16 MiB file plus scratch or second read",
+      "calls": 1,
+      "output": "true\n",
+      "samples_ns": {
+        "before": [
+          21330542,
+          18417541,
+          16722708,
+          17405667,
+          16942417,
+          16998834,
+          17083542,
+          17384042,
+          16937000,
+          16990584,
+          16836667,
+          17006125,
+          16811625,
+          16607541,
+          16989792,
+          17068208,
+          16713625,
+          16490375,
+          16952416,
+          16974042,
+          16815459,
+          16537667,
+          17057125,
+          16984000,
+          16890375
+        ],
+        "after": [
+          10238417,
+          7277166,
+          6950542,
+          7462875,
+          7128625,
+          7506875,
+          6798417,
+          7414208,
+          7308792,
+          7464833,
+          7056834,
+          7192750,
+          7441000,
+          7027750,
+          7130292,
+          7247584,
+          7240792,
+          7141500,
+          7569375,
+          7065083,
+          6895000,
+          7220208,
+          6928625,
+          7114958,
+          7683000
+        ]
+      },
+      "median_ns": {
+        "before": 16974042,
+        "after": 7220208
+      },
+      "effective_delta_ns_per_call": -9753834.0,
+      "ir_counts": {
+        "before": {
+          "call ptr @nil_roots_enter(": 1,
+          "call void @nil_root_store(": 6,
+          "call ptr @nil_set_unique(": 0,
+          "call ptr @nil_set(": 0,
+          "call i1 @nil_equal(": 0,
+          "call i1 @nil_plugin0_fn0(": 1,
+          "call i1 @nil_bulk_compare(": 0
+        },
+        "after": {
+          "call ptr @nil_roots_enter(": 1,
+          "call void @nil_root_store(": 6,
+          "call ptr @nil_set_unique(": 0,
+          "call ptr @nil_set(": 0,
+          "call i1 @nil_equal(": 0,
+          "call i1 @nil_plugin0_fn0(": 0,
+          "call i1 @nil_bulk_compare(": 1
+        }
+      }
+    }
+  ]
+}
