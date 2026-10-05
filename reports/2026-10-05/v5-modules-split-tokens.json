@@ -1,0 +1,127 @@
+{
+  "metric": "raw source tokens, not generation efficiency; sum token counts per file without special tokens",
+  "rows": {
+    "count_newlines.nil": {
+      "gemma3_4b": 21,
+      "qwen2.5_7b_instruct": 16,
+      "cl100k_base": 16,
+      "o200k_base": 16
+    },
+    "sum_integers.nil": {
+      "gemma3_4b": 27,
+      "qwen2.5_7b_instruct": 22,
+      "cl100k_base": 22,
+      "o200k_base": 22
+    },
+    "reports.nil": {
+      "gemma3_4b": 89,
+      "qwen2.5_7b_instruct": 67,
+      "cl100k_base": 66,
+      "o200k_base": 66
+    },
+    "reports.nil-module": {
+      "gemma3_4b": 27,
+      "qwen2.5_7b_instruct": 25,
+      "cl100k_base": 25,
+      "o200k_base": 25
+    }
+  },
+  "original": {
+    "count_newlines.nil": {
+      "gemma3_4b": 64,
+      "qwen2.5_7b_instruct": 50,
+      "cl100k_base": 49,
+      "o200k_base": 48
+    },
+    "sum_integers.nil": {
+      "gemma3_4b": 61,
+      "qwen2.5_7b_instruct": 47,
+      "cl100k_base": 47,
+      "o200k_base": 46
+    }
+  },
+  "summary": {
+    "gemma3_4b": {
+      "original_two_programs": 125,
+      "split_roots": 48,
+      "shared_source_once": 89,
+      "cross_reference_overhead": 8,
+      "sharing_and_refactor_delta": 4,
+      "source_bundle_delta": 12,
+      "manifest_tokens": 27,
+      "complete_bundle_delta": 39,
+      "each_program_charged_full_library": {
+        "count_newlines.nil": 137,
+        "sum_integers.nil": 143
+      }
+    },
+    "qwen2.5_7b_instruct": {
+      "original_two_programs": 97,
+      "split_roots": 38,
+      "shared_source_once": 67,
+      "cross_reference_overhead": 10,
+      "sharing_and_refactor_delta": -2,
+      "source_bundle_delta": 8,
+      "manifest_tokens": 25,
+      "complete_bundle_delta": 33,
+      "each_program_charged_full_library": {
+        "count_newlines.nil": 108,
+        "sum_integers.nil": 114
+      }
+    },
+    "cl100k_base": {
+      "original_two_programs": 96,
+      "split_roots": 38,
+      "shared_source_once": 66,
+      "cross_reference_overhead": 10,
+      "sharing_and_refactor_delta": -2,
+      "source_bundle_delta": 8,
+      "manifest_tokens": 25,
+      "complete_bundle_delta": 33,
+      "each_program_charged_full_library": {
+        "count_newlines.nil": 107,
+        "sum_integers.nil": 113
+      }
+    },
+    "o200k_base": {
+      "original_two_programs": 94,
+      "split_roots": 38,
+      "shared_source_once": 66,
+      "cross_reference_overhead": 10,
+      "sharing_and_refactor_delta": 0,
+      "source_bundle_delta": 10,
+      "manifest_tokens": 25,
+      "complete_bundle_delta": 35,
+      "each_program_charged_full_library": {
+        "count_newlines.nil": 107,
+        "sum_integers.nil": 113
+      }
+    }
+  },
+  "tokenizers": [
+    {
+      "id": "gemma3_4b",
+      "tag": "gemma3/4b",
+      "manifest_sha256": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "gguf_sha256": "aeda25e63ebd698fab8638ffb778e68bed908b960d39d0becc650fa981609d25",
+      "vocabulary_size": 262145,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    },
+    {
+      "id": "qwen2.5_7b_instruct",
+      "tag": "qwen2.5/7b-instruct",
+      "manifest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "gguf_sha256": "2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730",
+      "vocabulary_size": 152064,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "archive": "/Users/ninjacornix/.local/share/nil/benchmarks/archive/v5-modules-2026-10-05.tar.gz",
+  "sha256": "948c6443eb3250fd028f72c86ff0981df738794e51f53a213d5bf5f7495d4bff",
+  "bytes": 188333,
+  "description": "Real command logs, receipts, source/IR comparisons, token counts and timing manifests; failed/superseded development checks retained and identified by filenames. Final gates are ci-debug-final.log, ci-release-final.log and sanitize.log."
+}

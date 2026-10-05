@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "task": "count_newlines",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    },
+    {
+      "task": "sum_integers",
+      "parse_ok": true,
+      "typecheck_ok": true,
+      "compile_ok": true,
+      "semantic_ok": true,
+      "tests_total": 5,
+      "tests_passed": 5,
+      "native_tests_passed": 10,
+      "failure_reason": null,
+      "feedback": "Correct."
+    }
+  ],
+  "reference_checks": 10,
+  "native_checks": 20,
+  "all_passed": true
+}

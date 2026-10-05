@@ -1,0 +1,420 @@
+{
+  "programs": 69,
+  "all_identical": true,
+  "rows": [
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ascii_lower.nil",
+      "source_sha256": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+      "llvm_sha256": "f8edc5a8eb9930cb53f2a50f9a3c8b3cf9d3ca822434b1dc0a9295ecba95a840",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ascii_upper.nil",
+      "source_sha256": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+      "llvm_sha256": "fe664ff55fb54836602cd05b0ca165f8953f5f49eb733fba5c43c69b9c660c87",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/buffer_dot.nil",
+      "source_sha256": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+      "llvm_sha256": "06d39fd3dbc8f14cae080d25147b68ba8ff594188c7c086dde7e2e9b44529d03",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/buffer_sum.nil",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "llvm_sha256": "06eb150e23b31a3c18dce5fe6376f95d66768f8a8c2b0c99cb02b785eeb3d39e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/copy_file.nil",
+      "source_sha256": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+      "llvm_sha256": "16c89939f2052e75f5b6e24f895cfdf672898b689cc47cc68459446dba7bee73",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/count_newlines.nil",
+      "source_sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+      "llvm_sha256": "a2d68fec4d6b7ace19cc6d1a7112b560ab72b5e68987ea13aeddd5bb53f10ae5",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/dedupe_adjacent_lines.nil",
+      "source_sha256": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+      "llvm_sha256": "8b78f7d0337d8a11d7a4491a2a7657eda3c36b7040b6445c9a09ff8bd93d6793",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_acronym.nil",
+      "source_sha256": "e6d91e0d01aea0891b737f147a6c69b809c83230d515e6123fa59a1c71ea8f56",
+      "llvm_sha256": "c4384452dd247d2545298367a1ee10809eba22ccb45e8f411dca04e9542565f8",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_affine_cipher.nil",
+      "source_sha256": "80be8585750ed7756f80c42deda0caf03979d55dc44bf0b4ce6243be2e01b6b6",
+      "llvm_sha256": "619d71d68b56a5c05948d1509a069eb529dbb2288d3080db0dbc01f567b039de",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_algo_bst_walk.nil",
+      "source_sha256": "75d12a55b131ae564b2547b48fe9bd52570d1f8d662cf1a38115fdea46dd945e",
+      "llvm_sha256": "61fd20b5974be44b10bca81acdb78e4efc200c9caa193b95609fc4106a5bebc5",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_algo_graph_bfs.nil",
+      "source_sha256": "585c1981a280ba44e4a9c67e2cf98327caa28dbe79667cd4dc65883aef57e63b",
+      "llvm_sha256": "58b2981659567ce9f7751a8d8779c37c2751d1367530851852185b91cd55d6fe",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_algo_interval_merge.nil",
+      "source_sha256": "76beb2c340e122f69175048e13c2580659a1ef7cd75a60e4a5103bd164e81f5e",
+      "llvm_sha256": "fb0ef4618077ca3e9bb9be54738daba7225747bae8699b7f64f7e8a8b14363b2",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_algo_linked_list.nil",
+      "source_sha256": "489d9634aba2aff2b7e061cf8d5cfe28fa035bc00cd24bfc38db8a7c2bce7d7e",
+      "llvm_sha256": "bf3ee640448a8e4912ba5b692dfe7ecfa9b7e6d705cc9cce94876760a030b534",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_all_your_base.nil",
+      "source_sha256": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+      "llvm_sha256": "d2efc67342725de44e15eb7e6d0914568f25c787e6f5ee12d3ab55a5fef183a9",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_allergies.nil",
+      "source_sha256": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+      "llvm_sha256": "c291d47ff3c2734b4c4c06d5e26ab27bafaaaab7dd6eb61e1d4d5d63ba78a160",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_armstrong_numbers.nil",
+      "source_sha256": "a18e4d43f2c4890f40388b2581bb0811fd61ccef13e94532410c5b607ed56a87",
+      "llvm_sha256": "064e1418f358cdeea6dfba15b13dfed5d05e0caa5eab4ec49d2ece09b038b948",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_atbash_cipher.nil",
+      "source_sha256": "3325d122aec9c657c6f64510fa0bb3d01cc17c7024bcef5e1a930c33fa348e0b",
+      "llvm_sha256": "646725cb4e24f8b190e6e4f3163177051567d1f554e0258a444393594b772a94",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_baffling_birthdays.nil",
+      "source_sha256": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+      "llvm_sha256": "c60b665843f8161e771432a81364801394d8c3ecdd0d460378314692d9dd7dfc",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_beer_song.nil",
+      "source_sha256": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+      "llvm_sha256": "3fffc1775228d24573d6bd907b0daeceb825d35e023d0590fc984936e46c6b6b",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_binary.nil",
+      "source_sha256": "470ecf087ee33d7f0ae5f6555d7094601e61e8288d07efde2a1931ab3bec2fa8",
+      "llvm_sha256": "4c5295aa2fb5b9dacbf316877467df4c1b6d0a2dcfc702badc62532a166ed8bd",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_binary_search.nil",
+      "source_sha256": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+      "llvm_sha256": "d023b189a482348a9f19a5926c028f97eb66c41448bfe30323415bbe7a44d90f",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_binary_search_tree.nil",
+      "source_sha256": "71c10d36031b790533d7a9bfdc9e91076358aa5689622e58eee125f3c3e1b4ed",
+      "llvm_sha256": "3decea0064a68de6b98797779cbb5943141eefb0146d3f8a6b30a6bc59d7a324",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_book_store.nil",
+      "source_sha256": "276af945eab8cb06fd13fd7c4d191eae0f0c007f8acea257d30e67543f14bb0b",
+      "llvm_sha256": "7b25ba15ba98a0dcaafa78f482841c6a8be3b55019b013ecba915fe41b4e849b",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_bottle_song.nil",
+      "source_sha256": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+      "llvm_sha256": "497d856ec58577d5e66e3f58d8ec8e9c13d3184b8fafe16656234b1f9abf6aa7",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_bowling.nil",
+      "source_sha256": "63c2ed40454fa34d110a5049a0844b0484861a246b5ea8896580062f763f31d8",
+      "llvm_sha256": "dbe866fa7b01d673c6ab75402cb88a37cb9cdfbf226d3ac3ddd4f15086a81221",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_change.nil",
+      "source_sha256": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+      "llvm_sha256": "91257d7fbf5ef69c068ef8776f386d771dc95a9d5d260b23889fbec7950d538f",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_circular_buffer.nil",
+      "source_sha256": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+      "llvm_sha256": "2eec304500908322d38f650c59babf4ded7388712b4e702352659d07b68a64ec",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_clock.nil",
+      "source_sha256": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+      "llvm_sha256": "97479e12bdda5fce65bd6c5df83ce7deb36adf2c5292e127a4d719e6786d0453",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_collatz_conjecture.nil",
+      "source_sha256": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+      "llvm_sha256": "86c7709536a808e091c2777c33d3c2b500e3a92cfe5f63dac3098d42ac5cfa11",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_complex_numbers.nil",
+      "source_sha256": "a2fc3809b577544b5e55e466a54d741e09487b881c2c93370ce298fc20937ef2",
+      "llvm_sha256": "6348516727ce5bf64d7797709ede081a8508d1db36d1797d089af5ba8a32a0fb",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_connect.nil",
+      "source_sha256": "f9dbbcd703e4ad0f60b40c4686f7d2f2084cc94525afbf1715269c75bdab0e2a",
+      "llvm_sha256": "ede13bd223c3646178b4993110fba9337c40bd9033b0e363945b9e3ed82ca6a1",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_crypto_square.nil",
+      "source_sha256": "03e82e4bc7cf8dc4911816e85def4ecb63c1907fd219ffcebb048ded1c62dead",
+      "llvm_sha256": "db56762e16864e5e0bb2842d47abe5dd1672977cc816daf2ae9e4d790418196e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_custom_set.nil",
+      "source_sha256": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+      "llvm_sha256": "cb67e2f1506663df8c26c619e7c31483e8ac3bb9927ed6a26ced76f7dd638b2c",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_darts.nil",
+      "source_sha256": "7eb26b096da6bf7e7e1dd0872838063c911cf3480841a881619380aee9553c37",
+      "llvm_sha256": "433a5afcb1a8cabaa1bd5c499f25c8496ec6c3127e1218c27fe96b6b71cd281a",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_diamond.nil",
+      "source_sha256": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+      "llvm_sha256": "288851778609e2f976776a89c7bfcf1ec10bc6689a671e04934ba5352940da24",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_difference_of_squares.nil",
+      "source_sha256": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+      "llvm_sha256": "ba4c3a5dba8c29d2f1cf5e859ee870b37579b788221ea92c57dfbc9af5969b77",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_dnd_character.nil",
+      "source_sha256": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+      "llvm_sha256": "3ed00df990f0d642ebafef7204b62690c0b15bf4b449a0b0085dbbc628e61814",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_dominoes.nil",
+      "source_sha256": "1034ee08fc32d9b3361a1c9375e844753b1d65082b5b52c1b556549811e8a7e7",
+      "llvm_sha256": "8e8a5e7e7125e47575e7a0a5ec09b90dfef9a33bacff7b292f5c2bf0494fdc46",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_eliuds_eggs.nil",
+      "source_sha256": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+      "llvm_sha256": "53adcb34563b01ee7fea9346b8a9f11c9cabe53bf666c3b39fa31b8f84e2ebd6",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_etl.nil",
+      "source_sha256": "aeb5769061c1643733971c7cfd814f4432132c777116fc4cc7f6a637374c382e",
+      "llvm_sha256": "603cd86e95e0db76465b5c472abe8658feb4fb5af28528f018efd6109aad3195",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_flatten_array.nil",
+      "source_sha256": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+      "llvm_sha256": "83eab6b263faf1b35c508f331328b544ef71fb670c0c0d477cdfd7972de05614",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_flower_field.nil",
+      "source_sha256": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+      "llvm_sha256": "81c88ede2425dbe80a4e40dfeb8972d20153d3a624d96d990fe922d8c056bd4c",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_food_chain.nil",
+      "source_sha256": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+      "llvm_sha256": "24f6c53b732fb5aea055311920f6f432a3c51411cf483e0f3c08f1ff78a35596",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_game_of_life.nil",
+      "source_sha256": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+      "llvm_sha256": "bc9088ad274dec21a6221bd6491bd8d689453442f62dc969ca0ad2075ca30f89",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_go_counting.nil",
+      "source_sha256": "3c477fc727c8cc674985b820ed81501d2bc079979db358bfb25129fda5822a7e",
+      "llvm_sha256": "3efe0c79a5744fcf0c2060573c1aec5bdd6ae0c0dda526af0caec925aacfff81",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_grade_school.nil",
+      "source_sha256": "c0376c960ee2885563350b6053b8996c99fe8162cd9620347031c69d62bafaca",
+      "llvm_sha256": "1b9ad20a8b8a12457d14eb1d390ec5513e65f155e5a28252eb91228b89350422",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_grains.nil",
+      "source_sha256": "018081f35feb0b0c945fd7eb029901d9df4cbd792b53ea8071fe6db5fd17668b",
+      "llvm_sha256": "21cb300a528c5015c8d53670f654f079f3dd891a97ff68aaf70554d51561cfc6",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_hamming.nil",
+      "source_sha256": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+      "llvm_sha256": "935c39fe32b04d45e8aa018f01ea058d48b784d0f2a70ac330ddbe770c04dd05",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/ex_hello_world.nil",
+      "source_sha256": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+      "llvm_sha256": "a3d8f4efd18da8052db2f24a536cb3f3b5e840bb875b3e805598342bcd77fe20",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/expand_tabs.nil",
+      "source_sha256": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+      "llvm_sha256": "9281ba9d2cab289288d5b57e58aedde98cdd5df86456a9c9bf2d6d0b02de13f6",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/first_fields_csv.nil",
+      "source_sha256": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+      "llvm_sha256": "8f640deeca0c2e8173cda84ec82f6186b6891baf93faead75e638ab0921fe213",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/hex_encode.nil",
+      "source_sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+      "llvm_sha256": "1c1dad6190b836335d48a43b5b1fe85ea001090b9f4ab8d351240fb5b009354e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/histogram_digits.nil",
+      "source_sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+      "llvm_sha256": "89bc8e488670476a53ab55a68ee676846aa33e946bd1e8b999668ed14773907e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/invert_bytes.nil",
+      "source_sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "llvm_sha256": "6e5cb7ab8a753f9ebd3f7a3fb0c6c5f57c978dcb10194a61064780d9fb5a3bc0",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/min_max.nil",
+      "source_sha256": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+      "llvm_sha256": "d937d3c2bf358787d9f3c4ecf45bd1c4be8ecddffb8a45e470a9ce7e326b274e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/nonempty_lines.nil",
+      "source_sha256": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+      "llvm_sha256": "5512a9706c9ea3b425f6a916968687db64969f510a9d14eee664f9dc367967b2",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/normalize_crlf.nil",
+      "source_sha256": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+      "llvm_sha256": "b105a7051c15716e85fbb868e624d4dde93052083cd06b413df754e249d0183c",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/number_lines.nil",
+      "source_sha256": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+      "llvm_sha256": "aedd647dbe1e313f2cd1da456c08bac9fa804428718eacbabf9960c42ea5769c",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/prefix_lines.nil",
+      "source_sha256": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+      "llvm_sha256": "970b46d407e35918fc8b8ec2c96338717aa409ea5dcb7e371f112686468fddaa",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/prefix_sums.nil",
+      "source_sha256": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+      "llvm_sha256": "580a6e86c87b21a0d766e40d11719d4187a6635a93e9c30d3a9d91d43bf684ce",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/reverse_bytes.nil",
+      "source_sha256": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+      "llvm_sha256": "40c5ab79918f9278d476c503403227c907f6561fc4ba285a7b54e8f4cecf1f69",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/rot13.nil",
+      "source_sha256": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+      "llvm_sha256": "2a247485a195d00950a3cafaa94abc24741913528cb7e4e9e103dd0f10ea7ae0",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/running_report.nil",
+      "source_sha256": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+      "llvm_sha256": "c4b08734172fcae9d07dfb9a6269e994644f9c9a85e070a2cf52b57a24ef5518",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/slice_file.nil",
+      "source_sha256": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+      "llvm_sha256": "9cd6d0fc589863cd623999b178bfa13182a3d82ee1b5f5405025210ac576b9b3",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/sum_integers.nil",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "llvm_sha256": "06eb150e23b31a3c18dce5fe6376f95d66768f8a8c2b0c99cb02b785eeb3d39e",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/corpora/application-v5/programs/sum_pairs.nil",
+      "source_sha256": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+      "llvm_sha256": "4fd31cedbc33f69ad4757f92b671aaa12ef8c01bb86920d30af518626a583368",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/application/workloads/append.nil",
+      "source_sha256": "acd2aad94015f2c1793e0144fa84786aa0a62848756728503ee78bebed25aa79",
+      "llvm_sha256": "d8a87d486059cec350ca0be136b12000a2f58a0c34eb5c97343468cdda8ce5fa",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/application/workloads/newlines.nil",
+      "source_sha256": "c9f6a391a3965b89c095f27d6e951be94e0dd48a8f5bd5504d5f21aaa95093fc",
+      "llvm_sha256": "e208835d2fa8a64f61e0539d2d07dec13a4017b5181d5fb7e669bb6057b6b59d",
+      "byte_identical": true
+    },
+    {
+      "source": "benchmarks/application/transform.nil",
+      "source_sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "llvm_sha256": "6e5cb7ab8a753f9ebd3f7a3fb0c6c5f57c978dcb10194a61064780d9fb5a3bc0",
+      "byte_identical": true
+    }
+  ]
+}
