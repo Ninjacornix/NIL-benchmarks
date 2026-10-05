@@ -1,0 +1,16 @@
+{
+  "reference_calls_checked": 5,
+  "initial_and_execution_calls_scrubbed": true,
+  "sentinel_absent": true,
+  "oracle": {
+    "parse_ok": true,
+    "typecheck_ok": true,
+    "compile_ok": true,
+    "semantic_ok": true,
+    "tests_total": 4,
+    "tests_passed": 4,
+    "native_tests_passed": 8,
+    "failure_reason": null,
+    "feedback": "Correct."
+  }
+}
