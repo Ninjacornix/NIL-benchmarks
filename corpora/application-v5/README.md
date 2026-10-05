@@ -246,3 +246,16 @@ See GENERALITY_GAPS.json for the remaining blockers. Camicia/Forth/Alphametics l
 verified simulation/interpreter/search adapters; newly expressible storage alone
 does not satisfy their unchanged contracts. Dot DSL also lacks a verified adapter;
 sequence-bearing record maps and nested keyed values remain deferred.
+
+## Static higher-order functions (ADR 034)
+
+The unchanged frozen accumulate task gains real typed callbacks and explicit
+captured-prefix arguments in all five selected fixtures. **79 tasks, 68 verified
+NIL references (43 external), 11 unsupported** after final verification. Existing
+67 NIL sources, all old baselines, task/oracle/golden contracts stay unchanged.
+See [the reference notes](higher-order/README.md). Static specialization does not
+supply runtime callback registration or prove the reactive Hangman requirement.
+The named `--group original` verification now preserves the historical support
+cohort for exactly 610 checks; full verification also covers the environment
+solution added later and this new external task. Counts are execution checks, not
+independent random samples or evidence of model token efficiency.

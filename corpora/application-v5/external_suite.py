@@ -9,7 +9,10 @@ def load_tasks(group='all'):
     external = json.loads((HERE / 'external/tasks.json').read_text())['tasks']
     support = json.loads((HERE / 'SUPPORT.json').read_text())['overrides']
     external += json.loads((HERE / 'algorithms/tasks.json').read_text())['tasks']
-    original = [task | support.get(task['id'], {}) for task in original]
+    # Original audit group keeps its frozen support cohort (610 checks).
+    # Full runs use later capabilities, including the environment reference.
+    if group != 'original':
+        original = [task | support.get(task['id'], {}) for task in original]
     external = [task | support.get(task['id'], {}) for task in external]
     return original if group == 'original' else external if group == 'external' else original + external
 

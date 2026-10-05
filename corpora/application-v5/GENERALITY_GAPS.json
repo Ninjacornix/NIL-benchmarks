@@ -1,11 +1,10 @@
 {
   "schema": 1,
-  "unsupported_total": 12,
-  "external_unsupported": 12,
-  "supported_external": 42,
-  "classification": "ADR 033: historical gap labels distinguish core contracts from unfinished plugin/library adapters; entropy and multi_file_fixture remain unsupported under frozen oracle contracts.",
+  "unsupported_total": 11,
+  "external_unsupported": 11,
+  "supported_external": 43,
+  "classification": "ADR 034: static HOF supports ex_accumulate; runtime callback registration/reactive integration remains separate. ADR 033 placements otherwise retained, including unresolved entropy oracle and grep harness.",
   "blocking_task_counts": {
-    "higher_order": 1,
     "maps_records": 2,
     "unicode": 2,
     "concurrency": 1,
@@ -17,9 +16,6 @@
     "reactive": 1
   },
   "tasks_by_gap": {
-    "higher_order": [
-      "ex_accumulate"
-    ],
     "maps_records": [
       "ex_alphametics",
       "ex_dot_dsl"
@@ -182,7 +178,6 @@
     ]
   },
   "placement_by_task": {
-    "ex_accumulate": "core",
     "ex_alphametics": "plugin",
     "ex_dot_dsl": "plugin",
     "ex_anagram": "plugin",
@@ -194,5 +189,14 @@
     "ex_gigasecond": "plugin",
     "ex_grep": "plugin/harness (core runtime file access exists; directory capability now added)",
     "ex_hangman": "core"
+  },
+  "higher_order_round": {
+    "new_supported": [
+      "ex_accumulate"
+    ],
+    "unsupported_total": 11,
+    "ex_reactive": "Not in frozen manifest; prospective runtime subscriber/callback registration, not static calls alone.",
+    "ex_hangman": "Reactive integration not verified; static callback arguments do not prove its frozen requirement.",
+    "intrinsic_count": 35
   }
 }

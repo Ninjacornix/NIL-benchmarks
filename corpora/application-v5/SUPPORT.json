@@ -34,6 +34,12 @@
     "env_lookup": {
       "nil_status": "supported",
       "support_note": "ADR 033 environment host effect; original per-fixture environment and golden unchanged."
+    },
+    "ex_accumulate": {
+      "nil_status": "supported",
+      "baseline_status": "supported",
+      "missing_capabilities": [],
+      "unsupported_reason": ""
     }
   }
 }
