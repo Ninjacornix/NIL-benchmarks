@@ -90,7 +90,7 @@ def evaluate(source, language, task, folder, manifests=()):
             # Compile/check once before building native variants, even for bad sources.
             with tempfile.TemporaryDirectory(dir=folder) as directory:
                 work=Path(directory);(work/'input.bin').write_bytes(bytes.fromhex(task['inputs'][0]))
-                ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(work/'input.bin'),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],capture_output=True,text=True,timeout=5)
+                ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(work/'input.bin'),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**task.get('environments',[{}])[0]},capture_output=True,text=True,timeout=5)
             if ref.returncode:
                 return outcome | dict(failure_reason='checker',feedback='Reference checker process failed.')
             if ref.stdout.startswith('ERR\t'):
