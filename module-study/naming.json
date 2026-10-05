@@ -1,0 +1,1167 @@
+{
+  "metric": "hypothetical qualification of every local call using existing !plugin(1,export,args) spelling; not a verified source rewrite",
+  "tokenizers": [
+    {
+      "id": "gemma3_4b",
+      "tag": "gemma3/4b",
+      "manifest_sha256": "a2af6cc3eb7fa8be8504abaf9b04e88f17a119ec3f04a3addf55f92841195f5a",
+      "gguf_sha256": "aeda25e63ebd698fab8638ffb778e68bed908b960d39d0becc650fa981609d25",
+      "vocabulary_size": 262145,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    },
+    {
+      "id": "qwen2.5_7b_instruct",
+      "tag": "qwen2.5/7b-instruct",
+      "manifest_sha256": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "gguf_sha256": "2bada8a7450677000f678be90653b85d364de7db25eb5ea54136ada5f3933730",
+      "vocabulary_size": 152064,
+      "backend": "llama-cpp-python",
+      "backend_version": "0.3.16",
+      "vocab_only": true,
+      "add_special": false,
+      "parse_special": false
+    }
+  ],
+  "rows": [
+    {
+      "task": "ascii_lower",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 52,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      },
+      "qualified": {
+        "gemma3_4b": 78,
+        "qwen2.5_7b_instruct": 57,
+        "cl100k_base": 54,
+        "o200k_base": 53
+      }
+    },
+    {
+      "task": "ascii_upper",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 53,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      },
+      "qualified": {
+        "gemma3_4b": 79,
+        "qwen2.5_7b_instruct": 58,
+        "cl100k_base": 54,
+        "o200k_base": 53
+      }
+    },
+    {
+      "task": "buffer_dot",
+      "calls": 4,
+      "local": {
+        "gemma3_4b": 140,
+        "qwen2.5_7b_instruct": 104,
+        "cl100k_base": 104,
+        "o200k_base": 103
+      },
+      "qualified": {
+        "gemma3_4b": 158,
+        "qwen2.5_7b_instruct": 124,
+        "cl100k_base": 124,
+        "o200k_base": 123
+      }
+    },
+    {
+      "task": "buffer_sum",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 61,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 46
+      },
+      "qualified": {
+        "gemma3_4b": 65,
+        "qwen2.5_7b_instruct": 52,
+        "cl100k_base": 52,
+        "o200k_base": 51
+      }
+    },
+    {
+      "task": "copy_file",
+      "calls": 0,
+      "local": {
+        "gemma3_4b": 15,
+        "qwen2.5_7b_instruct": 10,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      },
+      "qualified": {
+        "gemma3_4b": 15,
+        "qwen2.5_7b_instruct": 10,
+        "cl100k_base": 10,
+        "o200k_base": 10
+      }
+    },
+    {
+      "task": "count_newlines",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 50,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      },
+      "qualified": {
+        "gemma3_4b": 68,
+        "qwen2.5_7b_instruct": 55,
+        "cl100k_base": 54,
+        "o200k_base": 53
+      }
+    },
+    {
+      "task": "dedupe_adjacent_lines",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 224,
+        "qwen2.5_7b_instruct": 167,
+        "cl100k_base": 163,
+        "o200k_base": 166
+      },
+      "qualified": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 172,
+        "cl100k_base": 168,
+        "o200k_base": 171
+      }
+    },
+    {
+      "task": "ex_acronym",
+      "calls": 5,
+      "local": {
+        "gemma3_4b": 160,
+        "qwen2.5_7b_instruct": 131,
+        "cl100k_base": 118,
+        "o200k_base": 118
+      },
+      "qualified": {
+        "gemma3_4b": 183,
+        "qwen2.5_7b_instruct": 156,
+        "cl100k_base": 143,
+        "o200k_base": 143
+      }
+    },
+    {
+      "task": "ex_affine_cipher",
+      "calls": 12,
+      "local": {
+        "gemma3_4b": 312,
+        "qwen2.5_7b_instruct": 241,
+        "cl100k_base": 227,
+        "o200k_base": 229
+      },
+      "qualified": {
+        "gemma3_4b": 362,
+        "qwen2.5_7b_instruct": 302,
+        "cl100k_base": 288,
+        "o200k_base": 289
+      }
+    },
+    {
+      "task": "ex_algo_bst_walk",
+      "calls": 9,
+      "local": {
+        "gemma3_4b": 347,
+        "qwen2.5_7b_instruct": 281,
+        "cl100k_base": 281,
+        "o200k_base": 281
+      },
+      "qualified": {
+        "gemma3_4b": 388,
+        "qwen2.5_7b_instruct": 326,
+        "cl100k_base": 326,
+        "o200k_base": 326
+      }
+    },
+    {
+      "task": "ex_algo_graph_bfs",
+      "calls": 4,
+      "local": {
+        "gemma3_4b": 381,
+        "qwen2.5_7b_instruct": 307,
+        "cl100k_base": 307,
+        "o200k_base": 307
+      },
+      "qualified": {
+        "gemma3_4b": 397,
+        "qwen2.5_7b_instruct": 327,
+        "cl100k_base": 327,
+        "o200k_base": 327
+      }
+    },
+    {
+      "task": "ex_algo_interval_merge",
+      "calls": 6,
+      "local": {
+        "gemma3_4b": 383,
+        "qwen2.5_7b_instruct": 315,
+        "cl100k_base": 315,
+        "o200k_base": 313
+      },
+      "qualified": {
+        "gemma3_4b": 409,
+        "qwen2.5_7b_instruct": 344,
+        "cl100k_base": 344,
+        "o200k_base": 344
+      }
+    },
+    {
+      "task": "ex_algo_linked_list",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 195,
+        "qwen2.5_7b_instruct": 161,
+        "cl100k_base": 161,
+        "o200k_base": 160
+      },
+      "qualified": {
+        "gemma3_4b": 207,
+        "qwen2.5_7b_instruct": 176,
+        "cl100k_base": 176,
+        "o200k_base": 175
+      }
+    },
+    {
+      "task": "ex_all_your_base",
+      "calls": 7,
+      "local": {
+        "gemma3_4b": 230,
+        "qwen2.5_7b_instruct": 170,
+        "cl100k_base": 170,
+        "o200k_base": 168
+      },
+      "qualified": {
+        "gemma3_4b": 260,
+        "qwen2.5_7b_instruct": 205,
+        "cl100k_base": 205,
+        "o200k_base": 203
+      }
+    },
+    {
+      "task": "ex_allergies",
+      "calls": 5,
+      "local": {
+        "gemma3_4b": 191,
+        "qwen2.5_7b_instruct": 155,
+        "cl100k_base": 149,
+        "o200k_base": 149
+      },
+      "qualified": {
+        "gemma3_4b": 212,
+        "qwen2.5_7b_instruct": 180,
+        "cl100k_base": 174,
+        "o200k_base": 174
+      }
+    },
+    {
+      "task": "ex_armstrong_numbers",
+      "calls": 4,
+      "local": {
+        "gemma3_4b": 183,
+        "qwen2.5_7b_instruct": 140,
+        "cl100k_base": 120,
+        "o200k_base": 121
+      },
+      "qualified": {
+        "gemma3_4b": 201,
+        "qwen2.5_7b_instruct": 162,
+        "cl100k_base": 142,
+        "o200k_base": 143
+      }
+    },
+    {
+      "task": "ex_atbash_cipher",
+      "calls": 7,
+      "local": {
+        "gemma3_4b": 176,
+        "qwen2.5_7b_instruct": 136,
+        "cl100k_base": 125,
+        "o200k_base": 126
+      },
+      "qualified": {
+        "gemma3_4b": 206,
+        "qwen2.5_7b_instruct": 171,
+        "cl100k_base": 160,
+        "o200k_base": 161
+      }
+    },
+    {
+      "task": "ex_baffling_birthdays",
+      "calls": 9,
+      "local": {
+        "gemma3_4b": 190,
+        "qwen2.5_7b_instruct": 132,
+        "cl100k_base": 131,
+        "o200k_base": 132
+      },
+      "qualified": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 177,
+        "cl100k_base": 176,
+        "o200k_base": 177
+      }
+    },
+    {
+      "task": "ex_beer_song",
+      "calls": 6,
+      "local": {
+        "gemma3_4b": 228,
+        "qwen2.5_7b_instruct": 194,
+        "cl100k_base": 193,
+        "o200k_base": 193
+      },
+      "qualified": {
+        "gemma3_4b": 253,
+        "qwen2.5_7b_instruct": 224,
+        "cl100k_base": 223,
+        "o200k_base": 223
+      }
+    },
+    {
+      "task": "ex_binary",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 79,
+        "qwen2.5_7b_instruct": 60,
+        "cl100k_base": 57,
+        "o200k_base": 57
+      },
+      "qualified": {
+        "gemma3_4b": 87,
+        "qwen2.5_7b_instruct": 69,
+        "cl100k_base": 66,
+        "o200k_base": 66
+      }
+    },
+    {
+      "task": "ex_binary_search",
+      "calls": 5,
+      "local": {
+        "gemma3_4b": 196,
+        "qwen2.5_7b_instruct": 144,
+        "cl100k_base": 143,
+        "o200k_base": 144
+      },
+      "qualified": {
+        "gemma3_4b": 216,
+        "qwen2.5_7b_instruct": 169,
+        "cl100k_base": 168,
+        "o200k_base": 168
+      }
+    },
+    {
+      "task": "ex_binary_search_tree",
+      "calls": 10,
+      "local": {
+        "gemma3_4b": 517,
+        "qwen2.5_7b_instruct": 416,
+        "cl100k_base": 411,
+        "o200k_base": 408
+      },
+      "qualified": {
+        "gemma3_4b": 562,
+        "qwen2.5_7b_instruct": 466,
+        "cl100k_base": 461,
+        "o200k_base": 458
+      }
+    },
+    {
+      "task": "ex_book_store",
+      "calls": 9,
+      "local": {
+        "gemma3_4b": 256,
+        "qwen2.5_7b_instruct": 205,
+        "cl100k_base": 194,
+        "o200k_base": 193
+      },
+      "qualified": {
+        "gemma3_4b": 294,
+        "qwen2.5_7b_instruct": 251,
+        "cl100k_base": 240,
+        "o200k_base": 240
+      }
+    },
+    {
+      "task": "ex_bottle_song",
+      "calls": 8,
+      "local": {
+        "gemma3_4b": 268,
+        "qwen2.5_7b_instruct": 236,
+        "cl100k_base": 235,
+        "o200k_base": 235
+      },
+      "qualified": {
+        "gemma3_4b": 301,
+        "qwen2.5_7b_instruct": 276,
+        "cl100k_base": 275,
+        "o200k_base": 275
+      }
+    },
+    {
+      "task": "ex_bowling",
+      "calls": 13,
+      "local": {
+        "gemma3_4b": 463,
+        "qwen2.5_7b_instruct": 375,
+        "cl100k_base": 362,
+        "o200k_base": 357
+      },
+      "qualified": {
+        "gemma3_4b": 518,
+        "qwen2.5_7b_instruct": 437,
+        "cl100k_base": 424,
+        "o200k_base": 420
+      }
+    },
+    {
+      "task": "ex_change",
+      "calls": 11,
+      "local": {
+        "gemma3_4b": 384,
+        "qwen2.5_7b_instruct": 281,
+        "cl100k_base": 281,
+        "o200k_base": 282
+      },
+      "qualified": {
+        "gemma3_4b": 430,
+        "qwen2.5_7b_instruct": 336,
+        "cl100k_base": 335,
+        "o200k_base": 336
+      }
+    },
+    {
+      "task": "ex_circular_buffer",
+      "calls": 8,
+      "local": {
+        "gemma3_4b": 309,
+        "qwen2.5_7b_instruct": 250,
+        "cl100k_base": 250,
+        "o200k_base": 251
+      },
+      "qualified": {
+        "gemma3_4b": 344,
+        "qwen2.5_7b_instruct": 290,
+        "cl100k_base": 290,
+        "o200k_base": 292
+      }
+    },
+    {
+      "task": "ex_clock",
+      "calls": 8,
+      "local": {
+        "gemma3_4b": 131,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      },
+      "qualified": {
+        "gemma3_4b": 164,
+        "qwen2.5_7b_instruct": 138,
+        "cl100k_base": 128,
+        "o200k_base": 128
+      }
+    },
+    {
+      "task": "ex_collatz_conjecture",
+      "calls": 4,
+      "local": {
+        "gemma3_4b": 102,
+        "qwen2.5_7b_instruct": 73,
+        "cl100k_base": 73,
+        "o200k_base": 75
+      },
+      "qualified": {
+        "gemma3_4b": 119,
+        "qwen2.5_7b_instruct": 93,
+        "cl100k_base": 93,
+        "o200k_base": 94
+      }
+    },
+    {
+      "task": "ex_complex_numbers",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 82,
+        "qwen2.5_7b_instruct": 60,
+        "cl100k_base": 57,
+        "o200k_base": 57
+      },
+      "qualified": {
+        "gemma3_4b": 94,
+        "qwen2.5_7b_instruct": 75,
+        "cl100k_base": 72,
+        "o200k_base": 72
+      }
+    },
+    {
+      "task": "ex_connect",
+      "calls": 29,
+      "local": {
+        "gemma3_4b": 628,
+        "qwen2.5_7b_instruct": 446,
+        "cl100k_base": 439,
+        "o200k_base": 435
+      },
+      "qualified": {
+        "gemma3_4b": 767,
+        "qwen2.5_7b_instruct": 600,
+        "cl100k_base": 577,
+        "o200k_base": 578
+      }
+    },
+    {
+      "task": "ex_crypto_square",
+      "calls": 7,
+      "local": {
+        "gemma3_4b": 257,
+        "qwen2.5_7b_instruct": 190,
+        "cl100k_base": 181,
+        "o200k_base": 180
+      },
+      "qualified": {
+        "gemma3_4b": 287,
+        "qwen2.5_7b_instruct": 225,
+        "cl100k_base": 216,
+        "o200k_base": 215
+      }
+    },
+    {
+      "task": "ex_custom_set",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 45,
+        "qwen2.5_7b_instruct": 31,
+        "cl100k_base": 31,
+        "o200k_base": 31
+      },
+      "qualified": {
+        "gemma3_4b": 53,
+        "qwen2.5_7b_instruct": 41,
+        "cl100k_base": 41,
+        "o200k_base": 41
+      }
+    },
+    {
+      "task": "ex_darts",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 145,
+        "qwen2.5_7b_instruct": 122,
+        "cl100k_base": 110,
+        "o200k_base": 110
+      },
+      "qualified": {
+        "gemma3_4b": 158,
+        "qwen2.5_7b_instruct": 137,
+        "cl100k_base": 125,
+        "o200k_base": 125
+      }
+    },
+    {
+      "task": "ex_diamond",
+      "calls": 4,
+      "local": {
+        "gemma3_4b": 126,
+        "qwen2.5_7b_instruct": 94,
+        "cl100k_base": 90,
+        "o200k_base": 90
+      },
+      "qualified": {
+        "gemma3_4b": 143,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 111,
+        "o200k_base": 111
+      }
+    },
+    {
+      "task": "ex_difference_of_squares",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 49
+      },
+      "qualified": {
+        "gemma3_4b": 76,
+        "qwen2.5_7b_instruct": 64,
+        "cl100k_base": 64,
+        "o200k_base": 64
+      }
+    },
+    {
+      "task": "ex_dnd_character",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "qualified": {
+        "gemma3_4b": 76,
+        "qwen2.5_7b_instruct": 63,
+        "cl100k_base": 62,
+        "o200k_base": 62
+      }
+    },
+    {
+      "task": "ex_dominoes",
+      "calls": 11,
+      "local": {
+        "gemma3_4b": 352,
+        "qwen2.5_7b_instruct": 258,
+        "cl100k_base": 258,
+        "o200k_base": 258
+      },
+      "qualified": {
+        "gemma3_4b": 398,
+        "qwen2.5_7b_instruct": 313,
+        "cl100k_base": 313,
+        "o200k_base": 314
+      }
+    },
+    {
+      "task": "ex_eliuds_eggs",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 66,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 47
+      },
+      "qualified": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 57,
+        "cl100k_base": 57,
+        "o200k_base": 57
+      }
+    },
+    {
+      "task": "ex_etl",
+      "calls": 7,
+      "local": {
+        "gemma3_4b": 242,
+        "qwen2.5_7b_instruct": 193,
+        "cl100k_base": 184,
+        "o200k_base": 184
+      },
+      "qualified": {
+        "gemma3_4b": 270,
+        "qwen2.5_7b_instruct": 230,
+        "cl100k_base": 221,
+        "o200k_base": 221
+      }
+    },
+    {
+      "task": "ex_flatten_array",
+      "calls": 5,
+      "local": {
+        "gemma3_4b": 157,
+        "qwen2.5_7b_instruct": 115,
+        "cl100k_base": 110,
+        "o200k_base": 108
+      },
+      "qualified": {
+        "gemma3_4b": 177,
+        "qwen2.5_7b_instruct": 139,
+        "cl100k_base": 134,
+        "o200k_base": 132
+      }
+    },
+    {
+      "task": "ex_flower_field",
+      "calls": 9,
+      "local": {
+        "gemma3_4b": 299,
+        "qwen2.5_7b_instruct": 225,
+        "cl100k_base": 218,
+        "o200k_base": 216
+      },
+      "qualified": {
+        "gemma3_4b": 342,
+        "qwen2.5_7b_instruct": 271,
+        "cl100k_base": 264,
+        "o200k_base": 265
+      }
+    },
+    {
+      "task": "ex_food_chain",
+      "calls": 8,
+      "local": {
+        "gemma3_4b": 389,
+        "qwen2.5_7b_instruct": 357,
+        "cl100k_base": 357,
+        "o200k_base": 356
+      },
+      "qualified": {
+        "gemma3_4b": 422,
+        "qwen2.5_7b_instruct": 397,
+        "cl100k_base": 397,
+        "o200k_base": 396
+      }
+    },
+    {
+      "task": "ex_game_of_life",
+      "calls": 9,
+      "local": {
+        "gemma3_4b": 304,
+        "qwen2.5_7b_instruct": 231,
+        "cl100k_base": 223,
+        "o200k_base": 221
+      },
+      "qualified": {
+        "gemma3_4b": 347,
+        "qwen2.5_7b_instruct": 277,
+        "cl100k_base": 269,
+        "o200k_base": 270
+      }
+    },
+    {
+      "task": "ex_go_counting",
+      "calls": 24,
+      "local": {
+        "gemma3_4b": 1193,
+        "qwen2.5_7b_instruct": 847,
+        "cl100k_base": 824,
+        "o200k_base": 826
+      },
+      "qualified": {
+        "gemma3_4b": 1308,
+        "qwen2.5_7b_instruct": 980,
+        "cl100k_base": 942,
+        "o200k_base": 945
+      }
+    },
+    {
+      "task": "ex_grade_school",
+      "calls": 8,
+      "local": {
+        "gemma3_4b": 223,
+        "qwen2.5_7b_instruct": 159,
+        "cl100k_base": 156,
+        "o200k_base": 157
+      },
+      "qualified": {
+        "gemma3_4b": 256,
+        "qwen2.5_7b_instruct": 199,
+        "cl100k_base": 196,
+        "o200k_base": 197
+      }
+    },
+    {
+      "task": "ex_grains",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 77,
+        "cl100k_base": 72,
+        "o200k_base": 73
+      },
+      "qualified": {
+        "gemma3_4b": 106,
+        "qwen2.5_7b_instruct": 87,
+        "cl100k_base": 82,
+        "o200k_base": 83
+      }
+    },
+    {
+      "task": "ex_hamming",
+      "calls": 3,
+      "local": {
+        "gemma3_4b": 115,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 83,
+        "o200k_base": 84
+      },
+      "qualified": {
+        "gemma3_4b": 127,
+        "qwen2.5_7b_instruct": 99,
+        "cl100k_base": 98,
+        "o200k_base": 98
+      }
+    },
+    {
+      "task": "ex_hello_world",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 27,
+        "qwen2.5_7b_instruct": 19,
+        "cl100k_base": 19,
+        "o200k_base": 19
+      },
+      "qualified": {
+        "gemma3_4b": 31,
+        "qwen2.5_7b_instruct": 24,
+        "cl100k_base": 24,
+        "o200k_base": 24
+      }
+    },
+    {
+      "task": "expand_tabs",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 63,
+        "qwen2.5_7b_instruct": 48,
+        "cl100k_base": 48,
+        "o200k_base": 48
+      },
+      "qualified": {
+        "gemma3_4b": 67,
+        "qwen2.5_7b_instruct": 53,
+        "cl100k_base": 53,
+        "o200k_base": 53
+      }
+    },
+    {
+      "task": "first_fields_csv",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 77,
+        "cl100k_base": 74,
+        "o200k_base": 73
+      },
+      "qualified": {
+        "gemma3_4b": 106,
+        "qwen2.5_7b_instruct": 87,
+        "cl100k_base": 84,
+        "o200k_base": 83
+      }
+    },
+    {
+      "task": "hex_encode",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 97,
+        "qwen2.5_7b_instruct": 78,
+        "cl100k_base": 69,
+        "o200k_base": 68
+      },
+      "qualified": {
+        "gemma3_4b": 101,
+        "qwen2.5_7b_instruct": 83,
+        "cl100k_base": 74,
+        "o200k_base": 73
+      }
+    },
+    {
+      "task": "histogram_digits",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 142,
+        "qwen2.5_7b_instruct": 111,
+        "cl100k_base": 106,
+        "o200k_base": 105
+      },
+      "qualified": {
+        "gemma3_4b": 150,
+        "qwen2.5_7b_instruct": 122,
+        "cl100k_base": 117,
+        "o200k_base": 115
+      }
+    },
+    {
+      "task": "invert_bytes",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 51,
+        "qwen2.5_7b_instruct": 37,
+        "cl100k_base": 35,
+        "o200k_base": 34
+      },
+      "qualified": {
+        "gemma3_4b": 55,
+        "qwen2.5_7b_instruct": 42,
+        "cl100k_base": 40,
+        "o200k_base": 39
+      }
+    },
+    {
+      "task": "min_max",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 75,
+        "cl100k_base": 75,
+        "o200k_base": 76
+      },
+      "qualified": {
+        "gemma3_4b": 102,
+        "qwen2.5_7b_instruct": 80,
+        "cl100k_base": 80,
+        "o200k_base": 81
+      }
+    },
+    {
+      "task": "nonempty_lines",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 90,
+        "qwen2.5_7b_instruct": 70,
+        "cl100k_base": 68,
+        "o200k_base": 67
+      },
+      "qualified": {
+        "gemma3_4b": 98,
+        "qwen2.5_7b_instruct": 80,
+        "cl100k_base": 78,
+        "o200k_base": 77
+      }
+    },
+    {
+      "task": "normalize_crlf",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 108,
+        "qwen2.5_7b_instruct": 85,
+        "cl100k_base": 83,
+        "o200k_base": 83
+      },
+      "qualified": {
+        "gemma3_4b": 112,
+        "qwen2.5_7b_instruct": 90,
+        "cl100k_base": 88,
+        "o200k_base": 88
+      }
+    },
+    {
+      "task": "number_lines",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 93,
+        "qwen2.5_7b_instruct": 74,
+        "cl100k_base": 72,
+        "o200k_base": 71
+      },
+      "qualified": {
+        "gemma3_4b": 97,
+        "qwen2.5_7b_instruct": 79,
+        "cl100k_base": 77,
+        "o200k_base": 76
+      }
+    },
+    {
+      "task": "prefix_lines",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 62,
+        "cl100k_base": 61,
+        "o200k_base": 61
+      },
+      "qualified": {
+        "gemma3_4b": 79,
+        "qwen2.5_7b_instruct": 67,
+        "cl100k_base": 66,
+        "o200k_base": 66
+      }
+    },
+    {
+      "task": "prefix_sums",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 57,
+        "cl100k_base": 57,
+        "o200k_base": 56
+      },
+      "qualified": {
+        "gemma3_4b": 78,
+        "qwen2.5_7b_instruct": 62,
+        "cl100k_base": 62,
+        "o200k_base": 61
+      }
+    },
+    {
+      "task": "reverse_bytes",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 60,
+        "qwen2.5_7b_instruct": 44,
+        "cl100k_base": 44,
+        "o200k_base": 43
+      },
+      "qualified": {
+        "gemma3_4b": 64,
+        "qwen2.5_7b_instruct": 49,
+        "cl100k_base": 49,
+        "o200k_base": 48
+      }
+    },
+    {
+      "task": "rot13",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 133,
+        "qwen2.5_7b_instruct": 98,
+        "cl100k_base": 86,
+        "o200k_base": 85
+      },
+      "qualified": {
+        "gemma3_4b": 137,
+        "qwen2.5_7b_instruct": 103,
+        "cl100k_base": 91,
+        "o200k_base": 90
+      }
+    },
+    {
+      "task": "running_report",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 75,
+        "qwen2.5_7b_instruct": 58,
+        "cl100k_base": 58,
+        "o200k_base": 58
+      },
+      "qualified": {
+        "gemma3_4b": 79,
+        "qwen2.5_7b_instruct": 63,
+        "cl100k_base": 63,
+        "o200k_base": 63
+      }
+    },
+    {
+      "task": "slice_file",
+      "calls": 2,
+      "local": {
+        "gemma3_4b": 103,
+        "qwen2.5_7b_instruct": 74,
+        "cl100k_base": 72,
+        "o200k_base": 73
+      },
+      "qualified": {
+        "gemma3_4b": 111,
+        "qwen2.5_7b_instruct": 84,
+        "cl100k_base": 82,
+        "o200k_base": 83
+      }
+    },
+    {
+      "task": "sum_integers",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 61,
+        "qwen2.5_7b_instruct": 47,
+        "cl100k_base": 47,
+        "o200k_base": 46
+      },
+      "qualified": {
+        "gemma3_4b": 65,
+        "qwen2.5_7b_instruct": 52,
+        "cl100k_base": 52,
+        "o200k_base": 51
+      }
+    },
+    {
+      "task": "sum_pairs",
+      "calls": 1,
+      "local": {
+        "gemma3_4b": 70,
+        "qwen2.5_7b_instruct": 56,
+        "cl100k_base": 56,
+        "o200k_base": 55
+      },
+      "qualified": {
+        "gemma3_4b": 74,
+        "qwen2.5_7b_instruct": 61,
+        "cl100k_base": 61,
+        "o200k_base": 60
+      }
+    }
+  ],
+  "cuts": {
+    "original": {
+      "programs": 24,
+      "calls": 30,
+      "tokens": {
+        "gemma3_4b": {
+          "local": 2144,
+          "qualified": 2266,
+          "delta": 122
+        },
+        "qwen2.5_7b_instruct": {
+          "local": 1634,
+          "qualified": 1785,
+          "delta": 151
+        },
+        "cl100k_base": {
+          "local": 1582,
+          "qualified": 1733,
+          "delta": 151
+        },
+        "o200k_base": {
+          "local": 1571,
+          "qualified": 1721,
+          "delta": 150
+        }
+      }
+    },
+    "external": {
+      "programs": 42,
+      "calls": 298,
+      "tokens": {
+        "gemma3_4b": {
+          "local": 10557,
+          "qualified": 11853,
+          "delta": 1296
+        },
+        "qwen2.5_7b_instruct": {
+          "local": 8153,
+          "qualified": 9668,
+          "delta": 1515
+        },
+        "cl100k_base": {
+          "local": 7946,
+          "qualified": 9429,
+          "delta": 1483
+        },
+        "o200k_base": {
+          "local": 7935,
+          "qualified": 9432,
+          "delta": 1497
+        }
+      }
+    },
+    "combined": {
+      "programs": 66,
+      "calls": 328,
+      "tokens": {
+        "gemma3_4b": {
+          "local": 12701,
+          "qualified": 14119,
+          "delta": 1418
+        },
+        "qwen2.5_7b_instruct": {
+          "local": 9787,
+          "qualified": 11453,
+          "delta": 1666
+        },
+        "cl100k_base": {
+          "local": 9528,
+          "qualified": 11162,
+          "delta": 1634
+        },
+        "o200k_base": {
+          "local": 9506,
+          "qualified": 11153,
+          "delta": 1647
+        }
+      }
+    }
+  }
+}
