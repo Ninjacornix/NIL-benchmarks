@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "question": "Does adding a fixed set of verified NIL examples improve parsing and correctness?",
+  "frozen_experiment": "generation/application/experiment.json",
+  "control": "Byte-identical frozen prompt, including the pre-existing generic copy-file example.",
+  "treatment": "The unchanged control plus task statement and full NIL source of four selected examples, inserted immediately before the evaluated task. No example fixtures or expected outputs.",
+  "selection": {
+    "count": 4,
+    "categories": [
+      "byte transform",
+      "numeric buffers",
+      "line processing",
+      "formatting"
+    ],
+    "population": "Original authored corpus tasks, supported and adaptation_overlap=false; no external or new algorithm task sampling.",
+    "excluded": [
+      "ascii_lower",
+      "copy_file"
+    ],
+    "exclusion_reasons": {
+      "ascii_lower": "Reverse-case variant of evaluated ascii_upper; exclude a near-solution.",
+      "copy_file": "Already present in the control; no new worked exposure."
+    },
+    "allowed_intrinsics": [
+      "read",
+      "write",
+      "out",
+      "bytes",
+      "buffer",
+      "concat",
+      "slice",
+      "format",
+      "parse"
+    ],
+    "rule": "Within each category choose the lexicographically first eligible task whose intrinsic names all occur in the frozen NIL reference. Apply once, globally, before inference; no per-task selection.",
+    "rationale": "Cover checked byte updates, numeric buffer state, scalar conditionals and formatted sequence accumulation without evaluated solutions or new capabilities absent from the reference."
+  },
+  "examples": [
+    {
+      "task": "invert_bytes",
+      "category": "byte transform",
+      "source": "corpora/application-v5/programs/invert_bytes.nil",
+      "sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25"
+    },
+    {
+      "task": "histogram_digits",
+      "category": "numeric buffers",
+      "source": "corpora/application-v5/programs/histogram_digits.nil",
+      "sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c"
+    },
+    {
+      "task": "count_newlines",
+      "category": "line processing",
+      "source": "corpora/application-v5/programs/count_newlines.nil",
+      "sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9"
+    },
+    {
+      "task": "hex_encode",
+      "category": "formatting",
+      "source": "corpora/application-v5/programs/hex_encode.nil",
+      "sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee"
+    }
+  ],
+  "conditions": [
+    "control",
+    "fewshot"
+  ],
+  "python": "Rerun unchanged Python once per model/task/seed alongside NIL control; common baseline, not duplicated for an identical treatment prompt.",
+  "schedule": "For each model in frozen order, run the original NIL/Python control matrix, then the NIL-only fewshot matrix. Models sequential; no smoke trials, prompt tuning or retries.",
+  "fixed": "Frozen model digests, all four task contracts and oracles, seeds17/29/43, temperature0.2, context8192, three attempts,512 output/request,1536 output/trial, parser extraction, repair feedback, reference100000 steps/depth256 and nativeO0/O2 remain unchanged.",
+  "counts": {
+    "nil_control_trials": 24,
+    "nil_fewshot_trials": 24,
+    "python_trials": 24
+  },
+  "accounting": "Provider prompt_eval_count and eval_count, all attempts including repairs; TCR-out=all output/solves, TCR-total=(all input+all output)/solves, undefined at zero solves.",
+  "failure_modes": "Per attempt, cumulative parse/typecheck/native compile passes, mutually exclusive parse/type/backend/semantic-or-execution/timeout/infrastructure/correct outcomes. Unknown remains unknown. Also final-trial modes.",
+  "confidence": "Four authored tasks, three paired seeds, two small quantized models, one rule. No causal claim about training or all familiarity; changed prompt length/content and serial condition order remain limitations.",
+  "stop_policy": "Digest/preflight mismatch aborts before inference. Infrastructure failure remains recorded, not automatically retried. No substitution or invented counts; mock results are labelled synthetic.",
+  "raw_outputs": "External fresh directory; retain exact requests, responses, candidates, per-attempt usage, frozen source hashes and model/server metadata."
+}
