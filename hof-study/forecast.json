@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "tiktoken": "0.12.0",
+  "counts": {
+    "signature_explicit": {
+      "source": "fn(i):i",
+      "cl100k_base": 4,
+      "o200k_base": 4
+    },
+    "signature_parenthesized": {
+      "source": "(i):i",
+      "cl100k_base": 3,
+      "o200k_base": 3
+    },
+    "signature_bracketed": {
+      "source": "[i:i]",
+      "cl100k_base": 3,
+      "o200k_base": 3
+    },
+    "reference_ampersand": {
+      "source": "&b",
+      "cl100k_base": 2,
+      "o200k_base": 2
+    },
+    "reference_explicit": {
+      "source": "fn(b)",
+      "cl100k_base": 3,
+      "o200k_base": 3
+    },
+    "reference_prefixed": {
+      "source": "ref(b)",
+      "cl100k_base": 3,
+      "o200k_base": 3
+    },
+    "parameter_call_caret": {
+      "source": "^b(a)",
+      "cl100k_base": 4,
+      "o200k_base": 4
+    },
+    "parameter_call_explicit": {
+      "source": "apply(b,a)",
+      "cl100k_base": 4,
+      "o200k_base": 4
+    },
+    "module_reference": {
+      "source": "&!plugin(1,0)",
+      "cl100k_base": 8,
+      "o200k_base": 8
+    },
+    "named_example": {
+      "source": "=b(&c,20)\n([i:i],i)=^a(b)\n1=a+1",
+      "cl100k_base": 20,
+      "o200k_base": 20
+    },
+    "anonymous_candidate": {
+      "source": "=b(fn(i):i=a+1,20)\n([i:i],i)=^a(b)",
+      "cl100k_base": 21,
+      "o200k_base": 21
+    },
+    "explicit_state_callback": {
+      "source": "[s,s:s]",
+      "cl100k_base": 4,
+      "o200k_base": 4
+    }
+  }
+}
