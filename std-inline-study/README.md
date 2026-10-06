@@ -48,3 +48,22 @@ and records allocations/hash/probes/reuses/copies/quota admission. Timed runs us
 the production runtime. The report distinguishes measured work from causal wall-time
 percentages it cannot establish. See [preregistration](../ownership-study/ROUND18_MAP_PLAN.md)
 and [the report](../reports/2026-10-06/ROUND18.md).
+
+The allocation-site follow-up prepares final executables separately, then rotates
+all baseline/final controls with `repeat.py`; it also checks transform output files.
+The final report identifies `allocator-*` receipts. Follow-up runs crossed local
+midnight into 2026-10-07; the Round18 report stays in the Round17 comparison folder.
+The private portable-allocation C test switch is exercised through an external
+Clang wrapper adding `-DNIL_PORTABLE_ALLOCATION`; ordinary runs have no such flag.
+
+To reproduce the final full interleaved table after preparing `before` and `after`:
+
+```sh
+python3 benchmarks/std-inline-study/repeat.py --before /tmp/nil-round18/before --after /tmp/nil-round18/after --output /tmp/nil-round18/full-interleaved.json --repeats 25 \
+  --control append --control filter_hand --control filter_std --control map_hand --control map_std --control scan \
+  --control insertion_hof --control insertion_hand --control transform \
+  --control sort_core_1024 --control sort_source_1024 --control sort_core_65536 --control sort_source_65536 \
+  --control sort_core_1048576 --control sort_source_1048576 \
+  --control cpp_append --control cpp_filter --control cpp_map --control cpp_insertion --control cpp_transform \
+  --control cpp_sort_1024 --control cpp_sort_65536 --control cpp_sort_1048576
+```

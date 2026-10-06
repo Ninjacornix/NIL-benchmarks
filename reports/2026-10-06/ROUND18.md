@@ -4,7 +4,9 @@
 
 **No unsound reconciliation case found.** No reference/native divergence or sanitizer finding occurred. This is an independent source review and adversarial testing, not an exhaustive proof. Audit commit `c64df4b` precedes ADRs and performance implementation; [audit argument and receipts](../../../docs/validation/ROUND18_AUDIT.md) cover dirty-frame synchronization, retain-before-drop, child roots, relocation, doubled slots, input frames and global state. Three new regressions exercise pending stores through 241 call frames, child-bearing record-buffer growth in a callee, and adjacent successful/failing copy-quota boundaries. Six new fuzz families exercise the same class beyond the regression shapes.
 
-**Unfavourable findings: the non-target performance gate remains open.** Source-sort medians are repeatedly 4–9% higher; the investigation below does not establish a safe production fix or a sufficient causal explanation. Round 18 is **not declared complete**. Also, all five 250k-entry/64-byte-key NIL map controls trap E013 during construction, at 131,073 live entries with the retained input. Map iteration materializes keys and hashes them again instead of directly visiting dense values. Filters, materialized updates and comparator/source sort remain slower than C++. Writable map/transform loops remain scalar. Bounded native calls intentionally retain their call machinery; trivial-source expansion applies only to unbounded native execution.
+**Unfavourable findings:** all five 250k-entry/64-byte-key NIL map controls trap E013 during construction, at 131,073 live entries with the retained input. Map iteration materializes keys and hashes them again instead of directly visiting dense values. Filters, materialized updates and comparator/source sort remain slower than C++. Writable map/transform loops remain scalar. Bounded native calls intentionally retain their call machinery; trivial-source expansion applies only to unbounded native execution.
+
+Final follow-up recovered the initial source-sort penalty: 1M elements 1458→1438 ms. Map/transform targets and push parity hold, and every gate was rerun after runtime commit `398156d`. The historical unfavourable campaigns and small comparator-insertion drift remain below.
 
 No unsound runtime fix or revert was needed. The single-threaded global runtime remains unsuitable for concurrent embedding without redesign. Each future root/live reader must observe the deferred protocol; passing aggregate tests is not a substitute for that invariant.
 
@@ -14,7 +16,7 @@ Main baseline `8647ba7`, benchmark baseline `0766a90`; branches `feat/std-inline
 
 Apple Silicon macOS, Apple Clang 21.0.0, Rust 1.98.1. Native O2, existing application LTO; C++17 O2 and libc++. All timing rows use 25 measured warm whole-process repetitions after one discarded warmup, rotating control order, no CPU isolation. Startup, input read, construction and stdout/file output are included. Every result is checksum- or byte-exact checked. Original and final 23-control batches were separate; C++ controls rotate within each batch. Push uses fully interleaved before/after revisions. Cross-round numbers are context, not paired measurements on a controlled machine. No statistical significance claim from medians alone.
 
-Raw JSON, logs, IR, disassembly and executables stay outside git in `/tmp/nil-round18/`. The committed report records summaries and SHA-256 receipts. Corpus verification reports the then-current HEAD `7ebaa8d` because final compiler changes were still uncommitted during gates; the tested working-tree code is the code subsequently committed as `f80e4b1`/`0d6fd7f`, with no later compiler changes. The binary receipt below identifies the measured build.
+Raw JSON, logs, IR, disassembly and executables stay outside git in `/tmp/nil-round18/`. The committed report records summaries and SHA-256 receipts. Corpus verification reports the then-current HEAD `7ebaa8d` because final compiler changes were still uncommitted during gates; the tested working-tree code is the code subsequently committed as `f80e4b1`/`0d6fd7f`, before the later allocator follow-up. Its final gates identify runtime commit `398156d`; the follow-up receipts identify the final measured build.
 
 ## Part A: stable observed update frames
 
@@ -37,7 +39,7 @@ call void @nil_root_store_observed(ptr %v6, ptr %v17)
 
 Forecast 32–39 ms for map/transform and target <=37.9: **hit**. Hand/std map 36.098/36.164, transform 35.783 ms. Round 17 published 47.28/44.83, same-session baseline 48.13/45.20. Round 16 comparison cited by the maintainer/ADR038 is 37.94/37.90; stored OWNERSHIP.md's separate batch is 35.652/35.030. Do not mix these as paired samples. Filters were forecast within 10%: hand 76.898→77.008, std 80.666→80.728 ms, **hit**.
 
-### Full controls, including remaining losses
+### First implementation controls, including remaining losses
 
 Each timing cell is **min/median/max ms**, 25 repetitions. Round17 column is its published median. This fixed-bound 1 MiB append control already benefits from Round16 growth lowering; it is not the old runtime-sized ~22 ms control.
 
@@ -71,7 +73,7 @@ After medians: append 1.15x C++, hand/std filter 2.54/2.66x, hand/std map 1.87x,
 
 Non-target filter/append/scan/insertion medians move approximately 0–2%, with overlapping ranges. Source-sort 64k/1M separate-batch medians move +7.2/+5.0%; ranges overlap, but that alone is insufficient to dismiss a regression. Follow-ups below retain those observations; their higher medians must not be labelled unchanged merely because ranges overlap.
 
-### Non-target source-sort investigation: unresolved
+### Initial non-target source-sort investigation (before recovery)
 
 All follow-ups use 25 rotating repetitions and exact full-array output checks. Cells min/median/max ms. These are separate campaigns, not samples pooled after selecting favourable runs.
 
@@ -102,7 +104,7 @@ The recursive sort body has1130 instructions before and after. Its production di
 
 One early exploratory runtime/grouped run overlapped for roughly its final seconds; both timings were discarded and replaced by the serialized isolation matrix above. The first isolation link omitted the entry wrapper from inspection IR and failed E011; corrected by capturing actual build IR, not by changing the compiler. These exploratory failures do not enter performance tables.
 
-**Outstanding completion work:** explain or recover the non-target source-sort timing difference under independently controlled conditions. All correctness gates and Part A/B targets pass, but the full no-regression gate cannot honestly be certified. No later optimization or unrelated feature started. Production code was not changed speculatively to alter binary layout.
+**Initial completion assessment:** the 4–9% difference prevented certification of the non-target gate. No speculative global-layout fix was shipped. The subsequent preregistered allocator follow-up below recovers source-sort timing; the unfavourable initial campaigns remain evidence, not discarded samples.
 
 ## Part B: inline linear source expressions
 
@@ -190,7 +192,7 @@ Iteration HIR/IR (`maps.ll`): `nil_map_key` at line286 followed by `nil_map_get_
 
 Quota failure: external profile reports `quota_entries=131073 prospective=33554456 live=49554640`. Prospective reservation includes its 40-byte header, so total is **83,109,136 >67,108,864** bytes. The retained 16MB input, grown map and current temporary key are live. Prospective-copy admission occurs even when uniqueness later permits reuse. **131,073 entries work in this retained-input long-key construction; the next insertion traps.** This is workload-specific, not a new global map ceiling. No quota or copying rule was weakened.
 
-Forecasts were conservative and mostly overestimated costs: short insert predicted 500–5000 ns, actual 81–311; lookup 100–1500, actual 28–119; iteration 50–1500, actual 27–91; update 200–4000, actual 41–118. Long insert expected 1.5–4x short, actual ~1.34x at10k (startup dominates) and 2.06x at100k. NIL 2–15x slower was not universally true: short-key 250k construction beats unordered (81.16 vs87.96 ns). It still loses many operation comparisons, especially iteration. E013 forecast **hit** for all long-key250k rows.
+Forecasts were conservative and mostly overestimated costs: short insert predicted 500–5000 ns, actual 81–311; lookup 100–1500, actual 28–119; iteration 50–1500, actual 27–91; update 200–4000, actual 41–118. Long insert expected 1.5–4x short, actual ~1.34x at10k (startup dominates) and 2.06x at100k. NIL 2–15x slower was not universally true: short-key 250k construction beats unordered (81.16 vs87.96 ns). It still loses many operation comparisons, especially iteration. E013 forecast **hit** for all long-key 250k rows.
 
 Recommendation only: benchmark a faster fixed, cross-platform deterministic long-key hash. A Swiss-style index is lower priority given short measured probe chains, and cannot eliminate temporary key allocation, redundant iteration lookup or prospective quota reservations. [Abseil's design](https://abseil.io/about/design/swisstables) uses control-byte fingerprints and vector candidate filtering; an insertion-ordered adaptation would retain dense entries and charge all new metadata. Such a redesign needs its own quota/determinism/alias audit. No hash, table layout or operation changed here.
 
@@ -293,7 +295,7 @@ Cells min/median/max; raw milliseconds and marginal nanoseconds. No truncated or
 | 64 | 250000 | iterate | unordered | 45.109/49.062/53.828 | -0.54/6.78/11.62 |
 | 64 | 250000 | update | unordered | 74.701/79.088/86.155 | 36.67/45.35/52.19 |
 
-## Final gates and failures encountered
+## First implementation gates and failures encountered
 
 Reproduction commands are in [std-inline-study/README.md](../../std-inline-study/README.md). Logs below are the command output receipts, not forecasts.
 
@@ -409,3 +411,289 @@ SHA-256; raw artifacts intentionally not committed. These identify the exact com
 | isolate/grouped.c | `cc3ba021a5bce30e6bd26fd429668ed3eb80851871e7d34c1a82da88b1558357` |
 | isolate/grouped | `f00063efe6200e88956220f13b22c3405990066b4426069b2bf7f8d2a24edeff` |
 | copied-baseline/same-code | `f1334bb932d95a37828f1f5365b948d997fa53254ca0ed1006197ec937fb95d9` |
+
+
+## Final recovery follow-up (completed 2026-10-07 local time)
+
+The report retains its Round17 comparison directory, 2026-10-06. Final follow-up
+measurements crossed midnight in Europe/Zagreb. They are separate campaigns, not
+pooled with the initial samples. Every compiler/sanitizer/fuzz/corpus gate was
+rerun after the allocator change. No frozen source or oracle changed.
+
+### Allocation-site stability: evidence and limits
+
+Apple's active allocator is xzone on this machine (public zone queries); before
+and after have the same final zone counts. Its documented unknown-type fallback
+uses a return address as a type hash, and segregates allocations into type buckets:
+[official descriptor fallback](https://github.com/apple-oss-distributions/libmalloc/blob/main/src/malloc_type_internal.h),
+[official xzone design](https://github.com/apple-oss-distributions/libmalloc/blob/main/doc/xzone_malloc.md).
+This provides a plausible binary-sensitive mechanism, not a complete causal
+attribution of the earlier difference. Instrumenting phase clocks gave parity,
+while slot-alignment changes did not. All exploratory failures are retained.
+
+ADR039's addendum `54a447a` precedes runtime commit `398156d`. It preregisters a
+fixed opaque descriptor for all NilSequence header/tail allocation sites, with
+zero summary bits (no pointer-layout or pure-data assertion). Weak-linked
+`malloc_type_malloc/realloc` on macOS SDK 14+ retain ordinary malloc/realloc when
+unavailable; older SDKs/platforms keep the portable path. Neither sizes, layout,
+quota, roots, relocation, free, null handling nor trap order changes. All seven
+sequence allocation/reallocation sites use it; unrelated scratch allocations do
+not. No descriptor-number tuning or profile-dependent benchmark switch occurred.
+
+The external weak-linked prototype was tested for 25 repetitions **before** the
+compiler change. Forecast: 1M source sort 1400–1490 ms and within 3% of a
+contemporaneous Round17 baseline, 64k within 5%. Both were met:
+
+| External prototype | 64k min/median/max ms | 1M min/median/max ms |
+|---|---:|---:|
+| before | 72.908/75.148/81.773 | 1330.769/1455.122/1555.046 |
+| after | 72.334/79.692/90.936 | 1335.552/1527.225/1614.767 |
+| weak_before | 72.196/73.834/80.878 | 1345.949/1439.044/1685.757 |
+| weak_after | 71.102/72.561/77.950 | 1326.796/1420.269/1492.542 |
+
+The final production 46-arm interleaved campaign below confirms recovery: source
+sort 1M 1457.557→1437.751 ms, 64k 76.543→73.151. The earlier 4–9% penalty is
+no longer present. This is macOS/Clang 21 evidence, not a portable speed guarantee.
+A standalone deliberately invalid C allocation/reallocation probe is caught by
+ASan (exit 134, heap-buffer-overflow); it is **not a NIL sanitizer finding**. Both
+the normal and forced portable allocation paths pass all 199 sanitizer tests.
+
+### Final full controls: baseline/final/C++, 25 repetitions
+
+Warm whole-process wall time, one discarded warmup, rotating all 46 arms, no
+competing validation/timing campaigns. Exact stdout and transform files checked
+every run. Each cell is **min/median/max ms**. C++ rows are the same algorithm
+comparisons described above; source merge sort versus std::sort is informational.
+
+| Control | Round17 baseline | Final | Final/baseline median |
+|---|---:|---:|---:|
+| append | 5.561/6.132/8.045 | 5.343/6.020/7.114 | 0.982x |
+| filter_hand | 75.017/76.934/102.974 | 75.533/76.517/80.372 | 0.995x |
+| filter_std | 79.088/81.698/172.221 | 79.982/81.979/86.175 | 1.003x |
+| map_hand | 46.542/47.792/90.404 | 34.877/35.737/39.450 | 0.748x |
+| map_std | 46.590/48.509/59.929 | 35.034/36.187/41.370 | 0.746x |
+| scan | 8.325/9.095/25.753 | 8.283/8.673/10.257 | 0.954x |
+| insertion_hof | 48.047/48.816/54.746 | 48.562/49.353/52.568 | 1.011x |
+| insertion_hand | 47.701/48.705/51.343 | 48.174/49.087/55.297 | 1.008x |
+| transform | 42.599/44.619/50.490 | 33.905/35.801/42.247 | 0.802x |
+| sort_core_1024 | 3.334/4.082/6.926 | 3.535/3.799/4.760 | 0.931x |
+| sort_source_1024 | 3.258/3.726/4.920 | 3.301/3.587/4.291 | 0.962x |
+| sort_core_65536 | 9.196/9.747/10.327 | 9.084/9.535/10.701 | 0.978x |
+| sort_source_65536 | 71.882/76.543/82.551 | 71.277/73.151/81.111 | 0.956x |
+| sort_core_1048576 | 127.714/130.988/143.576 | 127.587/130.733/138.900 | 0.998x |
+| sort_source_1048576 | 1328.116/1457.557/1563.906 | 1326.821/1437.751/1539.812 | 0.986x |
+| cpp_append | 4.870/5.459/7.287 | 4.914/5.198/7.891 | 0.952x |
+| cpp_filter | 28.884/30.113/33.844 | 29.101/29.821/33.901 | 0.990x |
+| cpp_map | 16.657/19.035/23.191 | 17.636/18.724/21.638 | 0.984x |
+| cpp_insertion | 4.604/5.043/6.753 | 4.652/4.897/5.549 | 0.971x |
+| cpp_transform | 12.186/13.317/25.171 | 12.074/13.057/16.622 | 0.981x |
+| cpp_sort_1024 | 2.795/4.015/7.090 | 3.501/3.889/4.205 | 0.969x |
+| cpp_sort_65536 | 8.410/8.848/9.553 | 8.507/8.677/10.428 | 0.981x |
+| cpp_sort_1048576 | 94.573/96.177/99.110 | 94.681/96.120/160.623 | 0.999x |
+
+Part A hits <=37.9 ms: hand/std map 35.737/36.187, transform 35.801. Filters
+76.517/81.979 remain close to baseline 76.934/81.698 (and the forecast within 10%).
+Round 16/17 historical columns remain in the initial table; no cross-round pooling.
+The largest non-target positive drift is comparator insertion 1.10%; a focused
+25-repeat follow-up is reported below. This is inside the observed baseline's
+cross-campaign movement (~1.3%), not proof of exact equality. An exploratory
+paired bootstrap of the full batch gives 1.000–1.015 for that ratio; it does not
+warrant claiming a zero cost. The material source-sort regression is recovered.
+
+Scan still emits `cmeq.16b` in final disassembly. Map/transform checked writes
+remain scalar. Final C++ losses: std filter 2.75x, std map 1.93x, transform 2.74x,
+callback insertion 10.08x; core sort 1M 1.36x, source sort 14.96x. No C++-parity
+claim is made for these losses. Fixed-bound append 1.16x already benefits from
+Round 16; it is not the historical runtime-bound 22 ms control.
+
+| Focused insertion follow-up | min/median/max ms |
+|---|---:|
+| before/insertion_hof | 47.741/48.203/48.704 |
+| before/insertion_hand | 47.550/48.074/48.949 |
+| after/insertion_hof | 48.185/48.608/49.559 |
+| after/insertion_hand | 48.301/48.503/49.739 |
+
+### Final std push parity
+
+Same16MiB input and keep<128 predicate, five rotating arms,25 repetitions,
+byte-exact stdout on every run. Forecast within 10% of concat: **hit**, 0.997x.
+It still costs 2.40x C++. Eligibility remains structural/exactly-once and native
+unbounded only; unused parameters remain conservative to preserve quota lifetime.
+
+| Arm | min/median/max ms |
+|---|---:|
+| before_concat | 77.925/78.956/82.821 |
+| before_push | 132.084/132.822/140.000 |
+| after_concat | 78.019/78.936/82.209 |
+| after_push | 78.102/78.733/89.876 |
+| cpp | 32.269/32.793/35.047 |
+
+### Final map matrix
+
+Same frozen controls, Clang 21/O2,25 samples per successful row. No map redesign.
+85 successful rows, five E013 failures. Whole-process timings include read/build;
+noninsert ns/op subtract the paired insert sample and divide by 3N, an estimate
+with noise (including negative estimates), **not an isolated kernel timer**.
+Insert divides whole-process time by N. C++ lacks NIL quota/COW semantics.
+
+| Key B | Entries | Language | Operation | Process min/median/max ms | Estimated min/median/max ns/op |
+|---:|---:|---|---|---:|---:|
+| 8 | 10000 | nil | insert | 2.856/3.052/3.320 | 285.60/305.19/332.05 |
+| 8 | 10000 | nil | hit | 3.760/3.978/4.589 | 21.94/30.04/51.72 |
+| 8 | 10000 | nil | miss | 4.390/4.628/5.062 | 37.99/52.45/67.49 |
+| 8 | 10000 | nil | iterate | 3.684/3.864/4.358 | 14.39/27.88/44.03 |
+| 8 | 10000 | nil | update | 4.131/4.320/4.717 | 34.61/42.00/55.99 |
+| 8 | 10000 | ordered | insert | 2.445/2.612/2.794 | 244.49/261.23/279.40 |
+| 8 | 10000 | ordered | hit | 2.665/2.922/3.086 | -0.02/9.47/14.25 |
+| 8 | 10000 | ordered | miss | 2.831/3.089/3.346 | 4.80/15.59/26.48 |
+| 8 | 10000 | ordered | iterate | 2.425/2.598/2.785 | -5.95/-0.88/4.12 |
+| 8 | 10000 | ordered | update | 2.660/2.839/2.925 | 0.07/7.30/11.62 |
+| 8 | 10000 | unordered | insert | 2.604/2.826/2.959 | 260.43/282.59/295.86 |
+| 8 | 10000 | unordered | hit | 3.208/3.403/3.618 | 13.20/18.94/30.23 |
+| 8 | 10000 | unordered | miss | 3.408/3.588/3.771 | 19.80/26.45/37.66 |
+| 8 | 10000 | unordered | iterate | 2.746/2.923/3.091 | -4.25/3.78/15.38 |
+| 8 | 10000 | unordered | update | 3.144/3.439/3.909 | 11.06/22.25/32.81 |
+| 8 | 100000 | nil | insert | 8.581/8.914/9.322 | 85.81/89.14/93.22 |
+| 8 | 100000 | nil | hit | 16.556/17.120/17.772 | 25.45/27.29/29.94 |
+| 8 | 100000 | nil | miss | 24.316/25.673/26.410 | 50.11/55.63/59.10 |
+| 8 | 100000 | nil | iterate | 16.066/16.764/17.398 | 23.42/25.82/29.39 |
+| 8 | 100000 | nil | update | 20.736/21.268/22.545 | 38.05/41.31/45.80 |
+| 8 | 100000 | ordered | insert | 4.667/5.137/5.574 | 46.67/51.37/55.74 |
+| 8 | 100000 | ordered | hit | 7.674/7.958/8.630 | 7.52/9.49/11.52 |
+| 8 | 100000 | ordered | miss | 9.515/10.034/11.058 | 14.29/16.27/20.26 |
+| 8 | 100000 | ordered | iterate | 4.705/5.135/5.800 | -1.64/-0.25/2.73 |
+| 8 | 100000 | ordered | update | 7.045/7.389/8.140 | 5.83/7.37/11.16 |
+| 8 | 100000 | unordered | insert | 8.012/8.361/9.149 | 80.12/83.61/91.49 |
+| 8 | 100000 | unordered | hit | 14.655/15.192/16.505 | 20.48/22.99/26.32 |
+| 8 | 100000 | unordered | miss | 17.255/17.692/18.427 | 27.91/31.14/32.80 |
+| 8 | 100000 | unordered | iterate | 9.595/10.039/10.931 | 2.63/5.74/8.57 |
+| 8 | 100000 | unordered | update | 15.415/16.936/17.652 | 21.25/28.12/30.25 |
+| 8 | 250000 | nil | insert | 19.071/20.388/21.983 | 76.28/81.55/87.93 |
+| 8 | 250000 | nil | hit | 42.121/43.552/45.495 | 28.26/30.95/33.86 |
+| 8 | 250000 | nil | miss | 67.215/71.403/76.083 | 63.24/67.60/73.35 |
+| 8 | 250000 | nil | iterate | 40.998/42.501/44.168 | 27.23/29.46/33.18 |
+| 8 | 250000 | nil | update | 52.868/54.245/56.561 | 42.73/45.05/49.99 |
+| 8 | 250000 | ordered | insert | 10.605/10.928/13.480 | 42.42/43.71/53.92 |
+| 8 | 250000 | ordered | hit | 19.420/20.194/24.077 | 8.53/12.12/17.62 |
+| 8 | 250000 | ordered | miss | 26.446/27.677/29.093 | 18.72/21.72/24.11 |
+| 8 | 250000 | ordered | iterate | 10.890/11.715/12.534 | -2.64/0.79/1.94 |
+| 8 | 250000 | ordered | update | 17.922/19.203/20.069 | 7.63/10.99/12.04 |
+| 8 | 250000 | unordered | insert | 20.385/21.946/25.785 | 81.54/87.78/103.14 |
+| 8 | 250000 | unordered | hit | 36.062/38.692/41.996 | 18.73/21.34/26.35 |
+| 8 | 250000 | unordered | miss | 40.192/42.825/46.620 | 23.04/27.11/32.42 |
+| 8 | 250000 | unordered | iterate | 24.877/26.141/29.536 | 1.61/6.20/9.12 |
+| 8 | 250000 | unordered | update | 40.585/44.414/47.888 | 23.02/29.91/34.59 |
+| 64 | 10000 | nil | insert | 3.805/4.101/4.365 | 380.48/410.10/436.47 |
+| 64 | 10000 | nil | hit | 6.722/6.869/7.098 | 84.45/91.60/106.08 |
+| 64 | 10000 | nil | miss | 7.556/7.733/7.914 | 113.75/120.68/126.96 |
+| 64 | 10000 | nil | iterate | 6.517/6.745/7.546 | 80.81/88.05/114.18 |
+| 64 | 10000 | nil | update | 7.349/7.609/8.400 | 105.47/118.02/142.64 |
+| 64 | 10000 | ordered | insert | 3.581/3.774/4.104 | 358.10/377.38/410.45 |
+| 64 | 10000 | ordered | hit | 6.233/6.442/6.634 | 74.18/88.38/96.11 |
+| 64 | 10000 | ordered | miss | 6.323/6.490/6.880 | 80.83/90.16/104.36 |
+| 64 | 10000 | ordered | iterate | 3.707/3.813/4.032 | -10.30/1.28/9.27 |
+| 64 | 10000 | ordered | update | 5.304/5.508/5.986 | 46.33/58.47/69.55 |
+| 64 | 10000 | unordered | insert | 3.201/3.425/3.632 | 320.05/342.48/363.21 |
+| 64 | 10000 | unordered | hit | 4.479/4.698/4.969 | 35.20/42.02/51.72 |
+| 64 | 10000 | unordered | miss | 4.713/4.859/5.046 | 40.49/46.29/54.19 |
+| 64 | 10000 | unordered | iterate | 3.277/3.475/3.761 | -6.94/1.94/12.20 |
+| 64 | 10000 | unordered | update | 4.394/4.631/4.961 | 27.70/40.13/52.21 |
+| 64 | 100000 | nil | insert | 17.464/18.063/20.581 | 174.64/180.63/205.81 |
+| 64 | 100000 | nil | hit | 42.583/43.587/49.601 | 79.76/84.88/106.05 |
+| 64 | 100000 | nil | miss | 52.648/53.499/64.400 | 109.97/118.65/153.11 |
+| 64 | 100000 | nil | iterate | 41.222/42.139/61.817 | 74.76/80.46/144.50 |
+| 64 | 100000 | nil | update | 50.251/51.377/67.163 | 103.32/110.86/162.31 |
+| 64 | 100000 | ordered | insert | 13.700/14.075/21.942 | 137.00/140.75/219.42 |
+| 64 | 100000 | ordered | hit | 33.624/34.433/36.894 | 49.10/67.48/73.80 |
+| 64 | 100000 | ordered | miss | 36.777/37.531/41.155 | 54.59/78.02/91.18 |
+| 64 | 100000 | ordered | iterate | 13.624/14.092/15.458 | -25.02/0.28/2.82 |
+| 64 | 100000 | ordered | update | 28.829/29.711/32.080 | 27.88/52.72/57.45 |
+| 64 | 100000 | unordered | insert | 13.807/14.748/19.577 | 138.07/147.48/195.77 |
+| 64 | 100000 | unordered | hit | 26.234/27.827/34.788 | 33.99/41.94/58.59 |
+| 64 | 100000 | unordered | miss | 28.682/29.847/37.316 | 35.98/50.35/70.93 |
+| 64 | 100000 | unordered | iterate | 15.781/16.639/18.358 | -9.79/5.56/9.89 |
+| 64 | 100000 | unordered | update | 26.224/27.753/30.192 | 22.16/42.07/48.97 |
+| 64 | 250000 | nil | insert | E013 before operation | E013 before operation |
+| 64 | 250000 | nil | hit | E013 before operation | E013 before operation |
+| 64 | 250000 | nil | miss | E013 before operation | E013 before operation |
+| 64 | 250000 | nil | iterate | E013 before operation | E013 before operation |
+| 64 | 250000 | nil | update | E013 before operation | E013 before operation |
+| 64 | 250000 | ordered | insert | 33.600/34.642/35.495 | 134.40/138.57/141.98 |
+| 64 | 250000 | ordered | hit | 87.670/89.069/90.775 | 70.38/72.57/74.96 |
+| 64 | 250000 | ordered | miss | 101.144/103.911/115.593 | 88.39/92.90/107.64 |
+| 64 | 250000 | ordered | iterate | 33.578/35.012/37.184 | -2.56/0.55/4.40 |
+| 64 | 250000 | ordered | update | 77.007/78.743/84.395 | 55.35/58.60/66.78 |
+| 64 | 250000 | unordered | insert | 42.161/45.376/50.677 | 168.64/181.50/202.71 |
+| 64 | 250000 | unordered | hit | 74.770/79.046/89.258 | 41.08/45.32/62.24 |
+| 64 | 250000 | unordered | miss | 75.589/81.669/87.845 | 40.32/46.76/60.13 |
+| 64 | 250000 | unordered | iterate | 45.705/49.082/53.185 | -2.76/4.03/13.01 |
+| 64 | 250000 | unordered | update | 73.186/78.634/84.860 | 37.56/44.21/52.17 |
+
+The untimed profiling rerun gives **identical allocation/hash/probe/reuse/copy
+counts** to the first production profile. 100k update loops reuse 399,984/399,982
+operations for 8/64-byte keys; only 16/18 growth copies. No per-update COW copying
+explains the gap. Query loops allocate 300k temporary keys, and map iteration
+materializes keys and rehashes them. Long-key FNV hashes 25.6M bytes per three
+passes; hit/miss probes remain short. Recommendations are unchanged: faster
+deterministic long-key hashing deserves a future experiment; a Swiss-style index
+is lower priority than temporary-key/iteration work because measured probe chains
+are already short. These are proposals, not implementations. Hash versus allocator
+wall-time percentages are **not established** by counters alone.
+
+All five long-key 250k rows fail at 131,073 entries with retained 16 MB input:
+prospective capacity 33,554,456 plus 40-byte header, live 49,554,640 exceeds 67,108,864.
+This is this workload's growth boundary, not the standalone map entry ceiling.
+No quota increase, views or relaxed alias rule was used.
+
+### Final gate receipts after runtime commit `398156d`
+
+| Command | Result | External output |
+|---|---|---|
+| `./scripts/ci.sh` | 466 passed, zero warnings |allocator-ci-debug.log |
+| `./scripts/ci.sh release` | 466 passed, zero warnings |allocator-ci-release.log |
+| `./scripts/sanitize.sh` | 199 passed, clean ASan/UBSan |allocator-sanitize.log |
+| `NIL_CLANG=/tmp/nil-round18/fallback/clang ./scripts/sanitize.sh` | 199 passed, portable fallback clean |allocator-fallback-sanitize.log |
+| `./scripts/fuzz-v5.sh --seed 102061801 --out /tmp/nil-round18/allocator-fuzz-102061801` | 475 programs/950 native builds/0 divergences |allocator-fuzz-102061801.log |
+| same, seed 74018329 |same, full coverage |allocator-fuzz-74018329.log |
+| same, seed 918273645 |same, full coverage |allocator-fuzz-918273645.log |
+| `python3 benchmarks/corpora/application-v5/verify.py --output /tmp/nil-round18/allocator-corpus.json` | 2815 checks, 68 NIL programs |allocator-corpus.log/json |
+| same with `--group original` | exactly 610 checks |allocator-original.log/json |
+
+Every fuzz seed executes all 475 indices and 420 named families, stdout/files
+compared. Per-seed codes unchanged: E009: 3, E012: 24, E013: 34, E014: 9, E015: 8, E016: 14,
+E017: 10, E018: 11, E019: 3, E020: 6, E021: 5, E022: 3, OK: 345. The per-family counts and new
+root/inline families in the earlier table are unchanged, each once per seed.
+276 frozen source hashes match the earlier corpus run exactly. Frontend/HIR/CLI/std
+sources and Cargo.lock unchanged from `8647ba7`; frozen benchmark diff from `0766a90`
+is empty. Intrinsic 35 variants / 34 core bodies unchanged. Local commits only.
+
+### Follow-up raw artifact SHA-256
+
+| Relative to /tmp/nil-round18 | SHA-256 |
+|---|---|
+| weak-alloc/clang | `72aa21a0fee0cf2dd0df175032e1f0ae5b9de5f3c7466c75941e67a9c6aa7934` |
+| weak-alloc/results.json | `48148124e35b3afa1cc11464e42fcb047ec828298ef4949ace58871cd0514f51` |
+| weak-alloc/run.log | `4f61b30fad989d19375e07ab1634c1ec468ebaa7e0ff4fc4e61a8682d14e5c7e` |
+| weak-alloc/asan-realloc.log | `486998576347578893796a4aaedbddb29341943e63b38dd7e7c91733f04333c1` |
+| typed-alloc/asan-probe.log | `10780046478d96a7b1b2bb7cfc74666cb354e5421e90e53228ee7db556b74a9e` |
+| resource.json | `415271b6df7c39591ce5aba90580efe62f411dba8c0c0ba74f027d2ec085599c` |
+| allocator-interleaved.json | `a1e7199104ff78dd327349bde9271577c91b2ee70c2508a0074ebe48e1455677` |
+| allocator-interleaved.log | `502ff64053e01a87b645ed199730435467fd8f6401bb03a0bacf1bc54c2233d1` |
+| allocator-insertion.json | `9e498f6619190b6635856ddb0b43c6bc2932a05ceb5aa11eb628e5ee630c022e` |
+| allocator-push/results.json | `37c155acf3065e17b5e98698b2b66de270cc4f6664d19b3d09a63fd0a30f9a05` |
+| allocator-maps/results.json | `0802033f8f5ccf81fa9c87c241921e141e4f693841646aaad4a16ac1ade26da5` |
+| allocator-map-profile/results.json | `9a914f0bf48aedd76fb8390fb22e08a0e4ac918fef405e8170446a769c310f0f` |
+| allocator-ci-debug.log | `1589b203f20c69b8db78f237816e50d28741ec810d23d0f165bdb6334ad4688e` |
+| allocator-ci-release.log | `a0a3e018bc3f95515a5d1760063079835a4aedc09db98e96a4ec3e208db33074` |
+| allocator-sanitize.log | `67c19109f2787d9759a773525d150b2517f4ad9a9e84e351f5d18843e6b11319` |
+| allocator-fallback-sanitize.log | `56113160762e8aec65bd3aca551ef4bed25f825f414ca2ef24c6b7a1978bd47e` |
+| allocator-corpus.json | `10aa33cce7c61aeabcadc24220e70252c3b1874ceda69a46c16de1553db691c5` |
+| allocator-corpus.log | `e45e64db610c668eeb0df87debc6f651bb47aec1c8b8e86096836a3dcd60f77e` |
+| allocator-original.json | `9f2375b0da14e84215d6a65f87a282df15a815922b42d14c6f40f04ec0474fc2` |
+| allocator-original.log | `bdf2e425eccacb9d7cbaef1373a9c6494ca6c46beb593f93aed6943c43272dea` |
+| allocator-controls/scan.asm | `18f15697810122007dcb33b21cff55b15a5cb4717ab386adbeff50682cf5b0d9` |
+| allocator-controls/map_hand.ll | `cebd637158d1fdd7b09487a998a07b0cd5b65c2715501fd95a9feb41b0c36b39` |
+| allocator-fuzz-102061801.log | `09576c96365a0e25a3c64fa9151d668a023d250d7e28d46e31b062ec583efd49` |
+| allocator-fuzz-74018329.log | `e91a9398ecb9d872128cfae2bd077a3a391d4751c6b23ada9b07b8159bfce6ea` |
+| allocator-fuzz-918273645.log | `84f0ffb61d63cccb735af8ab67b10b12f5945f6645929df997e3111dbd46ddac` |
+| target/release/nil (outside prefix) | `f527b23a20132157b74fdb4cba1959be034cf185bd141fdc6ee5286820c5f2ca` |

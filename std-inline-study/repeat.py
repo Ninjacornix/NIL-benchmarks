@@ -22,13 +22,15 @@ if a.output.resolve().is_relative_to(root) or a.repeats < 25:
     p.error('outside output and >=25 repeats required')
 if a.same_executable_path and a.same_executable_path.resolve().is_relative_to(root):
     p.error('shared executable must be outside checkout')
-commands, expected = {}, {}
+commands, expected, files = {}, {}, {}
 for arm, directory in [('before', a.before), ('after', a.after)]:
     prepared = json.loads((directory / 'prepared.json').read_text())
     for name in a.control:
         key = arm + '/' + name
         commands[key] = prepared['commands'][name]
         expected[key] = (directory / (name + '.expected')).read_bytes()
+        if name in ['transform', 'cpp_transform']:
+            files[key] = bytes(255 - b for b in Path(commands[key][1]).read_bytes())
 samples = {key: [] for key in commands}
 names = list(commands)
 for rep in range(a.repeats + 1):
@@ -45,6 +47,8 @@ for rep in range(a.repeats + 1):
         elapsed = (time.perf_counter_ns() - start) / 1e6
         if result.returncode or result.stderr or result.stdout != expected[key]:
             raise RuntimeError((key, result.returncode, result.stderr))
+        if key in files and Path(command[-1]).read_bytes() != files[key]:
+            raise RuntimeError((key, 'transform output mismatch'))
         if rep:
             samples[key].append(elapsed)
 rows = {key: dict(min_ms=min(v), median_ms=statistics.median(v),
