@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from test_standing import backend, standing, response, MODEL
+from test_standing import backend, standing, response, MODEL, TemporaryReports
 
 FAKE='planted-OAuth-secret-NIL-15b-never-a-real-token'
 
@@ -141,7 +141,7 @@ class SubscriptionTransportTests(unittest.TestCase):
         self.assertEqual(error.exception.reason,'isolation')
 
 
-class ResumeTests(unittest.TestCase):
+class ResumeTests(TemporaryReports):
     def run_mock(self,path,**kwargs):
         with patch.object(standing.application.oracle,'prepare'),patch.object(standing,'oracle',verdict):
             return standing.run(path,mock=True,**kwargs)
@@ -232,13 +232,13 @@ class ResumeTests(unittest.TestCase):
             return proc if argv[0]=='/usr/bin/sandbox-exec' else real_run(argv,**kwargs)
         with tempfile.TemporaryDirectory() as tmp,patch.dict(os.environ,{'CLAUDE_CODE_OAUTH_TOKEN':FAKE,'ANTHROPIC_API_KEY':'planted-api-secret'}),patch.object(standing,'Mock',return_value=c),patch.object(backend.subprocess,'run',no_live):
             root=Path(tmp)/'run';self.run_mock(root)
-            for file in list(root.rglob('*'))+list((standing.SUITE/'reports').rglob('MOCK_STANDING_GENERATION*_DEV.*')):
+            for file in list(root.rglob('*'))+list(self.report_root.rglob('MOCK_STANDING_GENERATION*_DEV.*')):
                 if file.is_file():
                     for secret in (FAKE,'planted-api-secret'):
                         self.assertNotIn(secret.encode(),file.read_bytes(),str(file))
 
 
-class OfflinePreflightAndAccountingTests(unittest.TestCase):
+class OfflinePreflightAndAccountingTests(TemporaryReports):
     def test_offline_preflight_with_private_fake_token_and_mock_cli_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);token=root/'fake-token';token.write_text(FAKE);token.chmod(0o600)

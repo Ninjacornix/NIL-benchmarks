@@ -61,7 +61,33 @@ class TransportTests(unittest.TestCase):
         self.assertEqual(f[f.index('--effort')+1],'high')
         self.assertEqual(f[f.index('--model')+1],MODEL)
 
-class HarnessTests(unittest.TestCase):
+class TemporaryReports(unittest.TestCase):
+    def setUp(self):
+        directory=tempfile.TemporaryDirectory(prefix='nil-standing-test-reports-')
+        self.addCleanup(directory.cleanup)
+        self.report_root=Path(directory.name)
+        # Unit tests exercise the harness with today's documentation. Production
+        # experiments retain their committed hash and fail closed after spec edits.
+        split=json.loads(standing.SPLIT.read_text())
+        split['spec_sha256']=standing.digest((standing.ROOT/'docs/language/EXPR_V5.md').read_text())
+        fixture=self.report_root/'unit-split.json';fixture.write_text(json.dumps(split))
+        splitter=patch.object(standing,'SPLIT',fixture)
+        splitter.start();self.addCleanup(splitter.stop)
+        original=standing.publish_report
+        def publish(*args,**kwargs):
+            with patch.object(standing,'SUITE',self.report_root):
+                return original(*args,**kwargs)
+        publisher=patch.object(standing,'publish_report',side_effect=publish)
+        publisher.start();self.addCleanup(publisher.stop)
+
+class HarnessTests(TemporaryReports):
+    def test_mock_reports_are_published_only_under_temporary_directory(self):
+        with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing,'oracle',return_value=dict(taxonomy='parse',semantic_ok=False,feedback='E001',parse_ok=False)):
+            standing.run(Path(tmp)/'run',mock=True)
+            reports=list(self.report_root.rglob('MOCK_STANDING_GENERATION*'))
+            self.assertEqual(len(reports),2)
+            self.assertEqual({p.suffix for p in reports},{'.json','.md'})
+
     def test_split_and_all_three_prompts_contain_no_held_out_answers(self):
         plan,split,tasks=standing.validate_split()
         for tid in split['held_out']+split['dev']:
