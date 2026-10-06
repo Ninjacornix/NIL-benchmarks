@@ -44,7 +44,9 @@ class TransportTests(unittest.TestCase):
         import subprocess
         client=object.__new__(backend.Claude)
         client.executable=Path('/usr/bin/true');client.model=MODEL;client.version='CLI';client.bare=False;client.proven=False
+        client.token='fake-token';client.secrets=backend.Secrets(client.token)
         completed=[subprocess.CompletedProcess([],1,b'',b'denied'),
+                   subprocess.CompletedProcess([],1,b'',b'denied'),
                    subprocess.CompletedProcess([],0,'CLI\n',''),
                    subprocess.CompletedProcess([],1,'','EPERM global temporary settings')]
         with patch.object(backend.subprocess,'run',side_effect=completed):
