@@ -95,3 +95,11 @@ oracles, split, few-shot selection and prompts are unchanged. Input counts are
 backend fresh/cache usage; tiktoken source screens stay separate. Undefined TCR
 and missing accounting remain unknown. Spec amortization is a measured-prefix
 scenario, not actual subscription billing. Paired task bootstrap is retained.
+
+## Budget amendment (2026-10-06, before any live generation)
+
+Maintainer decision: total notional cap **USD 10** (was USD 50), and **one** held-out
+replicate (was two): 24 tasks x 3 arms x 1 replicate = 72 trials, at most 216 held-out +
+9 DEV + 2 calibration = **227** invocations. Attempts, effort, output caps, split, arms,
+prompts and forecasts are unchanged. Earlier USD 50 / two-replicate / 443 figures above
+are superseded. With one replicate, run-to-run variance is not measured.
