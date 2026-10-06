@@ -1,0 +1,3161 @@
+{
+  "mock": true,
+  "status": "complete",
+  "config": {
+    "schema": 1,
+    "backend": "claude-cli",
+    "model": "claude-sonnet-5-5",
+    "effort": "high",
+    "replicates": [
+      0,
+      1
+    ],
+    "arms": [
+      "python",
+      "nil-spec",
+      "nil-fewshot"
+    ],
+    "attempt_limit": 3,
+    "per_attempt_output_cap": 512,
+    "trial_output_cap": 1536,
+    "spend_cap_usd": 50,
+    "request_reservation_usd": 1,
+    "dev_task": "expand_tabs",
+    "dev_replicates": [
+      0
+    ],
+    "max_generation_requests": 441,
+    "max_accounting_requests": 2,
+    "max_requests": 443,
+    "bootstrap_samples": 2000,
+    "bootstrap_seed": 37037,
+    "forecasts": {
+      "python": {
+        "parse_rate": 0.98,
+        "solve_rate": 0.7
+      },
+      "nil-spec": {
+        "parse_rate": 0.7,
+        "solve_rate": 0.25
+      },
+      "nil-fewshot": {
+        "parse_rate": 0.85,
+        "solve_rate": 0.35
+      },
+      "nil_vs_python_output_tcr_ratio": [
+        1.5,
+        3.0
+      ],
+      "nil_vs_python_full_total_tcr_ratio": [
+        10,
+        40
+      ]
+    },
+    "forecast_note": "Judgment ranges, not measured. Short legacy output caps and harder algorithms may dominate failures. Cache/fixed-spec amortization is a deployment scenario, not evidence of model efficiency.",
+    "prompt_rule": "Fixed replacement system prompt; Python no language spec; NIL includes exact published EXPR_V5.md, plus four unchanged preregistered corpus examples only in fewshot. Common file solve contract; failed candidates and real diagnostics become repair conversation. No task solution, hidden fixture or other held-out task statement enters context.",
+    "stop_policy": "No automatic infrastructure retries or model substitutions. Missing usage, tool calls, unavailable model, broken isolation, changed frozen hashes or inadequate remaining reservation stop the campaign and retain partial metrics. No unknown usage imputation.",
+    "mock": true,
+    "phase": "held-out",
+    "held_out": [
+      "nonempty_lines",
+      "ascii_lower",
+      "number_lines",
+      "prefix_lines",
+      "min_max",
+      "slice_file",
+      "prefix_sums",
+      "buffer_sum",
+      "ex_flower_field",
+      "ex_bottle_song",
+      "ex_dominoes",
+      "ex_custom_set",
+      "ex_atbash_cipher",
+      "ex_diamond",
+      "ex_beer_song",
+      "ex_change",
+      "ex_flatten_array",
+      "ex_hello_world",
+      "ex_circular_buffer",
+      "ex_grade_school",
+      "ex_algo_interval_merge",
+      "ex_algo_bst_walk",
+      "ex_algo_linked_list",
+      "ex_algo_graph_bfs"
+    ],
+    "split_sha256": "a28ce5a406fbb23029e4bac930d765d3719d4312ac273718ba1a21f04cae89ee",
+    "spec_sha256": "b2b9f32bde4eff44d80eea74c045b246e48b5a8307b2050ed4a0269226808ba3",
+    "python_version": "3.12.11 (main, Jun  4 2025, 17:42:58) [Clang 20.1.4 ]",
+    "plan_sha256": "7bd8d42d2a54bbf77dd357df5e28d09ecccc1bfe6e759a49a2cb8b05424d0661",
+    "compiler_revision": "791bab77ec16547440d65c614638fa98ceb5d523",
+    "benchmark_revision": "d36741ec1c2e6ce07ce0f5d811dc5ea90e198717",
+    "cli_version": "MOCK-NOT-A-MODEL"
+  },
+  "scored": [
+    {
+      "arm": "python",
+      "trials": 48,
+      "attempts": 96,
+      "solves": 48,
+      "solve_rate": 1.0,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": 0.0,
+      "parse_rate": 1.0,
+      "compile_o0_rate": null,
+      "compile_o2_rate": null,
+      "type_rate": null,
+      "input_tokens_full": 9600,
+      "input_tokens_spec_amortized": 9600,
+      "output_tokens": 1920,
+      "repair_output_tokens": 960,
+      "repair_input_tokens": 4800,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "output_tcr": 40.0,
+      "total_tcr": 240.0,
+      "amortized_total_tcr": 240.0,
+      "cost_usd": 0.096,
+      "wall_seconds": 0.0,
+      "failures": {
+        "wrong-answer": 48,
+        "correct": 48
+      },
+      "feature_associations": {}
+    },
+    {
+      "arm": "nil-spec",
+      "trials": 48,
+      "attempts": 96,
+      "solves": 48,
+      "solve_rate": 1.0,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": 0.0,
+      "parse_rate": 0.5,
+      "compile_o0_rate": 0.5,
+      "compile_o2_rate": 0.5,
+      "type_rate": 0.5,
+      "input_tokens_full": 9600,
+      "input_tokens_spec_amortized": null,
+      "output_tokens": 1920,
+      "repair_output_tokens": 960,
+      "repair_input_tokens": 4800,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "output_tcr": 40.0,
+      "total_tcr": 240.0,
+      "amortized_total_tcr": null,
+      "cost_usd": 0.096,
+      "wall_seconds": 0.0,
+      "failures": {
+        "parse": 48,
+        "correct": 48
+      },
+      "feature_associations": {
+        "foreign-or-missing-syntax": 48
+      }
+    },
+    {
+      "arm": "nil-fewshot",
+      "trials": 48,
+      "attempts": 96,
+      "solves": 48,
+      "solve_rate": 1.0,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": 0.0,
+      "parse_rate": 0.5,
+      "compile_o0_rate": 0.5,
+      "compile_o2_rate": 0.5,
+      "type_rate": 0.5,
+      "input_tokens_full": 9600,
+      "input_tokens_spec_amortized": null,
+      "output_tokens": 1920,
+      "repair_output_tokens": 960,
+      "repair_input_tokens": 4800,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": 0,
+      "cache_creation_tokens": 0,
+      "output_tcr": 40.0,
+      "total_tcr": 240.0,
+      "amortized_total_tcr": null,
+      "cost_usd": 0.096,
+      "wall_seconds": 0.0,
+      "failures": {
+        "parse": 48,
+        "correct": 48
+      },
+      "feature_associations": {
+        "foreign-or-missing-syntax": 48
+      }
+    }
+  ],
+  "dev": [
+    {
+      "arm": "python",
+      "trials": 0,
+      "attempts": 0,
+      "solves": 0,
+      "solve_rate": null,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": null,
+      "parse_rate": null,
+      "compile_o0_rate": null,
+      "compile_o2_rate": null,
+      "type_rate": null,
+      "input_tokens_full": null,
+      "input_tokens_spec_amortized": null,
+      "output_tokens": null,
+      "repair_output_tokens": null,
+      "repair_input_tokens": null,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": null,
+      "cache_creation_tokens": null,
+      "output_tcr": null,
+      "total_tcr": null,
+      "amortized_total_tcr": null,
+      "cost_usd": 0,
+      "wall_seconds": 0,
+      "failures": {},
+      "feature_associations": {}
+    },
+    {
+      "arm": "nil-spec",
+      "trials": 0,
+      "attempts": 0,
+      "solves": 0,
+      "solve_rate": null,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": null,
+      "parse_rate": null,
+      "compile_o0_rate": null,
+      "compile_o2_rate": null,
+      "type_rate": null,
+      "input_tokens_full": null,
+      "input_tokens_spec_amortized": null,
+      "output_tokens": null,
+      "repair_output_tokens": null,
+      "repair_input_tokens": null,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": null,
+      "cache_creation_tokens": null,
+      "output_tcr": null,
+      "total_tcr": null,
+      "amortized_total_tcr": null,
+      "cost_usd": 0,
+      "wall_seconds": 0,
+      "failures": {},
+      "feature_associations": {}
+    },
+    {
+      "arm": "nil-fewshot",
+      "trials": 0,
+      "attempts": 0,
+      "solves": 0,
+      "solve_rate": null,
+      "first_attempt_solves": 0,
+      "first_attempt_solve_rate": null,
+      "parse_rate": null,
+      "compile_o0_rate": null,
+      "compile_o2_rate": null,
+      "type_rate": null,
+      "input_tokens_full": null,
+      "input_tokens_spec_amortized": null,
+      "output_tokens": null,
+      "repair_output_tokens": null,
+      "repair_input_tokens": null,
+      "unknown_parse_attempts": 0,
+      "cached_input_tokens": null,
+      "cache_creation_tokens": null,
+      "output_tcr": null,
+      "total_tcr": null,
+      "amortized_total_tcr": null,
+      "cost_usd": 0,
+      "wall_seconds": 0,
+      "failures": {},
+      "feature_associations": {}
+    }
+  ],
+  "per_task": {
+    "nonempty_lines": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ascii_lower": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "number_lines": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "prefix_lines": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "min_max": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "slice_file": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "prefix_sums": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "buffer_sum": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_flower_field": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_bottle_song": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_dominoes": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_custom_set": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_atbash_cipher": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_diamond": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_beer_song": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_change": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_flatten_array": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_hello_world": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_circular_buffer": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_grade_school": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_algo_interval_merge": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_algo_bst_walk": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_algo_linked_list": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ],
+    "ex_algo_graph_bfs": [
+      {
+        "arm": "python",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 1.0,
+        "compile_o0_rate": null,
+        "compile_o2_rate": null,
+        "type_rate": null,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": 400,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": 240.0,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "wrong-answer": 2,
+          "correct": 2
+        },
+        "feature_associations": {}
+      },
+      {
+        "arm": "nil-spec",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      },
+      {
+        "arm": "nil-fewshot",
+        "trials": 2,
+        "attempts": 4,
+        "solves": 2,
+        "solve_rate": 1.0,
+        "first_attempt_solves": 0,
+        "first_attempt_solve_rate": 0.0,
+        "parse_rate": 0.5,
+        "compile_o0_rate": 0.5,
+        "compile_o2_rate": 0.5,
+        "type_rate": 0.5,
+        "input_tokens_full": 400,
+        "input_tokens_spec_amortized": null,
+        "output_tokens": 80,
+        "repair_output_tokens": 40,
+        "repair_input_tokens": 200,
+        "unknown_parse_attempts": 0,
+        "cached_input_tokens": 0,
+        "cache_creation_tokens": 0,
+        "output_tcr": 40.0,
+        "total_tcr": 240.0,
+        "amortized_total_tcr": null,
+        "cost_usd": 0.004,
+        "wall_seconds": 0.0,
+        "failures": {
+          "parse": 2,
+          "correct": 2
+        },
+        "feature_associations": {
+          "foreign-or-missing-syntax": 2
+        }
+      }
+    ]
+  },
+  "paired_intervals": {
+    "method": "2000 paired task-cluster resamples; all repairs/replicates retained; undefined TCR samples omitted and counted",
+    "arm_intervals": {
+      "python": {
+        "parse_rate": {
+          "interval": [
+            1.0,
+            1.0
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o0_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "compile_o2_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "solve_rate": {
+          "interval": [
+            1.0,
+            1.0
+          ],
+          "defined_resamples": 2000
+        },
+        "first_attempt_solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_full": {
+          "interval": [
+            9600,
+            9600
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_spec_amortized": {
+          "interval": [
+            9600,
+            9600
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tokens": {
+          "interval": [
+            1920,
+            1920
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_output_tokens": {
+          "interval": [
+            960,
+            960
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_input_tokens": {
+          "interval": [
+            4800,
+            4800
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tcr": {
+          "interval": [
+            40.0,
+            40.0
+          ],
+          "defined_resamples": 2000
+        },
+        "total_tcr": {
+          "interval": [
+            240.0,
+            240.0
+          ],
+          "defined_resamples": 2000
+        },
+        "amortized_total_tcr": {
+          "interval": [
+            240.0,
+            240.0
+          ],
+          "defined_resamples": 2000
+        },
+        "cost_usd": {
+          "interval": [
+            0.096,
+            0.096
+          ],
+          "defined_resamples": 2000
+        },
+        "wall_seconds": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        }
+      },
+      "nil-spec": {
+        "parse_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o0_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o2_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "solve_rate": {
+          "interval": [
+            1.0,
+            1.0
+          ],
+          "defined_resamples": 2000
+        },
+        "first_attempt_solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_full": {
+          "interval": [
+            9600,
+            9600
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_spec_amortized": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "output_tokens": {
+          "interval": [
+            1920,
+            1920
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_output_tokens": {
+          "interval": [
+            960,
+            960
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_input_tokens": {
+          "interval": [
+            4800,
+            4800
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tcr": {
+          "interval": [
+            40.0,
+            40.0
+          ],
+          "defined_resamples": 2000
+        },
+        "total_tcr": {
+          "interval": [
+            240.0,
+            240.0
+          ],
+          "defined_resamples": 2000
+        },
+        "amortized_total_tcr": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "cost_usd": {
+          "interval": [
+            0.096,
+            0.096
+          ],
+          "defined_resamples": 2000
+        },
+        "wall_seconds": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        }
+      },
+      "nil-fewshot": {
+        "parse_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o0_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o2_rate": {
+          "interval": [
+            0.5,
+            0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "solve_rate": {
+          "interval": [
+            1.0,
+            1.0
+          ],
+          "defined_resamples": 2000
+        },
+        "first_attempt_solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_full": {
+          "interval": [
+            9600,
+            9600
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_spec_amortized": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "output_tokens": {
+          "interval": [
+            1920,
+            1920
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_output_tokens": {
+          "interval": [
+            960,
+            960
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_input_tokens": {
+          "interval": [
+            4800,
+            4800
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tcr": {
+          "interval": [
+            40.0,
+            40.0
+          ],
+          "defined_resamples": 2000
+        },
+        "total_tcr": {
+          "interval": [
+            240.0,
+            240.0
+          ],
+          "defined_resamples": 2000
+        },
+        "amortized_total_tcr": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "cost_usd": {
+          "interval": [
+            0.096,
+            0.096
+          ],
+          "defined_resamples": 2000
+        },
+        "wall_seconds": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        }
+      }
+    },
+    "nil_minus_python": {
+      "nil-spec": {
+        "parse_rate": {
+          "interval": [
+            -0.5,
+            -0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o0_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "compile_o2_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "first_attempt_solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_full": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_spec_amortized": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "output_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_output_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_input_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tcr": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "total_tcr": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "amortized_total_tcr": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "cost_usd": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "wall_seconds": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        }
+      },
+      "nil-fewshot": {
+        "parse_rate": {
+          "interval": [
+            -0.5,
+            -0.5
+          ],
+          "defined_resamples": 2000
+        },
+        "compile_o0_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "compile_o2_rate": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "first_attempt_solve_rate": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_full": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "input_tokens_spec_amortized": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "output_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_output_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "repair_input_tokens": {
+          "interval": [
+            0,
+            0
+          ],
+          "defined_resamples": 2000
+        },
+        "output_tcr": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "total_tcr": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "amortized_total_tcr": {
+          "interval": null,
+          "defined_resamples": 0
+        },
+        "cost_usd": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        },
+        "wall_seconds": {
+          "interval": [
+            0.0,
+            0.0
+          ],
+          "defined_resamples": 2000
+        }
+      }
+    }
+  },
+  "spec_marginal_input_tokens": null,
+  "spent_usd": 0.2880000000000002,
+  "attempts": 288,
+  "unknown_cost_attempts": 0,
+  "note": "Synthetic mock is not model evidence; partial/blocked cells are not fabricated zero solves. TCR undefined at zero solves."
+}
