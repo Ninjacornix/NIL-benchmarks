@@ -1,0 +1,18 @@
+{
+  "cost_basis": "notional subscription usage",
+  "model": "claude-sonnet-5-5",
+  "effort": "high",
+  "dev_report_sha256": "25cd6224808b1ef1c17a52628ae11bed50f06a9d48aa879431b7f790f3e6a123",
+  "timestamp_utc": "2026-10-06T12:38:16Z",
+  "dev_requests": 3,
+  "dev_total_cost": 0.264752,
+  "mean_generation_request_cost": 0.06252466666666666,
+  "max_observed_generation_request_cost": 0.09623799999999999,
+  "held_out_max_requests": 222,
+  "remaining_cap": 9.735248,
+  "per_attempt_output_cap": 8192,
+  "trial_output_cap": 16384,
+  "worst_matrix_cost_at_dev_mean": 13.880475999999998,
+  "worst_matrix_cost_at_dev_maximum": 21.364835999999997,
+  "warning": "DEV is one task; held-out prompt/repair sizes can cost more. These are forecasts, not a safe hard bound. USD1 reservation and CLI/cumulative caps remain enforced."
+}
