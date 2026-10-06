@@ -50,5 +50,8 @@
   },
   "forecast_note": "Judgment ranges, not measured. Short legacy output caps and harder algorithms may dominate failures. Cache/fixed-spec amortization is a deployment scenario, not evidence of model efficiency.",
   "prompt_rule": "Fixed replacement system prompt; Python no language spec; NIL includes exact published EXPR_V5.md, plus four unchanged preregistered corpus examples only in fewshot. Common file solve contract; failed candidates and real diagnostics become repair conversation. No task solution, hidden fixture or other held-out task statement enters context.",
-  "stop_policy": "No automatic infrastructure retries or model substitutions. Missing usage, tool calls, unavailable model, broken isolation, changed frozen hashes or inadequate remaining reservation stop the campaign and retain partial metrics. No unknown usage imputation."
+  "stop_policy": "No automatic infrastructure retries or model substitutions. Missing usage, tool calls, unavailable model, broken isolation, changed frozen hashes or inadequate remaining reservation stop the campaign and retain partial metrics. No unknown usage imputation.",
+  "auth": "subscription-oauth-token-file",
+  "cost_basis": "notional subscription usage",
+  "resume_policy": "Explicit rate-limit pause only; atomic completed-attempt journal; frozen matrix/hash checks; unknown in-flight usage blocks resume; transport invocations also bounded by max_requests"
 }
