@@ -1,60 +1,97 @@
-# Standing generation eval — preregistration
+# Standing generation eval — Claude Pro transport
 
-ADR 037 governs this frozen matrix. See experiment.json and split.json. This is a
-tracking metric, not a compiler or release gate. No model result exists yet.
+ADR 037 and its Round 15b addendum govern the frozen experiment. No capable-model
+result exists. The earlier EPERM was a transport defect: Claude's own state ignored
+TMPDIR. This revision supplies CLAUDE_CODE_TMPDIR in a sibling of the empty cwd.
+Real CLI startup/auth/model availability must still be checked by the maintainer.
 
-The Claude arm uses claude-sonnet-5-5, high effort, USD 50 total notional cap,
-24 held-out tasks, two replicates and three total attempts. DEV is disjoint;
-only the first committed dev task is used for pipeline confirmation. Four existing
-few-shot examples stay fixed. JSON-placeholder tasks without an explicit contract
-are listed as exclusions; the cohort does not establish general task coverage.
+The exact model is `claude-sonnet-5-5`, effort high. Three unchanged arms:
+Python, NIL spec-only, NIL spec plus four fixed independent examples. Twenty-four
+held-out tasks, two replicates, three completed attempts per trial. Each request
+allows 8,192 output tokens (including thinking), each trial 16,384. All arms share
+these corrected limits. No generation had run before the cap amendment.
 
-The transport must prove tool/MCP/hook/session/repository isolation before live
-inference. Backend usage is authoritative; tiktoken screens are separate. Raw
-requests/responses and generated candidates remain outside version control.
+## Authentication and isolation
 
-## Run
+Provision a long-lived subscription token privately in
+`~/.config/nil/claude-oauth-token`, mode 0600, owned by the current user. An alternate
+path can be selected with `NIL_CLAUDE_OAUTH_TOKEN_FILE`. Never put the token on argv,
+in a prompt, shell history or Git. The transport reads this file outside the OS
+sandbox and forwards only `CLAUDE_CODE_OAUTH_TOKEN` into the CLI environment.
+No API-key fallback, `--bare`, keychain access or real-home config exception.
+Mock campaigns do not read token files or execute Claude.
 
-Use the existing paired Python environment (Python 3.12, tiktoken 0.12.0); no new
-dependencies. From the parent checkout:
+Each CLI request gets a fresh private root containing sibling `cwd/`, `state/`
+and `home/`. cwd remains empty. Strict empty tools/MCP, hooks disabled,
+safe/restricted mode, no session persistence, replacement system prompt and denied
+repository/keychain reads remain required. Every stream block is checked, including
+error responses. Preflight denies networking entirely; passing it proves isolated
+initialization, **not** a valid token, model access or a successful generation.
+Actual CLI/profile enforcement requires the maintainer's local preflight; unit
+mocks cannot prove kernel enforcement.
+
+## Exact execution sequence (parent checkout)
+
+Use the existing paired Python environment; no new dependency. Choose fresh output
+paths outside Git. Do not change either repository revision during a campaign.
 
 ```sh
-./scripts/gen-eval.sh --mock --phase dev --output /tmp/nil-gen/mock-dev
-./scripts/gen-eval.sh --mock --phase held-out --output /tmp/nil-gen/mock-matrix
-./scripts/gen-eval.sh --phase dev --output /tmp/nil-gen/dev
-# Only after a successful real DEV run (includes two prefix accounting probes):
-benchmarks/paired/.venv/bin/python benchmarks/generation/standing/forecast.py --dev /tmp/nil-gen/dev
-# Review/commit generation/standing/cost-forecast.json in the benchmarks branch.
-./scripts/gen-eval.sh --phase held-out --prior /tmp/nil-gen/dev --output /tmp/nil-gen/held-out
+./scripts/gen-eval.sh --preflight --output /tmp/nil-gen-pro/preflight
+./scripts/gen-eval.sh --phase dev --output /tmp/nil-gen-pro/dev
+benchmarks/paired/.venv/bin/python benchmarks/generation/standing/forecast.py --dev /tmp/nil-gen-pro/dev
+# Commit the observed forecast locally, BEFORE any held-out request:
+git -C benchmarks add generation/standing/cost-forecast.json
+git -C benchmarks commit -m 'docs(eval): forecast notional held-out cost'
+git add benchmarks
+git commit -m 'docs(eval): pin observed generation forecast'
+./scripts/gen-eval.sh --phase held-out --prior /tmp/nil-gen-pro/dev --output /tmp/nil-gen-pro/held-out
+# If DEV or held-out pauses at a subscription usage window, wait externally:
+./scripts/gen-eval.sh --resume /tmp/nil-gen-pro/dev
+./scripts/gen-eval.sh --resume /tmp/nil-gen-pro/held-out
 ```
 
-Each invocation writes raw requests/responses/candidates outside Git and publishes
-summary JSON/Markdown under `reports/<UTC date>/`. Mock files are prominently
-labelled; their usage/solutions are synthetic, never evidence of model ability.
-The fixed existing reference answers are read only by mock/leakage auditing.
+Resume DEV before forecasting if DEV paused. Do not execute a resume for a completed
+campaign. CLI exit 75 means known-accounting rate pause; exit 2 means another stop;
+exit 0 means complete. Rate pauses are outside parse/solve denominators, but any
+reported input/output/cost is retained in failure-inclusive totals and reduces the
+remaining trial/campaign budget. No automatic retry. Unknown usage/cost, an
+unresolved in-flight request, altered checkpoint, changed frozen hashes/revisions
+or changed CLI blocks resume. Accounting probes resume too. Completed attempts and
+repair history are never replayed. Every completed attempt is atomically checkpointed;
+a pre-request checkpoint marks the in-flight invocation. The checkpoint is the
+journal of record; attempts.jsonl is a rebuildable projection. SHA256 detects
+accidental edits, not adversarial rewriting of a journal and its checksum.
 
-The standing adapter reuses application/run.py's source extraction and repair
-conversation, application/oracle.py's reference/native/Python verification and
-sandbox, and corpus task loaders/expected outputs. Its driver is separate because
-the frozen original runner hard-codes four tasks, two Ollama profiles and a seed
-matrix; modifying it would compromise replication of historical studies. The
-original Ollama command and experiment remain unchanged.
+The USD50 cap covers DEV, calibration and held-out combined. CLI USD1 budget plus
+cumulative reservations guard each request; cost is **notional subscription usage**,
+not an invoice. Soft CLI enforcement can overshoot after an API call: retain and
+report that, then stop. Rate-paused invocations also count toward the global 443
+invocation bound. The new worst-case output envelope is 2,424,832 tokens, 10.69x
+old; a full matrix is not promised within USD50. No dollar usage forecast is invented:
+the actual DEV mean/max cost forecast must be committed before held-out.
 
-The unit suite covers repaired attempts, missing usage, infrastructure, tools,
-MCP/hooks, pin mismatch, split leakage and spend reservation. Native compilation
-rates are N/A for Python. Source feature labels are descriptive associations, not
-causal attribution. TCR is undefined at zero solves; missing usage is unknown.
-Task-cluster paired bootstrap retains both replicates and every failed repair;
-undefined resamples are counted, not assigned zero. Prefix-amortized input is a
-scenario based on two measured backend counts, not provider billing or tiktoken.
+## Offline checks
 
-## Round 15 environment block
+```sh
+benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/generation/standing/tests -v
+./scripts/gen-eval.sh --mock --phase dev --output /tmp/nil-gen-pro/mock-dev
+./scripts/gen-eval.sh --mock --mock-rate-limit-after 2 --output /tmp/nil-gen-pro/mock-pause
+# Previous command intentionally exits 75:
+./scripts/gen-eval.sh --resume /tmp/nil-gen-pro/mock-pause
+./scripts/gen-eval.sh --mock --phase held-out --output /tmp/nil-gen-pro/mock-matrix
+```
 
-CLI 2.1.291 is installed with Claude.ai subscription auth; API-key environment is
-absent. The network-disabled initialization probe failed before any model request:
-`EPERM: operation not permitted, open '/tmp/claude-501'`. Empty tools/MCP/hook
-isolation could not be proved. No capable-model result or post-DEV cost forecast
-exists. Do not remove the sandbox to make the command run: supply a CLI/auth
-configuration that initializes inside the documented isolation, or propose an
-explicitly audited fix to the global temporary-state dependency. Model availability
-itself was not tested; no alternate model or Ollama inference was substituted.
+Mocks read frozen reference solutions solely as stub responses; their solves,
+usage and spend are synthetic, never model evidence. Tests use planted fake tokens
+and mocked CLI subprocesses; they never read real subscription credentials. They
+cover sibling-state startup, private-file checks, artifact-wide redaction, tools,
+rate limits, interrupted requests, deterministic repair resume and accounting resume.
+
+Reports: external output directory plus summary JSON/Markdown under
+`reports/<UTC date>/[MOCK_]STANDING_GENERATION_PRO_<phase>.*`. Raw requests,
+responses, candidates and private environments stay outside Git. No credentials or
+raw transcripts belong in commits. The frozen application/Ollama runners, corpus,
+oracles, split, few-shot selection and prompts are unchanged. Input counts are
+backend fresh/cache usage; tiktoken source screens stay separate. Undefined TCR
+and missing accounting remain unknown. Spec amortization is a measured-prefix
+scenario, not actual subscription billing. Paired task bootstrap is retained.
