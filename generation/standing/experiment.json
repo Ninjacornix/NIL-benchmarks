@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "backend": "claude-cli",
+  "model": "claude-sonnet-5-5",
+  "effort": "high",
+  "replicates": [
+    0,
+    1
+  ],
+  "arms": [
+    "python",
+    "nil-spec",
+    "nil-fewshot"
+  ],
+  "attempt_limit": 3,
+  "per_attempt_output_cap": 512,
+  "trial_output_cap": 1536,
+  "spend_cap_usd": 50,
+  "request_reservation_usd": 1,
+  "dev_task": "expand_tabs",
+  "dev_replicates": [
+    0
+  ],
+  "max_generation_requests": 441,
+  "max_accounting_requests": 2,
+  "max_requests": 443,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 37037,
+  "forecasts": {
+    "python": {
+      "parse_rate": 0.98,
+      "solve_rate": 0.7
+    },
+    "nil-spec": {
+      "parse_rate": 0.7,
+      "solve_rate": 0.25
+    },
+    "nil-fewshot": {
+      "parse_rate": 0.85,
+      "solve_rate": 0.35
+    },
+    "nil_vs_python_output_tcr_ratio": [
+      1.5,
+      3.0
+    ],
+    "nil_vs_python_full_total_tcr_ratio": [
+      10,
+      40
+    ]
+  },
+  "forecast_note": "Judgment ranges, not measured. Short legacy output caps and harder algorithms may dominate failures. Cache/fixed-spec amortization is a deployment scenario, not evidence of model efficiency.",
+  "prompt_rule": "Fixed replacement system prompt; Python no language spec; NIL includes exact published EXPR_V5.md, plus four unchanged preregistered corpus examples only in fewshot. Common file solve contract; failed candidates and real diagnostics become repair conversation. No task solution, hidden fixture or other held-out task statement enters context.",
+  "stop_policy": "No automatic infrastructure retries or model substitutions. Missing usage, tool calls, unavailable model, broken isolation, changed frozen hashes or inadequate remaining reservation stop the campaign and retain partial metrics. No unknown usage imputation."
+}
