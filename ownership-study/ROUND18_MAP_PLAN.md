@@ -31,3 +31,10 @@ Report deterministic FNV bytes processed and ordered-table probe counts in a
 separate untimed diagnostic run if practical. A faster hash/Swiss-table index is
 only a recommendation, based on long-key cost/probing and constraints on stable
 order, deterministic hash and live-capacity quota. No third-party Rust dependency.
+
+Implementation clarification before running: C++ hit/miss queries materialize
+strings, matching NIL's copying slice more closely than the initially proposed
+views (short strings may use C++ SSO). Ordered updates still use views. Both
+baselines bulk-read the same key file. Probe counters and hash-only timings run
+in a separate instrumented C++ binary, not the timed baseline. This is harness
+construction before any results, not outcome-driven adjustment.
