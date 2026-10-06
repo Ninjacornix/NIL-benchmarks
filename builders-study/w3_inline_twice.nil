@@ -1,0 +1,2 @@
+(s):s=b(!read(a))
+(s):s=@(a,"",0;c<#a;a,a[c]+a[c]<256?!concat(b,!bytes(1,a[c])):b,c+1;b)

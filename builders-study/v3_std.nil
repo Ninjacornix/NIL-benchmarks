@@ -1,0 +1,2 @@
+(s):s=!filter(&b,!read(a))
+1:b=a/2*2==a
