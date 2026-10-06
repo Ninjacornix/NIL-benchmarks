@@ -65,7 +65,7 @@ class SubscriptionTransportTests(unittest.TestCase):
             env=kwargs['env'];state=Path(env['CLAUDE_CODE_TMPDIR'])
             self.assertNotEqual(state,cwd);self.assertEqual(state.parent,cwd.parent)
             self.assertEqual(Path(env['HOME']).parent,cwd.parent)
-            self.assertIn('(deny network*)',argv[2]);self.assertEqual(env['CLAUDE_CODE_OAUTH_TOKEN'],FAKE)
+            self.assertIn('(deny network*)',argv[2]);self.assertNotIn('CLAUDE_CODE_OAUTH_TOKEN',env)
             (state/'claude-501').mkdir()
             return subprocess.CompletedProcess(argv,1,json.dumps(response()[0])+'\n',FAKE)
         with patch.object(backend.subprocess,'run',fake_run): proof=c.preflight()
@@ -77,6 +77,36 @@ class SubscriptionTransportTests(unittest.TestCase):
         self.assertIn('(deny process-exec (literal "/usr/bin/security"))',profile)
         self.assertNotIn(str(Path.home()/'.claude.json'),profile)
         self.assertIn(str(backend.ROOT),profile)
+    def test_profile_is_a_sequence_of_balanced_top_level_rules(self):
+        # Implicit string-literal concatenation once nested the keychain rules inside the
+        # repository rule; sandbox-exec rejected the whole profile. Check structure here,
+        # since sandbox-exec itself is unavailable in some CI/agent sandboxes.
+        profile=backend.sandbox_profile(Path('/tmp/fake'),Path('/usr/bin/true'))
+        forms,depth,start=[],0,0
+        for index,char in enumerate(profile):
+            if char=='(':
+                if depth==0: start=index
+                depth+=1
+            elif char==')':
+                depth-=1
+                self.assertGreaterEqual(depth,0)
+                if depth==0: forms.append(profile[start:index+1])
+        self.assertEqual(depth,0)
+        self.assertEqual(''.join(forms),profile)
+        self.assertEqual(forms[0],'(version 1)')
+        for form in forms[1:]:
+            self.assertRegex(form,r'^\((allow|deny) ')
+            # A rule must not contain another top-level rule.
+            self.assertNotRegex(form[1:],r'\((allow|deny) ')
+        self.assertEqual(sum(f.startswith('(deny file-read* (subpath') for f in forms),5)
+    def test_preflight_environment_never_contains_the_token(self):
+        c=client()
+        with tempfile.TemporaryDirectory() as tmp:
+            env=c.environment(Path(tmp)/'state',Path(tmp)/'home',8192,authenticated=False)
+            self.assertNotIn('CLAUDE_CODE_OAUTH_TOKEN',env)
+            self.assertNotIn(FAKE,json.dumps(env))
+            live=c.environment(Path(tmp)/'state',Path(tmp)/'home',8192)
+            self.assertEqual(live['CLAUDE_CODE_OAUTH_TOKEN'],FAKE)
     def test_request_redacts_token_in_stdout_stderr_metadata_and_error(self):
         c=client();events=response(FAKE);events[-1]['is_error']=True;events[-1]['errors']=[FAKE]
         with tempfile.TemporaryDirectory() as tmp,patch.object(backend.subprocess,'run',return_value=subprocess.CompletedProcess([],1,'\n'.join(map(json.dumps,events)),FAKE)):
@@ -216,7 +246,10 @@ class OfflinePreflightAndAccountingTests(unittest.TestCase):
                 if '/usr/bin/head' in argv: return subprocess.CompletedProcess(argv,1,b'',b'denied')
                 if '--version' in argv: return subprocess.CompletedProcess(argv,0,'MOCK-CLI\n','')
                 self.assertIn('(deny network*)',argv[2])
-                self.assertEqual(kwargs['env']['CLAUDE_CODE_OAUTH_TOKEN'],FAKE)
+                # A valid token makes the CLI contact the server before `init`; the
+                # network-denied probe must run unauthenticated to observe isolation.
+                self.assertNotIn('CLAUDE_CODE_OAUTH_TOKEN',kwargs['env'])
+                self.assertNotIn(FAKE,json.dumps(kwargs['env']))
                 return subprocess.CompletedProcess(argv,1,json.dumps(response()[0])+'\n',FAKE)
             with patch.dict(os.environ,{'NIL_CLAUDE_OAUTH_TOKEN_FILE':str(token)}),patch.object(backend.shutil,'which',return_value='/usr/bin/true'),patch.object(backend.subprocess,'check_output',return_value='MOCK-CLI'),patch.object(backend.subprocess,'run',fake_run):
                 self.assertTrue(standing.preflight(root/'preflight'))

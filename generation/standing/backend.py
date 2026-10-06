@@ -78,7 +78,7 @@ def sandbox_profile(directory, executable, extra=()):
     return ('(version 1)(allow default)'
             '(deny file-read-data (require-all (subpath "/Users") '+exceptions+'))'
             '(deny file-read-data (require-all (subpath "/private/tmp") '+exceptions+'))'
-            '(deny file-read* (subpath '+json.dumps(str(ROOT))+'))'
+            '(deny file-read* (subpath '+json.dumps(str(ROOT))+'))'+
             ''.join('(deny file-read* (subpath '+json.dumps(str(p))+'))' for p in keychains)+
             '(deny process-exec (literal "/usr/bin/security"))'
             '(deny file-write* (require-not (subpath '+json.dumps(str(directory.resolve()))+')))')
@@ -171,12 +171,16 @@ class Claude:
         self.auth_method = 'subscription OAuth token file (notional cost)'
         self.proven = False
 
-    def environment(self, state, home, cap):
-        return {'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'HOME': str(home),
-                'TMPDIR': str(state), 'CLAUDE_CODE_TMPDIR': str(state),
-                'CLAUDE_CODE_OAUTH_TOKEN': self.token,
-                'CLAUDE_CODE_MAX_OUTPUT_TOKENS': str(cap),
-                'CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC': '1'}
+    def environment(self, state, home, cap, authenticated=True):
+        env = {'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'HOME': str(home),
+               'TMPDIR': str(state), 'CLAUDE_CODE_TMPDIR': str(state),
+               'CLAUDE_CODE_MAX_OUTPUT_TOKENS': str(cap),
+               'CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC': '1'}
+        # With a valid token the CLI contacts the server before emitting `init`, so the
+        # network-denied preflight must run unauthenticated to observe isolation at all.
+        if authenticated:
+            env['CLAUDE_CODE_OAUTH_TOKEN'] = self.token
+        return env
 
     def preflight(self):
         if not Path('/usr/bin/sandbox-exec').exists():
@@ -201,8 +205,8 @@ class Claude:
                                      capture_output=True, text=True, cwd=cwd)
             if version.returncode or version.stdout.strip() != self.version:
                 raise BackendError('isolation', 'Isolated CLI cannot start')
-            env = self.environment(state, home, 8192)
-            probe = ['/usr/bin/sandbox-exec', '-p', profile+'(deny network*)', str(self.executable), *flags(self.model,1)]
+            env = self.environment(state, home, 8192, authenticated=False)
+            probe =['/usr/bin/sandbox-exec', '-p', profile+'(deny network*)', str(self.executable), *flags(self.model,1)]
             try:
                 checked = subprocess.run(probe, input='Offline isolation initialization probe. Reply 0.', cwd=cwd,
                                          env=env, capture_output=True, text=True, timeout=12)
