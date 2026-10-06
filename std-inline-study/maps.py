@@ -12,7 +12,6 @@ rows=[]
 for w in [8,64]:
  for n in [10000,100000,250000]:
   data=b''.join(i.to_bytes(8,'little')+bytes(w-8) for i in range(n));path=out/f'keys-{w}-{n}';path.write_bytes(data)
-  profile_counts={op:subprocess.check_output([str(profile),str(path),str(n),str(w),str(op),'ordered'],stderr=subprocess.PIPE) for op in []}
   profile_counts={}
   for op in range(5):
    result=subprocess.run([str(profile),str(path),str(n),str(w),str(op),'ordered'],capture_output=True,check=True);profile_counts[op]=result.stderr.decode().strip()

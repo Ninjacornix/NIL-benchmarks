@@ -38,15 +38,17 @@ int main(int argc,char**argv){
  if(data.size()!=n*w)return 3;Ordered o;std::unordered_map<std::string,int64_t> u;
  for(size_t i=0;i<n;i++){std::string_view key(data.data()+i*w,w);if(ordered)o.put(key,i);else u.emplace(std::string(key),i);}
  int64_t result=0;
- if(op==0)result=n;
+ if(op==0)result=ordered?o.entries.size():u.size();
  else if(op==3){for(int pass=0;pass<3;pass++)if(ordered){for(auto &e:o.entries)result+=e.value;}else{for(auto &e:u)result+=e.second;}}
  else for(int pass=0;pass<3;pass++)for(size_t i=0;i<n;i++){
-  std::string_view view(data.data()+i*w,w);std::string key(view);if(op==2)key[w-1]=char(128);
+  std::string_view view(data.data()+i*w,w);
   if(op==4){if(ordered)o.put(view,i+1);else u[std::string(view)]=i+1;}
-  else if(ordered){int64_t v=o.get(key);result+=op==1?v:(v<0);}
-  else{auto it=u.find(key);result+=op==1?it->second:(it==u.end());}
+  else {std::string key(view);if(op==2)key[w-1]=char(128);
+   if(ordered){int64_t v=o.get(key);result+=op==1?v:(v<0);}
+   else{auto it=u.find(key);result+=op==1?it->second:(it==u.end());}
+  }
  }
- if(op==4)result=n;
+ if(op==4)result=ordered?o.entries.size():u.size();
  std::printf("%lld\n",static_cast<long long>(result));
 
 #ifdef NIL_MAP_PROFILE

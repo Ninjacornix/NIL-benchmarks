@@ -38,3 +38,9 @@ views (short strings may use C++ SSO). Ordered updates still use views. Both
 baselines bulk-read the same key file. Probe counters and hash-only timings run
 in a separate instrumented C++ binary, not the timed baseline. This is harness
 construction before any results, not outcome-driven adjustment.
+
+Harness review after the first run found a query-string temporary constructed even
+in the C++ update arm, where it was unused. Remove that work and rerun the entire
+matrix for the final report. This makes the update baseline faster; the initial
+rows are retained externally but not used as final evidence. Tasks/production
+compiler are unchanged.
