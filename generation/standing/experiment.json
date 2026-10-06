@@ -14,7 +14,7 @@
   "attempt_limit": 3,
   "per_attempt_output_cap": 8192,
   "trial_output_cap": 16384,
-  "spend_cap_usd": 10,
+  "spend_cap_usd": 20,
   "request_reservation_usd": 1,
   "dev_task": "expand_tabs",
   "dev_replicates": [
@@ -53,5 +53,6 @@
   "auth": "subscription-oauth-token-file",
   "cost_basis": "notional subscription usage",
   "resume_policy": "Explicit rate-limit pause only; atomic completed-attempt journal; frozen matrix/hash checks; unknown in-flight usage blocks resume; transport invocations also bounded by max_requests",
-  "budget_amendment": "Maintainer decision 2026-10-06, before any live generation and with no live data: total notional cap USD 10 (was 50); held-out replicates reduced from 2 to 1 (72 trials, max 216 held-out requests) to fit it. Attempts, effort, output caps, task split, arms, prompts and forecasts unchanged. If the post-DEV forecast exceeds the remaining cap, stop and report; do not shrink the matrix further."
+  "budget_amendment": "Maintainer decision 2026-10-06, before any live generation and with no live data: total notional cap USD 10 (was 50); held-out replicates reduced from 2 to 1 (72 trials, max 216 held-out requests) to fit it. Attempts, effort, output caps, task split, arms, prompts and forecasts unchanged. If the post-DEV forecast exceeds the remaining cap, stop and report; do not shrink the matrix further.",
+  "budget_amendment_2": "Maintainer decision 2026-10-06 after the DEV cost forecast (worst case USD 13.88 at DEV mean vs USD 9.74 remaining under USD 10) and before any held-out generation: notional cap raised to USD 20. Subscription usage is notional, not billed. Matrix, attempts, effort, caps, split, arms, prompts and solve forecasts unchanged. DEV is re-run under this plan because held-out requires a matching plan hash; the superseded DEV run (USD 0.26 notional, all three arms correct on attempt 1) is reported, not discarded."
 }

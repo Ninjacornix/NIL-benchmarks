@@ -220,7 +220,7 @@ class ResumeTests(unittest.TestCase):
     def test_committed_reasoning_cap_amendment_applies_equally_to_all_arms(self):
         plan=json.loads(standing.PLAN.read_text())
         self.assertEqual(plan['per_attempt_output_cap'],8192);self.assertEqual(plan['trial_output_cap'],16384)
-        self.assertEqual(plan['attempt_limit'],3);self.assertEqual(plan['spend_cap_usd'],10)
+        self.assertEqual(plan['attempt_limit'],3);self.assertEqual(plan['spend_cap_usd'],20)
     def test_mock_campaign_never_reads_subscription_token_file(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(standing,'subscription_token',side_effect=AssertionError('real token read')):
             self.run_mock(Path(tmp)/'run')

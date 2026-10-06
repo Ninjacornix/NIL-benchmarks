@@ -103,3 +103,11 @@ replicate (was two): 24 tasks x 3 arms x 1 replicate = 72 trials, at most 216 he
 9 DEV + 2 calibration = **227** invocations. Attempts, effort, output caps, split, arms,
 prompts and forecasts are unchanged. Earlier USD 50 / two-replicate / 443 figures above
 are superseded. With one replicate, run-to-run variance is not measured.
+
+## Budget amendment 2 (2026-10-06, after DEV forecast, before held-out)
+
+The post-DEV forecast (worst case USD 13.88 at the DEV mean request cost) exceeded the
+USD 9.74 remaining under USD 10, so the preregistered rule stopped the campaign. The
+maintainer raised the notional cap to **USD 20**; nothing else changed. DEV is re-run
+because held-out requires a DEV report with the same plan hash. The superseded DEV run
+(USD 0.26, all arms correct on attempt 1) is reported alongside.
