@@ -283,6 +283,22 @@ class OfflinePreflightAndAccountingTests(unittest.TestCase):
             state=json.loads((root/'checkpoint.json').read_text())['state']
             self.assertIsNotNone(state['pending']);self.assertEqual(state['invocations'],1)
             with self.assertRaises(ValueError): standing.run(resume=root)
+    def test_per_attempt_output_overrun_fails_attempt_without_stopping_campaign(self):
+        # Live finding: the CLI auto-continued past max_tokens within one invocation
+        # (two API turns, 10,735 output tokens against an 8,192 cap).
+        original=standing.Mock.request;calls=[]
+        def overrun_first(self,messages,budget,cap,folder):
+            result=original(self,messages,budget,cap,folder);calls.append(messages)
+            if len(calls)==1: result=result|dict(output_tokens=cap+1)
+            return result
+        with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing.Mock,'request',overrun_first):
+            r=standing.run(Path(tmp)/'run',mock=True)
+            rows=[json.loads(x) for x in (Path(tmp)/'run/attempts.jsonl').read_text().splitlines()]
+        self.assertEqual(r['status'],'complete')
+        first=rows[0];self.assertEqual(first['taxonomy'],'budget');self.assertFalse(first['semantic_ok'])
+        self.assertEqual(first['output_tokens'],8193)
+        self.assertGreater(len(rows),1);self.assertEqual(rows[1]['trial'],first['trial']);self.assertEqual(rows[1]['attempt'],1)
+        self.assertIn('exceeded the per-attempt output budget',calls[1][-1]['content'])
     def test_rate_limit_output_overrun_is_retained_and_not_resumable(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing.Mock,'request',side_effect=backend.BackendError('rate-limit','limit',.01,{'input_tokens':0,'output_tokens':8193})):
             root=Path(tmp)/'run';r=standing.run(root,mock=True)

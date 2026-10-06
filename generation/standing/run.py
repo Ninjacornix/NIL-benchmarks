@@ -387,8 +387,14 @@ def _run(output=None,mock=False,phase='dev',prior=None,resume=None,mock_rate_lim
             else:
                 state['used']+=response['output_tokens']
                 source=application.extract_source(response['text']);secrets.write(folder/'source.txt',source)
-                if state['spent_usd']>plan['spend_cap_usd'] or response['output_tokens']>cap:
+                if state['spent_usd']>plan['spend_cap_usd']:
                     verdict=dict(taxonomy='budget',semantic_ok=False,feedback='Backend exceeded frozen budget; campaign stopped.');state['status']='budget-overrun'
+                elif response['output_tokens']>cap:
+                    # The CLI can auto-continue past max_tokens within one invocation (several API
+                    # turns), so one attempt may exceed the per-attempt cap. That is a failed attempt,
+                    # charged in full and never scored, not a campaign stop (ADR 037 stop policy).
+                    verdict=dict(taxonomy='budget',semantic_ok=False,
+                                 feedback='Your previous response exceeded the per-attempt output budget, so it was not evaluated.')
                 else:
                     verdict=secrets.clean(oracle(source,arm,task,folder))
                     if verdict['taxonomy']=='infrastructure': state['status']='blocked-oracle-infrastructure'
@@ -402,7 +408,7 @@ def _run(output=None,mock=False,phase='dev',prior=None,resume=None,mock_rate_lim
                     state['messages'].extend([{'role':'assistant','content':response['text']},
                                               {'role':'user','content':row['feedback']+' Return only the full source program.'}])
                     state['attempt']+=1
-            if response['output_tokens']>cap or state['spent_usd']>plan['spend_cap_usd']: state['status']='budget-overrun'
+            if (accounting and response['output_tokens']>cap) or state['spent_usd']>plan['spend_cap_usd']: state['status']='budget-overrun'
             state['pending']=None;persist(output,state,secrets)
     except (BackendError,ValueError,RuntimeError) as error:
         if backend is not None and hasattr(backend,'probe_evidence'): secrets.write(output/'isolation-probe.json',backend.probe_evidence,True)
