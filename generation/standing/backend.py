@@ -136,6 +136,20 @@ def inspect_stream(events, model):
                           cache_creation_tokens=usage['cache_creation_input_tokens'],
                           output_tokens=usage['output_tokens']) if known else None
         raise BackendError('rate-limit', 'Subscription usage window reached; explicitly resume later', cost, accounting)
+    # A safety-classifier refusal is a model outcome, not a transport failure. Classify it
+    # only from structured stop fields, never from generated text, and keep its accounting.
+    refusals = [x['message'].get('stop_details') or {} for x in events if x.get('type') == 'assistant'
+                and isinstance(x.get('message'), dict) and x['message'].get('stop_reason') == 'refusal']
+    if result.get('stop_reason') == 'refusal' or refusals:
+        fields = ['input_tokens', 'cache_read_input_tokens', 'cache_creation_input_tokens', 'output_tokens']
+        usage = result.get('usage', {})
+        known = all(type(usage.get(k)) is int and usage[k] >= 0 for k in fields)
+        accounting = dict(input_tokens=sum(usage[k] for k in fields[:3]),
+                          fresh_input_tokens=usage['input_tokens'],cached_input_tokens=usage['cache_read_input_tokens'],
+                          cache_creation_tokens=usage['cache_creation_input_tokens'],
+                          output_tokens=usage['output_tokens']) if known else None
+        category = next((r.get('category') for r in refusals if r.get('category')), None)
+        raise BackendError('refusal', 'Model safety refusal (category: '+str(category)+')', cost, accounting)
     if result.get('is_error'):
         raise BackendError('budget' if result.get('subtype') == 'error_max_budget_usd' else 'infrastructure',
                            'Backend error: '+str(result.get('errors', result.get('result', 'unknown'))), cost)

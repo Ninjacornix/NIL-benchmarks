@@ -370,6 +370,16 @@ def _run(output=None,mock=False,phase='dev',prior=None,resume=None,mock_rate_lim
                         state['pending']=None;state['status']='paused-rate-limit'
                         if error.usage['output_tokens']>cap or state['spent_usd']>plan['spend_cap_usd']: state['status']='budget-overrun'
                     persist(output,state,secrets);break
+                if error.reason=='refusal' and not accounting and error.cost is not None and error.usage is not None:
+                    # A safety refusal ends the trial unsolved: charged in full, no repair turn
+                    # (resending the same conversation invites the same refusal), campaign continues.
+                    state['rows'].append(row|error.usage|dict(taxonomy='refusal',semantic_ok=False,
+                                                              error=secrets.clean(str(error)),cost_usd=error.cost))
+                    print(cell['trial'],state['attempt'],'refusal',flush=True)
+                    state['used']+=error.usage['output_tokens']
+                    state.update(cursor=state['cursor']+1,attempt=0,used=0,messages=None)
+                    if state['spent_usd']>plan['spend_cap_usd']: state['status']='budget-overrun'
+                    state['pending']=None;persist(output,state,secrets);continue
                 if not accounting:
                     state['rows'].append(row|dict(taxonomy=error.reason,semantic_ok=False,error=secrets.clean(str(error)),
                                                   cost_usd=error.cost,input_tokens=None,output_tokens=None))

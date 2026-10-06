@@ -299,6 +299,35 @@ class OfflinePreflightAndAccountingTests(unittest.TestCase):
         self.assertEqual(first['output_tokens'],8193)
         self.assertGreater(len(rows),1);self.assertEqual(rows[1]['trial'],first['trial']);self.assertEqual(rows[1]['attempt'],1)
         self.assertIn('exceeded the per-attempt output budget',calls[1][-1]['content'])
+    def test_structured_refusal_is_classified_with_accounting(self):
+        x=response();x.insert(1,dict(type='assistant',message=dict(stop_reason='refusal',
+            stop_details=dict(type='refusal',category='reasoning_extraction'),content=[dict(type='text',text='API Error')])))
+        x[-1].update(is_error=True,stop_reason='refusal')
+        with self.assertRaises(backend.BackendError) as e: backend.inspect_stream(x,MODEL)
+        self.assertEqual(e.exception.reason,'refusal');self.assertIn('reasoning_extraction',str(e.exception))
+        self.assertEqual(e.exception.usage['output_tokens'],40);self.assertEqual(e.exception.cost,.01)
+        # Generated text that merely mentions a refusal is not a refusal.
+        y=response('I refuse to use a refusal stop_reason here')
+        self.assertEqual(backend.inspect_stream(y,MODEL)['text'],'I refuse to use a refusal stop_reason here')
+    def test_refusal_ends_trial_unsolved_without_stopping_campaign(self):
+        original=standing.Mock.request;calls=[]
+        def refuse_first(self,messages,budget,cap,folder):
+            calls.append(messages)
+            if len(calls)==1:
+                raise backend.BackendError('refusal','Model safety refusal (category: reasoning_extraction)',.02,
+                    dict(input_tokens=100,fresh_input_tokens=100,cached_input_tokens=0,cache_creation_tokens=0,output_tokens=500))
+            return original(self,messages,budget,cap,folder)
+        with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing.Mock,'request',refuse_first):
+            r=standing.run(Path(tmp)/'run',mock=True)
+            rows=[json.loads(x) for x in (Path(tmp)/'run/attempts.jsonl').read_text().splitlines()]
+        self.assertEqual(r['status'],'complete')
+        self.assertEqual(rows[0]['taxonomy'],'refusal');self.assertFalse(rows[0]['semantic_ok']);self.assertEqual(rows[0]['output_tokens'],500)
+        self.assertNotEqual(rows[1]['trial'],rows[0]['trial'])  # no repair turn after a refusal
+    def test_refusal_with_unknown_accounting_still_fails_closed(self):
+        def refuse(self,messages,budget,cap,folder): raise backend.BackendError('refusal','refused',None,None)
+        with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing.Mock,'request',refuse):
+            r=standing.run(Path(tmp)/'run',mock=True)
+        self.assertEqual(r['status'],'blocked-refusal')
     def test_rate_limit_output_overrun_is_retained_and_not_resumable(self):
         with tempfile.TemporaryDirectory() as tmp,patch.object(standing.application.oracle,'prepare'),patch.object(standing.Mock,'request',side_effect=backend.BackendError('rate-limit','limit',.01,{'input_tokens':0,'output_tokens':8193})):
             root=Path(tmp)/'run';r=standing.run(root,mock=True)
