@@ -13,3 +13,10 @@ w1 537, w2 538, w3 538 ms. Every `a<128` shape costs the same; the fast even-byt
 result is a layout-sensitive LLVM optimisation. Reducing root stores to plain stores
 (unsafe experiment, reverted) gave ~70 ms; inlining the one-element concat store gave
 409 ms on w1. `input.bin` is generated, not committed.
+
+## After ADR 038 (variant F, shipped)
+
+`w4_push` is the `w1` filter written with std `!push`. Median of 12, output verified:
+v1 76.1, v2 79.0, v3 79.2, w1 78.3, w2 78.1, w3 78.6, **w4_push 131.0** ms. Every shape now
+costs the same (~76-79 ms, ~2.5x C++ `std::copy_if`); `!push` pays a caller-frame reconcile
+per call (1.68x the concat form). Full controls: `reports/2026-10-06/ROUND17_CONTROLS.json`.
