@@ -211,12 +211,13 @@ def render(output,config,rows,status,spent,calibration,final=True):
 
 
 def run(output,mock=False,phase='dev',prior=None):
+    run_started=time.perf_counter()
     plan,split,tasks=validate_split();output=output.expanduser().resolve()
     if output.is_relative_to(ROOT) or output.exists():raise ValueError('Use a fresh output outside checkout')
     if phase=='held-out' and not mock:
         if prior is None:raise ValueError('Held-out requires prior DEV report and committed cost forecast')
         prev=read_json(prior/'report.json');forecast=read_json(HERE/'cost-forecast.json')
-        if prev['mock'] or prev['status']!='complete' or forecast['dev_report_sha256']!=hashlib.sha256((prior/'report.json').read_bytes()).hexdigest():raise ValueError('Invalid dev/forecast provenance')
+        if prev['mock'] or prev['status']!='complete' or prev['config']['phase']!='dev' or prev['config']['model']!=plan['model'] or prev['config']['plan_sha256']!=hashlib.sha256(PLAN.read_bytes()).hexdigest() or prev['config']['split_sha256']!=hashlib.sha256(SPLIT.read_bytes()).hexdigest() or forecast['dev_report_sha256']!=hashlib.sha256((prior/'report.json').read_bytes()).hexdigest():raise ValueError('Invalid dev/forecast provenance')
         committed=subprocess.check_output(['git','show','HEAD:generation/standing/cost-forecast.json'],cwd=SUITE)
         if committed!= (HERE/'cost-forecast.json').read_bytes():raise ValueError('Cost forecast must be committed')
         spent=prev['spent_usd']
@@ -224,10 +225,13 @@ def run(output,mock=False,phase='dev',prior=None):
     backend=None
     output.mkdir(parents=True);rows=[];status='complete';calibration=(prev.get('spec_marginal_input_tokens') if phase=='held-out' and not mock else None)
     config=plan|dict(mock=mock,phase=phase,held_out=split['held_out'],split_sha256=hashlib.sha256(SPLIT.read_bytes()).hexdigest(),
-                     spec_sha256=split['spec_sha256'],python_version=sys.version,plan_sha256=hashlib.sha256(PLAN.read_bytes()).hexdigest(),compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+                     spec_sha256=split['spec_sha256'],started_at_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),
+                     initial_prompt_hashes={tid:{arm:digest(json.dumps([{'role':'user','content':make_prompt(arm,tasks[tid],split,tasks)}],sort_keys=True)) for arm in plan['arms']} for tid in split['held_out']+split['dev']},python_version=sys.version,plan_sha256=hashlib.sha256(PLAN.read_bytes()).hexdigest(),compiler_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
                      benchmark_revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),cli_version=None)
     try:
         backend=Mock() if mock else Claude(plan['model']);config['cli_version']=backend.version
+        if phase=='held-out' and not mock and prev['config']['cli_version']!=backend.version:
+            raise BackendError('infrastructure','CLI version changed since DEV')
         proof=backend.preflight();(output/'isolation.json').write_text(json.dumps(proof,indent=2)+'\n')
         if hasattr(backend,'probe_evidence'):(output/'isolation-probe.json').write_text(json.dumps(backend.probe_evidence,indent=2)+'\n')
         application.oracle.prepare()
@@ -295,6 +299,7 @@ def run(output,mock=False,phase='dev',prior=None):
             (output/'isolation-probe.json').write_text(json.dumps(backend.probe_evidence,indent=2)+'\n')
         if isinstance(error,BackendError) and error.cost is not None:spent+=error.cost
         status='blocked-'+getattr(error,'reason','infrastructure');(output/'blocked.txt').write_text(str(error)+'\n')
+    config['elapsed_total_seconds']=time.perf_counter()-run_started
     result=render(output,config,rows,status,spent,calibration)
     report_dir=SUITE/'reports'/time.strftime('%Y-%m-%d',time.gmtime());report_dir.mkdir(parents=True,exist_ok=True)
     label=('MOCK_' if mock else '')+'STANDING_GENERATION_'+phase.upper().replace('-','_')

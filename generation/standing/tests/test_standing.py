@@ -29,8 +29,8 @@ class TransportTests(unittest.TestCase):
         with self.assertRaises(backend.BackendError) as e:backend.inspect_stream(x,MODEL)
         self.assertEqual(e.exception.reason,'isolation')
     def test_mcp_and_hook_events_fail_even_when_result_succeeds(self):
-        for x in [response(),response()]:
-            if x==response():x[0]['mcp_servers']=['leak']
+        for key in ['tools','mcp_servers']:
+            x=response();x[0][key]=['leak']
             with self.assertRaises(backend.BackendError):backend.inspect_stream(x,MODEL)
         x=response();x.insert(1,dict(type='system',subtype='hook_started'))
         with self.assertRaises(backend.BackendError):backend.inspect_stream(x,MODEL)
@@ -40,6 +40,18 @@ class TransportTests(unittest.TestCase):
         x=response();x[-1]['is_error']=True;x[-1]['errors']=['unavailable']
         with self.assertRaises(backend.BackendError) as e:backend.inspect_stream(x,MODEL)
         self.assertEqual(e.exception.reason,'infrastructure')
+    def test_network_denied_initialization_failure_blocks_live_request(self):
+        import subprocess
+        client=object.__new__(backend.Claude)
+        client.executable=Path('/usr/bin/true');client.model=MODEL;client.version='CLI';client.bare=False;client.proven=False
+        completed=[subprocess.CompletedProcess([],1,b'',b'denied'),
+                   subprocess.CompletedProcess([],0,'CLI\n',''),
+                   subprocess.CompletedProcess([],1,'','EPERM global temporary settings')]
+        with patch.object(backend.subprocess,'run',side_effect=completed):
+            with self.assertRaises(backend.BackendError) as error:client.preflight()
+        self.assertEqual(error.exception.reason,'isolation');self.assertFalse(client.proven)
+        self.assertTrue(client.probe_evidence['network_denied'])
+
     def test_flags_pin_effort_disable_authority_and_bound_cost(self):
         f=backend.flags(MODEL,1)
         for key in ['--safe-mode','--restricted','--no-session-persistence','--strict-mcp-config']:self.assertIn(key,f)
