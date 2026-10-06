@@ -13,8 +13,8 @@
     "nil-fewshot"
   ],
   "attempt_limit": 3,
-  "per_attempt_output_cap": 512,
-  "trial_output_cap": 1536,
+  "per_attempt_output_cap": 8192,
+  "trial_output_cap": 16384,
   "spend_cap_usd": 50,
   "request_reservation_usd": 1,
   "dev_task": "expand_tabs",
@@ -48,7 +48,7 @@
       40
     ]
   },
-  "forecast_note": "Judgment ranges, not measured. Short legacy output caps and harder algorithms may dominate failures. Cache/fixed-spec amortization is a deployment scenario, not evidence of model efficiency.",
+  "forecast_note": "Preregistered design correction before any live generation: caps include reasoning. Worst-case output envelope 2424832 tokens (10.69x old); worst-case USD443 request reservations exceed unchanged USD50 notional cap. Actual dollar forecast unknown until DEV; commit observed mean/max forecast before held-out. Solve/parse forecasts unchanged.",
   "prompt_rule": "Fixed replacement system prompt; Python no language spec; NIL includes exact published EXPR_V5.md, plus four unchanged preregistered corpus examples only in fewshot. Common file solve contract; failed candidates and real diagnostics become repair conversation. No task solution, hidden fixture or other held-out task statement enters context.",
   "stop_policy": "No automatic infrastructure retries or model substitutions. Missing usage, tool calls, unavailable model, broken isolation, changed frozen hashes or inadequate remaining reservation stop the campaign and retain partial metrics. No unknown usage imputation.",
   "auth": "subscription-oauth-token-file",
