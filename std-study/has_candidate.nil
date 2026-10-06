@@ -1,0 +1,1 @@
+(m,s):b=!each(a,b,false;c,d?true:!equal(a,c);b)
