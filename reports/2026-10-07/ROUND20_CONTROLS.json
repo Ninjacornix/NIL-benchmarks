@@ -1,0 +1,220 @@
+{
+  "schema": 1,
+  "round": 20,
+  "source": "benchmarks/ownership-study/run.py",
+  "compiler": "/Users/ninjacornix/NIL/target/release/nil",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.0.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "repeats": 25,
+  "input_bytes": 16777216,
+  "method": "Rotating warm whole-process wall time; includes startup, read and stdout (capture); byte-exact output checked every run; no CPU isolation. Reserve-free builders. Same insertion algorithm, not std::sort.",
+  "proofs": {
+    "append": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    },
+    "filter_hand": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    },
+    "filter_std": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    },
+    "map_hand": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "map_std": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "scan": {
+      "vector_cmeq": true,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "insertion_hof": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 1,
+      "temporary_calls": 0
+    },
+    "insertion_hand": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 1,
+      "temporary_calls": 0
+    },
+    "transform": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "sort_core_1024": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "sort_source_1024": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    },
+    "sort_core_65536": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "sort_source_65536": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    },
+    "sort_core_1048576": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 0
+    },
+    "sort_source_1048576": {
+      "vector_cmeq": false,
+      "vector_sub": false,
+      "snapshot_calls": 0,
+      "temporary_calls": 1
+    }
+  },
+  "failures": {},
+  "rows": {
+    "append": {
+      "min_ms": 4.852666,
+      "median_ms": 5.860208,
+      "max_ms": 7.130666
+    },
+    "filter_hand": {
+      "min_ms": 76.054292,
+      "median_ms": 76.624917,
+      "max_ms": 84.822417
+    },
+    "filter_std": {
+      "min_ms": 80.910542,
+      "median_ms": 81.707917,
+      "max_ms": 85.431667
+    },
+    "map_hand": {
+      "min_ms": 34.691666,
+      "median_ms": 35.809458,
+      "max_ms": 37.589208
+    },
+    "map_std": {
+      "min_ms": 34.875875,
+      "median_ms": 35.760541,
+      "max_ms": 36.371166
+    },
+    "scan": {
+      "min_ms": 8.173583,
+      "median_ms": 8.651208,
+      "max_ms": 9.0595
+    },
+    "insertion_hof": {
+      "min_ms": 48.452958,
+      "median_ms": 48.887,
+      "max_ms": 51.15275
+    },
+    "insertion_hand": {
+      "min_ms": 48.079125,
+      "median_ms": 48.451792,
+      "max_ms": 51.218334
+    },
+    "transform": {
+      "min_ms": 34.816042,
+      "median_ms": 36.041875,
+      "max_ms": 38.394542
+    },
+    "sort_core_1024": {
+      "min_ms": 3.094208,
+      "median_ms": 4.130167,
+      "max_ms": 5.211375
+    },
+    "sort_source_1024": {
+      "min_ms": 3.446834,
+      "median_ms": 3.695834,
+      "max_ms": 5.053
+    },
+    "sort_core_65536": {
+      "min_ms": 9.453917,
+      "median_ms": 9.666166,
+      "max_ms": 10.819292
+    },
+    "sort_source_65536": {
+      "min_ms": 71.995917,
+      "median_ms": 72.821667,
+      "max_ms": 91.061667
+    },
+    "sort_core_1048576": {
+      "min_ms": 129.543625,
+      "median_ms": 130.409375,
+      "max_ms": 134.76225
+    },
+    "sort_source_1048576": {
+      "min_ms": 1394.764708,
+      "median_ms": 1466.410417,
+      "max_ms": 1530.7025
+    },
+    "cpp_append": {
+      "min_ms": 4.876542,
+      "median_ms": 5.17675,
+      "max_ms": 6.603291
+    },
+    "cpp_filter": {
+      "min_ms": 29.561,
+      "median_ms": 30.282959,
+      "max_ms": 32.629125
+    },
+    "cpp_map": {
+      "min_ms": 18.039292,
+      "median_ms": 19.13575,
+      "max_ms": 25.368417
+    },
+    "cpp_insertion": {
+      "min_ms": 4.573583,
+      "median_ms": 4.933125,
+      "max_ms": 6.053
+    },
+    "cpp_transform": {
+      "min_ms": 12.208625,
+      "median_ms": 13.38625,
+      "max_ms": 16.883917
+    },
+    "cpp_sort_1024": {
+      "min_ms": 2.900709,
+      "median_ms": 4.243542,
+      "max_ms": 6.530541
+    },
+    "cpp_sort_65536": {
+      "min_ms": 8.508542,
+      "median_ms": 8.78,
+      "max_ms": 9.861208
+    },
+    "cpp_sort_1048576": {
+      "min_ms": 95.671916,
+      "median_ms": 96.147416,
+      "max_ms": 100.547958
+    }
+  }
+}

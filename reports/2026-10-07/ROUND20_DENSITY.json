@@ -1,0 +1,3483 @@
+{
+  "schema": 1,
+  "cohort": 29,
+  "metric": "Source density, not failure-inclusive generation/repair tokens. Typed kernels include every algorithm helper, signature and required type/import declaration; adapters excluded in every language. NIL retains flat-buffer input-layout arithmetic. Standalone full programs retain all historical driver costs. Minimal-I/O baseline copies are idiomatic iterator/stream adapters; NIL keeps its already compact original I/O. Kernel-host copies verify typed-result reconstruction on unchanged fixtures.",
+  "tiktoken_version": "0.12.0",
+  "verification_sha256": "6df5fbde21c5fd85d0e04dae16b7527d4a5daec741f906b0817d3587de15f7e1",
+  "totals": {
+    "full-program": {
+      "nil": {
+        "bytes": 10280,
+        "characters": 10280,
+        "tokens": {
+          "cl100k_base": 5321,
+          "o200k_base": 5347
+        }
+      },
+      "python": {
+        "bytes": 25474,
+        "characters": 25474,
+        "tokens": {
+          "cl100k_base": 6795,
+          "o200k_base": 6818
+        }
+      },
+      "cpp": {
+        "bytes": 35044,
+        "characters": 35044,
+        "tokens": {
+          "cl100k_base": 10610,
+          "o200k_base": 10716
+        }
+      },
+      "nil_gap": {
+        "cl100k_base": {
+          "python": -0.21692420897718911,
+          "cpp": -0.4984919886899152
+        },
+        "o200k_base": {
+          "python": -0.2157524200645351,
+          "cpp": -0.5010265024262784
+        }
+      }
+    },
+    "kernel-only": {
+      "nil": {
+        "bytes": 7761,
+        "characters": 7761,
+        "tokens": {
+          "cl100k_base": 4348,
+          "o200k_base": 4368
+        }
+      },
+      "python": {
+        "bytes": 8444,
+        "characters": 8444,
+        "tokens": {
+          "cl100k_base": 2609,
+          "o200k_base": 2620
+        }
+      },
+      "cpp": {
+        "bytes": 9589,
+        "characters": 9589,
+        "tokens": {
+          "cl100k_base": 3366,
+          "o200k_base": 3420
+        }
+      },
+      "nil_gap": {
+        "cl100k_base": {
+          "python": 0.6665389037945573,
+          "cpp": 0.29174093879976226
+        },
+        "o200k_base": {
+          "python": 0.667175572519084,
+          "cpp": 0.2771929824561403
+        }
+      }
+    },
+    "minimal-io": {
+      "nil": {
+        "bytes": 10280,
+        "characters": 10280,
+        "tokens": {
+          "cl100k_base": 5321,
+          "o200k_base": 5347
+        }
+      },
+      "python": {
+        "bytes": 18464,
+        "characters": 18464,
+        "tokens": {
+          "cl100k_base": 5308,
+          "o200k_base": 5319
+        }
+      },
+      "cpp": {
+        "bytes": 33266,
+        "characters": 33266,
+        "tokens": {
+          "cl100k_base": 10754,
+          "o200k_base": 10929
+        }
+      },
+      "nil_gap": {
+        "cl100k_base": {
+          "python": 0.0024491333835718887,
+          "cpp": -0.5052073647015064
+        },
+        "o200k_base": {
+          "python": 0.005264147396127017,
+          "cpp": -0.5107512123707567
+        }
+      }
+    }
+  },
+  "per_task": [
+    {
+      "cut": "full-program",
+      "task": "3sum",
+      "language": "nil",
+      "sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "bytes": 536,
+      "characters": 536,
+      "tokens": {
+        "cl100k_base": 277,
+        "o200k_base": 276
+      },
+      "before_tokens": {
+        "cl100k_base": 277,
+        "o200k_base": 276
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "3sum",
+      "language": "python",
+      "sha256": "b4d8ca72d1a504bddfa727aa4a98317551d06e8519afb867fed4b48b120e8f38",
+      "bytes": 1116,
+      "characters": 1116,
+      "tokens": {
+        "cl100k_base": 319,
+        "o200k_base": 323
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "3sum",
+      "language": "cpp",
+      "sha256": "e1bb540d3fc8a7eff5e87e387ecca393ce3c2258b8b0d82fe16c85c83833d15b",
+      "bytes": 1483,
+      "characters": 1483,
+      "tokens": {
+        "cl100k_base": 490,
+        "o200k_base": 499
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "3sum",
+      "language": "nil",
+      "sha256": "e3ecde88971b7c59862ad578bd11fd4109a382ca4857cac40a140b4cb3649a06",
+      "bytes": 435,
+      "characters": 435,
+      "tokens": {
+        "cl100k_base": 257,
+        "o200k_base": 254
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "3sum",
+      "language": "python",
+      "sha256": "4360875a445903fc2893dbce9c5b6a20e111283a12f85889b9c0f918dd64e6b2",
+      "bytes": 597,
+      "characters": 597,
+      "tokens": {
+        "cl100k_base": 183,
+        "o200k_base": 183
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "3sum",
+      "language": "cpp",
+      "sha256": "0fcd7b89aa8dce4132be266102e30c85c1f6b53cc2befc53c5bc31ac8596aece",
+      "bytes": 439,
+      "characters": 439,
+      "tokens": {
+        "cl100k_base": 180,
+        "o200k_base": 186
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "3sum",
+      "language": "nil",
+      "sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "bytes": 536,
+      "characters": 536,
+      "tokens": {
+        "cl100k_base": 277,
+        "o200k_base": 276
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "3sum",
+      "language": "python",
+      "sha256": "b27b238b94efb2043913ea67b386f2eb4d789de566a8e0d109cd3980f41138d8",
+      "bytes": 935,
+      "characters": 935,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "3sum",
+      "language": "cpp",
+      "sha256": "acba228063d282c2333ff53d6e3ae75dccf3d28d4f7b9a739b76b755a4a9e701",
+      "bytes": 1264,
+      "characters": 1264,
+      "tokens": {
+        "cl100k_base": 437,
+        "o200k_base": 448
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "balanced-binary-tree",
+      "language": "nil",
+      "sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "bytes": 612,
+      "characters": 612,
+      "tokens": {
+        "cl100k_base": 323,
+        "o200k_base": 324
+      },
+      "before_tokens": {
+        "cl100k_base": 379,
+        "o200k_base": 380
+      },
+      "token_delta": {
+        "cl100k_base": -56,
+        "o200k_base": -56
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "balanced-binary-tree",
+      "language": "python",
+      "sha256": "1c2f5fa8ed73e87b3efbecdec6ece5e02faeda27ae00cb8d70a955b8dc8a68cc",
+      "bytes": 1304,
+      "characters": 1304,
+      "tokens": {
+        "cl100k_base": 356,
+        "o200k_base": 360
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "balanced-binary-tree",
+      "language": "cpp",
+      "sha256": "a42928008593f94d387b3fed07e94f4effb5e3b69b0894c2d9c865d9146d9b8c",
+      "bytes": 1445,
+      "characters": 1445,
+      "tokens": {
+        "cl100k_base": 441,
+        "o200k_base": 445
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "balanced-binary-tree",
+      "language": "nil",
+      "sha256": "d4c3b87e9bd4c34c9ec32e5745747e03bdde733d05edef2a602523f2ec9cb769",
+      "bytes": 533,
+      "characters": 533,
+      "tokens": {
+        "cl100k_base": 292,
+        "o200k_base": 293
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "balanced-binary-tree",
+      "language": "python",
+      "sha256": "6b72f07271f51f90acb41228a6b181323a861cce29f57cf6edbf3b96679a013a",
+      "bytes": 561,
+      "characters": 561,
+      "tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 165
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "balanced-binary-tree",
+      "language": "cpp",
+      "sha256": "5ec9bd6fcd61a147b8a78b41387b4771e192fa268550bb58af9b5ff26fc98a18",
+      "bytes": 600,
+      "characters": 600,
+      "tokens": {
+        "cl100k_base": 203,
+        "o200k_base": 205
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "balanced-binary-tree",
+      "language": "nil",
+      "sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "bytes": 612,
+      "characters": 612,
+      "tokens": {
+        "cl100k_base": 323,
+        "o200k_base": 324
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "balanced-binary-tree",
+      "language": "python",
+      "sha256": "b02fcd25e0c76c939fda9476fcdc8b4dfd9a819b0693998e0a662c29a0e34d74",
+      "bytes": 952,
+      "characters": 952,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 275
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "balanced-binary-tree",
+      "language": "cpp",
+      "sha256": "726f5b79423d8316b69fcb425f05835fc5e4328d49cf1645d2287374818f3530",
+      "bytes": 1476,
+      "characters": 1476,
+      "tokens": {
+        "cl100k_base": 482,
+        "o200k_base": 488
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "nil",
+      "sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "bytes": 189,
+      "characters": 189,
+      "tokens": {
+        "cl100k_base": 90,
+        "o200k_base": 94
+      },
+      "before_tokens": {
+        "cl100k_base": 90,
+        "o200k_base": 94
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "python",
+      "sha256": "707d828d6c219c9e4c52cc0cf393ea55a0c56be5e7a4f5e35bfd34baa6fc6411",
+      "bytes": 911,
+      "characters": 911,
+      "tokens": {
+        "cl100k_base": 237,
+        "o200k_base": 239
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "cpp",
+      "sha256": "229264b99b597102c52f475e547ccab560cf6c7cbfb3a1446a74967ad9f3df53",
+      "bytes": 1168,
+      "characters": 1168,
+      "tokens": {
+        "cl100k_base": 351,
+        "o200k_base": 353
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "nil",
+      "sha256": "85edce806e4b28d3aaeccefebc68a48bf4a43cf24b7b8eca9e00957bea17f0e0",
+      "bytes": 110,
+      "characters": 110,
+      "tokens": {
+        "cl100k_base": 59,
+        "o200k_base": 63
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "python",
+      "sha256": "74ed25b3523b925892ad726a19e25fbccc8d71abb3cb32eaaa0778a9dae9a4ea",
+      "bytes": 201,
+      "characters": 201,
+      "tokens": {
+        "cl100k_base": 66,
+        "o200k_base": 66
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "cpp",
+      "sha256": "ab92d9d33abf53cd7a897eb3e72d9cb57da3ac1019221284049e195ca2b9c37d",
+      "bytes": 284,
+      "characters": 284,
+      "tokens": {
+        "cl100k_base": 101,
+        "o200k_base": 102
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "nil",
+      "sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "bytes": 189,
+      "characters": 189,
+      "tokens": {
+        "cl100k_base": 90,
+        "o200k_base": 94
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "python",
+      "sha256": "bb0e496284ce79e8d62840fa72955de54985c01346f76b60685b24f31841b736",
+      "bytes": 509,
+      "characters": 509,
+      "tokens": {
+        "cl100k_base": 147,
+        "o200k_base": 147
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "language": "cpp",
+      "sha256": "833865c4c20cf1de0a46abdc695f0b9c8954314972e31a66c175d1c20887aab5",
+      "bytes": 1078,
+      "characters": 1078,
+      "tokens": {
+        "cl100k_base": 347,
+        "o200k_base": 352
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "car-fleet",
+      "language": "nil",
+      "sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "bytes": 351,
+      "characters": 351,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      },
+      "before_tokens": {
+        "cl100k_base": 213,
+        "o200k_base": 213
+      },
+      "token_delta": {
+        "cl100k_base": -28,
+        "o200k_base": -28
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "car-fleet",
+      "language": "python",
+      "sha256": "9dda82110fd283ca1d30e71eb435481abde04b6b76dd42c2bac12457b731c5c0",
+      "bytes": 958,
+      "characters": 958,
+      "tokens": {
+        "cl100k_base": 244,
+        "o200k_base": 245
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "car-fleet",
+      "language": "cpp",
+      "sha256": "7f2ad384a7437d880492110aef3dc38fcccffd6b6f69ce38670a734869cf2b90",
+      "bytes": 1220,
+      "characters": 1220,
+      "tokens": {
+        "cl100k_base": 367,
+        "o200k_base": 372
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "car-fleet",
+      "language": "nil",
+      "sha256": "36e706d4fdf00ca98a43b1f016ed33b381c90ec6b61a5bc6e43db9c472b187bd",
+      "bytes": 272,
+      "characters": 272,
+      "tokens": {
+        "cl100k_base": 154,
+        "o200k_base": 154
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "car-fleet",
+      "language": "python",
+      "sha256": "82e4689b5d27198aa999acc039af6598d88dd7b6cfeb4ad44b9b79fd64d20918",
+      "bytes": 320,
+      "characters": 320,
+      "tokens": {
+        "cl100k_base": 75,
+        "o200k_base": 75
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "car-fleet",
+      "language": "cpp",
+      "sha256": "80abd97c47152685d861d5a2bbfa26d05ca62481e445f81b1810fecd97d3cad9",
+      "bytes": 282,
+      "characters": 282,
+      "tokens": {
+        "cl100k_base": 100,
+        "o200k_base": 103
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "car-fleet",
+      "language": "nil",
+      "sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "bytes": 351,
+      "characters": 351,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "car-fleet",
+      "language": "python",
+      "sha256": "a6d5c13d13241364ad85f732794816be030a538e462bbd41ad3a245078d0c780",
+      "bytes": 709,
+      "characters": 709,
+      "tokens": {
+        "cl100k_base": 180,
+        "o200k_base": 180
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "car-fleet",
+      "language": "cpp",
+      "sha256": "43c9c5f3a14d594f5667b39d0a39080d49fbbb88b8f2131d548a78b5cd6b50d8",
+      "bytes": 1101,
+      "characters": 1101,
+      "tokens": {
+        "cl100k_base": 354,
+        "o200k_base": 361
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "coin-change",
+      "language": "nil",
+      "sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "bytes": 304,
+      "characters": 304,
+      "tokens": {
+        "cl100k_base": 170,
+        "o200k_base": 170
+      },
+      "before_tokens": {
+        "cl100k_base": 170,
+        "o200k_base": 170
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "coin-change",
+      "language": "python",
+      "sha256": "c87b27fd6fee593694ddafe4cb66a03eb9cd86acdc1c20564e7ab454741cd445",
+      "bytes": 897,
+      "characters": 897,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 241
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "coin-change",
+      "language": "cpp",
+      "sha256": "c4650463210a75af7e6cee9db5bbdd4080875cdfd1f1a6da074909e90e1b78e3",
+      "bytes": 1174,
+      "characters": 1174,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 357
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "coin-change",
+      "language": "nil",
+      "sha256": "b15bc969e4e2cf91e20c790f4dde6bcda3493ad3974f2a7c52da8decc53332e4",
+      "bytes": 225,
+      "characters": 225,
+      "tokens": {
+        "cl100k_base": 139,
+        "o200k_base": 139
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "coin-change",
+      "language": "python",
+      "sha256": "152bf06c486418d45db23d1c5b3f7ad98e2a809aa51499dcf54ed15c23b1d2e6",
+      "bytes": 241,
+      "characters": 241,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "coin-change",
+      "language": "cpp",
+      "sha256": "a1f7de9a0bf3380a5ec3f031b2662581334026a5f65dbaddcae0799355e33636",
+      "bytes": 282,
+      "characters": 282,
+      "tokens": {
+        "cl100k_base": 103,
+        "o200k_base": 104
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "coin-change",
+      "language": "nil",
+      "sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "bytes": 304,
+      "characters": 304,
+      "tokens": {
+        "cl100k_base": 170,
+        "o200k_base": 170
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "coin-change",
+      "language": "python",
+      "sha256": "766887e67c8fe4d4c5309a40481915341498fff5fc3855c089f035e9e96925df",
+      "bytes": 618,
+      "characters": 618,
+      "tokens": {
+        "cl100k_base": 182,
+        "o200k_base": 182
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "coin-change",
+      "language": "cpp",
+      "sha256": "c81da9426189022fad197d829cf8abd10dde01a174fb8d3f7327a853c89f56ee",
+      "bytes": 1108,
+      "characters": 1108,
+      "tokens": {
+        "cl100k_base": 357,
+        "o200k_base": 362
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "contains-duplicate",
+      "language": "nil",
+      "sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "bytes": 188,
+      "characters": 188,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      },
+      "before_tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "contains-duplicate",
+      "language": "python",
+      "sha256": "8316dd505ffc04feae48b7b3ec6a02984fc1544b7a8a92eee1fe71291577424b",
+      "bytes": 748,
+      "characters": 748,
+      "tokens": {
+        "cl100k_base": 182,
+        "o200k_base": 182
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "contains-duplicate",
+      "language": "cpp",
+      "sha256": "344f7a6b3ddb6f614125560cd17f9e33983074786e8e73d22e06cea8686e7d34",
+      "bytes": 1100,
+      "characters": 1100,
+      "tokens": {
+        "cl100k_base": 313,
+        "o200k_base": 316
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "contains-duplicate",
+      "language": "nil",
+      "sha256": "aa3c260c489cf30d1ae9e5967522cf9503bcbc99cac724f217a7e007508f9594",
+      "bytes": 109,
+      "characters": 109,
+      "tokens": {
+        "cl100k_base": 51,
+        "o200k_base": 51
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "contains-duplicate",
+      "language": "python",
+      "sha256": "ba4a7950b213b81181136834c83444204723f291df877104f65aeeec3235df12",
+      "bytes": 48,
+      "characters": 48,
+      "tokens": {
+        "cl100k_base": 14,
+        "o200k_base": 14
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "contains-duplicate",
+      "language": "cpp",
+      "sha256": "4e8e809c5503c911a2473bed14509ffc77a2393a98e5c4bb9d8e6ff11cb54027",
+      "bytes": 208,
+      "characters": 208,
+      "tokens": {
+        "cl100k_base": 63,
+        "o200k_base": 64
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "contains-duplicate",
+      "language": "nil",
+      "sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "bytes": 188,
+      "characters": 188,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "contains-duplicate",
+      "language": "python",
+      "sha256": "8dc42c0a5c145956b9d223f5e0c106893d246fd89fe8c6fcf9a24095fde939c4",
+      "bytes": 356,
+      "characters": 356,
+      "tokens": {
+        "cl100k_base": 95,
+        "o200k_base": 95
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "contains-duplicate",
+      "language": "cpp",
+      "sha256": "b36977cc6bd41f21082bda125be4f2305a1626c4c20689ec10cee78b405e3742",
+      "bytes": 1002,
+      "characters": 1002,
+      "tokens": {
+        "cl100k_base": 309,
+        "o200k_base": 314
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "course-schedule",
+      "language": "nil",
+      "sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "bytes": 867,
+      "characters": 867,
+      "tokens": {
+        "cl100k_base": 381,
+        "o200k_base": 384
+      },
+      "before_tokens": {
+        "cl100k_base": 372,
+        "o200k_base": 376
+      },
+      "token_delta": {
+        "cl100k_base": 9,
+        "o200k_base": 8
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "course-schedule",
+      "language": "python",
+      "sha256": "39d77de6a94b86350967a209b5475eaeea328f7649629a00c7314d8b7baf7ae1",
+      "bytes": 1407,
+      "characters": 1407,
+      "tokens": {
+        "cl100k_base": 374,
+        "o200k_base": 378
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "course-schedule",
+      "language": "cpp",
+      "sha256": "5fb5b8ee090f1fa1ba47eeed632d544da7fc84e0672cb1742ca5b207c75d1a17",
+      "bytes": 1275,
+      "characters": 1275,
+      "tokens": {
+        "cl100k_base": 384,
+        "o200k_base": 387
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "course-schedule",
+      "language": "nil",
+      "sha256": "bf533deb9e27baa0d52149de3b1af523ef19225447d1960d717e35da84646fee",
+      "bytes": 788,
+      "characters": 788,
+      "tokens": {
+        "cl100k_base": 350,
+        "o200k_base": 353
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "course-schedule",
+      "language": "python",
+      "sha256": "8424e0542e25431986addc298d139f825853bab6d4b768d28244eb85a6d9c186",
+      "bytes": 572,
+      "characters": 572,
+      "tokens": {
+        "cl100k_base": 162,
+        "o200k_base": 166
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "course-schedule",
+      "language": "cpp",
+      "sha256": "533a8c3dd9146434aba5fbf6008aacaa514dd3e6ea41846c1541b301cdd20e09",
+      "bytes": 479,
+      "characters": 479,
+      "tokens": {
+        "cl100k_base": 162,
+        "o200k_base": 163
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "course-schedule",
+      "language": "nil",
+      "sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "bytes": 867,
+      "characters": 867,
+      "tokens": {
+        "cl100k_base": 381,
+        "o200k_base": 384
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "course-schedule",
+      "language": "python",
+      "sha256": "7dac8da96475c55aaac335c9df1b31339e42ea1359ff2534f2450a5255de6baf",
+      "bytes": 957,
+      "characters": 957,
+      "tokens": {
+        "cl100k_base": 269,
+        "o200k_base": 273
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "course-schedule",
+      "language": "cpp",
+      "sha256": "72acb419cb18543e1c15886b2cfbc6d0e2dd0bc9de7f16b107bb726dad7a269e",
+      "bytes": 1352,
+      "characters": 1352,
+      "tokens": {
+        "cl100k_base": 440,
+        "o200k_base": 445
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "gas-station",
+      "language": "nil",
+      "sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "bytes": 225,
+      "characters": 225,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 130
+      },
+      "before_tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 130
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "gas-station",
+      "language": "python",
+      "sha256": "88b26901c90c60b4ee1240d3622b7a0e0c18b512258239d741b35abe56f82497",
+      "bytes": 907,
+      "characters": 907,
+      "tokens": {
+        "cl100k_base": 240,
+        "o200k_base": 240
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "gas-station",
+      "language": "cpp",
+      "sha256": "9fbc0d700f5f6b0a74aa202c4b558365ddf507c997a809f72712754c5dc1196a",
+      "bytes": 1156,
+      "characters": 1156,
+      "tokens": {
+        "cl100k_base": 345,
+        "o200k_base": 349
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "gas-station",
+      "language": "nil",
+      "sha256": "8bf6caa1dd70336d42c560dca7236e47065bf62e70566fca4970cd3a7a3497de",
+      "bytes": 146,
+      "characters": 146,
+      "tokens": {
+        "cl100k_base": 99,
+        "o200k_base": 99
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "gas-station",
+      "language": "python",
+      "sha256": "0de7f846e9c406a9f1c30613be8b411760be3c5d0f38c4c9e52a4a55fa9507fe",
+      "bytes": 262,
+      "characters": 262,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "gas-station",
+      "language": "cpp",
+      "sha256": "3bac7a68ef6dea6644041d1ce92fe9d50cc3a4701ad08be9c44e4306a4f50297",
+      "bytes": 263,
+      "characters": 263,
+      "tokens": {
+        "cl100k_base": 93,
+        "o200k_base": 95
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "gas-station",
+      "language": "nil",
+      "sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "bytes": 225,
+      "characters": 225,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 130
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "gas-station",
+      "language": "python",
+      "sha256": "a46a1943409500cab4e03853a426224df499b8e81be0e1451019e1972442d4c5",
+      "bytes": 659,
+      "characters": 659,
+      "tokens": {
+        "cl100k_base": 190,
+        "o200k_base": 190
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "gas-station",
+      "language": "cpp",
+      "sha256": "eb74dbe6a914ef4e5e287cc7c008002b68cc5d9dc267f9f8e7d74a044a256e65",
+      "bytes": 1082,
+      "characters": 1082,
+      "tokens": {
+        "cl100k_base": 346,
+        "o200k_base": 352
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "generate-parentheses",
+      "language": "nil",
+      "sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "bytes": 231,
+      "characters": 231,
+      "tokens": {
+        "cl100k_base": 109,
+        "o200k_base": 110
+      },
+      "before_tokens": {
+        "cl100k_base": 109,
+        "o200k_base": 110
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "generate-parentheses",
+      "language": "python",
+      "sha256": "c8effe2ad38f3ffd3e56ff03950478443d405e4f0ddf5848ea59050e4df69bf9",
+      "bytes": 500,
+      "characters": 500,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 135
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "generate-parentheses",
+      "language": "cpp",
+      "sha256": "6a21f70006c2ef32ff3d007a8d5c397191df4d884876e0594598dba59e416a17",
+      "bytes": 1067,
+      "characters": 1067,
+      "tokens": {
+        "cl100k_base": 314,
+        "o200k_base": 316
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "generate-parentheses",
+      "language": "nil",
+      "sha256": "7cf815dd124bf64511269829933103539ce1f25eaad0853c8d493c05ebb177f2",
+      "bytes": 204,
+      "characters": 204,
+      "tokens": {
+        "cl100k_base": 113,
+        "o200k_base": 111
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "generate-parentheses",
+      "language": "python",
+      "sha256": "01175699fd3a78366cd5a2f67aefd8c64e1f98543c5e8756154e3851a7fe1056",
+      "bytes": 312,
+      "characters": 312,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "generate-parentheses",
+      "language": "cpp",
+      "sha256": "9bd18b2314c130cfbf1277c85afd51b522b3cd1a7c71e51d7f9ba50354d6b960",
+      "bytes": 382,
+      "characters": 382,
+      "tokens": {
+        "cl100k_base": 124,
+        "o200k_base": 125
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "generate-parentheses",
+      "language": "nil",
+      "sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "bytes": 231,
+      "characters": 231,
+      "tokens": {
+        "cl100k_base": 109,
+        "o200k_base": 110
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "generate-parentheses",
+      "language": "python",
+      "sha256": "b67bab74b058553c489a1e99bbdc28828cf0f87df53542366c95a81c1615006a",
+      "bytes": 637,
+      "characters": 637,
+      "tokens": {
+        "cl100k_base": 170,
+        "o200k_base": 170
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "generate-parentheses",
+      "language": "cpp",
+      "sha256": "7f71eb5d3e210d4213ee407ad417adf9d3b0ae760873db749d24ed422af647cf",
+      "bytes": 1201,
+      "characters": 1201,
+      "tokens": {
+        "cl100k_base": 382,
+        "o200k_base": 388
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "insert-interval",
+      "language": "nil",
+      "sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "bytes": 426,
+      "characters": 426,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 244
+      },
+      "before_tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 244
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "insert-interval",
+      "language": "python",
+      "sha256": "b7692a7ba9df52812e12265e64df459479dbd950e2351dc72a6a8072349c6a61",
+      "bytes": 1033,
+      "characters": 1033,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "insert-interval",
+      "language": "cpp",
+      "sha256": "650a1d2abdbd2ff71440ecf9d60d07b9ad5b803610273b8863d0c6bb70eff401",
+      "bytes": 1524,
+      "characters": 1524,
+      "tokens": {
+        "cl100k_base": 474,
+        "o200k_base": 478
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "insert-interval",
+      "language": "nil",
+      "sha256": "f8b9b87ebaf9a04c257452fcfaec763bc054c564fd95bf39cfbb6a74320a6b6f",
+      "bytes": 355,
+      "characters": 355,
+      "tokens": {
+        "cl100k_base": 225,
+        "o200k_base": 226
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "insert-interval",
+      "language": "python",
+      "sha256": "8f7209cc435624cf06df3cc161060a0a09f8ebbdfc924db19ec5751837ebed69",
+      "bytes": 433,
+      "characters": 433,
+      "tokens": {
+        "cl100k_base": 118,
+        "o200k_base": 118
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "insert-interval",
+      "language": "cpp",
+      "sha256": "b1d0ef3fd7015a4026ee1007a75d2a33d9bf1fd294adb83ed675cc4e69885888",
+      "bytes": 420,
+      "characters": 420,
+      "tokens": {
+        "cl100k_base": 144,
+        "o200k_base": 145
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "insert-interval",
+      "language": "nil",
+      "sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "bytes": 426,
+      "characters": 426,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 244
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "insert-interval",
+      "language": "python",
+      "sha256": "f3375e1bf6c00f1160beb097f5d696650dcb23d4023bb0fa4e6f449a931b6b85",
+      "bytes": 862,
+      "characters": 862,
+      "tokens": {
+        "cl100k_base": 242,
+        "o200k_base": 242
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "insert-interval",
+      "language": "cpp",
+      "sha256": "be70bd7587505e4b141669733caf8b20ffda0c84f98523aad865d4ebd93e0bff",
+      "bytes": 1276,
+      "characters": 1276,
+      "tokens": {
+        "cl100k_base": 416,
+        "o200k_base": 422
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "kth-largest-element-in-an-array",
+      "language": "nil",
+      "sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "bytes": 136,
+      "characters": 136,
+      "tokens": {
+        "cl100k_base": 62,
+        "o200k_base": 62
+      },
+      "before_tokens": {
+        "cl100k_base": 62,
+        "o200k_base": 62
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "kth-largest-element-in-an-array",
+      "language": "python",
+      "sha256": "56328866d8c0c2abfb48a9d4ac8fbc4a659f8037e963d416212b83327cf0b0b4",
+      "bytes": 780,
+      "characters": 780,
+      "tokens": {
+        "cl100k_base": 197,
+        "o200k_base": 196
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "kth-largest-element-in-an-array",
+      "language": "cpp",
+      "sha256": "813476c075e81784fd7e457983473821315553de590b7de06f63fba8b61e0502",
+      "bytes": 1066,
+      "characters": 1066,
+      "tokens": {
+        "cl100k_base": 305,
+        "o200k_base": 307
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "kth-largest-element-in-an-array",
+      "language": "nil",
+      "sha256": "6d5a54322f95d45f16fd989287765e26a55044c9027ad754835fc8536db8da14",
+      "bytes": 57,
+      "characters": 57,
+      "tokens": {
+        "cl100k_base": 31,
+        "o200k_base": 31
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "kth-largest-element-in-an-array",
+      "language": "python",
+      "sha256": "22b7d3759ea6c5b3fdbdcfd8200558a6f23233581ba82a0d8416c3406362e8fd",
+      "bytes": 43,
+      "characters": 43,
+      "tokens": {
+        "cl100k_base": 13,
+        "o200k_base": 14
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "kth-largest-element-in-an-array",
+      "language": "cpp",
+      "sha256": "71f6b06ef2e40e61d609965136f13f5d6738c67812c8de13f0af4af5490901f3",
+      "bytes": 174,
+      "characters": 174,
+      "tokens": {
+        "cl100k_base": 53,
+        "o200k_base": 54
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "kth-largest-element-in-an-array",
+      "language": "nil",
+      "sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "bytes": 136,
+      "characters": 136,
+      "tokens": {
+        "cl100k_base": 62,
+        "o200k_base": 62
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "kth-largest-element-in-an-array",
+      "language": "python",
+      "sha256": "94c18c3f472f3ea65e190f4f2a21fc126924c56d9a417d2e4f718f83168734a9",
+      "bytes": 402,
+      "characters": 402,
+      "tokens": {
+        "cl100k_base": 111,
+        "o200k_base": 112
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "kth-largest-element-in-an-array",
+      "language": "cpp",
+      "sha256": "11388542e0c064fae2669b8614b5273fa9357f02d6c584a36ea4fd0a9ca9593a",
+      "bytes": 982,
+      "characters": 982,
+      "tokens": {
+        "cl100k_base": 305,
+        "o200k_base": 310
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "last-stone-weight",
+      "language": "nil",
+      "sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "bytes": 514,
+      "characters": 514,
+      "tokens": {
+        "cl100k_base": 288,
+        "o200k_base": 289
+      },
+      "before_tokens": {
+        "cl100k_base": 293,
+        "o200k_base": 293
+      },
+      "token_delta": {
+        "cl100k_base": -5,
+        "o200k_base": -4
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "last-stone-weight",
+      "language": "python",
+      "sha256": "ee3e520b116e94fd96a1a08aeb8c84b6c5c312d2539c2cedd52212d449c4d3d7",
+      "bytes": 917,
+      "characters": 917,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 246
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "last-stone-weight",
+      "language": "cpp",
+      "sha256": "87c40aceb393a4de66e0b6528f27e5b0313a60eb08242f58d084102214033588",
+      "bytes": 1150,
+      "characters": 1150,
+      "tokens": {
+        "cl100k_base": 337,
+        "o200k_base": 339
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "last-stone-weight",
+      "language": "nil",
+      "sha256": "c2ed568ba0edf7df520c710d0cbca79a51ff914faceccb7cf57b4464bb739b94",
+      "bytes": 435,
+      "characters": 435,
+      "tokens": {
+        "cl100k_base": 257,
+        "o200k_base": 259
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "last-stone-weight",
+      "language": "python",
+      "sha256": "4287520ee9d54fa8e48728393736de2d182b550541d2882c32938cc1855a5601",
+      "bytes": 259,
+      "characters": 259,
+      "tokens": {
+        "cl100k_base": 83,
+        "o200k_base": 86
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "last-stone-weight",
+      "language": "cpp",
+      "sha256": "657cf550f054e8d8923cbe4257d0d50ce5641a0ef063a47d4e1104a591ff5266",
+      "bytes": 266,
+      "characters": 266,
+      "tokens": {
+        "cl100k_base": 87,
+        "o200k_base": 88
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "last-stone-weight",
+      "language": "nil",
+      "sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "bytes": 514,
+      "characters": 514,
+      "tokens": {
+        "cl100k_base": 288,
+        "o200k_base": 289
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "last-stone-weight",
+      "language": "python",
+      "sha256": "6f1089a7b1440f95455566bb07e4505b9d36e033f43c9b0880ab1a891735beab",
+      "bytes": 567,
+      "characters": 567,
+      "tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 167
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "last-stone-weight",
+      "language": "cpp",
+      "sha256": "48938e35f9d2bd30f3acf1d8c7bbfdb8d807830836f32439586504fc7eea9dc2",
+      "bytes": 1060,
+      "characters": 1060,
+      "tokens": {
+        "cl100k_base": 333,
+        "o200k_base": 338
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "nil",
+      "sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "bytes": 326,
+      "characters": 326,
+      "tokens": {
+        "cl100k_base": 177,
+        "o200k_base": 176
+      },
+      "before_tokens": {
+        "cl100k_base": 182,
+        "o200k_base": 181
+      },
+      "token_delta": {
+        "cl100k_base": -5,
+        "o200k_base": -5
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "python",
+      "sha256": "e65dc40fe6510a41a793e90cdf70c4586803ce973900b1de3681a0b4630696d7",
+      "bytes": 471,
+      "characters": 471,
+      "tokens": {
+        "cl100k_base": 138,
+        "o200k_base": 137
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "cpp",
+      "sha256": "ebcf1e680f13e69d87fff09458550efc1c4519586009aa762addbfd03f474203",
+      "bytes": 1203,
+      "characters": 1203,
+      "tokens": {
+        "cl100k_base": 346,
+        "o200k_base": 349
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "nil",
+      "sha256": "2464cf2c4c23d15933bd7afb289c4a3242499393310da7fb7ee80ccb82dfec18",
+      "bytes": 283,
+      "characters": 283,
+      "tokens": {
+        "cl100k_base": 161,
+        "o200k_base": 159
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "python",
+      "sha256": "55e95b4d2a558f43a6c90e33d4872e1f9c83bbdb23f6bd4af3e55eb301af927d",
+      "bytes": 216,
+      "characters": 216,
+      "tokens": {
+        "cl100k_base": 73,
+        "o200k_base": 73
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "cpp",
+      "sha256": "c45ca94f76027a76fb06ed93111d71e3c5fe9fd7cec0f6bfeb2ceee4dd0b8fb5",
+      "bytes": 537,
+      "characters": 537,
+      "tokens": {
+        "cl100k_base": 159,
+        "o200k_base": 161
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "nil",
+      "sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "bytes": 326,
+      "characters": 326,
+      "tokens": {
+        "cl100k_base": 177,
+        "o200k_base": 176
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "python",
+      "sha256": "7ca64023eb461bab6fd0fda0a8c0c5c8d2d26a3ebeab992c030b0bd2ba101ec4",
+      "bytes": 528,
+      "characters": 528,
+      "tokens": {
+        "cl100k_base": 156,
+        "o200k_base": 156
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "letter-combinations-of-a-phone-number",
+      "language": "cpp",
+      "sha256": "b6630c0abf5e13c0091f3f67b797b3f7fa11829bb0ab8aa38271af2b44b0a08b",
+      "bytes": 1349,
+      "characters": 1349,
+      "tokens": {
+        "cl100k_base": 413,
+        "o200k_base": 420
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-repeating-character-replacement",
+      "language": "nil",
+      "sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "bytes": 628,
+      "characters": 628,
+      "tokens": {
+        "cl100k_base": 263,
+        "o200k_base": 264
+      },
+      "before_tokens": {
+        "cl100k_base": 263,
+        "o200k_base": 264
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-repeating-character-replacement",
+      "language": "python",
+      "sha256": "977ded56e9b50747d31a0c99b3aa23a3a5b846eecc289484a0f3fc2ea0934742",
+      "bytes": 671,
+      "characters": 671,
+      "tokens": {
+        "cl100k_base": 183,
+        "o200k_base": 184
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-repeating-character-replacement",
+      "language": "cpp",
+      "sha256": "9e8c8dde0d5dba79e9ea286d4c0592d450645a83b04effdaec963cc06b81b67d",
+      "bytes": 1211,
+      "characters": 1211,
+      "tokens": {
+        "cl100k_base": 361,
+        "o200k_base": 368
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-repeating-character-replacement",
+      "language": "nil",
+      "sha256": "ec24f39dce972d51cc897d519c5282cce5af518cbddebb52fb10d3d53c87e686",
+      "bytes": 489,
+      "characters": 489,
+      "tokens": {
+        "cl100k_base": 201,
+        "o200k_base": 202
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-repeating-character-replacement",
+      "language": "python",
+      "sha256": "0574dc28b65776ab8af404561720443a89f5c2f9fe5532e078aeaf641db6a3cf",
+      "bytes": 326,
+      "characters": 326,
+      "tokens": {
+        "cl100k_base": 108,
+        "o200k_base": 108
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-repeating-character-replacement",
+      "language": "cpp",
+      "sha256": "74ade7eb1cfda225dd619cf52124ba0e0d2d1ed0905ee49f1a80ff11dd077cda",
+      "bytes": 382,
+      "characters": 382,
+      "tokens": {
+        "cl100k_base": 129,
+        "o200k_base": 133
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-repeating-character-replacement",
+      "language": "nil",
+      "sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "bytes": 628,
+      "characters": 628,
+      "tokens": {
+        "cl100k_base": 263,
+        "o200k_base": 264
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-repeating-character-replacement",
+      "language": "python",
+      "sha256": "d4be08119a09b320f522251427391383bd4731e32f38af2d12f5a5b5d19999db",
+      "bytes": 644,
+      "characters": 644,
+      "tokens": {
+        "cl100k_base": 194,
+        "o200k_base": 194
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-repeating-character-replacement",
+      "language": "cpp",
+      "sha256": "381f0cb4d18165ad8a31b784b4d7f16542aba4e5b00b370edfca9e0c941ffa7c",
+      "bytes": 1237,
+      "characters": 1237,
+      "tokens": {
+        "cl100k_base": 393,
+        "o200k_base": 402
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "nil",
+      "sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "bytes": 201,
+      "characters": 201,
+      "tokens": {
+        "cl100k_base": 110,
+        "o200k_base": 109
+      },
+      "before_tokens": {
+        "cl100k_base": 110,
+        "o200k_base": 109
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "python",
+      "sha256": "69cc8660412cfb12e15ff5aa430fb88853b2fdbba704f1927d4ad155498cf23c",
+      "bytes": 565,
+      "characters": 565,
+      "tokens": {
+        "cl100k_base": 141,
+        "o200k_base": 143
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "cpp",
+      "sha256": "099a219d655becb32565c0f588b3898a597a63c02962d268f385f17d4bb6ae2a",
+      "bytes": 1135,
+      "characters": 1135,
+      "tokens": {
+        "cl100k_base": 333,
+        "o200k_base": 337
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "nil",
+      "sha256": "25cfc9720ff939bfb38c497ee8d10bc1f85e82259331f1db979447e8701235cf",
+      "bytes": 139,
+      "characters": 139,
+      "tokens": {
+        "cl100k_base": 86,
+        "o200k_base": 85
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "python",
+      "sha256": "96dbf9b028cd7f57d080d8b93380c779383289675a6e65a49e95a79b2601aaed",
+      "bytes": 206,
+      "characters": 206,
+      "tokens": {
+        "cl100k_base": 66,
+        "o200k_base": 66
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "cpp",
+      "sha256": "e3e7bddb18f01eb08c549456c20f93be87aaba677f390d7d84a4cbc05f5ac17c",
+      "bytes": 365,
+      "characters": 365,
+      "tokens": {
+        "cl100k_base": 118,
+        "o200k_base": 120
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "nil",
+      "sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "bytes": 201,
+      "characters": 201,
+      "tokens": {
+        "cl100k_base": 110,
+        "o200k_base": 109
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "python",
+      "sha256": "6b4e2745df25ee422985b5f58c322e58a772d68d31108a2931f8fd343a54e9b2",
+      "bytes": 478,
+      "characters": 478,
+      "tokens": {
+        "cl100k_base": 135,
+        "o200k_base": 135
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "longest-substring-without-repeating-characters",
+      "language": "cpp",
+      "sha256": "a770aeeb987433c21fe6bb43ef45b9d06e5e793a390d053a16a0f87da91bf2ce",
+      "bytes": 1146,
+      "characters": 1146,
+      "tokens": {
+        "cl100k_base": 360,
+        "o200k_base": 366
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "maximum-subarray",
+      "language": "nil",
+      "sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "bytes": 196,
+      "characters": 196,
+      "tokens": {
+        "cl100k_base": 104,
+        "o200k_base": 104
+      },
+      "before_tokens": {
+        "cl100k_base": 104,
+        "o200k_base": 104
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "maximum-subarray",
+      "language": "python",
+      "sha256": "ce5fdf17ecf109f7553bef8c26b7ebe58eb7ae92101ade1c700f0ca4d5a649a8",
+      "bytes": 813,
+      "characters": 813,
+      "tokens": {
+        "cl100k_base": 207,
+        "o200k_base": 207
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "maximum-subarray",
+      "language": "cpp",
+      "sha256": "24359551a4c3f98c1a4c92f1c7a78a41fd531672c97faa1199a8a4a03d481b95",
+      "bytes": 1145,
+      "characters": 1145,
+      "tokens": {
+        "cl100k_base": 331,
+        "o200k_base": 335
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "maximum-subarray",
+      "language": "nil",
+      "sha256": "91f8a7d600444ac5198e66d4f23d15a79cec283a921d8a85ec8595fe3277b184",
+      "bytes": 117,
+      "characters": 117,
+      "tokens": {
+        "cl100k_base": 73,
+        "o200k_base": 73
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "maximum-subarray",
+      "language": "python",
+      "sha256": "f68d99408c31fbb693b3f9d214df7ef196e978b8903506e948f3705158aee348",
+      "bytes": 149,
+      "characters": 149,
+      "tokens": {
+        "cl100k_base": 43,
+        "o200k_base": 44
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "maximum-subarray",
+      "language": "cpp",
+      "sha256": "252eda70f795aa8bf2707e44343289379d046b98967a0e7a7781a85242bcb465",
+      "bytes": 261,
+      "characters": 261,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 84
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "maximum-subarray",
+      "language": "nil",
+      "sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "bytes": 196,
+      "characters": 196,
+      "tokens": {
+        "cl100k_base": 104,
+        "o200k_base": 104
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "maximum-subarray",
+      "language": "python",
+      "sha256": "830ae881ad8149f2b76ecc70f1d3130166d7aa9c2b87e751b09bfef309b105af",
+      "bytes": 457,
+      "characters": 457,
+      "tokens": {
+        "cl100k_base": 124,
+        "o200k_base": 125
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "maximum-subarray",
+      "language": "cpp",
+      "sha256": "d3d86b089c41e220993af085e5ddfa1b41c94fd4ac8b07acb79e43bfc05fca91",
+      "bytes": 1055,
+      "characters": 1055,
+      "tokens": {
+        "cl100k_base": 328,
+        "o200k_base": 334
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "median-of-two-sorted-arrays",
+      "language": "nil",
+      "sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "bytes": 595,
+      "characters": 595,
+      "tokens": {
+        "cl100k_base": 354,
+        "o200k_base": 354
+      },
+      "before_tokens": {
+        "cl100k_base": 366,
+        "o200k_base": 366
+      },
+      "token_delta": {
+        "cl100k_base": -12,
+        "o200k_base": -12
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "median-of-two-sorted-arrays",
+      "language": "python",
+      "sha256": "9849a62c3bca450f29286a8d0fd2566794506523953ca33d7a06237f54da341f",
+      "bytes": 1210,
+      "characters": 1210,
+      "tokens": {
+        "cl100k_base": 357,
+        "o200k_base": 358
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "median-of-two-sorted-arrays",
+      "language": "cpp",
+      "sha256": "c122f55b1e54dfcf51c3c079b652471e8756f28629574ff9c2729735a8a53e53",
+      "bytes": 1406,
+      "characters": 1406,
+      "tokens": {
+        "cl100k_base": 457,
+        "o200k_base": 459
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "median-of-two-sorted-arrays",
+      "language": "nil",
+      "sha256": "dfb743ec32e5fe703378939094e47a0c677259774ff8844aec00948b4d9db9f7",
+      "bytes": 516,
+      "characters": 516,
+      "tokens": {
+        "cl100k_base": 323,
+        "o200k_base": 323
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "median-of-two-sorted-arrays",
+      "language": "python",
+      "sha256": "a78acab5886262170c65c939abfdf1295c939bdad3918d03c6a561a61b486f62",
+      "bytes": 619,
+      "characters": 619,
+      "tokens": {
+        "cl100k_base": 219,
+        "o200k_base": 220
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "median-of-two-sorted-arrays",
+      "language": "cpp",
+      "sha256": "68fbaabf1feccf3d4b458cf8a5c09ff1b775a8f72066ccd8c480baff1602184e",
+      "bytes": 534,
+      "characters": 534,
+      "tokens": {
+        "cl100k_base": 208,
+        "o200k_base": 211
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "median-of-two-sorted-arrays",
+      "language": "nil",
+      "sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "bytes": 595,
+      "characters": 595,
+      "tokens": {
+        "cl100k_base": 354,
+        "o200k_base": 354
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "median-of-two-sorted-arrays",
+      "language": "python",
+      "sha256": "eb9eac2bcc7ae6f88fcc181968c367abcd662c449aa8050779eb8394723ee14c",
+      "bytes": 1004,
+      "characters": 1004,
+      "tokens": {
+        "cl100k_base": 324,
+        "o200k_base": 325
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "median-of-two-sorted-arrays",
+      "language": "cpp",
+      "sha256": "46071060493cb935d57b218c9e93852375b8b7d04d2e37e963890be21dd6bfda",
+      "bytes": 1343,
+      "characters": 1343,
+      "tokens": {
+        "cl100k_base": 459,
+        "o200k_base": 466
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "meeting-rooms",
+      "language": "nil",
+      "sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "bytes": 270,
+      "characters": 270,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 136
+      },
+      "before_tokens": {
+        "cl100k_base": 145,
+        "o200k_base": 145
+      },
+      "token_delta": {
+        "cl100k_base": -9,
+        "o200k_base": -9
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "meeting-rooms",
+      "language": "python",
+      "sha256": "208b62c837b775bfaf3218b2254baa42d4d463940f59492a97840fb184076e62",
+      "bytes": 770,
+      "characters": 770,
+      "tokens": {
+        "cl100k_base": 200,
+        "o200k_base": 200
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "meeting-rooms",
+      "language": "cpp",
+      "sha256": "b1191846f13a32be14b01ae4758ed45e05bfd74de831623f1d1fbd97cd1d22ea",
+      "bytes": 1174,
+      "characters": 1174,
+      "tokens": {
+        "cl100k_base": 347,
+        "o200k_base": 351
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "meeting-rooms",
+      "language": "nil",
+      "sha256": "094acd6a7ecbfad87bcb84029c35b515ee10ff12dbe35743c8d9ef716ea7cb12",
+      "bytes": 191,
+      "characters": 191,
+      "tokens": {
+        "cl100k_base": 105,
+        "o200k_base": 105
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "meeting-rooms",
+      "language": "python",
+      "sha256": "0a9d4fd7cfaf78152d4fe15196fe20071987871d0693c0d8134dea74c7cb7b38",
+      "bytes": 100,
+      "characters": 100,
+      "tokens": {
+        "cl100k_base": 38,
+        "o200k_base": 38
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "meeting-rooms",
+      "language": "cpp",
+      "sha256": "38d39d395f34bd89bbcc39b01d70f7eebb0b817b23fb8afa4d9e7e1f99afc60d",
+      "bytes": 236,
+      "characters": 236,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 84
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "meeting-rooms",
+      "language": "nil",
+      "sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "bytes": 270,
+      "characters": 270,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 136
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "meeting-rooms",
+      "language": "python",
+      "sha256": "5d80947aed6308e243690dac2ada1f3cc9e360a0e4e4e629d9bf6c65ae6c1a54",
+      "bytes": 463,
+      "characters": 463,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 136
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "meeting-rooms",
+      "language": "cpp",
+      "sha256": "166184eb150d756ff71f888b9700e08c76a07a15d3177163278e3ecedca1c302",
+      "bytes": 1031,
+      "characters": 1031,
+      "tokens": {
+        "cl100k_base": 330,
+        "o200k_base": 336
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "min-cost-climbing-stairs",
+      "language": "nil",
+      "sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "bytes": 133,
+      "characters": 133,
+      "tokens": {
+        "cl100k_base": 68,
+        "o200k_base": 70
+      },
+      "before_tokens": {
+        "cl100k_base": 68,
+        "o200k_base": 70
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "min-cost-climbing-stairs",
+      "language": "python",
+      "sha256": "2cf12bc229509e68bc60bc86aae7cb302cda52ad9f31cd2889af4c4946515dab",
+      "bytes": 791,
+      "characters": 791,
+      "tokens": {
+        "cl100k_base": 209,
+        "o200k_base": 207
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "min-cost-climbing-stairs",
+      "language": "cpp",
+      "sha256": "867be0a32f8e0a224d8d4b2f7da7a745e838156069e8aa074ff42c93f8a71426",
+      "bytes": 1087,
+      "characters": 1087,
+      "tokens": {
+        "cl100k_base": 321,
+        "o200k_base": 323
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "min-cost-climbing-stairs",
+      "language": "nil",
+      "sha256": "0e5fe6268fdecca3723055c9ea72ddaa512da584485360988fc3b37b6c39af8b",
+      "bytes": 54,
+      "characters": 54,
+      "tokens": {
+        "cl100k_base": 37,
+        "o200k_base": 39
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "min-cost-climbing-stairs",
+      "language": "python",
+      "sha256": "71eae1abd6886dd367a7ea9272a56b91ba1f0461042fad62bfbdc9d6b1d68861",
+      "bytes": 106,
+      "characters": 106,
+      "tokens": {
+        "cl100k_base": 40,
+        "o200k_base": 40
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "min-cost-climbing-stairs",
+      "language": "cpp",
+      "sha256": "9748983baaa3d95974fefeb4036e176c07876ffaaf0de3c3ff97a7744bb80d81",
+      "bytes": 203,
+      "characters": 203,
+      "tokens": {
+        "cl100k_base": 71,
+        "o200k_base": 72
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "min-cost-climbing-stairs",
+      "language": "nil",
+      "sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "bytes": 133,
+      "characters": 133,
+      "tokens": {
+        "cl100k_base": 68,
+        "o200k_base": 70
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "min-cost-climbing-stairs",
+      "language": "python",
+      "sha256": "e9e0e19aed27a79bfb5d6819c0c5ab7f23d3be10f724bba7a45005397e69d7a1",
+      "bytes": 414,
+      "characters": 414,
+      "tokens": {
+        "cl100k_base": 121,
+        "o200k_base": 121
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "min-cost-climbing-stairs",
+      "language": "cpp",
+      "sha256": "dced8ae6df992f15466cd939084f67979cc97a32e9493dc60c580009dedadd90",
+      "bytes": 997,
+      "characters": 997,
+      "tokens": {
+        "cl100k_base": 317,
+        "o200k_base": 322
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "plus-one",
+      "language": "nil",
+      "sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "bytes": 311,
+      "characters": 311,
+      "tokens": {
+        "cl100k_base": 158,
+        "o200k_base": 159
+      },
+      "before_tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 165
+      },
+      "token_delta": {
+        "cl100k_base": -6,
+        "o200k_base": -6
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "plus-one",
+      "language": "python",
+      "sha256": "5a170a0b0d9c0b10fef5a88adb9cd5e19d62619c7a5634eaa02f32df5450a71d",
+      "bytes": 766,
+      "characters": 766,
+      "tokens": {
+        "cl100k_base": 210,
+        "o200k_base": 210
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "plus-one",
+      "language": "cpp",
+      "sha256": "9c5eaf9f510328398f807b8e06272fc66072c5fdde721195c9c896b6b6b6fadb",
+      "bytes": 1176,
+      "characters": 1176,
+      "tokens": {
+        "cl100k_base": 364,
+        "o200k_base": 368
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "plus-one",
+      "language": "nil",
+      "sha256": "77f10ce0f10d9f102e800fd9c6a9fff1eec6cbc12d8d944e7b958ec47a4541a5",
+      "bytes": 163,
+      "characters": 163,
+      "tokens": {
+        "cl100k_base": 94,
+        "o200k_base": 95
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "plus-one",
+      "language": "python",
+      "sha256": "3cc351ec0dd51556b43335ba4ce739c8028eff95881d2f78d91bfee11ff37eba",
+      "bytes": 173,
+      "characters": 173,
+      "tokens": {
+        "cl100k_base": 68,
+        "o200k_base": 68
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "plus-one",
+      "language": "cpp",
+      "sha256": "2f1f21982b46700625184c3c8489c20b9d8747a514372a1d48f3c9f689ba4172",
+      "bytes": 218,
+      "characters": 218,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 83
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "plus-one",
+      "language": "nil",
+      "sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "bytes": 311,
+      "characters": 311,
+      "tokens": {
+        "cl100k_base": 158,
+        "o200k_base": 159
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "plus-one",
+      "language": "python",
+      "sha256": "a80efa23db84523f266ccb348611e8b80aaf422e4863add666a5b32e42d69d03",
+      "bytes": 490,
+      "characters": 490,
+      "tokens": {
+        "cl100k_base": 151,
+        "o200k_base": 151
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "plus-one",
+      "language": "cpp",
+      "sha256": "133c67a9f0f4c5b620de6931892a2601501d47253fb86dd1a47ef230f88902b1",
+      "bytes": 996,
+      "characters": 996,
+      "tokens": {
+        "cl100k_base": 321,
+        "o200k_base": 326
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-integer",
+      "language": "nil",
+      "sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "bytes": 251,
+      "characters": 251,
+      "tokens": {
+        "cl100k_base": 121,
+        "o200k_base": 122
+      },
+      "before_tokens": {
+        "cl100k_base": 124,
+        "o200k_base": 125
+      },
+      "token_delta": {
+        "cl100k_base": -3,
+        "o200k_base": -3
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-integer",
+      "language": "python",
+      "sha256": "7c124c8b03ac1d60b87b3b8f30fe8232da6fffaffeeecb6f917c0a1a5cdc7bf2",
+      "bytes": 902,
+      "characters": 902,
+      "tokens": {
+        "cl100k_base": 221,
+        "o200k_base": 221
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-integer",
+      "language": "cpp",
+      "sha256": "f8ad71782d2d2dba748842ddcdf3fca639e46376b27dcb7d651fef3c0a26a1e5",
+      "bytes": 1164,
+      "characters": 1164,
+      "tokens": {
+        "cl100k_base": 360,
+        "o200k_base": 364
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-integer",
+      "language": "nil",
+      "sha256": "484ae5ae581ebd7d7c25c6d0012cfaa87239f1f7851c2698d30b63dd7e05a8a7",
+      "bytes": 103,
+      "characters": 103,
+      "tokens": {
+        "cl100k_base": 57,
+        "o200k_base": 58
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-integer",
+      "language": "python",
+      "sha256": "16348ce752eb4ad42b3440d6aa147d6c03f804a352d707af43ab2bd0866d3cab",
+      "bytes": 299,
+      "characters": 299,
+      "tokens": {
+        "cl100k_base": 77,
+        "o200k_base": 77
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-integer",
+      "language": "cpp",
+      "sha256": "d92e31c2d8ae95dc153bac3fde92741d78acaddda48cebae573cc3677cf1db52",
+      "bytes": 206,
+      "characters": 206,
+      "tokens": {
+        "cl100k_base": 78,
+        "o200k_base": 79
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-integer",
+      "language": "nil",
+      "sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "bytes": 251,
+      "characters": 251,
+      "tokens": {
+        "cl100k_base": 121,
+        "o200k_base": 122
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-integer",
+      "language": "python",
+      "sha256": "01d887b5d78c29978c5eee18fc85cd9c1597631bacd9ed3296d635a4001cbb56",
+      "bytes": 616,
+      "characters": 616,
+      "tokens": {
+        "cl100k_base": 160,
+        "o200k_base": 160
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-integer",
+      "language": "cpp",
+      "sha256": "58a7e106af704309e80f41bdb0dbd3b3f69891897b5a48e2e41bb3a45d95c3f4",
+      "bytes": 984,
+      "characters": 984,
+      "tokens": {
+        "cl100k_base": 317,
+        "o200k_base": 322
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-linked-list",
+      "language": "nil",
+      "sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "bytes": 226,
+      "characters": 226,
+      "tokens": {
+        "cl100k_base": 112,
+        "o200k_base": 113
+      },
+      "before_tokens": {
+        "cl100k_base": 112,
+        "o200k_base": 113
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-linked-list",
+      "language": "python",
+      "sha256": "2c05d93164d0706e35911051f4844c84dee33a0eb50618dbb48fe1b3532ccdd4",
+      "bytes": 809,
+      "characters": 809,
+      "tokens": {
+        "cl100k_base": 212,
+        "o200k_base": 215
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "reverse-linked-list",
+      "language": "cpp",
+      "sha256": "6404d5b3334d14e517d8d1033596ebb82f4c7907ee492a0c970f5547fed4eb8a",
+      "bytes": 1221,
+      "characters": 1221,
+      "tokens": {
+        "cl100k_base": 368,
+        "o200k_base": 372
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-linked-list",
+      "language": "nil",
+      "sha256": "779704ebc767aabfe5565ea1365218fc9f224260aa7e21a30a8f07f92a7e4e7a",
+      "bytes": 78,
+      "characters": 78,
+      "tokens": {
+        "cl100k_base": 49,
+        "o200k_base": 49
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-linked-list",
+      "language": "python",
+      "sha256": "ccb6e9d227d4b75880f6ae60adbe1219362e70f8f4bccd21a12348560d2d1b74",
+      "bytes": 137,
+      "characters": 137,
+      "tokens": {
+        "cl100k_base": 43,
+        "o200k_base": 43
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "reverse-linked-list",
+      "language": "cpp",
+      "sha256": "b5b5643f1b7daac9dcdf7487b0e2c4f7c1b62c0b6129740e137d90e5b151570d",
+      "bytes": 283,
+      "characters": 283,
+      "tokens": {
+        "cl100k_base": 86,
+        "o200k_base": 87
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-linked-list",
+      "language": "nil",
+      "sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "bytes": 226,
+      "characters": 226,
+      "tokens": {
+        "cl100k_base": 112,
+        "o200k_base": 113
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-linked-list",
+      "language": "python",
+      "sha256": "b16524b38672fbcaa460862d381cb80d5711af82ee6b7c5bca5a526d8771c380",
+      "bytes": 532,
+      "characters": 532,
+      "tokens": {
+        "cl100k_base": 153,
+        "o200k_base": 153
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "reverse-linked-list",
+      "language": "cpp",
+      "sha256": "bd85759972ace36e3007182db055a6a9c8b6064f36cc0d1367cd367f53c0ae90",
+      "bytes": 1149,
+      "characters": 1149,
+      "tokens": {
+        "cl100k_base": 365,
+        "o200k_base": 370
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "search-in-rotated-sorted-array",
+      "language": "nil",
+      "sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "bytes": 478,
+      "characters": 478,
+      "tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 288
+      },
+      "before_tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 288
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "search-in-rotated-sorted-array",
+      "language": "python",
+      "sha256": "dea22914cecb6edad919029929ea76651b9f3396c39f5acc9261ed69d6b8ce64",
+      "bytes": 1043,
+      "characters": 1043,
+      "tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 286
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "search-in-rotated-sorted-array",
+      "language": "cpp",
+      "sha256": "2d0c2e2657427980e409eadc911fef6c918c2b652b84272af9493516db9011d0",
+      "bytes": 1215,
+      "characters": 1215,
+      "tokens": {
+        "cl100k_base": 378,
+        "o200k_base": 382
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "search-in-rotated-sorted-array",
+      "language": "nil",
+      "sha256": "7f9d3f609b7d3d9ab63bff3e6b3f6fcb2288df60ef8e9ef8b6652a85675dcc63",
+      "bytes": 399,
+      "characters": 399,
+      "tokens": {
+        "cl100k_base": 255,
+        "o200k_base": 257
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "search-in-rotated-sorted-array",
+      "language": "python",
+      "sha256": "0dd40fb3ea618277bf84f280af7d22c5bb5ae381885e5e2d213492732f9ae4d0",
+      "bytes": 395,
+      "characters": 395,
+      "tokens": {
+        "cl100k_base": 128,
+        "o200k_base": 128
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "search-in-rotated-sorted-array",
+      "language": "cpp",
+      "sha256": "0ddea621c121130dd6ffe2a80dc89b6787500b2fe0d52da5395cc873adafb0b8",
+      "bytes": 317,
+      "characters": 317,
+      "tokens": {
+        "cl100k_base": 125,
+        "o200k_base": 127
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "search-in-rotated-sorted-array",
+      "language": "nil",
+      "sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "bytes": 478,
+      "characters": 478,
+      "tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 288
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "search-in-rotated-sorted-array",
+      "language": "python",
+      "sha256": "5382703ad5981ff743f15aedb90f5c125ee5ecae6083106f2cf673a2e17ae870",
+      "bytes": 764,
+      "characters": 764,
+      "tokens": {
+        "cl100k_base": 226,
+        "o200k_base": 226
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "search-in-rotated-sorted-array",
+      "language": "cpp",
+      "sha256": "72c0283dc400205ff0d7fb571f770f8d1bf8f14294a7cf4e3bc89ddbf427822e",
+      "bytes": 1135,
+      "characters": 1135,
+      "tokens": {
+        "cl100k_base": 377,
+        "o200k_base": 383
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "single-number",
+      "language": "nil",
+      "sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "bytes": 115,
+      "characters": 115,
+      "tokens": {
+        "cl100k_base": 56,
+        "o200k_base": 56
+      },
+      "before_tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 137
+      },
+      "token_delta": {
+        "cl100k_base": -80,
+        "o200k_base": -81
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "single-number",
+      "language": "python",
+      "sha256": "156e3297dca632abd7419729ace0942e58eb03b87a1519ae20aa53ac18cf616c",
+      "bytes": 760,
+      "characters": 760,
+      "tokens": {
+        "cl100k_base": 187,
+        "o200k_base": 187
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "single-number",
+      "language": "cpp",
+      "sha256": "c2c49bee233be20d8c1e7e49f11bf53b6f70284e3ef02a4474cce964ff6aed02",
+      "bytes": 1019,
+      "characters": 1019,
+      "tokens": {
+        "cl100k_base": 294,
+        "o200k_base": 296
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "single-number",
+      "language": "nil",
+      "sha256": "193c8b9ebba87d3d81fe493953c8b174de1ac37ca7ef85e89e8dcfe5d389ab87",
+      "bytes": 36,
+      "characters": 36,
+      "tokens": {
+        "cl100k_base": 25,
+        "o200k_base": 25
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "single-number",
+      "language": "python",
+      "sha256": "e531cabe7cb878a777fb12df6491c9ed7991d019213c3568c0c722452073ed8b",
+      "bytes": 92,
+      "characters": 92,
+      "tokens": {
+        "cl100k_base": 25,
+        "o200k_base": 25
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "single-number",
+      "language": "cpp",
+      "sha256": "46dadc5073f8a7b07f4d1172b0174c3284617dbd92a406991ab0aa9cfa89229a",
+      "bytes": 144,
+      "characters": 144,
+      "tokens": {
+        "cl100k_base": 48,
+        "o200k_base": 49
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "single-number",
+      "language": "nil",
+      "sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "bytes": 115,
+      "characters": 115,
+      "tokens": {
+        "cl100k_base": 56,
+        "o200k_base": 56
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "single-number",
+      "language": "python",
+      "sha256": "d5b039bd40430b5c39ac2d5d37cece90ba331414de4bd8fc92a2a26d14f39070",
+      "bytes": 400,
+      "characters": 400,
+      "tokens": {
+        "cl100k_base": 106,
+        "o200k_base": 106
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "single-number",
+      "language": "cpp",
+      "sha256": "2f458f4128e117e45c5f934183b01f750fbb58197287c4b5d03d5081ef56d2fe",
+      "bytes": 938,
+      "characters": 938,
+      "tokens": {
+        "cl100k_base": 294,
+        "o200k_base": 299
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "spiral-matrix",
+      "language": "nil",
+      "sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "bytes": 735,
+      "characters": 735,
+      "tokens": {
+        "cl100k_base": 403,
+        "o200k_base": 403
+      },
+      "before_tokens": {
+        "cl100k_base": 391,
+        "o200k_base": 391
+      },
+      "token_delta": {
+        "cl100k_base": 12,
+        "o200k_base": 12
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "spiral-matrix",
+      "language": "python",
+      "sha256": "f4ed24d6df554ff439c6aa13aa0035d914f2ecbc91561b50e0f71202c0a3cf14",
+      "bytes": 1095,
+      "characters": 1095,
+      "tokens": {
+        "cl100k_base": 301,
+        "o200k_base": 304
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "spiral-matrix",
+      "language": "cpp",
+      "sha256": "26a1d615c7064198ff7e0f20687d33197bbe5047d6bd1293f83a51371a507542",
+      "bytes": 1388,
+      "characters": 1388,
+      "tokens": {
+        "cl100k_base": 444,
+        "o200k_base": 449
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "spiral-matrix",
+      "language": "nil",
+      "sha256": "01df7415d5f3e7c2c73b1394879baadbc888fe89035306354f3a521aeabcf311",
+      "bytes": 587,
+      "characters": 587,
+      "tokens": {
+        "cl100k_base": 339,
+        "o200k_base": 339
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "spiral-matrix",
+      "language": "python",
+      "sha256": "084afbea148f3866c822bc2d89c83ba09b6116aee768e43e5609fa52ec53c20b",
+      "bytes": 526,
+      "characters": 526,
+      "tokens": {
+        "cl100k_base": 161,
+        "o200k_base": 161
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "spiral-matrix",
+      "language": "cpp",
+      "sha256": "42105051706c96eaf50b31c06dc406b7cc7f0fc0cb4495d0697278bab32596a7",
+      "bytes": 471,
+      "characters": 471,
+      "tokens": {
+        "cl100k_base": 175,
+        "o200k_base": 177
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "spiral-matrix",
+      "language": "nil",
+      "sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "bytes": 735,
+      "characters": 735,
+      "tokens": {
+        "cl100k_base": 403,
+        "o200k_base": 403
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "spiral-matrix",
+      "language": "python",
+      "sha256": "24aa4e7b90c753f6ef44c361de56e2b505d1e208b76bbed4a6cb86a532e012f9",
+      "bytes": 924,
+      "characters": 924,
+      "tokens": {
+        "cl100k_base": 273,
+        "o200k_base": 273
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "spiral-matrix",
+      "language": "cpp",
+      "sha256": "82306e2fddee65fcaf9dfc7b687fae57761440ef9cdce8c6f116900190083585",
+      "bytes": 1289,
+      "characters": 1289,
+      "tokens": {
+        "cl100k_base": 434,
+        "o200k_base": 440
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "target-sum",
+      "language": "nil",
+      "sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "bytes": 330,
+      "characters": 330,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      },
+      "before_tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "target-sum",
+      "language": "python",
+      "sha256": "294749d550c6252fe9e7503dcf84eba9ef7c1f7c3e49779dd725377918f82684",
+      "bytes": 989,
+      "characters": 989,
+      "tokens": {
+        "cl100k_base": 260,
+        "o200k_base": 260
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "target-sum",
+      "language": "cpp",
+      "sha256": "189758be6566a75dc77d1f02568fdaafde31681569111ff3c12bc759c93e9c94",
+      "bytes": 1236,
+      "characters": 1236,
+      "tokens": {
+        "cl100k_base": 381,
+        "o200k_base": 385
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "target-sum",
+      "language": "nil",
+      "sha256": "0d255aa12ec7a3295cb17f7082e856021651bce0f45f697b08675e7fbf832100",
+      "bytes": 251,
+      "characters": 251,
+      "tokens": {
+        "cl100k_base": 154,
+        "o200k_base": 154
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "target-sum",
+      "language": "python",
+      "sha256": "deab70c9a66b5b8760d2c2b0c53e705153ac2db8248fc6950fa2c5af9a155b3f",
+      "bytes": 351,
+      "characters": 351,
+      "tokens": {
+        "cl100k_base": 107,
+        "o200k_base": 107
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "target-sum",
+      "language": "cpp",
+      "sha256": "d8ffc8c771432c01ab620efcdfe3a6ffa03bf9de2891865f35b1ba9299a6bdce",
+      "bytes": 346,
+      "characters": 346,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 133
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "target-sum",
+      "language": "nil",
+      "sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "bytes": 330,
+      "characters": 330,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "target-sum",
+      "language": "python",
+      "sha256": "141afd975e4dd86989f860daf41c0ed0043f6fc3109bbfc7a2c25448deb0de73",
+      "bytes": 720,
+      "characters": 720,
+      "tokens": {
+        "cl100k_base": 205,
+        "o200k_base": 205
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "target-sum",
+      "language": "cpp",
+      "sha256": "f4b9b91e79f16c0adabd78219a157b2174a5e49f02047ccf139d9b56eb0416d0",
+      "bytes": 1164,
+      "characters": 1164,
+      "tokens": {
+        "cl100k_base": 382,
+        "o200k_base": 389
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-palindrome",
+      "language": "nil",
+      "sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "bytes": 280,
+      "characters": 280,
+      "tokens": {
+        "cl100k_base": 144,
+        "o200k_base": 152
+      },
+      "before_tokens": {
+        "cl100k_base": 144,
+        "o200k_base": 152
+      },
+      "token_delta": {
+        "cl100k_base": 0,
+        "o200k_base": 0
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-palindrome",
+      "language": "python",
+      "sha256": "07900220c3f0633ded3954f510414cb3ed284e0c6b351b0eed9095b132d699b6",
+      "bytes": 472,
+      "characters": 472,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 136
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-palindrome",
+      "language": "cpp",
+      "sha256": "634ba3f47de26dbefdc979863b34d55fa14c2ef65a60ced66e2867282b431024",
+      "bytes": 1080,
+      "characters": 1080,
+      "tokens": {
+        "cl100k_base": 323,
+        "o200k_base": 328
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-palindrome",
+      "language": "nil",
+      "sha256": "ef911b7a391a9d9a7437ea65b0879955745e8a16f5f008ea44d08f4f57739ac1",
+      "bytes": 218,
+      "characters": 218,
+      "tokens": {
+        "cl100k_base": 120,
+        "o200k_base": 128
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-palindrome",
+      "language": "python",
+      "sha256": "6190f1440dd6296a2a7fed17b66dd2081f350772d768788f3f489e9044a6778c",
+      "bytes": 156,
+      "characters": 156,
+      "tokens": {
+        "cl100k_base": 60,
+        "o200k_base": 60
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-palindrome",
+      "language": "cpp",
+      "sha256": "8e73d919861f6a230fa2d5bfcf90a084da57121301bdcc0c5f902a6670eee2a1",
+      "bytes": 312,
+      "characters": 312,
+      "tokens": {
+        "cl100k_base": 110,
+        "o200k_base": 114
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-palindrome",
+      "language": "nil",
+      "sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "bytes": 280,
+      "characters": 280,
+      "tokens": {
+        "cl100k_base": 144,
+        "o200k_base": 152
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-palindrome",
+      "language": "python",
+      "sha256": "3997e536005646ea09f360c4710425bad5aaf41af0a162cf0b72a29d2e400723",
+      "bytes": 428,
+      "characters": 428,
+      "tokens": {
+        "cl100k_base": 129,
+        "o200k_base": 129
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-palindrome",
+      "language": "cpp",
+      "sha256": "dc19744573233988eabc2c145914af3472cfad3f0dd80ef3a7d91971f4ee2ca0",
+      "bytes": 1093,
+      "characters": 1093,
+      "tokens": {
+        "cl100k_base": 352,
+        "o200k_base": 360
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-sudoku",
+      "language": "nil",
+      "sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "bytes": 283,
+      "characters": 283,
+      "tokens": {
+        "cl100k_base": 143,
+        "o200k_base": 143
+      },
+      "before_tokens": {
+        "cl100k_base": 155,
+        "o200k_base": 155
+      },
+      "token_delta": {
+        "cl100k_base": -12,
+        "o200k_base": -12
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-sudoku",
+      "language": "python",
+      "sha256": "7334865473653db82477818d5c5fceda88711773e3c527da66d4d06584726ea4",
+      "bytes": 688,
+      "characters": 688,
+      "tokens": {
+        "cl100k_base": 213,
+        "o200k_base": 213
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "valid-sudoku",
+      "language": "cpp",
+      "sha256": "dac299c45a231a1b463f3c0866989a1669e5ec705ac6f285858d7ff48c19b622",
+      "bytes": 1124,
+      "characters": 1124,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 358
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-sudoku",
+      "language": "nil",
+      "sha256": "dc3807b9e298941841b1ad2df59e3487208c10e6a2cc5c0fc7b8c2f26fb097be",
+      "bytes": 204,
+      "characters": 204,
+      "tokens": {
+        "cl100k_base": 112,
+        "o200k_base": 112
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-sudoku",
+      "language": "python",
+      "sha256": "d0c86b1fb13a7b707e1aefe5e90702fd0bd039ebc54bfd7acb5b5ecd4a526121",
+      "bytes": 323,
+      "characters": 323,
+      "tokens": {
+        "cl100k_base": 134,
+        "o200k_base": 134
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "valid-sudoku",
+      "language": "cpp",
+      "sha256": "a85790fb171849a5344b747cb8c53d2fb806ebe11c4fe4e59c4b66952009a638",
+      "bytes": 316,
+      "characters": 316,
+      "tokens": {
+        "cl100k_base": 137,
+        "o200k_base": 138
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-sudoku",
+      "language": "nil",
+      "sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "bytes": 283,
+      "characters": 283,
+      "tokens": {
+        "cl100k_base": 143,
+        "o200k_base": 143
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-sudoku",
+      "language": "python",
+      "sha256": "90ef8beab553412366ad76975ed49991b7f55852cb0f464ccfc5a14d9d3d9d71",
+      "bytes": 627,
+      "characters": 627,
+      "tokens": {
+        "cl100k_base": 212,
+        "o200k_base": 212
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "valid-sudoku",
+      "language": "cpp",
+      "sha256": "ac72e64499cd6693c1b4e8d44ac66cefc58b3baaf7f9327f9bc98da98217ec9c",
+      "bytes": 1123,
+      "characters": 1123,
+      "tokens": {
+        "cl100k_base": 392,
+        "o200k_base": 397
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "validate-binary-search-tree",
+      "language": "nil",
+      "sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "bytes": 343,
+      "characters": 343,
+      "tokens": {
+        "cl100k_base": 161,
+        "o200k_base": 163
+      },
+      "before_tokens": {
+        "cl100k_base": 153,
+        "o200k_base": 154
+      },
+      "token_delta": {
+        "cl100k_base": 8,
+        "o200k_base": 9
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "validate-binary-search-tree",
+      "language": "python",
+      "sha256": "cb363222832c3debc509058f63d4669d2a9635df826b23d235279658da8857c7",
+      "bytes": 1181,
+      "characters": 1181,
+      "tokens": {
+        "cl100k_base": 291,
+        "o200k_base": 291
+      }
+    },
+    {
+      "cut": "full-program",
+      "task": "validate-binary-search-tree",
+      "language": "cpp",
+      "sha256": "a7a98796668abac73e9c14044f00389efd10036dfc993839c2afcca2cd841a84",
+      "bytes": 1232,
+      "characters": 1232,
+      "tokens": {
+        "cl100k_base": 371,
+        "o200k_base": 374
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "validate-binary-search-tree",
+      "language": "nil",
+      "sha256": "2c5782c778f4d869d40fb990831de83adbc4c2114ef24381cdc9a85326fb365a",
+      "bytes": 264,
+      "characters": 264,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 132
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "validate-binary-search-tree",
+      "language": "python",
+      "sha256": "7b8cec07bdbd78dc74b210fb450aae04d1eb545022e8bda8cd380411dafb47a0",
+      "bytes": 421,
+      "characters": 421,
+      "tokens": {
+        "cl100k_base": 95,
+        "o200k_base": 95
+      }
+    },
+    {
+      "cut": "kernel-only",
+      "task": "validate-binary-search-tree",
+      "language": "cpp",
+      "sha256": "7daba63634f228ff1b87409d479989ea4cbc90e6e178781c085248055e5a98f9",
+      "bytes": 379,
+      "characters": 379,
+      "tokens": {
+        "cl100k_base": 133,
+        "o200k_base": 134
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "validate-binary-search-tree",
+      "language": "nil",
+      "sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "bytes": 343,
+      "characters": 343,
+      "tokens": {
+        "cl100k_base": 161,
+        "o200k_base": 163
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "validate-binary-search-tree",
+      "language": "python",
+      "sha256": "52b04ba4403859a692db31b867a19797672d3fc23c89fec7940c5e2e2257a828",
+      "bytes": 812,
+      "characters": 812,
+      "tokens": {
+        "cl100k_base": 205,
+        "o200k_base": 205
+      }
+    },
+    {
+      "cut": "minimal-io",
+      "task": "validate-binary-search-tree",
+      "language": "cpp",
+      "sha256": "f578a84280df29063c4001fa9594fd60f1ab6641c14c7affc1fdfcb901e04890",
+      "bytes": 1255,
+      "characters": 1255,
+      "tokens": {
+        "cl100k_base": 412,
+        "o200k_base": 417
+      }
+    }
+  ]
+}

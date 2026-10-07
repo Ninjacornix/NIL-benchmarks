@@ -6,8 +6,8 @@
     "sample": 36,
     "verified_nil": 29,
     "validation_blocked": 7,
-    "performance_misses": 10,
-    "meets_bound": 19,
+    "performance_misses": 7,
+    "meets_bound": 22,
     "unattempted": 114
   },
   "tasks": [
@@ -26,7 +26,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
-      "ratio": 1.5344824377407422
+      "ratio": 1.5218657917827032
     },
     {
       "task": "valid-anagram",
@@ -111,8 +111,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
-      "ratio": 1.042293167918191
+      "nil_source_sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "ratio": 1.0253032263144646
     },
     {
       "task": "encode-and-decode-strings",
@@ -159,7 +159,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
-      "ratio": 0.801761409326399
+      "ratio": 0.8322493020054795
     },
     {
       "task": "two-sum-ii-input-array-is-sorted",
@@ -189,7 +189,7 @@
       "correctness": "verified",
       "qualification": "performance-miss",
       "nil_source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
-      "ratio": 7.776020914834284
+      "ratio": 7.9361068192580655
     },
     {
       "task": "container-with-most-water",
@@ -243,7 +243,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
-      "ratio": 2.7374328904326424
+      "ratio": 2.780167930235368
     },
     {
       "task": "longest-repeating-character-replacement",
@@ -258,7 +258,7 @@
       "correctness": "verified",
       "qualification": "performance-miss",
       "nil_source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
-      "ratio": 3.594965569396984
+      "ratio": 3.663993590519657
     },
     {
       "task": "permutation-in-string",
@@ -359,7 +359,7 @@
       "correctness": "verified",
       "qualification": "performance-miss",
       "nil_source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
-      "ratio": 7.845883868325899
+      "ratio": 7.837164458612997
     },
     {
       "task": "daily-temperatures",
@@ -388,8 +388,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
-      "ratio": 0.8175291718807682
+      "nil_source_sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "ratio": 0.8155263959014434
     },
     {
       "task": "largest-rectangle-in-histogram",
@@ -471,7 +471,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
-      "ratio": 1.5597746766978227
+      "ratio": 1.5760070989639952
     },
     {
       "task": "time-based-key-value-store",
@@ -500,8 +500,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
-      "ratio": 1.5452697316931228
+      "nil_source_sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "ratio": 1.5269371103135596
     },
     {
       "task": "reverse-linked-list",
@@ -516,7 +516,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
-      "ratio": 2.8202927159444204
+      "ratio": 2.8407339253759543
     },
     {
       "task": "merge-two-sorted-lists",
@@ -740,9 +740,9 @@
         "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
       },
       "correctness": "verified",
-      "qualification": "performance-miss",
-      "nil_source_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
-      "ratio": 107.7005574509856
+      "qualification": "meets-bound",
+      "nil_source_sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "ratio": 1.9859115102639295
     },
     {
       "task": "same-tree",
@@ -843,9 +843,9 @@
         "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
       },
       "correctness": "verified",
-      "qualification": "performance-miss",
-      "nil_source_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
-      "ratio": 109.9995869584823
+      "qualification": "meets-bound",
+      "nil_source_sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "ratio": 1.839240989875374
     },
     {
       "task": "kth-smallest-element-in-a-bst",
@@ -1018,8 +1018,8 @@
       },
       "correctness": "verified",
       "qualification": "performance-miss",
-      "nil_source_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
-      "ratio": 2299.4457515197364
+      "nil_source_sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "ratio": 168.89214878396575
     },
     {
       "task": "k-closest-points-to-origin",
@@ -1049,7 +1049,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
-      "ratio": 1.5857811859688897
+      "ratio": 1.5681499509683516
     },
     {
       "task": "task-scheduler",
@@ -1213,8 +1213,8 @@
       },
       "correctness": "verified",
       "qualification": "performance-miss",
-      "nil_source_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
-      "ratio": 44.62034396519577
+      "nil_source_sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "ratio": 39.05901435134049
     },
     {
       "task": "n-queens",
@@ -1363,9 +1363,9 @@
         "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
       },
       "correctness": "verified",
-      "qualification": "performance-miss",
-      "nil_source_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
-      "ratio": 325.37365869553076
+      "qualification": "meets-bound",
+      "nil_source_sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "ratio": 1.8336242524884727
     },
     {
       "task": "course-schedule-ii",
@@ -1625,7 +1625,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
-      "ratio": 1.7685300007682654
+      "ratio": 1.7256429445707289
     },
     {
       "task": "house-robber",
@@ -1707,7 +1707,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
-      "ratio": 1.3639037715831173
+      "ratio": 1.379318698526527
     },
     {
       "task": "maximum-product-subarray",
@@ -1811,7 +1811,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
-      "ratio": 1.836687830687831
+      "ratio": 1.762494931830521
     },
     {
       "task": "coin-change-ii",
@@ -1844,7 +1844,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
-      "ratio": 1.0608903378778898
+      "ratio": 1.0843521772345301
     },
     {
       "task": "interleaving-string",
@@ -1955,7 +1955,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
-      "ratio": 1.6520578453918275
+      "ratio": 1.6474110569394518
     },
     {
       "task": "jump-game",
@@ -1996,7 +1996,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
-      "ratio": 2.1428815184578656
+      "ratio": 2.129794082787594
     },
     {
       "task": "hand-of-straights",
@@ -2065,7 +2065,7 @@
       "correctness": "verified",
       "qualification": "meets-bound",
       "nil_source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
-      "ratio": 2.51438532875648
+      "ratio": 2.5038820757025877
     },
     {
       "task": "merge-intervals",
@@ -2111,8 +2111,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
-      "ratio": 0.8724598658886338
+      "nil_source_sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "ratio": 0.8711667695934596
     },
     {
       "task": "meeting-rooms-ii",
@@ -2174,8 +2174,8 @@
       },
       "correctness": "verified",
       "qualification": "performance-miss",
-      "nil_source_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
-      "ratio": 170.97840679547338
+      "nil_source_sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "ratio": 3.302284465300618
     },
     {
       "task": "set-matrix-zeroes",
@@ -2222,8 +2222,8 @@
       },
       "correctness": "verified",
       "qualification": "performance-miss",
-      "nil_source_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
-      "ratio": 4.151644463662504
+      "nil_source_sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "ratio": 4.10633842932582
     },
     {
       "task": "powx-n",
@@ -2285,8 +2285,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
-      "ratio": 2.206326296139213
+      "nil_source_sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "ratio": 1.5474865183714523
     },
     {
       "task": "number-of-1-bits",
@@ -2379,8 +2379,8 @@
       },
       "correctness": "verified",
       "qualification": "meets-bound",
-      "nil_source_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
-      "ratio": 2.3859499646242783
+      "nil_source_sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "ratio": 2.3957008006916
     }
   ]
 }

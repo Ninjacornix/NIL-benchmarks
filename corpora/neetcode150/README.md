@@ -25,13 +25,17 @@ are separate from failure-inclusive model tokens per correct program.
 ## Current status
 
 The fixed 36-sample experiment admitted 29 byte-correct NIL programs. Seven fail
-the validation budget and are not included as passing sources. Ten of the 29 miss
-the 3× C++ performance bound; nineteen meet both gates. The other 114 problems
-are unattempted in NIL. See `STATUS.json` and
-[the measured report](../../reports/2026-10-07/CORE_1_0.md). This suite is a
+the validation budget and are not included as passing sources. After Round 20's
+operator/binding rewrites, seven of the 29 miss the 3× C++ performance bound and
+**twenty-two meet both gates** (nineteen at Round 19). The other 114 problems
+are unattempted in NIL. See `STATUS.json`,
+[the Round 19 measured report](../../reports/2026-10-07/CORE_1_0.md) and
+[the Round 20 report](../../reports/2026-10-07/ROUND20.md). This suite is a
 qualification yardstick, not an announcement that Core 1.0 is complete.
 `FEATURE_AUDIT.json` corrects the overly narrow preregistered string-risk tags
-without editing the original forecasts.
+without editing the original forecasts. `density-cuts/` holds the separately
+reported full-program, kernel-only and minimal-I/O measurement copies; they do not
+modify any frozen task, fixture, golden or baseline source.
 
 ## Run from the compiler repository root
 

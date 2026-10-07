@@ -1,0 +1,696 @@
+{
+  "schema": 1,
+  "round": 20,
+  "adr": "docs/adr/042.md",
+  "compiler_base": "851223b",
+  "compiler_revision_at_run": "0bedd919143789db0ad261427bbde215b8911a7f",
+  "definitions_revision": "44ce5bba84bdcbdffdbd20900d86cbefe10183d7",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "rust_toolchain": "1.98.1-aarch64-apple-darwin",
+  "python": "3.12.11 (main, Jun  4 2025, 17:42:58) [Clang 20.1.4 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "limits": {
+    "steps": 1000000000,
+    "depth": 256,
+    "timeout_seconds": 120
+  },
+  "tasks_sha256": "c9805a5d0493071651e62e03a127b3d8786bca1ff989a8d727be4276c4d3bd7f",
+  "goldens_sha256": "6cf8d3c98dafb1054ff8bbf14111d32592df8f0badf1ad0520d46d398e3d7162",
+  "method": {
+    "timed_repeats": 15,
+    "warmups": 1,
+    "jobs": 1,
+    "timed_scope": "process startup, read, parse, algorithm, serialization, write; warm input files",
+    "native_correctness": "O0 and O2, bounded",
+    "native_timing": "O2, existing unbounded instrumentation",
+    "note": "Whole-process medians on one macOS arm64 machine; compare ratios, not absolute milliseconds."
+  },
+  "receipts": {
+    "cohort-verification": {
+      "sha256": "0a0c15976bffed372e6f6880063381d0ff8728eecdb9dcbe877153c3b3ac0afb",
+      "totals": {
+        "tasks": 29,
+        "verified_nil": 29,
+        "checks": 1070,
+        "passed_checks": 1070
+      }
+    },
+    "cohort-timing": {
+      "sha256": "45c4e73abdd960ab4ca42553449989a204424c01f5494f10e157d067ea957368",
+      "totals": {
+        "tasks": 29,
+        "verified_nil": 29,
+        "checks": 1070,
+        "passed_checks": 1070
+      }
+    },
+    "density-cuts-verification": {
+      "sha256": "6df5fbde21c5fd85d0e04dae16b7527d4a5daec741f906b0817d3587de15f7e1",
+      "totals": {
+        "tasks": 29,
+        "checks": 1712,
+        "passed": 1712
+      }
+    },
+    "application-corpus-all": {
+      "sha256": "52c73df20c94db0f56f3c0eb06a9b23a225d847ec9b10dfd4d434b2edc4c450b",
+      "totals": {
+        "tasks": 79,
+        "nil_programs": 68,
+        "unsupported": 11,
+        "reference_checks": 563,
+        "native_checks": 1126,
+        "python_checks": 563,
+        "cpp_checks": 563
+      },
+      "checks": 2815
+    },
+    "application-corpus-original": {
+      "sha256": "15b09f01de9464ad3528bc0a789e424472994ee1b9315e9fc92a249ed23edd60",
+      "totals": {
+        "tasks": 25,
+        "nil_programs": 24,
+        "unsupported": 1,
+        "reference_checks": 120,
+        "native_checks": 240,
+        "python_checks": 125,
+        "cpp_checks": 125
+      },
+      "checks": 610
+    },
+    "historical-controls": {
+      "sha256": "426b538ae36657346bc1954d5ada3d5830914987805309ea3d86dea6abebca0b",
+      "repeats": 25,
+      "input_bytes": 16777216,
+      "failures": {}
+    },
+    "fuzz-v5": {
+      "20260707": {
+        "programs": 644,
+        "native_builds": 1288,
+        "divergences": 0
+      },
+      "918273645": {
+        "programs": 644,
+        "native_builds": 1288,
+        "divergences": 0
+      },
+      "42424242": {
+        "programs": 644,
+        "native_builds": 1288,
+        "divergences": 0
+      }
+    }
+  },
+  "qualification": {
+    "tasks": 150,
+    "sample": 36,
+    "verified_nil": 29,
+    "validation_blocked": 7,
+    "performance_misses": 7,
+    "meets_bound": 22,
+    "unattempted": 114
+  },
+  "measurements": [
+    {
+      "task": "3sum",
+      "nil_source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "timings": {
+        "nil": {
+          "min_ms": 835.06825,
+          "median_ms": 837.872667,
+          "max_ms": 847.051541,
+          "stdev_ms": 4.356940098588675
+        },
+        "cpp": {
+          "min_ms": 102.515583,
+          "median_ms": 105.577292,
+          "max_ms": 232.297709,
+          "stdev_ms": 32.738715040089716
+        },
+        "ratio": 7.9361068192580655
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "balanced-binary-tree",
+      "nil_source_sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "timings": {
+        "nil": {
+          "min_ms": 26.693959,
+          "median_ms": 27.087833,
+          "max_ms": 28.339584,
+          "stdev_ms": 0.43115878447926603
+        },
+        "cpp": {
+          "min_ms": 13.126667,
+          "median_ms": 13.64,
+          "max_ms": 14.575875,
+          "stdev_ms": 0.4201822498208309
+        },
+        "ratio": 1.9859115102639295
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "nil_source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "timings": {
+        "nil": {
+          "min_ms": 8.683125,
+          "median_ms": 8.89825,
+          "max_ms": 11.029083,
+          "stdev_ms": 0.6447695611580341
+        },
+        "cpp": {
+          "min_ms": 4.687709,
+          "median_ms": 5.048667,
+          "max_ms": 6.774917,
+          "stdev_ms": 0.4855315761532283
+        },
+        "ratio": 1.762494931830521
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "car-fleet",
+      "nil_source_sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "timings": {
+        "nil": {
+          "min_ms": 18.203667,
+          "median_ms": 18.508542,
+          "max_ms": 18.795792,
+          "stdev_ms": 0.15947516581088583
+        },
+        "cpp": {
+          "min_ms": 22.515292,
+          "median_ms": 22.695209,
+          "max_ms": 23.631875,
+          "stdev_ms": 0.3541411511483334
+        },
+        "ratio": 0.8155263959014434
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "coin-change",
+      "nil_source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "timings": {
+        "nil": {
+          "min_ms": 3.953666,
+          "median_ms": 4.173417,
+          "max_ms": 6.006125,
+          "stdev_ms": 0.6049734414847363
+        },
+        "cpp": {
+          "min_ms": 2.70325,
+          "median_ms": 3.025709,
+          "max_ms": 4.923125,
+          "stdev_ms": 0.5559807215931227
+        },
+        "ratio": 1.379318698526527
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "contains-duplicate",
+      "nil_source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "timings": {
+        "nil": {
+          "min_ms": 9.779584,
+          "median_ms": 9.973167,
+          "max_ms": 12.20725,
+          "stdev_ms": 0.6299785952376781
+        },
+        "cpp": {
+          "min_ms": 6.357709,
+          "median_ms": 6.55325,
+          "max_ms": 8.685458,
+          "stdev_ms": 0.5650333277948514
+        },
+        "ratio": 1.5218657917827032
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "course-schedule",
+      "nil_source_sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "timings": {
+        "nil": {
+          "min_ms": 41.709709,
+          "median_ms": 41.977083,
+          "max_ms": 42.912166,
+          "stdev_ms": 0.354139809675192
+        },
+        "cpp": {
+          "min_ms": 22.479958,
+          "median_ms": 22.892958,
+          "max_ms": 24.186792,
+          "stdev_ms": 0.47268493188006044
+        },
+        "ratio": 1.8336242524884727
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "gas-station",
+      "nil_source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "timings": {
+        "nil": {
+          "min_ms": 13.426541,
+          "median_ms": 13.597583,
+          "max_ms": 16.435541,
+          "stdev_ms": 0.7887595307415128
+        },
+        "cpp": {
+          "min_ms": 6.150792,
+          "median_ms": 6.384459,
+          "max_ms": 8.545209,
+          "stdev_ms": 0.5691407253580821
+        },
+        "ratio": 2.129794082787594
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "generate-parentheses",
+      "nil_source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "timings": {
+        "nil": {
+          "min_ms": 26.331541,
+          "median_ms": 26.653875,
+          "max_ms": 28.397125,
+          "stdev_ms": 0.6112582600426603
+        },
+        "cpp": {
+          "min_ms": 3.299,
+          "median_ms": 3.400959,
+          "max_ms": 3.779958,
+          "stdev_ms": 0.1519903506163969
+        },
+        "ratio": 7.837164458612997
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "insert-interval",
+      "nil_source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "timings": {
+        "nil": {
+          "min_ms": 44.395334,
+          "median_ms": 44.759083,
+          "max_ms": 54.760083,
+          "stdev_ms": 2.6188181501704495
+        },
+        "cpp": {
+          "min_ms": 17.445,
+          "median_ms": 17.875875,
+          "max_ms": 19.476583,
+          "stdev_ms": 0.5903117924360944
+        },
+        "ratio": 2.5038820757025877
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "nil_source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "timings": {
+        "nil": {
+          "min_ms": 13.370208,
+          "median_ms": 13.586125,
+          "max_ms": 15.4985,
+          "stdev_ms": 0.5469917353051532
+        },
+        "cpp": {
+          "min_ms": 8.368292,
+          "median_ms": 8.663792,
+          "max_ms": 10.913834,
+          "stdev_ms": 0.6009223591920371
+        },
+        "ratio": 1.5681499509683516
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "last-stone-weight",
+      "nil_source_sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "timings": {
+        "nil": {
+          "min_ms": 1943.292208,
+          "median_ms": 1951.809042,
+          "max_ms": 2040.8145,
+          "stdev_ms": 23.70843262414599
+        },
+        "cpp": {
+          "min_ms": 11.079917,
+          "median_ms": 11.556541,
+          "max_ms": 12.115458,
+          "stdev_ms": 0.33785313719266213
+        },
+        "ratio": 168.89214878396575
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "nil_source_sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "timings": {
+        "nil": {
+          "min_ms": 191.011,
+          "median_ms": 192.33475,
+          "max_ms": 202.266,
+          "stdev_ms": 3.0989090285763803
+        },
+        "cpp": {
+          "min_ms": 4.503583,
+          "median_ms": 4.924209,
+          "max_ms": 5.577792,
+          "stdev_ms": 0.29449342284599894
+        },
+        "ratio": 39.05901435134049
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "nil_source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "timings": {
+        "nil": {
+          "min_ms": 10.519334,
+          "median_ms": 10.925417,
+          "max_ms": 12.920208,
+          "stdev_ms": 0.6081339335723983
+        },
+        "cpp": {
+          "min_ms": 2.854959,
+          "median_ms": 2.981833,
+          "max_ms": 3.953791,
+          "stdev_ms": 0.26776803523945863
+        },
+        "ratio": 3.663993590519657
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "nil_source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "timings": {
+        "nil": {
+          "min_ms": 7.466042,
+          "median_ms": 7.892666,
+          "max_ms": 10.469333,
+          "stdev_ms": 0.8225969111645319
+        },
+        "cpp": {
+          "min_ms": 2.640042,
+          "median_ms": 2.838917,
+          "max_ms": 4.131542,
+          "stdev_ms": 0.36669528567089194
+        },
+        "ratio": 2.780167930235368
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "maximum-subarray",
+      "nil_source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "timings": {
+        "nil": {
+          "min_ms": 9.1465,
+          "median_ms": 9.515583,
+          "max_ms": 12.02775,
+          "stdev_ms": 0.7738563391182468
+        },
+        "cpp": {
+          "min_ms": 5.48625,
+          "median_ms": 5.776083,
+          "max_ms": 8.182042,
+          "stdev_ms": 0.6690317745928491
+        },
+        "ratio": 1.6474110569394518
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "nil_source_sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "timings": {
+        "nil": {
+          "min_ms": 9.184625,
+          "median_ms": 9.514791,
+          "max_ms": 11.525833,
+          "stdev_ms": 0.6046977494207767
+        },
+        "cpp": {
+          "min_ms": 6.021084,
+          "median_ms": 6.231292,
+          "max_ms": 8.183375,
+          "stdev_ms": 0.5202524038671448
+        },
+        "ratio": 1.5269371103135596
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "meeting-rooms",
+      "nil_source_sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "timings": {
+        "nil": {
+          "min_ms": 19.924416,
+          "median_ms": 20.149833,
+          "max_ms": 20.518917,
+          "stdev_ms": 0.1838078245273994
+        },
+        "cpp": {
+          "min_ms": 22.884667,
+          "median_ms": 23.129708,
+          "max_ms": 23.653,
+          "stdev_ms": 0.23582855048187182
+        },
+        "ratio": 0.8711667695934596
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "nil_source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "timings": {
+        "nil": {
+          "min_ms": 8.416292,
+          "median_ms": 8.635333,
+          "max_ms": 11.281583,
+          "stdev_ms": 0.8071876940863612
+        },
+        "cpp": {
+          "min_ms": 4.674459,
+          "median_ms": 5.004125,
+          "max_ms": 7.291125,
+          "stdev_ms": 0.6394583925720713
+        },
+        "ratio": 1.7256429445707289
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "plus-one",
+      "nil_source_sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "timings": {
+        "nil": {
+          "min_ms": 22.62425,
+          "median_ms": 22.937834,
+          "max_ms": 24.418625,
+          "stdev_ms": 0.4193170188853021
+        },
+        "cpp": {
+          "min_ms": 5.39275,
+          "median_ms": 5.585958,
+          "max_ms": 6.358959,
+          "stdev_ms": 0.22853255964549943
+        },
+        "ratio": 4.10633842932582
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "reverse-integer",
+      "nil_source_sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "timings": {
+        "nil": {
+          "min_ms": 28.758459,
+          "median_ms": 29.097583,
+          "max_ms": 29.41425,
+          "stdev_ms": 0.1899527728769392
+        },
+        "cpp": {
+          "min_ms": 11.947875,
+          "median_ms": 12.14575,
+          "max_ms": 12.762333,
+          "stdev_ms": 0.2046405036894373
+        },
+        "ratio": 2.3957008006916
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "reverse-linked-list",
+      "nil_source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "timings": {
+        "nil": {
+          "min_ms": 31.6195,
+          "median_ms": 31.947959,
+          "max_ms": 34.095458,
+          "stdev_ms": 0.5737612181561829
+        },
+        "cpp": {
+          "min_ms": 10.942042,
+          "median_ms": 11.246375,
+          "max_ms": 12.320791,
+          "stdev_ms": 0.4221750880064652
+        },
+        "ratio": 2.8407339253759543
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "nil_source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "timings": {
+        "nil": {
+          "min_ms": 8.450167,
+          "median_ms": 8.880209,
+          "max_ms": 11.199833,
+          "stdev_ms": 0.7298124071570589
+        },
+        "cpp": {
+          "min_ms": 5.434791,
+          "median_ms": 5.634625,
+          "max_ms": 7.9035,
+          "stdev_ms": 0.629096123238072
+        },
+        "ratio": 1.5760070989639952
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "single-number",
+      "nil_source_sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "timings": {
+        "nil": {
+          "min_ms": 8.898,
+          "median_ms": 9.07575,
+          "max_ms": 11.271875,
+          "stdev_ms": 0.6566260193646288
+        },
+        "cpp": {
+          "min_ms": 5.621625,
+          "median_ms": 5.864833,
+          "max_ms": 8.113292,
+          "stdev_ms": 0.6069062774685191
+        },
+        "ratio": 1.5474865183714523
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "spiral-matrix",
+      "nil_source_sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "timings": {
+        "nil": {
+          "min_ms": 24.999833,
+          "median_ms": 25.209917,
+          "max_ms": 26.633041,
+          "stdev_ms": 0.42821323375037357
+        },
+        "cpp": {
+          "min_ms": 7.400458,
+          "median_ms": 7.634084,
+          "max_ms": 8.817,
+          "stdev_ms": 0.3420925888931798
+        },
+        "ratio": 3.302284465300618
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "target-sum",
+      "nil_source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "timings": {
+        "nil": {
+          "min_ms": 2.515541,
+          "median_ms": 2.838834,
+          "max_ms": 4.098084,
+          "stdev_ms": 0.4813187855916285
+        },
+        "cpp": {
+          "min_ms": 2.435084,
+          "median_ms": 2.618,
+          "max_ms": 4.302125,
+          "stdev_ms": 0.48667718040205593
+        },
+        "ratio": 1.0843521772345301
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "valid-palindrome",
+      "nil_source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "timings": {
+        "nil": {
+          "min_ms": 2.403709,
+          "median_ms": 2.554,
+          "max_ms": 2.9095,
+          "stdev_ms": 0.146369025064276
+        },
+        "cpp": {
+          "min_ms": 2.886666,
+          "median_ms": 3.068792,
+          "max_ms": 3.711167,
+          "stdev_ms": 0.24176104370533985
+        },
+        "ratio": 0.8322493020054795
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "valid-sudoku",
+      "nil_source_sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "timings": {
+        "nil": {
+          "min_ms": 2.218375,
+          "median_ms": 2.578167,
+          "max_ms": 4.041083,
+          "stdev_ms": 0.5151636702561995
+        },
+        "cpp": {
+          "min_ms": 2.271667,
+          "median_ms": 2.514541,
+          "max_ms": 4.247834,
+          "stdev_ms": 0.5182569615328546
+        },
+        "ratio": 1.0253032263144646
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "nil_source_sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "timings": {
+        "nil": {
+          "min_ms": 22.967875,
+          "median_ms": 23.207083,
+          "max_ms": 23.453,
+          "stdev_ms": 0.17768617098833336
+        },
+        "cpp": {
+          "min_ms": 12.485459,
+          "median_ms": 12.61775,
+          "max_ms": 13.865667,
+          "stdev_ms": 0.3589165300219272
+        },
+        "ratio": 1.839240989875374
+      },
+      "qualification": "meets-bound"
+    }
+  ]
+}
