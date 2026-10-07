@@ -164,7 +164,9 @@ version. Decoded aggregate constructors had the same missing hook. The overlay n
 registers every such allocation immediately; this changes no checked-in compiler
 or execution semantics. The coverage test checks both sequence constructors, the
 map constructor and decoded records/arrays; the synthetic tracker regression
-checks reused addresses across allocation kinds. Three repeated golden runs each
+checks reused addresses across allocation kinds. The corrected application reference
+ledger changes four classifications (528 bytes) against the carried baseline,
+including the three initially observed drifting events. Three repeated golden runs each
 of BST, BFS and interval merge have identical event classifications after the fix.
 
 Use the same corrected instrumentation on historical and current compilers:
@@ -174,6 +176,14 @@ python3 benchmarks/core-generalize-study/reference_profile.py --copies \
   --revision 92d62b3 --output /tmp/nil-round22-corrected-before-overlay
 python3 benchmarks/core-generalize-study/reference_profile.py --copies \
   --output /tmp/nil-round22-corrected-after-overlay
+```
+
+Run the repeated golden stability check with:
+
+```sh
+python3 benchmarks/core-generalize-study/verify_copy_stability.py \
+  --helper /tmp/nil-round22-corrected-after-overlay/helper/target/release/reference-profile \
+  --output /tmp/nil-round22-stability.json
 ```
 
 The original preregistered baseline is retained. Corrected before/after category
