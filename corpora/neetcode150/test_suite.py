@@ -4,6 +4,7 @@ import json
 import tempfile
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 import fixtures
 import reference
 import verify
@@ -11,6 +12,13 @@ import export
 import cpp
 
 class SuiteTests(unittest.TestCase):
+    def test_correctness_without_timing_is_not_qualification(self):
+        self.assertEqual(verify.qualification({'nil_status':'verified'}),'performance-pending')
+        self.assertEqual(verify.qualification({'nil_status':'blocked-candidate'}),'unverified')
+
+    def test_correctness_with_slow_timing_misses_qualification(self):
+        self.assertEqual(verify.qualification({'nil_status':'verified','timings':{'ratio':3.01}}),'performance-miss')
+        self.assertEqual(verify.qualification({'nil_status':'verified','timings':{'ratio':3}}),'meets-bound')
     def test_public_list_and_hash_selection_are_exact(self):
         tasks=verify.tasks();self.assertEqual(len(tasks),150);self.assertEqual(len({t['id'] for t in tasks}),150)
         cats={t['category'] for t in tasks};self.assertEqual(len(cats),18)
@@ -82,5 +90,14 @@ class SuiteTests(unittest.TestCase):
             self.assertEqual(list(fixtures.cases(small)),list(fixtures.cases(small)))
     def test_frozen_fixture_set_contains_every_task(self):
         golden=json.loads((verify.HERE/'goldens.json').read_text());self.assertEqual(set(golden),{t['id'] for t in verify.tasks()})
+
+    def test_freeze_refuses_to_overwrite_existing_goldens(self):
+        with tempfile.TemporaryDirectory() as directory:
+            folder=Path(directory)
+            (folder/'tasks.json').write_text('{"tasks": []}')
+            (folder/'goldens.json').write_text('{"already": "frozen"}\n')
+            with patch.object(verify,'HERE',folder):
+                with self.assertRaisesRegex(RuntimeError,'refusing to overwrite'):verify.freeze()
+            self.assertEqual((folder/'goldens.json').read_text(),'{"already": "frozen"}\n')
 
 if __name__=='__main__':unittest.main()

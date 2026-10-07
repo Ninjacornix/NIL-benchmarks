@@ -1,0 +1,2386 @@
+{
+  "schema": 1,
+  "date": "2026-10-07",
+  "totals": {
+    "tasks": 150,
+    "sample": 36,
+    "verified_nil": 29,
+    "validation_blocked": 7,
+    "performance_misses": 10,
+    "meets_bound": 19,
+    "unattempted": 114
+  },
+  "tasks": [
+    {
+      "task": "contains-duplicate",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "ratio": 1.5344824377407422
+    },
+    {
+      "task": "valid-anagram",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "two-sum",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "group-anagrams",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "top-k-frequent-elements",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "product-of-array-except-self",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-sudoku",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+      "ratio": 1.042293167918191
+    },
+    {
+      "task": "encode-and-decode-strings",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "serialization"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-consecutive-sequence",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-palindrome",
+      "category": "Two Pointers",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "ascii"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "ratio": 0.801761409326399
+    },
+    {
+      "task": "two-sum-ii-input-array-is-sorted",
+      "category": "Two Pointers",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "3sum",
+      "category": "Two Pointers",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "ratio": 7.776020914834284
+    },
+    {
+      "task": "container-with-most-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "trapping-rain-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock",
+      "category": "Sliding Window",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "category": "Sliding Window",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "ratio": 2.7374328904326424
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "category": "Sliding Window",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "ratio": 3.594965569396984
+    },
+    {
+      "task": "permutation-in-string",
+      "category": "Sliding Window",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "minimum-window-substring",
+      "category": "Sliding Window",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "serialization"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "sliding-window-maximum",
+      "category": "Sliding Window",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-parentheses",
+      "category": "Stack",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-stack",
+      "category": "Stack",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "evaluate-reverse-polish-notation",
+      "category": "Stack",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "ascii"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "generate-parentheses",
+      "category": "Stack",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "ratio": 7.845883868325899
+    },
+    {
+      "task": "daily-temperatures",
+      "category": "Stack",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "car-fleet",
+      "category": "Stack",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+      "ratio": 0.8175291718807682
+    },
+    {
+      "task": "largest-rectangle-in-histogram",
+      "category": "Stack",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-search",
+      "category": "Binary Search",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "search-a-2d-matrix",
+      "category": "Binary Search",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "koko-eating-bananas",
+      "category": "Binary Search",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-minimum-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "ratio": 1.5597746766978227
+    },
+    {
+      "task": "time-based-key-value-store",
+      "category": "Binary Search",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "category": "Binary Search",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+      "ratio": 1.5452697316931228
+    },
+    {
+      "task": "reverse-linked-list",
+      "category": "Linked List",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "ratio": 2.8202927159444204
+    },
+    {
+      "task": "merge-two-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "reorder-list",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "remove-nth-node-from-end-of-list",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "copy-list-with-random-pointer",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "add-two-numbers",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "linked-list-cycle",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-the-duplicate-number",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "lru-cache",
+      "category": "Linked List",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "e305772e8c6cdf6525a0836d855d474d96d62987cdfa37e3fe713900d84afc59",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "O0",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @891..892 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "O2",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @891..892 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Timestamp map with full-entry scans is O(operations \u00d7 keys); replace candidate with indexed doubly linked list + lookup. No core impossibility established.",
+      "raw_receipt_sha256": "c6b52d5461902d0f8d12ca732f5341e7cd673fd2ae7d7785458222e799bff2b0"
+    },
+    {
+      "task": "merge-k-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-nodes-in-k-group",
+      "category": "Linked List",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "invert-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "maximum-depth-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "diameter-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "balanced-binary-tree",
+      "category": "Trees",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+      "ratio": 107.7005574509856
+    },
+    {
+      "task": "same-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "subtree-of-another-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "lowest-common-ancestor-of-a-binary-search-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-level-order-traversal",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "serialization"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-right-side-view",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "count-good-nodes-in-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "category": "Trees",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+      "ratio": 109.9995869584823
+    },
+    {
+      "task": "kth-smallest-element-in-a-bst",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-maximum-path-sum",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "deep_stack",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "serialize-and-deserialize-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "serialization",
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "implement-trie-prefix-tree",
+      "category": "Tries",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "e2241dbc4a8fff1816156cce2622a24cb29e65b0c6a938cb9282519a536dd7d5",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "O0",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        },
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Allocates byte-map entries for prefixes; inspect indexed trie pool and evaluator overhead. Native O2 succeeds; O0/reference exceed deadline.",
+      "raw_receipt_sha256": "16567412516b6515a307d697a381fd74d5787906ddd06e173f034bbd6abeed3a"
+    },
+    {
+      "task": "design-add-and-search-words-data-structure",
+      "category": "Tries",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-search-ii",
+      "category": "Tries",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested",
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "cb26fb0104b5839e799f7e9d1337baac9b85332c2d136190ae9d4834bf962ee4",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Per-word DFS rather than shared trie traversal; algorithm class differs. Both native paths succeed but reference exceeds deadline.",
+      "raw_receipt_sha256": "c6b52d5461902d0f8d12ca732f5341e7cd673fd2ae7d7785458222e799bff2b0"
+    },
+    {
+      "task": "kth-largest-element-in-a-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "last-stone-weight",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+      "ratio": 2299.4457515197364
+    },
+    {
+      "task": "k-closest-points-to-origin",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "ratio": 1.5857811859688897
+    },
+    {
+      "task": "task-scheduler",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "design-twitter",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested",
+          "heap"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-median-from-data-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "subsets",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "combination-sum",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "permutations",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "subsets-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "combination-sum-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-search",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "palindrome-partitioning",
+      "category": "Backtracking",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "category": "Backtracking",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+      "ratio": 44.62034396519577
+    },
+    {
+      "task": "n-queens",
+      "category": "Backtracking",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise",
+          "output_volume"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "dd764c5f5fad05c8b6941fb2c06c0fcb9b7a1ee3550bd848c7d42a67c773b06d",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Explicit column/diagonal flag arrays; both native paths succeed, reference exceeds deadline. No need for a depth-limit change demonstrated.",
+      "raw_receipt_sha256": "663a679a201101c1961f16255f3f7a604efbdb6b4ba1bff46ba7197dffebcfa6"
+    },
+    {
+      "task": "number-of-islands",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "clone-graph",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "max-area-of-island",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "pacific-atlantic-water-flow",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "surrounded-regions",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "rotting-oranges",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "walls-and-gates",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "course-schedule",
+      "category": "Graphs",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+      "ratio": 325.37365869553076
+    },
+    {
+      "task": "course-schedule-ii",
+      "category": "Graphs",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "eebc22ac7843ab1dc67c429f27ce306263d8f9f2567d7be82e9b0776055b41d8",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "O0",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @595..596 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "O2",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @595..596 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Scans all vertices for each lexicographically smallest ready vertex; replace candidate with a min heap. No core impossibility established.",
+      "raw_receipt_sha256": "16567412516b6515a307d697a381fd74d5787906ddd06e173f034bbd6abeed3a"
+    },
+    {
+      "task": "redundant-connection",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "number-of-connected-components-in-an-undirected-graph",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "graph-valid-tree",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-ladder",
+      "category": "Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "reconstruct-itinerary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested",
+          "deep_stack"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-cost-to-connect-all-points",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "network-delay-time",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "ff806f94bd142227eebdb642d1ae8ec85f8286f6c31c4e7dee2a81c2c1df2c46",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "O0",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @318..319 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "O2",
+          "exit": 1,
+          "stdout": "",
+          "stderr": "E008 @318..319 instruction budget exhausted\n"
+        },
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Dense vertex selection and repeated edge scans instead of C++ heap Dijkstra; algorithm class differs. No core impossibility established.",
+      "raw_receipt_sha256": "16567412516b6515a307d697a381fd74d5787906ddd06e173f034bbd6abeed3a"
+    },
+    {
+      "task": "swim-in-rising-water",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "grid",
+          "heap"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "alien-dictionary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "cheapest-flights-within-k-stops",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "blocked-candidate",
+      "qualification": "unverified",
+      "candidate_sha256": "b433061e9c37a558bbc765d774d03a69868575b48381344ff84e23117474b89d",
+      "failures": [
+        {
+          "fixture": "largest",
+          "language": "reference",
+          "exit": -999,
+          "stdout": "",
+          "stderr": "timeout"
+        }
+      ],
+      "analysis": "Layered Bellman\u2013Ford with snapshot buffers; both native paths succeed, reference exceeds deadline. Inspect evaluator/update cost.",
+      "raw_receipt_sha256": "16567412516b6515a307d697a381fd74d5787906ddd06e173f034bbd6abeed3a"
+    },
+    {
+      "task": "climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "ratio": 1.7685300007682654
+    },
+    {
+      "task": "house-robber",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "house-robber-ii",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-palindromic-substring",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "palindromic-substrings",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "decode-ways",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "coin-change",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "ratio": 1.3639037715831173
+    },
+    {
+      "task": "maximum-product-subarray",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-break",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-increasing-subsequence",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "partition-equal-subset-sum",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "unique-paths",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-common-subsequence",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "ratio": 1.836687830687831
+    },
+    {
+      "task": "coin-change-ii",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "target-sum",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "ratio": 1.0608903378778898
+    },
+    {
+      "task": "interleaving-string",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-increasing-path-in-a-matrix",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "distinct-subsequences",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "edit-distance",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "burst-balloons",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "regular-expression-matching",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "maximum-subarray",
+      "category": "Greedy",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "ratio": 1.6520578453918275
+    },
+    {
+      "task": "jump-game",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "jump-game-ii",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "gas-station",
+      "category": "Greedy",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "ratio": 2.1428815184578656
+    },
+    {
+      "task": "hand-of-straights",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "merge-triplets-to-form-target-triplet",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "partition-labels",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-parenthesis-string",
+      "category": "Greedy",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "insert-interval",
+      "category": "Intervals",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "ratio": 2.51438532875648
+    },
+    {
+      "task": "merge-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "non-overlapping-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "meeting-rooms",
+      "category": "Intervals",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+      "ratio": 0.8724598658886338
+    },
+    {
+      "task": "meeting-rooms-ii",
+      "category": "Intervals",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "minimum-interval-to-include-each-query",
+      "category": "Intervals",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "heap",
+          "record_sort"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "rotate-image",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "spiral-matrix",
+      "category": "Math & Geometry",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+      "ratio": 170.97840679547338
+    },
+    {
+      "task": "set-matrix-zeroes",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "grid",
+          "updates"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "happy-number",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "plus-one",
+      "category": "Math & Geometry",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "performance-miss",
+      "nil_source_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+      "ratio": 4.151644463662504
+    },
+    {
+      "task": "powx-n",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "f64_math"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "multiply-strings",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "detect-squares",
+      "category": "Math & Geometry",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "integer_keys",
+          "keyed_nested"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "single-number",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+      "ratio": 2.206326296139213
+    },
+    {
+      "task": "number-of-1-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise",
+          "shifts"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "counting-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise",
+          "shifts"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise",
+          "shifts"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "missing-number",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "sum-of-two-integers",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": false,
+        "risks": [
+          "bitwise",
+          "shifts"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "unattempted",
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-integer",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "forecast": {
+        "semantic_feasible": true,
+        "native_3x_expected": true,
+        "risks": [
+          "modulo"
+        ],
+        "basis": "Existing indexed collections/explicit stacks suffice semantically; dynamic-key allocation, checked heap/record updates, bit emulation or large serialization threaten 3x. This is a forecast, not verification."
+      },
+      "correctness": "verified",
+      "qualification": "meets-bound",
+      "nil_source_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+      "ratio": 2.3859499646242783
+    }
+  ]
+}

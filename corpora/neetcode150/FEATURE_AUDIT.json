@@ -1,0 +1,3047 @@
+{
+  "schema": 1,
+  "stage": "post-sample census audit; original forecasts unchanged",
+  "notes": [
+    "Preregistered string_ops flags named ASCII-helper risk only; they were too narrow as a string-dependency census. This audit records ordinary byte/text algorithm requirements separately.",
+    "Every solution also needs file parsing and output formatting; those are not counted as algorithm-specific string processing.",
+    "Emulation availability is not speed or quota proof. No unavailable type or operator was established as mandatory by the selected sample."
+  ],
+  "algorithm_byte_string_tasks": [
+    "alien-dictionary",
+    "decode-ways",
+    "design-add-and-search-words-data-structure",
+    "distinct-subsequences",
+    "edit-distance",
+    "encode-and-decode-strings",
+    "evaluate-reverse-polish-notation",
+    "generate-parentheses",
+    "group-anagrams",
+    "implement-trie-prefix-tree",
+    "interleaving-string",
+    "letter-combinations-of-a-phone-number",
+    "longest-common-subsequence",
+    "longest-palindromic-substring",
+    "longest-repeating-character-replacement",
+    "longest-substring-without-repeating-characters",
+    "minimum-window-substring",
+    "multiply-strings",
+    "palindrome-partitioning",
+    "palindromic-substrings",
+    "partition-labels",
+    "permutation-in-string",
+    "reconstruct-itinerary",
+    "regular-expression-matching",
+    "task-scheduler",
+    "time-based-key-value-store",
+    "valid-anagram",
+    "valid-palindrome",
+    "valid-parentheses",
+    "valid-parenthesis-string",
+    "word-break",
+    "word-ladder",
+    "word-search",
+    "word-search-ii"
+  ],
+  "tasks": [
+    {
+      "task": "contains-duplicate",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "valid-anagram",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "two-sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "group-anagrams",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "top-k-frequent-elements",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "product-of-array-except-self",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-sudoku",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "encode-and-decode-strings",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-consecutive-sequence",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-palindrome",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "two-sum-ii-input-array-is-sorted",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "3sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "container-with-most-water",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "trapping-rain-water",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "permutation-in-string",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "minimum-window-substring",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "sliding-window-maximum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-parentheses",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-stack",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "evaluate-reverse-polish-notation",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "generate-parentheses",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "daily-temperatures",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "car-fleet",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "largest-rectangle-in-histogram",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-search",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "search-a-2d-matrix",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "koko-eating-bananas",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-minimum-in-rotated-sorted-array",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "time-based-key-value-store",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "reverse-linked-list",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "merge-two-sorted-lists",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "reorder-list",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "remove-nth-node-from-end-of-list",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "copy-list-with-random-pointer",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "add-two-numbers",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "linked-list-cycle",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-the-duplicate-number",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "lru-cache",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "merge-k-sorted-lists",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-nodes-in-k-group",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "invert-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "maximum-depth-of-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "diameter-of-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "balanced-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "same-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "subtree-of-another-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "lowest-common-ancestor-of-a-binary-search-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-level-order-traversal",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-right-side-view",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "count-good-nodes-in-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "kth-smallest-element-in-a-bst",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "binary-tree-maximum-path-sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "serialize-and-deserialize-binary-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "implement-trie-prefix-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "design-add-and-search-words-data-structure",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-search-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "kth-largest-element-in-a-stream",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "last-stone-weight",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "k-closest-points-to-origin",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "task-scheduler",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "design-twitter",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "find-median-from-data-stream",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "subsets",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "combination-sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "permutations",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "subsets-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "combination-sum-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-search",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "palindrome-partitioning",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "n-queens",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "number-of-islands",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "clone-graph",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "max-area-of-island",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "pacific-atlantic-water-flow",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "surrounded-regions",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "rotting-oranges",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "walls-and-gates",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "course-schedule",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "course-schedule-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "redundant-connection",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "number-of-connected-components-in-an-undirected-graph",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "graph-valid-tree",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-ladder",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "reconstruct-itinerary",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "iterative explicit stack; depth limit 256 unchanged",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-cost-to-connect-all-points",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "network-delay-time",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "swim-in-rising-water",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "alien-dictionary",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "cheapest-flights-within-k-stops",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "integer node indices; no recursive type required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "climbing-stairs",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "house-robber",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "house-robber-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-palindromic-substring",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "palindromic-substrings",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "decode-ways",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "coin-change",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "maximum-product-subarray",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "word-break",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-increasing-subsequence",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "partition-equal-subset-sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "unique-paths",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-common-subsequence",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "coin-change-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "target-sum",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "interleaving-string",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "longest-increasing-path-in-a-matrix",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "distinct-subsequences",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "edit-distance",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "burst-balloons",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "regular-expression-matching",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "maximum-subarray",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "jump-game",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "jump-game-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "gas-station",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "hand-of-straights",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "merge-triplets-to-form-target-triplet",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "partition-labels",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "valid-parenthesis-string",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "insert-interval",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "merge-intervals",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "non-overlapping-intervals",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "meeting-rooms",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "meeting-rooms-ii",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "minimum-interval-to-include-each-query",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "handwritten indexed heap; update-copy risk",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "rotate-image",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "spiral-matrix",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "set-matrix-zeroes",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "flat indexed buffers",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "happy-number",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "plus-one",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "performance-miss"
+    },
+    {
+      "task": "powx-n",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "binary64 arithmetic; exponentiation by squaring",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "multiply-strings",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "existing byte/text operations; ASCII domain",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "detect-squares",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "decimal-key emulation; allocation risk",
+        "grid_nested": "record-wrapped nested buffers/index pools",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "single-number",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    },
+    {
+      "task": "number-of-1-bits",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "division/multiplication emulation",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "counting-bits",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "division/multiplication emulation",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-bits",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "division/multiplication emulation",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "missing-number",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "sum-of-two-integers",
+      "feature_checks": {
+        "modulo": "not required",
+        "bitwise": "arithmetic/Boolean emulation; throughput risk",
+        "shifts": "division/multiplication emulation",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "unverified"
+    },
+    {
+      "task": "reverse-integer",
+      "feature_checks": {
+        "modulo": "a-a/b*b with signed edge care",
+        "bitwise": "not required",
+        "shifts": "not required",
+        "logical": "lazy conditions available",
+        "abs_min_max": "comparisons/conditional expressions",
+        "f64_math": "not required",
+        "integer_key_map_set": "not required",
+        "grid_nested": "not required",
+        "heap": "not required",
+        "deep_recursion": "not required",
+        "string_ops": "file parse/format only",
+        "record_graph": "not required",
+        "early_exit": "condition-carried loop state",
+        "quota_fit": "forecast fits with compact layout; unverified"
+      },
+      "qualification": "meets-bound"
+    }
+  ]
+}

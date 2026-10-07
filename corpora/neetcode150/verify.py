@@ -20,8 +20,13 @@ TIMEOUT=120
 
 def sha(data): return hashlib.sha256(data).hexdigest()
 def tasks(): return json.loads((HERE/'tasks.json').read_text())['tasks']
+def qualification(result):
+    if result.get('nil_status')!='verified': return 'unverified'
+    if not result.get('timings'): return 'performance-pending'
+    return 'meets-bound' if result['timings']['ratio']<=3 else 'performance-miss'
 def run(command,cwd):
     env={'PATH':os.environ['PATH'],'HOME':str(cwd),'TMPDIR':str(cwd),'PYTHONDONTWRITEBYTECODE':'1'}
+    if 'NIL_CLANG' in os.environ:env['NIL_CLANG']=os.environ['NIL_CLANG']
     try:
         p=subprocess.run(command,cwd=cwd,env=env,capture_output=True,timeout=TIMEOUT)
         return p.returncode,p.stdout,p.stderr
@@ -45,18 +50,26 @@ def freeze():
         for name,data in fixtures.cases(t):
             answer=reference.SOLVERS[t['id']](data)
             frozen[t['id']][name]={'input_sha256':sha(data),'output_sha256':sha(answer),'input_bytes':len(data),'output_bytes':len(answer)}
-    (HERE/'goldens.json').write_text(json.dumps(frozen,indent=2)+'\n')
+    payload=json.dumps(frozen,indent=2)+'\n'
+    path=HERE/'goldens.json'
+    if path.exists() and path.read_text()!=payload:raise RuntimeError('Frozen goldens differ; refusing to overwrite')
+    if not path.exists():path.write_text(payload)
     print('FROZEN',len(frozen),'tasks',sum(map(len,frozen.values())),'fixtures')
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);ap.add_argument('--freeze',action='store_true');ap.add_argument('--baselines-only',action='store_true');ap.add_argument('--all',action='store_true');ap.add_argument('--task',action='append');ap.add_argument('--candidate-dir',type=Path);ap.add_argument('--jobs',type=int,default=2);ap.add_argument('--timing-repeats',type=int,default=0)
+    ap=argparse.ArgumentParser();ap.add_argument('--output',type=Path);ap.add_argument('--freeze',action='store_true');ap.add_argument('--baselines-only',action='store_true');ap.add_argument('--all',action='store_true');ap.add_argument('--verified-only',action='store_true');ap.add_argument('--task',action='append');ap.add_argument('--candidate-dir',type=Path);ap.add_argument('--jobs',type=int,default=2);ap.add_argument('--timing-repeats',type=int,default=0)
     args=ap.parse_args()
     if args.freeze: freeze();return
     if not args.output: ap.error('--output required')
     args.output=args.output.resolve()
     if args.output.is_relative_to(ROOT):ap.error('raw results must be outside checkout')
     if args.timing_repeats and args.timing_repeats<15:ap.error('at least 15 timing repeats')
+    if args.jobs<1:ap.error('--jobs must be positive')
+    if args.timing_repeats and args.jobs!=1:ap.error('timing requires --jobs 1 to avoid competing measurements')
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.with_suffix('.jsonl').write_text('')
     golden=json.loads((HERE/'goldens.json').read_text())
     selected=[t for t in tasks() if (t['id'] in args.task if args.task else args.all or t['selected'])]
+    if args.verified_only:selected=[t for t in selected if (HERE/'programs'/(t['id']+'.nil')).exists()]
     if args.task and set(args.task)!={t['id'] for t in selected}:ap.error('unknown task')
     if not args.baselines_only:build_helpers('core_check')
     helper=ROOT/'target/release/examples/core_check'
@@ -67,7 +80,7 @@ def main():
         result={'task':slug,'forecast':t['forecast'],'checks':[], 'timings':{}}
         with tempfile.TemporaryDirectory(prefix='nil-core-') as directory:
             folder=Path(directory); cpp=folder/'cpp'
-            result['cpp_command']=[clang+'++' if clang=='clang' else clang,'-std=c++17','-O2','-ffp-contract=off',str(HERE/'programs'/f'{slug}.cpp'),'-o',str(cpp)]
+            result['cpp_command']=[clang,'--driver-mode=g++','-std=c++17','-O2','-ffp-contract=off',str(HERE/'programs'/f'{slug}.cpp'),'-o',str(cpp)]
             build=subprocess.run(result['cpp_command'],capture_output=True)
             if build.returncode:result.update(status='infrastructure-failure',detail=build.stderr.decode());return result
             commands={'python':[sys.executable,'-I',str(HERE/'programs'/f'{slug}.py'),'input.bin','output.bin'],'cpp':[str(cpp),'input.bin','output.bin']}
@@ -95,7 +108,7 @@ def main():
             baseline_good=all(x['pass'] for x in result['checks'] if x['language'] in ('cpp','python'))
             nilchecks=[x for x in result['checks'] if x['language'] in ('reference','O0','O2')]
             needed=3*len(golden[slug])
-            result['nil_status']='verified' if len(nilchecks)==needed and all(x['pass'] for x in nilchecks) else result.get('nil_status','blocked-candidate')
+            result['nil_status']='verified' if len(nilchecks)==needed and all(x['pass'] for x in nilchecks) else ('not-run' if args.baselines_only else result.get('nil_status','blocked-candidate'))
             result['status']='pass' if baseline_good and (args.baselines_only or result['nil_status']=='verified') else 'failed'
             if args.timing_repeats and result['nil_status']=='verified':
                 binary=folder/'nil-perf';code,out,err=run([str(helper),str(source),'perf-O2',str(binary)],folder)
@@ -111,10 +124,12 @@ def main():
                         if repeat:samples[language].append(elapsed)
                 for language,values in samples.items():result['timings'][language]={'min_ms':min(values),'median_ms':statistics.median(values),'max_ms':max(values),'samples_ms':values,'stdev_ms':statistics.stdev(values)}
                 result['timings']['ratio']=result['timings']['nil']['median_ms']/result['timings']['cpp']['median_ms']
+        result['qualification']=qualification(result)
+        with args.output.with_suffix('.jsonl').open('a') as progress:progress.write(json.dumps(result)+'\n')
         print(slug,result['status'],result['nil_status'],sum(x['pass'] for x in result['checks']),flush=True)
         return result
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:results=list(pool.map(verify,selected))
-    report={'schema':1,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':256,'timeout_seconds':TIMEOUT},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks'])}}
+    report={'schema':1,'clang_version':subprocess.check_output([clang,'--version'],text=True).splitlines()[0],'python_version':sys.version,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':256,'timeout_seconds':TIMEOUT},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks'])}}
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2)+'\n');print('TOTALS',json.dumps(report['totals']))
     if any(r['status']!='pass' for r in results):raise SystemExit(1)
 if __name__=='__main__':main()

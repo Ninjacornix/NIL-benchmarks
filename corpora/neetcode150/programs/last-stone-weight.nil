@@ -1,0 +1,11 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=d(e(!concat(!slice(a,1,a[0]),!buffer(1,a[0]))))
+(v)=@(a;a[#a-1]>1;f(a);a[#a-1]==0?0:a[0])
+(v):v=@(a,(#a-1)/2-1;b>=0;i(a,b,#a-1),b-1;a)
+(v):v=g(a,a[0],a[#a-1])
+(v,i,i):v=h(j(a,c),b)
+(v,i):v=b==a[0]?j(a,a[#a-1]):i(a[0:b-a[0]],0,a[#a-1])
+(v,i,i):v=@(a,b,c;2*b+1<c?(a[b]<a[k(a,b,c)]):false;a[b:a[k(a,b,c)]][k(a,b,c):a[b]],k(a,b,c),c;a)
+(v,i):v=i(a[0:a[b-1]][#a-1:b-1],0,b-1)
+(v,i,i)=2*b+2<c?(a[2*b+1]>a[2*b+2]?2*b+1:2*b+2):2*b+1
