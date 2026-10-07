@@ -21,3 +21,38 @@ evaluator and native O0/O2. A census prediction is not a verified solution.
 No generation, training or compiler modifications are part of this study. Raw
 artifacts and unsuccessful candidates belong outside git. Source-density counts
 are separate from failure-inclusive model tokens per correct program.
+
+## Current status
+
+The fixed 36-sample experiment admitted 29 byte-correct NIL programs. Seven fail
+the validation budget and are not included as passing sources. Ten of the 29 miss
+the 3× C++ performance bound; nineteen meet both gates. The other 114 problems
+are unattempted in NIL. See `STATUS.json` and
+[the measured report](../../reports/2026-10-07/CORE_1_0.md). This suite is a
+qualification yardstick, not an announcement that Core 1.0 is complete.
+`FEATURE_AUDIT.json` corrects the overly narrow preregistered string-risk tags
+without editing the original forecasts.
+
+## Run from the compiler repository root
+
+```sh
+python3 benchmarks/corpora/neetcode150/verify.py --baselines-only --all --output /tmp/core-baselines.json
+python3 benchmarks/corpora/neetcode150/verify.py --verified-only --output /tmp/core-verified.json
+python3 benchmarks/corpora/neetcode150/verify.py --verified-only --jobs 1 --timing-repeats 15 --output /tmp/core-performance.json
+benchmarks/paired/.venv/bin/python benchmarks/corpora/neetcode150/density.py --verification /tmp/core-verified.json --output /tmp/core-density.json
+python3 -m unittest discover -s benchmarks/corpora/neetcode150 -p 'test_*.py'
+```
+
+Require Clang, the pinned Rust toolchain and the existing benchmark Python
+environment for tiktoken. No new dependencies. `NIL_CLANG` selects the same driver
+for NIL and C++. Use `--jobs 1` for timing. Omitting `--verified-only` checks all
+36 selected tasks and fails on the seven missing candidates; `--all` requests
+all 150 and does not silently skip unauthored solutions. `--task <slug>` selects
+an individual contract. `--candidate-dir <outside-checkout>` attempts failed or
+new sources without admitting them to the verified corpus.
+
+Inputs/goldens remain frozen. `--freeze` refuses to overwrite changed goldens.
+All execution paths check byte output, returned length, unexpected effects and
+unchanged input. A correctness pass without timing is `performance-pending`,
+not qualification. Largest fixtures are realistic size envelopes, not exhaustive
+worst-case shape coverage; a separately registered release audit is still needed.

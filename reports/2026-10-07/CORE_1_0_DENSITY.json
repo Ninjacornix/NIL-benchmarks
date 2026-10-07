@@ -1,0 +1,4355 @@
+{
+  "schema": 1,
+  "verification_sha256": "fa2874ce3b71e624b6772966ec73bdfe010bd1d9930d80fb8ca8d206384d879e",
+  "metric": "Standalone source counts; includes all I/O drivers/helpers. Density is not failure-inclusive model tokens to a correct program. Only verified-NIL cohort is paired; failed/unattempted tasks are not silently counted as zero.",
+  "tokenizer_version": "0.12.0",
+  "tokenizers": {
+    "cl100k_base": {
+      "vocabulary": 100277,
+      "mergeable_ranks_sha256": "3532e3847b8df1579f88f43e9ad00d4f0b8227a462801fd64b2bc19775f2101c"
+    },
+    "o200k_base": {
+      "vocabulary": 200019,
+      "mergeable_ranks_sha256": "046e3286832de0554b0efc7d617b94a42d6db16a681713c9b0009197c60e3d7e"
+    }
+  },
+  "cohort_tasks": [
+    "3sum",
+    "balanced-binary-tree",
+    "best-time-to-buy-and-sell-stock-with-cooldown",
+    "car-fleet",
+    "coin-change",
+    "contains-duplicate",
+    "course-schedule",
+    "gas-station",
+    "generate-parentheses",
+    "insert-interval",
+    "kth-largest-element-in-an-array",
+    "last-stone-weight",
+    "letter-combinations-of-a-phone-number",
+    "longest-repeating-character-replacement",
+    "longest-substring-without-repeating-characters",
+    "maximum-subarray",
+    "median-of-two-sorted-arrays",
+    "meeting-rooms",
+    "min-cost-climbing-stairs",
+    "plus-one",
+    "reverse-integer",
+    "reverse-linked-list",
+    "search-in-rotated-sorted-array",
+    "single-number",
+    "spiral-matrix",
+    "target-sum",
+    "valid-palindrome",
+    "valid-sudoku",
+    "validate-binary-search-tree"
+  ],
+  "totals": {
+    "nil": {
+      "programs": 29,
+      "bytes": 10390,
+      "characters": 10390,
+      "tokens": {
+        "cl100k_base": 5508,
+        "o200k_base": 5534
+      }
+    },
+    "python": {
+      "programs": 29,
+      "bytes": 25474,
+      "characters": 25474,
+      "tokens": {
+        "cl100k_base": 6795,
+        "o200k_base": 6818
+      }
+    },
+    "cpp": {
+      "programs": 29,
+      "bytes": 35044,
+      "characters": 35044,
+      "tokens": {
+        "cl100k_base": 10610,
+        "o200k_base": 10716
+      }
+    }
+  },
+  "per_task": [
+    {
+      "task": "contains-duplicate",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "bytes": 188,
+      "characters": 188,
+      "tokens": {
+        "cl100k_base": 82,
+        "o200k_base": 82
+      }
+    },
+    {
+      "task": "contains-duplicate",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "8316dd505ffc04feae48b7b3ec6a02984fc1544b7a8a92eee1fe71291577424b",
+      "bytes": 748,
+      "characters": 748,
+      "tokens": {
+        "cl100k_base": 182,
+        "o200k_base": 182
+      }
+    },
+    {
+      "task": "contains-duplicate",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "344f7a6b3ddb6f614125560cd17f9e33983074786e8e73d22e06cea8686e7d34",
+      "bytes": 1100,
+      "characters": 1100,
+      "tokens": {
+        "cl100k_base": 313,
+        "o200k_base": 316
+      }
+    },
+    {
+      "task": "valid-anagram",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0f37fa784091085c914f7f3f594255e43b150c3f4f5d4c1612ce072da9f471ce",
+      "bytes": 455,
+      "characters": 455,
+      "tokens": {
+        "cl100k_base": 111,
+        "o200k_base": 111
+      }
+    },
+    {
+      "task": "valid-anagram",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "149d611df31b84adc151d443dc76059918d255f1c578877baca4ec797f268616",
+      "bytes": 1090,
+      "characters": 1090,
+      "tokens": {
+        "cl100k_base": 303,
+        "o200k_base": 308
+      }
+    },
+    {
+      "task": "two-sum",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "5419205bcf343adcc51708ba3b6e8141afe176d0f2b6eb78301f93c558d4de80",
+      "bytes": 812,
+      "characters": 812,
+      "tokens": {
+        "cl100k_base": 205,
+        "o200k_base": 206
+      }
+    },
+    {
+      "task": "two-sum",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "3314ec928a8e6b64535167d09b743084575b7283e38af819310d7eab61adfc28",
+      "bytes": 1275,
+      "characters": 1275,
+      "tokens": {
+        "cl100k_base": 381,
+        "o200k_base": 385
+      }
+    },
+    {
+      "task": "group-anagrams",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "343ce8577e4f3699397a10cc00b6e3e0f40278475f40e2bf066364da3eba0a2f",
+      "bytes": 428,
+      "characters": 428,
+      "tokens": {
+        "cl100k_base": 116,
+        "o200k_base": 116
+      }
+    },
+    {
+      "task": "group-anagrams",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "673517e2ff4067e2bec8f4de3aafe492d7103a174a9837227146b051c6388799",
+      "bytes": 1296,
+      "characters": 1296,
+      "tokens": {
+        "cl100k_base": 371,
+        "o200k_base": 376
+      }
+    },
+    {
+      "task": "top-k-frequent-elements",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0169968815c14542c8a39415d36f4b019007afaadaeaa14d7ed383fa294fa8fb",
+      "bytes": 785,
+      "characters": 785,
+      "tokens": {
+        "cl100k_base": 196,
+        "o200k_base": 196
+      }
+    },
+    {
+      "task": "top-k-frequent-elements",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "2954ea5b816b643e57053faa95a8c583349112349a3d4347ab3f2da9db94979d",
+      "bytes": 1356,
+      "characters": 1356,
+      "tokens": {
+        "cl100k_base": 406,
+        "o200k_base": 411
+      }
+    },
+    {
+      "task": "product-of-array-except-self",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "8ba2de8b63f7ddb022f50fae5ad597a52f87dd5eaf3ef386a2064c0b4dbf3761",
+      "bytes": 820,
+      "characters": 820,
+      "tokens": {
+        "cl100k_base": 222,
+        "o200k_base": 222
+      }
+    },
+    {
+      "task": "product-of-array-except-self",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "c393466dbf4c8d18865e6e6225e9b3bb69ff7ef44d02e998724eaf8c995633f9",
+      "bytes": 1235,
+      "characters": 1235,
+      "tokens": {
+        "cl100k_base": 382,
+        "o200k_base": 387
+      }
+    },
+    {
+      "task": "valid-sudoku",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+      "bytes": 299,
+      "characters": 299,
+      "tokens": {
+        "cl100k_base": 155,
+        "o200k_base": 155
+      }
+    },
+    {
+      "task": "valid-sudoku",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "7334865473653db82477818d5c5fceda88711773e3c527da66d4d06584726ea4",
+      "bytes": 688,
+      "characters": 688,
+      "tokens": {
+        "cl100k_base": 213,
+        "o200k_base": 213
+      }
+    },
+    {
+      "task": "valid-sudoku",
+      "category": "Arrays & Hashing",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "dac299c45a231a1b463f3c0866989a1669e5ec705ac6f285858d7ff48c19b622",
+      "bytes": 1124,
+      "characters": 1124,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 358
+      }
+    },
+    {
+      "task": "encode-and-decode-strings",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "043e0fab0445ed605aa228cd2167ba6a78e8fdf0ee52ae72c5d02d532b5bf249",
+      "bytes": 479,
+      "characters": 479,
+      "tokens": {
+        "cl100k_base": 132,
+        "o200k_base": 133
+      }
+    },
+    {
+      "task": "encode-and-decode-strings",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "4f8534a015c57d92a1d745b156e9d381b93eade9ce4597b605de4c7f9a70949b",
+      "bytes": 1073,
+      "characters": 1073,
+      "tokens": {
+        "cl100k_base": 312,
+        "o200k_base": 315
+      }
+    },
+    {
+      "task": "longest-consecutive-sequence",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "a718a24c3b080b7391c053080a746da2c31d401f07bbc3d34d5a30eb9b9a9dd6",
+      "bytes": 907,
+      "characters": 907,
+      "tokens": {
+        "cl100k_base": 220,
+        "o200k_base": 220
+      }
+    },
+    {
+      "task": "longest-consecutive-sequence",
+      "category": "Arrays & Hashing",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "90dd933c79bf3dbebaed0fc5660f0d2c2632c5b88961f4d42796ec5423b7daf4",
+      "bytes": 1201,
+      "characters": 1201,
+      "tokens": {
+        "cl100k_base": 344,
+        "o200k_base": 347
+      }
+    },
+    {
+      "task": "valid-palindrome",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "bytes": 280,
+      "characters": 280,
+      "tokens": {
+        "cl100k_base": 144,
+        "o200k_base": 152
+      }
+    },
+    {
+      "task": "valid-palindrome",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "07900220c3f0633ded3954f510414cb3ed284e0c6b351b0eed9095b132d699b6",
+      "bytes": 472,
+      "characters": 472,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 136
+      }
+    },
+    {
+      "task": "valid-palindrome",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "634ba3f47de26dbefdc979863b34d55fa14c2ef65a60ced66e2867282b431024",
+      "bytes": 1080,
+      "characters": 1080,
+      "tokens": {
+        "cl100k_base": 323,
+        "o200k_base": 328
+      }
+    },
+    {
+      "task": "two-sum-ii-input-array-is-sorted",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "dfe53ee74ae0720cb0801708c6a06f38adf98d6bb5fb21ad16e786b13be7afb5",
+      "bytes": 865,
+      "characters": 865,
+      "tokens": {
+        "cl100k_base": 233,
+        "o200k_base": 235
+      }
+    },
+    {
+      "task": "two-sum-ii-input-array-is-sorted",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e065494ec1c97085d4c1d33f505c59dc41fd8e2c8ac4213cc5dd877218202672",
+      "bytes": 1186,
+      "characters": 1186,
+      "tokens": {
+        "cl100k_base": 367,
+        "o200k_base": 371
+      }
+    },
+    {
+      "task": "3sum",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "bytes": 536,
+      "characters": 536,
+      "tokens": {
+        "cl100k_base": 277,
+        "o200k_base": 276
+      }
+    },
+    {
+      "task": "3sum",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "b4d8ca72d1a504bddfa727aa4a98317551d06e8519afb867fed4b48b120e8f38",
+      "bytes": 1116,
+      "characters": 1116,
+      "tokens": {
+        "cl100k_base": 319,
+        "o200k_base": 323
+      }
+    },
+    {
+      "task": "3sum",
+      "category": "Two Pointers",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "e1bb540d3fc8a7eff5e87e387ecca393ce3c2258b8b0d82fe16c85c83833d15b",
+      "bytes": 1483,
+      "characters": 1483,
+      "tokens": {
+        "cl100k_base": 490,
+        "o200k_base": 499
+      }
+    },
+    {
+      "task": "container-with-most-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "2264b96b0a5f0b19773bd708a8de5facf9d2efc8aabe1f4c92b5663b20a67d3f",
+      "bytes": 868,
+      "characters": 868,
+      "tokens": {
+        "cl100k_base": 231,
+        "o200k_base": 234
+      }
+    },
+    {
+      "task": "container-with-most-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5a88b210d9f165313efbe803e2018033e3bb2a311f1f14707638be9eb6a3ad60",
+      "bytes": 1129,
+      "characters": 1129,
+      "tokens": {
+        "cl100k_base": 339,
+        "o200k_base": 344
+      }
+    },
+    {
+      "task": "trapping-rain-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "00bed82f6a543ab1cde8ad6cddf6bab8ca2f31eac79ef4c44c69ba8dfb759469",
+      "bytes": 905,
+      "characters": 905,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 242
+      }
+    },
+    {
+      "task": "trapping-rain-water",
+      "category": "Two Pointers",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "1d06df53dc9fd467c47ef7d92aa7365062fcb35be44a305c88d0a53eabefe27d",
+      "bytes": 1189,
+      "characters": 1189,
+      "tokens": {
+        "cl100k_base": 353,
+        "o200k_base": 356
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "2ae314d12794eb3ad6b7e25ec4690ffeb182f7ee7f9b8e1667d11857cfdd4bdb",
+      "bytes": 820,
+      "characters": 820,
+      "tokens": {
+        "cl100k_base": 209,
+        "o200k_base": 209
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "c87d85cfab6a163d855731a5954df35ef47d02404e20449d54195af9fee31f77",
+      "bytes": 1088,
+      "characters": 1088,
+      "tokens": {
+        "cl100k_base": 316,
+        "o200k_base": 318
+      }
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "bytes": 201,
+      "characters": 201,
+      "tokens": {
+        "cl100k_base": 110,
+        "o200k_base": 109
+      }
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "69cc8660412cfb12e15ff5aa430fb88853b2fdbba704f1927d4ad155498cf23c",
+      "bytes": 565,
+      "characters": 565,
+      "tokens": {
+        "cl100k_base": 141,
+        "o200k_base": 143
+      }
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "099a219d655becb32565c0f588b3898a597a63c02962d268f385f17d4bb6ae2a",
+      "bytes": 1135,
+      "characters": 1135,
+      "tokens": {
+        "cl100k_base": 333,
+        "o200k_base": 337
+      }
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "bytes": 628,
+      "characters": 628,
+      "tokens": {
+        "cl100k_base": 263,
+        "o200k_base": 264
+      }
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "977ded56e9b50747d31a0c99b3aa23a3a5b846eecc289484a0f3fc2ea0934742",
+      "bytes": 671,
+      "characters": 671,
+      "tokens": {
+        "cl100k_base": 183,
+        "o200k_base": 184
+      }
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "category": "Sliding Window",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "9e8c8dde0d5dba79e9ea286d4c0592d450645a83b04effdaec963cc06b81b67d",
+      "bytes": 1211,
+      "characters": 1211,
+      "tokens": {
+        "cl100k_base": 361,
+        "o200k_base": 368
+      }
+    },
+    {
+      "task": "permutation-in-string",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "f90e568beacb569ce46eb2fcd786091a2cf02dc555616922f655b0ba92dbe5fc",
+      "bytes": 772,
+      "characters": 772,
+      "tokens": {
+        "cl100k_base": 180,
+        "o200k_base": 182
+      }
+    },
+    {
+      "task": "permutation-in-string",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "1a4305d258306bd2f673c07c6ed1cfea0f154ce61c190394dfec4a9042232801",
+      "bytes": 1278,
+      "characters": 1278,
+      "tokens": {
+        "cl100k_base": 363,
+        "o200k_base": 371
+      }
+    },
+    {
+      "task": "minimum-window-substring",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "1d9ca519f2a375aa9d84b4db89b9092a1e0dc51b15e8da44464b8a6b9054cb1b",
+      "bytes": 720,
+      "characters": 720,
+      "tokens": {
+        "cl100k_base": 207,
+        "o200k_base": 208
+      }
+    },
+    {
+      "task": "minimum-window-substring",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "17a7f8ab712187c3b450b2461796157749f37eb9330c472e875eb5896a7650e4",
+      "bytes": 1396,
+      "characters": 1396,
+      "tokens": {
+        "cl100k_base": 407,
+        "o200k_base": 412
+      }
+    },
+    {
+      "task": "sliding-window-maximum",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "7db8d88dcd2a9044478049403bfe6e668e4e87e13796cf401171450bf368f517",
+      "bytes": 952,
+      "characters": 952,
+      "tokens": {
+        "cl100k_base": 244,
+        "o200k_base": 246
+      }
+    },
+    {
+      "task": "sliding-window-maximum",
+      "category": "Sliding Window",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "77e0a21bdd65122c8b1c6ac9ec3c25efb00c2bdf1df82efac1e9657d9778c815",
+      "bytes": 1334,
+      "characters": 1334,
+      "tokens": {
+        "cl100k_base": 405,
+        "o200k_base": 410
+      }
+    },
+    {
+      "task": "valid-parentheses",
+      "category": "Stack",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "4fabdd1873e69061d578bed72deb39265c9e98b2d2053e8488cb01f71e82d29b",
+      "bytes": 562,
+      "characters": 562,
+      "tokens": {
+        "cl100k_base": 145,
+        "o200k_base": 143
+      }
+    },
+    {
+      "task": "valid-parentheses",
+      "category": "Stack",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "66650af7b882006def0f518868a37170a3c80e6e07169b0f7eee527bcf288935",
+      "bytes": 1112,
+      "characters": 1112,
+      "tokens": {
+        "cl100k_base": 318,
+        "o200k_base": 319
+      }
+    },
+    {
+      "task": "min-stack",
+      "category": "Stack",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "06ff9fcc2ec263fc5d4b5e68c4a55ab1e497709b2bc0639836a62ecd5dd8d5ca",
+      "bytes": 736,
+      "characters": 736,
+      "tokens": {
+        "cl100k_base": 209,
+        "o200k_base": 209
+      }
+    },
+    {
+      "task": "min-stack",
+      "category": "Stack",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "72ad39d5a3d414f38ebb659dcf84035c8838b48b273cebd3ac85c7289e28cc95",
+      "bytes": 1257,
+      "characters": 1257,
+      "tokens": {
+        "cl100k_base": 362,
+        "o200k_base": 366
+      }
+    },
+    {
+      "task": "evaluate-reverse-polish-notation",
+      "category": "Stack",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "296d6326430c413b1da3b8a76c12a88daf5789537ba3a97d8ffbf1307418a0b5",
+      "bytes": 735,
+      "characters": 735,
+      "tokens": {
+        "cl100k_base": 207,
+        "o200k_base": 207
+      }
+    },
+    {
+      "task": "evaluate-reverse-polish-notation",
+      "category": "Stack",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "448f66f768edd8fad98fb06306284b1d1b8c718ebda2dfc42ec57819393f1ea7",
+      "bytes": 1257,
+      "characters": 1257,
+      "tokens": {
+        "cl100k_base": 365,
+        "o200k_base": 369
+      }
+    },
+    {
+      "task": "generate-parentheses",
+      "category": "Stack",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "bytes": 231,
+      "characters": 231,
+      "tokens": {
+        "cl100k_base": 109,
+        "o200k_base": 110
+      }
+    },
+    {
+      "task": "generate-parentheses",
+      "category": "Stack",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "c8effe2ad38f3ffd3e56ff03950478443d405e4f0ddf5848ea59050e4df69bf9",
+      "bytes": 500,
+      "characters": 500,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 135
+      }
+    },
+    {
+      "task": "generate-parentheses",
+      "category": "Stack",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "6a21f70006c2ef32ff3d007a8d5c397191df4d884876e0594598dba59e416a17",
+      "bytes": 1067,
+      "characters": 1067,
+      "tokens": {
+        "cl100k_base": 314,
+        "o200k_base": 316
+      }
+    },
+    {
+      "task": "daily-temperatures",
+      "category": "Stack",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "a037ea5c01d13dc9a74cea51aa689922877baf4a9fc4e2bc87e85822114ea460",
+      "bytes": 830,
+      "characters": 830,
+      "tokens": {
+        "cl100k_base": 217,
+        "o200k_base": 217
+      }
+    },
+    {
+      "task": "daily-temperatures",
+      "category": "Stack",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "3241cb02d3f62873ab9c4ec1c3916269b455407f3de156298ca293e6dff0cd05",
+      "bytes": 1229,
+      "characters": 1229,
+      "tokens": {
+        "cl100k_base": 370,
+        "o200k_base": 376
+      }
+    },
+    {
+      "task": "car-fleet",
+      "category": "Stack",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+      "bytes": 403,
+      "characters": 403,
+      "tokens": {
+        "cl100k_base": 213,
+        "o200k_base": 213
+      }
+    },
+    {
+      "task": "car-fleet",
+      "category": "Stack",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "9dda82110fd283ca1d30e71eb435481abde04b6b76dd42c2bac12457b731c5c0",
+      "bytes": 958,
+      "characters": 958,
+      "tokens": {
+        "cl100k_base": 244,
+        "o200k_base": 245
+      }
+    },
+    {
+      "task": "car-fleet",
+      "category": "Stack",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "7f2ad384a7437d880492110aef3dc38fcccffd6b6f69ce38670a734869cf2b90",
+      "bytes": 1220,
+      "characters": 1220,
+      "tokens": {
+        "cl100k_base": 367,
+        "o200k_base": 372
+      }
+    },
+    {
+      "task": "largest-rectangle-in-histogram",
+      "category": "Stack",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "2f160b03205090aaec01255e5ce8f47ceaf22b6fb406fca0f7249b5a1fd2dff9",
+      "bytes": 959,
+      "characters": 959,
+      "tokens": {
+        "cl100k_base": 235,
+        "o200k_base": 237
+      }
+    },
+    {
+      "task": "largest-rectangle-in-histogram",
+      "category": "Stack",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "7001920d9048aa9d24bb43983e0b039fd636a51a5da8a1f1304265864d8b276c",
+      "bytes": 1270,
+      "characters": 1270,
+      "tokens": {
+        "cl100k_base": 372,
+        "o200k_base": 377
+      }
+    },
+    {
+      "task": "binary-search",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0b42f6dad848140f4ab7107205f539fb19280f4624fc9bfbd71e00cbe01f0daf",
+      "bytes": 799,
+      "characters": 799,
+      "tokens": {
+        "cl100k_base": 209,
+        "o200k_base": 209
+      }
+    },
+    {
+      "task": "binary-search",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9b4bf8bda69b50d7a0ed8d4ef4d443274582c2d45a3be612ee3ac93dcd699b35",
+      "bytes": 1105,
+      "characters": 1105,
+      "tokens": {
+        "cl100k_base": 322,
+        "o200k_base": 325
+      }
+    },
+    {
+      "task": "search-a-2d-matrix",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0498c0101611923b2bd4e02aaae933b5ca2898717d2cfa02044d7b251522b7c7",
+      "bytes": 835,
+      "characters": 835,
+      "tokens": {
+        "cl100k_base": 228,
+        "o200k_base": 229
+      }
+    },
+    {
+      "task": "search-a-2d-matrix",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "cacda51a654db5444febc6124946f958bbd2cfdef37f16797b6ea10bff7d4290",
+      "bytes": 1030,
+      "characters": 1030,
+      "tokens": {
+        "cl100k_base": 293,
+        "o200k_base": 295
+      }
+    },
+    {
+      "task": "koko-eating-bananas",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "23841bce2e841435d80634799b5336b098972e96feb525030b18b036900b37a4",
+      "bytes": 862,
+      "characters": 862,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "koko-eating-bananas",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "f1c9fa20d2b18761f82be3ea4d68397bea4d45ab5b34285b6a6af60d6e66c30a",
+      "bytes": 1163,
+      "characters": 1163,
+      "tokens": {
+        "cl100k_base": 351,
+        "o200k_base": 354
+      }
+    },
+    {
+      "task": "find-minimum-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "93e36d22dec62004cf030816d0cbe752203d51c7468cc025a683d57fb4c04135",
+      "bytes": 868,
+      "characters": 868,
+      "tokens": {
+        "cl100k_base": 233,
+        "o200k_base": 235
+      }
+    },
+    {
+      "task": "find-minimum-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "06074636661e63e672b8c03f6c0995a300a4105675a8ec73b6288f5c0d141993",
+      "bytes": 1066,
+      "characters": 1066,
+      "tokens": {
+        "cl100k_base": 321,
+        "o200k_base": 324
+      }
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "bytes": 478,
+      "characters": 478,
+      "tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 288
+      }
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "dea22914cecb6edad919029929ea76651b9f3396c39f5acc9261ed69d6b8ce64",
+      "bytes": 1043,
+      "characters": 1043,
+      "tokens": {
+        "cl100k_base": 286,
+        "o200k_base": 286
+      }
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "2d0c2e2657427980e409eadc911fef6c918c2b652b84272af9493516db9011d0",
+      "bytes": 1215,
+      "characters": 1215,
+      "tokens": {
+        "cl100k_base": 378,
+        "o200k_base": 382
+      }
+    },
+    {
+      "task": "time-based-key-value-store",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e96c26cb011cda97cf0366ddf262cd21ce1c3bda379cc3786a9b949321091d19",
+      "bytes": 646,
+      "characters": 646,
+      "tokens": {
+        "cl100k_base": 189,
+        "o200k_base": 189
+      }
+    },
+    {
+      "task": "time-based-key-value-store",
+      "category": "Binary Search",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "cd5fe84020ac00f193de68db108e49c1ce704d9f4385585cbc8371edcd8121fb",
+      "bytes": 1334,
+      "characters": 1334,
+      "tokens": {
+        "cl100k_base": 380,
+        "o200k_base": 385
+      }
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+      "bytes": 628,
+      "characters": 628,
+      "tokens": {
+        "cl100k_base": 366,
+        "o200k_base": 366
+      }
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "9849a62c3bca450f29286a8d0fd2566794506523953ca33d7a06237f54da341f",
+      "bytes": 1210,
+      "characters": 1210,
+      "tokens": {
+        "cl100k_base": 357,
+        "o200k_base": 358
+      }
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "category": "Binary Search",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "c122f55b1e54dfcf51c3c079b652471e8756f28629574ff9c2729735a8a53e53",
+      "bytes": 1406,
+      "characters": 1406,
+      "tokens": {
+        "cl100k_base": 457,
+        "o200k_base": 459
+      }
+    },
+    {
+      "task": "reverse-linked-list",
+      "category": "Linked List",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "bytes": 226,
+      "characters": 226,
+      "tokens": {
+        "cl100k_base": 112,
+        "o200k_base": 113
+      }
+    },
+    {
+      "task": "reverse-linked-list",
+      "category": "Linked List",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "2c05d93164d0706e35911051f4844c84dee33a0eb50618dbb48fe1b3532ccdd4",
+      "bytes": 809,
+      "characters": 809,
+      "tokens": {
+        "cl100k_base": 212,
+        "o200k_base": 215
+      }
+    },
+    {
+      "task": "reverse-linked-list",
+      "category": "Linked List",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "6404d5b3334d14e517d8d1033596ebb82f4c7907ee492a0c970f5547fed4eb8a",
+      "bytes": 1221,
+      "characters": 1221,
+      "tokens": {
+        "cl100k_base": 368,
+        "o200k_base": 372
+      }
+    },
+    {
+      "task": "merge-two-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e70ec6d20a2e9b04788945fa43f03db3b138a7b51aacccf95f5e35846a8e9cab",
+      "bytes": 853,
+      "characters": 853,
+      "tokens": {
+        "cl100k_base": 235,
+        "o200k_base": 235
+      }
+    },
+    {
+      "task": "merge-two-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "519027ce1ec5b4f0cee9c6bb50ac61411044f154d4ab608e8ce6c1951273ce43",
+      "bytes": 1200,
+      "characters": 1200,
+      "tokens": {
+        "cl100k_base": 352,
+        "o200k_base": 357
+      }
+    },
+    {
+      "task": "reorder-list",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "22524c025d7732e34211faa9a62e67a9f0563ccbabb7b1ebd38d5aa76fcd5859",
+      "bytes": 770,
+      "characters": 770,
+      "tokens": {
+        "cl100k_base": 208,
+        "o200k_base": 208
+      }
+    },
+    {
+      "task": "reorder-list",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "a090bc1e4913158e325b7a6ac64dbee1b91940322ec7af48ff7e8c6f7f462cc0",
+      "bytes": 1161,
+      "characters": 1161,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 359
+      }
+    },
+    {
+      "task": "remove-nth-node-from-end-of-list",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "f79700b714e470acd4d68ef80f9b3ea556b9b11d74edd5adc603cfc346e6e421",
+      "bytes": 728,
+      "characters": 728,
+      "tokens": {
+        "cl100k_base": 187,
+        "o200k_base": 189
+      }
+    },
+    {
+      "task": "remove-nth-node-from-end-of-list",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e4300e9a307405ddb5fadfa3f0ab31a4aee6d5e8ada913a667356f321f584ec9",
+      "bytes": 1097,
+      "characters": 1097,
+      "tokens": {
+        "cl100k_base": 327,
+        "o200k_base": 331
+      }
+    },
+    {
+      "task": "copy-list-with-random-pointer",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b24bed71a1020584a5cf607c4bebd0c4b326d20dd43c7df42f17c549c89306e7",
+      "bytes": 1001,
+      "characters": 1001,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "task": "copy-list-with-random-pointer",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "345df20b326e15bbfce0b77ea2652e8b7ceed7a906a5d01dcaa6716df63f33ba",
+      "bytes": 1434,
+      "characters": 1434,
+      "tokens": {
+        "cl100k_base": 444,
+        "o200k_base": 450
+      }
+    },
+    {
+      "task": "add-two-numbers",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "f5f7a967dcafa4e8cd5b0ba71b15b24674eca0cba08efe48a1f11027d89b83ed",
+      "bytes": 870,
+      "characters": 870,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 242
+      }
+    },
+    {
+      "task": "add-two-numbers",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "485829ae6c021a2096006d2ae76dfe868d96ed7f4fd92adff8844fa735da8849",
+      "bytes": 1285,
+      "characters": 1285,
+      "tokens": {
+        "cl100k_base": 397,
+        "o200k_base": 401
+      }
+    },
+    {
+      "task": "linked-list-cycle",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "ed503bda702d7b3144507cb00c22c33f126a11975a39e5c011f46034437a4504",
+      "bytes": 924,
+      "characters": 924,
+      "tokens": {
+        "cl100k_base": 246,
+        "o200k_base": 247
+      }
+    },
+    {
+      "task": "linked-list-cycle",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "31ea1cf77aff1d09c0d451f06572a7c6ce3bb72323ed9edfc218c8e80f87250f",
+      "bytes": 1084,
+      "characters": 1084,
+      "tokens": {
+        "cl100k_base": 327,
+        "o200k_base": 330
+      }
+    },
+    {
+      "task": "find-the-duplicate-number",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0c092f3d42d41a63d03b292905c5d69b7437a114b967adbc48f962b950c181f6",
+      "bytes": 852,
+      "characters": 852,
+      "tokens": {
+        "cl100k_base": 227,
+        "o200k_base": 227
+      }
+    },
+    {
+      "task": "find-the-duplicate-number",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "7cf95c37b8a1cc041e261c232d23598cfdbd599ad0831e54842751dca106dcab",
+      "bytes": 1072,
+      "characters": 1072,
+      "tokens": {
+        "cl100k_base": 326,
+        "o200k_base": 329
+      }
+    },
+    {
+      "task": "lru-cache",
+      "category": "Linked List",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "7db50002e59f1e17e437a7bcf9ec2cb7a5eff7ab6234db45272837961f4f31e8",
+      "bytes": 1151,
+      "characters": 1151,
+      "tokens": {
+        "cl100k_base": 292,
+        "o200k_base": 292
+      }
+    },
+    {
+      "task": "lru-cache",
+      "category": "Linked List",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "f0a71580eed7f7ba3f3dbc2ec75b070d50d28828232f22e5abccef5320b07b4d",
+      "bytes": 1491,
+      "characters": 1491,
+      "tokens": {
+        "cl100k_base": 424,
+        "o200k_base": 426
+      }
+    },
+    {
+      "task": "merge-k-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "9732a9132cbe54073cd874d535e1d0ae0f64364aefd77a6f759a68340e86caf1",
+      "bytes": 941,
+      "characters": 941,
+      "tokens": {
+        "cl100k_base": 260,
+        "o200k_base": 261
+      }
+    },
+    {
+      "task": "merge-k-sorted-lists",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "6282d5a20950acd6bb574fe7357ff186184fad75c7f2df49532ed2a11b14fe0a",
+      "bytes": 1410,
+      "characters": 1410,
+      "tokens": {
+        "cl100k_base": 440,
+        "o200k_base": 445
+      }
+    },
+    {
+      "task": "reverse-nodes-in-k-group",
+      "category": "Linked List",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0603620a7de6575fbfff4518ebc8514a0a9affc0d81a69d07a14d5c1568af61b",
+      "bytes": 763,
+      "characters": 763,
+      "tokens": {
+        "cl100k_base": 204,
+        "o200k_base": 204
+      }
+    },
+    {
+      "task": "reverse-nodes-in-k-group",
+      "category": "Linked List",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e10ef473c4ba54f4347261b4cc4879a95e45e1ae58d5ef350018fe80dacd5929",
+      "bytes": 1171,
+      "characters": 1171,
+      "tokens": {
+        "cl100k_base": 353,
+        "o200k_base": 358
+      }
+    },
+    {
+      "task": "invert-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "a342f49a9630541caa43e92f78afe720ed2e5eef645af238553739b519b8e0cc",
+      "bytes": 877,
+      "characters": 877,
+      "tokens": {
+        "cl100k_base": 234,
+        "o200k_base": 234
+      }
+    },
+    {
+      "task": "invert-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "ea51b862847ea27aef45f6f99e13e0619a59cb4d9721943e03a915598aff21ca",
+      "bytes": 1253,
+      "characters": 1253,
+      "tokens": {
+        "cl100k_base": 379,
+        "o200k_base": 383
+      }
+    },
+    {
+      "task": "maximum-depth-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e8e65ae764ab29cc7819989c498d5e67f8308f86160372891c7086ee2174437e",
+      "bytes": 1069,
+      "characters": 1069,
+      "tokens": {
+        "cl100k_base": 278,
+        "o200k_base": 279
+      }
+    },
+    {
+      "task": "maximum-depth-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "a9e738d9f5c571e602713147fbf9f1c50b1cb2d9fdf692dde6476cfd3168b773",
+      "bytes": 1275,
+      "characters": 1275,
+      "tokens": {
+        "cl100k_base": 377,
+        "o200k_base": 380
+      }
+    },
+    {
+      "task": "diameter-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b4c053a58a596e726f536da15fbfc3d3d85a083ead9ae3a8055e6df924312232",
+      "bytes": 1315,
+      "characters": 1315,
+      "tokens": {
+        "cl100k_base": 376,
+        "o200k_base": 379
+      }
+    },
+    {
+      "task": "diameter-of-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "8a600943c819b99a0adc66e818e4c03a5bebcdf7bf683a8de95e20437446596c",
+      "bytes": 1418,
+      "characters": 1418,
+      "tokens": {
+        "cl100k_base": 436,
+        "o200k_base": 440
+      }
+    },
+    {
+      "task": "balanced-binary-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+      "bytes": 641,
+      "characters": 641,
+      "tokens": {
+        "cl100k_base": 379,
+        "o200k_base": 380
+      }
+    },
+    {
+      "task": "balanced-binary-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "1c2f5fa8ed73e87b3efbecdec6ece5e02faeda27ae00cb8d70a955b8dc8a68cc",
+      "bytes": 1304,
+      "characters": 1304,
+      "tokens": {
+        "cl100k_base": 356,
+        "o200k_base": 360
+      }
+    },
+    {
+      "task": "balanced-binary-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "a42928008593f94d387b3fed07e94f4effb5e3b69b0894c2d9c865d9146d9b8c",
+      "bytes": 1445,
+      "characters": 1445,
+      "tokens": {
+        "cl100k_base": 441,
+        "o200k_base": 445
+      }
+    },
+    {
+      "task": "same-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "1b350201d1b297c9af48be42df4eea58cba6c1603807b7481203acd16dea9d1d",
+      "bytes": 1066,
+      "characters": 1066,
+      "tokens": {
+        "cl100k_base": 292,
+        "o200k_base": 292
+      }
+    },
+    {
+      "task": "same-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "b5fcb81ec14478e20a1bbc4596a2cf68651c4f5ad4fc179da8a4f97331dadd4c",
+      "bytes": 1377,
+      "characters": 1377,
+      "tokens": {
+        "cl100k_base": 422,
+        "o200k_base": 425
+      }
+    },
+    {
+      "task": "subtree-of-another-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "c38fb3d39b7a1065467cc3db1b2ff6bd606f0f7cea436cb8a0fc18a63d416827",
+      "bytes": 1491,
+      "characters": 1491,
+      "tokens": {
+        "cl100k_base": 416,
+        "o200k_base": 416
+      }
+    },
+    {
+      "task": "subtree-of-another-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "bfab98666c999859054b8ccad990b17f6be46311921718bfb0cd099824226485",
+      "bytes": 1725,
+      "characters": 1725,
+      "tokens": {
+        "cl100k_base": 527,
+        "o200k_base": 531
+      }
+    },
+    {
+      "task": "lowest-common-ancestor-of-a-binary-search-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "34693ddeef8ca072405b7a70966b7f4251bebd3c09ef2cc0de6773e959590900",
+      "bytes": 1039,
+      "characters": 1039,
+      "tokens": {
+        "cl100k_base": 289,
+        "o200k_base": 287
+      }
+    },
+    {
+      "task": "lowest-common-ancestor-of-a-binary-search-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "42a04bfe91261c36e45f757154e9768f12a9bd09931df6357b97564a70a839e3",
+      "bytes": 1196,
+      "characters": 1196,
+      "tokens": {
+        "cl100k_base": 370,
+        "o200k_base": 372
+      }
+    },
+    {
+      "task": "binary-tree-level-order-traversal",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "33610b12c20bdaebe82b5b019fe0cea4333ff744b6d4bba87eb09c64a8923b7b",
+      "bytes": 1118,
+      "characters": 1118,
+      "tokens": {
+        "cl100k_base": 297,
+        "o200k_base": 299
+      }
+    },
+    {
+      "task": "binary-tree-level-order-traversal",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5a19a54def4f63b438aa551caa331a52875cbe55df9013cea8aa1efea106994a",
+      "bytes": 1424,
+      "characters": 1424,
+      "tokens": {
+        "cl100k_base": 436,
+        "o200k_base": 440
+      }
+    },
+    {
+      "task": "binary-tree-right-side-view",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "892be1883548292495d04fb569c5c91a4c36fec3056971aea1030c35fee2b6c9",
+      "bytes": 1033,
+      "characters": 1033,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "task": "binary-tree-right-side-view",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "69e34a56e36df87fc0375787a997335321ad39e30e65e0097220abfa181ab4fa",
+      "bytes": 1287,
+      "characters": 1287,
+      "tokens": {
+        "cl100k_base": 391,
+        "o200k_base": 395
+      }
+    },
+    {
+      "task": "count-good-nodes-in-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "bd200ebce6b727dd257815516a2af6c96afe24bfb1977aab5dce29bb54b8ae8c",
+      "bytes": 1048,
+      "characters": 1048,
+      "tokens": {
+        "cl100k_base": 289,
+        "o200k_base": 289
+      }
+    },
+    {
+      "task": "count-good-nodes-in-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "770eee09abc5fbb8ef5526f1642c1a464acf2078a4eb6409fd9637d1ca404015",
+      "bytes": 1297,
+      "characters": 1297,
+      "tokens": {
+        "cl100k_base": 386,
+        "o200k_base": 390
+      }
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+      "bytes": 283,
+      "characters": 283,
+      "tokens": {
+        "cl100k_base": 153,
+        "o200k_base": 154
+      }
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "cb363222832c3debc509058f63d4669d2a9635df826b23d235279658da8857c7",
+      "bytes": 1181,
+      "characters": 1181,
+      "tokens": {
+        "cl100k_base": 291,
+        "o200k_base": 291
+      }
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "category": "Trees",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "a7a98796668abac73e9c14044f00389efd10036dfc993839c2afcca2cd841a84",
+      "bytes": 1232,
+      "characters": 1232,
+      "tokens": {
+        "cl100k_base": 371,
+        "o200k_base": 374
+      }
+    },
+    {
+      "task": "kth-smallest-element-in-a-bst",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "c2d8ac20a176655ec0562d477944adc11ebabc7c41824f0ec8a63b181f9f7913",
+      "bytes": 1007,
+      "characters": 1007,
+      "tokens": {
+        "cl100k_base": 279,
+        "o200k_base": 277
+      }
+    },
+    {
+      "task": "kth-smallest-element-in-a-bst",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e2a65722d6318dcefcfda2a4fd51e2c74d96b5e87b78d410f082d4b79575d8d0",
+      "bytes": 1158,
+      "characters": 1158,
+      "tokens": {
+        "cl100k_base": 345,
+        "o200k_base": 347
+      }
+    },
+    {
+      "task": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "c0cf1eb8dd38a90276b7097ec276c2e58a88491a2890c7125596c721c2cdd29c",
+      "bytes": 1136,
+      "characters": 1136,
+      "tokens": {
+        "cl100k_base": 301,
+        "o200k_base": 303
+      }
+    },
+    {
+      "task": "construct-binary-tree-from-preorder-and-inorder-traversal",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "71555b99be38498d9288fbc2c1efeb255e08aba7212fa91b20aec4b7a4e8532e",
+      "bytes": 1493,
+      "characters": 1493,
+      "tokens": {
+        "cl100k_base": 466,
+        "o200k_base": 473
+      }
+    },
+    {
+      "task": "binary-tree-maximum-path-sum",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d31881473ce9fd396319f686d524f405fd6e2831c8ba7e8b85b32b4b44857285",
+      "bytes": 1352,
+      "characters": 1352,
+      "tokens": {
+        "cl100k_base": 392,
+        "o200k_base": 397
+      }
+    },
+    {
+      "task": "binary-tree-maximum-path-sum",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "146ed0eeb29eb4d3b090ec59fb908fa5c582fd396025f2eb2b1f370b07816ed7",
+      "bytes": 1462,
+      "characters": 1462,
+      "tokens": {
+        "cl100k_base": 462,
+        "o200k_base": 465
+      }
+    },
+    {
+      "task": "serialize-and-deserialize-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0e727a280d592c3381ddad48eb3e780fe72db7e2be11d963602cfb300f8c624a",
+      "bytes": 1033,
+      "characters": 1033,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "task": "serialize-and-deserialize-binary-tree",
+      "category": "Trees",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9a27e32ead718002fdb8cc733008b59090cdd43272911a47a18687868adeda14",
+      "bytes": 1174,
+      "characters": 1174,
+      "tokens": {
+        "cl100k_base": 346,
+        "o200k_base": 348
+      }
+    },
+    {
+      "task": "implement-trie-prefix-tree",
+      "category": "Tries",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "1a56e95f406d4f0d7dea83e0769fe7242308947846845f439e96f6ac9f8e322e",
+      "bytes": 951,
+      "characters": 951,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 243
+      }
+    },
+    {
+      "task": "implement-trie-prefix-tree",
+      "category": "Tries",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "7b0b75f903a51cb3185d765bc83755c742a90d438daca33f38480a531b8b5e73",
+      "bytes": 1504,
+      "characters": 1504,
+      "tokens": {
+        "cl100k_base": 435,
+        "o200k_base": 441
+      }
+    },
+    {
+      "task": "design-add-and-search-words-data-structure",
+      "category": "Tries",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "2d8d71e2e271307436f0a9c5dad4d124b1f71317a8ddb727bbad9f020e1bd7a5",
+      "bytes": 918,
+      "characters": 918,
+      "tokens": {
+        "cl100k_base": 238,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "design-add-and-search-words-data-structure",
+      "category": "Tries",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "591ffe99daa950a1ff89ef4b5b033e4135b88f287d2e5000253fa53af406efd0",
+      "bytes": 1556,
+      "characters": 1556,
+      "tokens": {
+        "cl100k_base": 477,
+        "o200k_base": 488
+      }
+    },
+    {
+      "task": "word-search-ii",
+      "category": "Tries",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "757f28025eca8a5d6acb842a78326ab26f544e16aab12d2a34c19fd14af9d68c",
+      "bytes": 935,
+      "characters": 935,
+      "tokens": {
+        "cl100k_base": 292,
+        "o200k_base": 294
+      }
+    },
+    {
+      "task": "word-search-ii",
+      "category": "Tries",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "ad7c65e95ea6fb909479ec3dddef053e84e0d071604443e9fb8a5c2fb7080ed4",
+      "bytes": 1869,
+      "characters": 1869,
+      "tokens": {
+        "cl100k_base": 619,
+        "o200k_base": 633
+      }
+    },
+    {
+      "task": "kth-largest-element-in-a-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b6ab429f7a0a417de4a77f59c260278d3d308029c956e2cfb1e56763ac81a7bd",
+      "bytes": 951,
+      "characters": 951,
+      "tokens": {
+        "cl100k_base": 251,
+        "o200k_base": 251
+      }
+    },
+    {
+      "task": "kth-largest-element-in-a-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "506fcbd36b5399373250ae8adf86fd24a38791b7d79769dbf2c0f8ea78a9a72f",
+      "bytes": 1321,
+      "characters": 1321,
+      "tokens": {
+        "cl100k_base": 396,
+        "o200k_base": 400
+      }
+    },
+    {
+      "task": "last-stone-weight",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+      "bytes": 508,
+      "characters": 508,
+      "tokens": {
+        "cl100k_base": 293,
+        "o200k_base": 293
+      }
+    },
+    {
+      "task": "last-stone-weight",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "ee3e520b116e94fd96a1a08aeb8c84b6c5c312d2539c2cedd52212d449c4d3d7",
+      "bytes": 917,
+      "characters": 917,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 246
+      }
+    },
+    {
+      "task": "last-stone-weight",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "87c40aceb393a4de66e0b6528f27e5b0313a60eb08242f58d084102214033588",
+      "bytes": 1150,
+      "characters": 1150,
+      "tokens": {
+        "cl100k_base": 337,
+        "o200k_base": 339
+      }
+    },
+    {
+      "task": "k-closest-points-to-origin",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d3229602d364fc7a4852b1e3ff913cfad9e74ec520c6951e939f88849f29265b",
+      "bytes": 846,
+      "characters": 846,
+      "tokens": {
+        "cl100k_base": 230,
+        "o200k_base": 233
+      }
+    },
+    {
+      "task": "k-closest-points-to-origin",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "66911069403f2016791676f3cd5c1435b666f6760e24095fc15ad06f394b9606",
+      "bytes": 1320,
+      "characters": 1320,
+      "tokens": {
+        "cl100k_base": 421,
+        "o200k_base": 425
+      }
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "bytes": 136,
+      "characters": 136,
+      "tokens": {
+        "cl100k_base": 62,
+        "o200k_base": 62
+      }
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "56328866d8c0c2abfb48a9d4ac8fbc4a659f8037e963d416212b83327cf0b0b4",
+      "bytes": 780,
+      "characters": 780,
+      "tokens": {
+        "cl100k_base": 197,
+        "o200k_base": 196
+      }
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "category": "Heap / Priority Queue",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "813476c075e81784fd7e457983473821315553de590b7de06f63fba8b61e0502",
+      "bytes": 1066,
+      "characters": 1066,
+      "tokens": {
+        "cl100k_base": 305,
+        "o200k_base": 307
+      }
+    },
+    {
+      "task": "task-scheduler",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d35b1d7cfdf619aae75c6b71d5a1f600edf8765f67045e2e2734fa1f50869c05",
+      "bytes": 583,
+      "characters": 583,
+      "tokens": {
+        "cl100k_base": 148,
+        "o200k_base": 148
+      }
+    },
+    {
+      "task": "task-scheduler",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "2c8ef701c98cbbe3738c41597c9952959c7d04b41d772c72f0253b9d02be09bc",
+      "bytes": 1257,
+      "characters": 1257,
+      "tokens": {
+        "cl100k_base": 360,
+        "o200k_base": 365
+      }
+    },
+    {
+      "task": "design-twitter",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0b1ec3d280926bcd2849fd9e06d91cbd6ba61656cbbbd2a74a2dee0a476cd116",
+      "bytes": 1214,
+      "characters": 1214,
+      "tokens": {
+        "cl100k_base": 338,
+        "o200k_base": 341
+      }
+    },
+    {
+      "task": "design-twitter",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "d0dc443698e1a3fa606e5a03e58fda5cdb1cd50126745c9455923f681ef40aba",
+      "bytes": 1757,
+      "characters": 1757,
+      "tokens": {
+        "cl100k_base": 549,
+        "o200k_base": 555
+      }
+    },
+    {
+      "task": "find-median-from-data-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b48ce302e847ba6c61c8e1ff4291565edfe5f36ab9ee1c70f7b3dec556e5a057",
+      "bytes": 960,
+      "characters": 960,
+      "tokens": {
+        "cl100k_base": 256,
+        "o200k_base": 260
+      }
+    },
+    {
+      "task": "find-median-from-data-stream",
+      "category": "Heap / Priority Queue",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "ed88f162976316834cfa67b9f9bf87aeb846a57c979ac46b0e08802d629f19e1",
+      "bytes": 1339,
+      "characters": 1339,
+      "tokens": {
+        "cl100k_base": 394,
+        "o200k_base": 397
+      }
+    },
+    {
+      "task": "subsets",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e654369acdc584ca154a9965ffcb0a1bbad9ca3f2e503234f00e1ef9ee6ba0f8",
+      "bytes": 786,
+      "characters": 786,
+      "tokens": {
+        "cl100k_base": 205,
+        "o200k_base": 205
+      }
+    },
+    {
+      "task": "subsets",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "987bb831ccf8d666c5eb2127290de57c79cd40c6102f31bf03562c4f7be1f609",
+      "bytes": 1377,
+      "characters": 1377,
+      "tokens": {
+        "cl100k_base": 417,
+        "o200k_base": 423
+      }
+    },
+    {
+      "task": "combination-sum",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "22769fa1b6693ae4985fcb11f88820e2f8a7b59f7484360f6c79b1637b70ee20",
+      "bytes": 1096,
+      "characters": 1096,
+      "tokens": {
+        "cl100k_base": 280,
+        "o200k_base": 282
+      }
+    },
+    {
+      "task": "combination-sum",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "1f988ee09c67d8f2446058017c44536578a9ea9b79d62c37713e4375f4b29ddd",
+      "bytes": 1518,
+      "characters": 1518,
+      "tokens": {
+        "cl100k_base": 462,
+        "o200k_base": 468
+      }
+    },
+    {
+      "task": "permutations",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "453080fca726109fcc6bb08da56cb7853fc6973214b86625b3a9b83f03099548",
+      "bytes": 768,
+      "characters": 768,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 186
+      }
+    },
+    {
+      "task": "permutations",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "b370ae2e4b13f9e4866c94dd7b2f22bdfaec6da7f875d2b1346366831be853f7",
+      "bytes": 1304,
+      "characters": 1304,
+      "tokens": {
+        "cl100k_base": 386,
+        "o200k_base": 390
+      }
+    },
+    {
+      "task": "subsets-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "03c8bc1d404dd353f28e070c7c645f11b7cfe874cacacc99a8a39e03f0219a82",
+      "bytes": 887,
+      "characters": 887,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "subsets-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "59214d1112730a6d7526b92e25a0079533dab038e4d7fcb90018e2eaa4c9a374",
+      "bytes": 1466,
+      "characters": 1466,
+      "tokens": {
+        "cl100k_base": 453,
+        "o200k_base": 460
+      }
+    },
+    {
+      "task": "combination-sum-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "de43ecfae6c7e77f98388446efe37051756af92bf161edff46c3a81620cab61f",
+      "bytes": 1103,
+      "characters": 1103,
+      "tokens": {
+        "cl100k_base": 284,
+        "o200k_base": 286
+      }
+    },
+    {
+      "task": "combination-sum-ii",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "31a09c17b914864423a76905fd449d89578eff9427a9d1bb2e56a2b94b288df7",
+      "bytes": 1520,
+      "characters": 1520,
+      "tokens": {
+        "cl100k_base": 464,
+        "o200k_base": 470
+      }
+    },
+    {
+      "task": "word-search",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "829bc48198501286ca6d8b96741e4cc5a23953be240ece5a909e2608bc059b62",
+      "bytes": 803,
+      "characters": 803,
+      "tokens": {
+        "cl100k_base": 251,
+        "o200k_base": 252
+      }
+    },
+    {
+      "task": "word-search",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "f09a845f6153f00cd435517c894650377215a785921420bac982eb8c29bb063f",
+      "bytes": 1482,
+      "characters": 1482,
+      "tokens": {
+        "cl100k_base": 469,
+        "o200k_base": 474
+      }
+    },
+    {
+      "task": "palindrome-partitioning",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b2ec7701ae15274bc8141c30954798c69ed4ce8bcccbeb22e436cebb1de0d145",
+      "bytes": 529,
+      "characters": 529,
+      "tokens": {
+        "cl100k_base": 143,
+        "o200k_base": 143
+      }
+    },
+    {
+      "task": "palindrome-partitioning",
+      "category": "Backtracking",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "db8d7958d086e530629987145c7b54ddebb1273a73baf93034cf8231abcf6e30",
+      "bytes": 1359,
+      "characters": 1359,
+      "tokens": {
+        "cl100k_base": 391,
+        "o200k_base": 395
+      }
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "category": "Backtracking",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+      "bytes": 337,
+      "characters": 337,
+      "tokens": {
+        "cl100k_base": 182,
+        "o200k_base": 181
+      }
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "category": "Backtracking",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "e65dc40fe6510a41a793e90cdf70c4586803ce973900b1de3681a0b4630696d7",
+      "bytes": 471,
+      "characters": 471,
+      "tokens": {
+        "cl100k_base": 138,
+        "o200k_base": 137
+      }
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "category": "Backtracking",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "ebcf1e680f13e69d87fff09458550efc1c4519586009aa762addbfd03f474203",
+      "bytes": 1203,
+      "characters": 1203,
+      "tokens": {
+        "cl100k_base": 346,
+        "o200k_base": 349
+      }
+    },
+    {
+      "task": "n-queens",
+      "category": "Backtracking",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "42b0ef49460ee7c4f5b6f5e0e85bf071122b97931f7d9b5af567001fbe08979d",
+      "bytes": 684,
+      "characters": 684,
+      "tokens": {
+        "cl100k_base": 189,
+        "o200k_base": 191
+      }
+    },
+    {
+      "task": "n-queens",
+      "category": "Backtracking",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "21820467091defa32796df4fba5417352c51c0c587d6c108622f22e66b104273",
+      "bytes": 1384,
+      "characters": 1384,
+      "tokens": {
+        "cl100k_base": 415,
+        "o200k_base": 418
+      }
+    },
+    {
+      "task": "number-of-islands",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "9fe4745db6311159aed030f82e9b015ecfc68c5153829a18d3470b5b70c52f62",
+      "bytes": 1280,
+      "characters": 1280,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 356
+      }
+    },
+    {
+      "task": "number-of-islands",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "6903cf9d7071204c8dc2d64ca43ef0bee1949920b453a10d709d07526a8dcd56",
+      "bytes": 1376,
+      "characters": 1376,
+      "tokens": {
+        "cl100k_base": 424,
+        "o200k_base": 429
+      }
+    },
+    {
+      "task": "clone-graph",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "15f1dc5ddf3b3b198c050ce84d47852192cf0ccee58eec56a5ff11a1ff38b9ff",
+      "bytes": 1071,
+      "characters": 1071,
+      "tokens": {
+        "cl100k_base": 290,
+        "o200k_base": 290
+      }
+    },
+    {
+      "task": "clone-graph",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "2d0937018e6e64285790f687cef558903591bbbfe38adbb77ae3e867e3e41ebc",
+      "bytes": 1480,
+      "characters": 1480,
+      "tokens": {
+        "cl100k_base": 451,
+        "o200k_base": 454
+      }
+    },
+    {
+      "task": "max-area-of-island",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "7849f4784ef6319c3273c204ed9fbe8ee515d2360b228bbd625602e2af3a01f1",
+      "bytes": 1292,
+      "characters": 1292,
+      "tokens": {
+        "cl100k_base": 361,
+        "o200k_base": 362
+      }
+    },
+    {
+      "task": "max-area-of-island",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "4c8facf57b066e43e49db31aea861911e450e47102facd500c8108548731e4d2",
+      "bytes": 1445,
+      "characters": 1445,
+      "tokens": {
+        "cl100k_base": 441,
+        "o200k_base": 446
+      }
+    },
+    {
+      "task": "pacific-atlantic-water-flow",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d6d813a3e42e09117f4631461d89e01b4eb04de5b50da70ed00d8a44c5ab4fe0",
+      "bytes": 1401,
+      "characters": 1401,
+      "tokens": {
+        "cl100k_base": 397,
+        "o200k_base": 398
+      }
+    },
+    {
+      "task": "pacific-atlantic-water-flow",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5daf11e8e51cbfe810873d2ab78e1f8f023fe40c5c9a59bb2167681daaccb0dd",
+      "bytes": 1846,
+      "characters": 1846,
+      "tokens": {
+        "cl100k_base": 600,
+        "o200k_base": 609
+      }
+    },
+    {
+      "task": "surrounded-regions",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e7bee15ddf113617fa7034b744ba25b5739627383d35eb0195ecbce5b023cc6d",
+      "bytes": 1181,
+      "characters": 1181,
+      "tokens": {
+        "cl100k_base": 354,
+        "o200k_base": 355
+      }
+    },
+    {
+      "task": "surrounded-regions",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "de9c5b4fba48e4ba760f08043e86ea0c32ecc6be3fda556ec16276de48bf5642",
+      "bytes": 1430,
+      "characters": 1430,
+      "tokens": {
+        "cl100k_base": 477,
+        "o200k_base": 483
+      }
+    },
+    {
+      "task": "rotting-oranges",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "15ea77d3a21620476060c5617d90d17840fdf3e2e3fd22a0399858097b4b2cc8",
+      "bytes": 1213,
+      "characters": 1213,
+      "tokens": {
+        "cl100k_base": 351,
+        "o200k_base": 352
+      }
+    },
+    {
+      "task": "rotting-oranges",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "78b3d3747b155b4c3cb397feeaeca57a20adaeec8c4e6ad896386d564ebda9cf",
+      "bytes": 1395,
+      "characters": 1395,
+      "tokens": {
+        "cl100k_base": 444,
+        "o200k_base": 449
+      }
+    },
+    {
+      "task": "walls-and-gates",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "f28808304eb26e910cc03edf4af7b55dd5bd395175e8afc2309f7657d21f4b62",
+      "bytes": 1200,
+      "characters": 1200,
+      "tokens": {
+        "cl100k_base": 349,
+        "o200k_base": 350
+      }
+    },
+    {
+      "task": "walls-and-gates",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "74759dc87cd113c61e001966bf80ce9fd1c6826747bbfe75f2b37f5d99f3105a",
+      "bytes": 1464,
+      "characters": 1464,
+      "tokens": {
+        "cl100k_base": 472,
+        "o200k_base": 478
+      }
+    },
+    {
+      "task": "course-schedule",
+      "category": "Graphs",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+      "bytes": 801,
+      "characters": 801,
+      "tokens": {
+        "cl100k_base": 372,
+        "o200k_base": 376
+      }
+    },
+    {
+      "task": "course-schedule",
+      "category": "Graphs",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "39d77de6a94b86350967a209b5475eaeea328f7649629a00c7314d8b7baf7ae1",
+      "bytes": 1407,
+      "characters": 1407,
+      "tokens": {
+        "cl100k_base": 374,
+        "o200k_base": 378
+      }
+    },
+    {
+      "task": "course-schedule",
+      "category": "Graphs",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "5fb5b8ee090f1fa1ba47eeed632d544da7fc84e0672cb1742ca5b207c75d1a17",
+      "bytes": 1275,
+      "characters": 1275,
+      "tokens": {
+        "cl100k_base": 384,
+        "o200k_base": 387
+      }
+    },
+    {
+      "task": "course-schedule-ii",
+      "category": "Graphs",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "8426264bba86b1e35fa3c95e328a0cddb5797c6837d8d02cd2cf50d70e452b9e",
+      "bytes": 1392,
+      "characters": 1392,
+      "tokens": {
+        "cl100k_base": 374,
+        "o200k_base": 379
+      }
+    },
+    {
+      "task": "course-schedule-ii",
+      "category": "Graphs",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "cf5c215a87f768a8522ed8b7174451b8b37121a2fadc14ec1131f02301d75d75",
+      "bytes": 1359,
+      "characters": 1359,
+      "tokens": {
+        "cl100k_base": 424,
+        "o200k_base": 427
+      }
+    },
+    {
+      "task": "redundant-connection",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "66cba2a97ae6cc4ee028a22cb7edf1b69ddfab86b1f72d9b2182966c38e9747f",
+      "bytes": 1469,
+      "characters": 1469,
+      "tokens": {
+        "cl100k_base": 401,
+        "o200k_base": 400
+      }
+    },
+    {
+      "task": "redundant-connection",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "86f30cb5ac71ec060773a655d60689d2874b42e5c12695bb51aa9fa3daca8010",
+      "bytes": 1338,
+      "characters": 1338,
+      "tokens": {
+        "cl100k_base": 423,
+        "o200k_base": 429
+      }
+    },
+    {
+      "task": "number-of-connected-components-in-an-undirected-graph",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "4a27345a7a4fbdd08e12aeef8c4d27c3343705849c91012dff42808ff9b5d89b",
+      "bytes": 1536,
+      "characters": 1536,
+      "tokens": {
+        "cl100k_base": 414,
+        "o200k_base": 414
+      }
+    },
+    {
+      "task": "number-of-connected-components-in-an-undirected-graph",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9d9609cd00d1d99cb5a90187a4f51b7368c8c182d760b2547dd92fcb1cb3a777",
+      "bytes": 1265,
+      "characters": 1265,
+      "tokens": {
+        "cl100k_base": 390,
+        "o200k_base": 395
+      }
+    },
+    {
+      "task": "graph-valid-tree",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "a71682c17b684ad7b4b6073fa1edeb187481da891072d1d270f9d4cae12f9e88",
+      "bytes": 1456,
+      "characters": 1456,
+      "tokens": {
+        "cl100k_base": 400,
+        "o200k_base": 400
+      }
+    },
+    {
+      "task": "graph-valid-tree",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "cf89eebfe722e6ca1d254305488697fcc9a9985fc00037b27ac9afc3fc791818",
+      "bytes": 1281,
+      "characters": 1281,
+      "tokens": {
+        "cl100k_base": 402,
+        "o200k_base": 407
+      }
+    },
+    {
+      "task": "word-ladder",
+      "category": "Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "58fe7b4c80d305e2f39916944042089e5998ae717e6abeaae0054bd6a18dde3b",
+      "bytes": 1020,
+      "characters": 1020,
+      "tokens": {
+        "cl100k_base": 263,
+        "o200k_base": 263
+      }
+    },
+    {
+      "task": "word-ladder",
+      "category": "Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "73458bc4653eb9a6f1199a2745b971396371dac6b35154a159edba9923713725",
+      "bytes": 1809,
+      "characters": 1809,
+      "tokens": {
+        "cl100k_base": 522,
+        "o200k_base": 529
+      }
+    },
+    {
+      "task": "reconstruct-itinerary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "fd00fe6f9940919765d04464ab68cd0b2e6c90efef50aefa72ec7a962f721222",
+      "bytes": 594,
+      "characters": 594,
+      "tokens": {
+        "cl100k_base": 158,
+        "o200k_base": 158
+      }
+    },
+    {
+      "task": "reconstruct-itinerary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "069169bd0d9fd1022d3391b1e4fe751cb62fbe8f89c8e4de9e4c9ffc5f4e8a32",
+      "bytes": 1444,
+      "characters": 1444,
+      "tokens": {
+        "cl100k_base": 425,
+        "o200k_base": 430
+      }
+    },
+    {
+      "task": "min-cost-to-connect-all-points",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e007d47f07acad84202fbe93d9a415e055af2b78168f6e6f6ff651b0b566e9d1",
+      "bytes": 1065,
+      "characters": 1065,
+      "tokens": {
+        "cl100k_base": 302,
+        "o200k_base": 302
+      }
+    },
+    {
+      "task": "min-cost-to-connect-all-points",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5bfa08a75b214fbe59bdef86bd1b92d790a6e96280adccf0c4846bec440423ad",
+      "bytes": 1380,
+      "characters": 1380,
+      "tokens": {
+        "cl100k_base": 445,
+        "o200k_base": 449
+      }
+    },
+    {
+      "task": "network-delay-time",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "9c4268b591ab8555cf65eb7611a96df70ccd12ee805bcf5ea247ac95318e5dae",
+      "bytes": 1322,
+      "characters": 1322,
+      "tokens": {
+        "cl100k_base": 363,
+        "o200k_base": 367
+      }
+    },
+    {
+      "task": "network-delay-time",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "c7e232cbc084f2ad50cec0668006fd765f825e30a01e57b04b071ad796eafb23",
+      "bytes": 1494,
+      "characters": 1494,
+      "tokens": {
+        "cl100k_base": 447,
+        "o200k_base": 453
+      }
+    },
+    {
+      "task": "swim-in-rising-water",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "ae997445a439f1054fab64a8a14d33dca6466f1e945480927e4eb54317158b63",
+      "bytes": 1189,
+      "characters": 1189,
+      "tokens": {
+        "cl100k_base": 349,
+        "o200k_base": 352
+      }
+    },
+    {
+      "task": "swim-in-rising-water",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "96962a02b24cbef8ab2dfc2a206316590ad9807d56e13939a145b7d8b6f47217",
+      "bytes": 1507,
+      "characters": 1507,
+      "tokens": {
+        "cl100k_base": 464,
+        "o200k_base": 469
+      }
+    },
+    {
+      "task": "alien-dictionary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "3e64f7b4a60ed721e949a351ef8d7de9b8e4fd155566b18612a1c7ede7752b7e",
+      "bytes": 889,
+      "characters": 889,
+      "tokens": {
+        "cl100k_base": 257,
+        "o200k_base": 259
+      }
+    },
+    {
+      "task": "alien-dictionary",
+      "category": "Advanced Graphs",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "a8b1fb57d0d2563bbfdbe6586a96bed8382a206f1a2e7a21b7be43a940f1316e",
+      "bytes": 1626,
+      "characters": 1626,
+      "tokens": {
+        "cl100k_base": 498,
+        "o200k_base": 504
+      }
+    },
+    {
+      "task": "cheapest-flights-within-k-stops",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "e633d04d233e9586780e8899a528c86a66b60bedc79bba45aeefd711ca9fab83",
+      "bytes": 1024,
+      "characters": 1024,
+      "tokens": {
+        "cl100k_base": 282,
+        "o200k_base": 285
+      }
+    },
+    {
+      "task": "cheapest-flights-within-k-stops",
+      "category": "Advanced Graphs",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "ac23642bbed708fa5225307d27479503da2d8866014bd7649696d74ec6244f02",
+      "bytes": 1269,
+      "characters": 1269,
+      "tokens": {
+        "cl100k_base": 386,
+        "o200k_base": 388
+      }
+    },
+    {
+      "task": "climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "023b893a255d79f4f8594e89ccd7c6780f9653696940aabf8c75829576557fad",
+      "bytes": 421,
+      "characters": 421,
+      "tokens": {
+        "cl100k_base": 113,
+        "o200k_base": 113
+      }
+    },
+    {
+      "task": "climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "46a2f4331fdc75c2c5442997a3ab8798cc8d2d7499bbc7d613e603c2f2df4056",
+      "bytes": 967,
+      "characters": 967,
+      "tokens": {
+        "cl100k_base": 282,
+        "o200k_base": 285
+      }
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "bytes": 133,
+      "characters": 133,
+      "tokens": {
+        "cl100k_base": 68,
+        "o200k_base": 70
+      }
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "2cf12bc229509e68bc60bc86aae7cb302cda52ad9f31cd2889af4c4946515dab",
+      "bytes": 791,
+      "characters": 791,
+      "tokens": {
+        "cl100k_base": 209,
+        "o200k_base": 207
+      }
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "867be0a32f8e0a224d8d4b2f7da7a745e838156069e8aa074ff42c93f8a71426",
+      "bytes": 1087,
+      "characters": 1087,
+      "tokens": {
+        "cl100k_base": 321,
+        "o200k_base": 323
+      }
+    },
+    {
+      "task": "house-robber",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "dbab7965d7388b377e94da0fccee1fa8e159fb7beb229dbbf48e1a0f24703b3d",
+      "bytes": 824,
+      "characters": 824,
+      "tokens": {
+        "cl100k_base": 214,
+        "o200k_base": 214
+      }
+    },
+    {
+      "task": "house-robber",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "12e0e69c3464abf6b4cff4eb81de260c5d5a96da266350df0cc3261f555f1fbb",
+      "bytes": 1099,
+      "characters": 1099,
+      "tokens": {
+        "cl100k_base": 322,
+        "o200k_base": 323
+      }
+    },
+    {
+      "task": "house-robber-ii",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "be6d91aa56baa9f178f61a8a5889d299737c02c6d17bab82316834e5cfcd06d1",
+      "bytes": 891,
+      "characters": 891,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 243
+      }
+    },
+    {
+      "task": "house-robber-ii",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "b32a96e4d31d7722904add816baec62bd46224a6cf472b6706b7da4a48c02f49",
+      "bytes": 1253,
+      "characters": 1253,
+      "tokens": {
+        "cl100k_base": 378,
+        "o200k_base": 382
+      }
+    },
+    {
+      "task": "longest-palindromic-substring",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0adab2e329d24dc0f6bc76d4fbb5ef09bf8e1a90475312b673ee013c0b338bce",
+      "bytes": 608,
+      "characters": 608,
+      "tokens": {
+        "cl100k_base": 195,
+        "o200k_base": 195
+      }
+    },
+    {
+      "task": "longest-palindromic-substring",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "0d9fbca6bc5e931d637dd23c08a01d1af667f89c3523130a5f0f2efc1c96b088",
+      "bytes": 1137,
+      "characters": 1137,
+      "tokens": {
+        "cl100k_base": 356,
+        "o200k_base": 359
+      }
+    },
+    {
+      "task": "palindromic-substrings",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d594d95705d0c9e7f61235642583d01623e2b511708c28ad7b11287a68f99ce0",
+      "bytes": 593,
+      "characters": 593,
+      "tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 164
+      }
+    },
+    {
+      "task": "palindromic-substrings",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "d3b5af8bf39af1882d2d5a4354fa6c0553901b21368ed971d375cedfff8f2bfd",
+      "bytes": 1167,
+      "characters": 1167,
+      "tokens": {
+        "cl100k_base": 362,
+        "o200k_base": 366
+      }
+    },
+    {
+      "task": "decode-ways",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "5624496c3218d98e659e86c5521f4f03b8fc017856cfe513689670cd21a2b73a",
+      "bytes": 551,
+      "characters": 551,
+      "tokens": {
+        "cl100k_base": 145,
+        "o200k_base": 145
+      }
+    },
+    {
+      "task": "decode-ways",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "a9d8c6b246762a517f7a68cbdf8403b09e1227883d9269efca580b7aa4515d67",
+      "bytes": 1126,
+      "characters": 1126,
+      "tokens": {
+        "cl100k_base": 328,
+        "o200k_base": 334
+      }
+    },
+    {
+      "task": "coin-change",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "bytes": 304,
+      "characters": 304,
+      "tokens": {
+        "cl100k_base": 170,
+        "o200k_base": 170
+      }
+    },
+    {
+      "task": "coin-change",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "c87b27fd6fee593694ddafe4cb66a03eb9cd86acdc1c20564e7ab454741cd445",
+      "bytes": 897,
+      "characters": 897,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "coin-change",
+      "category": "1-D Dynamic Programming",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "c4650463210a75af7e6cee9db5bbdd4080875cdfd1f1a6da074909e90e1b78e3",
+      "bytes": 1174,
+      "characters": 1174,
+      "tokens": {
+        "cl100k_base": 355,
+        "o200k_base": 357
+      }
+    },
+    {
+      "task": "maximum-product-subarray",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "294c78c60c4c77c844dd42bf3ceac4dd6b8970aa2aa89e26a497f31d8d7c8686",
+      "bytes": 848,
+      "characters": 848,
+      "tokens": {
+        "cl100k_base": 225,
+        "o200k_base": 225
+      }
+    },
+    {
+      "task": "maximum-product-subarray",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "d6a7b2f517a6bba1c607a1a20ff2e122a46900b398789d63b5ad3a2e617e8296",
+      "bytes": 1187,
+      "characters": 1187,
+      "tokens": {
+        "cl100k_base": 362,
+        "o200k_base": 366
+      }
+    },
+    {
+      "task": "word-break",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "fa043b0da30de115bf191fb4d7bca1d0956d7da0cc69b208f5e622af4a352a8e",
+      "bytes": 810,
+      "characters": 810,
+      "tokens": {
+        "cl100k_base": 221,
+        "o200k_base": 224
+      }
+    },
+    {
+      "task": "word-break",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9e9c2348b3b233cdc2b2dd39cb387db90f1ac26590384575180936883c8a11cb",
+      "bytes": 1528,
+      "characters": 1528,
+      "tokens": {
+        "cl100k_base": 481,
+        "o200k_base": 495
+      }
+    },
+    {
+      "task": "longest-increasing-subsequence",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "a79a49f265169fa7e09b02232008bf935da3ad4c61f55e64cfcea82308d79a98",
+      "bytes": 898,
+      "characters": 898,
+      "tokens": {
+        "cl100k_base": 225,
+        "o200k_base": 225
+      }
+    },
+    {
+      "task": "longest-increasing-subsequence",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "0045ade4f1707f9f4c54aa7ee42b6de44002a22025875f4f97fe7047b23d2cb1",
+      "bytes": 1138,
+      "characters": 1138,
+      "tokens": {
+        "cl100k_base": 326,
+        "o200k_base": 327
+      }
+    },
+    {
+      "task": "partition-equal-subset-sum",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "baa166125fb87e2fe0829325f64a7012dbad5d587472047696d7539addd05065",
+      "bytes": 920,
+      "characters": 920,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "partition-equal-subset-sum",
+      "category": "1-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "90a0a6ed217ca05da0e84bff6da7d2417d216ee4412035e555f01b013704c90e",
+      "bytes": 1171,
+      "characters": 1171,
+      "tokens": {
+        "cl100k_base": 356,
+        "o200k_base": 359
+      }
+    },
+    {
+      "task": "unique-paths",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "fd347a23ac6ad7743cf8aacbe8927d0bd0a18822285a868a69abb4e104e92c86",
+      "bytes": 473,
+      "characters": 473,
+      "tokens": {
+        "cl100k_base": 131,
+        "o200k_base": 131
+      }
+    },
+    {
+      "task": "unique-paths",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "935fb22064d75fc8bb2194a4ffb76c00175e6fd91e5360f98a7d569a83603365",
+      "bytes": 996,
+      "characters": 996,
+      "tokens": {
+        "cl100k_base": 295,
+        "o200k_base": 298
+      }
+    },
+    {
+      "task": "longest-common-subsequence",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "26724516f309c44b946836e774c449370fbbcd8de28648d04fd302ab871df860",
+      "bytes": 570,
+      "characters": 570,
+      "tokens": {
+        "cl100k_base": 165,
+        "o200k_base": 165
+      }
+    },
+    {
+      "task": "longest-common-subsequence",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "556804fdefc89e15a29d746c189d66d5cd1c5d0409a2e564188600c5dd25c232",
+      "bytes": 1183,
+      "characters": 1183,
+      "tokens": {
+        "cl100k_base": 353,
+        "o200k_base": 358
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "bytes": 189,
+      "characters": 189,
+      "tokens": {
+        "cl100k_base": 90,
+        "o200k_base": 94
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "707d828d6c219c9e4c52cc0cf393ea55a0c56be5e7a4f5e35bfd34baa6fc6411",
+      "bytes": 911,
+      "characters": 911,
+      "tokens": {
+        "cl100k_base": 237,
+        "o200k_base": 239
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "229264b99b597102c52f475e547ccab560cf6c7cbfb3a1446a74967ad9f3df53",
+      "bytes": 1168,
+      "characters": 1168,
+      "tokens": {
+        "cl100k_base": 351,
+        "o200k_base": 353
+      }
+    },
+    {
+      "task": "coin-change-ii",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "4a2cb5c119c901ce87527ccdf142936c643e777f1eb589922886584a7cbc2d69",
+      "bytes": 842,
+      "characters": 842,
+      "tokens": {
+        "cl100k_base": 225,
+        "o200k_base": 225
+      }
+    },
+    {
+      "task": "coin-change-ii",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "f956300cce8f366964975cf362968967aa924fe717e1d49d9ac9c16a69fb1cf7",
+      "bytes": 1097,
+      "characters": 1097,
+      "tokens": {
+        "cl100k_base": 324,
+        "o200k_base": 326
+      }
+    },
+    {
+      "task": "target-sum",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "bytes": 330,
+      "characters": 330,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 185
+      }
+    },
+    {
+      "task": "target-sum",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "294749d550c6252fe9e7503dcf84eba9ef7c1f7c3e49779dd725377918f82684",
+      "bytes": 989,
+      "characters": 989,
+      "tokens": {
+        "cl100k_base": 260,
+        "o200k_base": 260
+      }
+    },
+    {
+      "task": "target-sum",
+      "category": "2-D Dynamic Programming",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "189758be6566a75dc77d1f02568fdaafde31681569111ff3c12bc759c93e9c94",
+      "bytes": 1236,
+      "characters": 1236,
+      "tokens": {
+        "cl100k_base": 381,
+        "o200k_base": 385
+      }
+    },
+    {
+      "task": "interleaving-string",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b4c05d3f1d1ebb40bb9b6c129fb2a8c32cc181b1c290ad2a83a5c78a2de3e3b3",
+      "bytes": 738,
+      "characters": 738,
+      "tokens": {
+        "cl100k_base": 248,
+        "o200k_base": 250
+      }
+    },
+    {
+      "task": "interleaving-string",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "d2ed0c3d22bbbbdca36b78c972bf1ec371f99ef0fd73e21662151a2b18ead26d",
+      "bytes": 1357,
+      "characters": 1357,
+      "tokens": {
+        "cl100k_base": 440,
+        "o200k_base": 447
+      }
+    },
+    {
+      "task": "longest-increasing-path-in-a-matrix",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "7c3eef4e1d44a42ac084d2200f9974fe93c31164ce7c2d42046e8953057eaf83",
+      "bytes": 1375,
+      "characters": 1375,
+      "tokens": {
+        "cl100k_base": 376,
+        "o200k_base": 378
+      }
+    },
+    {
+      "task": "longest-increasing-path-in-a-matrix",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "efc6bbb4dcc711e6fda6a6583c3b53c6ebca843572bd69db2e21b994f8e83900",
+      "bytes": 1393,
+      "characters": 1393,
+      "tokens": {
+        "cl100k_base": 438,
+        "o200k_base": 443
+      }
+    },
+    {
+      "task": "distinct-subsequences",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "3c1daeb4473db8d79f9f5cc6b8fbe99abdb6c9ea10467f867deef243c8065111",
+      "bytes": 533,
+      "characters": 533,
+      "tokens": {
+        "cl100k_base": 154,
+        "o200k_base": 156
+      }
+    },
+    {
+      "task": "distinct-subsequences",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "b6f1e1261d7df58436ae544fb5c26added2e3c8e458c81820f81caef8fc0a45d",
+      "bytes": 1108,
+      "characters": 1108,
+      "tokens": {
+        "cl100k_base": 328,
+        "o200k_base": 332
+      }
+    },
+    {
+      "task": "edit-distance",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "77581e51d9d921a7eef72cbf90e497da8a47813018dc07ffc6c644afeb815049",
+      "bytes": 582,
+      "characters": 582,
+      "tokens": {
+        "cl100k_base": 175,
+        "o200k_base": 175
+      }
+    },
+    {
+      "task": "edit-distance",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "b52b7d0ec5297b87cf5a0b19e45b1e41197e2985269b656e9fec0374c543d926",
+      "bytes": 1273,
+      "characters": 1273,
+      "tokens": {
+        "cl100k_base": 398,
+        "o200k_base": 405
+      }
+    },
+    {
+      "task": "burst-balloons",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "5f979b1ed417119127ff7bf04456dd316657a5803a81c851b76dc028b8c981b9",
+      "bytes": 937,
+      "characters": 937,
+      "tokens": {
+        "cl100k_base": 266,
+        "o200k_base": 266
+      }
+    },
+    {
+      "task": "burst-balloons",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "080b2ab1d1fea36f8eef2fd213b83cdf4c22ecd0d51fe264d4e041c8823864af",
+      "bytes": 1246,
+      "characters": 1246,
+      "tokens": {
+        "cl100k_base": 393,
+        "o200k_base": 396
+      }
+    },
+    {
+      "task": "regular-expression-matching",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "18642492a8ab027c1a286fcd7c703295d95db8ffcfa98af99ccecb07bc38c48f",
+      "bytes": 788,
+      "characters": 788,
+      "tokens": {
+        "cl100k_base": 236,
+        "o200k_base": 236
+      }
+    },
+    {
+      "task": "regular-expression-matching",
+      "category": "2-D Dynamic Programming",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "712de3318c793a415cd3a625b9d1775e3eb009e5302387fcde1f7b2c8fcd6efb",
+      "bytes": 1370,
+      "characters": 1370,
+      "tokens": {
+        "cl100k_base": 429,
+        "o200k_base": 435
+      }
+    },
+    {
+      "task": "maximum-subarray",
+      "category": "Greedy",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "bytes": 196,
+      "characters": 196,
+      "tokens": {
+        "cl100k_base": 104,
+        "o200k_base": 104
+      }
+    },
+    {
+      "task": "maximum-subarray",
+      "category": "Greedy",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "ce5fdf17ecf109f7553bef8c26b7ebe58eb7ae92101ade1c700f0ca4d5a649a8",
+      "bytes": 813,
+      "characters": 813,
+      "tokens": {
+        "cl100k_base": 207,
+        "o200k_base": 207
+      }
+    },
+    {
+      "task": "maximum-subarray",
+      "category": "Greedy",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "24359551a4c3f98c1a4c92f1c7a78a41fd531672c97faa1199a8a4a03d481b95",
+      "bytes": 1145,
+      "characters": 1145,
+      "tokens": {
+        "cl100k_base": 331,
+        "o200k_base": 335
+      }
+    },
+    {
+      "task": "jump-game",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d5f2fd20e90a6fe97526998166b01ae6f9e5bcc432f6f803904e29b58a3058e3",
+      "bytes": 820,
+      "characters": 820,
+      "tokens": {
+        "cl100k_base": 206,
+        "o200k_base": 206
+      }
+    },
+    {
+      "task": "jump-game",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "71b8cd67f187ddb5f05d117c09dcf5e0ff2c4b128edb42eb027614be5f117c65",
+      "bytes": 1119,
+      "characters": 1119,
+      "tokens": {
+        "cl100k_base": 328,
+        "o200k_base": 331
+      }
+    },
+    {
+      "task": "jump-game-ii",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "ed6a67949748b788a8f6f7d2d5390a9ef148b4e7366798f00e53ed5d2b267b5f",
+      "bytes": 835,
+      "characters": 835,
+      "tokens": {
+        "cl100k_base": 220,
+        "o200k_base": 220
+      }
+    },
+    {
+      "task": "jump-game-ii",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "3f03291becdbd7f6fcdd0bb94a84cae346d82c527eab7089c504b5d91a746f6c",
+      "bytes": 1132,
+      "characters": 1132,
+      "tokens": {
+        "cl100k_base": 337,
+        "o200k_base": 341
+      }
+    },
+    {
+      "task": "gas-station",
+      "category": "Greedy",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "bytes": 225,
+      "characters": 225,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 130
+      }
+    },
+    {
+      "task": "gas-station",
+      "category": "Greedy",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "88b26901c90c60b4ee1240d3622b7a0e0c18b512258239d741b35abe56f82497",
+      "bytes": 907,
+      "characters": 907,
+      "tokens": {
+        "cl100k_base": 240,
+        "o200k_base": 240
+      }
+    },
+    {
+      "task": "gas-station",
+      "category": "Greedy",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "9fbc0d700f5f6b0a74aa202c4b558365ddf507c997a809f72712754c5dc1196a",
+      "bytes": 1156,
+      "characters": 1156,
+      "tokens": {
+        "cl100k_base": 345,
+        "o200k_base": 349
+      }
+    },
+    {
+      "task": "hand-of-straights",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "8a4b3de49cec40f98770235fd742587d001f4f1ede283092d866008859c79ef2",
+      "bytes": 1032,
+      "characters": 1032,
+      "tokens": {
+        "cl100k_base": 252,
+        "o200k_base": 252
+      }
+    },
+    {
+      "task": "hand-of-straights",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e752384d0e600567453b1ae5f5225242449964274358d91d4cf2510194454200",
+      "bytes": 1210,
+      "characters": 1210,
+      "tokens": {
+        "cl100k_base": 357,
+        "o200k_base": 360
+      }
+    },
+    {
+      "task": "merge-triplets-to-form-target-triplet",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d44dfb43673b0a70019d6b816a5fa417e749d8e3383b442be1ec46c655432916",
+      "bytes": 931,
+      "characters": 931,
+      "tokens": {
+        "cl100k_base": 249,
+        "o200k_base": 250
+      }
+    },
+    {
+      "task": "merge-triplets-to-form-target-triplet",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "80a8e398b62d192f71bf45980f851b327cb448ead49306ad078e60179e9fabda",
+      "bytes": 1258,
+      "characters": 1258,
+      "tokens": {
+        "cl100k_base": 385,
+        "o200k_base": 388
+      }
+    },
+    {
+      "task": "partition-labels",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "41403b854c8740ec234a028f341a7a145e67861bb0e98cc94432e48f77d44b87",
+      "bytes": 491,
+      "characters": 491,
+      "tokens": {
+        "cl100k_base": 130,
+        "o200k_base": 130
+      }
+    },
+    {
+      "task": "partition-labels",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "e47df7a3bd48dab0be7fda9f9728e27adfc8040be19cde1512b419c6cb06d878",
+      "bytes": 1262,
+      "characters": 1262,
+      "tokens": {
+        "cl100k_base": 388,
+        "o200k_base": 394
+      }
+    },
+    {
+      "task": "valid-parenthesis-string",
+      "category": "Greedy",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "ce73b5e45822dac2eb0b3dba7de65fb8ab625136f8187d14d083849ad95c3d6c",
+      "bytes": 522,
+      "characters": 522,
+      "tokens": {
+        "cl100k_base": 147,
+        "o200k_base": 145
+      }
+    },
+    {
+      "task": "valid-parenthesis-string",
+      "category": "Greedy",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "7b20e5bb7cd5098e646fe32e65f3a19b67f4c42737b4f77a02bb8f48dd265178",
+      "bytes": 1038,
+      "characters": 1038,
+      "tokens": {
+        "cl100k_base": 310,
+        "o200k_base": 312
+      }
+    },
+    {
+      "task": "insert-interval",
+      "category": "Intervals",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "bytes": 426,
+      "characters": 426,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 244
+      }
+    },
+    {
+      "task": "insert-interval",
+      "category": "Intervals",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "b7692a7ba9df52812e12265e64df459479dbd950e2351dc72a6a8072349c6a61",
+      "bytes": 1033,
+      "characters": 1033,
+      "tokens": {
+        "cl100k_base": 274,
+        "o200k_base": 274
+      }
+    },
+    {
+      "task": "insert-interval",
+      "category": "Intervals",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "650a1d2abdbd2ff71440ecf9d60d07b9ad5b803610273b8863d0c6bb70eff401",
+      "bytes": 1524,
+      "characters": 1524,
+      "tokens": {
+        "cl100k_base": 474,
+        "o200k_base": 478
+      }
+    },
+    {
+      "task": "merge-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "03bb6e0f668e77086983f6cae71ba30d68fa19ee2acb11a73150c59501f51e6b",
+      "bytes": 859,
+      "characters": 859,
+      "tokens": {
+        "cl100k_base": 231,
+        "o200k_base": 233
+      }
+    },
+    {
+      "task": "merge-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "1959e6bbad4ea72022c0bc8a266b5737e4b7a15b0707760c57a3f50decb6ffed",
+      "bytes": 1411,
+      "characters": 1411,
+      "tokens": {
+        "cl100k_base": 429,
+        "o200k_base": 433
+      }
+    },
+    {
+      "task": "non-overlapping-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "6a64d52daec9e4d7de90fdbabb8bed9601ced5039236dee48cbe6d81e1a1b075",
+      "bytes": 858,
+      "characters": 858,
+      "tokens": {
+        "cl100k_base": 224,
+        "o200k_base": 226
+      }
+    },
+    {
+      "task": "non-overlapping-intervals",
+      "category": "Intervals",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "c92977a678d25e028111c04bc3af7acf6aa19d5a30ffb4d01b7a3903c9d2f087",
+      "bytes": 1227,
+      "characters": 1227,
+      "tokens": {
+        "cl100k_base": 367,
+        "o200k_base": 370
+      }
+    },
+    {
+      "task": "meeting-rooms",
+      "category": "Intervals",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+      "bytes": 285,
+      "characters": 285,
+      "tokens": {
+        "cl100k_base": 145,
+        "o200k_base": 145
+      }
+    },
+    {
+      "task": "meeting-rooms",
+      "category": "Intervals",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "208b62c837b775bfaf3218b2254baa42d4d463940f59492a97840fb184076e62",
+      "bytes": 770,
+      "characters": 770,
+      "tokens": {
+        "cl100k_base": 200,
+        "o200k_base": 200
+      }
+    },
+    {
+      "task": "meeting-rooms",
+      "category": "Intervals",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "b1191846f13a32be14b01ae4758ed45e05bfd74de831623f1d1fbd97cd1d22ea",
+      "bytes": 1174,
+      "characters": 1174,
+      "tokens": {
+        "cl100k_base": 347,
+        "o200k_base": 351
+      }
+    },
+    {
+      "task": "meeting-rooms-ii",
+      "category": "Intervals",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "7dcb81f300253a6b5853b0613b58cb33b957539c407335298054b58a4ca7e9a8",
+      "bytes": 847,
+      "characters": 847,
+      "tokens": {
+        "cl100k_base": 229,
+        "o200k_base": 229
+      }
+    },
+    {
+      "task": "meeting-rooms-ii",
+      "category": "Intervals",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "c5e08db11483d5487049ea36e4ff65935df6df106efd2de7ab3adfdaab935b2a",
+      "bytes": 1295,
+      "characters": 1295,
+      "tokens": {
+        "cl100k_base": 377,
+        "o200k_base": 380
+      }
+    },
+    {
+      "task": "minimum-interval-to-include-each-query",
+      "category": "Intervals",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "cb26710a2b4eeeda333b91a711e699e243404b3294a02c2231305b7e202e284b",
+      "bytes": 1040,
+      "characters": 1040,
+      "tokens": {
+        "cl100k_base": 289,
+        "o200k_base": 290
+      }
+    },
+    {
+      "task": "minimum-interval-to-include-each-query",
+      "category": "Intervals",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "19b20b27aa65e624b45fadec6f57be3c05167d75e3b810fbaa646aac211dea82",
+      "bytes": 1734,
+      "characters": 1734,
+      "tokens": {
+        "cl100k_base": 537,
+        "o200k_base": 542
+      }
+    },
+    {
+      "task": "rotate-image",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "d2a6ba82c7a7d20716d0480400bb89c877dc623c1139341db391b7cb650ce0cb",
+      "bytes": 740,
+      "characters": 740,
+      "tokens": {
+        "cl100k_base": 198,
+        "o200k_base": 199
+      }
+    },
+    {
+      "task": "rotate-image",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "a703d27c26aa4409d05a9d44bf2f1c67dda8ba4ccde62c45a6222d59776fd161",
+      "bytes": 1095,
+      "characters": 1095,
+      "tokens": {
+        "cl100k_base": 337,
+        "o200k_base": 341
+      }
+    },
+    {
+      "task": "spiral-matrix",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+      "bytes": 675,
+      "characters": 675,
+      "tokens": {
+        "cl100k_base": 391,
+        "o200k_base": 391
+      }
+    },
+    {
+      "task": "spiral-matrix",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "f4ed24d6df554ff439c6aa13aa0035d914f2ecbc91561b50e0f71202c0a3cf14",
+      "bytes": 1095,
+      "characters": 1095,
+      "tokens": {
+        "cl100k_base": 301,
+        "o200k_base": 304
+      }
+    },
+    {
+      "task": "spiral-matrix",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "26a1d615c7064198ff7e0f20687d33197bbe5047d6bd1293f83a51371a507542",
+      "bytes": 1388,
+      "characters": 1388,
+      "tokens": {
+        "cl100k_base": 444,
+        "o200k_base": 449
+      }
+    },
+    {
+      "task": "set-matrix-zeroes",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "cd8759a7a4504f551dc31796369833ea5f2a34e1fc30731d3b4a4507d9ac68d1",
+      "bytes": 933,
+      "characters": 933,
+      "tokens": {
+        "cl100k_base": 262,
+        "o200k_base": 262
+      }
+    },
+    {
+      "task": "set-matrix-zeroes",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "22a957f7b366e8f34a4324b5182da1aea9ab314eb33244e68ceb97fbd1a6f611",
+      "bytes": 1316,
+      "characters": 1316,
+      "tokens": {
+        "cl100k_base": 435,
+        "o200k_base": 443
+      }
+    },
+    {
+      "task": "happy-number",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "bbad5dba4d9a71ee0e62b74a426bc78b47d451138e3ad9e3425cec70aa5fcf17",
+      "bytes": 936,
+      "characters": 936,
+      "tokens": {
+        "cl100k_base": 241,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "happy-number",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9c4d28d9f17358b898a7ff5a9fe8ecddaf8de78194d22a0916f00ce1a6dbdfde",
+      "bytes": 1255,
+      "characters": 1255,
+      "tokens": {
+        "cl100k_base": 390,
+        "o200k_base": 393
+      }
+    },
+    {
+      "task": "plus-one",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+      "bytes": 321,
+      "characters": 321,
+      "tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 165
+      }
+    },
+    {
+      "task": "plus-one",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "5a170a0b0d9c0b10fef5a88adb9cd5e19d62619c7a5634eaa02f32df5450a71d",
+      "bytes": 766,
+      "characters": 766,
+      "tokens": {
+        "cl100k_base": 210,
+        "o200k_base": 210
+      }
+    },
+    {
+      "task": "plus-one",
+      "category": "Math & Geometry",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "9c5eaf9f510328398f807b8e06272fc66072c5fdde721195c9c896b6b6b6fadb",
+      "bytes": 1176,
+      "characters": 1176,
+      "tokens": {
+        "cl100k_base": 364,
+        "o200k_base": 368
+      }
+    },
+    {
+      "task": "powx-n",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "0d9ede87e646106e338716992341f7d0d0b34ea9037fa613bf1d7a9606762f3c",
+      "bytes": 584,
+      "characters": 584,
+      "tokens": {
+        "cl100k_base": 169,
+        "o200k_base": 171
+      }
+    },
+    {
+      "task": "powx-n",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "149228bb34077562d7ee0a55c155cbaf8ae5a7b7313c2d6deaf8b51a2edc161f",
+      "bytes": 1192,
+      "characters": 1192,
+      "tokens": {
+        "cl100k_base": 357,
+        "o200k_base": 362
+      }
+    },
+    {
+      "task": "multiply-strings",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b97d5a9a246a644929c31945635a60327712aed3a18500c9a386cc239731e1c6",
+      "bytes": 516,
+      "characters": 516,
+      "tokens": {
+        "cl100k_base": 164,
+        "o200k_base": 165
+      }
+    },
+    {
+      "task": "multiply-strings",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "13e1ca0c23075290464554df2c18463b3f76655c5ecdbddb74b99163c94a7c97",
+      "bytes": 1179,
+      "characters": 1179,
+      "tokens": {
+        "cl100k_base": 375,
+        "o200k_base": 382
+      }
+    },
+    {
+      "task": "detect-squares",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "e5dd04bb611f6688c096d5bed1024930d94d9dd7ed89d39ad4381e892a2ea795",
+      "bytes": 884,
+      "characters": 884,
+      "tokens": {
+        "cl100k_base": 243,
+        "o200k_base": 243
+      }
+    },
+    {
+      "task": "detect-squares",
+      "category": "Math & Geometry",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "ffafe96610ee3a426846a9c25ee35158c4fd9c977100dde38fde0e863ad3760e",
+      "bytes": 1303,
+      "characters": 1303,
+      "tokens": {
+        "cl100k_base": 412,
+        "o200k_base": 417
+      }
+    },
+    {
+      "task": "single-number",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+      "bytes": 246,
+      "characters": 246,
+      "tokens": {
+        "cl100k_base": 136,
+        "o200k_base": 137
+      }
+    },
+    {
+      "task": "single-number",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "156e3297dca632abd7419729ace0942e58eb03b87a1519ae20aa53ac18cf616c",
+      "bytes": 760,
+      "characters": 760,
+      "tokens": {
+        "cl100k_base": 187,
+        "o200k_base": 187
+      }
+    },
+    {
+      "task": "single-number",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "c2c49bee233be20d8c1e7e49f11bf53b6f70284e3ef02a4474cce964ff6aed02",
+      "bytes": 1019,
+      "characters": 1019,
+      "tokens": {
+        "cl100k_base": 294,
+        "o200k_base": 296
+      }
+    },
+    {
+      "task": "number-of-1-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "b037c7538b79699b575f64ca09fb59ce119f9968b16952e1c3c4c98af227c345",
+      "bytes": 680,
+      "characters": 680,
+      "tokens": {
+        "cl100k_base": 172,
+        "o200k_base": 172
+      }
+    },
+    {
+      "task": "number-of-1-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "86f7e4247871e08c0c6ac6de44807185b1eea7798082f50963ffd6707560f666",
+      "bytes": 1135,
+      "characters": 1135,
+      "tokens": {
+        "cl100k_base": 343,
+        "o200k_base": 346
+      }
+    },
+    {
+      "task": "counting-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "bb82f98f33d3860e2725d2268e597eea0790c36ff3156442d0e76b94404ec8fa",
+      "bytes": 382,
+      "characters": 382,
+      "tokens": {
+        "cl100k_base": 113,
+        "o200k_base": 113
+      }
+    },
+    {
+      "task": "counting-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5ee7416040d5bdce23b4a0f34c9a2d8380279044b0f20bf8963b4fb277a41b94",
+      "bytes": 1035,
+      "characters": 1035,
+      "tokens": {
+        "cl100k_base": 316,
+        "o200k_base": 320
+      }
+    },
+    {
+      "task": "reverse-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "82a012d862477c97a447442caa221b4fafdd35b24f427660a531c4448800d3da",
+      "bytes": 683,
+      "characters": 683,
+      "tokens": {
+        "cl100k_base": 175,
+        "o200k_base": 175
+      }
+    },
+    {
+      "task": "reverse-bits",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "9abfdfd76429366c8dd8b3bfb51ed5df2fa50d1f45721b19a3a7926e0d0d1fc7",
+      "bytes": 1172,
+      "characters": 1172,
+      "tokens": {
+        "cl100k_base": 359,
+        "o200k_base": 362
+      }
+    },
+    {
+      "task": "missing-number",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "51912945fa4eee9e0b2d45c33632d211a12b1217bdfa9cf0ff13dcd55b550a42",
+      "bytes": 740,
+      "characters": 740,
+      "tokens": {
+        "cl100k_base": 185,
+        "o200k_base": 186
+      }
+    },
+    {
+      "task": "missing-number",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "282f64d818d6cdfd918fda25c4625eb6fb8f4a2fa8b378300ffcc40e90bbf708",
+      "bytes": 1050,
+      "characters": 1050,
+      "tokens": {
+        "cl100k_base": 304,
+        "o200k_base": 307
+      }
+    },
+    {
+      "task": "sum-of-two-integers",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "python",
+      "source_sha256": "5a79d9435a3ba4459a12b7d319918bae56af7471234cc5992ac826258dff8e8b",
+      "bytes": 871,
+      "characters": 871,
+      "tokens": {
+        "cl100k_base": 239,
+        "o200k_base": 241
+      }
+    },
+    {
+      "task": "sum-of-two-integers",
+      "category": "Bit Manipulation",
+      "selected": false,
+      "language": "cpp",
+      "source_sha256": "5765ff6001563a3bdef3791219ae14dc8c92bb1d540f7a6314ae1d2e77b41707",
+      "bytes": 1145,
+      "characters": 1145,
+      "tokens": {
+        "cl100k_base": 354,
+        "o200k_base": 358
+      }
+    },
+    {
+      "task": "reverse-integer",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "nil",
+      "source_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+      "bytes": 256,
+      "characters": 256,
+      "tokens": {
+        "cl100k_base": 124,
+        "o200k_base": 125
+      }
+    },
+    {
+      "task": "reverse-integer",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "python",
+      "source_sha256": "7c124c8b03ac1d60b87b3b8f30fe8232da6fffaffeeecb6f917c0a1a5cdc7bf2",
+      "bytes": 902,
+      "characters": 902,
+      "tokens": {
+        "cl100k_base": 221,
+        "o200k_base": 221
+      }
+    },
+    {
+      "task": "reverse-integer",
+      "category": "Bit Manipulation",
+      "selected": true,
+      "language": "cpp",
+      "source_sha256": "f8ad71782d2d2dba748842ddcdf3fca639e46376b27dcb7d651fef3c0a26a1e5",
+      "bytes": 1164,
+      "characters": 1164,
+      "tokens": {
+        "cl100k_base": 360,
+        "o200k_base": 364
+      }
+    }
+  ]
+}

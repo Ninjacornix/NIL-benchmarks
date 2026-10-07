@@ -1,0 +1,675 @@
+{
+  "schema": 1,
+  "compiler_base": "31cb922",
+  "compiler_revision_at_run": "d64311b19d6d7f1bded076f945e7ea9e8153dc22",
+  "definitions_revision": "798747096ea0042dc4bfd3fc1eedb4fead3137c1",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "limits": {
+    "steps": 1000000000,
+    "depth": 256,
+    "timeout_seconds": 120
+  },
+  "tasks_sha256": "c9805a5d0493071651e62e03a127b3d8786bca1ff989a8d727be4276c4d3bd7f",
+  "goldens_sha256": "6cf8d3c98dafb1054ff8bbf14111d32592df8f0badf1ad0520d46d398e3d7162",
+  "method": {
+    "timed_repeats": 15,
+    "warmups": 1,
+    "jobs": 1,
+    "ordering": "alternate NIL/C++",
+    "timed_scope": "process startup, read, parse, algorithm, serialization, write; warm input files",
+    "native_correctness": "O0 and O2, bounded",
+    "native_timing": "O2, existing unbounded instrumentation; memory checks retained",
+    "cpp_flags": [
+      "--driver-mode=g++",
+      "-std=c++17",
+      "-O2",
+      "-ffp-contract=off"
+    ],
+    "compiler_driver_note": "Timing run used clang++ alias of the same Apple Clang 21 binary. Final baseline rerun uses clang --driver-mode=g++; NIL_CLANG is forwarded for both."
+  },
+  "receipts": {
+    "baselines-final": {
+      "sha256": "7d20fd403e13853cb82e78685fd64c329538d522f495d505cebc719f39021030",
+      "totals": {
+        "tasks": 150,
+        "verified_nil": 0,
+        "checks": 2126,
+        "passed_checks": 2126
+      }
+    },
+    "isolated-performance": {
+      "sha256": "fa2874ce3b71e624b6772966ec73bdfe010bd1d9930d80fb8ca8d206384d879e",
+      "totals": {
+        "tasks": 29,
+        "verified_nil": 29,
+        "checks": 1070,
+        "passed_checks": 1070
+      }
+    },
+    "sample-third": {
+      "sha256": "16567412516b6515a307d697a381fd74d5787906ddd06e173f034bbd6abeed3a",
+      "totals": {
+        "tasks": 36,
+        "verified_nil": 28,
+        "checks": 1260,
+        "passed_checks": 1247
+      }
+    },
+    "queens-fast": {
+      "sha256": "663a679a201101c1961f16255f3f7a604efbdb6b4ba1bff46ba7197dffebcfa6",
+      "totals": {
+        "tasks": 1,
+        "verified_nil": 0,
+        "checks": 40,
+        "passed_checks": 39
+      }
+    },
+    "last-two": {
+      "sha256": "c6b52d5461902d0f8d12ca732f5341e7cd673fd2ae7d7785458222e799bff2b0",
+      "totals": {
+        "tasks": 2,
+        "verified_nil": 0,
+        "checks": 70,
+        "passed_checks": 66
+      }
+    },
+    "application-all": {
+      "sha256": "f6deb910ba7e5ecef58200b741b0f5e34285195afcb8da473d26b172eb640a1d",
+      "totals": {
+        "tasks": 79,
+        "nil_programs": 68,
+        "unsupported": 11,
+        "reference_checks": 563,
+        "native_checks": 1126,
+        "python_checks": 563,
+        "cpp_checks": 563
+      }
+    },
+    "application-original": {
+      "sha256": "d8200e000867a383412c03e88840dc2b7bc2183f0aa1e15ecb8d860b4befcd06",
+      "totals": {
+        "tasks": 25,
+        "nil_programs": 24,
+        "unsupported": 1,
+        "reference_checks": 120,
+        "native_checks": 240,
+        "python_checks": 125,
+        "cpp_checks": 125
+      }
+    }
+  },
+  "measurements": [
+    {
+      "task": "contains-duplicate",
+      "nil_source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "timings": {
+        "nil": {
+          "min_ms": 9.583375,
+          "median_ms": 10.058916,
+          "max_ms": 11.780666,
+          "stdev_ms": 0.6030133771417394
+        },
+        "cpp": {
+          "min_ms": 6.412333,
+          "median_ms": 6.55525,
+          "max_ms": 8.528416,
+          "stdev_ms": 0.5315800297084514
+        },
+        "ratio": 1.5344824377407422
+      }
+    },
+    {
+      "task": "valid-sudoku",
+      "nil_source_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+      "timings": {
+        "nil": {
+          "min_ms": 2.342959,
+          "median_ms": 2.585625,
+          "max_ms": 3.172125,
+          "stdev_ms": 0.24169228542262067
+        },
+        "cpp": {
+          "min_ms": 2.368,
+          "median_ms": 2.480708,
+          "max_ms": 3.209916,
+          "stdev_ms": 0.24115623033374234
+        },
+        "ratio": 1.042293167918191
+      }
+    },
+    {
+      "task": "valid-palindrome",
+      "nil_source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "timings": {
+        "nil": {
+          "min_ms": 2.295167,
+          "median_ms": 2.579333,
+          "max_ms": 3.516959,
+          "stdev_ms": 0.31432884157447655
+        },
+        "cpp": {
+          "min_ms": 2.969708,
+          "median_ms": 3.217083,
+          "max_ms": 4.622916,
+          "stdev_ms": 0.43697731670210466
+        },
+        "ratio": 0.801761409326399
+      }
+    },
+    {
+      "task": "3sum",
+      "nil_source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "timings": {
+        "nil": {
+          "min_ms": 840.264083,
+          "median_ms": 842.7065,
+          "max_ms": 864.408166,
+          "stdev_ms": 5.855952229798905
+        },
+        "cpp": {
+          "min_ms": 101.583583,
+          "median_ms": 108.372458,
+          "max_ms": 113.938708,
+          "stdev_ms": 3.0047603492728916
+        },
+        "ratio": 7.776020914834284
+      }
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "nil_source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "timings": {
+        "nil": {
+          "min_ms": 7.774708,
+          "median_ms": 8.026041,
+          "max_ms": 10.350666,
+          "stdev_ms": 0.686204157555461
+        },
+        "cpp": {
+          "min_ms": 2.861791,
+          "median_ms": 2.931959,
+          "max_ms": 3.964125,
+          "stdev_ms": 0.29140410641308667
+        },
+        "ratio": 2.7374328904326424
+      }
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "nil_source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "timings": {
+        "nil": {
+          "min_ms": 10.641166,
+          "median_ms": 10.900083,
+          "max_ms": 12.866,
+          "stdev_ms": 0.5851057436410471
+        },
+        "cpp": {
+          "min_ms": 2.864584,
+          "median_ms": 3.032041,
+          "max_ms": 3.677666,
+          "stdev_ms": 0.19267469700688578
+        },
+        "ratio": 3.594965569396984
+      }
+    },
+    {
+      "task": "generate-parentheses",
+      "nil_source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "timings": {
+        "nil": {
+          "min_ms": 26.52775,
+          "median_ms": 26.97775,
+          "max_ms": 27.936334,
+          "stdev_ms": 0.4698785152773406
+        },
+        "cpp": {
+          "min_ms": 3.200834,
+          "median_ms": 3.438459,
+          "max_ms": 3.735875,
+          "stdev_ms": 0.14760399736198912
+        },
+        "ratio": 7.845883868325899
+      }
+    },
+    {
+      "task": "car-fleet",
+      "nil_source_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+      "timings": {
+        "nil": {
+          "min_ms": 18.111875,
+          "median_ms": 18.737292,
+          "max_ms": 19.091375,
+          "stdev_ms": 0.22957869437075554
+        },
+        "cpp": {
+          "min_ms": 22.417916,
+          "median_ms": 22.919417,
+          "max_ms": 23.494583,
+          "stdev_ms": 0.31787751843133966
+        },
+        "ratio": 0.8175291718807682
+      }
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "nil_source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "timings": {
+        "nil": {
+          "min_ms": 8.690541,
+          "median_ms": 8.961166,
+          "max_ms": 10.631083,
+          "stdev_ms": 0.4910995448835582
+        },
+        "cpp": {
+          "min_ms": 5.472667,
+          "median_ms": 5.745167,
+          "max_ms": 7.318541,
+          "stdev_ms": 0.4379024225518848
+        },
+        "ratio": 1.5597746766978227
+      }
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "nil_source_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+      "timings": {
+        "nil": {
+          "min_ms": 9.251291,
+          "median_ms": 9.625292,
+          "max_ms": 11.705041,
+          "stdev_ms": 0.5986924188267294
+        },
+        "cpp": {
+          "min_ms": 6.006416,
+          "median_ms": 6.228875,
+          "max_ms": 8.273708,
+          "stdev_ms": 0.5506249701417038
+        },
+        "ratio": 1.5452697316931228
+      }
+    },
+    {
+      "task": "reverse-linked-list",
+      "nil_source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "timings": {
+        "nil": {
+          "min_ms": 31.697625,
+          "median_ms": 32.200458,
+          "max_ms": 32.67425,
+          "stdev_ms": 0.28218575230522663
+        },
+        "cpp": {
+          "min_ms": 11.131084,
+          "median_ms": 11.417417,
+          "max_ms": 12.1035,
+          "stdev_ms": 0.28572516444095286
+        },
+        "ratio": 2.8202927159444204
+      }
+    },
+    {
+      "task": "balanced-binary-tree",
+      "nil_source_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+      "timings": {
+        "nil": {
+          "min_ms": 1518.419584,
+          "median_ms": 1522.333917,
+          "max_ms": 1533.4035,
+          "stdev_ms": 4.247760286922726
+        },
+        "cpp": {
+          "min_ms": 13.376542,
+          "median_ms": 14.134875,
+          "max_ms": 14.949333,
+          "stdev_ms": 0.42008755120424696
+        },
+        "ratio": 107.7005574509856
+      }
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "nil_source_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+      "timings": {
+        "nil": {
+          "min_ms": 1458.153542,
+          "median_ms": 1466.069875,
+          "max_ms": 1516.279417,
+          "stdev_ms": 14.372578860761037
+        },
+        "cpp": {
+          "min_ms": 12.866375,
+          "median_ms": 13.327958,
+          "max_ms": 16.136334,
+          "stdev_ms": 0.7931644509691788
+        },
+        "ratio": 109.9995869584823
+      }
+    },
+    {
+      "task": "last-stone-weight",
+      "nil_source_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+      "timings": {
+        "nil": {
+          "min_ms": 26285.378167,
+          "median_ms": 27940.087042,
+          "max_ms": 56188.683625,
+          "stdev_ms": 8831.810253640155
+        },
+        "cpp": {
+          "min_ms": 10.789625,
+          "median_ms": 12.150792,
+          "max_ms": 19.51075,
+          "stdev_ms": 2.557625558314963
+        },
+        "ratio": 2299.4457515197364
+      }
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "nil_source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "timings": {
+        "nil": {
+          "min_ms": 13.412791,
+          "median_ms": 13.57475,
+          "max_ms": 15.195166,
+          "stdev_ms": 0.4331425365833153
+        },
+        "cpp": {
+          "min_ms": 8.311875,
+          "median_ms": 8.560292,
+          "max_ms": 10.609666,
+          "stdev_ms": 0.5539421586862487
+        },
+        "ratio": 1.5857811859688897
+      }
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "nil_source_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+      "timings": {
+        "nil": {
+          "min_ms": 222.853333,
+          "median_ms": 224.356667,
+          "max_ms": 233.251959,
+          "stdev_ms": 2.43347135055752
+        },
+        "cpp": {
+          "min_ms": 4.59625,
+          "median_ms": 5.028125,
+          "max_ms": 5.227125,
+          "stdev_ms": 0.20081040711500786
+        },
+        "ratio": 44.62034396519577
+      }
+    },
+    {
+      "task": "course-schedule",
+      "nil_source_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+      "timings": {
+        "nil": {
+          "min_ms": 7419.929792,
+          "median_ms": 7511.277917,
+          "max_ms": 7595.409,
+          "stdev_ms": 51.11095873496672
+        },
+        "cpp": {
+          "min_ms": 22.457875,
+          "median_ms": 23.085083,
+          "max_ms": 24.342875,
+          "stdev_ms": 0.5694959632340146
+        },
+        "ratio": 325.37365869553076
+      }
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "nil_source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "timings": {
+        "nil": {
+          "min_ms": 8.387083,
+          "median_ms": 8.632416,
+          "max_ms": 10.445875,
+          "stdev_ms": 0.5852750765386753
+        },
+        "cpp": {
+          "min_ms": 4.632291,
+          "median_ms": 4.881125,
+          "max_ms": 6.136417,
+          "stdev_ms": 0.35922191201278875
+        },
+        "ratio": 1.7685300007682654
+      }
+    },
+    {
+      "task": "coin-change",
+      "nil_source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "timings": {
+        "nil": {
+          "min_ms": 3.804083,
+          "median_ms": 4.012208,
+          "max_ms": 5.706416,
+          "stdev_ms": 0.5749757927039563
+        },
+        "cpp": {
+          "min_ms": 2.729416,
+          "median_ms": 2.941709,
+          "max_ms": 4.741708,
+          "stdev_ms": 0.5188343575491122
+        },
+        "ratio": 1.3639037715831173
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "nil_source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "timings": {
+        "nil": {
+          "min_ms": 8.65875,
+          "median_ms": 8.851917,
+          "max_ms": 10.551667,
+          "stdev_ms": 0.4808819942013495
+        },
+        "cpp": {
+          "min_ms": 4.670458,
+          "median_ms": 4.8195,
+          "max_ms": 6.166417,
+          "stdev_ms": 0.36949805789901363
+        },
+        "ratio": 1.836687830687831
+      }
+    },
+    {
+      "task": "target-sum",
+      "nil_source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "timings": {
+        "nil": {
+          "min_ms": 2.308709,
+          "median_ms": 2.684583,
+          "max_ms": 3.82725,
+          "stdev_ms": 0.44149509753101873
+        },
+        "cpp": {
+          "min_ms": 2.272708,
+          "median_ms": 2.5305,
+          "max_ms": 3.869375,
+          "stdev_ms": 0.4382029178818981
+        },
+        "ratio": 1.0608903378778898
+      }
+    },
+    {
+      "task": "maximum-subarray",
+      "nil_source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "timings": {
+        "nil": {
+          "min_ms": 8.915042,
+          "median_ms": 9.339083,
+          "max_ms": 11.392416,
+          "stdev_ms": 0.6413444307752494
+        },
+        "cpp": {
+          "min_ms": 5.460042,
+          "median_ms": 5.653,
+          "max_ms": 7.805416,
+          "stdev_ms": 0.5707237551136527
+        },
+        "ratio": 1.6520578453918275
+      }
+    },
+    {
+      "task": "gas-station",
+      "nil_source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "timings": {
+        "nil": {
+          "min_ms": 13.125541,
+          "median_ms": 13.575958,
+          "max_ms": 15.589834,
+          "stdev_ms": 0.5800197650897276
+        },
+        "cpp": {
+          "min_ms": 6.093459,
+          "median_ms": 6.335375,
+          "max_ms": 7.939833,
+          "stdev_ms": 0.4415773538589436
+        },
+        "ratio": 2.1428815184578656
+      }
+    },
+    {
+      "task": "insert-interval",
+      "nil_source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "timings": {
+        "nil": {
+          "min_ms": 44.240041,
+          "median_ms": 44.764125,
+          "max_ms": 59.20675,
+          "stdev_ms": 3.794404373515571
+        },
+        "cpp": {
+          "min_ms": 17.266625,
+          "median_ms": 17.803208,
+          "max_ms": 18.571625,
+          "stdev_ms": 0.3429925351468968
+        },
+        "ratio": 2.51438532875648
+      }
+    },
+    {
+      "task": "meeting-rooms",
+      "nil_source_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+      "timings": {
+        "nil": {
+          "min_ms": 19.812292,
+          "median_ms": 20.107292,
+          "max_ms": 20.899834,
+          "stdev_ms": 0.25842523015688296
+        },
+        "cpp": {
+          "min_ms": 22.82175,
+          "median_ms": 23.046667,
+          "max_ms": 23.784,
+          "stdev_ms": 0.27742614412474476
+        },
+        "ratio": 0.8724598658886338
+      }
+    },
+    {
+      "task": "spiral-matrix",
+      "nil_source_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+      "timings": {
+        "nil": {
+          "min_ms": 1409.266625,
+          "median_ms": 1418.8785,
+          "max_ms": 1438.101333,
+          "stdev_ms": 7.874324320175097
+        },
+        "cpp": {
+          "min_ms": 7.608916,
+          "median_ms": 8.298583,
+          "max_ms": 8.627208,
+          "stdev_ms": 0.38504975449927553
+        },
+        "ratio": 170.97840679547338
+      }
+    },
+    {
+      "task": "plus-one",
+      "nil_source_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+      "timings": {
+        "nil": {
+          "min_ms": 22.666291,
+          "median_ms": 22.966208,
+          "max_ms": 24.508458,
+          "stdev_ms": 0.435000287493282
+        },
+        "cpp": {
+          "min_ms": 5.294125,
+          "median_ms": 5.531834,
+          "max_ms": 6.365666,
+          "stdev_ms": 0.25597799641901886
+        },
+        "ratio": 4.151644463662504
+      }
+    },
+    {
+      "task": "single-number",
+      "nil_source_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+      "timings": {
+        "nil": {
+          "min_ms": 12.344375,
+          "median_ms": 12.72425,
+          "max_ms": 14.643542,
+          "stdev_ms": 0.5450297502541622
+        },
+        "cpp": {
+          "min_ms": 5.560667,
+          "median_ms": 5.767166,
+          "max_ms": 7.212916,
+          "stdev_ms": 0.4120699704612359
+        },
+        "ratio": 2.206326296139213
+      }
+    },
+    {
+      "task": "reverse-integer",
+      "nil_source_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+      "timings": {
+        "nil": {
+          "min_ms": 29.14725,
+          "median_ms": 29.753791,
+          "max_ms": 31.363917,
+          "stdev_ms": 0.6458900442231266
+        },
+        "cpp": {
+          "min_ms": 11.998167,
+          "median_ms": 12.470417,
+          "max_ms": 13.388209,
+          "stdev_ms": 0.385315327908541
+        },
+        "ratio": 2.3859499646242783
+      }
+    }
+  ],
+  "gate_logs": {
+    "ci-final-debug": {
+      "sha256": "bda6c2b7c9331c13884a6e3db2ca273950b07fab1b429c5fdd82dd045dcaf5f1",
+      "passed_tests": 466,
+      "warnings": 0,
+      "errors": 0
+    },
+    "ci-final-release": {
+      "sha256": "10073ed97c199d958b4baf50f144f9907713a963733ce1cb9051a0b056064715",
+      "passed_tests": 466,
+      "warnings": 0,
+      "errors": 0
+    },
+    "harness-final": {
+      "sha256": "bcec0d111a471e5ae5e153df16dd5cacb5847707b449f6fe5c58b91aec6f32b0",
+      "passed_tests": 12,
+      "warnings": 0,
+      "errors": 0
+    }
+  }
+}
