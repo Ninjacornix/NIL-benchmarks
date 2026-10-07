@@ -23,11 +23,11 @@ pub(crate) fn observe_profile_charge(bytes: usize) {
 }
 '''
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--copies',action='store_true');a=p.parse_args();out=a.output.resolve()
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--copies',action='store_true');p.add_argument('--revision',default='HEAD');a=p.parse_args();out=a.output.resolve()
  if out.is_relative_to(ROOT):p.error('overlay must be outside the checkout')
  out.mkdir(parents=True,exist_ok=True);shadow=out/'source';shadow.mkdir(exist_ok=True)
  if any(shadow.iterdir()):p.error('use a fresh output folder')
- revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+ revision=subprocess.check_output(['git','rev-parse',a.revision],cwd=ROOT,text=True).strip()
  process=subprocess.Popen(['git','archive',revision],cwd=ROOT,stdout=subprocess.PIPE)
  with tarfile.open(fileobj=process.stdout,mode='r|') as archive:archive.extractall(shadow,filter='data')
  assert process.wait()==0

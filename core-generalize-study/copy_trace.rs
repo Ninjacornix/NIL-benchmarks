@@ -86,6 +86,13 @@ mod tests {
     #[test] fn in_place_update_starts_a_new_version() { reset();tick();copied(1,8,"snapshot");fresh(1);tick();observe(1,true);assert!(rows().ends_with("AVOIDABLE\tAVOIDABLE\n")); }
     #[test] fn snapshot_keeps_its_old_version() { reset();tick();copied(1,8,"snapshot");fresh(2);tick();observe(1,true);assert!(rows().ends_with("REQUIRED\tREQUIRED\n")); }
     #[test] fn bookkeeping_is_not_a_semantic_observation() { reset();tick();copied(1,8,"cow");tick();pause();observe(1,true);assert!(rows().ends_with("AVOIDABLE\tAVOIDABLE\n")); }
+    #[test] fn a_new_allocation_cannot_inherit_a_dead_records_storage_version() {
+        reset();tick();copied(1,144,"record_update");
+        // A new sequence or map can occupy an expired record's address. Its
+        // constructor must register a new version even without a record Drop hook.
+        fresh(1);tick();observe(1,true);
+        assert!(rows().ends_with("AVOIDABLE\tAVOIDABLE\n"));
+    }
     #[test] fn metadata_only_observation_has_separate_classification() { reset();tick();copied(1,8,"cow");tick();observe(1,false);assert!(rows().ends_with("REQUIRED\tAVOIDABLE\n")); }
     #[test] fn same_instruction_copy_reads_are_not_later_observations() { reset();tick();copied(1,8,"concat");observe(1,true);assert!(rows().ends_with("AVOIDABLE\tAVOIDABLE\n")); }
     #[test] fn versions_are_monotonic_and_addresses_are_not_exported() { reset();tick();copied(900001,8,"cow");forget(900001);copied(900001,8,"cow");assert!(!rows().contains("900001"));assert!(rows().contains("1\t1\t8"));assert!(rows().contains("1\t2\t8")); }

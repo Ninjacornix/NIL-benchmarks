@@ -12,6 +12,10 @@ def patch(shadow):
  def edit(name,transform):
   p=shadow/name;old=p.read_text();new=transform(old);assert new!=old,name;p.write_text(new)
   changes[name]={'original_sha256':hashlib.sha256(old.encode()).hexdigest(),'instrumented_sha256':hashlib.sha256(new.encode()).hexdigest()}
+ def births(s):
+  anchor='        Self(Arc::new(Storage { data, capacity }))'
+  assert s.count(anchor)==2, ('sequence constructors',s.count(anchor))
+  return s.replace(anchor, '        let value=Self(Arc::new(Storage { data, capacity }));\n        crate::copy_trace::fresh(value.identity());\n        value')
  def replacements(s, pairs):
   for old,new in pairs:
    assert s.count(old)==1,(old,s.count(old));s=s.replace(old,new)
@@ -19,7 +23,7 @@ def patch(shadow):
  trace=(HERE/'copy_trace.rs').read_text();(shadow/'crates/nil-compiler/src/copy_trace.rs').write_text(trace)
  changes['crates/nil-compiler/src/copy_trace.rs']={'instrumented_sha256':hashlib.sha256(trace.encode()).hexdigest()}
  edit('crates/nil-compiler/src/lib.rs',lambda s:s+'\npub mod copy_trace;\n')
- edit('crates/nil-compiler/src/sequence.rs',lambda s:replacements(s,[
+ edit('crates/nil-compiler/src/sequence.rs',lambda s:births(replacements(s,[
   ('        let mut data = Vec::with_capacity(self.capacity);','        crate::copy_trace::copied(self as *const Self as usize, self.data.len()*std::mem::size_of::<T>(), "sequence_cow");\n        let mut data = Vec::with_capacity(self.capacity);'),
   ('        &self.0.data','        crate::copy_trace::observe(self.identity(), true);\n        &self.0.data'),
   ('        &mut Arc::make_mut(&mut self.0).data','        let storage = Arc::make_mut(&mut self.0);\n        crate::copy_trace::fresh(storage as *const Storage<T> as usize);\n        &mut storage.data'),
@@ -31,7 +35,7 @@ def patch(shadow):
    '            if storage.data.capacity() != physical {\n'
    '                crate::copy_trace::copied(storage as *const Storage<T> as usize, storage.data.len()*std::mem::size_of::<T>(), "sequence_growth");\n'
    '            }'),
- ])+'\nimpl<T> Drop for Storage<T> { fn drop(&mut self) { crate::copy_trace::forget(self as *const Self as usize); } }\n')
+ ]))+'\nimpl<T> Drop for Storage<T> { fn drop(&mut self) { crate::copy_trace::forget(self as *const Self as usize); } }\n')
  edit('crates/nil-compiler/src/evaluator.rs',lambda s:replacements(s,[
   ('        Self::Array(values.into())', '        let value = Self::Array(values.into());\n        if let Self::Array(values)=&value { crate::copy_trace::fresh(values.as_ptr() as usize); }\n        value'),
   ('        let (live, root_counts) = live_bytes(&mut frames);','        crate::copy_trace::pause();\n        let (live, root_counts) = live_bytes(&mut frames);'),
@@ -112,7 +116,7 @@ impl Value {
   ('            storage.index.insert(key.clone(), i);',
    '            crate::copy_trace::copied(storage as *const Storage as usize, key.len(), "map_reindex_key");\n'
    '            storage.index.insert(key.clone(), i);'),
- ]).replace('        let storage = Arc::make_mut(&mut self.0);', '        let storage = Arc::make_mut(&mut self.0);\n        crate::copy_trace::fresh(storage as *const Storage as usize);')+'''\nimpl Clone for Storage {
+ ]).replace('        Self(Arc::new(Storage {', '        let value=Self(Arc::new(Storage {',1).replace('        }))\n    }\n    pub fn empty_record', '        }));\n        crate::copy_trace::fresh(value.identity());\n        value\n    }\n    pub fn empty_record',1).replace('        let storage = Arc::make_mut(&mut self.0);', '        let storage = Arc::make_mut(&mut self.0);\n        crate::copy_trace::fresh(storage as *const Storage as usize);')+'''\nimpl Clone for Storage {
     fn clone(&self) -> Self {
         let entry_bytes=self.entries.len()*std::mem::size_of::<(Vec<u8>, EntryValue)>();
         let payload_bytes:usize=self.entries.iter().map(|(k,v)| k.len()+v.bytes_len()).sum();
@@ -125,6 +129,7 @@ impl Value {
 impl Drop for Storage { fn drop(&mut self) { crate::copy_trace::forget(self as *const Self as usize); } }
 ''')
  edit('crates/nil-compiler/src/records.rs',lambda s:replacements(s,[
+  ('pub fn unpack(ty: Type, records: &[RecordDefinition], bytes: &mut &[u8]) -> Value {', 'pub fn unpack(ty: Type, records: &[RecordDefinition], bytes: &mut &[u8]) -> Value { let value = unpack_value(ty,records,bytes); match &value { Value::Record(_,fields) => crate::copy_trace::fresh(fields.as_ptr() as usize), Value::Array(fields) => crate::copy_trace::fresh(fields.as_ptr() as usize), _=>{} } value }\nfn unpack_value(ty: Type, records: &[RecordDefinition], bytes: &mut &[u8]) -> Value {'),
   ('pub fn pack(value: &Value, out: &mut Vec<u8>) {','pub fn pack(value: &Value, out: &mut Vec<u8>) {\n    value.observe_copy(true);'),
  ]))
  return changes

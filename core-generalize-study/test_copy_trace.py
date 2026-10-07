@@ -7,5 +7,6 @@ class CopyTraceTests(unittest.TestCase):
    binary=Path(d)/'tracker-tests'
    subprocess.run(['rustc','--edition=2024','--test',str(HERE/'copy_trace.rs'),'-o',str(binary)],check=True,capture_output=True)
    result=subprocess.run([str(binary)],check=True,capture_output=True,text=True)
-   self.assertIn('9 passed; 0 failed',result.stdout)
+   self.assertRegex(result.stdout, r'test result: ok\. \d+ passed; 0 failed')
+   self.assertIn('a_new_allocation_cannot_inherit_a_dead_records_storage_version ... ok', result.stdout)
 if __name__=='__main__':unittest.main()

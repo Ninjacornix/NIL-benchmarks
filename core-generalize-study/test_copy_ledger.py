@@ -74,6 +74,25 @@ class CoverageLedger(unittest.TestCase):
         self.assertIn('not a proof that the', receipt['note'])
         self.assertEqual(set(receipt['kinds']), set(copy_ledger.KINDS))
 
+    def test_every_dynamic_constructor_registers_a_new_storage_version(self):
+        import tempfile
+        root = HERE.parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            shadow = Path(directory)
+            for name in ['lib', 'sequence', 'evaluator', 'application', 'keyed', 'records']:
+                relative = Path('crates/nil-compiler/src') / (name + '.rs')
+                target = shadow / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes((root / relative).read_bytes())
+            copy_overlay.patch(shadow)
+            sequence = (shadow / 'crates/nil-compiler/src/sequence.rs').read_text()
+            keyed = (shadow / 'crates/nil-compiler/src/keyed.rs').read_text()
+            records = (shadow / 'crates/nil-compiler/src/records.rs').read_text()
+            self.assertEqual(sequence.count('copy_trace::fresh(value.identity())'), 2)
+            self.assertEqual(keyed.count('copy_trace::fresh(value.identity())'), 1)
+            self.assertIn('let value = unpack_value(ty,records,bytes)', records)
+            self.assertIn('Value::Array(fields) => crate::copy_trace::fresh', records)
+
     def test_overlays_patch_a_shadow_checkout_not_the_repository(self):
         for module in (copy_overlay, native_copy_overlay):
             source = Path(module.__file__).read_text()

@@ -154,3 +154,31 @@ The physical-copy/semantic-observation census is a separate deliverable; the
 RSS and token tools below do **not** implement it. A root count, static last use
 or runtime memcpy counter alone is insufficient to classify future observations.
 Do not publish any of those as a completed avoidable-copy census.
+
+### Round 22 tracker correction
+
+Repeated unchanged record programs exposed three drifting reference classifications
+(432 bytes total in the application scope). Sequence and empty-map constructors
+had not registered births: their private address could inherit an expired record's
+version. Decoded aggregate constructors had the same missing hook. The overlay now
+registers every such allocation immediately; this changes no checked-in compiler
+or execution semantics. The coverage test checks both sequence constructors, the
+map constructor and decoded records/arrays; the synthetic tracker regression
+checks reused addresses across allocation kinds. Three repeated golden runs each
+of BST, BFS and interval merge have identical event classifications after the fix.
+
+Use the same corrected instrumentation on historical and current compilers:
+
+```sh
+python3 benchmarks/core-generalize-study/reference_profile.py --copies \
+  --revision 92d62b3 --output /tmp/nil-round22-corrected-before-overlay
+python3 benchmarks/core-generalize-study/reference_profile.py --copies \
+  --output /tmp/nil-round22-corrected-after-overlay
+```
+
+The original preregistered baseline is retained. Corrected before/after category
+counts are labelled retrospective measurement repairs, not revised forecasts.
+Fuzz census remains bounded to 100,000 steps; it measures the compatibility path,
+not G2's unbounded replay. The differential campaign and separate replay controls
+exercise unbounded G2. O0 copy counts describe emitter decisions, not O2 physical
+traffic after LLVM optimization.
