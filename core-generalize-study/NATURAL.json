@@ -1,0 +1,182 @@
+{
+  "schema": 1,
+  "revision": "6fd268d",
+  "method": "Byte-exact Round 19 admitted sources, before performance cliffs were known. No corrections or performance rewrites.",
+  "tasks": [
+    {
+      "task": "3sum",
+      "natural_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "tuned_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "differs": false
+    },
+    {
+      "task": "balanced-binary-tree",
+      "natural_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+      "tuned_sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "differs": true
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "natural_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "tuned_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "differs": false
+    },
+    {
+      "task": "car-fleet",
+      "natural_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+      "tuned_sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "differs": true
+    },
+    {
+      "task": "coin-change",
+      "natural_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "tuned_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "differs": false
+    },
+    {
+      "task": "contains-duplicate",
+      "natural_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "tuned_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "differs": false
+    },
+    {
+      "task": "course-schedule",
+      "natural_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+      "tuned_sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "differs": true
+    },
+    {
+      "task": "gas-station",
+      "natural_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "tuned_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "differs": false
+    },
+    {
+      "task": "generate-parentheses",
+      "natural_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "tuned_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "differs": false
+    },
+    {
+      "task": "insert-interval",
+      "natural_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "tuned_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "differs": false
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "natural_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "tuned_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "differs": false
+    },
+    {
+      "task": "last-stone-weight",
+      "natural_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+      "tuned_sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "differs": true
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "natural_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+      "tuned_sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "differs": true
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "natural_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "tuned_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "differs": false
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "natural_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "tuned_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "differs": false
+    },
+    {
+      "task": "maximum-subarray",
+      "natural_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "tuned_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "differs": false
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "natural_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+      "tuned_sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "differs": true
+    },
+    {
+      "task": "meeting-rooms",
+      "natural_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+      "tuned_sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "differs": true
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "natural_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "tuned_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "differs": false
+    },
+    {
+      "task": "plus-one",
+      "natural_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+      "tuned_sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "differs": true
+    },
+    {
+      "task": "reverse-integer",
+      "natural_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+      "tuned_sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "differs": true
+    },
+    {
+      "task": "reverse-linked-list",
+      "natural_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "tuned_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "differs": false
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "natural_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "tuned_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "differs": false
+    },
+    {
+      "task": "single-number",
+      "natural_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+      "tuned_sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "differs": true
+    },
+    {
+      "task": "spiral-matrix",
+      "natural_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+      "tuned_sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "differs": true
+    },
+    {
+      "task": "target-sum",
+      "natural_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "tuned_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "differs": false
+    },
+    {
+      "task": "valid-palindrome",
+      "natural_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "tuned_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "differs": false
+    },
+    {
+      "task": "valid-sudoku",
+      "natural_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+      "tuned_sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "differs": true
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "natural_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+      "tuned_sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "differs": true
+    }
+  ],
+  "held_out": 114
+}

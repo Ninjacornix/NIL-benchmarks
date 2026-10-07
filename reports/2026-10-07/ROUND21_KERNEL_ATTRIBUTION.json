@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "cohort": 29,
+  "method": "Exact kernel-token ledger. Categories partition tokens, not estimated removable work. Mixed tokens use greatest non-whitespace byte overlap; ties choose first source occurrence. Fractional-byte attribution is retained per task. Helpers remain fully counted under their syntax categories, not double-counted as an overlapping category.",
+  "tiktoken_version": "0.12.0",
+  "density_sha256": "19838622a271a886252e13623ae7cc64eee0cb60a367faac3d07c016de7ac4f6",
+  "checks": {
+    "cl100k_base": {
+      "nil": 4348,
+      "python": 2609,
+      "gap": 1739,
+      "exact_sum": true
+    },
+    "o200k_base": {
+      "nil": 4368,
+      "python": 2620,
+      "gap": 1748,
+      "exact_sum": true
+    }
+  },
+  "ranked": {
+    "cl100k_base": [
+      {
+        "category": "separator",
+        "nil": 1376,
+        "python": 509,
+        "difference": 867
+      },
+      {
+        "category": "numeric_literal",
+        "nil": 688,
+        "python": 161,
+        "difference": 527
+      },
+      {
+        "category": "signature",
+        "nil": 370,
+        "python": 167,
+        "difference": 203
+      },
+      {
+        "category": "operator",
+        "nil": 506,
+        "python": 303,
+        "difference": 203
+      },
+      {
+        "category": "conditional",
+        "nil": 273,
+        "python": 75,
+        "difference": 198
+      },
+      {
+        "category": "loop_delimiters",
+        "nil": 192,
+        "python": 31,
+        "difference": 161
+      },
+      {
+        "category": "loop_index_bound",
+        "nil": 117,
+        "python": 60,
+        "difference": 57
+      },
+      {
+        "category": "call_identifier",
+        "nil": 51,
+        "python": 5,
+        "difference": 46
+      },
+      {
+        "category": "record_definition",
+        "nil": 42,
+        "python": 0,
+        "difference": 42
+      },
+      {
+        "category": "boolean_literal",
+        "nil": 40,
+        "python": 9,
+        "difference": 31
+      },
+      {
+        "category": "unchanged_state",
+        "nil": 15,
+        "python": 0,
+        "difference": 15
+      },
+      {
+        "category": "identifier",
+        "nil": 575,
+        "python": 567,
+        "difference": 8
+      },
+      {
+        "category": "comment",
+        "nil": 0,
+        "python": 0,
+        "difference": 0
+      },
+      {
+        "category": "text_literal",
+        "nil": 31,
+        "python": 42,
+        "difference": -11
+      },
+      {
+        "category": "intrinsic_name",
+        "nil": 68,
+        "python": 110,
+        "difference": -42
+      },
+      {
+        "category": "keyword",
+        "nil": 0,
+        "python": 111,
+        "difference": -111
+      },
+      {
+        "category": "whitespace",
+        "nil": 4,
+        "python": 459,
+        "difference": -455
+      }
+    ],
+    "o200k_base": [
+      {
+        "category": "separator",
+        "nil": 1376,
+        "python": 512,
+        "difference": 864
+      },
+      {
+        "category": "numeric_literal",
+        "nil": 688,
+        "python": 161,
+        "difference": 527
+      },
+      {
+        "category": "operator",
+        "nil": 509,
+        "python": 304,
+        "difference": 205
+      },
+      {
+        "category": "signature",
+        "nil": 370,
+        "python": 167,
+        "difference": 203
+      },
+      {
+        "category": "conditional",
+        "nil": 274,
+        "python": 75,
+        "difference": 199
+      },
+      {
+        "category": "loop_delimiters",
+        "nil": 192,
+        "python": 31,
+        "difference": 161
+      },
+      {
+        "category": "loop_index_bound",
+        "nil": 115,
+        "python": 60,
+        "difference": 55
+      },
+      {
+        "category": "call_identifier",
+        "nil": 52,
+        "python": 5,
+        "difference": 47
+      },
+      {
+        "category": "record_definition",
+        "nil": 42,
+        "python": 0,
+        "difference": 42
+      },
+      {
+        "category": "boolean_literal",
+        "nil": 40,
+        "python": 9,
+        "difference": 31
+      },
+      {
+        "category": "identifier",
+        "nil": 591,
+        "python": 574,
+        "difference": 17
+      },
+      {
+        "category": "unchanged_state",
+        "nil": 15,
+        "python": 0,
+        "difference": 15
+      },
+      {
+        "category": "comment",
+        "nil": 0,
+        "python": 0,
+        "difference": 0
+      },
+      {
+        "category": "text_literal",
+        "nil": 31,
+        "python": 41,
+        "difference": -10
+      },
+      {
+        "category": "intrinsic_name",
+        "nil": 69,
+        "python": 111,
+        "difference": -42
+      },
+      {
+        "category": "keyword",
+        "nil": 0,
+        "python": 111,
+        "difference": -111
+      },
+      {
+        "category": "whitespace",
+        "nil": 4,
+        "python": 459,
+        "difference": -455
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=d(!sort(!slice(a,1,a[0]),0),a[a[0]+1])
+(v,i)=a[#a-b]
