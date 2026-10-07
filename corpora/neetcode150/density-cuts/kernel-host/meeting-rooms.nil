@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=d(!sort(@(a,!buffer(a[0],0),0;c<a[0];a,b[c:(a[1+2*c]+1000000)*2000001+a[2+2*c]+1000000],c+1;b),0))
+(v)=@(a,1,true;b<#a?c:false;a,b+1,(a[b-1]%2000001-1000000)<=a[b]/2000001-1000000;c?1:0)

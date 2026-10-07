@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=@(a,1,0,0;b<=a[0];a,b+1,d,a[b]+(c<d?c:d);c<d?c:d)

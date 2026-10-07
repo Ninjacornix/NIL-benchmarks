@@ -1,0 +1,3 @@
+(v):v=b(!slice(a,1,a[0]))
+(v):v=c(@(a,#a-1,1;b>=0;a[b:(a[b]+c)%10],b-1,(a[b]+c)/10;a),@(a,#a-1,1;b>=0;a,b-1,(a[b]+c)/10;c))
+(v,i):v=b==1?!concat(!buffer(1,1),a):a

@@ -1,0 +1,2 @@
+(v)=@(a,0,true;b<81?c:false;a,b+1,b(a,b);c?1:0)
+(v,i):b=a[b]==0?true:@(a,b,b+1,true;c<81?d:false;a,b,c+1,(a[b]==a[c]?(b/9==c/9?false:b%9==c%9?false:b/27==c/27?((b%9)/3==(c%9)/3?false:true):true):true);d)

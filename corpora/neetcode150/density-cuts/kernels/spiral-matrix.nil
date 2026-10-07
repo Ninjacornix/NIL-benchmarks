@@ -1,0 +1,5 @@
+(v):v=b(a,!buffer(a[0]*a[1],0),!buffer(a[0]*a[1],0),0,0,0)
+(v,v,v,i,i,i):v=@(a,b,c,d,e,f,0;g<a[0]*a[1];row=c(a,c,d,e,f,true);col=c(a,c,d,e,f,false);direction=e(a,c,d,e,f);value=a[2+d*a[1]+e];index=d*a[1]+e;a,b[g:value],c[index:1],row,col,direction,g+1;b)
+(v,v,i,i,i,b)=d(a,b,c,d,e)?(f?(e==1?c+1:e==3?c-1:c):(e==0?d+1:e==2?d-1:d)):(f?(e==0?c+1:e==2?c-1:c):(e==1?d-1:e==3?d+1:d))
+(v,v,i,i,i):b=e==0?(d+1<a[1]?(b[c*a[1]+d+1]==0):false):e==1?(c+1<a[0]?(b[(c+1)*a[1]+d]==0):false):e==2?(d>0?(b[c*a[1]+d-1]==0):false):(c>0?(b[(c-1)*a[1]+d]==0):false)
+(v,v,i,i,i)=d(a,b,c,d,e)?e:(e+1==4?0:e+1)

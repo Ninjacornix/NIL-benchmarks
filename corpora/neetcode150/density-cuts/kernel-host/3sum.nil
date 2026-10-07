@@ -1,0 +1,8 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"),&h)
+(v,[s,i,i,i:s]):s=d(!sort(!slice(a,1,a[0]),0),^b)
+(v,[s,i,i,i:s]):s=@(a,0,"";b<#a-2;a,b+1,b>0?(a[b]==a[b-1]?c:e(a,b,c,^b)):e(a,b,c,^b);c)
+(v,i,s,[s,i,i,i:s]):s=@(a,b,b+1,#a-1,c;c<d;a,b,a[b]+a[c]+a[d]<0?c+1:a[b]+a[c]+a[d]>0?c:f(a,c,d),a[b]+a[c]+a[d]>0?d-1:a[b]+a[c]+a[d]<0?d:g(a,c,d),a[b]+a[c]+a[d]==0?^d(e,a[b],a[c],a[d]):e;e)
+(v,i,i)=@(a,b+1,c;b<c?(a[b]==a[b-1]):false;a,b+1,c;b)
+(v,i,i)=@(a,b,c-1;b<c?(a[c]==a[c+1]):false;a,b,c-1;c)
+(s,i,i,i):s=!concat(a,!concat(!format(b),!concat(" ",!concat(!format(c),!concat(" ",!concat(!format(d),"\n"))))))

@@ -1,0 +1,674 @@
+[
+  {
+    "task": "3sum",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "rows"
+  },
+  {
+    "task": "3sum",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "rows"
+  },
+  {
+    "task": "balanced-binary-tree",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "root"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "balanced-binary-tree",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "root"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "car-fleet",
+    "language": "python",
+    "decoded_parameters": [
+      "target",
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "car-fleet",
+    "language": "cpp",
+    "decoded_parameters": [
+      "target",
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "coin-change",
+    "language": "python",
+    "decoded_parameters": [
+      "coins",
+      "amount"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "coin-change",
+    "language": "cpp",
+    "decoded_parameters": [
+      "coins",
+      "amount"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "contains-duplicate",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "contains-duplicate",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "course-schedule",
+    "language": "python",
+    "decoded_parameters": [
+      "n",
+      "edges"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "course-schedule",
+    "language": "cpp",
+    "decoded_parameters": [
+      "n",
+      "edges"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "gas-station",
+    "language": "python",
+    "decoded_parameters": [
+      "gas",
+      "costs"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "gas-station",
+    "language": "cpp",
+    "decoded_parameters": [
+      "gas",
+      "costs"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "generate-parentheses",
+    "language": "python",
+    "decoded_parameters": [
+      "n"
+    ],
+    "serialization": "lines"
+  },
+  {
+    "task": "generate-parentheses",
+    "language": "cpp",
+    "decoded_parameters": [
+      "n"
+    ],
+    "serialization": "lines"
+  },
+  {
+    "task": "insert-interval",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "lo",
+      "hi"
+    ],
+    "serialization": "rows"
+  },
+  {
+    "task": "insert-interval",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "lo",
+      "hi"
+    ],
+    "serialization": "rows"
+  },
+  {
+    "task": "kth-largest-element-in-an-array",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "k"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "kth-largest-element-in-an-array",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "k"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "last-stone-weight",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "last-stone-weight",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "letter-combinations-of-a-phone-number",
+    "language": "python",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "lines"
+  },
+  {
+    "task": "letter-combinations-of-a-phone-number",
+    "language": "cpp",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "lines"
+  },
+  {
+    "task": "longest-repeating-character-replacement",
+    "language": "python",
+    "decoded_parameters": [
+      "k",
+      "line"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "longest-repeating-character-replacement",
+    "language": "cpp",
+    "decoded_parameters": [
+      "k",
+      "line"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "longest-substring-without-repeating-characters",
+    "language": "python",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "longest-substring-without-repeating-characters",
+    "language": "cpp",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "maximum-subarray",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "maximum-subarray",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "median-of-two-sorted-arrays",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "b"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "median-of-two-sorted-arrays",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "b"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "meeting-rooms",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "meeting-rooms",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "min-cost-climbing-stairs",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "min-cost-climbing-stairs",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "plus-one",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "plus-one",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-integer",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-integer",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-linked-list",
+    "language": "python",
+    "decoded_parameters": [
+      "n",
+      "head",
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-linked-list",
+    "language": "cpp",
+    "decoded_parameters": [
+      "n",
+      "head",
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "search-in-rotated-sorted-array",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "target"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "search-in-rotated-sorted-array",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "target"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "single-number",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "single-number",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "spiral-matrix",
+    "language": "python",
+    "decoded_parameters": [
+      "r",
+      "c",
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "spiral-matrix",
+    "language": "cpp",
+    "decoded_parameters": [
+      "r",
+      "c",
+      "a"
+    ],
+    "serialization": "row"
+  },
+  {
+    "task": "target-sum",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "target"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "target-sum",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "target"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-palindrome",
+    "language": "python",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-palindrome",
+    "language": "cpp",
+    "decoded_parameters": [
+      "data"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-sudoku",
+    "language": "python",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-sudoku",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "validate-binary-search-tree",
+    "language": "python",
+    "decoded_parameters": [
+      "a",
+      "root"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "validate-binary-search-tree",
+    "language": "cpp",
+    "decoded_parameters": [
+      "a",
+      "root"
+    ],
+    "serialization": "scalar"
+  },
+  {
+    "task": "3sum",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "rows"
+  },
+  {
+    "task": "balanced-binary-tree",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "car-fleet",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "coin-change",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "contains-duplicate",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "course-schedule",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "gas-station",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "generate-parentheses",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "lines"
+  },
+  {
+    "task": "insert-interval",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "rows"
+  },
+  {
+    "task": "kth-largest-element-in-an-array",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "last-stone-weight",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "letter-combinations-of-a-phone-number",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "lines"
+  },
+  {
+    "task": "longest-repeating-character-replacement",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "longest-substring-without-repeating-characters",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "maximum-subarray",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "median-of-two-sorted-arrays",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "meeting-rooms",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "min-cost-climbing-stairs",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "plus-one",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-integer",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "row"
+  },
+  {
+    "task": "reverse-linked-list",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "row"
+  },
+  {
+    "task": "search-in-rotated-sorted-array",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "single-number",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "spiral-matrix",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "row"
+  },
+  {
+    "task": "target-sum",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-palindrome",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "valid-sudoku",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  },
+  {
+    "task": "validate-binary-search-tree",
+    "language": "nil",
+    "decoded_parameters": "Current typed flat buffer/byte/record signatures; metadata offsets remain charged.",
+    "serialization": "scalar"
+  }
+]

@@ -1,0 +1,5 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=d(a,@(a,!buffer(a[a[0]+1]+1,a[a[0]+1]+1)[0:0],1;c<=a[a[0]+1];a,b[c:e(a,b,c)],c+1;b))
+(v,v)=b[a[a[0]+1]]>a[a[0]+1]?-1:b[a[a[0]+1]]
+(v,v,i)=@(a,b,c,1,a[a[0]+1]+1;d<=a[0];a,b,c,d+1,a[d]<=c?(e<b[c-a[d]]+1?e:b[c-a[d]]+1):e;e)

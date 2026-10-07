@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"),&g)
+(v,[s:s]):s=d(a[0],0,0,"",^b)
+(i,i,i,s,[s:s]):s=c==a?^e(d):!concat(b<a?e(a,b,c,d,^e):"",c<b?f(a,b,c,d,^e):"")
+(i,i,i,s,[s:s]):s=d(a,b+1,c,!concat(d,"("),^e)
+(i,i,i,s,[s:s]):s=d(a,b,c+1,!concat(d,")"),^e)
+(s):s=!concat(a,"\n")

@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"))
+(v):s=d(!map(&e,!slice(a,1,a[0])))
+(v):s=@(a,"",0;c<#a;a,!concat(b,!concat(c==0?"":" ",!format(a[c]))),c+1;!concat(b,"\n"))
+1=f(@(a,0;a!=0;a/10,b*10+(a%10);b))
+1=a<-2147483648?0:a>2147483647?0:a

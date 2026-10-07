@@ -1,0 +1,4 @@
+(v,[s:s]):s=b(a[0],0,0,"",^b)
+(i,i,i,s,[s:s]):s=c==a?^e(d):!concat(b<a?c(a,b,c,d,^e):"",c<b?d(a,b,c,d,^e):"")
+(i,i,i,s,[s:s]):s=b(a,b+1,c,!concat(d,"("),^e)
+(i,i,i,s,[s:s]):s=b(a,b,c+1,!concat(d,")"),^e)

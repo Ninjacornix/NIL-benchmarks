@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"))
+(v):s=d(!sort(!slice(a,1,a[0]),0))
+(v):s=@(a,0,"";b<#a-2;a,b+1,b>0?(a[b]==a[b-1]?c:e(a,b,c)):e(a,b,c);c)
+(v,i,s):s=@(a,b,b+1,#a-1,c;c<d;a,b,a[b]+a[c]+a[d]<0?c+1:a[b]+a[c]+a[d]>0?c:f(a,c,d),a[b]+a[c]+a[d]>0?d-1:a[b]+a[c]+a[d]<0?d:g(a,c,d),a[b]+a[c]+a[d]==0?!concat(e,!concat(!format(a[b]),!concat(" ",!concat(!format(a[c]),!concat(" ",!concat(!format(a[d]),"\n")))))):e;e)
+(v,i,i)=@(a,b+1,c;b<c?(a[b]==a[b-1]):false;a,b+1,c;b)
+(v,i,i)=@(a,b,c-1;b<c?(a[c]==a[c+1]):false;a,b,c-1;c)

@@ -1,0 +1,8 @@
+record Window(counts:v,left:i,peak:i,best:i)
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parse(!slice(a,0,!find(a,10,0))),!slice(a,!find(a,10,0)+1,#a-!find(a,10,0)-1))),"\n")
+(i,s)=@(a,b,Window(!buffer(26,0),0,0,0),0;d<#b;a,b,e(a,b,c,d),d+1;c.best)
+(v,i)=a[b]
+(i,s,Window,i):Window=f(a,b,c,d,c.counts[b[d]-65]+1)
+(i,s,Window,i,i):Window=g(a,b,Window(c.counts[b[d]-65:e],c.left,c.peak>e?c.peak:e,c.best),d)
+(i,s,Window,i):Window=d-c.left+1-c.peak>a?Window(c.counts[b[c.left]-65:c.counts[b[c.left]-65]-1],c.left+1,c.peak,c.best>d-c.left?c.best:d-c.left):Window(c.counts,c.left,c.peak,c.best>d-c.left+1?c.best:d-c.left+1)

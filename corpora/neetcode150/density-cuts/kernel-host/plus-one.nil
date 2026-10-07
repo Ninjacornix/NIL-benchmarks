@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=d(c(!parsebuf(a," \n")))
+(v):v=e(!slice(a,1,a[0]))
+(v):s=@(a,"",0;c<#a;a,!concat(b,!concat(c==0?"":" ",!format(a[c]))),c+1;!concat(b,"\n"))
+(v):v=f(@(a,#a-1,1;b>=0;a[b:(a[b]+c)%10],b-1,(a[b]+c)/10;a),@(a,#a-1,1;b>=0;a,b-1,(a[b]+c)/10;c))
+(v,i):v=b==1?!concat(!buffer(1,1),a):a
