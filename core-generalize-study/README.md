@@ -1,5 +1,33 @@
 # Round 21: natural programs, copies, memory and limits
 
+## Round 22: repaired fuzz scope
+
+`fuzz_check.rs` supplies the generated entry's actual `(v,s,s,s)` types, using
+`[3,-2,9]`, `abc 12`, `input.bin`, and `output.bin`. The fixed census fixture is
+1024 bytes (four repetitions of 0–255), not the randomized differential campaign
+fixture. Denial, deterministic random seed, environment and directory fixtures
+are explicit. Providers use the campaign's existing `compile_case` loader.
+Both ordinary and instrumented helpers must agree; native O0 additionally compares
+diagnostic codes, stdout, output file and input preservation. E006 aborts rather
+than counting an entry mismatch as successful coverage. Fuzz census uses bounded
+execution (100,000 steps, 256 calls) because some generated programs never finish.
+Application and NeetCode mechanism censuses remain O0 unbounded.
+
+```sh
+python3 reference_profile.py --copies --output /tmp/nil-round22-overlay
+python3 copy_census.py --overlay /tmp/nil-round22-overlay --scope fuzz:22001 \
+  --native --output /tmp/nil-round22-fuzz-22001.json
+python3 copy_census.py --overlay /tmp/nil-round22-overlay --scope fuzz:22002 \
+  --native --output /tmp/nil-round22-fuzz-22002.json
+```
+
+Before ownership changes, both seeds execute all 644 families with no skipped or
+unjoinable fixture: 5,240 / 4,983 native payload copies, 88,110,864 / 88,114,519
+bytes. Exact category and diagnostic counts are in
+`reports/2026-10-07/ROUND22_CENSUS_BEFORE.json`. The existing application and
+natural/tuned NeetCode baselines are carried forward with their original receipts;
+they were not rerun for this harness-only fix. Raw telemetry stays outside git.
+
 This study does not attempt the 114 held-out NeetCode problems. `natural/` contains
 29 byte-exact admitted Round 19 programs from benchmarks commit `6fd268d`.
 `NATURAL.json` freezes their hashes alongside the tuned Round 20 hashes. Natural

@@ -2,7 +2,10 @@
 fn main() {
     let args=std::env::args().skip(1).collect::<Vec<_>>();
     let source=std::fs::read_to_string(&args[0]).expect("source");
-    let mut program=match nil_compiler::compile_with_plugins(&source,nil_compiler::SourceProfile::ExprV5,&args[3..]) {
+    let compiled=if std::env::var_os("NIL_COPY_FUZZ").is_some() {
+        nil_fuzz::application::compile_case(&source)
+    } else { nil_compiler::compile_with_plugins(&source,nil_compiler::SourceProfile::ExprV5,&args[3..]) };
+    let mut program=match compiled {
         Ok(p)=>p,Err(d)=>{println!("ERR\t{:?}\t{}",d.phase,d);return;}
     };
     program.hir=measurement_program(&program.hir,&mut 0);

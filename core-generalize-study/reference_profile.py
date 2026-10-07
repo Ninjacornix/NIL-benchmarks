@@ -79,6 +79,11 @@ def main():
   extra_helpers['reference-application']=app
   extra_helpers['native-copy-build']=(HERE/'native_copy_build.rs').read_text()+site_overlay.ANNOTATE
   extra_helpers['fuzz-sources']=(HERE/'fuzz_sources.rs').read_text()
+  fuzz=(HERE/'fuzz_check.rs').read_text()
+  fuzz=fuzz.replace('    let program = nil_fuzz::', '    let mut program = nil_fuzz::')
+  fuzz=fuzz.replace('    // MEASUREMENT: annotate the same HIR only in the isolated instrumented helper.', '    program.hir = measurement_program(&program.hir, &mut 0);')
+  fuzz=fuzz.replace('fn main() { oracle_main(); }','fn main() { nil_compiler::copy_trace::reset(); oracle_main(); if let Some(path)=std::env::var_os("NIL_COPY_TRACE_FILE") { nil_compiler::copy_trace::finish(std::path::Path::new(&path)); } }')
+  extra_helpers['reference-fuzz']=fuzz+site_overlay.ANNOTATE
   for name,content in extra_helpers.items():(helper_dir/(name+'.rs')).write_text(content)
 
  manifest='[package]\nname="nil-generalize-reference-profile"\nversion="0.0.0"\nedition="2024"\n[workspace]\n[dependencies]\n'
@@ -90,6 +95,15 @@ def main():
  manifest+='[[bin]]\nname="reference-controls"\npath='+json.dumps(str(HERE/'reference_controls.rs'))+'\n';(helper_dir/'Cargo.toml').write_text(manifest)
  subprocess.run(['cargo','generate-lockfile','--manifest-path',str(helper_dir/'Cargo.toml'),'--offline'],check=True)
  subprocess.run(['cargo','build','--manifest-path',str(helper_dir/'Cargo.toml'),'--release','--locked','--offline'],check=True)
+ if a.copies:
+  ordinary=out/'ordinary-fuzz';ordinary.mkdir()
+  (ordinary/'main.rs').write_text((HERE/'fuzz_check.rs').read_text())
+  ordinary_manifest='[package]\nname="nil-census-fuzz-oracle"\nversion="0.0.0"\nedition="2024"\n[workspace]\n[dependencies]\n'
+  for name,path in [('nil-compiler',ROOT/'crates/nil-compiler'),('nil-hir',ROOT/'crates/nil-hir'),('nil-fuzz',ROOT/'tools/nil-fuzz')]:ordinary_manifest+=name+'={path='+json.dumps(str(path))+'}\n'
+  ordinary_manifest+='[[bin]]\nname="ordinary-fuzz"\npath="main.rs"\n'
+  (ordinary/'Cargo.toml').write_text(ordinary_manifest)
+  subprocess.run(['cargo','generate-lockfile','--manifest-path',str(ordinary/'Cargo.toml'),'--offline'],check=True)
+  subprocess.run(['cargo','build','--manifest-path',str(ordinary/'Cargo.toml'),'--release','--locked','--offline'],check=True)
  receipt=dict(schema=1,compiler_revision=revision,method=__doc__,patches=changes,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),controls_helper_sha256=hashlib.sha256((HERE/"reference_controls.rs").read_bytes()).hexdigest(),extra_helpers={name:hashlib.sha256(content.encode()).hexdigest() for name,content in extra_helpers.items()},binary=str(helper_dir/'target/release/reference-profile'))
  (out/'MANIFEST.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))
 if __name__=='__main__':main()

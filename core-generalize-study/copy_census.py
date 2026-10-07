@@ -27,6 +27,35 @@ NEETCODE = SUITE / 'corpora/neetcode150'
 APPLICATION = SUITE / 'corpora/application-v5'
 
 
+def fuzz_environment(row):
+    """Only fixture state: never inherit ambient host variables or entropy."""
+    env = {'NIL_COPY_FUZZ': '1', 'NIL_CENSUS_SEED': row['seed'],
+           'NIL_RANDOM_SEED': '01' if row['invalid_seed'] == 'true' else row['seed'],
+           'NIL_FUZZ_PRESENT': 'abc 12', 'NIL_FUZZ_EMPTY': '',
+           'NIL_FUZZ_RAW': bytes([255, 128, 120]), 'NIL_FUZZ_LARGE': 'x' * 1024}
+    if row['denied'] == 'true':
+        env['NIL_DENY_HOST_IO'] = '1'
+    if row['invalid_seed'] == 'true':
+        env['NIL_CENSUS_INVALID_SEED'] = '1'
+    return env
+
+
+def prepare_fuzz_directories(work):
+    for suffix, count in (('.entries', 16), ('.large', 1024), ('.empty', 0)):
+        folder = work / ('input.bin' + suffix)
+        if not folder.exists():
+            folder.mkdir()
+            for i in reversed(range(count)):
+                (folder / f'entry-{i:04}-é').write_bytes(b'')
+            if count == 16:
+                (folder / 'subdirectory').mkdir()
+    # The unreadable fixture is genuinely unreadable for this unprivileged run.
+    folder = work / 'input.bin.unreadable'
+    if not folder.exists():
+        folder.mkdir()
+        folder.chmod(0)
+
+
 def read_trace(path):
     if not path.exists():
         return []
@@ -58,7 +87,8 @@ def accumulate(into, events, kinds):
         kinds[kind] += 1
 
 
-def run_pair(ordinary, instrumented, source, work, data, trace, manifests=(), environment=None):
+def run_pair(ordinary, instrumented, source, work, data, trace, manifests=(), environment=None,
+             fuzz=False):
     """Run both helpers on one fixture and require identical observable behaviour."""
     results = {}
     for label, helper in (('ordinary', ordinary), ('instrumented', instrumented)):
@@ -79,10 +109,16 @@ def run_pair(ordinary, instrumented, source, work, data, trace, manifests=(), en
                           (work / 'input.bin').read_bytes())
     assert results['ordinary'] == results['instrumented'], ('instrumented divergence', source.name,
                                                             results['ordinary'][:3], results['instrumented'][:3])
+    if fuzz:
+        code = results['ordinary'][1].decode().strip().split('\t')
+        assert len(code) == 2 and code[0] == 'RESULT', ('missing execution result', results)
+        assert code[1] != 'E006', 'fuzz census entry still has wrong arity/types'
+        return read_trace(trace), code[1], results['ordinary']
     return read_trace(trace)
 
 
-def native_census(helpers, source, work, data, trace, reference_trace, max_events, manifests=()):
+def native_census(helpers, source, work, data, trace, reference_trace, max_events, manifests=(),
+                  environment=None, expected=None):
     """Native O0 mechanism census joined to reference versions. Fail-closed.
 
     O0 keeps every runtime copy call the emitter decided to make, which is the
@@ -92,16 +128,26 @@ def native_census(helpers, source, work, data, trace, reference_trace, max_event
     env = {'PATH': os.environ['PATH'], 'HOME': str(work), 'TMPDIR': str(work),
            'NIL_CLANG': str(HERE / 'copy_clang.py'),
            'NIL_NATIVE_COPY_TRACE_FILE': str(trace)}
+    env.update(environment or {})
     binary = work / 'native-instrumented'
     trace.unlink(missing_ok=True)
     built = subprocess.run([str(helpers / 'native-copy-build'), str(source), str(binary),
-                            'unbounded', *map(str, manifests)],
+                            'bounded' if expected is not None else 'unbounded', *map(str, manifests)],
                            cwd=work, env=env, capture_output=True, timeout=600)
     if built.stdout.strip() != b'BUILD\tOK':
         return None, 'instrumented build failed: ' + built.stdout.decode(errors='replace')[:160]
     (work / 'input.bin').write_bytes(data)
-    run = subprocess.run([str(binary), 'input.bin', 'output.bin'], cwd=work, env=env,
+    if expected is not None:
+        (work / 'output.bin').unlink(missing_ok=True)
+    arguments = ['[3,-2,9]', 'abc 12', 'input.bin', 'output.bin'] if expected is not None else ['input.bin', 'output.bin']
+    run = subprocess.run([str(binary), *arguments], cwd=work, env=env,
                          capture_output=True, timeout=600)
+    if expected is not None:
+        code = 'OK' if run.returncode == 0 else run.stderr.decode(errors='replace').split()[0] if run.stderr else 'NO_DIAGNOSTIC'
+        assert code == expected[1].decode().strip().split('\t')[1], ('native diagnostic divergence', source, code, expected[:3])
+        assert run.stdout == expected[4], ('native stdout divergence', source)
+        assert ((work / 'output.bin').read_bytes() if (work / 'output.bin').exists() else None) == expected[3], ('native output divergence', source)
+        assert (work / 'input.bin').read_bytes() == expected[5], ('native input changed', source)
     events = read_trace(trace)
     if not events:
         return [], 'native exit %d, no instrumented copy reached' % run.returncode
@@ -191,6 +237,7 @@ def main():
     native_totals = blank(groups)
     native_kinds = defaultdict(int)
     per_program, skipped = [], []
+    outcomes = defaultdict(int)
     scope = args.scope
     started = time.time()
 
@@ -211,9 +258,13 @@ def main():
             # One deterministic census fixture, recorded as the census's own input
             # rather than the fuzz oracle's randomized host.
             fixture = bytes(range(256)) * 4
-            jobs = [(path.stem, path, [('census-fixture', fixture, {})], ordinary_core,
-                     helpers / 'reference-profile')
-                    for path in sorted(folder.glob('family-*.nil'))]
+            metadata = list(csv.DictReader((folder / 'fixtures.tsv').open(), delimiter='\t'))
+            jobs = []
+            for row in metadata:
+                env = fuzz_environment(row)
+                path = folder / f"family-{int(row['index']):04}.nil"
+                jobs.append((path.stem, path, [('census-fixture', fixture, env)],
+                             args.overlay / 'ordinary-fuzz/target/release/ordinary-fuzz', helpers / 'reference-fuzz'))
         else:
             parser.error('unknown scope')
         if args.limit:
@@ -228,17 +279,24 @@ def main():
             fixtures_done = 0
             work = base / 'work'
             work.mkdir(exist_ok=True)
+            if scope.startswith('fuzz:'):
+                prepare_fuzz_directories(work)
             try:
                 for label, data, environment in cases:
                     events = run_pair(ordinary, instrumented, path.resolve(), work, data, trace,
-                                      environment=environment)
+                                      environment=environment, fuzz=scope.startswith('fuzz:'))
+                    expected = None
+                    if scope.startswith('fuzz:'):
+                        events, code, expected = events
+                        outcomes[code] += 1
                     accumulate(program, events, program_kinds)
                     accumulate(totals, events, kinds)
                     fixtures_done += 1
-                    if args.native and not environment:
+                    if args.native and (not environment or scope.startswith('fuzz:')):
                         joined, note = native_census(helpers, path.resolve(), work, data,
                                                      base / 'native.tsv', trace,
-                                                     args.native_max_events)
+                                                     args.native_max_events, environment=environment,
+                                                     expected=expected)
                         if joined is None:
                             native_notes.append({'fixture': label, 'reason': note})
                         else:
@@ -286,7 +344,14 @@ def main():
         'overlay_manifest_sha256': hashlib.sha256((args.overlay / 'MANIFEST.json').read_bytes()).hexdigest(),
         'totals': totals,
         'kinds': dict(kinds),
-        'native': ({'path': 'native O0 unbounded, mechanism census joined to reference versions',
+        'executed_codes': dict(outcomes),
+        'fixture_contract': ({'parameters': ['v:[3,-2,9]', 's:abc 12', 's:input.bin', 's:output.bin'],
+                              'input_sha256': hashlib.sha256(bytes(range(256)) * 4).hexdigest(),
+                              'steps': 100000, 'call_depth': 256,
+                              'host': 'fixed census fixture, not randomized campaign Host',
+                              'native_observables_compared': ['diagnostic code', 'stdout', 'output file', 'preserved input']}
+                             if scope.startswith('fuzz:') else None),
+        'native': ({'path': 'native O0 ' + ('bounded' if scope.startswith('fuzz:') else 'unbounded') + ', mechanism census joined to reference versions',
                     'caveat': 'O0 preserves the emitter\'s copy decisions. It does not claim which '
                               'copies survive the O2 pipeline.',
                     'totals': native_totals, 'kinds': dict(native_kinds)} if args.native else None),
@@ -299,6 +364,7 @@ def main():
     payload = totals[copy_ledger.PAYLOAD_COPY]
     print('CENSUS ' + json.dumps({
         'scope': scope, 'programs': len(per_program), 'skipped': len(skipped),
+        'executed_codes': dict(outcomes),
         'payload_events': payload['events'], 'payload_bytes': payload['bytes'],
         'strict': payload['strict'], 'payload_only': payload['payload_only'],
         'other_groups': {g: totals[g]['events'] for g in groups if g != copy_ledger.PAYLOAD_COPY},

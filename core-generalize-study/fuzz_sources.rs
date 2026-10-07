@@ -10,6 +10,7 @@ fn main() {
     std::fs::create_dir_all(&out).expect("output directory");
     let count = nil_fuzz::application::FAMILY_COUNT;
     let mut denied = 0usize;
+    let mut fixtures = String::from("index\tseed\tdenied\tinvalid_seed\n");
     for index in 0..count {
         // Identical to application::smoke_campaign.
         let case_seed = seed.wrapping_add(index as u64);
@@ -17,11 +18,13 @@ fn main() {
         if case.denied {
             denied += 1;
         }
+        fixtures.push_str(&format!("{index}\t{case_seed}\t{}\t{}\n", case.denied, index == 371));
         std::fs::write(
             out.join(format!("family-{index:04}.nil")),
             format!("{}\n", case.source),
         )
         .expect("write source");
     }
+    std::fs::write(out.join("fixtures.tsv"), fixtures).expect("write fixture metadata");
     println!("DUMPED\t{count}\tdenied\t{denied}");
 }
