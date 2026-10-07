@@ -1,0 +1,3037 @@
+{
+  "schema": 1,
+  "round": 21,
+  "part": "A1",
+  "adr": "docs/adr/043.md",
+  "metric": "Physical owning-storage copies classified against later reference-semantic observations by monotonic version ID. AVOIDABLE means no later observation under the stated metric, not a proof that the copy is removable. PAYLOAD_COPY is the only group carrying the headline.",
+  "native_path": "native O0 unbounded mechanism census joined to reference versions; O0 preserves the emitter's copy decisions and makes no claim about which copies survive O2.",
+  "scopes": {
+    "neetcode-natural": {
+      "programs": 29,
+      "skipped": [],
+      "elapsed_s": 783.6,
+      "raw_sha256": "a95d7dac314d2a7ecd44d6e45d73a5df396ad9b4e6eb31cc9faf33ae958bdd75",
+      "overlay_manifest_sha256": "836165339241f5414f54f29adf8787ab13360dd8d9b7a665d912df31eda8947b",
+      "reference_totals": {
+        "PAYLOAD_COPY": {
+          "events": 13269808,
+          "bytes": 2166682394099,
+          "strict": {
+            "REQUIRED": 2627053,
+            "AVOIDABLE": 10642755
+          },
+          "strict_bytes": {
+            "REQUIRED": 2006574316083,
+            "AVOIDABLE": 160108078016
+          },
+          "payload_only": {
+            "REQUIRED": 2526934,
+            "AVOIDABLE": 10742874
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 1926574287211,
+            "AVOIDABLE": 240108106888
+          }
+        },
+        "CONSTRUCTION": {
+          "events": 1940,
+          "bytes": 10222,
+          "strict": {
+            "REQUIRED": 1938,
+            "AVOIDABLE": 2
+          },
+          "strict_bytes": {
+            "REQUIRED": 10220,
+            "AVOIDABLE": 2
+          },
+          "payload_only": {
+            "REQUIRED": 1938,
+            "AVOIDABLE": 2
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 10220,
+            "AVOIDABLE": 2
+          }
+        },
+        "INPUT_DECODE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "OUTPUT_MATERIALIZE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "GROWTH_RELOCATION": {
+          "events": 7307101,
+          "bytes": 54310490,
+          "strict": {
+            "REQUIRED": 7307101,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 54310490,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 7307101,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 54310490,
+            "AVOIDABLE": 0
+          }
+        }
+      },
+      "reference_kinds": {
+        "append_right": 9166664,
+        "sequence_growth": 7307089,
+        "map_key_argument": 970,
+        "map_key_own_index": 970,
+        "map_key_own_entry": 970,
+        "map_entries_growth": 12,
+        "buffer_slice": 49,
+        "sequence_cow": 2995150,
+        "bytes_slice": 1057970,
+        "concat_right": 24506,
+        "concat_left": 24499
+      },
+      "native": {
+        "totals": {
+          "PAYLOAD_COPY": {
+            "events": 6423242,
+            "bytes": 2086634959941,
+            "strict": {
+              "REQUIRED": 2526935,
+              "AVOIDABLE": 3896307
+            },
+            "strict_bytes": {
+              "REQUIRED": 1926575088147,
+              "AVOIDABLE": 160059871794
+            },
+            "payload_only": {
+              "REQUIRED": 2426816,
+              "AVOIDABLE": 3996426
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 1846575059275,
+              "AVOIDABLE": 240059900666
+            }
+          },
+          "CONSTRUCTION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "INPUT_DECODE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "OUTPUT_MATERIALIZE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "GROWTH_RELOCATION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          }
+        },
+        "kinds": {
+          "append_right": 2421164,
+          "map_rebuild": 23,
+          "slice": 1058018,
+          "set": 2895032,
+          "concat_right": 24506,
+          "concat_left": 24499
+        }
+      },
+      "worst_strict_avoidable_bytes": [
+        {
+          "program": "validate-binary-search-tree",
+          "avoidable_bytes": 80000016879,
+          "payload_bytes": 80000016879
+        },
+        {
+          "program": "course-schedule",
+          "avoidable_bytes": 79999200007,
+          "payload_bytes": 399994455719
+        },
+        {
+          "program": "3sum",
+          "avoidable_bytes": 48350514,
+          "payload_bytes": 48350514
+        },
+        {
+          "program": "longest-repeating-character-replacement",
+          "avoidable_bytes": 38641915,
+          "payload_bytes": 38641927
+        },
+        {
+          "program": "letter-combinations-of-a-phone-number",
+          "avoidable_bytes": 6495806,
+          "payload_bytes": 6495806
+        },
+        {
+          "program": "generate-parentheses",
+          "avoidable_bytes": 3791656,
+          "payload_bytes": 4048927
+        },
+        {
+          "program": "spiral-matrix",
+          "avoidable_bytes": 3476244,
+          "payload_bytes": 79770871628
+        },
+        {
+          "program": "insert-interval",
+          "avoidable_bytes": 2319788,
+          "payload_bytes": 2319788
+        },
+        {
+          "program": "reverse-integer",
+          "avoidable_bytes": 2079091,
+          "payload_bytes": 2079091
+        },
+        {
+          "program": "plus-one",
+          "avoidable_bytes": 1902350,
+          "payload_bytes": 80001931286
+        }
+      ],
+      "status": "complete",
+      "per_program_native_payload": {
+        "contains-duplicate": {
+          "events": 31,
+          "bytes": 137447,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 31
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 137447
+          },
+          "unjoinable": 0
+        },
+        "valid-sudoku": {
+          "events": 6,
+          "bytes": 6,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "unjoinable": 0
+        },
+        "valid-palindrome": {
+          "events": 9,
+          "bytes": 9,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "unjoinable": 0
+        },
+        "3sum": {
+          "events": 2544,
+          "bytes": 11964,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2544
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 11964
+          },
+          "unjoinable": 1
+        },
+        "longest-substring-without-repeating-characters": {
+          "events": 100135,
+          "bytes": 205060104,
+          "strict": {
+            "REQUIRED": 100127,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 205060096,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "longest-repeating-character-replacement": {
+          "events": 185320,
+          "bytes": 38641927,
+          "strict": {
+            "REQUIRED": 8,
+            "AVOIDABLE": 185312
+          },
+          "strict_bytes": {
+            "REQUIRED": 12,
+            "AVOIDABLE": 38641915
+          },
+          "unjoinable": 0
+        },
+        "generate-parentheses": {
+          "events": 187358,
+          "bytes": 4048927,
+          "strict": {
+            "REQUIRED": 17323,
+            "AVOIDABLE": 170035
+          },
+          "strict_bytes": {
+            "REQUIRED": 257271,
+            "AVOIDABLE": 3791656
+          },
+          "unjoinable": 0
+        },
+        "car-fleet": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "search-in-rotated-sorted-array": {
+          "events": 8,
+          "bytes": 8,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "median-of-two-sorted-arrays": {
+          "events": 23,
+          "bytes": 801032,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 400512,
+            "AVOIDABLE": 400520
+          },
+          "unjoinable": 0
+        },
+        "reverse-linked-list": {
+          "events": 200253,
+          "bytes": 583522,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 200253
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 583522
+          },
+          "unjoinable": 0
+        },
+        "balanced-binary-tree": {
+          "events": 100194,
+          "bytes": 80002443815,
+          "strict": {
+            "REQUIRED": 100125,
+            "AVOIDABLE": 69
+          },
+          "strict_bytes": {
+            "REQUIRED": 80001629384,
+            "AVOIDABLE": 814431
+          },
+          "unjoinable": 0
+        },
+        "validate-binary-search-tree": {
+          "events": 100080,
+          "bytes": 80000016879,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 100080
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 80000016879
+          },
+          "unjoinable": 0
+        },
+        "last-stone-weight": {
+          "events": 1809154,
+          "bytes": 1446603487848,
+          "strict": {
+            "REQUIRED": 1809138,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 1446603487776,
+            "AVOIDABLE": 72
+          },
+          "unjoinable": 0
+        },
+        "kth-largest-element-in-an-array": {
+          "events": 14,
+          "bytes": 801007,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 801000,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "letter-combinations-of-a-phone-number": {
+          "events": 2236955,
+          "bytes": 6495806,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2236955
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6495806
+          },
+          "unjoinable": 0
+        },
+        "course-schedule": {
+          "events": 500234,
+          "bytes": 399994455719,
+          "strict": {
+            "REQUIRED": 400228,
+            "AVOIDABLE": 100006
+          },
+          "strict_bytes": {
+            "REQUIRED": 319995255712,
+            "AVOIDABLE": 79999200007
+          },
+          "unjoinable": 0
+        },
+        "min-cost-climbing-stairs": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "coin-change": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "best-time-to-buy-and-sell-stock-with-cooldown": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "target-sum": {
+          "events": 8,
+          "bytes": 8,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "maximum-subarray": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "gas-station": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "insert-interval": {
+          "events": 300355,
+          "bytes": 2319788,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 300355
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2319788
+          },
+          "unjoinable": 0
+        },
+        "meeting-rooms": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "spiral-matrix": {
+          "events": 299957,
+          "bytes": 79770871628,
+          "strict": {
+            "REQUIRED": 99965,
+            "AVOIDABLE": 199992
+          },
+          "strict_bytes": {
+            "REQUIRED": 79767395384,
+            "AVOIDABLE": 3476244
+          },
+          "unjoinable": 0
+        },
+        "plus-one": {
+          "events": 200286,
+          "bytes": 2703350,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 200279
+          },
+          "strict_bytes": {
+            "REQUIRED": 801000,
+            "AVOIDABLE": 1902350
+          },
+          "unjoinable": 0
+        },
+        "single-number": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "reverse-integer": {
+          "events": 200262,
+          "bytes": 2079091,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 200262
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2079091
+          },
+          "unjoinable": 0
+        }
+      }
+    },
+    "neetcode-tuned": {
+      "programs": 29,
+      "skipped": [],
+      "elapsed_s": 600.3,
+      "raw_sha256": "3f01e9c1b42c1d51e2b3b03b5bd4f4cfa4b77d8c7e15a4a7c4763763dd9f1e03",
+      "overlay_manifest_sha256": "836165339241f5414f54f29adf8787ab13360dd8d9b7a665d912df31eda8947b",
+      "reference_totals": {
+        "PAYLOAD_COPY": {
+          "events": 12469338,
+          "bytes": 1526915682819,
+          "strict": {
+            "REQUIRED": 2026735,
+            "AVOIDABLE": 10442603
+          },
+          "strict_bytes": {
+            "REQUIRED": 1526810035603,
+            "AVOIDABLE": 105647216
+          },
+          "payload_only": {
+            "REQUIRED": 1926616,
+            "AVOIDABLE": 10542722
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 1446810006731,
+            "AVOIDABLE": 80105676088
+          }
+        },
+        "CONSTRUCTION": {
+          "events": 1940,
+          "bytes": 10222,
+          "strict": {
+            "REQUIRED": 1938,
+            "AVOIDABLE": 2
+          },
+          "strict_bytes": {
+            "REQUIRED": 10220,
+            "AVOIDABLE": 2
+          },
+          "payload_only": {
+            "REQUIRED": 1938,
+            "AVOIDABLE": 2
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 10220,
+            "AVOIDABLE": 2
+          }
+        },
+        "INPUT_DECODE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "OUTPUT_MATERIALIZE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "GROWTH_RELOCATION": {
+          "events": 7307101,
+          "bytes": 54310490,
+          "strict": {
+            "REQUIRED": 7307101,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 54310490,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 7307101,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 54310490,
+            "AVOIDABLE": 0
+          }
+        }
+      },
+      "reference_kinds": {
+        "append_right": 9166664,
+        "sequence_growth": 7307089,
+        "map_key_argument": 970,
+        "map_key_own_index": 970,
+        "map_key_own_entry": 970,
+        "map_entries_growth": 12,
+        "buffer_slice": 49,
+        "sequence_cow": 2194680,
+        "bytes_slice": 1057970,
+        "concat_right": 24506,
+        "concat_left": 24499
+      },
+      "native": {
+        "totals": {
+          "PAYLOAD_COPY": {
+            "events": 3945509,
+            "bytes": 105570672637,
+            "strict": {
+              "REQUIRED": 249354,
+              "AVOIDABLE": 3696155
+            },
+            "strict_bytes": {
+              "REQUIRED": 105513231643,
+              "AVOIDABLE": 57440994
+            },
+            "payload_only": {
+              "REQUIRED": 149235,
+              "AVOIDABLE": 3796274
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 25513202771,
+              "AVOIDABLE": 80057469866
+            }
+          },
+          "CONSTRUCTION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "INPUT_DECODE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "OUTPUT_MATERIALIZE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "GROWTH_RELOCATION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          }
+        },
+        "kinds": {
+          "append_right": 2421164,
+          "map_rebuild": 23,
+          "slice": 1058018,
+          "set": 417299,
+          "concat_right": 24506,
+          "concat_left": 24499
+        }
+      },
+      "worst_strict_avoidable_bytes": [
+        {
+          "program": "3sum",
+          "avoidable_bytes": 48350514,
+          "payload_bytes": 48350514
+        },
+        {
+          "program": "longest-repeating-character-replacement",
+          "avoidable_bytes": 38641915,
+          "payload_bytes": 38641927
+        },
+        {
+          "program": "letter-combinations-of-a-phone-number",
+          "avoidable_bytes": 6495806,
+          "payload_bytes": 6495806
+        },
+        {
+          "program": "generate-parentheses",
+          "avoidable_bytes": 3791656,
+          "payload_bytes": 4048927
+        },
+        {
+          "program": "insert-interval",
+          "avoidable_bytes": 2319788,
+          "payload_bytes": 2319788
+        },
+        {
+          "program": "reverse-integer",
+          "avoidable_bytes": 2079091,
+          "payload_bytes": 2079091
+        },
+        {
+          "program": "plus-one",
+          "avoidable_bytes": 1902350,
+          "payload_bytes": 80001931286
+        },
+        {
+          "program": "spiral-matrix",
+          "avoidable_bytes": 1076740,
+          "payload_bytes": 1076740
+        },
+        {
+          "program": "reverse-linked-list",
+          "avoidable_bytes": 583522,
+          "payload_bytes": 583522
+        },
+        {
+          "program": "median-of-two-sorted-arrays",
+          "avoidable_bytes": 400520,
+          "payload_bytes": 801032
+        }
+      ],
+      "status": "complete",
+      "per_program_native_payload": {
+        "contains-duplicate": {
+          "events": 31,
+          "bytes": 137447,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 31
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 137447
+          },
+          "unjoinable": 0
+        },
+        "valid-sudoku": {
+          "events": 6,
+          "bytes": 6,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "unjoinable": 0
+        },
+        "valid-palindrome": {
+          "events": 9,
+          "bytes": 9,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "unjoinable": 0
+        },
+        "3sum": {
+          "events": 2544,
+          "bytes": 11964,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2544
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 11964
+          },
+          "unjoinable": 1
+        },
+        "longest-substring-without-repeating-characters": {
+          "events": 100135,
+          "bytes": 205060104,
+          "strict": {
+            "REQUIRED": 100127,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 205060096,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "longest-repeating-character-replacement": {
+          "events": 185320,
+          "bytes": 38641927,
+          "strict": {
+            "REQUIRED": 8,
+            "AVOIDABLE": 185312
+          },
+          "strict_bytes": {
+            "REQUIRED": 12,
+            "AVOIDABLE": 38641915
+          },
+          "unjoinable": 0
+        },
+        "generate-parentheses": {
+          "events": 187358,
+          "bytes": 4048927,
+          "strict": {
+            "REQUIRED": 17323,
+            "AVOIDABLE": 170035
+          },
+          "strict_bytes": {
+            "REQUIRED": 257271,
+            "AVOIDABLE": 3791656
+          },
+          "unjoinable": 0
+        },
+        "car-fleet": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "search-in-rotated-sorted-array": {
+          "events": 8,
+          "bytes": 8,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "median-of-two-sorted-arrays": {
+          "events": 23,
+          "bytes": 801032,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 400512,
+            "AVOIDABLE": 400520
+          },
+          "unjoinable": 0
+        },
+        "reverse-linked-list": {
+          "events": 200253,
+          "bytes": 583522,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 200253
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 583522
+          },
+          "unjoinable": 0
+        },
+        "balanced-binary-tree": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "validate-binary-search-tree": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "last-stone-weight": {
+          "events": 131891,
+          "bytes": 105305911824,
+          "strict": {
+            "REQUIRED": 131875,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 105305911752,
+            "AVOIDABLE": 72
+          },
+          "unjoinable": 0
+        },
+        "kth-largest-element-in-an-array": {
+          "events": 14,
+          "bytes": 801007,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 801000,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "letter-combinations-of-a-phone-number": {
+          "events": 2236955,
+          "bytes": 6495806,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2236955
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6495806
+          },
+          "unjoinable": 0
+        },
+        "course-schedule": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "min-cost-climbing-stairs": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "coin-change": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "best-time-to-buy-and-sell-stock-with-cooldown": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "target-sum": {
+          "events": 8,
+          "bytes": 8,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 8
+          },
+          "unjoinable": 0
+        },
+        "maximum-subarray": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "gas-station": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "insert-interval": {
+          "events": 300355,
+          "bytes": 2319788,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 300355
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2319788
+          },
+          "unjoinable": 0
+        },
+        "meeting-rooms": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "spiral-matrix": {
+          "events": 199974,
+          "bytes": 1076740,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 199974
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 1076740
+          },
+          "unjoinable": 0
+        },
+        "plus-one": {
+          "events": 200286,
+          "bytes": 2703350,
+          "strict": {
+            "REQUIRED": 7,
+            "AVOIDABLE": 200279
+          },
+          "strict_bytes": {
+            "REQUIRED": 801000,
+            "AVOIDABLE": 1902350
+          },
+          "unjoinable": 0
+        },
+        "single-number": {
+          "events": 7,
+          "bytes": 7,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 7
+          },
+          "unjoinable": 0
+        },
+        "reverse-integer": {
+          "events": 200262,
+          "bytes": 2079091,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 200262
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2079091
+          },
+          "unjoinable": 0
+        }
+      }
+    },
+    "application": {
+      "programs": 68,
+      "skipped": [],
+      "elapsed_s": 223.3,
+      "raw_sha256": "62eaffc2f3ec043558b1b77d844e6de8ea7ee93a50a32b312febf031798407b4",
+      "overlay_manifest_sha256": "836165339241f5414f54f29adf8787ab13360dd8d9b7a665d912df31eda8947b",
+      "reference_totals": {
+        "PAYLOAD_COPY": {
+          "events": 7595,
+          "bytes": 165218,
+          "strict": {
+            "REQUIRED": 1469,
+            "AVOIDABLE": 6126
+          },
+          "strict_bytes": {
+            "REQUIRED": 22054,
+            "AVOIDABLE": 143164
+          },
+          "payload_only": {
+            "REQUIRED": 1437,
+            "AVOIDABLE": 6158
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 21913,
+            "AVOIDABLE": 143305
+          }
+        },
+        "CONSTRUCTION": {
+          "events": 183,
+          "bytes": 447,
+          "strict": {
+            "REQUIRED": 159,
+            "AVOIDABLE": 24
+          },
+          "strict_bytes": {
+            "REQUIRED": 365,
+            "AVOIDABLE": 82
+          },
+          "payload_only": {
+            "REQUIRED": 159,
+            "AVOIDABLE": 24
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 365,
+            "AVOIDABLE": 82
+          }
+        },
+        "INPUT_DECODE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "OUTPUT_MATERIALIZE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "GROWTH_RELOCATION": {
+          "events": 3792,
+          "bytes": 64097,
+          "strict": {
+            "REQUIRED": 3787,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 63825,
+            "AVOIDABLE": 272
+          },
+          "payload_only": {
+            "REQUIRED": 3787,
+            "AVOIDABLE": 5
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 63825,
+            "AVOIDABLE": 272
+          }
+        }
+      },
+      "reference_kinds": {
+        "append_right": 5766,
+        "sequence_growth": 3787,
+        "bytes_slice": 1241,
+        "sequence_cow": 245,
+        "concat_left": 52,
+        "concat_right": 71,
+        "record_update": 88,
+        "map_key_argument": 61,
+        "map_key_own_index": 61,
+        "map_key_own_entry": 61,
+        "map_reindex_key": 61,
+        "map_key_extract": 61,
+        "map_entries_growth": 5,
+        "buffer_slice": 10
+      },
+      "native": {
+        "totals": {
+          "PAYLOAD_COPY": {
+            "events": 8147,
+            "bytes": 162517,
+            "strict": {
+              "REQUIRED": 2130,
+              "AVOIDABLE": 6017
+            },
+            "strict_bytes": {
+              "REQUIRED": 31214,
+              "AVOIDABLE": 131303
+            },
+            "payload_only": {
+              "REQUIRED": 2060,
+              "AVOIDABLE": 6087
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 30513,
+              "AVOIDABLE": 132004
+            }
+          },
+          "CONSTRUCTION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "INPUT_DECODE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "OUTPUT_MATERIALIZE": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          },
+          "GROWTH_RELOCATION": {
+            "events": 0,
+            "bytes": 0,
+            "strict": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "strict_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            },
+            "payload_only_bytes": {
+              "REQUIRED": 0,
+              "AVOIDABLE": 0
+            }
+          }
+        },
+        "kinds": {
+          "append_right": 5648,
+          "slice": 1251,
+          "record_append_right": 127,
+          "record_get": 631,
+          "set": 243,
+          "record_set_replacement": 74,
+          "concat_left": 43,
+          "concat_right": 62,
+          "map_key_extract": 61,
+          "map_rebuild": 5,
+          "record_set_cow": 2
+        }
+      },
+      "worst_strict_avoidable_bytes": [
+        {
+          "program": "ex_beer_song",
+          "avoidable_bytes": 71260,
+          "payload_bytes": 71260
+        },
+        {
+          "program": "ex_food_chain",
+          "avoidable_bytes": 25223,
+          "payload_bytes": 25223
+        },
+        {
+          "program": "ex_bottle_song",
+          "avoidable_bytes": 15521,
+          "payload_bytes": 15521
+        },
+        {
+          "program": "ex_algo_graph_bfs",
+          "avoidable_bytes": 6440,
+          "payload_bytes": 11168
+        },
+        {
+          "program": "ex_algo_bst_walk",
+          "avoidable_bytes": 5661,
+          "payload_bytes": 5661
+        },
+        {
+          "program": "ex_binary_search_tree",
+          "avoidable_bytes": 5261,
+          "payload_bytes": 5419
+        },
+        {
+          "program": "ex_diamond",
+          "avoidable_bytes": 2819,
+          "payload_bytes": 2819
+        },
+        {
+          "program": "ex_algo_interval_merge",
+          "avoidable_bytes": 1912,
+          "payload_bytes": 2392
+        },
+        {
+          "program": "running_report",
+          "avoidable_bytes": 1174,
+          "payload_bytes": 1174
+        },
+        {
+          "program": "ex_etl",
+          "avoidable_bytes": 872,
+          "payload_bytes": 956
+        }
+      ],
+      "status": "complete",
+      "per_program_native_payload": {
+        "ascii_upper": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ascii_lower": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "rot13": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "invert_bytes": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "reverse_bytes": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "hex_encode": {
+          "events": 536,
+          "bytes": 804,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 536
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 804
+          },
+          "unjoinable": 0
+        },
+        "count_newlines": {
+          "events": 5,
+          "bytes": 5,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "unjoinable": 0
+        },
+        "nonempty_lines": {
+          "events": 24,
+          "bytes": 50,
+          "strict": {
+            "REQUIRED": 8,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 17,
+            "AVOIDABLE": 33
+          },
+          "unjoinable": 0
+        },
+        "normalize_crlf": {
+          "events": 17,
+          "bytes": 17,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 17
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 17
+          },
+          "unjoinable": 0
+        },
+        "prefix_lines": {
+          "events": 34,
+          "bytes": 43,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 34
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 43
+          },
+          "unjoinable": 0
+        },
+        "first_fields_csv": {
+          "events": 30,
+          "bytes": 90,
+          "strict": {
+            "REQUIRED": 8,
+            "AVOIDABLE": 22
+          },
+          "strict_bytes": {
+            "REQUIRED": 38,
+            "AVOIDABLE": 52
+          },
+          "unjoinable": 0
+        },
+        "sum_pairs": {
+          "events": 16,
+          "bytes": 27,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 27
+          },
+          "unjoinable": 0
+        },
+        "sum_integers": {
+          "events": 5,
+          "bytes": 5,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "unjoinable": 0
+        },
+        "min_max": {
+          "events": 15,
+          "bytes": 40,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 15
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 40
+          },
+          "unjoinable": 0
+        },
+        "dedupe_adjacent_lines": {
+          "events": 46,
+          "bytes": 60,
+          "strict": {
+            "REQUIRED": 25,
+            "AVOIDABLE": 21
+          },
+          "strict_bytes": {
+            "REQUIRED": 29,
+            "AVOIDABLE": 31
+          },
+          "unjoinable": 0
+        },
+        "running_report": {
+          "events": 292,
+          "bytes": 1174,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 292
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 1174
+          },
+          "unjoinable": 0
+        },
+        "number_lines": {
+          "events": 42,
+          "bytes": 103,
+          "strict": {
+            "REQUIRED": 6,
+            "AVOIDABLE": 36
+          },
+          "strict_bytes": {
+            "REQUIRED": 10,
+            "AVOIDABLE": 93
+          },
+          "unjoinable": 0
+        },
+        "histogram_digits": {
+          "events": 200,
+          "bytes": 500,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 200
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 500
+          },
+          "unjoinable": 0
+        },
+        "buffer_sum": {
+          "events": 5,
+          "bytes": 5,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "unjoinable": 0
+        },
+        "buffer_dot": {
+          "events": 5,
+          "bytes": 5,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "unjoinable": 0
+        },
+        "prefix_sums": {
+          "events": 20,
+          "bytes": 38,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 20
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 38
+          },
+          "unjoinable": 0
+        },
+        "copy_file": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "slice_file": {
+          "events": 13,
+          "bytes": 20,
+          "strict": {
+            "REQUIRED": 10,
+            "AVOIDABLE": 3
+          },
+          "strict_bytes": {
+            "REQUIRED": 10,
+            "AVOIDABLE": 10
+          },
+          "unjoinable": 0
+        },
+        "expand_tabs": {
+          "events": 13,
+          "bytes": 28,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 13
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 28
+          },
+          "unjoinable": 0
+        },
+        "env_lookup": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_accumulate": {
+          "events": 917,
+          "bytes": 6773,
+          "strict": {
+            "REQUIRED": 817,
+            "AVOIDABLE": 100
+          },
+          "strict_bytes": {
+            "REQUIRED": 6366,
+            "AVOIDABLE": 407
+          },
+          "unjoinable": 0
+        },
+        "ex_acronym": {
+          "events": 46,
+          "bytes": 46,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 46
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 46
+          },
+          "unjoinable": 0
+        },
+        "ex_affine_cipher": {
+          "events": 288,
+          "bytes": 446,
+          "strict": {
+            "REQUIRED": 9,
+            "AVOIDABLE": 279
+          },
+          "strict_bytes": {
+            "REQUIRED": 38,
+            "AVOIDABLE": 408
+          },
+          "unjoinable": 0
+        },
+        "ex_all_your_base": {
+          "events": 39,
+          "bytes": 88,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 39
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 88
+          },
+          "unjoinable": 0
+        },
+        "ex_allergies": {
+          "events": 80,
+          "bytes": 372,
+          "strict": {
+            "REQUIRED": 40,
+            "AVOIDABLE": 40
+          },
+          "strict_bytes": {
+            "REQUIRED": 77,
+            "AVOIDABLE": 295
+          },
+          "unjoinable": 0
+        },
+        "ex_armstrong_numbers": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_atbash_cipher": {
+          "events": 270,
+          "bytes": 283,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 270
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 283
+          },
+          "unjoinable": 0
+        },
+        "ex_baffling_birthdays": {
+          "events": 34,
+          "bytes": 170,
+          "strict": {
+            "REQUIRED": 34,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 170,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_beer_song": {
+          "events": 1183,
+          "bytes": 71260,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 1183
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 71260
+          },
+          "unjoinable": 0
+        },
+        "ex_binary": {
+          "events": 9,
+          "bytes": 9,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 9
+          },
+          "unjoinable": 0
+        },
+        "ex_binary_search": {
+          "events": 27,
+          "bytes": 182,
+          "strict": {
+            "REQUIRED": 11,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 16,
+            "AVOIDABLE": 166
+          },
+          "unjoinable": 0
+        },
+        "ex_binary_search_tree": {
+          "events": 245,
+          "bytes": 6067,
+          "strict": {
+            "REQUIRED": 113,
+            "AVOIDABLE": 132
+          },
+          "strict_bytes": {
+            "REQUIRED": 2390,
+            "AVOIDABLE": 3677
+          },
+          "unjoinable": 0
+        },
+        "ex_book_store": {
+          "events": 58,
+          "bytes": 1618,
+          "strict": {
+            "REQUIRED": 40,
+            "AVOIDABLE": 18
+          },
+          "strict_bytes": {
+            "REQUIRED": 1600,
+            "AVOIDABLE": 18
+          },
+          "unjoinable": 0
+        },
+        "ex_bottle_song": {
+          "events": 209,
+          "bytes": 15521,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 209
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 15521
+          },
+          "unjoinable": 0
+        },
+        "ex_bowling": {
+          "events": 16,
+          "bytes": 16,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 16
+          },
+          "unjoinable": 0
+        },
+        "ex_change": {
+          "events": 94,
+          "bytes": 250,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 94
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 250
+          },
+          "unjoinable": 0
+        },
+        "ex_circular_buffer": {
+          "events": 132,
+          "bytes": 1861,
+          "strict": {
+            "REQUIRED": 49,
+            "AVOIDABLE": 83
+          },
+          "strict_bytes": {
+            "REQUIRED": 1568,
+            "AVOIDABLE": 293
+          },
+          "unjoinable": 0
+        },
+        "ex_clock": {
+          "events": 63,
+          "bytes": 123,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 63
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 123
+          },
+          "unjoinable": 0
+        },
+        "ex_collatz_conjecture": {
+          "events": 4,
+          "bytes": 4,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 4
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 4
+          },
+          "unjoinable": 0
+        },
+        "ex_complex_numbers": {
+          "events": 6,
+          "bytes": 6,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 6
+          },
+          "unjoinable": 0
+        },
+        "ex_connect": {
+          "events": 563,
+          "bytes": 563,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 563
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 563
+          },
+          "unjoinable": 0
+        },
+        "ex_crypto_square": {
+          "events": 185,
+          "bytes": 316,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 185
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 316
+          },
+          "unjoinable": 0
+        },
+        "ex_custom_set": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_darts": {
+          "events": 39,
+          "bytes": 82,
+          "strict": {
+            "REQUIRED": 13,
+            "AVOIDABLE": 26
+          },
+          "strict_bytes": {
+            "REQUIRED": 35,
+            "AVOIDABLE": 47
+          },
+          "unjoinable": 0
+        },
+        "ex_diamond": {
+          "events": 134,
+          "bytes": 2819,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 134
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 2819
+          },
+          "unjoinable": 0
+        },
+        "ex_difference_of_squares": {
+          "events": 3,
+          "bytes": 3,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 3
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 3
+          },
+          "unjoinable": 0
+        },
+        "ex_dnd_character": {
+          "events": 16,
+          "bytes": 16,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 16
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 16
+          },
+          "unjoinable": 0
+        },
+        "ex_dominoes": {
+          "events": 135,
+          "bytes": 5728,
+          "strict": {
+            "REQUIRED": 135,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 5728,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_eliuds_eggs": {
+          "events": 4,
+          "bytes": 4,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 4
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 4
+          },
+          "unjoinable": 0
+        },
+        "ex_etl": {
+          "events": 275,
+          "bytes": 2488,
+          "strict": {
+            "REQUIRED": 83,
+            "AVOIDABLE": 192
+          },
+          "strict_bytes": {
+            "REQUIRED": 84,
+            "AVOIDABLE": 2404
+          },
+          "unjoinable": 0
+        },
+        "ex_flatten_array": {
+          "events": 120,
+          "bytes": 174,
+          "strict": {
+            "REQUIRED": 40,
+            "AVOIDABLE": 80
+          },
+          "strict_bytes": {
+            "REQUIRED": 47,
+            "AVOIDABLE": 127
+          },
+          "unjoinable": 0
+        },
+        "ex_flower_field": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_food_chain": {
+          "events": 354,
+          "bytes": 25223,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 354
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 25223
+          },
+          "unjoinable": 0
+        },
+        "ex_game_of_life": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_go_counting": {
+          "events": 158,
+          "bytes": 1453,
+          "strict": {
+            "REQUIRED": 52,
+            "AVOIDABLE": 106
+          },
+          "strict_bytes": {
+            "REQUIRED": 1009,
+            "AVOIDABLE": 444
+          },
+          "unjoinable": 0
+        },
+        "ex_grade_school": {
+          "events": 153,
+          "bytes": 745,
+          "strict": {
+            "REQUIRED": 102,
+            "AVOIDABLE": 51
+          },
+          "strict_bytes": {
+            "REQUIRED": 374,
+            "AVOIDABLE": 371
+          },
+          "unjoinable": 0
+        },
+        "ex_grains": {
+          "events": 17,
+          "bytes": 22,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 17
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 22
+          },
+          "unjoinable": 0
+        },
+        "ex_hamming": {
+          "events": 5,
+          "bytes": 5,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 5
+          },
+          "unjoinable": 0
+        },
+        "ex_hello_world": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "unjoinable": 0
+        },
+        "ex_algo_linked_list": {
+          "events": 68,
+          "bytes": 586,
+          "strict": {
+            "REQUIRED": 13,
+            "AVOIDABLE": 55
+          },
+          "strict_bytes": {
+            "REQUIRED": 208,
+            "AVOIDABLE": 378
+          },
+          "unjoinable": 0
+        },
+        "ex_algo_bst_walk": {
+          "events": 542,
+          "bytes": 10773,
+          "strict": {
+            "REQUIRED": 402,
+            "AVOIDABLE": 140
+          },
+          "strict_bytes": {
+            "REQUIRED": 9648,
+            "AVOIDABLE": 1125
+          },
+          "unjoinable": 0
+        },
+        "ex_algo_graph_bfs": {
+          "events": 150,
+          "bytes": 1240,
+          "strict": {
+            "REQUIRED": 34,
+            "AVOIDABLE": 116
+          },
+          "strict_bytes": {
+            "REQUIRED": 312,
+            "AVOIDABLE": 928
+          },
+          "unjoinable": 0
+        },
+        "ex_algo_interval_merge": {
+          "events": 188,
+          "bytes": 2168,
+          "strict": {
+            "REQUIRED": 86,
+            "AVOIDABLE": 102
+          },
+          "strict_bytes": {
+            "REQUIRED": 1440,
+            "AVOIDABLE": 728
+          },
+          "unjoinable": 0
+        }
+      }
+    },
+    "fuzz:5130572": {
+      "programs": 644,
+      "skipped": [],
+      "elapsed_s": 4.4,
+      "raw_sha256": "bec8f187ef256bb2e7f7f8372d598911555d3b9141a159bf16314481ba1feb1e",
+      "overlay_manifest_sha256": "836165339241f5414f54f29adf8787ab13360dd8d9b7a665d912df31eda8947b",
+      "reference_totals": {
+        "PAYLOAD_COPY": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "CONSTRUCTION": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "INPUT_DECODE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "OUTPUT_MATERIALIZE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "GROWTH_RELOCATION": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        }
+      },
+      "reference_kinds": {},
+      "native": null,
+      "worst_strict_avoidable_bytes": [],
+      "status": "NOT ACHIEVED",
+      "reason": "Zero events. The generated families declare a four-argument (v,s,s,s) entry and the census harness supplies two byte arguments, so every family stops at \"E006 entry arity mismatch expected:4 got:2\" before executing. Parity between the instrumented and ordinary runs still held, so this is a harness gap, not a measurement that copies are absent. A dedicated helper supplying a Buffer and three Bytes arguments is required."
+    },
+    "fuzz:777001": {
+      "programs": 644,
+      "skipped": [],
+      "elapsed_s": 4.1,
+      "raw_sha256": "7e5b55e334b3cf6951119888791bdd533e00123e3601e17401b55685bee38936",
+      "overlay_manifest_sha256": "836165339241f5414f54f29adf8787ab13360dd8d9b7a665d912df31eda8947b",
+      "reference_totals": {
+        "PAYLOAD_COPY": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "CONSTRUCTION": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "INPUT_DECODE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "OUTPUT_MATERIALIZE": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        },
+        "GROWTH_RELOCATION": {
+          "events": 0,
+          "bytes": 0,
+          "strict": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "strict_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          },
+          "payload_only_bytes": {
+            "REQUIRED": 0,
+            "AVOIDABLE": 0
+          }
+        }
+      },
+      "reference_kinds": {},
+      "native": null,
+      "worst_strict_avoidable_bytes": [],
+      "status": "NOT ACHIEVED",
+      "reason": "Zero events. The generated families declare a four-argument (v,s,s,s) entry and the census harness supplies two byte arguments, so every family stops at \"E006 entry arity mismatch expected:4 got:2\" before executing. Parity between the instrumented and ordinary runs still held, so this is a harness gap, not a measurement that copies are absent. A dedicated helper supplying a Buffer and three Bytes arguments is required."
+    }
+  },
+  "ledger": {
+    "schema": 1,
+    "kinds": {
+      "sequence_cow": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "Storage::clone element payload"
+      },
+      "concat_left": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "left concat source payload"
+      },
+      "concat_right": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "right concat source payload"
+      },
+      "append_right": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "appended source payload"
+      },
+      "bytes_slice": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "sliced byte payload"
+      },
+      "buffer_slice": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "sliced i64 payload"
+      },
+      "record_buffer_slice": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "sliced record cells"
+      },
+      "record_update": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "record field cells"
+      },
+      "array_update": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "fixed array elements"
+      },
+      "map_cow": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "map entries, keys, values and index"
+      },
+      "map_key_extract": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "key bytes materialized out of a map"
+      },
+      "map_value_extract": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "value bytes materialized out of a map"
+      },
+      "map_key_argument": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "key argument payload copied for insert/put"
+      },
+      "map_value_argument": {
+        "group": "PAYLOAD_COPY",
+        "path": "reference",
+        "bytes_measure": "byte value argument payload copied for insert/put"
+      },
+      "map_key_own_index": {
+        "group": "CONSTRUCTION",
+        "path": "reference",
+        "bytes_measure": "map index takes its own key copy"
+      },
+      "map_key_own_entry": {
+        "group": "CONSTRUCTION",
+        "path": "reference",
+        "bytes_measure": "map entry list takes its own key copy"
+      },
+      "map_reindex_key": {
+        "group": "CONSTRUCTION",
+        "path": "reference",
+        "bytes_measure": "index rebuilt after sort takes own keys"
+      },
+      "sequence_growth": {
+        "group": "GROWTH_RELOCATION",
+        "path": "reference",
+        "bytes_measure": "capacity before an append reserve"
+      },
+      "map_entries_growth": {
+        "group": "GROWTH_RELOCATION",
+        "path": "reference",
+        "bytes_measure": "entry vector capacity before a push"
+      },
+      "set": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "replacement copy-on-write payload"
+      },
+      "slice": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "sliced payload"
+      },
+      "sort_cow": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "sort copy-on-write payload"
+      },
+      "map_rebuild": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "aggregate of entry, key and value bytes re-emitted"
+      },
+      "record_get": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "record row read out of a buffer"
+      },
+      "record_set_cow": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "record buffer copy-on-write rows"
+      },
+      "record_set_replacement": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "replacement row payload"
+      },
+      "record_concat_left": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "left record concat rows"
+      },
+      "record_concat_right": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "right record concat rows"
+      },
+      "record_append_right": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "appended record rows"
+      },
+      "record_slice": {
+        "group": "PAYLOAD_COPY",
+        "path": "native",
+        "bytes_measure": "sliced record rows"
+      }
+    },
+    "native_shared_kinds": [
+      "append_right",
+      "concat_left",
+      "concat_right",
+      "map_key_extract",
+      "map_value_extract"
+    ],
+    "excluded": [
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/sequence.rs From<Vec>",
+        "group": "CONSTRUCTION",
+        "reason": "Fresh sequence for a constructed or decoded value; no pre-existing logical source."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/evaluator.rs Operation::Bytes/Array/Repeat",
+        "group": "CONSTRUCTION",
+        "reason": "Literal materialization from HIR, not from a runtime value version."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/application.rs buffer/bytes/map constructors",
+        "group": "CONSTRUCTION",
+        "reason": "Constructor fill; the only source is a scalar fill value."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/keyed.rs empty/empty_record",
+        "group": "CONSTRUCTION",
+        "reason": "Zero-length entry and index allocation; no payload bytes."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/evaluator.rs argv decode",
+        "group": "INPUT_DECODE",
+        "reason": "Host argument vector decoded once before execution begins."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/application.rs Host env/directory/read",
+        "group": "INPUT_DECODE",
+        "reason": "Host input materialization; the source is outside the program semantics."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/application.rs ParseBuffer values",
+        "group": "INPUT_DECODE",
+        "reason": "Decoded i64 vector built from text; separate logical value."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/records.rs unpack",
+        "group": "INPUT_DECODE",
+        "reason": "Reconstructs a record from packed map bytes; the map copy itself is counted."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/application.rs Intrinsic::Format",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Formats a scalar into fresh bytes; no sequence payload is duplicated."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/numeric.rs format/format_float",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Scalar to text; reached only through Format."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/records.rs pack",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Packs record cells for map storage; its observation is recorded so the map copy classifies."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/keyed.rs render",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Tooling-only rendering, unreachable from program semantics."
+      },
+      {
+        "path": "reference",
+        "site": "crates/nil-compiler/src/evaluator.rs frame/branch/loop value clones",
+        "group": "CONSTRUCTION",
+        "reason": "Clones Value handles. Sequence, map and record handles are Arc pointers, so no payload moves; any payload duplication appears at the Storage::clone hook instead."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c nil_literal (226-228)",
+        "group": "CONSTRUCTION",
+        "reason": "Shared literal allocator. Its payload-copying callers at 511 and 516 are hooked individually; the construction and env/format callers are excluded here."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c nil_read/nil_parsebuf/nil_directory",
+        "group": "INPUT_DECODE",
+        "reason": "Host input materialization; the source lies outside the program semantics."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c scalar-record pack (609)",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Packs a record into map bytes; the enclosing map update is counted."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c constructor fills (201,203,687)",
+        "group": "CONSTRUCTION",
+        "reason": "Buffer and record-buffer fill loops; no pre-existing logical source."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c realloc growth (316,738)",
+        "group": "GROWTH_RELOCATION",
+        "reason": "Unique-path capacity growth. realloc can remap without copying, so a byte count here would be an invented memcpy; reported as uninstrumented rather than estimated."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/runtime.rs F64 print (198)",
+        "group": "OUTPUT_MATERIALIZE",
+        "reason": "Eight-byte scalar move for printing."
+      },
+      {
+        "path": "native",
+        "site": "crates/nil-llvm/src/application.c map_rebuild per-entry memcpy (541,545)",
+        "group": "PAYLOAD_COPY",
+        "reason": "Covered by the map_rebuild aggregate at 537, which sums entry, key and value bytes. Not a separate total: adding per-memcpy hooks would double count the same bytes."
+      }
+    ],
+    "headline_group": "PAYLOAD_COPY",
+    "note": "REQUIRED/AVOIDABLE is published for PAYLOAD_COPY. Other groups are reported per group and never folded into that headline. AVOIDABLE means no later reference observation of the source version under the stated metric, not a proof that the copy is removable."
+  }
+}
