@@ -2,7 +2,7 @@
 
 NIL costs **1,739 more cl100k tokens (+66.7%)** and **1,748 more o200k tokens (+66.7%)** than Python on the frozen 29-program Round 20 kernel cut. This is source density, not model generation efficiency. Helpers, flat-buffer offsets and callback signatures remain charged. No source, oracle, golden or syntax was changed.
 
-The ledger uses greatest non-whitespace byte overlap, breaking ties by first source occurrence. Every category is disjoint; positive costs and negative savings sum exactly to the gap. The per-token raw ledger is emitted outside git by `core-generalize-study/attribution.py`. The JSON alongside this report freezes the method, density hash and aggregate checks.
+The ledger uses greatest non-whitespace byte overlap, breaking ties by first source occurrence. Functional-update colons are separated from ternary colons. Every category is disjoint; positive costs and negative savings sum exactly to the gap. The per-token raw ledger is emitted outside git by `core-generalize-study/attribution.py`. The JSON alongside this report freezes the method, density hash and aggregate checks.
 
 ## cl100k_base
 
@@ -12,11 +12,12 @@ The ledger uses greatest non-whitespace byte overlap, breaking ties by first sou
 | numeric_literal | 688 | 161 | 527 |
 | signature | 370 | 167 | 203 |
 | operator | 506 | 303 | 203 |
-| conditional | 273 | 75 | 198 |
+| conditional | 241 | 75 | 166 |
 | loop_delimiters | 192 | 31 | 161 |
 | loop_index_bound | 117 | 60 | 57 |
 | call_identifier | 51 | 5 | 46 |
 | record_definition | 42 | 0 | 42 |
+| functional_update | 32 | 0 | 32 |
 | boolean_literal | 40 | 9 | 31 |
 | unchanged_state | 15 | 0 | 15 |
 | identifier | 575 | 567 | 8 |
@@ -35,11 +36,12 @@ The ledger uses greatest non-whitespace byte overlap, breaking ties by first sou
 | numeric_literal | 688 | 161 | 527 |
 | operator | 509 | 304 | 205 |
 | signature | 370 | 167 | 203 |
-| conditional | 274 | 75 | 199 |
+| conditional | 242 | 75 | 167 |
 | loop_delimiters | 192 | 31 | 161 |
 | loop_index_bound | 115 | 60 | 55 |
 | call_identifier | 52 | 5 | 47 |
 | record_definition | 42 | 0 | 42 |
+| functional_update | 32 | 0 | 32 |
 | boolean_literal | 40 | 9 | 31 |
 | identifier | 591 | 574 | 17 |
 | unchanged_state | 15 | 0 | 15 |
@@ -54,6 +56,6 @@ The ledger uses greatest non-whitespace byte overlap, breaking ties by first sou
 
 Separators/brackets and numeric literals dominate the positive costs. Categories cannot establish the savings of a syntax or library change: replacing arithmetic, flat layouts or whole helpers may move several categories together. This round freezes the attribution and changes no spelling.
 
-Verification: `benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/core-generalize-study -p "test_*.py" -v` passed **5 tests**; attribution independently reconstructs every source byte and reproduces **4,348/2,609 cl100k and 4,368/2,620 o200k**. tiktoken 0.12.0.
+Verification: `benchmarks/paired/.venv/bin/python -m unittest discover -s benchmarks/core-generalize-study -p "test_*.py" -v` passed **6 tests**; attribution independently reconstructs every source byte and reproduces **4,348/2,609 cl100k and 4,368/2,620 o200k**. tiktoken 0.12.0.
 
-This is Part A3 only. Copy census, complete memory/qualification measurements, forecasts, ADR 043 and implementation are pending.
+This is Part A3 only. The natural/tuned qualification and memory measurements are separately reported in ROUND21_COHORT_BEFORE.json and ROUND21_CONTROLS_BEFORE.json. Copy census, forecasts, ADR 043 and implementation are pending.

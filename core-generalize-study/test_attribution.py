@@ -24,10 +24,15 @@ class TokenLedgerTests(unittest.TestCase):
   nil='1=a>0?a:0\n';py='def solve(a):\n    return a if a > 0 else 0\n'
   self.assertEqual(m.nil_labels(nil)[nil.index('?')],'conditional')
   self.assertEqual(m.py_labels(py)[py.index('if')],'conditional')
+ def test_update_colon_is_not_a_conditional(self):
+  source='5=a[b?c:d:x]\n'
+  labels=m.nil_labels(source)
+  self.assertEqual(labels[source.index(':d')],'conditional')
+  self.assertEqual(labels[source.index(':x')],'functional_update')
  def test_kernel_corpus_hashes_and_token_totals(self):
   import json,hashlib
   density=json.loads(m.DENSITY.read_text());totals={name:{lang:0 for lang in ['nil','python']} for name in ['cl100k_base','o200k_base']}
-  original=m.ledger.__globals__['CATEGORIES'];m.ledger.__globals__['CATEGORIES']=(*original,'conditional')
+  original=m.ledger.__globals__['CATEGORIES'];m.ledger.__globals__['CATEGORIES']=(*original,'conditional','functional_update')
   try:
    for row in density['per_task']:
     if row['cut']!='kernel-only' or row['language'] not in totals['cl100k_base']:continue

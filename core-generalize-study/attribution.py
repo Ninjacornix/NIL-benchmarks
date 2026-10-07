@@ -44,9 +44,21 @@ def nil_labels(source):
    name=chr(ord('a')+index);step=source[start:stop].strip()
    if step==name:paint(labels,start,stop,'unchanged_state')
    elif step in (name+'+1',name+'-1') and re.search(r'\b'+name+r'\b',condition):paint(labels,start,stop,'loop_index_bound')
- # Retain lexical operator spelling, but make lazy condition punctuation visible.
- for m in re.finditer(r'[?:]',source):
-  if labels[m.start()]=='operator':paint(labels,m.start(),m.end(),'conditional')
+ # A replacement colon is not a ternary colon. Track pending questions at
+ # each delimiter depth; quoted punctuation is excluded by lexical iteration.
+ stack=[['root',0]]
+ for token in NIL_LEX.finditer(source):
+  text=token.group()
+  if text in ('(', '['):stack.append([text,0])
+  elif text in (')', ']'):
+   assert stack[-1][1]==0,'unmatched ternary';stack.pop()
+  elif text=='?' and labels[token.start()]=='operator':
+   stack[-1][1]+=1;paint(labels,token.start(),token.end(),'conditional')
+  elif text==':' and labels[token.start()]=='operator':
+   if stack[-1][1]:
+    stack[-1][1]-=1;paint(labels,token.start(),token.end(),'conditional')
+   elif stack[-1][0]=='[':paint(labels,token.start(),token.end(),'functional_update')
+ assert len(stack)==1 and stack[0][1]==0
  return labels
 
 def py_labels(source):
@@ -62,7 +74,7 @@ def main():
  parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
  frozen=json.loads(DENSITY.read_text());expected={(r['task'],r['language']):r for r in frozen['per_task'] if r['cut']=='kernel-only' and r['language'] in ('nil','python')}
  totals={n:{l:Counter() for l in ('nil','python')} for n in ('cl100k_base','o200k_base')};records=[]
- categories=(*CATEGORIES,'conditional'); original_categories=ledger.__globals__['CATEGORIES'];ledger.__globals__['CATEGORIES']=categories
+ categories=(*CATEGORIES,'conditional','functional_update'); original_categories=ledger.__globals__['CATEGORIES'];ledger.__globals__['CATEGORIES']=categories
  for (task,language),row in sorted(expected.items()):
   path=KERNELS/(task+('.nil' if language=='nil' else '.py'));data=path.read_bytes();source=data.decode()
   assert hashlib.sha256(data).hexdigest()==row['sha256']

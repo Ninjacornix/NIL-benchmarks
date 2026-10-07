@@ -31,12 +31,14 @@ Report natural qualification as the headline and tuned qualification separately.
 
 `measure_clang.py` is a measurement-only wrapper that instruments the compiler's
 **temporary generated C runtime**, not any checked-in compiler file. Counter
-binaries are separate from timing/RSS binaries. Peak observed live capacity is
-sampled after complete reconciliations, excluding transient retain-before-drop
-counts. It is not RSS, allocator overhead, or the prospective copying reservation.
-The reported headroom ratio is observed live charge divided by the existing
-64 MiB limit. The collector may retain unrooted physical storage, so RSS can exceed
-this live accounting. Historical-control measurements must also be reported.
+binaries are separate from timing/RSS binaries. Native observed root charge is sampled after complete reconciliations. It is
+**not semantic liveness or quota headroom**: rootless scans retain their input
+without rooting it. `reference_profile.py` builds a hashed isolated reference
+checkout outside git, sampling instruction-boundary live capacity and prospective
+quota reservations separately. `profile_reference_cohort.py` and
+`profile_reference_controls.py` run unchanged fixtures through that overlay.
+All instrumented results must match the ordinary oracle. Historical control
+measurements, including their actual input byte counts, are separately reported.
 
 The exact token ledger reuses the application-corpus byte-overlap classifier on
 the unchanged Round 20 kernel-only sources. Every source hash and token count

@@ -1,0 +1,325 @@
+{
+  "schema": 1,
+  "compiler_revision": "03c4eda9191ac8a1691e26dd78e768b2ff07b176",
+  "repeats": 25,
+  "rss_unit": "bytes (macOS)",
+  "metric": "Whole-process warm medians; exact historical inputs; same clang/O2; counter binaries excluded from timings/RSS; transform byte-exact and double-transform verified",
+  "results": {
+    "append": {
+      "timings": {
+        "nil": {
+          "min_ms": 4.862,
+          "median_ms": 5.589459,
+          "max_ms": 11.056333,
+          "samples_ms": [
+            5.589459,
+            5.373708,
+            6.311292,
+            11.056333,
+            8.663083,
+            6.351542,
+            6.9205,
+            10.097166,
+            7.607209,
+            6.416958,
+            5.225792,
+            6.06525,
+            6.962,
+            9.9395,
+            6.064709,
+            5.516167,
+            5.464875,
+            4.862,
+            5.104208,
+            5.025792,
+            5.265416,
+            5.390083,
+            5.260792,
+            4.974375,
+            5.163292
+          ]
+        },
+        "cpp": {
+          "min_ms": 3.867542,
+          "median_ms": 4.472042,
+          "max_ms": 7.511417,
+          "samples_ms": [
+            4.472042,
+            4.218125,
+            6.652208,
+            5.34025,
+            7.503,
+            5.054375,
+            5.416792,
+            5.802125,
+            6.5875,
+            6.196333,
+            4.843208,
+            4.431875,
+            7.511417,
+            7.050625,
+            4.552458,
+            4.38875,
+            4.306167,
+            3.867542,
+            4.112667,
+            4.258916,
+            4.335375,
+            4.38825,
+            4.469,
+            4.193542,
+            4.231875
+          ]
+        }
+      },
+      "rss": {
+        "nil": {
+          "min_bytes": 2801664,
+          "median_bytes": 2801664,
+          "max_bytes": 2801664,
+          "samples_bytes": [
+            2801664,
+            2801664,
+            2801664
+          ]
+        },
+        "cpp": {
+          "min_bytes": 3768320,
+          "median_bytes": 3768320,
+          "max_bytes": 3768320,
+          "samples_bytes": [
+            3768320,
+            3768320,
+            3768320
+          ]
+        }
+      },
+      "charge": {
+        "peak_observed_live_bytes": 1048657,
+        "memory_limit_bytes": 67108864,
+        "native_observed_root_charge_to_limit_ratio": 0.0156262069940567
+      },
+      "cpp_time_ratio": 1.2498672865773621,
+      "cpp_rss_ratio": 0.7434782608695653,
+      "reference_liveness": {
+        "peak_instruction_boundary_live_bytes": 1048657,
+        "peak_quota_reservation_bytes": 2097273,
+        "limit_bytes": 67108864,
+        "live_to_limit_ratio": 0.0156262069940567,
+        "reservation_to_limit_ratio": 0.031251803040504456
+      },
+      "input_bytes": 1048576
+    },
+    "scan": {
+      "timings": {
+        "nil": {
+          "min_ms": 8.103833,
+          "median_ms": 8.792334,
+          "max_ms": 9.425542,
+          "samples_ms": [
+            9.425542,
+            8.463667,
+            8.448917,
+            9.053667,
+            8.8395,
+            8.86075,
+            9.20675,
+            8.246125,
+            8.924208,
+            8.792334,
+            8.576667,
+            9.297542,
+            8.794083,
+            9.045292,
+            8.485834,
+            8.546667,
+            8.805333,
+            9.1165,
+            8.103833,
+            8.550417,
+            8.10675,
+            8.748292,
+            8.765875,
+            8.80825,
+            8.518709
+          ]
+        },
+        "cpp": {
+          "min_ms": 10.779125,
+          "median_ms": 11.525959,
+          "max_ms": 12.184375,
+          "samples_ms": [
+            12.078333,
+            12.184375,
+            11.525959,
+            11.727042,
+            11.065959,
+            11.936291,
+            11.449542,
+            11.68875,
+            11.624583,
+            11.379417,
+            11.352958,
+            11.497958,
+            11.66725,
+            11.246459,
+            11.534042,
+            11.776791,
+            11.040375,
+            11.017208,
+            10.779125,
+            11.372167,
+            11.488958,
+            11.765875,
+            11.089166,
+            11.538167,
+            11.656875
+          ]
+        }
+      },
+      "rss": {
+        "nil": {
+          "min_bytes": 19513344,
+          "median_bytes": 19513344,
+          "max_bytes": 19513344,
+          "samples_bytes": [
+            19513344,
+            19513344,
+            19513344
+          ]
+        },
+        "cpp": {
+          "min_bytes": 19513344,
+          "median_bytes": 19513344,
+          "max_bytes": 19513344,
+          "samples_bytes": [
+            19513344,
+            19513344,
+            19513344
+          ]
+        }
+      },
+      "charge": {
+        "peak_observed_live_bytes": 126,
+        "memory_limit_bytes": 67108864,
+        "native_observed_root_charge_to_limit_ratio": 1.8775463104248047e-06
+      },
+      "cpp_time_ratio": 0.7628288457385628,
+      "cpp_rss_ratio": 1.0,
+      "reference_liveness": {
+        "peak_instruction_boundary_live_bytes": 17825832,
+        "peak_quota_reservation_bytes": 17825961,
+        "limit_bytes": 67108864,
+        "live_to_limit_ratio": 0.26562559604644775,
+        "reservation_to_limit_ratio": 0.26562751829624176
+      },
+      "input_bytes": 17825792
+    },
+    "transform": {
+      "timings": {
+        "nil": {
+          "min_ms": 37.568542,
+          "median_ms": 39.494583,
+          "max_ms": 160.524125,
+          "samples_ms": [
+            39.4995,
+            39.21625,
+            160.524125,
+            43.804667,
+            42.633458,
+            43.894292,
+            39.33225,
+            37.982084,
+            39.175,
+            38.735083,
+            38.556417,
+            38.604708,
+            38.283416,
+            38.728292,
+            38.42575,
+            40.532208,
+            39.9005,
+            39.659042,
+            38.323958,
+            44.003708,
+            39.547167,
+            39.747625,
+            39.494583,
+            42.469291,
+            37.568542
+          ]
+        },
+        "cpp": {
+          "min_ms": 14.923667,
+          "median_ms": 18.526792,
+          "max_ms": 29.825083,
+          "samples_ms": [
+            19.327083,
+            23.917666,
+            20.541458,
+            18.526792,
+            29.4455,
+            29.825083,
+            16.137666,
+            15.6935,
+            15.577667,
+            16.91725,
+            16.315416,
+            14.923667,
+            15.519416,
+            15.087917,
+            18.236083,
+            16.149833,
+            20.436667,
+            23.133,
+            27.675541,
+            26.719542,
+            15.391667,
+            20.136209,
+            28.935041,
+            22.130667,
+            16.1795
+          ]
+        }
+      },
+      "rss": {
+        "nil": {
+          "min_bytes": 18464768,
+          "median_bytes": 18464768,
+          "max_bytes": 18464768,
+          "samples_bytes": [
+            18464768,
+            18464768,
+            18464768
+          ]
+        },
+        "cpp": {
+          "min_bytes": 18481152,
+          "median_bytes": 18481152,
+          "max_bytes": 18481152,
+          "samples_bytes": [
+            18481152,
+            18481152,
+            18481152
+          ]
+        }
+      },
+      "charge": {
+        "peak_observed_live_bytes": 16777388,
+        "memory_limit_bytes": 67108864,
+        "native_observed_root_charge_to_limit_ratio": 0.25000256299972534
+      },
+      "cpp_time_ratio": 2.1317550820455047,
+      "cpp_rss_ratio": 0.999113475177305,
+      "reference_liveness": {
+        "peak_instruction_boundary_live_bytes": 16777391,
+        "peak_quota_reservation_bytes": 33554647,
+        "limit_bytes": 67108864,
+        "live_to_limit_ratio": 0.2500026077032089,
+        "reservation_to_limit_ratio": 0.5000032037496567
+      },
+      "input_bytes": 16777216
+    }
+  },
+  "fixture_note": "Historical scan is 17 MiB (17-byte line times 1048576), not the 16 MiB used in old prose. Exact historical input is preserved. Append builds 1 MiB; transform reads/transforms 16 MiB."
+}

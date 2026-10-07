@@ -46,9 +46,9 @@
       },
       {
         "category": "conditional",
-        "nil": 273,
+        "nil": 241,
         "python": 75,
-        "difference": 198
+        "difference": 166
       },
       {
         "category": "loop_delimiters",
@@ -73,6 +73,12 @@
         "nil": 42,
         "python": 0,
         "difference": 42
+      },
+      {
+        "category": "functional_update",
+        "nil": 32,
+        "python": 0,
+        "difference": 32
       },
       {
         "category": "boolean_literal",
@@ -150,9 +156,9 @@
       },
       {
         "category": "conditional",
-        "nil": 274,
+        "nil": 242,
         "python": 75,
-        "difference": 199
+        "difference": 167
       },
       {
         "category": "loop_delimiters",
@@ -177,6 +183,12 @@
         "nil": 42,
         "python": 0,
         "difference": 42
+      },
+      {
+        "category": "functional_update",
+        "nil": 32,
+        "python": 0,
+        "difference": 32
       },
       {
         "category": "boolean_literal",
