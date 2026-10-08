@@ -564,6 +564,90 @@
       "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-followup-tuned-correctness.jsonl",
       "sha256": "27d77634b5fe89d2a85faa1c67842a8e5de33aadd38e81df798103cb7dc0ad40",
       "bytes": 228283
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-report.py",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-report.py",
+      "sha256": "62d900c794d7c8805677f4c6b6b6bd7803735c1bc918d69c04428ffaf893097d",
+      "bytes": 3702
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-ci-debug.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-ci-debug.log",
+      "sha256": "4af58344313e715fae6c7356af3244922782aece0bb7f80f3ad28e4d30c3c6ab",
+      "bytes": 47633
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-release.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-release.log",
+      "sha256": "671e9c34fc907c9425bc2855a650721a8f5fdda147aea2fc43a58a3c6ff36b2d",
+      "bytes": 47350
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-sanitize.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-sanitize.log",
+      "sha256": "91ff026cd0bbd2004323740917b222741a9af478fc3509ac1f0833cf5d9b533e",
+      "bytes": 19064
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-validate.py",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-validate.py",
+      "sha256": "733de938547e57fff062d804850edb83d844727b0a3a46d146facc25551c4a86",
+      "bytes": 692
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-validation.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-validation.log",
+      "sha256": "c61c23871a4ecd8baa168c0c5cb7033acdc01fa8a93d1e065b453d8d4558dbd7",
+      "bytes": 74
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-validation-receipts.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-validation-receipts.json",
+      "sha256": "d4595b62ba4f9beecb319e6df1951a8a703a21f4aebbe97ecd2a49dad54888f2",
+      "bytes": 379
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-default-equivalence.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-default-equivalence.json",
+      "sha256": "5b0834b61c639b556d15846a5cd6ddbb65f675300bb5b3f51316f0ac26a4ce8a",
+      "bytes": 1659
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-parent.nil",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-parent.nil",
+      "sha256": "de807a2aefcb15a794f004dcce1851815fcd4ef031e291a478f456017b42a21b",
+      "bytes": 95
+    },
+    {
+      "original_path": "/tmp/nil-round22-contract-parent-output.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-contract-parent-output.json",
+      "sha256": "18d0751668de7f143047d18a3c132a0c989e81d9c5727ea516b57a892ea3397e",
+      "bytes": 612
+    },
+    {
+      "original_path": "/tmp/nil-round22-completion-audit-witnesses.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-completion-audit-witnesses.json",
+      "sha256": "3c62c027c3e5fbd538c0223b2fd0ba2b95914b612fbbfbfab30813814b73279e",
+      "bytes": 860
+    },
+    {
+      "original_path": "/tmp/nil-round22-audit-multiple-versions.nil",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-audit-multiple-versions.nil",
+      "sha256": "1a60b766f88ff91d8d9e761a7481ff5b00ba874cadc67058159543203c4ddcff",
+      "bytes": 56
+    },
+    {
+      "original_path": "/tmp/nil-round22-audit-unread-parent-child.nil",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-audit-unread-parent-child.nil",
+      "sha256": "5ae837bd90dbc34a912b711ade3a36c4db44b7f2d21ef0787418f76240512dbb",
+      "bytes": 128
+    },
+    {
+      "original_path": "/tmp/nil-round22-quota-audit-tests.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-quota-audit-tests.log",
+      "sha256": "eb56510c088a7103e3532d12eca89bb750710067a5cc7d8c40856fa5e538d088",
+      "bytes": 1411
     }
   ]
 }

@@ -1,0 +1,160 @@
+{
+  "code_revision": "be1a856",
+  "contract_revision": "99b4e9d",
+  "gates": {
+    "debug": {
+      "command": "./scripts/ci.sh",
+      "tests": 526,
+      "exit": 0,
+      "warnings": false,
+      "raw_sha256": "4af58344313e715fae6c7356af3244922782aece0bb7f80f3ad28e4d30c3c6ab"
+    },
+    "release": {
+      "command": "./scripts/ci.sh release",
+      "tests": 526,
+      "exit": 0,
+      "warnings": false,
+      "raw_sha256": "671e9c34fc907c9425bc2855a650721a8f5fdda147aea2fc43a58a3c6ff36b2d"
+    },
+    "sanitize": {
+      "command": "./scripts/sanitize.sh",
+      "tests": 237,
+      "exit": 0,
+      "warnings": false,
+      "raw_sha256": "91ff026cd0bbd2004323740917b222741a9af478fc3509ac1f0833cf5d9b533e"
+    }
+  },
+  "default_path_equivalence": {
+    "before_revision": "f84e2e4",
+    "compiler_source_changes": [
+      "application.c opt-in reason renderer"
+    ],
+    "command": [
+      "clang",
+      "-E",
+      "-P",
+      "-x",
+      "c",
+      "-"
+    ],
+    "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "results": [
+      {
+        "record_buffers": 0,
+        "explain_copies": 0,
+        "equal": true,
+        "before_sha256": "6e06d8051d16015bc3df105964dc5c5918ec2272d82542d89d4f74510e38a1e2",
+        "after_sha256": "6e06d8051d16015bc3df105964dc5c5918ec2272d82542d89d4f74510e38a1e2"
+      },
+      {
+        "record_buffers": 0,
+        "explain_copies": 1,
+        "equal": false,
+        "before_sha256": "c86e30f00bad8a381680d803efeed3b95da3421fb349ffef68eebf61b040b8c4",
+        "after_sha256": "a82ee6fffcdac03aa6884ce32dc68810e2960a11bbc9966d702de3bbdedcac5f"
+      },
+      {
+        "record_buffers": 1,
+        "explain_copies": 0,
+        "equal": true,
+        "before_sha256": "35d126aaeb938f908f73b430ccd1613caa0ff3b5fbd37d85107cb5daa5210f31",
+        "after_sha256": "35d126aaeb938f908f73b430ccd1613caa0ff3b5fbd37d85107cb5daa5210f31"
+      },
+      {
+        "record_buffers": 1,
+        "explain_copies": 1,
+        "equal": false,
+        "before_sha256": "18d92e5032aadc118d64f8c881d93714a020a8ce0d345f8b5c3880734b139b9f",
+        "after_sha256": "4e16ca3855578fafc2ef3d7a1d4b432e276914d48fcf0da665912394ae6c10b0"
+      }
+    ],
+    "meaning": "All default-runtime preprocessed tokens are identical, for record buffers enabled and disabled. Only copy-hint-enabled runtime changes. Rust codegen unchanged. Existing default-mode fuzz/corpus/performance evidence remains applicable; opt-in renderer and quota-witness assertions are re-tested."
+  },
+  "hint_json_round_trip": {
+    "command": [
+      "target/debug/nil",
+      "--profile",
+      "expr-v5",
+      "--unbounded",
+      "--explain-copies",
+      "run",
+      "/tmp/nil-round22-contract-parent.nil"
+    ],
+    "source": "record Holder(text:s,n:i)\n:s=b(Holder(\"abcd\",0))\n(Holder):s=changed=a.text[0:90];n=a.n;changed\n",
+    "stdout": "Zbcd\n",
+    "exit": 0,
+    "hints": [
+      {
+        "kind": "replace",
+        "bytes": 4,
+        "span": [
+          74,
+          80
+        ],
+        "keeping_read": null,
+        "retaining_use": [
+          84,
+          85
+        ],
+        "precision": "root-retention-use",
+        "reason": "live-root-retention"
+      }
+    ]
+  },
+  "quota_witness_probe": [
+    {
+      "name": "multiple-versions",
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "--unbounded",
+        "run",
+        "/tmp/nil-round22-audit-multiple-versions.nil"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "E013 @39..47 dynamic allocation limit exceeded\n",
+      "source": ":s=b(!bytes(22369590,97))\n(s):s=a[0:90][1:a[2]][2:a[0]]"
+    },
+    {
+      "name": "unread-parent-child",
+      "command": [
+        "target/release/nil",
+        "--profile",
+        "expr-v5",
+        "--unbounded",
+        "run",
+        "/tmp/nil-round22-audit-unread-parent-child.nil"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "E013 @100..101 dynamic allocation limit exceeded\n",
+      "source": "record Holder(text:s,n:i)\n:s=b(Holder(!bytes(33554392,97),0))\n(Holder):s=changed=a.text[0:90];temp=#!bytes(100,0);n=a.n;changed"
+    }
+  ],
+  "command_receipts": [
+    {
+      "name": "release",
+      "command": [
+        "./scripts/ci.sh",
+        "release"
+      ],
+      "exit": 0,
+      "started_unix": 1791458623.4950972,
+      "elapsed_seconds": 201.3655228614807
+    },
+    {
+      "name": "sanitize",
+      "command": [
+        "./scripts/sanitize.sh"
+      ],
+      "exit": 0,
+      "started_unix": 1791458824.8620229,
+      "elapsed_seconds": 743.7669951915741
+    }
+  ],
+  "retained_default_campaigns": "ROUND22_FOLLOWUP_GATES.json",
+  "retained_timings": "ROUND22_FOLLOWUP_COHORT.json + both FOLLOWUP_CONTROLS JSONs",
+  "note": "No fresh fuzz/corpus/timing campaigns claimed for this opt-in-only renderer. All default preprocessed C tokens are unchanged and no Rust codegen changes. G1 remains unimplemented under the original soundness stop condition; nullable keeping-read contract accepted by maintainer."
+}

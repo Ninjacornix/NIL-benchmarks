@@ -1,7 +1,8 @@
 # Round 22 — guarded replay, with ownership still incomplete
 
 **Natural qualification stays 19/150; tuned stays 22/150. No newly qualifying
-program. G1 did not ship, and the full cross-frame copy-hint contract remains open.**
+program. G1 did not ship. Copy hints use the subsequently accepted nullable-read
+contract; they do not establish G1 provenance.**
 Natural copied payload falls 16.5%, but REQUIRED bytes fall only 17.9% against a
 70–95% forecast. Natural Last Stone Weight still takes 24.96 s / 2,182x C++;
 balanced tree and BST remain over 100x. Spiral Matrix improves 1,422.33 -> 27.89 ms
@@ -150,7 +151,7 @@ different indices, inline/bound expressions, nested conditionals, earlier/later
 reads, call aliases, returned aliases, recursion/mutual recursion, record children,
 map values, empty and zero-slot values, selected/unselected traps and host effects.
 
-## Copy hints: useful but incomplete
+## Initial copy hints, before contract clarification
 
 ```sh
 target/release/nil --profile expr-v5 --unbounded --explain-copies run /tmp/example.nil
@@ -176,8 +177,9 @@ admit G1. Traversal is capped at 128 levels/4,096 nodes. A new budget-exhaustion
 regression confirms unknown provenance stays null. Map key/value/record extraction,
 inserted keys, replaced values and replacement rows are also reported, independently
 of other kinds at the same site. LLVM aggregate moves, allocator relocation,
-construction/input traffic and repeated executions still are not enumerated. The full Part D
-keeping-read contract remains open; no invented keeping-read spans are supplied.
+construction/input traffic and repeated executions still are not enumerated. At this stage the full Part D keeping-read contract was unresolved; the later
+maintainer clarification below accepts nullable reads with separate retention
+evidence and reason. No invented keeping-read spans are supplied.
 
 For `:s=b("abcd")` / `(s):s=a[0:90][1:a[2]]`, emitted IR changes from
 one `nil_set`, one `nil_set_unique` and one `nil_get` to one `nil_set_replay_check`,
@@ -234,7 +236,8 @@ is claimed. Qualification uses same-session C++ median <=3x; process timings inc
 startup and I/O. RSS is not live-charge liveness. The host is shared with ordinary
 Mac applications; this is not a dedicated performance machine.
 
-Accepted limits: G1 and full cross-frame hints remain unproved, replay cannot cross
+Accepted limits: G1 and full semantic payload-read provenance remain unproved;
+the clarified diagnostic contract permits null reads. Replay cannot cross
 quota/host-effect observations or unsupported scalar operations, bounded replay is
 disabled to retain tick parity, and configurable limits/native stack safety remain
 out of scope. No frozen source, task, fixture, oracle, golden or baseline changes;
@@ -349,7 +352,8 @@ General G1 and replay across multi-update quota barriers need parameter/returned
 child provenance plus an explicit logical charge/death model. A last payload read
 alone is not enough. Consider a version/charge ledger in a separate decision;
 do not erase semantic reservations or rewrite natural solutions to claim success.
-Full keeping-read hints depend on that provenance. No new core capability, profile,
+Full semantic-observation tracing depends on that provenance; the accepted
+nullable diagnostic contract does not require it. No new core capability, profile,
 intrinsic or held-out algorithm was added in this round.
 
 ## Follow-up control replication decision
@@ -464,7 +468,49 @@ The child-traversal budget regression reports unknown provenance instead of
 pretending to find a semantic keeping read. Old test fixtures used a wrong byte-map
 signature and copy-kind expectation; corrected before the final rerun.
 
-G1, exhaustive semantic cross-frame keeping-read provenance, and exact attribution
-of absolute transform drift remain open. This is a measured **partial result**,
-not completion of every Round 22 requirement. No native memory/depth limits,
+At the pre-clarification follow-up, G1, exhaustive semantic cross-frame
+keeping-read provenance and exact absolute-transform-drift attribution remained
+open. That was a measured **partial result**. The subsequent maintainer
+clarification below resolves the diagnostic requirement without admitting G1. No native memory/depth limits,
 stack-safety work, new capability, natural-source rewrites or held-out attempts.
+
+## Accepted copy-hint contract and final completion audit
+
+The maintainer accepted nullable `keeping_read` with a separate `retaining_use`
+and reason on 2026-10-08. ADR 044 amendment `99b4e9d` was committed before renderer
+`be1a856`. This resolves Part D's contract without inventing semantic payload-read
+spans or admitting G1. Every hint adds `reason`: `later-local-read`,
+`live-root-retention`, `required-materialization`, or `unresolved-copy-cause`.
+These classify diagnostic evidence, not whether a physical copy is indispensable.
+
+For the live-parent example using `Holder("abcd",0)`, native output is `Zbcd`;
+the parsed JSON record is:
+
+```json
+{"kind":"replace","bytes":4,"span":[74,80],"keeping_read":null,"retaining_use":[84,85],"precision":"root-retention-use","reason":"live-root-retention"}
+```
+
+The two quota witnesses now explicitly require **E013 at 39..47 and 100..101**,
+in addition to reference/native O0/O2 and bounded/unbounded agreement. Agreement
+alone would not prevent both paths incorrectly succeeding. The reason-tag test
+checks local reads, parent retention and materialization; exhausted traversal
+must label the cause unresolved and keep missing provenance null.
+
+The amendment changes four C statements inside `NIL_EXPLAIN_COPIES`, tests and
+documentation. Clang-preprocessed default C tokens are identical before/after,
+with record buffers enabled and disabled; Rust codegen is unchanged. Earlier
+three-seed differential campaigns, full corpus/cohort verification, census and
+isolated timings therefore cover the exact unchanged default compilation path.
+They were **not rerun or relabelled as fresh campaigns** for this opt-in renderer.
+CI and all sanitizer suites were rerun for the changed path and stronger assertions;
+current counts are **526 debug/release tests and 237 sanitizer tests**, all passing,
+zero Clippy warnings. [ROUND22_CONTRACT_GATES.json](ROUND22_CONTRACT_GATES.json) contains raw output hashes,
+JSON round-trip evidence and the default-path equivalence check.
+
+Compiler `docs/ROUND22_COMPLETION_AUDIT.md` maps the original requirements to
+current evidence. The delivered ownership result remains **partial G2 with fallback,
+no G1**, under the original explicit stop condition. No natural qualification gain,
+no claim of discharged G1 obligations and no claim of exact transform-drift
+attribution. Full semantic-observation tracing is optional future diagnostic work
+under the clarified contract, not a remaining Round 22 gate. The underlying G1
+provenance/logical-charge problem and Round 23 limits/stack-safety work remain deferred.
