@@ -1,0 +1,365 @@
+{
+  "archive": "/Users/ninjacornix/.local/share/nil/round22-ownership",
+  "files": [
+    {
+      "original_path": "/tmp/nil-round22-census-stability-repro.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-census-stability-repro.json",
+      "sha256": "08c3b629bdaaae9b3a5429a56c67822ba43a94be478d5e8343be3eaa1f628ad9",
+      "bytes": 571
+    },
+    {
+      "original_path": "/tmp/nil-round22-census-stability-repro.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-census-stability-repro.log",
+      "sha256": "071939efb0d5787c3a841270fcbe9c1e0ca4ff6c0cdfaebc76980e42ce7753fa",
+      "bytes": 190
+    },
+    {
+      "original_path": "/tmp/nil-round22-cohort-after.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-cohort-after.json",
+      "sha256": "833a7af4968aa3c1fbb490014504820a58d951b7875dcc139a7791d9e7d90dbf",
+      "bytes": 90458
+    },
+    {
+      "original_path": "/tmp/nil-round22-cohort-after.jsonl",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-cohort-after.jsonl",
+      "sha256": "ca275b8c3861aa9f29bdb68c023e12f7a03afe3d2cca5be643c7ce64fd7a8c2f",
+      "bytes": 51635
+    },
+    {
+      "original_path": "/tmp/nil-round22-cohort-after.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-cohort-after.log",
+      "sha256": "8ed8a885658f27107909b51afd8743140957c290e095363d9272192076c15249",
+      "bytes": 1667
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-after.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-after.json",
+      "sha256": "380d9c709100eb62e6fd781280611825233ceaf51b08806963a2341d51b57b20",
+      "bytes": 7033
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-after.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-after.log",
+      "sha256": "355bf7dd32ceb22be79000ee7665a370aacbe1b3ae61072e2ea7aa6d19511dab",
+      "bytes": 892
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-before-same-session.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-before-same-session.json",
+      "sha256": "5c26a732b1a0ebec58afb8259175fea6cf4e71f0c7cae964497ae7baa512308a",
+      "bytes": 7018
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-before-same-session.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-before-same-session.log",
+      "sha256": "d87b2dd0735b52bae52305ef22b29da40b1690371bbfa45cefa376da214b39a0",
+      "bytes": 893
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-paired.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-paired.json",
+      "sha256": "c7a09abcf1605c407af0e844d2b6f620e97b4620c592e58d0648ea420674d010",
+      "bytes": 10008
+    },
+    {
+      "original_path": "/tmp/nil-round22-controls-paired.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-controls-paired.log",
+      "sha256": "a2c0f6d07fb60af69febfc5be000642b77d33d7e580988a63da69b9a11d41d03",
+      "bytes": 1339
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-application.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-application.json",
+      "sha256": "a3fd58e1ac04c517e53f572e0ba3580c57aefa92d20573e6784d0d0602c6b0b9",
+      "bytes": 377175
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-application.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-application.log",
+      "sha256": "225675a712626a9920a03f445e50b71b36a470aa92ec2c1ada895cbe8255726a",
+      "bytes": 12866
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-fuzz-22001.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-fuzz-22001.json",
+      "sha256": "d046c2c2b0e8e4945b607b07f7f5754666579dae5c956f80187fbc784a1fb149",
+      "bytes": 3506449
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-fuzz-22001.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-fuzz-22001.log",
+      "sha256": "f7cb07d04f34d78ed0f98a3f99cd6902207bb3ddd83df0f0674d5c12c1b2ff40",
+      "bytes": 121937
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-fuzz-22002.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-fuzz-22002.json",
+      "sha256": "159b3041a7fdea3ed052dc8bbe095959b2824a0bb7d7df336c2a41be8d0ff29b",
+      "bytes": 3506166
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-fuzz-22002.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-fuzz-22002.log",
+      "sha256": "842de1c337f94e548f4ba82efa904f152a5e51b79e32844cbcc38662ff31ef95",
+      "bytes": 121937
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-natural.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-natural.json",
+      "sha256": "b72f5ba175e154b2c8c8887d9b3591e7050f77cdde6c33fb30e28814b8763652",
+      "bytes": 173389
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-natural.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-natural.log",
+      "sha256": "16010be741c55ba23b0f65d16545de9c52afa92b7428b94dc12fc62453797873",
+      "bytes": 5931
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-overlay.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-overlay.log",
+      "sha256": "aabb9a4ed3f152a9f8e68ead0df0f60973b30297e42204dfa734039185815dcf",
+      "bytes": 6165
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-tuned.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-tuned.json",
+      "sha256": "0260efecf5d85375080f17a673c57ab9922d6393aac69d45ce970759a03ab995",
+      "bytes": 172651
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-after-tuned.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-after-tuned.log",
+      "sha256": "ec6974d62aa189c0731b0a60b2a06d646b99ce1e30dfa5dbed2159d3b5281df3",
+      "bytes": 5900
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-application.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-application.json",
+      "sha256": "38567193e751fbf396bf3fd72e1f70c3ac53c1eae259499b6f8a5ca987f4a4ab",
+      "bytes": 377182
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-application.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-application.log",
+      "sha256": "98f358db7230ea02078bbde6ca77412d2848a489b61993ea3a45791e0fd760c7",
+      "bytes": 12866
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-fuzz-22001.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-fuzz-22001.json",
+      "sha256": "651d64e60455f6fcbe3bbd47b5f6b2dce089dfb0e995715343181c876821ba5f",
+      "bytes": 3355414
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-fuzz-22001.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-fuzz-22001.log",
+      "sha256": "30a769a163416c3e7a02937ef534c8f0a16f46086313fced66bfe8cdf9b64de9",
+      "bytes": 116715
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-fuzz-22002.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-fuzz-22002.json",
+      "sha256": "27fb000d794cfdf8e47145e7a21a1e25ffaae5bb59a6fece34cca14b173fe96c",
+      "bytes": 3355131
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-fuzz-22002.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-fuzz-22002.log",
+      "sha256": "858dddd5c2ba80e6358203e7d381765a2e3f5dc6e6e02d9ba80ee58ce069762d",
+      "bytes": 116715
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-natural.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-natural.json",
+      "sha256": "95f40ced9a11e7553ee4406a3dd95c5fea57da575e4ab03d61bf8eb82c25658f",
+      "bytes": 173534
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-natural.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-natural.log",
+      "sha256": "3b700a4b336c4dc583f27e7937de53759111a0d08486043b8d13959503e59ef8",
+      "bytes": 5931
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-overlay.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-overlay.log",
+      "sha256": "ab8ea05fc342e485917d96b6a4e873b85421cf835a302d61c9eb8b83f55c86b0",
+      "bytes": 6172
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-tuned.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-tuned.json",
+      "sha256": "a34263e9caca94a55e618f11a2a558d8e4885d3e6681b45ebabca626106d5db4",
+      "bytes": 172801
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-before-tuned.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-before-tuned.log",
+      "sha256": "86267b991c8ecd09aff9cc4f90d677426d0246e56a11e4ec05a3f7dbe6e9d095",
+      "bytes": 5918
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-tracker-checks.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-tracker-checks.json",
+      "sha256": "d3ecc00144229efa8264625b4e4ea5a188f04206c567f90afb5e4040e87aec58",
+      "bytes": 10986
+    },
+    {
+      "original_path": "/tmp/nil-round22-corrected-tracker-checks.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-corrected-tracker-checks.log",
+      "sha256": "552d06855e92f50520696477e288ac05af293a786583c7ee2b1b5ac4454eab3c",
+      "bytes": 504
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-ci-debug.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-ci-debug.log",
+      "sha256": "82ad677ad453a2e310b06bb60388a4cf2e5d37caad0801fd4bd19535886903ac",
+      "bytes": 46729
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-ci-release.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-ci-release.log",
+      "sha256": "53fa22a3ca39c3c7b895b45703edfde61114702bf843b1d946bf47d753ba59bb",
+      "bytes": 46734
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-corpus.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-corpus.json",
+      "sha256": "9ab848d09479e4779975f3e5ff141b0c80b51a46e902882a31a0241444eeb89f",
+      "bytes": 101127
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-corpus.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-corpus.log",
+      "sha256": "ea35c28421bd2a6463f8e5eb15eacdb2cfe96d351b1951ec0fc20bf56b718dc8",
+      "bytes": 24749
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-fuzz-22021.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-fuzz-22021.log",
+      "sha256": "a50e6397c88fff0c0d33e2c0063a4ba61bfe3ee3feef39dbc0222b8925ee4bc3",
+      "bytes": 47882
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-fuzz-22022.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-fuzz-22022.log",
+      "sha256": "e3c1629537fa5f1ea7eebad62091d2e2a25e0ca628c4762947687d6bc0c1dad7",
+      "bytes": 47832
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-fuzz-22023.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-fuzz-22023.log",
+      "sha256": "6f0e2f90c554d7f1b1a01d6819f1d6e8ceb000beae2ba0723326bbba4251c0cd",
+      "bytes": 47915
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-natural-correctness.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-natural-correctness.json",
+      "sha256": "6cefda13213404f1c6f1e761d110ee6e1691ea5f8d4985bc57e7e6e5defb8585",
+      "bytes": 332077
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-natural-correctness.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-natural-correctness.log",
+      "sha256": "0950d890fab3fe798d5be91e2ff819d8b8bf4873143abd8b26d1da36a2a5fd68",
+      "bytes": 1367
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-original.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-original.json",
+      "sha256": "4d4f7719e8c84320834b4c981bac0f2086a55206b89da09724d9daa172366411",
+      "bytes": 55356
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-original.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-original.log",
+      "sha256": "4efa554dc4e5ae18ce65b4fea9fd2b966cab62058e1608722575de480215d21e",
+      "bytes": 8834
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-sanitize.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-sanitize.log",
+      "sha256": "deb88d69c9ae46d4e0ad491af225d814cf3d807d49b4a7dad089a3690a099e2b",
+      "bytes": 18576
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-tuned-correctness.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-tuned-correctness.json",
+      "sha256": "125e180e3e685505f06fdf9f8f0c4359fc088a501747c9f1736be328f9fbd521",
+      "bytes": 332077
+    },
+    {
+      "original_path": "/tmp/nil-round22-final-tuned-correctness.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-final-tuned-correctness.log",
+      "sha256": "ceaf70addd216ed2fbaa75e9af018d21ee503d486157ba5530b7f18763b5d537",
+      "bytes": 1245
+    },
+    {
+      "original_path": "/tmp/nil-round22-g1-quota-sanitize.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-g1-quota-sanitize.log",
+      "sha256": "af533d487979a81aaa9749ce154fff2f006214f34eff05768e1e51f76f973088",
+      "bytes": 355
+    },
+    {
+      "original_path": "/tmp/nil-round22-g1-quota-witness.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-g1-quota-witness.log",
+      "sha256": "0f0ec0d0af647aa5684bcb081116540b38d9c4f8726b90578d3615c149a2ae52",
+      "bytes": 425
+    },
+    {
+      "original_path": "/tmp/nil-round22-gate-receipts.json",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-gate-receipts.json",
+      "sha256": "8a2f774051e8cb617f4d1a1418d46fa262be8160f09910eb1145d9d60e51561d",
+      "bytes": 146155
+    },
+    {
+      "original_path": "/tmp/nil-round22-hint-example.err",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-hint-example.err",
+      "sha256": "dc3c69d91532ef57862928c94b33108335d5fb5819723cf6588ac91eaf127c6c",
+      "bytes": 113
+    },
+    {
+      "original_path": "/tmp/nil-round22-hint-example.nil",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-hint-example.nil",
+      "sha256": "12c1928f01d718ce00aa0bbbbbb06fddfd91525d6ae81710c2532dc95083eeac",
+      "bytes": 43
+    },
+    {
+      "original_path": "/tmp/nil-round22-hint-example.out",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-hint-example.out",
+      "sha256": "e2c0f4c93a03ed18b0952b35df6bdf1f43380162b719428b9d87a46f08ec3c51",
+      "bytes": 5
+    },
+    {
+      "original_path": "/tmp/nil-round22-replay-after/receipt.txt",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-replay-after-receipt.txt",
+      "sha256": "dda7d9075ded8b62c35f9ede94ff332925bc16ec5f9f82603fb209cd07fac245",
+      "bytes": 51
+    },
+    {
+      "original_path": "/tmp/nil-round22-replay-after-body.ll",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-replay-after-body.ll",
+      "sha256": "da0f966f5b72df5eb733c04f7aada0d2cd5fdd7c0e1a7a11afd41fcc88ccf1e5",
+      "bytes": 2066
+    },
+    {
+      "original_path": "/tmp/nil-round22-replay-before/receipt.txt",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-replay-before-receipt.txt",
+      "sha256": "6acab188fdfb0f8c2463ae6725569f04358ee9c169027cdc7c887162975ba08a",
+      "bytes": 64
+    },
+    {
+      "original_path": "/tmp/nil-round22-replay-before-body.ll",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-replay-before-body.ll",
+      "sha256": "a10ea1aa1ee354610ff406094c643be327260fe6011e77f5c4d930f8bd23b598",
+      "bytes": 1098
+    },
+    {
+      "original_path": "/tmp/nil-round22-study-tests-3.log",
+      "archive_path": "/Users/ninjacornix/.local/share/nil/round22-ownership/nil-round22-study-tests-3.log",
+      "sha256": "df364d5d1ea77d5d334ce90bddcb24e5c85e9f0801b71000b08e8808de74c9ff",
+      "bytes": 3434
+    }
+  ]
+}
