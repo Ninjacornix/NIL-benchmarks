@@ -3,9 +3,9 @@
 **Natural qualification stays 19/150; tuned stays 22/150. No newly qualifying
 program. G1 did not ship, and the full cross-frame copy-hint contract remains open.**
 Natural copied payload falls 16.5%, but REQUIRED bytes fall only 17.9% against a
-70–95% forecast. Natural Last Stone Weight still takes 24.46 s / 2,232x C++;
-balanced tree and BST remain over 100x. Spiral Matrix improves 1,422.33 -> 27.31 ms
-but still misses at 3.65x C++. These are compiler gaps, not successful qualifications.
+70–95% forecast. Natural Last Stone Weight still takes 24.96 s / 2,182x C++;
+balanced tree and BST remain over 100x. Spiral Matrix improves 1,422.33 -> 27.89 ms
+but still misses at 3.63x C++ in the final rerun. These are compiler gaps, not successful qualifications.
 
 G2 ships with guards and an ordinary-copy fallback. Tuned copied payload falls
 105.6 GB -> 60.5 MB without further source edits, but the tuned heap remains
@@ -18,7 +18,7 @@ ADR 044 (`46c10fc`) precedes G2 (`d97b481`) and hints (`bce3d6e`). The repaired
 fuzz baseline (`eab1320`, benchmarks `76af011`) precedes the ADR. Later benchmark
 tracker corrections preserve the original forecasts and baseline artifacts.
 
-## Qualification and five cliffs
+## Initial G2 qualification and five cliffs
 
 Unmodified frozen Round 19 sources remain the headline. All 29 admitted natural
 and tuned programs passed reference/native O0/O2; seven sampled blocked candidates
@@ -160,16 +160,23 @@ For `:s=b("abcd")` / `(s):s=a[0:90][1:a[2]][2:a[0]]`, stdout is `Zcad` and
 stderr contains:
 
 ```json
-{"kind":"replace","bytes":4,"span":[20,26],"keeping_read":[30,33],"precision":"direct-local-read"}
+{"kind":"replace","bytes":4,"span":[20,26],"keeping_read":[30,33],"retaining_use":[38,41],"precision":"direct-local-read"}
 ```
 
 The runtime emits `NIL_COPY_HINT ` before each JSON record, once per successful
-copy site. Default binaries contain no copy-site calls. Tests compare return code,
+C copy kind/site. `bytes` is nominal C transfer size, not machine traffic surviving
+O2; the optimizer may eliminate or reshape moves. Zero-byte work is not reported.
+Default binaries contain no copy-site calls. Tests compare return code,
 stdout, host effects and repeated diagnostics with/without hints at O0/O2.
 A direct-local span identifies a later source/reference read; it is not proof that
-this is the sole physical alias forcing the copy. Unknown interprocedural/child
-provenance is null. Map extraction, LLVM aggregate copies and subsequent executions
-of an already reported site are not exhaustively enumerated. The full Part D
+this is the sole physical alias forcing the copy. A diagnostic-only parallel stack table now identifies cross-frame and acyclic
+child **retention uses**, separately from semantic payload reads. Caller/parent
+retention may supply `retaining_use` while `keeping_read` remains null; it cannot
+admit G1. Traversal is capped at 128 levels/4,096 nodes. A new budget-exhaustion
+regression confirms unknown provenance stays null. Map key/value/record extraction,
+inserted keys, replaced values and replacement rows are also reported, independently
+of other kinds at the same site. LLVM aggregate moves, allocator relocation,
+construction/input traffic and repeated executions still are not enumerated. The full Part D
 keeping-read contract remains open; no invented keeping-read spans are supplied.
 
 For `:s=b("abcd")` / `(s):s=a[0:90][1:a[2]]`, emitted IR changes from
@@ -264,7 +271,7 @@ normalized NIL/C++ ratios differ by about -1.5%, demonstrating why comparing onl
 those absolute medians would misattribute movement. These controls, not census
 elapsed time, are the performance evidence.
 
-## Gates and differential coverage
+## Initial G2 gates and differential coverage
 
 Compiler codegen revision is `bce3d6e`; later `159d07c` adds the live-parent
 quota witness inside an existing test. Later changes are measurement tooling and
@@ -317,11 +324,11 @@ Run timing alone. Build helpers through the existing corpus verification first.
 ./scripts/ci.sh
 ./scripts/ci.sh release
 ./scripts/sanitize.sh
-./scripts/fuzz-v5.sh --seed 22021
-./scripts/fuzz-v5.sh --seed 22022
-./scripts/fuzz-v5.sh --seed 22023
-python3 benchmarks/corpora/application-v5/verify.py --jobs 1 --output /tmp/r22-app.json
-python3 benchmarks/corpora/application-v5/verify.py --group original --jobs 1 --output /tmp/r22-original.json
+./scripts/fuzz-v5.sh --seed 22031
+./scripts/fuzz-v5.sh --seed 22032
+./scripts/fuzz-v5.sh --seed 22033
+python3 benchmarks/corpora/application-v5/verify.py --output /tmp/r22-app.json
+python3 benchmarks/corpora/application-v5/verify.py --group original --output /tmp/r22-original.json
 python3 benchmarks/corpora/neetcode150/verify.py --verified-only --jobs 1   --candidate-dir "$PWD/benchmarks/core-generalize-study/natural" --output /tmp/r22-natural.json
 python3 benchmarks/corpora/neetcode150/verify.py --verified-only --jobs 1 --output /tmp/r22-tuned.json
 python3 benchmarks/core-generalize-study/measure_cohort.py --repeats 15 --output /tmp/r22-cohort.json
@@ -344,3 +351,120 @@ alone is not enough. Consider a version/charge ledger in a separate decision;
 do not erase semantic reservations or rewrite natural solutions to claim success.
 Full keeping-read hints depend on that provenance. No new core capability, profile,
 intrinsic or held-out algorithm was added in this round.
+
+## Follow-up control replication decision
+
+After the diagnostic-only follow-up, the first paired control run had transform
+medians 48.618 ms old / 45.794 ms current / 29.017 ms C++, with broad ranges in
+all three arms. Append and scan stayed stable. Before any additional timing,
+one further 25-repeat rotating replication is fixed here, using the identical
+command and inputs. Both runs will be retained and reported; no best-run selection.
+No exact operating-system cause is established.
+
+## Final diagnostic follow-up — rerun after `4643097`
+
+Five additional regression tests bring the current gates to **525 debug/release tests**
+and **236 sanitizer tests**. The last code change is bounded, read-only diagnostic
+child traversal; no G1 change was admitted. Current qualification remains **19/150
+natural and 22/150 tuned**, with exactly the same qualified sets. Default LLVM IR
+for all 126 application/natural/tuned programs is byte-identical to `c8ea871` after
+excluding three unused diagnostic declarations. The receipt and per-program hashes
+are in [ROUND22_FOLLOWUP_DEFAULT_IR.json](ROUND22_FOLLOWUP_DEFAULT_IR.json).
+
+The earlier tables and JSON above are retained as the initial G2 campaign, not
+relabelled as measurements of the final revision. Final plain O2 timings below
+use another isolated 15-repeat rotating campaign, three separate RSS runs and
+unchanged largest fixtures. All admitted programs were re-verified first.
+
+| Natural problem | Final natural min/median/max ms | C++ min/median/max ms | Natural/C++ | Final tuned min/median/max ms |
+|---|---:|---:|---:|---:|
+| last-stone-weight | 24707.827/24962.076/29587.093 | 10.723/11.439/13.966 | 2182.15x | 55.116/56.648/72.280 |
+| balanced-binary-tree | 1516.463/1535.545/1895.687 | 13.064/14.080/15.464 | 109.06x | 26.735/27.562/28.903 |
+| course-schedule | 4380.120/4508.621/4661.915 | 22.663/22.970/23.764 | 196.28x | 41.442/42.328/43.047 |
+| validate-binary-search-tree | 1457.735/1465.216/1569.374 | 12.736/13.153/14.337 | 111.40x | 23.131/24.264/24.667 |
+| spiral-matrix | 27.437/27.892/28.397 | 7.331/7.693/8.080 | 3.63x | 25.109/25.429/25.971 |
+
+No previously qualified program changes qualification or shows a normalized
+median increase above 10% against the initial G2 campaign. Complete distributions,
+plain RSS and separately instrumented observed-root charges are in
+[ROUND22_FOLLOWUP_COHORT.json](ROUND22_FOLLOWUP_COHORT.json). Observed root charges
+are not semantic liveness or reliable quota headroom. The natural copy census
+remains the earlier G2 measurement; it was not rerun for diagnostic-only changes.
+
+Final plain RSS, median of three runs (MiB):
+
+| Problem | Natural | Tuned | C++ | Natural/C++ |
+|---|---:|---:|---:|---:|
+| last-stone-weight | 6.81 | 3.73 | 4.52 | 1.51x |
+| balanced-binary-tree | 7.69 | 5.47 | 11.20 | 0.69x |
+| course-schedule | 15.44 | 12.33 | 13.31 | 1.16x |
+| validate-binary-search-tree | 7.02 | 5.36 | 8.66 | 0.81x |
+| spiral-matrix | 4.59 | 4.58 | 6.09 | 0.75x |
+
+### Paired controls: both follow-up sets retained
+
+The first follow-up control had broad transform ranges in **both compiler versions
+and C++**, unlike append and scan. A second 25-repeat replication was fixed in
+the preceding decision before running it. Every timing uses default plain binaries;
+no CI, fuzz, census or other owned heavy job runs alongside. Both sets are shown,
+not the faster one alone. Historical append is 1 MiB, scan is **17 MiB**, transform
+is 16 MiB. Each transform and double transform verified byte-exact output.
+
+| Set/control | Old compiler min/median/max ms | Current min/median/max ms | C++ min/median/max ms | Current/old | NIL/C++ RSS MiB |
+|---|---:|---:|---:|---:|---:|
+| First follow-up: append | 4.378/4.624/4.835 | 4.436/4.589/4.807 | 3.391/3.609/3.746 | 0.993x | 2.67/3.59 |
+| First follow-up: scan | 7.296/7.484/8.010 | 7.179/7.481/8.290 | 9.850/10.144/10.557 | 1.000x | 18.61/18.61 |
+| First follow-up: transform | 35.042/48.618/58.292 | 35.456/45.794/62.622 | 12.465/29.017/38.406 | 0.942x | 17.61/17.62 |
+| Replication: append | 4.202/4.442/4.896 | 4.286/4.416/4.791 | 3.287/3.441/4.464 | 0.994x | 2.67/3.59 |
+| Replication: scan | 7.030/7.476/8.140 | 7.043/7.355/7.901 | 9.663/10.149/10.709 | 0.984x | 18.61/18.61 |
+| Replication: transform | 35.702/36.923/52.240 | 35.523/38.160/57.301 | 12.545/15.376/49.833 | 1.034x | 17.61/17.62 |
+
+The first transform medians rose versus the initial paired campaign by 36% old,
+26% current and 119% C++; the replication still has movement and overlapping
+ranges. The historical +14% drift is **not fully attributed**. An exact thermal,
+allocator or filesystem cause has not been measured. Shared movement, stable
+append/scan, and paired current/old ratios do not establish a compiler regression,
+nor prove zero overhead. The smaller apparent NIL/C++ gap in the slow first set
+is not a compiler speedup. Both complete control artifacts are committed as
+[ROUND22_FOLLOWUP_CONTROLS.json](ROUND22_FOLLOWUP_CONTROLS.json) and
+[ROUND22_FOLLOWUP_CONTROLS_REPLICATION.json](ROUND22_FOLLOWUP_CONTROLS_REPLICATION.json).
+
+### Final gate receipts
+
+| Command | Final output |
+|---|---|
+| `./scripts/ci.sh` | 525 tests, zero Clippy warnings, exit 0 |
+| `./scripts/ci.sh release` | 525 tests, zero Clippy warnings, exit 0 |
+| `./scripts/sanitize.sh` | 236 tests, all suites clean, exit 0 |
+| Application `verify.py` | 2,815 checks; 68 supported/11 unsupported |
+| Application `verify.py --group original` | Exactly 610 checks |
+| Natural / tuned NeetCode verification | Each 29/29 programs, 1,070/1,070 checks |
+| Study unit suite | 25 tests, exit 0 |
+| Default IR comparison | 126 programs; only unused hint declarations excluded |
+
+All frozen source hashes match. Final campaigns at seeds 22031/22032/22033 execute
+all 673 indices, including every one of the 29 new `g2_` families once per seed:
+2,019 programs / 4,038 native builds, zero divergences. Host stdout, written files,
+preserved inputs, return values and diagnostic codes/spans are compared. These
+mostly fixed adversarial families are not broad random ownership synthesis.
+E008 remains absent in the unbounded campaigns and present once per bounded
+fuzz census seed. E009 counts arithmetic traps, **not instruction/call limits**.
+
+| Seed | OK | E009 | E012 | E013 | E014 | E015 | E016 | E017 | E018 | E019 | E020 | E021 | E022 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 22031 | 499 | 8 | 28 | 38 | 10 | 8 | 14 | 10 | 11 | 3 | 6 | 35 | 3 |
+| 22032 | 500 | 8 | 27 | 38 | 10 | 8 | 14 | 10 | 11 | 3 | 6 | 35 | 3 |
+| 22033 | 499 | 8 | 28 | 38 | 10 | 8 | 14 | 10 | 11 | 3 | 6 | 35 | 3 |
+
+[ROUND22_FOLLOWUP_GATES.json](ROUND22_FOLLOWUP_GATES.json) preserves per-code,
+per-family and index counts, commands, timestamps and output hashes. This follow-up
+found no compiler divergence or sanitizer finding. It fixed diagnostic suppression
+of additional copy kinds at one site and missing map-materialization reporting.
+The child-traversal budget regression reports unknown provenance instead of
+pretending to find a semantic keeping read. Old test fixtures used a wrong byte-map
+signature and copy-kind expectation; corrected before the final rerun.
+
+G1, exhaustive semantic cross-frame keeping-read provenance, and exact attribution
+of absolute transform drift remain open. This is a measured **partial result**,
+not completion of every Round 22 requirement. No native memory/depth limits,
+stack-safety work, new capability, natural-source rewrites or held-out attempts.

@@ -1,0 +1,3642 @@
+{
+  "schema": 1,
+  "compiler_revision": "464309738c4b78b385e263b6c851b7d8a964461c",
+  "natural_revision": "6fd268d",
+  "machine": "Darwin Milans-Laptop.local 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:16 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8112 arm64",
+  "clang": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "repeats": 15,
+  "method": "Natural/tuned measurements on admitted problems only. No held-out attempts.\n\nUninstrumented binaries supply timings/RSS. A separate temporary-runtime overlay\nsupplies peak observed live charge; its overhead is excluded from timings.\n",
+  "rss_unit": "bytes (macOS /usr/bin/time -l)",
+  "held_out_attempted": 0,
+  "results": [
+    {
+      "task": "3sum",
+      "source_hashes": {
+        "natural": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+        "tuned": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 101.125167,
+          "median_ms": 102.434,
+          "max_ms": 106.889416,
+          "samples_ms": [
+            102.434,
+            103.583417,
+            101.694583,
+            102.998625,
+            102.353875,
+            102.104584,
+            106.889416,
+            102.113667,
+            102.422958,
+            106.267958,
+            101.125167,
+            105.076875,
+            102.609542,
+            101.6095,
+            102.465833
+          ]
+        },
+        "natural": {
+          "min_ms": 828.52975,
+          "median_ms": 830.1395,
+          "max_ms": 881.94375,
+          "samples_ms": [
+            842.773834,
+            829.32275,
+            829.566667,
+            828.52975,
+            834.296333,
+            834.289666,
+            881.94375,
+            830.189458,
+            829.058917,
+            829.809125,
+            830.30325,
+            830.1395,
+            829.296834,
+            829.133166,
+            830.623666
+          ],
+          "cpp_ratio": 8.104140226877794,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 827.202959,
+          "median_ms": 830.078167,
+          "max_ms": 920.637959,
+          "samples_ms": [
+            847.25725,
+            827.963125,
+            830.981208,
+            828.135292,
+            829.845917,
+            854.9475,
+            833.7055,
+            837.212167,
+            827.202959,
+            829.171792,
+            830.078167,
+            834.907792,
+            828.4045,
+            828.545042,
+            920.637959
+          ],
+          "cpp_ratio": 8.103541470605464,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 118439936,
+          "median_bytes": 118439936,
+          "max_bytes": 118439936,
+          "samples_bytes": [
+            118439936,
+            118439936,
+            118439936
+          ]
+        },
+        "natural": {
+          "min_bytes": 19365888,
+          "median_bytes": 19365888,
+          "max_bytes": 19398656,
+          "samples_bytes": [
+            19398656,
+            19365888,
+            19365888
+          ],
+          "cpp_ratio": 0.1635080924055886
+        },
+        "tuned": {
+          "min_bytes": 19365888,
+          "median_bytes": 19365888,
+          "max_bytes": 19365888,
+          "samples_bytes": [
+            19365888,
+            19365888,
+            19365888
+          ],
+          "cpp_ratio": 0.1635080924055886
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 27287360,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.4066133499145508
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 27287360,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.4066133499145508
+        }
+      }
+    },
+    {
+      "task": "balanced-binary-tree",
+      "source_hashes": {
+        "natural": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+        "tuned": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 13.063917,
+          "median_ms": 14.079709,
+          "max_ms": 15.463833,
+          "samples_ms": [
+            13.296,
+            13.063917,
+            14.209458,
+            14.049875,
+            14.107334,
+            14.30675,
+            13.295666,
+            13.154,
+            15.463833,
+            14.079709,
+            14.114667,
+            14.467625,
+            14.038041,
+            14.034833,
+            14.582459
+          ]
+        },
+        "natural": {
+          "min_ms": 1516.463208,
+          "median_ms": 1535.545125,
+          "max_ms": 1895.686584,
+          "samples_ms": [
+            1589.358208,
+            1519.000375,
+            1529.875125,
+            1549.824166,
+            1524.232459,
+            1556.735417,
+            1535.545125,
+            1895.686584,
+            1578.432292,
+            1805.900333,
+            1554.561875,
+            1521.424375,
+            1517.632125,
+            1516.463208,
+            1526.602916
+          ],
+          "cpp_ratio": 109.06085665548913,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 26.73475,
+          "median_ms": 27.562375,
+          "max_ms": 28.902958,
+          "samples_ms": [
+            27.562375,
+            26.73475,
+            27.396584,
+            26.952208,
+            28.373416,
+            27.946209,
+            26.983583,
+            26.783375,
+            28.07375,
+            27.66025,
+            28.902958,
+            27.595625,
+            28.066375,
+            27.067459,
+            27.35375
+          ],
+          "cpp_ratio": 1.9575955014411164,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 11714560,
+          "median_bytes": 11747328,
+          "max_bytes": 11747328,
+          "samples_bytes": [
+            11747328,
+            11747328,
+            11714560
+          ]
+        },
+        "natural": {
+          "min_bytes": 6553600,
+          "median_bytes": 8060928,
+          "max_bytes": 8175616,
+          "samples_bytes": [
+            8060928,
+            8175616,
+            6553600
+          ],
+          "cpp_ratio": 0.6861924686192469
+        },
+        "tuned": {
+          "min_bytes": 5734400,
+          "median_bytes": 5734400,
+          "max_bytes": 7258112,
+          "samples_bytes": [
+            7258112,
+            5734400,
+            5734400
+          ],
+          "cpp_ratio": 0.4881450488145049
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 4000194,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.05960753560066223
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 4000194,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.05960753560066223
+        }
+      }
+    },
+    {
+      "task": "best-time-to-buy-and-sell-stock-with-cooldown",
+      "source_hashes": {
+        "natural": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+        "tuned": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 4.713917,
+          "median_ms": 4.910541,
+          "max_ms": 7.401625,
+          "samples_ms": [
+            4.960875,
+            4.969541,
+            5.086417,
+            4.769292,
+            4.729625,
+            5.184375,
+            4.77975,
+            4.713917,
+            5.1275,
+            4.781667,
+            4.742666,
+            4.803958,
+            4.910541,
+            6.053167,
+            7.401625
+          ]
+        },
+        "natural": {
+          "min_ms": 8.49925,
+          "median_ms": 8.87325,
+          "max_ms": 10.087083,
+          "samples_ms": [
+            8.897417,
+            8.584292,
+            8.876709,
+            8.49925,
+            8.609791,
+            8.87325,
+            8.675333,
+            8.71525,
+            10.087083,
+            8.945792,
+            8.763583,
+            8.919792,
+            8.933792,
+            9.648709,
+            8.721
+          ],
+          "cpp_ratio": 1.8069801270369192,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 8.484292,
+          "median_ms": 8.871166,
+          "max_ms": 9.671625,
+          "samples_ms": [
+            8.916625,
+            8.716042,
+            8.72525,
+            8.89275,
+            8.796333,
+            8.874167,
+            8.88275,
+            8.734625,
+            8.964125,
+            8.748416,
+            8.843625,
+            8.484292,
+            9.034834,
+            9.671625,
+            8.871166
+          ],
+          "cpp_ratio": 1.8065557338794238,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 3342336,
+          "median_bytes": 3342336,
+          "max_bytes": 3342336,
+          "samples_bytes": [
+            3342336,
+            3342336,
+            3342336
+          ]
+        },
+        "natural": {
+          "min_bytes": 2899968,
+          "median_bytes": 2899968,
+          "max_bytes": 2899968,
+          "samples_bytes": [
+            2899968,
+            2899968,
+            2899968
+          ],
+          "cpp_ratio": 0.8676470588235294
+        },
+        "tuned": {
+          "min_bytes": 2899968,
+          "median_bytes": 2899968,
+          "max_bytes": 2899968,
+          "samples_bytes": [
+            2899968,
+            2899968,
+            2899968
+          ],
+          "cpp_ratio": 0.8676470588235294
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 389255,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.005800351500511169
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 389255,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.005800351500511169
+        }
+      }
+    },
+    {
+      "task": "car-fleet",
+      "source_hashes": {
+        "natural": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+        "tuned": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 22.462583,
+          "median_ms": 22.904625,
+          "max_ms": 23.235417,
+          "samples_ms": [
+            22.462583,
+            23.235417,
+            23.014833,
+            22.525292,
+            22.534916,
+            22.69325,
+            23.1775,
+            22.929083,
+            23.02075,
+            22.904625,
+            22.656791,
+            22.985666,
+            23.051375,
+            22.78825,
+            22.714916
+          ]
+        },
+        "natural": {
+          "min_ms": 18.082792,
+          "median_ms": 18.552583,
+          "max_ms": 19.321167,
+          "samples_ms": [
+            18.5105,
+            18.480042,
+            19.321167,
+            18.702875,
+            18.70675,
+            18.552583,
+            18.184334,
+            18.528875,
+            18.408542,
+            18.618709,
+            18.484334,
+            18.67975,
+            18.082792,
+            18.810041,
+            18.75425
+          ],
+          "cpp_ratio": 0.8099928726185214,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 18.241416,
+          "median_ms": 18.397292,
+          "max_ms": 18.690042,
+          "samples_ms": [
+            18.646333,
+            18.275666,
+            18.372625,
+            18.315917,
+            18.560542,
+            18.313083,
+            18.543,
+            18.480875,
+            18.392917,
+            18.690042,
+            18.397041,
+            18.397292,
+            18.241416,
+            18.505209,
+            18.406667
+          ],
+          "cpp_ratio": 0.803212975545332,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 8257536,
+          "median_bytes": 8273920,
+          "max_bytes": 8306688,
+          "samples_bytes": [
+            8257536,
+            8273920,
+            8306688
+          ]
+        },
+        "natural": {
+          "min_bytes": 4194304,
+          "median_bytes": 4194304,
+          "max_bytes": 4194304,
+          "samples_bytes": [
+            4194304,
+            4194304,
+            4194304
+          ],
+          "cpp_ratio": 0.5069306930693069
+        },
+        "tuned": {
+          "min_bytes": 4194304,
+          "median_bytes": 4194304,
+          "max_bytes": 4194304,
+          "samples_bytes": [
+            4194304,
+            4194304,
+            4194304
+          ],
+          "cpp_ratio": 0.5069306930693069
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2400146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03576496243476868
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2400146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03576496243476868
+        }
+      }
+    },
+    {
+      "task": "coin-change",
+      "source_hashes": {
+        "natural": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+        "tuned": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 2.741916,
+          "median_ms": 2.846875,
+          "max_ms": 3.053042,
+          "samples_ms": [
+            3.053042,
+            2.904,
+            2.775208,
+            2.764625,
+            2.741916,
+            2.829375,
+            2.979667,
+            2.974917,
+            2.944708,
+            2.838042,
+            2.813083,
+            2.877584,
+            2.781209,
+            2.884542,
+            2.846875
+          ]
+        },
+        "natural": {
+          "min_ms": 3.867917,
+          "median_ms": 4.047875,
+          "max_ms": 4.503084,
+          "samples_ms": [
+            4.503084,
+            4.135625,
+            4.017209,
+            3.867917,
+            3.892875,
+            4.072042,
+            4.14575,
+            4.029208,
+            4.049917,
+            3.905417,
+            4.059584,
+            4.011833,
+            4.047875,
+            4.118625,
+            3.928959
+          ],
+          "cpp_ratio": 1.4218660812294184,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 3.819625,
+          "median_ms": 4.001916,
+          "max_ms": 4.371,
+          "samples_ms": [
+            4.323209,
+            4.115958,
+            3.95225,
+            3.844584,
+            4.032208,
+            4.114,
+            4.371,
+            4.047958,
+            4.0845,
+            4.001916,
+            3.853458,
+            3.853875,
+            3.819625,
+            3.987333,
+            3.869875
+          ],
+          "cpp_ratio": 1.4057224149286498,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 2506752,
+          "median_bytes": 2506752,
+          "max_bytes": 2506752,
+          "samples_bytes": [
+            2506752,
+            2506752,
+            2506752
+          ]
+        },
+        "natural": {
+          "min_bytes": 2490368,
+          "median_bytes": 2490368,
+          "max_bytes": 2490368,
+          "samples_bytes": [
+            2490368,
+            2490368,
+            2490368
+          ],
+          "cpp_ratio": 0.9934640522875817
+        },
+        "tuned": {
+          "min_bytes": 2490368,
+          "median_bytes": 2490368,
+          "max_bytes": 2490368,
+          "samples_bytes": [
+            2490368,
+            2490368,
+            2490368
+          ],
+          "cpp_ratio": 0.9934640522875817
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 800186,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01192370057106018
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 800186,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01192370057106018
+        }
+      }
+    },
+    {
+      "task": "contains-duplicate",
+      "source_hashes": {
+        "natural": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+        "tuned": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 6.250167,
+          "median_ms": 6.486666,
+          "max_ms": 6.870166,
+          "samples_ms": [
+            6.250167,
+            6.870166,
+            6.518042,
+            6.510334,
+            6.486666,
+            6.315542,
+            6.334417,
+            6.304709,
+            6.318791,
+            6.597417,
+            6.635917,
+            6.336792,
+            6.574375,
+            6.384042,
+            6.535791
+          ]
+        },
+        "natural": {
+          "min_ms": 9.612041,
+          "median_ms": 9.786958,
+          "max_ms": 10.188292,
+          "samples_ms": [
+            9.859375,
+            10.188292,
+            9.955833,
+            9.629666,
+            9.618667,
+            9.964708,
+            9.786958,
+            9.717542,
+            9.710834,
+            10.103333,
+            10.093792,
+            9.959292,
+            9.762875,
+            9.709709,
+            9.612041
+          ],
+          "cpp_ratio": 1.5087809361542588,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 9.547709,
+          "median_ms": 9.793334,
+          "max_ms": 10.41025,
+          "samples_ms": [
+            9.648917,
+            9.782833,
+            9.89225,
+            9.547709,
+            9.707708,
+            10.323875,
+            9.974916,
+            9.611125,
+            9.793334,
+            10.242958,
+            10.41025,
+            9.761125,
+            9.957208,
+            9.859167,
+            9.678584
+          ],
+          "cpp_ratio": 1.5097638756180756,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4063232,
+          "median_bytes": 4063232,
+          "max_bytes": 4063232,
+          "samples_bytes": [
+            4063232,
+            4063232,
+            4063232
+          ]
+        },
+        "natural": {
+          "min_bytes": 3293184,
+          "median_bytes": 3293184,
+          "max_bytes": 3293184,
+          "samples_bytes": [
+            3293184,
+            3293184,
+            3293184
+          ],
+          "cpp_ratio": 0.8104838709677419
+        },
+        "tuned": {
+          "min_bytes": 3293184,
+          "median_bytes": 3293184,
+          "max_bytes": 3293184,
+          "samples_bytes": [
+            3293184,
+            3293184,
+            3293184
+          ],
+          "cpp_ratio": 0.8104838709677419
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 873936,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.013022661209106445
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 873936,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.013022661209106445
+        }
+      }
+    },
+    {
+      "task": "course-schedule",
+      "source_hashes": {
+        "natural": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+        "tuned": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 22.663083,
+          "median_ms": 22.969791,
+          "max_ms": 23.764375,
+          "samples_ms": [
+            23.047959,
+            23.063625,
+            23.764375,
+            22.893916,
+            22.663083,
+            23.010625,
+            22.946416,
+            22.969791,
+            23.53975,
+            22.893416,
+            23.268125,
+            22.786542,
+            22.866625,
+            22.943542,
+            23.146041
+          ]
+        },
+        "natural": {
+          "min_ms": 4380.11975,
+          "median_ms": 4508.620625,
+          "max_ms": 4661.915209,
+          "samples_ms": [
+            4589.320084,
+            4538.55425,
+            4465.634417,
+            4380.11975,
+            4506.816667,
+            4437.561167,
+            4550.490167,
+            4578.336042,
+            4515.046958,
+            4587.531041,
+            4508.620625,
+            4482.292083,
+            4432.758584,
+            4661.915209,
+            4475.240917
+          ],
+          "cpp_ratio": 196.28479096740583,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 41.442458,
+          "median_ms": 42.3285,
+          "max_ms": 43.047167,
+          "samples_ms": [
+            42.17525,
+            41.442458,
+            42.187833,
+            42.3285,
+            42.881208,
+            42.331625,
+            42.829333,
+            41.633667,
+            42.3535,
+            43.047167,
+            41.964375,
+            41.924042,
+            42.253541,
+            42.892542,
+            42.798375
+          ],
+          "cpp_ratio": 1.8427899496342826,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 13959168,
+          "median_bytes": 13959168,
+          "max_bytes": 13959168,
+          "samples_bytes": [
+            13959168,
+            13959168,
+            13959168
+          ]
+        },
+        "natural": {
+          "min_bytes": 16187392,
+          "median_bytes": 16187392,
+          "max_bytes": 16990208,
+          "samples_bytes": [
+            16187392,
+            16990208,
+            16187392
+          ],
+          "cpp_ratio": 1.15962441314554
+        },
+        "tuned": {
+          "min_bytes": 12926976,
+          "median_bytes": 12926976,
+          "max_bytes": 12926976,
+          "samples_bytes": [
+            12926976,
+            12926976,
+            12926976
+          ],
+          "cpp_ratio": 0.926056338028169
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 9600250,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.14305487275123596
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 8800210,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.13113334774971008
+        }
+      }
+    },
+    {
+      "task": "gas-station",
+      "source_hashes": {
+        "natural": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+        "tuned": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 6.146291,
+          "median_ms": 6.310958,
+          "max_ms": 6.710125,
+          "samples_ms": [
+            6.211958,
+            6.702542,
+            6.710125,
+            6.467875,
+            6.335042,
+            6.310958,
+            6.299458,
+            6.18625,
+            6.226375,
+            6.500125,
+            6.322667,
+            6.300791,
+            6.221583,
+            6.50175,
+            6.146291
+          ]
+        },
+        "natural": {
+          "min_ms": 13.281583,
+          "median_ms": 13.526458,
+          "max_ms": 14.358625,
+          "samples_ms": [
+            13.390958,
+            14.358625,
+            13.9805,
+            13.713125,
+            13.640458,
+            13.281583,
+            13.410834,
+            13.476459,
+            13.525417,
+            13.526458,
+            13.617708,
+            13.506417,
+            13.61175,
+            13.594375,
+            13.363458
+          ],
+          "cpp_ratio": 2.1433287941387027,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 13.380834,
+          "median_ms": 13.696,
+          "max_ms": 14.195208,
+          "samples_ms": [
+            13.380834,
+            14.195208,
+            14.103208,
+            13.932333,
+            13.64,
+            13.525583,
+            13.77625,
+            13.696,
+            13.828916,
+            13.898208,
+            13.388875,
+            13.915416,
+            13.632459,
+            13.384125,
+            13.588459
+          ],
+          "cpp_ratio": 2.17019349518726,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4734976,
+          "median_bytes": 4734976,
+          "max_bytes": 4734976,
+          "samples_bytes": [
+            4734976,
+            4734976,
+            4734976
+          ]
+        },
+        "natural": {
+          "min_bytes": 3899392,
+          "median_bytes": 3899392,
+          "max_bytes": 3899392,
+          "samples_bytes": [
+            3899392,
+            3899392,
+            3899392
+          ],
+          "cpp_ratio": 0.8235294117647058
+        },
+        "tuned": {
+          "min_bytes": 3899392,
+          "median_bytes": 3899392,
+          "max_bytes": 3899392,
+          "samples_bytes": [
+            3899392,
+            3899392,
+            3899392
+          ],
+          "cpp_ratio": 0.8235294117647058
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 579966,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.00864216685295105
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 579966,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.00864216685295105
+        }
+      }
+    },
+    {
+      "task": "generate-parentheses",
+      "source_hashes": {
+        "natural": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+        "tuned": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 3.332458,
+          "median_ms": 3.474167,
+          "max_ms": 3.632375,
+          "samples_ms": [
+            3.332458,
+            3.41125,
+            3.446292,
+            3.593,
+            3.536,
+            3.424458,
+            3.574084,
+            3.584583,
+            3.387125,
+            3.488708,
+            3.376125,
+            3.632375,
+            3.474167,
+            3.341875,
+            3.496167
+          ]
+        },
+        "natural": {
+          "min_ms": 26.732791,
+          "median_ms": 27.597459,
+          "max_ms": 28.7545,
+          "samples_ms": [
+            28.251875,
+            27.597459,
+            28.7545,
+            26.813,
+            27.383375,
+            27.709208,
+            26.960125,
+            26.732791,
+            26.829917,
+            28.219833,
+            27.24225,
+            26.976042,
+            27.745,
+            28.364084,
+            27.777083
+          ],
+          "cpp_ratio": 7.943619002771024,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 26.848708,
+          "median_ms": 27.233958,
+          "max_ms": 27.867958,
+          "samples_ms": [
+            27.104458,
+            27.229833,
+            26.848708,
+            27.052791,
+            26.9735,
+            27.340959,
+            27.643333,
+            27.36975,
+            27.867958,
+            27.274541,
+            27.233958,
+            27.346417,
+            27.147917,
+            27.63225,
+            26.934291
+          ],
+          "cpp_ratio": 7.8389893174392595,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 2490368,
+          "median_bytes": 2490368,
+          "max_bytes": 2490368,
+          "samples_bytes": [
+            2490368,
+            2490368,
+            2490368
+          ]
+        },
+        "natural": {
+          "min_bytes": 3145728,
+          "median_bytes": 3145728,
+          "max_bytes": 3145728,
+          "samples_bytes": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "cpp_ratio": 1.263157894736842
+        },
+        "tuned": {
+          "min_bytes": 3145728,
+          "median_bytes": 3145728,
+          "max_bytes": 3145728,
+          "samples_bytes": [
+            3145728,
+            3145728,
+            3145728
+          ],
+          "cpp_ratio": 1.263157894736842
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 611650,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.009114295244216919
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 611650,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.009114295244216919
+        }
+      }
+    },
+    {
+      "task": "insert-interval",
+      "source_hashes": {
+        "natural": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+        "tuned": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 17.498292,
+          "median_ms": 17.831458,
+          "max_ms": 18.125792,
+          "samples_ms": [
+            17.498292,
+            17.831458,
+            18.102166,
+            18.007042,
+            18.125792,
+            17.864042,
+            17.742166,
+            17.991083,
+            17.699167,
+            17.664667,
+            18.022167,
+            17.695959,
+            17.599166,
+            17.539667,
+            17.916042
+          ]
+        },
+        "natural": {
+          "min_ms": 44.269042,
+          "median_ms": 44.801458,
+          "max_ms": 45.652167,
+          "samples_ms": [
+            45.03875,
+            44.48725,
+            44.906708,
+            44.920667,
+            45.652167,
+            44.407125,
+            44.801458,
+            44.78775,
+            44.84325,
+            45.229417,
+            44.269042,
+            44.490917,
+            44.717583,
+            44.924584,
+            44.483
+          ],
+          "cpp_ratio": 2.5124955009287513,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 44.262458,
+          "median_ms": 44.784417,
+          "max_ms": 45.541709,
+          "samples_ms": [
+            44.730375,
+            44.6765,
+            44.262458,
+            44.784417,
+            45.22675,
+            45.329375,
+            45.541709,
+            44.753958,
+            44.744333,
+            44.84075,
+            45.17325,
+            44.529792,
+            44.872833,
+            44.887625,
+            44.6735
+          ],
+          "cpp_ratio": 2.5115398303380463,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 16220160,
+          "median_bytes": 16252928,
+          "max_bytes": 16252928,
+          "samples_bytes": [
+            16252928,
+            16220160,
+            16252928
+          ]
+        },
+        "natural": {
+          "min_bytes": 5652480,
+          "median_bytes": 5652480,
+          "max_bytes": 5652480,
+          "samples_bytes": [
+            5652480,
+            5652480,
+            5652480
+          ],
+          "cpp_ratio": 0.3477822580645161
+        },
+        "tuned": {
+          "min_bytes": 5652480,
+          "median_bytes": 5652480,
+          "max_bytes": 5652480,
+          "samples_bytes": [
+            5652480,
+            5652480,
+            5652480
+          ],
+          "cpp_ratio": 0.3477822580645161
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2648944,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.039472341537475586
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2648944,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.039472341537475586
+        }
+      }
+    },
+    {
+      "task": "kth-largest-element-in-an-array",
+      "source_hashes": {
+        "natural": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+        "tuned": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 8.44275,
+          "median_ms": 8.518708,
+          "max_ms": 8.900709,
+          "samples_ms": [
+            8.518708,
+            8.611875,
+            8.633417,
+            8.463375,
+            8.516958,
+            8.549542,
+            8.515792,
+            8.8495,
+            8.500917,
+            8.514833,
+            8.60425,
+            8.44275,
+            8.455708,
+            8.536416,
+            8.900709
+          ]
+        },
+        "natural": {
+          "min_ms": 13.444125,
+          "median_ms": 13.588041,
+          "max_ms": 13.974458,
+          "samples_ms": [
+            13.820583,
+            13.588041,
+            13.444125,
+            13.833875,
+            13.585833,
+            13.445417,
+            13.893,
+            13.648542,
+            13.974458,
+            13.602625,
+            13.549042,
+            13.789208,
+            13.579833,
+            13.457541,
+            13.561583
+          ],
+          "cpp_ratio": 1.5950823763415767,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 13.382625,
+          "median_ms": 13.665292,
+          "max_ms": 14.09,
+          "samples_ms": [
+            13.725208,
+            13.710417,
+            13.948125,
+            13.592875,
+            13.738875,
+            14.09,
+            13.788833,
+            13.420041,
+            13.704709,
+            13.665292,
+            13.640541,
+            13.631958,
+            13.462834,
+            13.602709,
+            13.382625
+          ],
+          "cpp_ratio": 1.6041507702811273,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4096000,
+          "median_bytes": 4096000,
+          "max_bytes": 4096000,
+          "samples_bytes": [
+            4096000,
+            4096000,
+            4096000
+          ]
+        },
+        "natural": {
+          "min_bytes": 4063232,
+          "median_bytes": 4063232,
+          "max_bytes": 4063232,
+          "samples_bytes": [
+            4063232,
+            4063232,
+            4063232
+          ],
+          "cpp_ratio": 0.992
+        },
+        "tuned": {
+          "min_bytes": 4063232,
+          "median_bytes": 4063232,
+          "max_bytes": 4063232,
+          "samples_bytes": [
+            4063232,
+            4063232,
+            4063232
+          ],
+          "cpp_ratio": 0.992
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 1600146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.023844033479690552
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 1600146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.023844033479690552
+        }
+      }
+    },
+    {
+      "task": "last-stone-weight",
+      "source_hashes": {
+        "natural": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+        "tuned": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 10.723,
+          "median_ms": 11.439209,
+          "max_ms": 13.966042,
+          "samples_ms": [
+            11.663666,
+            10.932209,
+            12.270875,
+            11.226542,
+            10.723,
+            11.649042,
+            13.787625,
+            13.966042,
+            13.158167,
+            12.008334,
+            11.188125,
+            11.439209,
+            11.25125,
+            11.177958,
+            11.355083
+          ]
+        },
+        "natural": {
+          "min_ms": 24707.827208,
+          "median_ms": 24962.075583,
+          "max_ms": 29587.092542,
+          "samples_ms": [
+            24865.923625,
+            25265.573667,
+            24962.075583,
+            25018.171041,
+            24847.209334,
+            25269.483959,
+            27135.6785,
+            29587.092542,
+            29081.757792,
+            25602.801041,
+            24843.289291,
+            24804.294209,
+            24825.483792,
+            24707.827208,
+            24760.422083
+          ],
+          "cpp_ratio": 2182.1504951085344,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 55.116458,
+          "median_ms": 56.647542,
+          "max_ms": 72.280125,
+          "samples_ms": [
+            57.079208,
+            55.507958,
+            57.179583,
+            56.078959,
+            55.116458,
+            58.033958,
+            70.407791,
+            72.280125,
+            59.451208,
+            56.163625,
+            56.05325,
+            59.611791,
+            56.647542,
+            55.401958,
+            56.011916
+          ],
+          "cpp_ratio": 4.952050618185226,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4734976,
+          "median_bytes": 4734976,
+          "max_bytes": 4734976,
+          "samples_bytes": [
+            4734976,
+            4734976,
+            4734976
+          ]
+        },
+        "natural": {
+          "min_bytes": 6553600,
+          "median_bytes": 7143424,
+          "max_bytes": 7159808,
+          "samples_bytes": [
+            6553600,
+            7143424,
+            7159808
+          ],
+          "cpp_ratio": 1.508650519031142
+        },
+        "tuned": {
+          "min_bytes": 3915776,
+          "median_bytes": 3915776,
+          "max_bytes": 3915776,
+          "samples_bytes": [
+            3915776,
+            3915776,
+            3915776
+          ],
+          "cpp_ratio": 0.8269896193771626
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 3200130,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0476856529712677
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 1600090,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.023843199014663696
+        }
+      }
+    },
+    {
+      "task": "letter-combinations-of-a-phone-number",
+      "source_hashes": {
+        "natural": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+        "tuned": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.093792,
+          "median_ms": 5.366917,
+          "max_ms": 5.6215,
+          "samples_ms": [
+            5.298916,
+            5.366917,
+            5.376417,
+            5.411084,
+            5.177959,
+            5.096959,
+            5.372125,
+            5.16975,
+            5.381917,
+            5.6215,
+            5.454292,
+            5.549041,
+            5.352459,
+            5.2695,
+            5.093792
+          ]
+        },
+        "natural": {
+          "min_ms": 223.687792,
+          "median_ms": 225.050208,
+          "max_ms": 225.919667,
+          "samples_ms": [
+            224.36325,
+            225.395875,
+            225.919667,
+            225.05675,
+            224.626917,
+            224.038333,
+            225.497042,
+            225.050208,
+            225.258125,
+            224.497,
+            225.333292,
+            225.410542,
+            224.141375,
+            224.023666,
+            223.687792
+          ],
+          "cpp_ratio": 41.932865367584405,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 192.886,
+          "median_ms": 193.939125,
+          "max_ms": 201.423917,
+          "samples_ms": [
+            198.744416,
+            193.601167,
+            194.088209,
+            194.535708,
+            194.034208,
+            193.100542,
+            194.203458,
+            193.217167,
+            201.423917,
+            193.939125,
+            193.780333,
+            194.063416,
+            193.616083,
+            192.9145,
+            192.886
+          ],
+          "cpp_ratio": 36.136039554925105,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4423680,
+          "median_bytes": 4423680,
+          "max_bytes": 4423680,
+          "samples_bytes": [
+            4423680,
+            4423680,
+            4423680
+          ]
+        },
+        "natural": {
+          "min_bytes": 2916352,
+          "median_bytes": 2916352,
+          "max_bytes": 2916352,
+          "samples_bytes": [
+            2916352,
+            2916352,
+            2916352
+          ],
+          "cpp_ratio": 0.6592592592592592
+        },
+        "tuned": {
+          "min_bytes": 2916352,
+          "median_bytes": 2916352,
+          "max_bytes": 2916352,
+          "samples_bytes": [
+            2916352,
+            2916352,
+            2916352
+          ],
+          "cpp_ratio": 0.6592592592592592
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 1310951,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01953469216823578
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 1310951,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01953469216823578
+        }
+      }
+    },
+    {
+      "task": "longest-repeating-character-replacement",
+      "source_hashes": {
+        "natural": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+        "tuned": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 2.7625,
+          "median_ms": 2.940541,
+          "max_ms": 3.09775,
+          "samples_ms": [
+            2.992833,
+            2.767542,
+            2.940541,
+            2.915166,
+            2.815041,
+            2.7625,
+            2.921208,
+            2.895667,
+            3.051166,
+            2.965916,
+            3.017083,
+            3.020291,
+            3.032375,
+            2.932,
+            3.09775
+          ]
+        },
+        "natural": {
+          "min_ms": 10.580833,
+          "median_ms": 10.906708,
+          "max_ms": 11.122084,
+          "samples_ms": [
+            10.78225,
+            11.045375,
+            10.914667,
+            10.872667,
+            10.654833,
+            10.95525,
+            10.906708,
+            10.694375,
+            11.122084,
+            10.580833,
+            10.893792,
+            10.799417,
+            10.973375,
+            11.113709,
+            10.942042
+          ],
+          "cpp_ratio": 3.7090821042794504,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 10.604625,
+          "median_ms": 10.7535,
+          "max_ms": 11.10925,
+          "samples_ms": [
+            10.928209,
+            10.655125,
+            11.017458,
+            10.824209,
+            10.604625,
+            11.0165,
+            10.615209,
+            11.022625,
+            10.636083,
+            10.92725,
+            11.10925,
+            10.733041,
+            10.718,
+            10.656708,
+            10.7535
+          ],
+          "cpp_ratio": 3.656980127126267,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 2048000,
+          "median_bytes": 2048000,
+          "max_bytes": 2048000,
+          "samples_bytes": [
+            2048000,
+            2048000,
+            2048000
+          ]
+        },
+        "natural": {
+          "min_bytes": 1949696,
+          "median_bytes": 1966080,
+          "max_bytes": 1966080,
+          "samples_bytes": [
+            1966080,
+            1966080,
+            1949696
+          ],
+          "cpp_ratio": 0.96
+        },
+        "tuned": {
+          "min_bytes": 1966080,
+          "median_bytes": 1966080,
+          "max_bytes": 1966080,
+          "samples_bytes": [
+            1966080,
+            1966080,
+            1966080
+          ],
+          "cpp_ratio": 0.96
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 100338,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0014951527118682861
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 100338,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0014951527118682861
+        }
+      }
+    },
+    {
+      "task": "longest-substring-without-repeating-characters",
+      "source_hashes": {
+        "natural": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+        "tuned": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 2.630916,
+          "median_ms": 2.858042,
+          "max_ms": 4.198333,
+          "samples_ms": [
+            3.120041,
+            2.858042,
+            2.911667,
+            2.641417,
+            2.723125,
+            3.017958,
+            2.894542,
+            4.198333,
+            2.964709,
+            2.867083,
+            2.834125,
+            2.82425,
+            2.630916,
+            2.835542,
+            2.77425
+          ]
+        },
+        "natural": {
+          "min_ms": 2.976709,
+          "median_ms": 3.21,
+          "max_ms": 3.735291,
+          "samples_ms": [
+            3.735291,
+            3.214083,
+            3.291625,
+            3.135791,
+            3.237542,
+            3.147541,
+            3.240208,
+            3.449417,
+            3.278875,
+            3.21,
+            3.19925,
+            3.1565,
+            3.053125,
+            3.127417,
+            2.976709
+          ],
+          "cpp_ratio": 1.1231465457820422,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 3.065791,
+          "median_ms": 3.236083,
+          "max_ms": 3.509166,
+          "samples_ms": [
+            3.509166,
+            3.318916,
+            3.20875,
+            3.065791,
+            3.253041,
+            3.327875,
+            3.250625,
+            3.216083,
+            3.273083,
+            3.196083,
+            3.177833,
+            3.34425,
+            3.128917,
+            3.084875,
+            3.236083
+          ],
+          "cpp_ratio": 1.1322727237738281,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 2048000,
+          "median_bytes": 2048000,
+          "max_bytes": 2048000,
+          "samples_bytes": [
+            2048000,
+            2048000,
+            2048000
+          ]
+        },
+        "natural": {
+          "min_bytes": 1802240,
+          "median_bytes": 1802240,
+          "max_bytes": 1802240,
+          "samples_bytes": [
+            1802240,
+            1802240,
+            1802240
+          ],
+          "cpp_ratio": 0.88
+        },
+        "tuned": {
+          "min_bytes": 1802240,
+          "median_bytes": 1802240,
+          "max_bytes": 1802240,
+          "samples_bytes": [
+            1802240,
+            1802240,
+            1802240
+          ],
+          "cpp_ratio": 0.88
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 102178,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0015225708484649658
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 102178,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0015225708484649658
+        }
+      }
+    },
+    {
+      "task": "maximum-subarray",
+      "source_hashes": {
+        "natural": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+        "tuned": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.498375,
+          "median_ms": 5.60325,
+          "max_ms": 5.808417,
+          "samples_ms": [
+            5.60325,
+            5.537125,
+            5.498375,
+            5.808417,
+            5.54225,
+            5.571875,
+            5.627958,
+            5.790208,
+            5.710542,
+            5.757375,
+            5.709125,
+            5.750292,
+            5.518583,
+            5.551791,
+            5.591625
+          ]
+        },
+        "natural": {
+          "min_ms": 9.072834,
+          "median_ms": 9.242541,
+          "max_ms": 9.571666,
+          "samples_ms": [
+            9.18025,
+            9.232625,
+            9.242541,
+            9.571666,
+            9.204292,
+            9.296375,
+            9.072834,
+            9.1825,
+            9.342083,
+            9.391084,
+            9.336125,
+            9.27575,
+            9.21575,
+            9.4005,
+            9.1645
+          ],
+          "cpp_ratio": 1.649496452951412,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 8.9935,
+          "median_ms": 9.189416,
+          "max_ms": 9.360792,
+          "samples_ms": [
+            9.115042,
+            9.064125,
+            9.134375,
+            9.360792,
+            9.301916,
+            9.305583,
+            9.194917,
+            9.148833,
+            9.189416,
+            9.075541,
+            9.211667,
+            9.265458,
+            9.218667,
+            9.18925,
+            8.9935
+          ],
+          "cpp_ratio": 1.640015348235399,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 3784704,
+          "median_bytes": 3784704,
+          "max_bytes": 3784704,
+          "samples_bytes": [
+            3784704,
+            3784704,
+            3784704
+          ]
+        },
+        "natural": {
+          "min_bytes": 2932736,
+          "median_bytes": 2932736,
+          "max_bytes": 2932736,
+          "samples_bytes": [
+            2932736,
+            2932736,
+            2932736
+          ],
+          "cpp_ratio": 0.7748917748917749
+        },
+        "tuned": {
+          "min_bytes": 2932736,
+          "median_bytes": 2932736,
+          "max_bytes": 2932736,
+          "samples_bytes": [
+            2932736,
+            2932736,
+            2932736
+          ],
+          "cpp_ratio": 0.7748917748917749
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 439279,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.006545767188072205
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 439279,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.006545767188072205
+        }
+      }
+    },
+    {
+      "task": "median-of-two-sorted-arrays",
+      "source_hashes": {
+        "natural": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+        "tuned": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.987042,
+          "median_ms": 6.122667,
+          "max_ms": 6.465167,
+          "samples_ms": [
+            6.116875,
+            6.122667,
+            6.195833,
+            6.241667,
+            6.235167,
+            6.121459,
+            6.121167,
+            6.236916,
+            6.020667,
+            6.465167,
+            6.042875,
+            5.996917,
+            5.987042,
+            6.239584,
+            6.13
+          ]
+        },
+        "natural": {
+          "min_ms": 9.230042,
+          "median_ms": 9.452959,
+          "max_ms": 9.680792,
+          "samples_ms": [
+            9.462292,
+            9.408375,
+            9.67175,
+            9.485834,
+            9.452959,
+            9.363875,
+            9.615958,
+            9.490583,
+            9.3135,
+            9.402417,
+            9.680792,
+            9.284708,
+            9.521833,
+            9.285375,
+            9.230042
+          ],
+          "cpp_ratio": 1.543928324045714,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 9.1875,
+          "median_ms": 9.520125,
+          "max_ms": 9.8015,
+          "samples_ms": [
+            9.507125,
+            9.256083,
+            9.710291,
+            9.573,
+            9.199833,
+            9.8015,
+            9.520125,
+            9.560584,
+            9.5315,
+            9.359791,
+            9.647542,
+            9.290833,
+            9.243541,
+            9.1875,
+            9.6145
+          ],
+          "cpp_ratio": 1.5548983800686857,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4112384,
+          "median_bytes": 4112384,
+          "max_bytes": 4112384,
+          "samples_bytes": [
+            4112384,
+            4112384,
+            4112384
+          ]
+        },
+        "natural": {
+          "min_bytes": 3670016,
+          "median_bytes": 3670016,
+          "max_bytes": 3670016,
+          "samples_bytes": [
+            3670016,
+            3670016,
+            3670016
+          ],
+          "cpp_ratio": 0.8924302788844621
+        },
+        "tuned": {
+          "min_bytes": 3653632,
+          "median_bytes": 3653632,
+          "max_bytes": 3653632,
+          "samples_bytes": [
+            3653632,
+            3653632,
+            3653632
+          ],
+          "cpp_ratio": 0.8884462151394422
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 1200146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01788356900215149
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 1200146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.01788356900215149
+        }
+      }
+    },
+    {
+      "task": "meeting-rooms",
+      "source_hashes": {
+        "natural": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+        "tuned": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 22.857125,
+          "median_ms": 23.209209,
+          "max_ms": 23.482,
+          "samples_ms": [
+            23.366541,
+            23.078916,
+            23.3705,
+            23.43275,
+            22.916833,
+            23.209875,
+            23.482,
+            23.162541,
+            23.2175,
+            23.389459,
+            22.871208,
+            22.961958,
+            23.209209,
+            23.133333,
+            22.857125
+          ]
+        },
+        "natural": {
+          "min_ms": 19.877083,
+          "median_ms": 20.102541,
+          "max_ms": 20.424167,
+          "samples_ms": [
+            20.219291,
+            20.102541,
+            20.424167,
+            19.977125,
+            20.083292,
+            20.214917,
+            19.966083,
+            19.877083,
+            20.216834,
+            20.15125,
+            20.069833,
+            20.333541,
+            19.9965,
+            19.97475,
+            20.183041
+          ],
+          "cpp_ratio": 0.8661450288977964,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 19.739916,
+          "median_ms": 20.075792,
+          "max_ms": 20.321083,
+          "samples_ms": [
+            20.045125,
+            20.170542,
+            19.90975,
+            20.180791,
+            20.297167,
+            19.832917,
+            19.739916,
+            20.321083,
+            20.181916,
+            19.857666,
+            20.209042,
+            20.117166,
+            19.935292,
+            20.075792,
+            20.042084
+          ],
+          "cpp_ratio": 0.8649925122394304,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 8716288,
+          "median_bytes": 8716288,
+          "max_bytes": 8716288,
+          "samples_bytes": [
+            8716288,
+            8716288,
+            8716288
+          ]
+        },
+        "natural": {
+          "min_bytes": 5439488,
+          "median_bytes": 5439488,
+          "max_bytes": 5439488,
+          "samples_bytes": [
+            5439488,
+            5439488,
+            5439488
+          ],
+          "cpp_ratio": 0.6240601503759399
+        },
+        "tuned": {
+          "min_bytes": 5439488,
+          "median_bytes": 5439488,
+          "max_bytes": 5439488,
+          "samples_bytes": [
+            5439488,
+            5439488,
+            5439488
+          ],
+          "cpp_ratio": 0.6240601503759399
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2400138,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.035764843225479126
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2400138,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.035764843225479126
+        }
+      }
+    },
+    {
+      "task": "min-cost-climbing-stairs",
+      "source_hashes": {
+        "natural": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+        "tuned": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 4.722,
+          "median_ms": 4.932708,
+          "max_ms": 5.164709,
+          "samples_ms": [
+            4.8305,
+            5.164709,
+            4.972292,
+            4.904083,
+            4.811459,
+            4.9135,
+            5.1535,
+            4.932708,
+            4.722,
+            5.058625,
+            4.962541,
+            4.92425,
+            4.860292,
+            4.95,
+            5.098542
+          ]
+        },
+        "natural": {
+          "min_ms": 8.404916,
+          "median_ms": 8.584666,
+          "max_ms": 8.827875,
+          "samples_ms": [
+            8.522875,
+            8.614541,
+            8.619583,
+            8.735584,
+            8.584666,
+            8.661083,
+            8.827875,
+            8.580709,
+            8.804042,
+            8.537917,
+            8.404916,
+            8.515542,
+            8.537291,
+            8.498666,
+            8.6215
+          ],
+          "cpp_ratio": 1.7403556018316917,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 8.348791,
+          "median_ms": 8.664834,
+          "max_ms": 8.997834,
+          "samples_ms": [
+            8.348791,
+            8.997834,
+            8.627792,
+            8.646541,
+            8.640209,
+            8.694167,
+            8.664834,
+            8.651417,
+            8.529083,
+            8.668542,
+            8.702375,
+            8.586666,
+            8.665875,
+            8.681833,
+            8.826333
+          ],
+          "cpp_ratio": 1.7566079321946486,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 3342336,
+          "median_bytes": 3342336,
+          "max_bytes": 3342336,
+          "samples_bytes": [
+            3342336,
+            3342336,
+            3342336
+          ]
+        },
+        "natural": {
+          "min_bytes": 2899968,
+          "median_bytes": 2899968,
+          "max_bytes": 2899968,
+          "samples_bytes": [
+            2899968,
+            2899968,
+            2899968
+          ],
+          "cpp_ratio": 0.8676470588235294
+        },
+        "tuned": {
+          "min_bytes": 2899968,
+          "median_bytes": 2899968,
+          "max_bytes": 2899968,
+          "samples_bytes": [
+            2899968,
+            2899968,
+            2899968
+          ],
+          "cpp_ratio": 0.8676470588235294
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 389255,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.005800351500511169
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 389255,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.005800351500511169
+        }
+      }
+    },
+    {
+      "task": "plus-one",
+      "source_hashes": {
+        "natural": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+        "tuned": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.295625,
+          "median_ms": 5.5015,
+          "max_ms": 6.073625,
+          "samples_ms": [
+            5.580084,
+            5.39525,
+            5.641417,
+            5.489541,
+            5.580291,
+            5.295625,
+            5.381334,
+            5.383083,
+            6.015125,
+            5.747875,
+            5.41725,
+            5.835458,
+            5.5015,
+            5.304,
+            6.073625
+          ]
+        },
+        "natural": {
+          "min_ms": 22.587875,
+          "median_ms": 23.16975,
+          "max_ms": 23.546625,
+          "samples_ms": [
+            23.316,
+            23.195875,
+            22.846125,
+            23.038458,
+            22.853541,
+            22.829,
+            23.184709,
+            23.207,
+            23.16975,
+            22.7035,
+            23.223084,
+            22.587875,
+            23.160667,
+            23.264708,
+            23.546625
+          ],
+          "cpp_ratio": 4.211533218213215,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 22.596834,
+          "median_ms": 23.106625,
+          "max_ms": 24.338584,
+          "samples_ms": [
+            23.106625,
+            23.025375,
+            22.942625,
+            23.2805,
+            23.136375,
+            23.197791,
+            22.88125,
+            24.338584,
+            22.924291,
+            23.086542,
+            23.197542,
+            23.565042,
+            22.701584,
+            22.596834,
+            24.153959
+          ],
+          "cpp_ratio": 4.200059074797783,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 4210688,
+          "median_bytes": 4210688,
+          "max_bytes": 4210688,
+          "samples_bytes": [
+            4210688,
+            4210688,
+            4210688
+          ]
+        },
+        "natural": {
+          "min_bytes": 3620864,
+          "median_bytes": 3620864,
+          "max_bytes": 3620864,
+          "samples_bytes": [
+            3620864,
+            3620864,
+            3620864
+          ],
+          "cpp_ratio": 0.8599221789883269
+        },
+        "tuned": {
+          "min_bytes": 3620864,
+          "median_bytes": 3620864,
+          "max_bytes": 3620864,
+          "samples_bytes": [
+            3620864,
+            3620864,
+            3620864
+          ],
+          "cpp_ratio": 0.8599221789883269
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 1600130,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.02384379506111145
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 1600130,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.02384379506111145
+        }
+      }
+    },
+    {
+      "task": "reverse-integer",
+      "source_hashes": {
+        "natural": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+        "tuned": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 12.057792,
+          "median_ms": 12.34025,
+          "max_ms": 12.792916,
+          "samples_ms": [
+            12.464417,
+            12.460125,
+            12.136125,
+            12.792916,
+            12.420583,
+            12.34025,
+            12.52275,
+            12.268042,
+            12.285542,
+            12.095625,
+            12.498834,
+            12.057792,
+            12.395542,
+            12.21975,
+            12.254458
+          ]
+        },
+        "natural": {
+          "min_ms": 28.668542,
+          "median_ms": 29.300625,
+          "max_ms": 29.655416,
+          "samples_ms": [
+            29.427125,
+            29.576375,
+            29.655416,
+            29.475792,
+            29.360334,
+            29.09025,
+            29.129583,
+            29.0735,
+            28.888042,
+            29.481083,
+            29.300625,
+            28.668542,
+            29.476084,
+            29.250667,
+            29.257833
+          ],
+          "cpp_ratio": 2.3743947650979518,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 29.075834,
+          "median_ms": 29.266834,
+          "max_ms": 31.46775,
+          "samples_ms": [
+            29.076333,
+            29.476125,
+            29.075834,
+            31.46775,
+            29.219959,
+            29.266834,
+            29.372917,
+            29.314875,
+            29.1885,
+            29.153791,
+            29.15225,
+            29.306666,
+            29.090792,
+            29.635875,
+            29.453333
+          ],
+          "cpp_ratio": 2.371656489941452,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 7831552,
+          "median_bytes": 7831552,
+          "max_bytes": 7847936,
+          "samples_bytes": [
+            7831552,
+            7831552,
+            7847936
+          ]
+        },
+        "natural": {
+          "min_bytes": 4145152,
+          "median_bytes": 4145152,
+          "max_bytes": 4145152,
+          "samples_bytes": [
+            4145152,
+            4145152,
+            4145152
+          ],
+          "cpp_ratio": 0.5292887029288703
+        },
+        "tuned": {
+          "min_bytes": 4128768,
+          "median_bytes": 4128768,
+          "max_bytes": 4128768,
+          "samples_bytes": [
+            4128768,
+            4128768,
+            4128768
+          ],
+          "cpp_ratio": 0.5271966527196653
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2110942,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03145548701286316
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2110942,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03145548701286316
+        }
+      }
+    },
+    {
+      "task": "reverse-linked-list",
+      "source_hashes": {
+        "natural": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+        "tuned": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 11.174375,
+          "median_ms": 11.307625,
+          "max_ms": 11.682625,
+          "samples_ms": [
+            11.263125,
+            11.682625,
+            11.307625,
+            11.610875,
+            11.392208,
+            11.352084,
+            11.2765,
+            11.257208,
+            11.504541,
+            11.2915,
+            11.533875,
+            11.284,
+            11.575083,
+            11.180917,
+            11.174375
+          ]
+        },
+        "natural": {
+          "min_ms": 31.61225,
+          "median_ms": 32.1075,
+          "max_ms": 32.426916,
+          "samples_ms": [
+            32.111833,
+            32.075458,
+            32.426916,
+            32.157375,
+            32.046125,
+            32.294541,
+            31.950334,
+            32.376625,
+            31.865375,
+            32.3885,
+            32.056,
+            31.61225,
+            32.1075,
+            31.782959,
+            32.179834
+          ],
+          "cpp_ratio": 2.8394556770320913,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 31.870834,
+          "median_ms": 32.140917,
+          "max_ms": 33.939625,
+          "samples_ms": [
+            31.925042,
+            32.669125,
+            33.939625,
+            32.616125,
+            32.083125,
+            31.974792,
+            32.317,
+            32.02075,
+            32.065208,
+            32.169083,
+            32.830916,
+            32.261584,
+            31.870834,
+            31.962958,
+            32.140917
+          ],
+          "cpp_ratio": 2.8424109395208985,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 8765440,
+          "median_bytes": 8765440,
+          "max_bytes": 8765440,
+          "samples_bytes": [
+            8765440,
+            8765440,
+            8765440
+          ]
+        },
+        "natural": {
+          "min_bytes": 4341760,
+          "median_bytes": 4341760,
+          "max_bytes": 4341760,
+          "samples_bytes": [
+            4341760,
+            4341760,
+            4341760
+          ],
+          "cpp_ratio": 0.4953271028037383
+        },
+        "tuned": {
+          "min_bytes": 4341760,
+          "median_bytes": 4341760,
+          "max_bytes": 4341760,
+          "samples_bytes": [
+            4341760,
+            4341760,
+            4341760
+          ],
+          "cpp_ratio": 0.4953271028037383
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2400146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03576496243476868
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2400146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03576496243476868
+        }
+      }
+    },
+    {
+      "task": "search-in-rotated-sorted-array",
+      "source_hashes": {
+        "natural": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+        "tuned": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.484375,
+          "median_ms": 5.600042,
+          "max_ms": 5.770666,
+          "samples_ms": [
+            5.581083,
+            5.484375,
+            5.705209,
+            5.509458,
+            5.64925,
+            5.762,
+            5.495958,
+            5.681542,
+            5.641375,
+            5.564125,
+            5.585042,
+            5.600042,
+            5.627917,
+            5.770666,
+            5.591167
+          ]
+        },
+        "natural": {
+          "min_ms": 8.608958,
+          "median_ms": 8.752875,
+          "max_ms": 9.1325,
+          "samples_ms": [
+            8.752875,
+            9.010917,
+            8.65375,
+            8.608958,
+            8.831375,
+            8.732416,
+            8.830042,
+            8.820083,
+            8.711666,
+            8.91125,
+            8.678709,
+            8.893292,
+            8.730916,
+            9.1325,
+            8.70175
+          ],
+          "cpp_ratio": 1.5630016703446152,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 8.578875,
+          "median_ms": 8.78525,
+          "max_ms": 9.209375,
+          "samples_ms": [
+            8.936083,
+            8.928791,
+            8.760125,
+            9.052042,
+            8.578875,
+            8.852625,
+            8.705625,
+            8.601125,
+            9.209375,
+            8.78525,
+            8.746875,
+            8.771125,
+            8.7465,
+            9.133792,
+            8.808541
+          ],
+          "cpp_ratio": 1.5687828769855654,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 3932160,
+          "median_bytes": 3932160,
+          "max_bytes": 3932160,
+          "samples_bytes": [
+            3932160,
+            3932160,
+            3932160
+          ]
+        },
+        "natural": {
+          "min_bytes": 3096576,
+          "median_bytes": 3096576,
+          "max_bytes": 3096576,
+          "samples_bytes": [
+            3096576,
+            3096576,
+            3096576
+          ],
+          "cpp_ratio": 0.7875
+        },
+        "tuned": {
+          "min_bytes": 3096576,
+          "median_bytes": 3096576,
+          "max_bytes": 3096576,
+          "samples_bytes": [
+            3096576,
+            3096576,
+            3096576
+          ],
+          "cpp_ratio": 0.7875
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 589031,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.008777245879173279
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 589031,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.008777245879173279
+        }
+      }
+    },
+    {
+      "task": "single-number",
+      "source_hashes": {
+        "natural": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+        "tuned": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 5.728083,
+          "median_ms": 5.868833,
+          "max_ms": 9.783958,
+          "samples_ms": [
+            9.783958,
+            7.96275,
+            6.799459,
+            6.508625,
+            6.0175,
+            5.868833,
+            6.110458,
+            5.857334,
+            5.842666,
+            5.809167,
+            5.78375,
+            5.728083,
+            5.98725,
+            5.831833,
+            5.731292
+          ]
+        },
+        "natural": {
+          "min_ms": 12.515541,
+          "median_ms": 12.709625,
+          "max_ms": 18.712,
+          "samples_ms": [
+            14.545375,
+            14.33125,
+            15.512625,
+            18.712,
+            12.85575,
+            12.521209,
+            12.949125,
+            12.722917,
+            12.608625,
+            12.689042,
+            12.685084,
+            12.617459,
+            12.515541,
+            12.701375,
+            12.709625
+          ],
+          "cpp_ratio": 2.1656136748140558,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 8.802417,
+          "median_ms": 9.162291,
+          "max_ms": 15.955208,
+          "samples_ms": [
+            13.052542,
+            15.955208,
+            10.316791,
+            12.097625,
+            9.162291,
+            9.258666,
+            9.310042,
+            9.091125,
+            8.88075,
+            9.111042,
+            8.802417,
+            8.863333,
+            9.105292,
+            9.177167,
+            9.131458
+          ],
+          "cpp_ratio": 1.5611776651337665,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 3932160,
+          "median_bytes": 3932160,
+          "max_bytes": 3964928,
+          "samples_bytes": [
+            3964928,
+            3932160,
+            3932160
+          ]
+        },
+        "natural": {
+          "min_bytes": 3096576,
+          "median_bytes": 3096576,
+          "max_bytes": 3129344,
+          "samples_bytes": [
+            3129344,
+            3096576,
+            3096576
+          ],
+          "cpp_ratio": 0.7875
+        },
+        "tuned": {
+          "min_bytes": 3080192,
+          "median_bytes": 3096576,
+          "max_bytes": 3112960,
+          "samples_bytes": [
+            3112960,
+            3096576,
+            3080192
+          ],
+          "cpp_ratio": 0.7875
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 577917,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.008611634373664856
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 577917,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.008611634373664856
+        }
+      }
+    },
+    {
+      "task": "spiral-matrix",
+      "source_hashes": {
+        "natural": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+        "tuned": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 7.330708,
+          "median_ms": 7.693,
+          "max_ms": 8.080292,
+          "samples_ms": [
+            7.693,
+            7.330708,
+            7.510208,
+            7.77225,
+            7.818166,
+            7.479084,
+            7.873292,
+            7.81475,
+            7.633125,
+            7.73125,
+            8.080292,
+            7.510916,
+            7.550042,
+            7.648209,
+            7.723834
+          ]
+        },
+        "natural": {
+          "min_ms": 27.437167,
+          "median_ms": 27.89225,
+          "max_ms": 28.396916,
+          "samples_ms": [
+            28.335833,
+            27.478666,
+            28.198416,
+            28.251459,
+            27.437167,
+            28.396916,
+            27.883375,
+            28.142917,
+            28.237833,
+            27.635416,
+            27.756417,
+            27.487417,
+            27.723167,
+            28.3795,
+            27.89225
+          ],
+          "cpp_ratio": 3.6256661900428964,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 25.109333,
+          "median_ms": 25.42925,
+          "max_ms": 25.970583,
+          "samples_ms": [
+            25.42925,
+            25.211708,
+            25.782625,
+            25.109333,
+            25.176458,
+            25.38275,
+            25.399667,
+            25.346583,
+            25.568209,
+            25.274834,
+            25.634334,
+            25.970583,
+            25.74,
+            25.457708,
+            25.463458
+          ],
+          "cpp_ratio": 3.3055050045495906,
+          "qualified": false
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 6373376,
+          "median_bytes": 6389760,
+          "max_bytes": 6389760,
+          "samples_bytes": [
+            6389760,
+            6373376,
+            6389760
+          ]
+        },
+        "natural": {
+          "min_bytes": 4816896,
+          "median_bytes": 4816896,
+          "max_bytes": 4816896,
+          "samples_bytes": [
+            4816896,
+            4816896,
+            4816896
+          ],
+          "cpp_ratio": 0.7538461538461538
+        },
+        "tuned": {
+          "min_bytes": 4800512,
+          "median_bytes": 4800512,
+          "max_bytes": 4800512,
+          "samples_bytes": [
+            4800512,
+            4800512,
+            4800512
+          ],
+          "cpp_ratio": 0.7512820512820513
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 2396730,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03571406006813049
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 2396730,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.03571406006813049
+        }
+      }
+    },
+    {
+      "task": "target-sum",
+      "source_hashes": {
+        "natural": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+        "tuned": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 2.287542,
+          "median_ms": 2.488708,
+          "max_ms": 2.852875,
+          "samples_ms": [
+            2.852875,
+            2.709333,
+            2.419875,
+            2.386083,
+            2.549,
+            2.287542,
+            2.693166,
+            2.434584,
+            2.488708,
+            2.478375,
+            2.379125,
+            2.516292,
+            2.574583,
+            2.520125,
+            2.383625
+          ]
+        },
+        "natural": {
+          "min_ms": 2.475333,
+          "median_ms": 2.669791,
+          "max_ms": 2.805833,
+          "samples_ms": [
+            2.805833,
+            2.760375,
+            2.643792,
+            2.5675,
+            2.704708,
+            2.718833,
+            2.730125,
+            2.646625,
+            2.689125,
+            2.529584,
+            2.475333,
+            2.669791,
+            2.521041,
+            2.683625,
+            2.518708
+          ],
+          "cpp_ratio": 1.0727618507273655,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 2.415542,
+          "median_ms": 2.610375,
+          "max_ms": 2.875959,
+          "samples_ms": [
+            2.875959,
+            2.656042,
+            2.610375,
+            2.415542,
+            2.575625,
+            2.624542,
+            2.737792,
+            2.644084,
+            2.417,
+            2.567166,
+            2.546,
+            2.721833,
+            2.495208,
+            2.584917,
+            2.800292
+          ],
+          "cpp_ratio": 1.048887615582061,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 1720320,
+          "median_bytes": 1736704,
+          "max_bytes": 1736704,
+          "samples_bytes": [
+            1720320,
+            1736704,
+            1736704
+          ]
+        },
+        "natural": {
+          "min_bytes": 1703936,
+          "median_bytes": 1703936,
+          "max_bytes": 1703936,
+          "samples_bytes": [
+            1703936,
+            1703936,
+            1703936
+          ],
+          "cpp_ratio": 0.9811320754716981
+        },
+        "tuned": {
+          "min_bytes": 1703936,
+          "median_bytes": 1703936,
+          "max_bytes": 1703936,
+          "samples_bytes": [
+            1703936,
+            1703936,
+            1703936
+          ],
+          "cpp_ratio": 0.9811320754716981
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 17386,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.00025907158851623535
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 17386,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.00025907158851623535
+        }
+      }
+    },
+    {
+      "task": "valid-palindrome",
+      "source_hashes": {
+        "natural": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+        "tuned": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 3.013458,
+          "median_ms": 3.093458,
+          "max_ms": 3.661708,
+          "samples_ms": [
+            3.661708,
+            3.51225,
+            3.17225,
+            3.077166,
+            3.013458,
+            3.099625,
+            3.163917,
+            3.0225,
+            3.105125,
+            3.093458,
+            3.366417,
+            3.041041,
+            3.088875,
+            3.041166,
+            3.0615
+          ]
+        },
+        "natural": {
+          "min_ms": 2.333708,
+          "median_ms": 2.550833,
+          "max_ms": 3.072917,
+          "samples_ms": [
+            3.072917,
+            2.50175,
+            2.551,
+            2.50375,
+            2.602333,
+            2.511083,
+            2.62325,
+            2.333708,
+            2.505958,
+            2.527916,
+            2.434458,
+            2.575167,
+            2.668333,
+            2.560584,
+            2.550833
+          ],
+          "cpp_ratio": 0.8245895046902204,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 2.302041,
+          "median_ms": 2.530125,
+          "max_ms": 3.059917,
+          "samples_ms": [
+            3.059917,
+            2.914667,
+            2.559417,
+            2.574167,
+            2.43325,
+            2.302041,
+            2.49875,
+            2.719375,
+            2.530125,
+            2.444583,
+            2.685458,
+            2.437625,
+            2.602166,
+            2.35625,
+            2.325334
+          ],
+          "cpp_ratio": 0.8178953779233465,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 2179072,
+          "median_bytes": 2179072,
+          "max_bytes": 2179072,
+          "samples_bytes": [
+            2179072,
+            2179072,
+            2179072
+          ]
+        },
+        "natural": {
+          "min_bytes": 1802240,
+          "median_bytes": 1802240,
+          "max_bytes": 1802240,
+          "samples_bytes": [
+            1802240,
+            1802240,
+            1802240
+          ],
+          "cpp_ratio": 0.8270676691729323
+        },
+        "tuned": {
+          "min_bytes": 1802240,
+          "median_bytes": 1802240,
+          "max_bytes": 1802240,
+          "samples_bytes": [
+            1802240,
+            1802240,
+            1802240
+          ],
+          "cpp_ratio": 0.8270676691729323
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 132,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 1.9669532775878906e-06
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 132,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 1.9669532775878906e-06
+        }
+      }
+    },
+    {
+      "task": "valid-sudoku",
+      "source_hashes": {
+        "natural": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+        "tuned": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 2.228833,
+          "median_ms": 2.483541,
+          "max_ms": 3.058834,
+          "samples_ms": [
+            3.058834,
+            2.999459,
+            2.598542,
+            2.565709,
+            2.406625,
+            2.526208,
+            2.228833,
+            2.47025,
+            2.290291,
+            2.4035,
+            2.335916,
+            2.378458,
+            2.537875,
+            2.483541,
+            2.484292
+          ]
+        },
+        "natural": {
+          "min_ms": 2.371,
+          "median_ms": 2.568959,
+          "max_ms": 3.300084,
+          "samples_ms": [
+            3.300084,
+            2.72475,
+            2.644291,
+            2.457125,
+            2.568959,
+            2.559416,
+            2.578458,
+            2.532167,
+            2.426916,
+            2.568083,
+            2.399291,
+            2.695667,
+            2.371,
+            2.833208,
+            2.641792
+          ],
+          "cpp_ratio": 1.0343936339283304,
+          "qualified": true
+        },
+        "tuned": {
+          "min_ms": 2.315542,
+          "median_ms": 2.456208,
+          "max_ms": 3.17125,
+          "samples_ms": [
+            3.17125,
+            2.904334,
+            2.823042,
+            2.520958,
+            2.619541,
+            2.315542,
+            2.427875,
+            2.427125,
+            2.390875,
+            2.483833,
+            2.456208,
+            2.418125,
+            2.334417,
+            2.522125,
+            2.358292
+          ],
+          "cpp_ratio": 0.9889943431576125,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 1687552,
+          "median_bytes": 1687552,
+          "max_bytes": 1687552,
+          "samples_bytes": [
+            1687552,
+            1687552,
+            1687552
+          ]
+        },
+        "natural": {
+          "min_bytes": 1671168,
+          "median_bytes": 1671168,
+          "max_bytes": 1671168,
+          "samples_bytes": [
+            1671168,
+            1671168,
+            1671168
+          ],
+          "cpp_ratio": 0.9902912621359223
+        },
+        "tuned": {
+          "min_bytes": 1654784,
+          "median_bytes": 1654784,
+          "max_bytes": 1654784,
+          "samples_bytes": [
+            1654784,
+            1654784,
+            1654784
+          ],
+          "cpp_ratio": 0.9805825242718447
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 294,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 4.380941390991211e-06
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 294,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 4.380941390991211e-06
+        }
+      }
+    },
+    {
+      "task": "validate-binary-search-tree",
+      "source_hashes": {
+        "natural": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+        "tuned": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63"
+      },
+      "timings": {
+        "cpp": {
+          "min_ms": 12.735542,
+          "median_ms": 13.152917,
+          "max_ms": 14.337291,
+          "samples_ms": [
+            13.152917,
+            12.972666,
+            13.785542,
+            13.121542,
+            13.05525,
+            14.1985,
+            13.028167,
+            12.735542,
+            14.337291,
+            13.238916,
+            12.782333,
+            13.376375,
+            13.435,
+            12.757541,
+            13.838708
+          ]
+        },
+        "natural": {
+          "min_ms": 1457.734584,
+          "median_ms": 1465.215708,
+          "max_ms": 1569.373917,
+          "samples_ms": [
+            1475.32,
+            1466.340584,
+            1470.028167,
+            1470.887917,
+            1464.797209,
+            1467.223041,
+            1465.215708,
+            1569.373917,
+            1464.893125,
+            1480.369125,
+            1457.734584,
+            1461.688,
+            1462.824167,
+            1462.228708,
+            1463.314209
+          ],
+          "cpp_ratio": 111.39853676564672,
+          "qualified": false
+        },
+        "tuned": {
+          "min_ms": 23.131417,
+          "median_ms": 24.2635,
+          "max_ms": 24.667167,
+          "samples_ms": [
+            24.172792,
+            23.299666,
+            24.336125,
+            24.252,
+            23.131417,
+            24.667167,
+            24.571959,
+            23.646375,
+            24.2635,
+            24.525209,
+            23.691292,
+            24.472583,
+            24.488,
+            23.63925,
+            24.300625
+          ],
+          "cpp_ratio": 1.8447238737992493,
+          "qualified": true
+        }
+      },
+      "rss": {
+        "cpp": {
+          "min_bytes": 9076736,
+          "median_bytes": 9076736,
+          "max_bytes": 9076736,
+          "samples_bytes": [
+            9076736,
+            9076736,
+            9076736
+          ]
+        },
+        "natural": {
+          "min_bytes": 7356416,
+          "median_bytes": 7356416,
+          "max_bytes": 7356416,
+          "samples_bytes": [
+            7356416,
+            7356416,
+            7356416
+          ],
+          "cpp_ratio": 0.8104693140794224
+        },
+        "tuned": {
+          "min_bytes": 5619712,
+          "median_bytes": 5619712,
+          "max_bytes": 5619712,
+          "samples_bytes": [
+            5619712,
+            5619712,
+            5619712
+          ],
+          "cpp_ratio": 0.6191335740072202
+        }
+      },
+      "charge": {
+        "natural": {
+          "peak_observed_live_bytes": 3200146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0476858913898468
+        },
+        "tuned": {
+          "peak_observed_live_bytes": 3200146,
+          "memory_limit_bytes": 67108864,
+          "quota_headroom_ratio": 0.0476858913898468
+        }
+      }
+    }
+  ],
+  "qualified": {
+    "natural": 19,
+    "tuned": 22
+  }
+}

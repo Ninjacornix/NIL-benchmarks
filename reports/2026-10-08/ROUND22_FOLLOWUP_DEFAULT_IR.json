@@ -1,0 +1,639 @@
+{
+  "before_revision": "c8ea871",
+  "after_revision": "464309738c4b78b385e263b6c851b7d8a964461c",
+  "programs": 126,
+  "match": true,
+  "normalization": "Only remove three unused diagnostic-runtime declarations; function bodies, globals and all other declarations byte-identical",
+  "results": [
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ascii_upper.nil",
+      "source_sha256": "544afd10c6003b93c39535682d4c0950f766b43e312b8871295eba9e3dec3281",
+      "ir_sha256": "248f71b5f79ce259ccc461ee6b55190b94f9bfd8cd915fcc137da194cc72a79e"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ascii_lower.nil",
+      "source_sha256": "b5d06102dd9e90d4aaa5d595a496d0bc7a0a028f4f10e5c83ba9fb3cfafdff2c",
+      "ir_sha256": "68bd3c91f1a601931c51dc317164e9dd4c6b136ceeaa5fe58951a3737a248425"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/rot13.nil",
+      "source_sha256": "3e2de58ea5ec9980d46037c040848fd989800b6ce67ba2c8583afb53edb0b50e",
+      "ir_sha256": "64b75de706656d0f5c816d7dc8cf6104a826a39f4a751591fbe46abb5dbda231"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/invert_bytes.nil",
+      "source_sha256": "32358ffb353b99932c580f15b9e9da978502929b9b2c652aeca3351db3fc1b25",
+      "ir_sha256": "07cf3feb4bb77265c6fd6d6180b7c38cc2ecef6a824d1d89c1071034c8b90c76"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/reverse_bytes.nil",
+      "source_sha256": "56fbb77c4e165230cfbbed68205d37eb0ddc8d0305406f8a9810bc6fd4ecc23f",
+      "ir_sha256": "5c2d0db7272ef36834e1a59bbbaa1dc9a6e2a24d382a575205b7dced242ca8f9"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/hex_encode.nil",
+      "source_sha256": "62b8c85b761d7b68ba0fcf29de1525d5f3f486da799efd41c3382eeb059ee0ee",
+      "ir_sha256": "5fb559e4c2be9deb6d3c4dc283e99a2c07c698def15a61dfcc1a8e7c127823a7"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/count_newlines.nil",
+      "source_sha256": "82d92c950d38fc75398ccd3d766d0a5808520097491b1dec86b450e326ed6bf9",
+      "ir_sha256": "3c83642a40a806b5927ba41825574a58ec65a5ba371459822c09999d7cc4668d"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/nonempty_lines.nil",
+      "source_sha256": "0485497d6010f397787ae7fc215a1f342a825910a62337c53b13ee5f1c6a9607",
+      "ir_sha256": "d53e5251a68c05d6fba41bc3f905dde07ceaf719aef21cd6c2ee18a36b040f5d"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/normalize_crlf.nil",
+      "source_sha256": "60a740a6738edea02dcd547a7834c38b418cc5aa59a9c99466f0b3b8bf9d7ffd",
+      "ir_sha256": "5e5028a3dbb44d410d8290b64dd894a8e37fc435bc1252753cc29f8c176a1612"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/prefix_lines.nil",
+      "source_sha256": "c69a5d2e84e6c4cd3443177cc185beedde049437ade4387283febf2ad6f7db10",
+      "ir_sha256": "49517158ac105be3b86bb524776993f1f31dbb1f78626bad0f6581febca3bd2f"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/first_fields_csv.nil",
+      "source_sha256": "23da1a03783153559533732158f8941c0a33af36db509561a980ce388bb5ee8f",
+      "ir_sha256": "5133da56321c8094d1304fc473fe7b8ba826e31e2738b191f5214ac364dcb9eb"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/sum_pairs.nil",
+      "source_sha256": "b02ee6b77380cd488e9c43309d0ac79d601e9d255c4881c74e08c0d89a99ba03",
+      "ir_sha256": "295cd6e5b0f2e8d06898bd4bfab0422f0923bb54a6819b36a7701bca18447607"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/sum_integers.nil",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "ir_sha256": "7f735e2a6d8c1d3569e20ecce94ffb133988808c142bba7c43d6daad9f07d800"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/min_max.nil",
+      "source_sha256": "372e067fa1733f0b824b7a5fd012388f5d5ccf70582b4f34174bf0f08756dbf8",
+      "ir_sha256": "12dfca689031e804c56f2f019cc24416888e06673924530b8f1c2994a618cc76"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/dedupe_adjacent_lines.nil",
+      "source_sha256": "efc0cfaea6cf30477b9823880430f7c970da34d1ec1df9636b7dd4fa86fd4aa7",
+      "ir_sha256": "bdf04fe449c50a0a4b909ca11b1b8594ecbe93080e7e5fa973838503ae76d55e"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/running_report.nil",
+      "source_sha256": "6dee8576791e052714dfec21110ed3280610be05c05610335a5b3d8f9ffbd878",
+      "ir_sha256": "a0a25c63e7cd453724dc6a005213599c219603d28abd2cd585cc34103fb7d36c"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/number_lines.nil",
+      "source_sha256": "5d8dc725b281846f1e14fb49908cd14adb3983ac14f7bf330247be48a84b4f91",
+      "ir_sha256": "289257bd94148758b26925a0dc1b1baf003749032885450e35597ff0fa4020b5"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/histogram_digits.nil",
+      "source_sha256": "84ff6c102c2cc8729b82b33410860e42cdf74bc05a11b205c022344c3489483c",
+      "ir_sha256": "9ba8c71d7c501eb32dc007839d7167bc71663d12eb0abbce9eec9cf3af9c3ac0"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/buffer_sum.nil",
+      "source_sha256": "5bf004292a6c32c7b38edba5603ffa40a4ea3503f7aec96ccb28f231d3ec25f2",
+      "ir_sha256": "7f735e2a6d8c1d3569e20ecce94ffb133988808c142bba7c43d6daad9f07d800"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/buffer_dot.nil",
+      "source_sha256": "c64fbb8d6c78b33916a3ba16e49a16d03175156c1d7b2fd1541b9bd338303a32",
+      "ir_sha256": "dabc554b270201017b6efa00fcbc9c80a445cfea2e12efb30b57973d67fd6f5f"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/prefix_sums.nil",
+      "source_sha256": "eb73ac49f529d78e7c069a0219862a282668be5995367be829683a355b36ecf2",
+      "ir_sha256": "edacc1f717eef3bb29dad8e3b4e301a7f120ea745c1689edb635840365eb8a55"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/copy_file.nil",
+      "source_sha256": "9a39f40488a1ecac8e6fd366b7800df2016da9f3e3a9ffe4da09ae72faacea45",
+      "ir_sha256": "dd26652dbd49d59f5d7436ac686e27a13a17a072acfb2c0480c59e3f30809a5c"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/slice_file.nil",
+      "source_sha256": "871cd42f688fc29cc1aa899a5c5dc3c1787de2e33697b9bbee024aa33f02ae25",
+      "ir_sha256": "c344b8c2cc1d905b68fc847040b95de29462ad28d3188e9790722bff3a2e40df"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/expand_tabs.nil",
+      "source_sha256": "0cbfc755550277e3465a504da37129359f5cc111bf8f30fcbd7e92d91ad20db4",
+      "ir_sha256": "22ce14e99931505a71752c89f4fe6ddbdecf7dcd716a0490a8ef259723cdd8cb"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/env_lookup.nil",
+      "source_sha256": "a4ea6078792a46c4a589ab546772f9fc4e6371d481ea9e2255c7404117f07c71",
+      "ir_sha256": "4919ed80e0a670bcdc434a781930e4e7bea5e4edfc69aa28a9724f467f385e49"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_accumulate.nil",
+      "source_sha256": "1e86c681ee7433c566498dabf2e09bb3e531ca5ae99cc80db00a80f02bb78ae9",
+      "ir_sha256": "8c24f305ed95c90c4f27732310141b1811538e16770cf279ba21b4940ac98f20"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_acronym.nil",
+      "source_sha256": "e6d91e0d01aea0891b737f147a6c69b809c83230d515e6123fa59a1c71ea8f56",
+      "ir_sha256": "9203582735a4dea615fd93069e397604c733caac05ac2758fb2bf00d134461d8"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_affine_cipher.nil",
+      "source_sha256": "80be8585750ed7756f80c42deda0caf03979d55dc44bf0b4ce6243be2e01b6b6",
+      "ir_sha256": "c6f7a48f5ae313e9f4457a346af3c650ef8bac50601e47820f874d25cec8b1cd"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_all_your_base.nil",
+      "source_sha256": "59d9ace365ede18ec72383371586317729dd4e025703070e73bf4ce6dafb194e",
+      "ir_sha256": "62294e0fdfeda0d74533ff63020c7935cbe15bfcdf4d47b07129f31d38080056"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_allergies.nil",
+      "source_sha256": "987f45a9933bce8b6e33e9bae265c4c538e7d826d36232ca79a2a825d92918f8",
+      "ir_sha256": "c5c711321ebb30cd227b3134c6f31213be24ebb7b3179aea7b0fce9bc950eece"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_armstrong_numbers.nil",
+      "source_sha256": "a18e4d43f2c4890f40388b2581bb0811fd61ccef13e94532410c5b607ed56a87",
+      "ir_sha256": "1a4451421a1274dae15e9ab9fe63d279b0ad1016358e80516cd4c914b43c20db"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_atbash_cipher.nil",
+      "source_sha256": "3325d122aec9c657c6f64510fa0bb3d01cc17c7024bcef5e1a930c33fa348e0b",
+      "ir_sha256": "88a08b094e0fd3aa4d414057e3a4b2eb0ae26074082e224a3b7ff98eb3f642d0"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_baffling_birthdays.nil",
+      "source_sha256": "ad1e1f4921c9267eae1bea78cb6172587b2c25bef749f8c0dfa4508a477fcf97",
+      "ir_sha256": "33039c18774effcdffa0923201f02a919177e04456f57243e6a0359c4ef0ac04"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_beer_song.nil",
+      "source_sha256": "04a9994abc3689f049478bc65e6b008c705f61cc057c3728b8abf1e8f6925539",
+      "ir_sha256": "7e1847132d557bb952f454f9480bff6e9082eba59c0adb6ffe2f3356b107297d"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_binary.nil",
+      "source_sha256": "470ecf087ee33d7f0ae5f6555d7094601e61e8288d07efde2a1931ab3bec2fa8",
+      "ir_sha256": "7d59389b19c797c139204819c3e3a528eda11a5d0a68bc3894de396581237d34"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_binary_search.nil",
+      "source_sha256": "e724c513ab25fb55bcfa52e9f5f1ea9073fff0636f6c3fa59aef6f94b3d02288",
+      "ir_sha256": "41712dc3b7e9877cfdb8605468eea40c4966b803d46fc40bde5218c1a48eabd5"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_binary_search_tree.nil",
+      "source_sha256": "71c10d36031b790533d7a9bfdc9e91076358aa5689622e58eee125f3c3e1b4ed",
+      "ir_sha256": "375786cf95d20ee21f67cda9b0cd6ce5dce7509a0efdd393f81ec7592333a935"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_book_store.nil",
+      "source_sha256": "276af945eab8cb06fd13fd7c4d191eae0f0c007f8acea257d30e67543f14bb0b",
+      "ir_sha256": "3753e8f8b0cb388d60c88549e3bca6970e02f6b8350e922866c4e51c26a77263"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_bottle_song.nil",
+      "source_sha256": "90c64c27bbdf3e8aa3a983897cfac0e7029a16babe9f1223f9f933819aeed916",
+      "ir_sha256": "5d3db8c99702057c294115a54addad6c985d2edd84e2796691f252096cba12ed"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_bowling.nil",
+      "source_sha256": "63c2ed40454fa34d110a5049a0844b0484861a246b5ea8896580062f763f31d8",
+      "ir_sha256": "f8f9c75b2493a802418826b4ae8a4fae1283e3deb1f21eb331532128bc85caaa"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_change.nil",
+      "source_sha256": "f247ab9c96aabce53752f1fccd00268c182d7d1f4916bcfa1401ba7d848abe81",
+      "ir_sha256": "9f6dfbd6621c7dde0ebe465b8699b498e1ce2d3d9c3bb8cb5c92096320b423a7"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_circular_buffer.nil",
+      "source_sha256": "794eca58686cfaabf351f5b2bab531716c019aeea0dcaea77684d40f98ddb452",
+      "ir_sha256": "609d673b8c995d28b9a0600c7e60424157f2f11bc9cdfeadbf1dd9f45a3e80e3"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_clock.nil",
+      "source_sha256": "343fa9d139fcd0769afe4ff37e4c2a2e5725b59de382a99823ddeab4aa261720",
+      "ir_sha256": "1a3f0c3dbbb3b9dbf11ffe28640325b9eacb8cbded5bc59ae82f20ab2b0b9672"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_collatz_conjecture.nil",
+      "source_sha256": "e670f71459b1cdd67e61cd456b56a0b32e30833d4029dd60a3d31e86d0e52869",
+      "ir_sha256": "d97b3d3f4c05c34cbb97ef34a4a8e45462c98479f096bdc94d6c73c77819bffe"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_complex_numbers.nil",
+      "source_sha256": "a2fc3809b577544b5e55e466a54d741e09487b881c2c93370ce298fc20937ef2",
+      "ir_sha256": "1168e6be41883128e368e04b52effb3baf97277baaf0738374b6ca6ec0a5b52a"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_connect.nil",
+      "source_sha256": "f9dbbcd703e4ad0f60b40c4686f7d2f2084cc94525afbf1715269c75bdab0e2a",
+      "ir_sha256": "af6bce366cf237846f5eb7ec8898d2b62eb2bf4c8f94f949a46f5d6d2ed3cf6c"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_crypto_square.nil",
+      "source_sha256": "03e82e4bc7cf8dc4911816e85def4ecb63c1907fd219ffcebb048ded1c62dead",
+      "ir_sha256": "9f39098b095dea62f93928084849cea03d37f8bd262d2b8d282a97f2eee57a43"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_custom_set.nil",
+      "source_sha256": "505f1d3929cf625b678603f50290dcffed3a2bedf626967abd35c734383ba7e7",
+      "ir_sha256": "6d4c15f3e36d8781f3dd3a741a8f1f57478051dafd19af4660fa5b3220d3e012"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_darts.nil",
+      "source_sha256": "7eb26b096da6bf7e7e1dd0872838063c911cf3480841a881619380aee9553c37",
+      "ir_sha256": "0a048854a002567aaaa180ac36781e4ce9ec79904c6aa7ef63f91a4165cd8a26"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_diamond.nil",
+      "source_sha256": "125a577441a28786fd95998effb985a2f6f6e36e8aee81771f89794318dbaa29",
+      "ir_sha256": "ac9550be8a050d26e15964092010346aeefc0c0ba8b7a516235c141aaf22493d"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_difference_of_squares.nil",
+      "source_sha256": "45fb7835b8793fcdf49282e11b9395c7318d3c0db652b26baa36542091a9308c",
+      "ir_sha256": "ec7b18cce3a7806145797461691fcd2bfa0ec9479458c795a38ea4b184a2a5a1"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_dnd_character.nil",
+      "source_sha256": "468cf7a515f957734e817c5a6bfe1f7056042c9a1826deae3f705fee83a23b5e",
+      "ir_sha256": "dbe1eac9d37105931c5e3e532203d59d28fa8bb3990bc2514ce720faf1e42332"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_dominoes.nil",
+      "source_sha256": "1034ee08fc32d9b3361a1c9375e844753b1d65082b5b52c1b556549811e8a7e7",
+      "ir_sha256": "9095419c4a182a13c043941a4ad21bddad4da139a3494274aabd0267f67cb25f"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_eliuds_eggs.nil",
+      "source_sha256": "ba488ef2d01cb36e31d1d0d91f36f9c80ec283961ad55414528e7de859170762",
+      "ir_sha256": "25e8a6a66f4e85c15004564a9380139575f44396de4c17d685673a78a46ff516"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_etl.nil",
+      "source_sha256": "aeb5769061c1643733971c7cfd814f4432132c777116fc4cc7f6a637374c382e",
+      "ir_sha256": "1e4206242ea2ebf85b2ba15c51316873409895e61d7e8efc525e8c274d538822"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_flatten_array.nil",
+      "source_sha256": "24bcb5b0b00d31ea39646283fa3e490d666d5f7caf72b11f9ea97bcd250128b5",
+      "ir_sha256": "3a8907b6bdc5d045ff93227ae598d8b8b77e2a0ea7660eda53d254618151d5eb"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_flower_field.nil",
+      "source_sha256": "84f2fd873851d41bc845cd8d6bf69cf38db45516f432f52dc0f45199ddc07b09",
+      "ir_sha256": "e8b43edb9f82c9efdb3f7a4f64fcc639a760ee375c7838571bf9dc9a18609a96"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_food_chain.nil",
+      "source_sha256": "7287e6c367647a6038947edc7fb0fd2521115fc711f5ac3f33551c7b3085c665",
+      "ir_sha256": "6b9e7504b2dd9025027842f4162c205a51c34f024665c68c043dd3059d2b20f4"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_game_of_life.nil",
+      "source_sha256": "45b347310efa3d607affc174ffcb90879f88f865af718630a416b51165c4d9f1",
+      "ir_sha256": "657ba342cd55005bf958bea7867fb49608c3051670e2d4e1d1f7bf12d2da8222"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_go_counting.nil",
+      "source_sha256": "3c477fc727c8cc674985b820ed81501d2bc079979db358bfb25129fda5822a7e",
+      "ir_sha256": "44e3d591fff72a4e4a4a6669de90f9dbc4e51875796e1cdca48f2cf24ae7e69b"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_grade_school.nil",
+      "source_sha256": "c0376c960ee2885563350b6053b8996c99fe8162cd9620347031c69d62bafaca",
+      "ir_sha256": "17b8469a4643c36b0eec0f91b88c2c30a37e9e26c0f05e2fc7b6342bdec084cc"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_grains.nil",
+      "source_sha256": "018081f35feb0b0c945fd7eb029901d9df4cbd792b53ea8071fe6db5fd17668b",
+      "ir_sha256": "5ec364dc5ef014597d2aacc06469e5a21f613be7bfda7047d7d2a6c29b6fd6a9"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_hamming.nil",
+      "source_sha256": "46ef5a421317ffe877696ae84cb2912c40bc60cb9964c8f912d18e871621247f",
+      "ir_sha256": "791295ae550768abd2fc34a5829855e70ca7d250324131ff840a9cc8c20e5961"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_hello_world.nil",
+      "source_sha256": "76360fe40892e04f5e9b01c769e0aa45544cda65f3b6d4c6e9a559f01ec327f0",
+      "ir_sha256": "754be77dcea158ae15c966e950036ddcd8deb035d2d8b552efe2ef7c498673a0"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_algo_linked_list.nil",
+      "source_sha256": "489d9634aba2aff2b7e061cf8d5cfe28fa035bc00cd24bfc38db8a7c2bce7d7e",
+      "ir_sha256": "7809f931c79a29571f7ec74b84d7062545da7ce76bc4eb5370964a11af21420c"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_algo_bst_walk.nil",
+      "source_sha256": "75d12a55b131ae564b2547b48fe9bd52570d1f8d662cf1a38115fdea46dd945e",
+      "ir_sha256": "7654e1ad0636822b2b266171e7c16f0e9e7bdabf07c450c06d256d5139f52df2"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_algo_graph_bfs.nil",
+      "source_sha256": "585c1981a280ba44e4a9c67e2cf98327caa28dbe79667cd4dc65883aef57e63b",
+      "ir_sha256": "5021f62b24b84e4aba8d6ab774c8912d45285588c835a1d27e66f9edfb7a3253"
+    },
+    {
+      "path": "benchmarks/corpora/application-v5/programs/ex_algo_interval_merge.nil",
+      "source_sha256": "76beb2c340e122f69175048e13c2580659a1ef7cd75a60e4a5103bd164e81f5e",
+      "ir_sha256": "dce3b905e32232b1cab70871698373b11e3e8d570c1c298381d4e6534310ba8e"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/3sum.nil",
+      "source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "ir_sha256": "8c9fed557676c53c4863cbfe2cd6987eaed5a214ecb0f4d34b800737e80db4cd"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/balanced-binary-tree.nil",
+      "source_sha256": "cd76143cc11509999792e29f30c6b555a1b94f0f9a1598081b3071410d3ffc04",
+      "ir_sha256": "3ab1df42c60494be5b379ea633d5c9d9ab96b161d6c8276daf7f849deafc069e"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/best-time-to-buy-and-sell-stock-with-cooldown.nil",
+      "source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "ir_sha256": "25a717b3cc8cd5e709fe99c1d4ad1bd757f4a42b65aff757d35ab8a00da42569"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/car-fleet.nil",
+      "source_sha256": "b3aa5c1da001dd551848777e8970631b18549dc953b651580b7a4104fa1af523",
+      "ir_sha256": "e8ac5f60c274919012f3585f15985cbb420907bdcbae42358f5ec8962b015c11"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/coin-change.nil",
+      "source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "ir_sha256": "32c4e48e6ff6c315003d3072cdedca6f4e77a406fd12b0bae31a121459568759"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/contains-duplicate.nil",
+      "source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "ir_sha256": "72233b466093f13f2095b10a795f8d7268260c4b9671eacd5045650794f1458c"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/course-schedule.nil",
+      "source_sha256": "0489f2964762b49ead4f639e6c8e26dcdeb6b572be45f9f52360534967ab5af0",
+      "ir_sha256": "7fc929bfba3416093423fcd4c68ed0f48a2df239358d044a7845e57a5aa08263"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/gas-station.nil",
+      "source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "ir_sha256": "ea0af47d9d09f72e636bd2a9990cb7903b507c7ad562a169b0fbb7fbaa07c6ba"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/generate-parentheses.nil",
+      "source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "ir_sha256": "b7363aafe9acb3e21fed737eea424c42cb859292a18f32ff97402c56e9644142"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/insert-interval.nil",
+      "source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "ir_sha256": "d6011d57e396f9c0f588fd745928a363719f9dedbc87a1723f6efadb149cdd33"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/kth-largest-element-in-an-array.nil",
+      "source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "ir_sha256": "69aa5804633d6ac1e055acca6d63e9003d843cc3348d8ea7764297ddc693c9dc"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/last-stone-weight.nil",
+      "source_sha256": "b1af2c131f0186f70d9aefc71d91969903cd9aba417aced4467f6fa89342c9e3",
+      "ir_sha256": "65fe791eba5aa7a56ae8e82dd7844f6feb9a03647d4651ac089f6d6e43667afd"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/letter-combinations-of-a-phone-number.nil",
+      "source_sha256": "bf1c0d6c060df66aae75fdd11f1c897930aff1aff0cf74aad0bad85e410f1513",
+      "ir_sha256": "20f2f40a9832eed87fb6afd0d54c351ac49bbd00c375fedfa708f836fc24d051"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/longest-repeating-character-replacement.nil",
+      "source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "ir_sha256": "780b83b01c6652b106d591019965eab34c8826ae81cbbe72be7d2a58efcacbcd"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/longest-substring-without-repeating-characters.nil",
+      "source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "ir_sha256": "0a4114c95f4b90263e4e7540bb63b78eafe42ba41d02e7df3b662587da483b39"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/maximum-subarray.nil",
+      "source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "ir_sha256": "92c33f0eaaca57bbc6f18fbe7c7941dbbcc30c646344b93f544c951feffdec4d"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/median-of-two-sorted-arrays.nil",
+      "source_sha256": "eab0b7a26f414853ec4e67121a00d57198306647502645fc4594d57f31e826a7",
+      "ir_sha256": "d1bfb547dbcbe15e9ce800b857ba4122a397312dad06daf4f882f5ec73bf70be"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/meeting-rooms.nil",
+      "source_sha256": "b0b96e82921c209ae3d1a051e5a705eb8572855a397a8b9d858669d48b734258",
+      "ir_sha256": "654d20b3368769877098350c267e4e261155f6a6acf7f9449423851a3ecace3b"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/min-cost-climbing-stairs.nil",
+      "source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "ir_sha256": "5b0b9d8d99b765e3e6701d3db8c75a45d7563e47ff84dce6efbfd671a56c1f3f"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/plus-one.nil",
+      "source_sha256": "9fa50a336fc4939322ced0b9a9942954ffac8312c71b1e2406dfa64691546def",
+      "ir_sha256": "fe9dbe674891e37669252404be5fca8c3645acaa857bd697092a7f81028fdae9"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/reverse-integer.nil",
+      "source_sha256": "a2ec9de51c5130b84c5f0c451f4edad02f28ed3566b378597c30600b2ed42d87",
+      "ir_sha256": "d1adcac5e829b7aaadefa2cf1412cdbb928d2fb9006af4b33f772bb93190febb"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/reverse-linked-list.nil",
+      "source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "ir_sha256": "8837c5f60fab8a598c4b5036983e7d9c754268dbaf78b5d485efce36115a0fbe"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/search-in-rotated-sorted-array.nil",
+      "source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "ir_sha256": "ed7c25228bfc9611f7e10a64277b4493d85d28f6a97b628b7e971325ef210b64"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/single-number.nil",
+      "source_sha256": "0b600af66f4b0e86bd725e84bf52e6d73a828dc9111decb34f3a42b78008b7fd",
+      "ir_sha256": "26fa70f9d8c2f52ffc8100b20ecf188c0db94faf6d91aa8d5e90a9e6135a956c"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/spiral-matrix.nil",
+      "source_sha256": "f2d53e367d8ef199fc1f1fd5445c6926b3e12b3657690a54d47cd2513d38d371",
+      "ir_sha256": "45833bc8115601f5abf9f83597f530d50556e2aea6912639be29e5e1602095e2"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/target-sum.nil",
+      "source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "ir_sha256": "b45f6f77fc2aa5ca76a187cefb1185077f02c7cdc097e22014502c3e78405852"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/valid-palindrome.nil",
+      "source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "ir_sha256": "5dee16137b11806333fe3cd4853890c49e3781b7fff0642f0cd8e75e7eced8e5"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/valid-sudoku.nil",
+      "source_sha256": "fb79062ae9aefd9711399d0508106f7dc1f594e207853295aa7e57a9a16e2237",
+      "ir_sha256": "9c6fb1088ad86a7fe4324b172c9b38f664f3add0245b9d96413fe4c6d2550231"
+    },
+    {
+      "path": "benchmarks/corpora/neetcode150/programs/validate-binary-search-tree.nil",
+      "source_sha256": "75be1938cff3ea2cfb051dbe78032a09b1779ec994509e06913ec008723faf63",
+      "ir_sha256": "e5e9ceb8eb228f1a1917ae93caee267c433fac546aab1de49eb0e0f9e01653f8"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/3sum.nil",
+      "source_sha256": "af0a0f80eba828ea230e8c6d7601bd1205cf8a46d4f2b6eb5323b6a214ba3eed",
+      "ir_sha256": "8c9fed557676c53c4863cbfe2cd6987eaed5a214ecb0f4d34b800737e80db4cd"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/balanced-binary-tree.nil",
+      "source_sha256": "34f28105fdb2d89bb3176a492caff53f858d6f2f8c359b211bd4c5e0d8f9f316",
+      "ir_sha256": "1ca5ee1c765ad0a8445760644d1bf53730217bfa8eac098bcd2a4d3da8334a44"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/best-time-to-buy-and-sell-stock-with-cooldown.nil",
+      "source_sha256": "f48c9044fd2fd03a9acae6aa39e70b1da0f2dc6fbfa0b6181795431644ef18a7",
+      "ir_sha256": "25a717b3cc8cd5e709fe99c1d4ad1bd757f4a42b65aff757d35ab8a00da42569"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/car-fleet.nil",
+      "source_sha256": "7d0212d4ee9e2dcf54a22a806e2641a2c895ed8844167238c99b4a1474b7ab3f",
+      "ir_sha256": "4849272f2acffe31d83eae75929301914d970f3c2f530c12781b6685998a009a"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/coin-change.nil",
+      "source_sha256": "8513ad3a7c1545802bd76c4ca8f017ee511e39595588ca44875e4bef554bebe5",
+      "ir_sha256": "32c4e48e6ff6c315003d3072cdedca6f4e77a406fd12b0bae31a121459568759"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/contains-duplicate.nil",
+      "source_sha256": "2f9ae0d94928307c373e44b18102b3107fec9380198235c916ee0dae2f663d10",
+      "ir_sha256": "72233b466093f13f2095b10a795f8d7268260c4b9671eacd5045650794f1458c"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/course-schedule.nil",
+      "source_sha256": "ee62007be3494fe40007b166e862d46bcc03c203eeea62fbc5e0bcc4596dc6fa",
+      "ir_sha256": "25c34484cd3046d6ff7c0889d79628837203119a91732caac164edb624c64a89"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/gas-station.nil",
+      "source_sha256": "56de4e9d00641e033db4afac0ef0391c2e44eb45097b3f9df6e3e9f835d0a2e0",
+      "ir_sha256": "ea0af47d9d09f72e636bd2a9990cb7903b507c7ad562a169b0fbb7fbaa07c6ba"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/generate-parentheses.nil",
+      "source_sha256": "41f679f055a121d6f2679439805730f82651b297a28b76b6992d86636d66a11b",
+      "ir_sha256": "b7363aafe9acb3e21fed737eea424c42cb859292a18f32ff97402c56e9644142"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/insert-interval.nil",
+      "source_sha256": "f0d80825107d918da9b51093c9d2ff242f4a1c9688d28abbc90b25983af4813e",
+      "ir_sha256": "d6011d57e396f9c0f588fd745928a363719f9dedbc87a1723f6efadb149cdd33"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/kth-largest-element-in-an-array.nil",
+      "source_sha256": "3b5d1a5b553171bc0ccd5da923002ba661765105a41973fcb210b7f45281c06d",
+      "ir_sha256": "69aa5804633d6ac1e055acca6d63e9003d843cc3348d8ea7764297ddc693c9dc"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/last-stone-weight.nil",
+      "source_sha256": "13cc8bd23314395563916a69c7bd2f09dbfc558fed1f04aa73430c6004d33460",
+      "ir_sha256": "3dc3b6e03aaf96d5e948b18b92badbf3f37c6c5483c681572f78c2d3ad90b651"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/letter-combinations-of-a-phone-number.nil",
+      "source_sha256": "450c9dfaf214b6111182027241a18bcb076b9c2a3cc6122e7fbd4f31dec35cfd",
+      "ir_sha256": "938a556690d4ac6c4871daff281966d0701195aaf17318c54ad967d23d9b77a9"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/longest-repeating-character-replacement.nil",
+      "source_sha256": "883fe7c842fd21a81ab81c7e44cecb570c5d5032aa039620070a6ebef0622880",
+      "ir_sha256": "780b83b01c6652b106d591019965eab34c8826ae81cbbe72be7d2a58efcacbcd"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/longest-substring-without-repeating-characters.nil",
+      "source_sha256": "30fbe8729e69e7d44b1ee44ae7393268345bf98cfc9fb1cba38377114e2d6e8b",
+      "ir_sha256": "0a4114c95f4b90263e4e7540bb63b78eafe42ba41d02e7df3b662587da483b39"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/maximum-subarray.nil",
+      "source_sha256": "908dd8d0ee8c311c5b7a373eba563f8d674207de8df4fa088d914db348a7e052",
+      "ir_sha256": "92c33f0eaaca57bbc6f18fbe7c7941dbbcc30c646344b93f544c951feffdec4d"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/median-of-two-sorted-arrays.nil",
+      "source_sha256": "a37dffa7c5d8c93be295ef98656dc8d3e22badd83a6229ecd3394659747903eb",
+      "ir_sha256": "62d841b4e74b9529499fd38e73768d38ea59ecb0454a627a916172e8a2303f24"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/meeting-rooms.nil",
+      "source_sha256": "8ed3cf5e13b5d1343e4d6d80a31c03fafcac01c2e0699843a1d25db2370f3b43",
+      "ir_sha256": "dfa283c5dc6510fea0406236d883a0162e14f2853b2897ac53f8009adfb2f66e"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/min-cost-climbing-stairs.nil",
+      "source_sha256": "df1ca3d4036d94fcc144b2ff365b3c409f473223bf3e61ded2a496d4b7ed7bd6",
+      "ir_sha256": "5b0b9d8d99b765e3e6701d3db8c75a45d7563e47ff84dce6efbfd671a56c1f3f"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/plus-one.nil",
+      "source_sha256": "92fd78faef79bf7a4ba3238deb788f71e4649fb628f4213fa7f66a5c0c5d372f",
+      "ir_sha256": "deba831ff9019f2aa072fb387ab06d47b46e7d2316581edaaf7ad081170613f8"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/reverse-integer.nil",
+      "source_sha256": "7d3de81d284e0a8ceae4665644fc748ad2178c70cf7246703cce4fbe3aa11e9a",
+      "ir_sha256": "4a1f565e7efe8ece2235fc585515b68114cf0203e71b79f35a5156eadc84ad82"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/reverse-linked-list.nil",
+      "source_sha256": "f2a4cd377b6bed1c783b87b09e5b153e2425a8dad9345109f24ad8c97eab90ec",
+      "ir_sha256": "8837c5f60fab8a598c4b5036983e7d9c754268dbaf78b5d485efce36115a0fbe"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/search-in-rotated-sorted-array.nil",
+      "source_sha256": "f9b2bfb008e4972aa34529bb39d95d2eb457652bba256c3311437c509774d1ba",
+      "ir_sha256": "ed7c25228bfc9611f7e10a64277b4493d85d28f6a97b628b7e971325ef210b64"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/single-number.nil",
+      "source_sha256": "847d0ad0de732b2adc6424e660ecccb0f2ffd450fbd11c2dd561078e31a74c07",
+      "ir_sha256": "90e4ae66d276b08c9d9cebb64c3fbc2efe76b01d303e47326a863459e5116a26"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/spiral-matrix.nil",
+      "source_sha256": "035ee936400a86b5655611f3779270ff44f67297a27d16508b891b320d13b5b6",
+      "ir_sha256": "3d9b9577beca8a297e13646e7d9c246a28436b5cceed4a40ed90e29b93d61035"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/target-sum.nil",
+      "source_sha256": "8d80590b3a97078ec91b213b4fce556a7a1a3c2d39e0b17433a67d602961bfd0",
+      "ir_sha256": "b45f6f77fc2aa5ca76a187cefb1185077f02c7cdc097e22014502c3e78405852"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/valid-palindrome.nil",
+      "source_sha256": "447ef47f071db472ee57fa20d4c80b4dd0a806c10ecd93f8f8abf55975773da6",
+      "ir_sha256": "5dee16137b11806333fe3cd4853890c49e3781b7fff0642f0cd8e75e7eced8e5"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/valid-sudoku.nil",
+      "source_sha256": "cf609df019103bf2520f10a17b46e1c177e859ae5e4b44652075d2c02ec25f31",
+      "ir_sha256": "00a87f0bed4a921b02de870c422c206eac5bd37e027b928b0ed924783f56e71a"
+    },
+    {
+      "path": "benchmarks/core-generalize-study/natural/validate-binary-search-tree.nil",
+      "source_sha256": "4eb7cee93d196486f1d671388be507999dad89b1b298400f06244a323e69bab1",
+      "ir_sha256": "36c054cc974e55190ddd0c05c4886c09fe35f784f7c9c0bd1733ec829dd3bda4"
+    }
+  ]
+}
