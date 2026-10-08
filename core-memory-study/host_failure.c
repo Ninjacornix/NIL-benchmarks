@@ -15,7 +15,7 @@
 #include <limits.h>
 
 static unsigned fixture_calls, failures;
-static uint64_t prefix;
+static uint64_t prefix, failure_request;
 static int fixture(int fd) {
     char path[4096];
     if (fcntl(fd, F_GETPATH, path) != 0) return 0;
@@ -25,11 +25,12 @@ static int fixture(int fd) {
 static ssize_t audited_read(int fd, void *buffer, size_t count) {
     if (!fixture(fd)) return (ssize_t)syscall(SYS_read, fd, buffer, count);
     ++fixture_calls;
+    if (!count) return 0;
     off_t offset = lseek(fd, 0, SEEK_CUR);
     const char *raw = getenv("NIL_AUDIT_FAIL_AFTER");
     uint64_t limit = raw ? strtoull(raw, NULL, 10) : UINT64_MAX;
     if (offset < 0) abort();
-    if ((uint64_t)offset >= limit) { ++failures; errno = EIO; return -1; }
+    if ((uint64_t)offset >= limit) { ++failures; failure_request = count; errno = EIO; return -1; }
     if (limit - (uint64_t)offset < count) count = (size_t)(limit - (uint64_t)offset);
     ssize_t received = pread(fd, buffer, count, offset);
     if (received > 0) {
@@ -62,7 +63,7 @@ __attribute__((destructor)) static void receipt(void) {
     if (!path) return;
     FILE *file = fopen(path, "w");
     if (!file) abort();
-    fprintf(file, "{\"read_calls\":%u,\"prefix_bytes\":%llu,\"EIO_returns\":%u}\n",
-            fixture_calls, (unsigned long long)prefix, failures);
+    fprintf(file, "{\"read_calls\":%u,\"prefix_bytes\":%llu,\"EIO_returns\":%u,\"failure_request_bytes\":%llu}\n",
+            fixture_calls, (unsigned long long)prefix, failures, (unsigned long long)failure_request);
     fclose(file);
 }

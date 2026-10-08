@@ -6,9 +6,9 @@ import audit_read_order as audit
 class ReadOrderAudit(unittest.TestCase):
     def test_matrix_has_quota_fault_laziness_child_and_call_controls(self):
         tasks = audit.definitions()
-        self.assertEqual(len(tasks), 12)
-        self.assertEqual(len({t['id'] for t in tasks}), 12)
-        self.assertEqual(sum(t['expected'][0] != t['expected'][1] for t in tasks), 5)
+        self.assertEqual(len(tasks), 14)
+        self.assertEqual(len({t['id'] for t in tasks}), 14)
+        self.assertEqual(sum(t['expected'][0] != t['expected'][1] for t in tasks), 7)
         self.assertTrue(any(t['fault'] == 0 for t in tasks))
         self.assertTrue(any(t['fault'] == 64 for t in tasks))
         self.assertTrue(any(t.get('calls') == 0 for t in tasks))
