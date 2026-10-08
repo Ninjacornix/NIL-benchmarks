@@ -192,3 +192,18 @@ Fuzz census remains bounded to 100,000 steps; it measures the compatibility path
 not G2's unbounded replay. The differential campaign and separate replay controls
 exercise unbounded G2. O0 copy counts describe emitter decisions, not O2 physical
 traffic after LLVM optimization.
+
+### Interleaved historical compiler controls
+
+Use the same runner with a separately built historical compiler to rotate old,
+current and C++ executions within each repetition. Both compiler path and revision
+are required together; binary hashes are recorded. Counter runs remain separate.
+
+```sh
+python3 benchmarks/core-generalize-study/measure_controls.py --repeats 25 \
+  --baseline-compiler /path/to/compiler-built-from-92d62b3 \
+  --baseline-revision 92d62b3 --output /tmp/nil-round22-controls-paired.json
+```
+
+`--compiler` plus `--compiler-revision` can instead measure a historical compiler
+alone. These options change no workload, fixture, source or correctness oracle.
