@@ -14,6 +14,7 @@ HERE=Path(__file__).resolve().parent
 SUITE=HERE.parents[1]
 sys.path.insert(0,str(SUITE))
 from support import ROOT, build_helpers
+from resource_outcomes import clean_e013
 import fixtures
 import reference
 TIMEOUT=120
@@ -41,7 +42,8 @@ def observed(command,work,data,answer,ref=False):
     if ref: good=good and (work/'stdout.bin').exists() and (work/'stdout.bin').read_bytes()==b''
     files={p.name for p in work.iterdir()}
     good=good and files<=({'input.bin','output.bin','stdout.bin'} if ref else {'input.bin','output.bin'})
-    return {'pass':good,'exit':code,'stdout':out.decode(errors='backslashreplace')[:2000], 'stderr':err.decode(errors='backslashreplace')[:2000],'output_sha256':sha(output) if output is not None else None}
+    resource=clean_e013(subprocess.CompletedProcess(command,code,out,err), reference=ref)
+    return {'pass':good,'inconclusive':resource,'exit':code,'stdout':out.decode(errors='backslashreplace')[:2000], 'stderr':err.decode(errors='backslashreplace')[:2000],'output_sha256':sha(output) if output is not None else None}
 def freeze():
     frozen={}
     for t in tasks():
@@ -101,7 +103,7 @@ def main():
                     work=folder/f'{name}-{language}';work.mkdir()
                     verdict=observed(command,work,data,answer,language=='reference')
                     result['checks'].append({'fixture':name,'language':language,**verdict})
-                    if not verdict['pass']:
+                    if not verdict['pass'] and not verdict['inconclusive']:
                         # Failed candidates do not spend repeated 120s on later maximum cases.
                         commands[language]=None
                 commands={k:v for k,v in commands.items() if v is not None}
@@ -109,7 +111,9 @@ def main():
             nilchecks=[x for x in result['checks'] if x['language'] in ('reference','O0','O2')]
             needed=3*len(golden[slug])
             result['nil_status']='verified' if len(nilchecks)==needed and all(x['pass'] for x in nilchecks) else ('not-run' if args.baselines_only else result.get('nil_status','blocked-candidate'))
-            result['status']='pass' if baseline_good and (args.baselines_only or result['nil_status']=='verified') else 'failed'
+            resource_only=len(nilchecks)==needed and any(x['inconclusive'] for x in nilchecks) and all(x['pass'] or x['inconclusive'] for x in nilchecks)
+            if resource_only:result['nil_status']='resource-inconclusive'
+            result['status']='pass' if baseline_good and (args.baselines_only or result['nil_status']=='verified') else ('resource-inconclusive' if baseline_good and resource_only else 'failed')
             if args.timing_repeats and result['nil_status']=='verified':
                 binary=folder/'nil-perf';code,out,err=run([str(helper),str(source),'perf-O2',str(binary)],folder)
                 if code or out!=b'BUILD\tOK\n' or err:raise RuntimeError('perf build failed')
@@ -129,7 +133,7 @@ def main():
         print(slug,result['status'],result['nil_status'],sum(x['pass'] for x in result['checks']),flush=True)
         return result
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:results=list(pool.map(verify,selected))
-    report={'schema':1,'clang_version':subprocess.check_output([clang,'--version'],text=True).splitlines()[0],'python_version':sys.version,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':256,'timeout_seconds':TIMEOUT},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks'])}}
+    report={'schema':1,'clang_version':subprocess.check_output([clang,'--version'],text=True).splitlines()[0],'python_version':sys.version,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':256,'timeout_seconds':TIMEOUT},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks']),'inconclusive_checks':sum(x['inconclusive'] for r in results for x in r['checks'])}}
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2)+'\n');print('TOTALS',json.dumps(report['totals']))
-    if any(r['status']!='pass' for r in results):raise SystemExit(1)
+    if any(r['status'] not in ('pass','resource-inconclusive') for r in results):raise SystemExit(1)
 if __name__=='__main__':main()

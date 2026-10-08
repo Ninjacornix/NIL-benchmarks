@@ -22,6 +22,8 @@ SUITE = HERE.parent
 ROOT = SUITE.parent
 sys.path.insert(0, str(HERE))
 import copy_ledger
+sys.path.insert(0, str(SUITE))
+from resource_outcomes import native_code
 
 NEETCODE = SUITE / 'corpora/neetcode150'
 APPLICATION = SUITE / 'corpora/application-v5'
@@ -143,11 +145,19 @@ def native_census(helpers, source, work, data, trace, reference_trace, max_event
     run = subprocess.run([str(binary), *arguments], cwd=work, env=env,
                          capture_output=True, timeout=600)
     if expected is not None:
-        code = 'OK' if run.returncode == 0 else run.stderr.decode(errors='replace').split()[0] if run.stderr else 'NO_DIAGNOSTIC'
-        assert code == expected[1].decode().strip().split('\t')[1], ('native diagnostic divergence', source, code, expected[:3])
+        code = native_code(run)
+        reference_code = expected[1].decode().strip().split('\t')[1]
+        if code == 'E013' or reference_code == 'E013':
+            return None, f'resource-inconclusive reference={reference_code} native={code}'
+        assert code == reference_code, ('native diagnostic divergence', source, code, expected[:3])
         assert run.stdout == expected[4], ('native stdout divergence', source)
         assert ((work / 'output.bin').read_bytes() if (work / 'output.bin').exists() else None) == expected[3], ('native output divergence', source)
         assert (work / 'input.bin').read_bytes() == expected[5], ('native input changed', source)
+    if expected is None:
+        code = native_code(run)
+        if code == 'E013':
+            return None, 'resource-inconclusive native=E013'
+        assert code == 'OK', ('native census failed', source, run.stderr)
     events = read_trace(trace)
     if not events:
         return [], 'native exit %d, no instrumented copy reached' % run.returncode
@@ -345,9 +355,13 @@ def main():
         'totals': totals,
         'kinds': dict(kinds),
         'executed_codes': dict(outcomes),
+        'inconclusive_native_fixtures': [{'program': r['program'], **n}
+            for r in per_program if r['native'] for n in r['native']['unjoinable']
+            if n['reason'].startswith('resource-inconclusive')],
         'fixture_contract': ({'parameters': ['v:[3,-2,9]', 's:abc 12', 's:input.bin', 's:output.bin'],
                               'input_sha256': hashlib.sha256(bytes(range(256)) * 4).hexdigest(),
-                              'steps': 100000, 'call_depth': 256,
+                              'steps': 100000, 'call_depth': 256, 'memory_bytes': 67108864,
+                              'resource_policy': 'clean E013 inconclusive; excluded from native joins',
                               'host': 'fixed census fixture, not randomized campaign Host',
                               'native_observables_compared': ['diagnostic code', 'stdout', 'output file', 'preserved input']}
                              if scope.startswith('fuzz:') else None),
@@ -365,6 +379,9 @@ def main():
     print('CENSUS ' + json.dumps({
         'scope': scope, 'programs': len(per_program), 'skipped': len(skipped),
         'executed_codes': dict(outcomes),
+        'inconclusive_native_fixtures': [{'program': r['program'], **n}
+            for r in per_program if r['native'] for n in r['native']['unjoinable']
+            if n['reason'].startswith('resource-inconclusive')],
         'payload_events': payload['events'], 'payload_bytes': payload['bytes'],
         'strict': payload['strict'], 'payload_only': payload['payload_only'],
         'other_groups': {g: totals[g]['events'] for g in groups if g != copy_ledger.PAYLOAD_COPY},

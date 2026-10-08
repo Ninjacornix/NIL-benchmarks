@@ -1,4 +1,22 @@
-# Round 21: natural programs, copies, memory and limits
+# Natural programs, copies, memory and limits
+
+## Round 23 ordinary-memory policy (ADR 046)
+
+Run current overlays with `reference_profile.py --copies --working-tree --output
+<outside-dir>` while a compiler step is uncommitted. The manifest records the
+committed revision and the tracked compiler patch SHA-256. Without that flag it
+measures committed HEAD only. The census preserves original program hashes.
+
+Bounded fuzz helpers and native builds use the same 64 MiB **safety guard**;
+application/NeetCode helpers use the 256 MiB default. Native signals, malformed
+or noisy diagnostics and sanitizer output fail closed. Clean E013 on either
+path is resource-inconclusive: the reference partial trace is reported, but the
+native join is excluded and named in `inconclusive_native_fixtures`. Excluded
+resource traces are not zero-copy successes. Other outcomes remain exact.
+Reports before ADR 046 used a deterministic quota; their figures remain history.
+The `quota_headroom_ratio` legacy telemetry field now means observed managed
+storage / configured safety guard, not semantic quota or process-RSS headroom.
+
 
 ## Round 22: repaired fuzz scope
 

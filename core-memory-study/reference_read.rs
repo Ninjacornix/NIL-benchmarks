@@ -13,7 +13,10 @@ fn main() {
         &program.hir,
         FunctionId(0),
         &[],
-        Limits::default(),
+        Limits {
+            memory_bytes: nil_hir::MAX_DYNAMIC_BYTES,
+            ..Limits::default()
+        },
         &mut FileHost::default(),
     ) {
         Ok(Value::I64(value)) => println!("{value}"),

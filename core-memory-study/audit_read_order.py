@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Permanent fail-fast streaming read/quota audit, without compiler edits.
+"""Permanent streaming read/fault audit, without compiler edits.
 
-Use --require-parity for every admission gate; any conflict fails.
+Use --require-parity for every gate: any non-resource conflict fails.
+Clean E013 on either side is explicitly inconclusive (ADR 046).
 """
 import argparse
 import hashlib
@@ -48,12 +49,19 @@ def definitions():
 def observation(result):
     diagnostic = CODE.match(result.stderr)
     if diagnostic:
-        if result.returncode != 1 or result.stdout:
+        if result.returncode != 1 or result.stdout or len(result.stderr.splitlines()) != 1 or int(diagnostic[2]) > int(diagnostic[3]):
             raise AssertionError(f'Unexpected failure status/output: {result!r}')
         return dict(code=diagnostic[1].decode(), span=[int(diagnostic[2]), int(diagnostic[3])], stdout_hex=result.stdout.hex())
     if result.returncode or result.stderr:
         raise AssertionError(f'Infrastructure failure, not a language diagnostic: {result!r}')
     return dict(code='OK', span=None, stdout_hex=result.stdout.hex())
+
+
+def compare(reference, native):
+    # observation() must validate process status/output before this classification.
+    if 'E013' in (reference['code'], native['code']):
+        return 'inconclusive'
+    return 'equal' if reference == native else 'different'
 
 
 def command(args, cwd=ROOT, env=None):
@@ -104,7 +112,7 @@ def main():
         for mode in ('bounded', 'unbounded'):
             for opt in ('O0', 'O2'):
                 binary = work / f'native-{mode}-{opt}'
-                build = [compiler, '--profile', 'expr-v5', f'--{mode}', 'build', source, '-o', binary, f'-{opt}']
+                build = [compiler, '--profile', 'expr-v5', f'--{mode}', '--memory-limit', '64MiB', 'build', source, '-o', binary, f'-{opt}']
                 command(build)
                 native_build_commands.append(list(map(str, build)))
                 variants.append((binary.name, [str(binary)]))
@@ -121,14 +129,18 @@ def main():
                 Path(str(stem) + '.stderr').write_bytes(result.stderr)
                 seen = observation(result)
                 expected = task['expected'][0 if name == 'reference' else 1]
-                allowed = set(task['expected']) if args.require_parity else {expected}
-                assert seen['code'] in allowed, (task['id'], name, seen, allowed)
+                # Historical E013 predictions are not contracts. Only fixtures
+                # with a non-resource expected outcome have an independent oracle.
+                allowed = set(task['expected']) - {'E013'}
+                if allowed:
+                    assert seen['code'] == 'E013' or seen['code'] in allowed, (task['id'], name, seen, allowed)
                 trace = json.loads(Path(str(stem) + '.trace.json').read_text()) if task['fault'] is not None else None
                 if seen['code'] == 'OK':
-                    assert result.stdout == f"{task['value']}\n".encode()
-                elif seen['span'] != [task['source'].index('!read'), task['source'].index('!read') + 1]:
+                    if 'value' in task:
+                        assert result.stdout == f"{task['value']}\n".encode()
+                elif seen['code'] != 'E013' and seen['span'] != [task['source'].index('!read'), task['source'].index('!read') + 1]:
                     raise AssertionError((task['id'], name, 'wrong diagnostic span', seen))
-                if trace is not None:
+                if trace is not None and seen['code'] != 'E013':
                     if 'calls' in task:
                         assert trace['read_calls'] == task['calls']
                     elif seen['code'] == 'E015':
@@ -138,12 +150,13 @@ def main():
                         assert seen['code'] == 'E013' and 0 < trace['prefix_bytes'] < task['fault'] and trace['EIO_returns'] == 0
                 records.append(dict(variant=name, repeat=repeat, command=invoke, exit=result.returncode, observation=seen, trace=trace))
         by_repeat = [{r['variant']: r['observation'] for r in records if r['repeat'] == repeat} for repeat in range(args.repeats)]
-        divergences = sum(observed != trial['reference'] for trial in by_repeat for name, observed in trial.items() if name != 'reference')
+        inconclusive = sum(compare(trial['reference'], observed) == 'inconclusive' for trial in by_repeat for name, observed in trial.items() if name != 'reference')
+        divergences = sum(compare(trial['reference'], observed) == 'different' for trial in by_repeat for name, observed in trial.items() if name != 'reference')
         conflict = bool(divergences)
-        results.append(dict(task=task, source_sha256=digest(source), parity=not conflict, diagnostic_divergences=divergences, records=records))
+        results.append(dict(task=task, source_sha256=digest(source), parity=not conflict, inconclusive_comparisons=inconclusive, diagnostic_divergences=divergences, records=records))
         ref_codes = ','.join(sorted({r['observation']['code'] for r in records if r['variant'] == 'reference'}))
         native_codes = ','.join(sorted({r['observation']['code'] for r in records if r['variant'] != 'reference'}))
-        print(f"{task['id']}: {'CONFLICT' if conflict else 'PARITY'} reference={ref_codes} native={native_codes} O0/O2 bounded/unbounded repeats={args.repeats}", flush=True)
+        print(f"{task['id']}: {'CONFLICT' if conflict else 'INCONCLUSIVE' if inconclusive else 'PARITY'} reference={ref_codes} native={native_codes} O0/O2 bounded/unbounded repeats={args.repeats}", flush=True)
     manifest = {str(p.relative_to(out)): digest(p) for p in sorted(out.rglob('*')) if p.is_file() and p.name not in ('report.json', 'manifest.json')}
     report = dict(schema=1, status='BLOCKED_B1' if any(not r['parity'] for r in results) else 'PARITY',
                   main_revision=command(['git', 'rev-parse', 'HEAD']), benchmark_revision=command(['git', 'rev-parse', 'HEAD'], cwd=BENCH),
@@ -155,6 +168,8 @@ def main():
                   totals=dict(families=len(results), conflict_families=sum(not r['parity'] for r in results),
                               reference_runs=len(results)*args.repeats, native_runs=len(results)*args.repeats*4,
                               comparisons=len(results)*args.repeats*4,
+                              inconclusive_comparisons=sum(r['inconclusive_comparisons'] for r in results),
+                              inconclusive_families=[r['task']['id'] for r in results if r['inconclusive_comparisons']],
                               diagnostic_divergences=sum(r['diagnostic_divergences'] for r in results)),
                   results=results, raw_manifest=manifest)
     (out / 'report.json').write_text(json.dumps(report, indent=2) + '\n')

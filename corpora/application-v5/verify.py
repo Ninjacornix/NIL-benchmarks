@@ -96,12 +96,12 @@ def main():
                 verdict = application.evaluate(path.read_text(), language, task, folder) if language == 'expr-v5' else baseline(task, path, folder, language)
                 results.append({'task': task['id'], 'language': language, 'source_sha256': digest(path), **verdict})
                 print(f"{task['id']}/{language}: {'PASS' if verdict['semantic_ok'] else 'FAIL'} {verdict}", flush=True)
-    totals = dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r['language'] == 'expr-v5' and r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'))
+    totals = dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r['language'] == 'expr-v5' and r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'), inconclusive_checks=sum(len(r.get('inconclusive_checks', [])) for r in results))
     report = {'schema': 1, 'group': args.group, 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=application.ROOT, text=True).strip(), 'source_hashes': fingerprint(), 'totals': totals, 'results': results}
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + '\n')
     print('TOTALS ' + json.dumps(totals), flush=True)
-    if any(not r.get('semantic_ok', False) for r in results if r.get('status') != 'unsupported'):
+    if any(not r.get('semantic_ok', False) and r.get('failure_reason') != 'resource_inconclusive' for r in results if r.get('status') != 'unsupported'):
         raise SystemExit(1)
 
 

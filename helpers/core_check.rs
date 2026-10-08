@@ -91,6 +91,7 @@ fn main() {
         Limits {
             steps: 1_000_000_000,
             call_depth: 256,
+            memory_bytes: nil_hir::DEFAULT_MEMORY_BYTES,
         },
         &mut host,
     ) {

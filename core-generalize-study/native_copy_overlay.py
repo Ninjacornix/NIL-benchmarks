@@ -33,6 +33,16 @@ def patch(shadow):
   ('    return nil_literal(nil_map_bytes(m)+e->key,(int64_t)e->key_len,start,end);','    nil_measure_copy(1,e->key_len,"map_key_extract");\n    return nil_literal(nil_map_bytes(m)+e->key,(int64_t)e->key_len,start,end);'),
  ]
  for before,after in hooks:
+  if s.count(before)==0 and before=='        memcpy(copy->data,value->data,(size_t)bytes); value=copy;':
+   before='        memcpy(copy->data,value->data,(size_t)bytes);'
+   after='        nil_measure_copy(1,bytes,"sort_cow");\n'+before
+  if s.count(before)==0 and before=='    memcpy(row,replacement,(size_t)width);return v;':
+   before='    memcpy(row,replacement,(size_t)width);'
+   after='    nil_measure_copy(3,width,"record_set_replacement");\n'+before
+  if s.count(before)==0 and before.startswith('    return nil_literal(nil_map_bytes(m)+e->'):
+   field='value' if 'e->value' in before else 'key'
+   before=f'    NilSequence *out=nil_literal(nil_map_bytes(m)+e->{field},(int64_t)e->{field}_len,start,end);'
+   after=f'    nil_measure_copy(1,e->{field}_len,"map_{field}_extract");\n'+before
   assert s.count(before)==1,(before,s.count(before));s=s.replace(before,after)
  anchor='/* Application runtime: execution-owned immutable sequences. No public pointer ABI. */'
  assert s.count(anchor)==1;s=s.replace(anchor,(HERE/'native_copy_trace.c').read_text()+'\n'+anchor)

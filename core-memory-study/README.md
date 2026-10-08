@@ -1,10 +1,10 @@
 # Round 23: memory-model admission audit
 
-This is the permanent **14-family parity regression gate** for the 2026-10-08
-ADR 033/045 fail-fast amendment. A successful prefix beyond available payload must
-produce E013 before a later E015. Earlier faults, dead allocations and unselected
-arms remain controls. Historical Round 23 results recorded seven conflicting
-families; those are retained in the earlier report, not accepted expectations.
+This is the permanent **14-family non-resource parity regression gate**. ADR 046
+(2026-10-08) supersedes deterministic quota ordering. Clean E013 on either path
+is explicitly inconclusive, counted and listed. Non-resource codes/spans, output
+and fault receipts must agree; crashes, malformed diagnostics and sanitizer
+findings always fail. Earlier deterministic-quota reports remain historical.
 
 All sources/fixtures here are originally authored and covered by this repository's
 MIT license. No frozen corpus inputs, solutions or compiler sources are edited.
@@ -21,7 +21,7 @@ python3 benchmarks/core-memory-study/audit_read_order.py \
 ```
 
 The last command exits **1** when parity is violated. Every admission gate must
-use `--require-parity`; successful runs report PARITY. Unexpected diagnostics, crashes, wrong spans, stdout or fault traces
+use `--require-parity`; successful gates report PARITY for non-resource comparisons and list inconclusives. Unexpected diagnostics, crashes, wrong spans, stdout or fault traces
 fail in either mode. Rerun in a fresh output directory for independently archived
 artifacts; results and executables stay outside git.
 

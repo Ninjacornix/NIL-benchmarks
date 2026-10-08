@@ -31,5 +31,20 @@ class ReadOrderAudit(unittest.TestCase):
         self.assertEqual(audit.observation(subprocess.CompletedProcess([], 0, b'12\n', b'')),
                          dict(code='OK', span=None, stdout_hex='31320a'))
 
+    def test_resource_diagnostic_cannot_hide_sanitizer_or_reversed_span(self):
+        for text in (b'E013 @3..4 failure\nAddressSanitizer: heap-buffer-overflow\n', b'E013 @4..3 failure\n'):
+            with self.assertRaises(AssertionError):
+                audit.observation(subprocess.CompletedProcess([], 1, b'', text))
+
+    def test_resource_outcomes_are_inconclusive_not_equal(self):
+        resource = dict(code='E013', span=[3,4], stdout_hex='')
+        same = dict(resource)
+        other = dict(code='E015', span=[7,8], stdout_hex='')
+        self.assertEqual(audit.compare(resource, same), 'inconclusive')
+        self.assertEqual(audit.compare(resource, other), 'inconclusive')
+        self.assertEqual(audit.compare(other, resource), 'inconclusive')
+        self.assertEqual(audit.compare(other, other), 'equal')
+        self.assertEqual(audit.compare(other, dict(other, span=[8,9])), 'different')
+
 if __name__ == '__main__':
     unittest.main()

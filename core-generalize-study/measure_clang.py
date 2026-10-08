@@ -16,12 +16,14 @@ for i,arg in enumerate(args):
  text=path.read_text()
  if '#define NIL_MEMORY_LIMIT' not in text:continue
  assert 'static uint64_t nil_live;' in text
+ # The observation function precedes the application macro; append reporting
+ # after the complete runtime so the configured macro is in scope.
  text=text.replace('static uint64_t nil_live;', '''static uint64_t nil_live;
 static uint64_t nil_measure_peak;
-static void nil_measure_observe(void) { if(nil_live>nil_measure_peak) nil_measure_peak=nil_live; }
-__attribute__((destructor)) static void nil_measure_report(void) {
-    fprintf(stderr,"NIL_MEASURE peak_observed_live=%" PRIu64 " limit=%" PRIu64 "\\n",nil_measure_peak,UINT64_C(67108864));
-}''',1)
+static void nil_measure_observe(void) { if(nil_live>nil_measure_peak) nil_measure_peak=nil_live; }''',1)
+ text+='''\n__attribute__((destructor)) static void nil_measure_report(void) {
+    fprintf(stderr,"NIL_MEASURE peak_observed_live=%" PRIu64 " limit=%" PRIu64 "\\n",nil_measure_peak,NIL_MEMORY_LIMIT);
+}'''
  old='if(!nil_roots_dirty) return;'
  assert text.count(old)==1;text=text.replace(old,'if(!nil_roots_dirty) { nil_measure_observe(); return; }')
  old='if(differ) nil_roots_sync_slow(frame);'

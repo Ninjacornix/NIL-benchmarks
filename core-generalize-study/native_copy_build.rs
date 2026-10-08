@@ -11,6 +11,7 @@ fn main() {
     program.hir=measurement_program(&program.hir,&mut 0);
     let options=nil_llvm::Options {
         steps:100_000,call_depth:256,
+        memory_bytes:if args[2]=="bounded" {nil_hir::MAX_DYNAMIC_BYTES as u64} else {nil_hir::DEFAULT_MEMORY_BYTES as u64},
         instrumentation:if args[2]=="bounded" {nil_llvm::Instrumentation::Bounded} else {assert_eq!(args[2],"unbounded");nil_llvm::Instrumentation::Unbounded},
         optimization:nil_llvm::Optimization::O0,
         ..nil_llvm::Options::default()

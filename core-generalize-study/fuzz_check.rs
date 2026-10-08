@@ -84,7 +84,7 @@ fn oracle_main() {
         state: env::var("NIL_CENSUS_SEED").expect("fixture seed").parse().expect("seed"),
         invalid_seed: env::var_os("NIL_CENSUS_INVALID_SEED").is_some() };
     let result = execute_values_with_host(&program.hir, FunctionId(0), &parameters,
-        Limits { steps: 100_000, call_depth: 256 }, &mut host);
+        Limits { steps: 100_000, call_depth: 256, memory_bytes: nil_hir::MAX_DYNAMIC_BYTES }, &mut host);
     let code = match result {
         Ok(value) => { host.stdout.extend(render(&value)); "OK" }
         Err(ref d) => { eprintln!("{d}"); d.code }

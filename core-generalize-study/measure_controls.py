@@ -37,7 +37,7 @@ def main():
      match=re.search(r'(\d+)\s+maximum resident set size',err);assert match,err;return ms,int(match[1])
     if mode=='counter':
      match=re.fullmatch(r'NIL_MEASURE peak_observed_live=(\d+) limit=(\d+)\n',err);assert match,err
-     return ms,dict(peak_observed_live_bytes=int(match[1]),memory_limit_bytes=int(match[2]),quota_headroom_ratio=int(match[1])/int(match[2]))
+     return ms,dict(peak_observed_live_bytes=int(match[1]),memory_limit_bytes=int(match[2]),guard_headroom_ratio=int(match[1])/int(match[2]))
     assert not err,err;return ms,None
    _,charge=execute('counter');rss={};samples={m:[] for m in ['nil','cpp']+(['before'] if a.baseline_compiler else [])}
    for mode in samples:

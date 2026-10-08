@@ -29,7 +29,7 @@ def checked(cmd,work,data,answer,env=None,measurement=False,rss=False):
  err=p.stderr.decode();value=None
  if measurement:
   m=re.fullmatch(r'NIL_MEASURE peak_observed_live=(\d+) limit=(\d+)\n',err);assert m,err
-  value={'peak_observed_live_bytes':int(m[1]),'memory_limit_bytes':int(m[2]),'quota_headroom_ratio':int(m[1])/int(m[2])}
+  value={'peak_observed_live_bytes':int(m[1]),'memory_limit_bytes':int(m[2]),'guard_headroom_ratio':int(m[1])/int(m[2])}
  elif rss:
   m=re.search(r'(\d+)\s+maximum resident set size',err);assert m,err
   value=int(m[1])

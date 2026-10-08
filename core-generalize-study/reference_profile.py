@@ -23,7 +23,7 @@ pub(crate) fn observe_profile_charge(bytes: usize) {
 }
 '''
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--copies',action='store_true');p.add_argument('--revision',default='HEAD');a=p.parse_args();out=a.output.resolve()
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--copies',action='store_true');p.add_argument('--working-tree',action='store_true');p.add_argument('--revision',default='HEAD');a=p.parse_args();out=a.output.resolve()
  if out.is_relative_to(ROOT):p.error('overlay must be outside the checkout')
  out.mkdir(parents=True,exist_ok=True);shadow=out/'source';shadow.mkdir(exist_ok=True)
  if any(shadow.iterdir()):p.error('use a fresh output folder')
@@ -31,14 +31,19 @@ def main():
  process=subprocess.Popen(['git','archive',revision],cwd=ROOT,stdout=subprocess.PIPE)
  with tarfile.open(fileobj=process.stdout,mode='r|') as archive:archive.extractall(shadow,filter='data')
  assert process.wait()==0
+ working_patch=None
+ if a.working_tree:
+  patch=subprocess.check_output(['git','diff','--binary',revision,'--','crates','cli','tools','std','Cargo.toml','Cargo.lock'],cwd=ROOT)
+  subprocess.run(['git','apply','--unsafe-paths','-'],input=patch,cwd=shadow,check=True)
+  working_patch=hashlib.sha256(patch).hexdigest()
  changes={}
  path=shadow/'crates/nil-compiler/src/evaluator.rs';source=path.read_text();original=hashlib.sha256(source.encode()).hexdigest()
- anchor='        allocated = live;';assert source.count(anchor)==1
+ anchor='        allocated.bytes = live;' if 'Memory::new' in source else '        allocated = live;';assert source.count(anchor)==1
  source=PREFIX+source.replace(anchor,'        PROFILE_LIVE.with(|p| p.set(p.get().max(live)));\n'+anchor)
  path.write_text(source);changes[str(path.relative_to(shadow))]=dict(original_sha256=original,instrumented_sha256=hashlib.sha256(source.encode()).hexdigest())
  path=shadow/'crates/nil-compiler/src/application.rs';source=path.read_text();original=hashlib.sha256(source.encode()).hexdigest()
  anchor='    Ok(())\n}\npub(crate) fn intrinsic(';assert source.count(anchor)==1
- source=source.replace(anchor,'    crate::evaluator::observe_profile_charge(*used);\n'+anchor)
+ source=source.replace(anchor,'    crate::evaluator::observe_profile_charge('+('used.bytes' if 'pub(crate) struct Memory' in source else '*used')+');\n'+anchor)
  path.write_text(source);changes[str(path.relative_to(shadow))]=dict(original_sha256=original,instrumented_sha256=hashlib.sha256(source.encode()).hexdigest())
  if a.copies:
   import copy_overlay,site_overlay,native_copy_overlay
@@ -104,6 +109,6 @@ def main():
   (ordinary/'Cargo.toml').write_text(ordinary_manifest)
   subprocess.run(['cargo','generate-lockfile','--manifest-path',str(ordinary/'Cargo.toml'),'--offline'],check=True)
   subprocess.run(['cargo','build','--manifest-path',str(ordinary/'Cargo.toml'),'--release','--locked','--offline'],check=True)
- receipt=dict(schema=1,compiler_revision=revision,method=__doc__,patches=changes,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),controls_helper_sha256=hashlib.sha256((HERE/"reference_controls.rs").read_bytes()).hexdigest(),extra_helpers={name:hashlib.sha256(content.encode()).hexdigest() for name,content in extra_helpers.items()},binary=str(helper_dir/'target/release/reference-profile'))
+ receipt=dict(schema=1,compiler_revision=revision,working_tree_patch_sha256=working_patch,method=__doc__,patches=changes,helper_sha256=hashlib.sha256(helper.encode()).hexdigest(),controls_helper_sha256=hashlib.sha256((HERE/"reference_controls.rs").read_bytes()).hexdigest(),extra_helpers={name:hashlib.sha256(content.encode()).hexdigest() for name,content in extra_helpers.items()},binary=str(helper_dir/'target/release/reference-profile'))
  (out/'MANIFEST.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))
 if __name__=='__main__':main()
