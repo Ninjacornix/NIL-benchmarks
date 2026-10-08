@@ -1,11 +1,10 @@
 # Round 23: memory-model admission audit
 
-This is a **negative admission test**, not a ledger implementation or a claim that
-regular-file reads diverge. It probes a successful file prefix followed by an I/O
-error while other values keep nearly 64 MiB of logical charge live. The starting
-compiler can produce reference E015 versus native E013 at the same source span.
-A zero-change ledger cannot make those outcomes agree without deciding which
-host/error ordering to change. ADR 045 preregisters that stop condition.
+This is the permanent **14-family parity regression gate** for the 2026-10-08
+ADR 033/045 fail-fast amendment. A successful prefix beyond available payload must
+produce E013 before a later E015. Earlier faults, dead allocations and unselected
+arms remain controls. Historical Round 23 results recorded seven conflicting
+families; those are retained in the earlier report, not accepted expectations.
 
 All sources/fixtures here are originally authored and covered by this repository's
 MIT license. No frozen corpus inputs, solutions or compiler sources are edited.
@@ -21,16 +20,15 @@ python3 benchmarks/core-memory-study/audit_read_order.py \
   --out /tmp/nil-round23-admission --repeats 3 --require-parity
 ```
 
-The last command exits **1** when parity is violated; the report says
-`BLOCKED_B1`. Without `--require-parity`, exit 0 means the audit matched its
-explicitly expected outcomes, **not** that the compiler passed differential
-validation. Unexpected diagnostics, crashes, wrong spans, stdout or fault traces
+The last command exits **1** when parity is violated. Every admission gate must
+use `--require-parity`; successful runs report PARITY. Unexpected diagnostics, crashes, wrong spans, stdout or fault traces
 fail in either mode. Rerun in a fresh output directory for independently archived
 artifacts; results and executables stay outside git.
 
 ## Fault model and limits
 
-`host_failure.c` is a test-only Darwin interposer. It reads an ordinary, authored
+`tools/nil-fuzz/fixtures/read_fault.c` in the parent repository is the shared
+test-only interposer. This full audit exercises its Darwin path. It reads an ordinary, authored
 4 KiB file and makes the next read at a specified byte offset return EIO. The
 same fault position applies to Rust `File::read` and C `fread`; the latter is also
 interposed because Darwin's internal libc read calls cannot be overridden by
@@ -50,8 +48,9 @@ substitute in-memory Host or a simulated compiler result.
 
 The matrix includes Bytes, Buffer, record-child, callee and selected-lazy retention.
 Both bounded/unbounded native modes at O0/O2 are compared to the reference at the
-same source/fixture/fault. This family is absent from the normal v5 generator:
-zero divergences there cannot establish parity for partially failing streams.
+same source/fixture/fault. The normal v5 generator also covers fourteen acquisition-fault families with
+real native interposition and a prefix-failing in-memory reference Host. The audit
+additionally exercises the actual reference FileHost and bounded/unbounded builds.
 
 `report.json` contains commands, source/binary hashes, codes/spans, output bytes,
 fault receipts and a raw artifact manifest. Native semantic failures are expected

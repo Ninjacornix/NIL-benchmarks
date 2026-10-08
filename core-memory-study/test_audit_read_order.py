@@ -8,7 +8,7 @@ class ReadOrderAudit(unittest.TestCase):
         tasks = audit.definitions()
         self.assertEqual(len(tasks), 14)
         self.assertEqual(len({t['id'] for t in tasks}), 14)
-        self.assertEqual(sum(t['expected'][0] != t['expected'][1] for t in tasks), 7)
+        self.assertEqual(sum(t['expected'][0] != t['expected'][1] for t in tasks), 0)
         self.assertTrue(any(t['fault'] == 0 for t in tasks))
         self.assertTrue(any(t['fault'] == 64 for t in tasks))
         self.assertTrue(any(t.get('calls') == 0 for t in tasks))
