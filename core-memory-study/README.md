@@ -71,3 +71,24 @@ selects conservatively from emitted IR, reruns unresolved module contexts too,
 and requires matching source hashes and reference totals before merging rows.
 Raw traces and merge receipts remain outside git. Unbounded recursion safety is
 still B4 work, not a guarantee supplied by these controls.
+
+## Depth/stack admission audit (B4, failing on the B3 compiler)
+
+```sh
+cargo build --workspace --release --locked --offline
+python3 -m unittest discover -s benchmarks/core-memory-study -p 'test_*.py'
+python3 benchmarks/core-memory-study/audit_depth.py --out /tmp/nil-depth-admission-new
+```
+
+The last command is **expected to exit 1 on the current compiler**. This is a
+retained admission audit, not a passing regression suite or a depth fix. It calls
+the actual heap-framed evaluator and native build API, selecting call-depth limits
+32, 256 and 1024, bounded/unbounded builds and O0/O2. The sources cover the
+reported literal sequence recursion, mutual recursion, and recursion carrying a
+3,840-slot record of fixed arrays. It archives every exit status and diagnostic
+span; signals, sanitizer output and build rejection never count as E008.
+
+The 2026-10-09 audit found 11/36 exact comparisons, 19 signals and six build
+rejections (bounded depth 1024). In particular, bounded O0 with the large record
+also overflows the stack. See the Round 23 admission report. Fixing unbounded
+entry counters alone is insufficient. No frozen corpus task is added or changed.
