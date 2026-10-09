@@ -55,3 +55,19 @@ additionally exercises the actual reference FileHost and bounded/unbounded build
 `report.json` contains commands, source/binary hashes, codes/spans, output bytes,
 fault receipts and a raw artifact manifest. Native semantic failures are expected
 here; an infrastructure failure is never counted as a language diagnostic.
+
+## Flat std update boundary (B3)
+
+`python3 benchmarks/core-memory-study/measure_updates.py --repeats 25 --output /tmp/std-updates.json`
+compares `!swap`/`!pop` with their checked caller forms for Buffer/Bytes.
+It rotates warm process runs, checks every result and retains all samples.
+Run timing alone. This is a source-boundary measurement, not a C++ comparison.
+See `reports/2026-10-09/ROUND23_B3.md` for the missed parity forecast.
+
+The copy overlay counts nonzero-offset in-place slice moves as payload traffic;
+zero-offset truncation moves no payload. `copy_census.py --program NAME` supports
+explicit instrumentation reruns and fails on unknown names. The B3 repair
+selects conservatively from emitted IR, reruns unresolved module contexts too,
+and requires matching source hashes and reference totals before merging rows.
+Raw traces and merge receipts remain outside git. Unbounded recursion safety is
+still B4 work, not a guarantee supplied by these controls.
