@@ -5357,5 +5357,46 @@
     "Object frame measurements are not a complete final linked stack bound",
     "Existing sanitizer suites do not cover the failing large-record recursion",
     "Retrospective output-file audit has only final native O2 bytes; original fuzzer checked O0 effects during execution"
-  ]
+  ],
+  "refreshed_existing_gates": [
+    {
+      "command": [
+        "./scripts/ci.sh"
+      ],
+      "exit": 0,
+      "started": 1791552462.5225909,
+      "finished": 1791552721.632451,
+      "tests": 551,
+      "warning_lines": 0,
+      "log": "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/ci-debug.log",
+      "log_sha256": "29b35690b472e9870683bd3e9aecb7f5343e47d0ed5b5313e33617b8e621f105"
+    },
+    {
+      "command": [
+        "./scripts/ci.sh",
+        "release"
+      ],
+      "exit": 0,
+      "started": 1791552721.6331189,
+      "finished": 1791552910.7180538,
+      "tests": 551,
+      "warning_lines": 0,
+      "log": "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/ci-release.log",
+      "log_sha256": "cef65c210241f51e101265b4756a3da81901b837cd3a4030e1fe5766153d04ed"
+    },
+    {
+      "command": [
+        "./scripts/sanitize.sh"
+      ],
+      "exit": 0,
+      "started": 1791552910.718509,
+      "finished": 1791553720.420492,
+      "tests": 250,
+      "warning_lines": 0,
+      "log": "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/sanitize.log",
+      "log_sha256": "df682a3ed1d904fe6671e229e9222b10ab404b147bd87a73513f9718845527a8",
+      "suite_findings": 0
+    }
+  ],
+  "overall_gate_status": "FAILED_NEW_STACK_ADMISSION"
 }

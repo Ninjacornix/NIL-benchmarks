@@ -111,3 +111,17 @@ are not included in these inconclusives.
 | 708 | `io_map_and_child` | 2 | 2 | E013 / E013 |
 | 709 | `io_selected_lazy` | 2 | 2 | E013 / E013 |
 | 710 | `io_callee_retention` | 2 | 2 | E013 / E013 |
+
+## Refreshed existing gates (same B3 compiler source)
+
+| Command | Exit | Tests | Findings |
+|---|---:|---:|---|
+| `./scripts/ci.sh` | 0 | 551 | Zero warnings |
+| `./scripts/ci.sh release` | 0 | 551 | Zero warnings |
+| `./scripts/sanitize.sh` | 0 | 250 | No suite ASan/UBSan findings |
+
+Raw log hashes and invocation timestamps are in the JSON. The **new targeted
+ASan stack-overflow finding still fails admission**; passing existing suites
+does not erase it. No B4 compiler change was made. Earlier B3 corpus/fuzz gates
+therefore cover identical compiler source, but their missing E008 coverage is
+explicit. Nothing was pushed.
