@@ -44,6 +44,13 @@ def patch(shadow):
    before=f'    NilSequence *out=nil_literal(nil_map_bytes(m)+e->{field},(int64_t)e->{field}_len,start,end);'
    after=f'    nil_measure_copy(1,e->{field}_len,"map_{field}_extract");\n'+before
   assert s.count(before)==1,(before,s.count(before));s=s.replace(before,after)
+ # In-place offset slices still physically move payload. Zero-offset truncation
+ # does not; do not count it as a copy merely because a slice operation occurred.
+ if 'void *nil_slice_unique(' in s:
+  before='    if(length && offset) memmove(value->data,value->data+(size_t)offset*value->width,(size_t)length*value->width);'
+  after='    if(length && offset) { nil_measure_copy(1,(uint64_t)length*value->width,"slice"); memmove(value->data,value->data+(size_t)offset*value->width,(size_t)length*value->width); }'
+  assert s.count(before)==1,('unique slice move',s.count(before))
+  s=s.replace(before,after)
  anchor='/* Application runtime: execution-owned immutable sequences. No public pointer ABI. */'
  assert s.count(anchor)==1;s=s.replace(anchor,(HERE/'native_copy_trace.c').read_text()+'\n'+anchor)
  path.write_text(s)

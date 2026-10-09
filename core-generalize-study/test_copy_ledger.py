@@ -2,6 +2,8 @@
 import re
 import sys
 import unittest
+import tempfile
+import subprocess
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -98,6 +100,30 @@ class CoverageLedger(unittest.TestCase):
             source = Path(module.__file__).read_text()
             self.assertNotIn("/Users", source)
             self.assertIn('shadow', source)
+
+    def test_unique_slice_moves_are_counted_only_for_nonzero_offsets(self):
+        runtime = HERE.parents[1] / 'crates/nil-llvm/src/application.c'
+        with tempfile.TemporaryDirectory() as directory:
+            shadow = Path(directory)
+            destination = shadow / 'crates/nil-llvm/src/application.c'
+            destination.parent.mkdir(parents=True)
+            destination.write_text(runtime.read_text())
+            native_copy_overlay.patch(shadow)
+            source = destination.read_text()
+            self.assertIn('if(length && offset) { nil_measure_copy(1,', source)
+            self.assertIn('"slice"); memmove(value->data,', source)
+
+    def test_unknown_census_program_selection_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'census.json'
+            result = subprocess.run([
+                sys.executable, str(HERE / 'copy_census.py'),
+                '--overlay', directory, '--scope', 'neetcode-natural',
+                '--program', 'not-a-real-program', '--output', str(output),
+            ], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 2)
+            self.assertIn('unknown selected programs', result.stderr)
+            self.assertFalse(output.exists())
 
 
 if __name__ == '__main__':

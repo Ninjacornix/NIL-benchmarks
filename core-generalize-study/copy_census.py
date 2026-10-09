@@ -229,6 +229,8 @@ def main():
                         help='application | neetcode-natural | neetcode-tuned | fuzz:<seed>')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--limit', type=int, default=0, help='development subset only')
+    parser.add_argument('--program', action='append', default=[],
+                        help='explicit program subset for instrumented reruns; repeatable')
     parser.add_argument('--native-max-events', type=int, default=5000000,
                         help='skip the native join when the native trace itself is larger')
     parser.add_argument('--native', action='store_true',
@@ -277,6 +279,12 @@ def main():
                              args.overlay / 'ordinary-fuzz/target/release/ordinary-fuzz', helpers / 'reference-fuzz'))
         else:
             parser.error('unknown scope')
+        if args.program:
+            wanted = set(args.program)
+            missing = wanted - {job[0] for job in jobs}
+            if missing:
+                parser.error('unknown selected programs: ' + ', '.join(sorted(missing)))
+            jobs = [job for job in jobs if job[0] in wanted]
         if args.limit:
             jobs = jobs[:args.limit]
 
@@ -346,6 +354,7 @@ def main():
     report = {
         'schema': 1,
         'scope': scope,
+        'selected_programs': sorted(set(args.program)),
         'path': 'reference',
         'programs': len(per_program),
         'skipped': skipped,
