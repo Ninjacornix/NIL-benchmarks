@@ -14,7 +14,7 @@ HERE=Path(__file__).resolve().parent
 SUITE=HERE.parents[1]
 sys.path.insert(0,str(SUITE))
 from support import ROOT, build_helpers
-from resource_outcomes import clean_e013
+from resource_outcomes import clean_resource
 import fixtures
 import reference
 TIMEOUT=120
@@ -42,7 +42,7 @@ def observed(command,work,data,answer,ref=False):
     if ref: good=good and (work/'stdout.bin').exists() and (work/'stdout.bin').read_bytes()==b''
     files={p.name for p in work.iterdir()}
     good=good and files<=({'input.bin','output.bin','stdout.bin'} if ref else {'input.bin','output.bin'})
-    resource=clean_e013(subprocess.CompletedProcess(command,code,out,err), reference=ref)
+    resource=clean_resource(subprocess.CompletedProcess(command,code,out,err), reference=ref)
     return {'pass':good,'inconclusive':resource,'exit':code,'stdout':out.decode(errors='backslashreplace')[:2000], 'stderr':err.decode(errors='backslashreplace')[:2000],'output_sha256':sha(output) if output is not None else None}
 def freeze():
     frozen={}
@@ -78,7 +78,7 @@ def main():
     clang=os.environ.get('NIL_CLANG','clang')
     def verify(t):
         slug=t['id']; source=HERE/'programs'/f'{slug}.nil'
-        if args.candidate_dir:source=args.candidate_dir/f'{slug}.nil'
+        if args.candidate_dir:source=(args.candidate_dir/f'{slug}.nil').resolve()
         result={'task':slug,'forecast':t['forecast'],'checks':[], 'timings':{}}
         with tempfile.TemporaryDirectory(prefix='nil-core-') as directory:
             folder=Path(directory); cpp=folder/'cpp'

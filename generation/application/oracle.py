@@ -8,7 +8,7 @@ import tempfile
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[1]))
 from support import ROOT, build_helpers
-from resource_outcomes import clean_e013
+from resource_outcomes import clean_resource
 
 
 def expected(task_id, data):
@@ -119,8 +119,8 @@ def evaluate(source, language, task, folder, manifests=()):
                     ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(inp),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**environment},capture_output=True,timeout=5)
                     ref_ok=ref.returncode==0 and not ref.stderr and ref.stdout==f'VALUE\t{len(answer)}\n'.encode() and (work/'reference.bin').exists() and (work/'reference.bin').read_bytes()==answer and (work/'stdout.bin').read_bytes()==b''
                     outcome['tests_passed']+=int(ref_ok)
-                    if clean_e013(ref, reference=True):
-                        outcome['inconclusive_checks'].append({'fixture':index,'language':'reference','code':'E013'})
+                    if clean_resource(ref, reference=True):
+                        outcome['inconclusive_checks'].append({'fixture':index,'language':'reference','code':ref.stdout.split(b'\t',2)[2][:4].decode()})
                     elif not ref_ok:
                         outcome['non_resource_failure']=True
                     for artifact in ['reference.bin','stdout.bin']:
@@ -130,8 +130,8 @@ def evaluate(source, language, task, folder, manifests=()):
                         if output.exists():output.unlink()
                         native=sandbox([binary,'input.bin','output.bin'],work,environment=environment)
                         good=native.returncode==0 and not native.stderr and native.stdout==f'{len(answer)}\n'.encode() and output.exists() and output.read_bytes()==answer
-                        if clean_e013(native):
-                            outcome['inconclusive_checks'].append({'fixture':index,'language':binary.name.rsplit('-',1)[-1],'code':'E013'})
+                        if clean_resource(native):
+                            outcome['inconclusive_checks'].append({'fixture':index,'language':binary.name.rsplit('-',1)[-1],'code':native.stderr[:4].decode()})
                         elif not good:
                             outcome['non_resource_failure']=True
                         outcome['native_tests_passed']+=int(good)
@@ -146,7 +146,7 @@ def evaluate(source, language, task, folder, manifests=()):
         outcome['failure_reason']=None if outcome['semantic_ok'] else 'semantic_or_execution'
         if outcome['semantic_ok']:outcome['feedback']='Correct.'
         elif outcome['inconclusive_checks'] and not outcome['non_resource_failure']:
-            outcome.update(failure_reason='resource_inconclusive',feedback='Allocation safety guard reached (E013); resource result is inconclusive, not a correct program.')
+            outcome.update(failure_reason='resource_inconclusive',feedback='Execution resource guard reached (E008/E013); resource result is inconclusive, not a correct program.')
     except subprocess.TimeoutExpired:
         outcome.update(failure_reason='timeout',feedback='Execution or compilation timed out; use a terminating algorithm within 100000 reference steps and 256 call frames.')
     return outcome

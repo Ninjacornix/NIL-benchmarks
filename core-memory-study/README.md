@@ -92,3 +92,21 @@ The 2026-10-09 audit found 11/36 exact comparisons, 19 signals and six build
 rejections (bounded depth 1024). In particular, bounded O0 with the large record
 also overflows the stack. See the Round 23 admission report. Fixing unbounded
 entry counters alone is insufficient. No frozen corpus task is added or changed.
+
+## Round 24 guarded-stack regression
+
+ADR 047 treats clean E008/E013 as resource-inconclusive. The retained depth matrix
+checks 36 combinations of sequence/mutual/large-record recursion, bounded and
+unbounded, O0/O2 and three logical limits. Signals, build failures and sanitizer
+reports always fail. Run after building release libraries:
+
+```sh
+python3 benchmarks/core-memory-study/audit_depth.py --out /tmp/nil-round24-depth
+./scripts/fuzz-v5.sh --scope stacks --seed 24001 --out /tmp/nil-round24-stacks
+```
+
+The stack-only fuzz scope is an explicit subset, never a replacement for the full
+campaign. It exercises 18 source/configuration combinations at native O0/O2: three
+recursion/layout classes, 64 KiB/1 MiB/8 MiB native stacks and reference depth
+guards 32/1024. Full campaigns include these families and report clean resource
+counts separately by code and family.

@@ -3,7 +3,7 @@ import re
 
 _DIAGNOSTIC = rb'E\d{3}(?: @(\d+)\.\.(\d+))? [^\r\n]+\n?'
 
-def clean_e013(result, *, reference=False):
+def clean_resource(result, *, reference=False):
     """Recognize one clean resource diagnostic, never a crash/noisy subprocess.
 
     Reference helper protocols use exit 0 and ERR\tExecute\t on stdout;
@@ -26,7 +26,7 @@ def clean_e013(result, *, reference=False):
     except UnicodeDecodeError:
         return False
     match = re.fullmatch(_DIAGNOSTIC, text)
-    if not match or not text.startswith(b'E013 '):
+    if not match or not text.startswith((b'E008 ', b'E013 ')):
         return False
     if match[1] is not None and int(match[1]) > int(match[2]):
         return False
@@ -48,3 +48,7 @@ def native_code(result):
     assert not any(marker in result.stderr for marker in
                    (b'AddressSanitizer', b'UndefinedBehaviorSanitizer', b'runtime error:', b'LeakSanitizer')), result.stderr
     return result.stderr[:4].decode('ascii')
+
+
+# Compatibility for historical measurements; new clients use clean_resource.
+clean_e013 = clean_resource

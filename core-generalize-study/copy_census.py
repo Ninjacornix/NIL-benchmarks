@@ -147,7 +147,7 @@ def native_census(helpers, source, work, data, trace, reference_trace, max_event
     if expected is not None:
         code = native_code(run)
         reference_code = expected[1].decode().strip().split('\t')[1]
-        if code == 'E013' or reference_code == 'E013':
+        if code in ('E008', 'E013') or reference_code in ('E008', 'E013'):
             return None, f'resource-inconclusive reference={reference_code} native={code}'
         assert code == reference_code, ('native diagnostic divergence', source, code, expected[:3])
         assert run.stdout == expected[4], ('native stdout divergence', source)
@@ -155,8 +155,8 @@ def native_census(helpers, source, work, data, trace, reference_trace, max_event
         assert (work / 'input.bin').read_bytes() == expected[5], ('native input changed', source)
     if expected is None:
         code = native_code(run)
-        if code == 'E013':
-            return None, 'resource-inconclusive native=E013'
+        if code in ('E008', 'E013'):
+            return None, f'resource-inconclusive native={code}'
         assert code == 'OK', ('native census failed', source, run.stderr)
     events = read_trace(trace)
     if not events:
@@ -370,7 +370,7 @@ def main():
         'fixture_contract': ({'parameters': ['v:[3,-2,9]', 's:abc 12', 's:input.bin', 's:output.bin'],
                               'input_sha256': hashlib.sha256(bytes(range(256)) * 4).hexdigest(),
                               'steps': 100000, 'call_depth': 256, 'memory_bytes': 67108864,
-                              'resource_policy': 'clean E013 inconclusive; excluded from native joins',
+                              'resource_policy': 'clean E008/E013 inconclusive; excluded from native joins',
                               'host': 'fixed census fixture, not randomized campaign Host',
                               'native_observables_compared': ['diagnostic code', 'stdout', 'output file', 'preserved input']}
                              if scope.startswith('fuzz:') else None),
