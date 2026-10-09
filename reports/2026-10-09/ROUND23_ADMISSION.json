@@ -1,0 +1,5361 @@
+{
+  "schema": 1,
+  "status": "B4_UNSHIPPED_ADMISSION_FAILED",
+  "compiler_revision": "48900fbaa9807becbd85deefc685b4be594500e6",
+  "benchmark_audit_revision": "c62a5321db46355609125abd96e145ed3e3ff9a7",
+  "matrix": {
+    "schema": 1,
+    "revision": "48900fbaa9807becbd85deefc685b4be594500e6",
+    "benchmark_revision": "c62a5321db46355609125abd96e145ed3e3ff9a7",
+    "started_unix": 1791552564.561766,
+    "finished_unix": 1791552579.864903,
+    "driver_source_sha256": "ff3117c5109f3e9ff547bfae37d261f345030180fb9ede7d2f76f987a19a895e",
+    "clang": "clang",
+    "rows": [
+      {
+        "family": "reported-literal-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-bounded-O0"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-bounded-O2"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-unbounded-O0"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-32-unbounded-O2"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-bounded-O0"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-bounded-O2"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-unbounded-O0"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-256-unbounded-O2"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-unbounded-O0"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "reported-literal-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "6152bf1425c76bc3e0ea0890d91c21686d8cc9fa125c3b2cf0c33865771dfbb3",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            40,
+            46
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/reported-literal-recursion/native-1024-unbounded-O2"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-bounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-bounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-32-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-bounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-bounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-256-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "mutual-sequence-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "ab269ccdbbe57650450dafdf33462f0b8774f54217eb0b979d585d27c93bcefa",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            36,
+            42
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/mutual-sequence-recursion/native-1024-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-bounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 32,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-bounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 32,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "32",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-32-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-bounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 256,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-bounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "exit": 1,
+        "equal": true
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 256,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "256",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-256-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-bounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 1024,
+        "mode": "bounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "bounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-bounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "native": {
+          "kind": "build-failure",
+          "exit": 1,
+          "stderr": "E011 native call depth must be 0..256\n"
+        },
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O0",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-unbounded-O0",
+          "O0"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-unbounded-O0",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      },
+      {
+        "family": "large-record-recursion",
+        "depth": 1024,
+        "mode": "unbounded",
+        "optimization": "O2",
+        "source_sha256": "e5604328eace1b4a4cf356cbe8456fc65ab3fbc8bd3d23512e289688efb8c1c8",
+        "reference_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "reference",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "200000"
+        ],
+        "build_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/depth-driver",
+          "unbounded",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/source.nil",
+          "1024",
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-unbounded-O2",
+          "O2"
+        ],
+        "reference": {
+          "kind": "diagnostic",
+          "code": "E008",
+          "span": [
+            13903,
+            13911
+          ]
+        },
+        "run_command": [
+          "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed/large-record-recursion/native-1024-unbounded-O2",
+          "200000"
+        ],
+        "native": {
+          "kind": "signal",
+          "signal": 11
+        },
+        "exit": -11,
+        "equal": false
+      }
+    ],
+    "compared": 36,
+    "equal": 11,
+    "failed": 25
+  },
+  "sanitized_large_bounded_O0": {
+    "build_command": [
+      "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/depth-driver",
+      "bounded",
+      "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/large-record-recursion/source.nil",
+      "256",
+      "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/large-bounded-O0-sanitized",
+      "O0"
+    ],
+    "run_command": [
+      "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final/large-bounded-O0-sanitized",
+      "200000"
+    ],
+    "exit": -6,
+    "stdout_bytes": 0,
+    "stack_overflow": true,
+    "stderr_bytes": 12272
+  },
+  "object_frame_measurements": {
+    "note": "IR object frames; not a final linked stack bound",
+    "O0": "warning: <unknown>:0:0: stack frame size (48) exceeds limit (0) in function 'nil_tick' [-Wframe-larger-than]\nwarning: <unknown>:0:0: stack frame size (48) exceeds limit (0) in function 'nil_enter' [-Wframe-larger-than]\nwarning: <unknown>:0:0: stack frame size (32944) exceeds limit (0) in function 'nil_fn0' [-Wframe-larger-than]\nwarning: <unknown>:0:0: stack frame size (63952) exceeds limit (0) in function 'nil_fn1' [-Wframe-larger-than]\n4 warnings generated.\n",
+    "O2": "warning: <unknown>:0:0: stack frame size (112) exceeds limit (0) in function 'nil_fn0' [-Wframe-larger-than]\nwarning: <unknown>:0:0: stack frame size (2272) exceeds limit (0) in function 'nil_fn1' [-Wframe-larger-than]\n2 warnings generated.\n"
+  },
+  "resource_inconclusives": {
+    "schema": 1,
+    "source_gate_summary_sha256": "f9e5771f16765d5f5b756e658be13ea7015a01a6b6ad00bfb04804d9f4f9e937",
+    "rows": [
+      {
+        "seed": 23601,
+        "family_index": 10,
+        "family": "base_negative_buffer_length",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f4d78d39c1ff86981bfb5c548d0439d111edcb2386db62995f7e8164eaab8dc",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 10,
+        "family": "base_negative_buffer_length",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f4d78d39c1ff86981bfb5c548d0439d111edcb2386db62995f7e8164eaab8dc",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 11,
+        "family": "base_64m_bytes_constructor",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "599985fd07e441561ba3f5a1507ceddcd11657338e80aff87a76e1de31d35f0b",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 11,
+        "family": "base_64m_bytes_constructor",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "599985fd07e441561ba3f5a1507ceddcd11657338e80aff87a76e1de31d35f0b",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 29,
+        "family": "base_negative_bytes_length_and_bad_fill",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f8dfb72f9f00b33b32a637c95835b24188eea4965cf12a86aba7ac313c72e9c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 29,
+        "family": "base_negative_bytes_length_and_bad_fill",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f8dfb72f9f00b33b32a637c95835b24188eea4965cf12a86aba7ac313c72e9c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 92,
+        "family": "parsebuf_quota_priority",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          37,
+          38
+        ],
+        "native_code": "E013",
+        "native_span": [
+          37,
+          38
+        ],
+        "source_sha256": "3a1463c62dc1a970ad8aa78a7b194a3f77f9037a31cf3bf8ac63230776fdebf0",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 92,
+        "family": "parsebuf_quota_priority",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          37,
+          38
+        ],
+        "native_code": "E013",
+        "native_span": [
+          37,
+          38
+        ],
+        "source_sha256": "3a1463c62dc1a970ad8aa78a7b194a3f77f9037a31cf3bf8ac63230776fdebf0",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 120,
+        "family": "map_quota_boundary",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "74c6f9f687d76c7df9a5fb778a31a65908871ccb2cc5581d1250839048586fa6",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 120,
+        "family": "map_quota_boundary",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "74c6f9f687d76c7df9a5fb778a31a65908871ccb2cc5581d1250839048586fa6",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 128,
+        "family": "map_constructor_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "3b28116fe6a99d2a6abc31e546e8b856171d3e8a32935899c61bff66b3b29068",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 128,
+        "family": "map_constructor_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "3b28116fe6a99d2a6abc31e546e8b856171d3e8a32935899c61bff66b3b29068",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 129,
+        "family": "map_byte_constructor_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "759f9f4cbc351edfdc01b3b49ef93f47531ee33fa63bcf79693b55d19dbe2637",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 129,
+        "family": "map_byte_constructor_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "759f9f4cbc351edfdc01b3b49ef93f47531ee33fa63bcf79693b55d19dbe2637",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 130,
+        "family": "map_put_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "5cb8e46b3dece2a9968f0a3ed8718a24152efae082d9649631f91f11fd930540",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 130,
+        "family": "map_put_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "5cb8e46b3dece2a9968f0a3ed8718a24152efae082d9649631f91f11fd930540",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 131,
+        "family": "map_key_result_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          84,
+          85
+        ],
+        "native_code": "E013",
+        "native_span": [
+          84,
+          85
+        ],
+        "source_sha256": "c36b1fe9e4b199ab1300108e0ce4305479fa5030bfded254f309b70856c66fe8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 131,
+        "family": "map_key_result_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          84,
+          85
+        ],
+        "native_code": "E013",
+        "native_span": [
+          84,
+          85
+        ],
+        "source_sha256": "c36b1fe9e4b199ab1300108e0ce4305479fa5030bfded254f309b70856c66fe8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 132,
+        "family": "map_lookup_result_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          90,
+          91
+        ],
+        "native_code": "E013",
+        "native_span": [
+          90,
+          91
+        ],
+        "source_sha256": "c0831f97d980cb5443e29f2dc013c450f5be9a6a85e3264e992366e8453691fa",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 132,
+        "family": "map_lookup_result_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          90,
+          91
+        ],
+        "native_code": "E013",
+        "native_span": [
+          90,
+          91
+        ],
+        "source_sha256": "c0831f97d980cb5443e29f2dc013c450f5be9a6a85e3264e992366e8453691fa",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 162,
+        "family": "each_ignored_value_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          57,
+          58
+        ],
+        "native_code": "E013",
+        "native_span": [
+          57,
+          58
+        ],
+        "source_sha256": "8df8a292759715cc8319183b681473f1a1f5cc7eaddf6b084fa18778b9c41791",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 162,
+        "family": "each_ignored_value_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          57,
+          58
+        ],
+        "native_code": "E013",
+        "native_span": [
+          57,
+          58
+        ],
+        "source_sha256": "8df8a292759715cc8319183b681473f1a1f5cc7eaddf6b084fa18778b9c41791",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 224,
+        "family": "record_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          192,
+          193
+        ],
+        "native_code": "E013",
+        "native_span": [
+          192,
+          193
+        ],
+        "source_sha256": "892e2f908a1986bf03f9137bf4ca3a32f0eee83e989af285fe4c04c84daa6774",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 224,
+        "family": "record_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          192,
+          193
+        ],
+        "native_code": "E013",
+        "native_span": [
+          192,
+          193
+        ],
+        "source_sha256": "892e2f908a1986bf03f9137bf4ca3a32f0eee83e989af285fe4c04c84daa6774",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 235,
+        "family": "record_map_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          148,
+          149
+        ],
+        "native_code": "E013",
+        "native_span": [
+          148,
+          149
+        ],
+        "source_sha256": "0db444fd465b9dbcbfa3496a6a96bbfcc5ab3c3704d85f4fecc3237a100c5def",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 235,
+        "family": "record_map_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          148,
+          149
+        ],
+        "native_code": "E013",
+        "native_span": [
+          148,
+          149
+        ],
+        "source_sha256": "0db444fd465b9dbcbfa3496a6a96bbfcc5ab3c3704d85f4fecc3237a100c5def",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 248,
+        "family": "plugin_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          109,
+          110
+        ],
+        "native_code": "E013",
+        "native_span": [
+          109,
+          110
+        ],
+        "source_sha256": "9699d7128352c76da456879432a9f1242b3a56c238f57c188818e0177bbd1140",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 248,
+        "family": "plugin_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          109,
+          110
+        ],
+        "native_code": "E013",
+        "native_span": [
+          109,
+          110
+        ],
+        "source_sha256": "9699d7128352c76da456879432a9f1242b3a56c238f57c188818e0177bbd1140",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 261,
+        "family": "plugin_equal_bounds_order",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          58,
+          59
+        ],
+        "native_code": "E013",
+        "native_span": [
+          58,
+          59
+        ],
+        "source_sha256": "2817d5cc99f04e9393e27bc4c22302caef4e18b0b84d5846e697934cd09c7d66",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 261,
+        "family": "plugin_equal_bounds_order",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          58,
+          59
+        ],
+        "native_code": "E013",
+        "native_span": [
+          58,
+          59
+        ],
+        "source_sha256": "2817d5cc99f04e9393e27bc4c22302caef4e18b0b84d5846e697934cd09c7d66",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 262,
+        "family": "plugin_argument_quota_order",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          68,
+          69
+        ],
+        "native_code": "E013",
+        "native_span": [
+          68,
+          69
+        ],
+        "source_sha256": "42b6f8ebc3fed17d1ccfb09ac9f829cd0ca6e3b2451cfc24247af0cce6a14d07",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 262,
+        "family": "plugin_argument_quota_order",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          68,
+          69
+        ],
+        "native_code": "E013",
+        "native_span": [
+          68,
+          69
+        ],
+        "source_sha256": "42b6f8ebc3fed17d1ccfb09ac9f829cd0ca6e3b2451cfc24247af0cce6a14d07",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 278,
+        "family": "collection_negative_length",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "34331a6eb03671ac2d56b232c01f8a7784a65f6fa9334713e90810b16ea5a031",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 278,
+        "family": "collection_negative_length",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "34331a6eb03671ac2d56b232c01f8a7784a65f6fa9334713e90810b16ea5a031",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 279,
+        "family": "collection_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "55f540156bcac011f8f68b3d3944fd90cf6da3fd234a3b132c221ee637cb9028",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 279,
+        "family": "collection_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "55f540156bcac011f8f68b3d3944fd90cf6da3fd234a3b132c221ee637cb9028",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 284,
+        "family": "collection_live_children_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          370,
+          371
+        ],
+        "native_code": "E013",
+        "native_span": [
+          370,
+          371
+        ],
+        "source_sha256": "de1bf030a6f38e8785b6df3dd87e08805a98360663803ef9f17b4695c53d0ec7",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 284,
+        "family": "collection_live_children_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          370,
+          371
+        ],
+        "native_code": "E013",
+        "native_span": [
+          370,
+          371
+        ],
+        "source_sha256": "de1bf030a6f38e8785b6df3dd87e08805a98360663803ef9f17b4695c53d0ec7",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 291,
+        "family": "collection_zero_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "df34924fbe6425357440f19d88121e9fddbc7765d191bfc4b2aa42daa19d29a8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 291,
+        "family": "collection_zero_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "df34924fbe6425357440f19d88121e9fddbc7765d191bfc4b2aa42daa19d29a8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 305,
+        "family": "layout_nested_zero_negative",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "c32f4a672344c25ffdf586681b2767133c6f1a9ff9041aa9b93973d990acac21",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 305,
+        "family": "layout_nested_zero_negative",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "c32f4a672344c25ffdf586681b2767133c6f1a9ff9041aa9b93973d990acac21",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 317,
+        "family": "bulk_quota_failure",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          335,
+          336
+        ],
+        "native_code": "E013",
+        "native_span": [
+          335,
+          336
+        ],
+        "source_sha256": "58168e5ed237b7c179cefdcd4790980ff64568c357ede5a79a98741a390fc1f2",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 317,
+        "family": "bulk_quota_failure",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          335,
+          336
+        ],
+        "native_code": "E013",
+        "native_span": [
+          335,
+          336
+        ],
+        "source_sha256": "58168e5ed237b7c179cefdcd4790980ff64568c357ede5a79a98741a390fc1f2",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 325,
+        "family": "field_append_quota_alias",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          355,
+          356
+        ],
+        "native_code": "E013",
+        "native_span": [
+          355,
+          356
+        ],
+        "source_sha256": "a741aadd6f475c5958e7af59cb305c2342a663a7d13af1c9b6fcf1a68275995c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 325,
+        "family": "field_append_quota_alias",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          355,
+          356
+        ],
+        "native_code": "E013",
+        "native_span": [
+          355,
+          356
+        ],
+        "source_sha256": "a741aadd6f475c5958e7af59cb305c2342a663a7d13af1c9b6fcf1a68275995c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 329,
+        "family": "nested_builder_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          390,
+          391
+        ],
+        "native_code": "E013",
+        "native_span": [
+          390,
+          391
+        ],
+        "source_sha256": "cc18abfac3a56155df6f7b59c82f4dfa9d4afc2a64746d2254a06aa8de579aef",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 329,
+        "family": "nested_builder_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          390,
+          391
+        ],
+        "native_code": "E013",
+        "native_span": [
+          390,
+          391
+        ],
+        "source_sha256": "cc18abfac3a56155df6f7b59c82f4dfa9d4afc2a64746d2254a06aa8de579aef",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 341,
+        "family": "module_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          1269,
+          1270
+        ],
+        "native_code": "E013",
+        "native_span": [
+          1269,
+          1270
+        ],
+        "source_sha256": "8307809233499c96041b76a1c162bca9b7359b60ade54e4e3bfd82d4539ba300",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 341,
+        "family": "module_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          1269,
+          1270
+        ],
+        "native_code": "E013",
+        "native_span": [
+          1269,
+          1270
+        ],
+        "source_sha256": "8307809233499c96041b76a1c162bca9b7359b60ade54e4e3bfd82d4539ba300",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 343,
+        "family": "module_quota_boundary",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          679,
+          680
+        ],
+        "native_code": "E013",
+        "native_span": [
+          679,
+          680
+        ],
+        "source_sha256": "fc858ad3cb9f62c9438f57f7f621a6d276c85cac47f800a964b87e1f949df687",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 343,
+        "family": "module_quota_boundary",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          679,
+          680
+        ],
+        "native_code": "E013",
+        "native_span": [
+          679,
+          680
+        ],
+        "source_sha256": "fc858ad3cb9f62c9438f57f7f621a6d276c85cac47f800a964b87e1f949df687",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 364,
+        "family": "host_env_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          336,
+          337
+        ],
+        "native_code": "E013",
+        "native_span": [
+          336,
+          337
+        ],
+        "source_sha256": "c89b90a739e645d6cd8619c9c8936bb091d5f008f7d3a4c8d4244cace5d635a3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 364,
+        "family": "host_env_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          336,
+          337
+        ],
+        "native_code": "E013",
+        "native_span": [
+          336,
+          337
+        ],
+        "source_sha256": "c89b90a739e645d6cd8619c9c8936bb091d5f008f7d3a4c8d4244cace5d635a3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 381,
+        "family": "host_directory_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "f1eb5179d79f5310def26f79d2b45660b6ae099771efd997a511dcfdeec249e4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 381,
+        "family": "host_directory_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "f1eb5179d79f5310def26f79d2b45660b6ae099771efd997a511dcfdeec249e4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 402,
+        "family": "hof_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          331,
+          332
+        ],
+        "native_code": "E013",
+        "native_span": [
+          331,
+          332
+        ],
+        "source_sha256": "abb2d5bb2de4a45cf79dbdccc57a70def0c5cfcf78db04f3b84d1566efa11804",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 402,
+        "family": "hof_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          331,
+          332
+        ],
+        "native_code": "E013",
+        "native_span": [
+          331,
+          332
+        ],
+        "source_sha256": "abb2d5bb2de4a45cf79dbdccc57a70def0c5cfcf78db04f3b84d1566efa11804",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 428,
+        "family": "std_callback_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          325,
+          326
+        ],
+        "native_code": "E013",
+        "native_span": [
+          325,
+          326
+        ],
+        "source_sha256": "4cb5084aeca97c35e4421b3f62a47fe662ea53b3b3b9704d1a09502ae26a43ed",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 428,
+        "family": "std_callback_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          325,
+          326
+        ],
+        "native_code": "E013",
+        "native_span": [
+          325,
+          326
+        ],
+        "source_sha256": "4cb5084aeca97c35e4421b3f62a47fe662ea53b3b3b9704d1a09502ae26a43ed",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 447,
+        "family": "transfer_quota_partial",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          342
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          342
+        ],
+        "source_sha256": "013f5134deda70f667384f31f52d4cbabe0edae5df8fbd590e34dc5b0cc20c48",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 447,
+        "family": "transfer_quota_partial",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          342
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          342
+        ],
+        "source_sha256": "013f5134deda70f667384f31f52d4cbabe0edae5df8fbd590e34dc5b0cc20c48",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 464,
+        "family": "reconcile_quota_failure",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          353,
+          358
+        ],
+        "native_code": "E013",
+        "native_span": [
+          353,
+          358
+        ],
+        "source_sha256": "e76d4b2e47e53281ad7a90a58d4c8387f438200bb28a3bbad328e5b03c2c7b10",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 464,
+        "family": "reconcile_quota_failure",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          353,
+          358
+        ],
+        "native_code": "E013",
+        "native_span": [
+          353,
+          358
+        ],
+        "source_sha256": "e76d4b2e47e53281ad7a90a58d4c8387f438200bb28a3bbad328e5b03c2c7b10",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 470,
+        "family": "inline_push_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          186,
+          187
+        ],
+        "native_code": "OK",
+        "native_span": null,
+        "source_sha256": "be6d90316e6df052c70eaf4eb567cf9902d2e3990a89c7da190cea976a16c2f1",
+        "native_stdout_bytes": 33554395,
+        "native_stdout_sha256": "c7df117216260c3c7c3b1f6b6530376fd8e7331f7e5c14bfdae8130879377cea",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": false,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 470,
+        "family": "inline_push_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          186,
+          187
+        ],
+        "native_code": "OK",
+        "native_span": null,
+        "source_sha256": "be6d90316e6df052c70eaf4eb567cf9902d2e3990a89c7da190cea976a16c2f1",
+        "native_stdout_bytes": 33554395,
+        "native_stdout_sha256": "c7df117216260c3c7c3b1f6b6530376fd8e7331f7e5c14bfdae8130879377cea",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": false,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 639,
+        "family": "binding_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          338,
+          339
+        ],
+        "native_code": "E013",
+        "native_span": [
+          338,
+          339
+        ],
+        "source_sha256": "6295a70c1e46e08ccce11f020f3e14fb495c20b004dbced69551d26956adf973",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 639,
+        "family": "binding_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          338,
+          339
+        ],
+        "native_code": "E013",
+        "native_span": [
+          338,
+          339
+        ],
+        "source_sha256": "6295a70c1e46e08ccce11f020f3e14fb495c20b004dbced69551d26956adf973",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 655,
+        "family": "g2_quota_before_read",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          347
+        ],
+        "source_sha256": "a4b54677a56f9572f2d3b245ba19c33aa2659f73658e05d2aca1b42d4c44d2e8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 655,
+        "family": "g2_quota_before_read",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          347
+        ],
+        "source_sha256": "a4b54677a56f9572f2d3b245ba19c33aa2659f73658e05d2aca1b42d4c44d2e8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 660,
+        "family": "g2_allocation_barrier",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          347,
+          348
+        ],
+        "native_code": "E013",
+        "native_span": [
+          347,
+          348
+        ],
+        "source_sha256": "ce32dbfbf20268994372f2832f752742fe7d6ed8823d2f7adb94b5bef4fd7219",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 660,
+        "family": "g2_allocation_barrier",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          347,
+          348
+        ],
+        "native_code": "E013",
+        "native_span": [
+          347,
+          348
+        ],
+        "source_sha256": "ce32dbfbf20268994372f2832f752742fe7d6ed8823d2f7adb94b5bef4fd7219",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 702,
+        "family": "io_quota_real_read",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "0ce4da472d0aaf713ff0d08ffa94cbf5daa84bd740f6396bcf273687f7bda3f8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 702,
+        "family": "io_quota_real_read",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "0ce4da472d0aaf713ff0d08ffa94cbf5daa84bd740f6396bcf273687f7bda3f8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 704,
+        "family": "io_quota_before_late_fault",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "58f9d32f53972d4920e09a6f3d237173c67dad7218f1dae0c54afdb9f10f91b4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 704,
+        "family": "io_quota_before_late_fault",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "58f9d32f53972d4920e09a6f3d237173c67dad7218f1dae0c54afdb9f10f91b4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 705,
+        "family": "io_buffer_retention",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "2723afde919c62463d8ef1f4de35ee1e55b645fbb876218c716263a974e10ef9",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 705,
+        "family": "io_buffer_retention",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "2723afde919c62463d8ef1f4de35ee1e55b645fbb876218c716263a974e10ef9",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 706,
+        "family": "io_record_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "8bba65dc6c8c061e1fc19eebfaa18153587a1716271844e3d707340dfeae32ce",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 706,
+        "family": "io_record_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "8bba65dc6c8c061e1fc19eebfaa18153587a1716271844e3d707340dfeae32ce",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 707,
+        "family": "io_record_buffer_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          362,
+          363
+        ],
+        "native_code": "E013",
+        "native_span": [
+          362,
+          363
+        ],
+        "source_sha256": "211d75bf47ffcdc63d722c41a1bce4e4545549a3c9a197ed416a9abff317c701",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 707,
+        "family": "io_record_buffer_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          362,
+          363
+        ],
+        "native_code": "E013",
+        "native_span": [
+          362,
+          363
+        ],
+        "source_sha256": "211d75bf47ffcdc63d722c41a1bce4e4545549a3c9a197ed416a9abff317c701",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 708,
+        "family": "io_map_and_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          346,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          346,
+          347
+        ],
+        "source_sha256": "2f9a4be4e542f9e3edf000ab0058425761b9451c62a7b094a79b6f7a2a8d942d",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 708,
+        "family": "io_map_and_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          346,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          346,
+          347
+        ],
+        "source_sha256": "2f9a4be4e542f9e3edf000ab0058425761b9451c62a7b094a79b6f7a2a8d942d",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 709,
+        "family": "io_selected_lazy",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          342,
+          343
+        ],
+        "native_code": "E013",
+        "native_span": [
+          342,
+          343
+        ],
+        "source_sha256": "53414d9df0e2bae409eb02de09b74149dea9e43444b187da851541c7f642f8c3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 709,
+        "family": "io_selected_lazy",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          342,
+          343
+        ],
+        "native_code": "E013",
+        "native_span": [
+          342,
+          343
+        ],
+        "source_sha256": "53414d9df0e2bae409eb02de09b74149dea9e43444b187da851541c7f642f8c3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 710,
+        "family": "io_callee_retention",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          352,
+          353
+        ],
+        "native_code": "E013",
+        "native_span": [
+          352,
+          353
+        ],
+        "source_sha256": "3b78d04c2854912145401c8282ffc8f705cb9759ed8375d2a16f89227605f758",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23601,
+        "family_index": 710,
+        "family": "io_callee_retention",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          352,
+          353
+        ],
+        "native_code": "E013",
+        "native_span": [
+          352,
+          353
+        ],
+        "source_sha256": "3b78d04c2854912145401c8282ffc8f705cb9759ed8375d2a16f89227605f758",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 10,
+        "family": "base_negative_buffer_length",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "5badb9580df272c70b31e26daea1073666779556752fc14f9f159ab98432132e",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 10,
+        "family": "base_negative_buffer_length",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "5badb9580df272c70b31e26daea1073666779556752fc14f9f159ab98432132e",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 11,
+        "family": "base_64m_bytes_constructor",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "599985fd07e441561ba3f5a1507ceddcd11657338e80aff87a76e1de31d35f0b",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 11,
+        "family": "base_64m_bytes_constructor",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "599985fd07e441561ba3f5a1507ceddcd11657338e80aff87a76e1de31d35f0b",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 29,
+        "family": "base_negative_bytes_length_and_bad_fill",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f8dfb72f9f00b33b32a637c95835b24188eea4965cf12a86aba7ac313c72e9c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 29,
+        "family": "base_negative_bytes_length_and_bad_fill",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          12,
+          13
+        ],
+        "native_code": "E013",
+        "native_span": [
+          12,
+          13
+        ],
+        "source_sha256": "1f8dfb72f9f00b33b32a637c95835b24188eea4965cf12a86aba7ac313c72e9c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 92,
+        "family": "parsebuf_quota_priority",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          37,
+          38
+        ],
+        "native_code": "E013",
+        "native_span": [
+          37,
+          38
+        ],
+        "source_sha256": "3a1463c62dc1a970ad8aa78a7b194a3f77f9037a31cf3bf8ac63230776fdebf0",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 92,
+        "family": "parsebuf_quota_priority",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          37,
+          38
+        ],
+        "native_code": "E013",
+        "native_span": [
+          37,
+          38
+        ],
+        "source_sha256": "3a1463c62dc1a970ad8aa78a7b194a3f77f9037a31cf3bf8ac63230776fdebf0",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 120,
+        "family": "map_quota_boundary",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "74c6f9f687d76c7df9a5fb778a31a65908871ccb2cc5581d1250839048586fa6",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 120,
+        "family": "map_quota_boundary",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "74c6f9f687d76c7df9a5fb778a31a65908871ccb2cc5581d1250839048586fa6",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 128,
+        "family": "map_constructor_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "3b28116fe6a99d2a6abc31e546e8b856171d3e8a32935899c61bff66b3b29068",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 128,
+        "family": "map_constructor_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "3b28116fe6a99d2a6abc31e546e8b856171d3e8a32935899c61bff66b3b29068",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 129,
+        "family": "map_byte_constructor_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "759f9f4cbc351edfdc01b3b49ef93f47531ee33fa63bcf79693b55d19dbe2637",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 129,
+        "family": "map_byte_constructor_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          42,
+          43
+        ],
+        "native_code": "E013",
+        "native_span": [
+          42,
+          43
+        ],
+        "source_sha256": "759f9f4cbc351edfdc01b3b49ef93f47531ee33fa63bcf79693b55d19dbe2637",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 130,
+        "family": "map_put_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "5cb8e46b3dece2a9968f0a3ed8718a24152efae082d9649631f91f11fd930540",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 130,
+        "family": "map_put_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          16,
+          17
+        ],
+        "native_code": "E013",
+        "native_span": [
+          16,
+          17
+        ],
+        "source_sha256": "5cb8e46b3dece2a9968f0a3ed8718a24152efae082d9649631f91f11fd930540",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 131,
+        "family": "map_key_result_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          84,
+          85
+        ],
+        "native_code": "E013",
+        "native_span": [
+          84,
+          85
+        ],
+        "source_sha256": "c36b1fe9e4b199ab1300108e0ce4305479fa5030bfded254f309b70856c66fe8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 131,
+        "family": "map_key_result_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          84,
+          85
+        ],
+        "native_code": "E013",
+        "native_span": [
+          84,
+          85
+        ],
+        "source_sha256": "c36b1fe9e4b199ab1300108e0ce4305479fa5030bfded254f309b70856c66fe8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 132,
+        "family": "map_lookup_result_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          90,
+          91
+        ],
+        "native_code": "E013",
+        "native_span": [
+          90,
+          91
+        ],
+        "source_sha256": "c0831f97d980cb5443e29f2dc013c450f5be9a6a85e3264e992366e8453691fa",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 132,
+        "family": "map_lookup_result_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          90,
+          91
+        ],
+        "native_code": "E013",
+        "native_span": [
+          90,
+          91
+        ],
+        "source_sha256": "c0831f97d980cb5443e29f2dc013c450f5be9a6a85e3264e992366e8453691fa",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 162,
+        "family": "each_ignored_value_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          57,
+          58
+        ],
+        "native_code": "E013",
+        "native_span": [
+          57,
+          58
+        ],
+        "source_sha256": "8df8a292759715cc8319183b681473f1a1f5cc7eaddf6b084fa18778b9c41791",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 162,
+        "family": "each_ignored_value_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          57,
+          58
+        ],
+        "native_code": "E013",
+        "native_span": [
+          57,
+          58
+        ],
+        "source_sha256": "8df8a292759715cc8319183b681473f1a1f5cc7eaddf6b084fa18778b9c41791",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 224,
+        "family": "record_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          192,
+          193
+        ],
+        "native_code": "E013",
+        "native_span": [
+          192,
+          193
+        ],
+        "source_sha256": "892e2f908a1986bf03f9137bf4ca3a32f0eee83e989af285fe4c04c84daa6774",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 224,
+        "family": "record_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          192,
+          193
+        ],
+        "native_code": "E013",
+        "native_span": [
+          192,
+          193
+        ],
+        "source_sha256": "892e2f908a1986bf03f9137bf4ca3a32f0eee83e989af285fe4c04c84daa6774",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 235,
+        "family": "record_map_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          148,
+          149
+        ],
+        "native_code": "E013",
+        "native_span": [
+          148,
+          149
+        ],
+        "source_sha256": "0db444fd465b9dbcbfa3496a6a96bbfcc5ab3c3704d85f4fecc3237a100c5def",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 235,
+        "family": "record_map_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          148,
+          149
+        ],
+        "native_code": "E013",
+        "native_span": [
+          148,
+          149
+        ],
+        "source_sha256": "0db444fd465b9dbcbfa3496a6a96bbfcc5ab3c3704d85f4fecc3237a100c5def",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 248,
+        "family": "plugin_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          109,
+          110
+        ],
+        "native_code": "E013",
+        "native_span": [
+          109,
+          110
+        ],
+        "source_sha256": "9699d7128352c76da456879432a9f1242b3a56c238f57c188818e0177bbd1140",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 248,
+        "family": "plugin_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          109,
+          110
+        ],
+        "native_code": "E013",
+        "native_span": [
+          109,
+          110
+        ],
+        "source_sha256": "9699d7128352c76da456879432a9f1242b3a56c238f57c188818e0177bbd1140",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 261,
+        "family": "plugin_equal_bounds_order",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          58,
+          59
+        ],
+        "native_code": "E013",
+        "native_span": [
+          58,
+          59
+        ],
+        "source_sha256": "2817d5cc99f04e9393e27bc4c22302caef4e18b0b84d5846e697934cd09c7d66",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 261,
+        "family": "plugin_equal_bounds_order",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          58,
+          59
+        ],
+        "native_code": "E013",
+        "native_span": [
+          58,
+          59
+        ],
+        "source_sha256": "2817d5cc99f04e9393e27bc4c22302caef4e18b0b84d5846e697934cd09c7d66",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 262,
+        "family": "plugin_argument_quota_order",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          68,
+          69
+        ],
+        "native_code": "E013",
+        "native_span": [
+          68,
+          69
+        ],
+        "source_sha256": "42b6f8ebc3fed17d1ccfb09ac9f829cd0ca6e3b2451cfc24247af0cce6a14d07",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 262,
+        "family": "plugin_argument_quota_order",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          68,
+          69
+        ],
+        "native_code": "E013",
+        "native_span": [
+          68,
+          69
+        ],
+        "source_sha256": "42b6f8ebc3fed17d1ccfb09ac9f829cd0ca6e3b2451cfc24247af0cce6a14d07",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 278,
+        "family": "collection_negative_length",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "34331a6eb03671ac2d56b232c01f8a7784a65f6fa9334713e90810b16ea5a031",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 278,
+        "family": "collection_negative_length",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "34331a6eb03671ac2d56b232c01f8a7784a65f6fa9334713e90810b16ea5a031",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 279,
+        "family": "collection_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "55f540156bcac011f8f68b3d3944fd90cf6da3fd234a3b132c221ee637cb9028",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 279,
+        "family": "collection_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "55f540156bcac011f8f68b3d3944fd90cf6da3fd234a3b132c221ee637cb9028",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 284,
+        "family": "collection_live_children_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          370,
+          371
+        ],
+        "native_code": "E013",
+        "native_span": [
+          370,
+          371
+        ],
+        "source_sha256": "de1bf030a6f38e8785b6df3dd87e08805a98360663803ef9f17b4695c53d0ec7",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 284,
+        "family": "collection_live_children_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          370,
+          371
+        ],
+        "native_code": "E013",
+        "native_span": [
+          370,
+          371
+        ],
+        "source_sha256": "de1bf030a6f38e8785b6df3dd87e08805a98360663803ef9f17b4695c53d0ec7",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 291,
+        "family": "collection_zero_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "df34924fbe6425357440f19d88121e9fddbc7765d191bfc4b2aa42daa19d29a8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 291,
+        "family": "collection_zero_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "df34924fbe6425357440f19d88121e9fddbc7765d191bfc4b2aa42daa19d29a8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 305,
+        "family": "layout_nested_zero_negative",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "c32f4a672344c25ffdf586681b2767133c6f1a9ff9041aa9b93973d990acac21",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 305,
+        "family": "layout_nested_zero_negative",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          310,
+          311
+        ],
+        "native_code": "E013",
+        "native_span": [
+          310,
+          311
+        ],
+        "source_sha256": "c32f4a672344c25ffdf586681b2767133c6f1a9ff9041aa9b93973d990acac21",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 317,
+        "family": "bulk_quota_failure",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          335,
+          336
+        ],
+        "native_code": "E013",
+        "native_span": [
+          335,
+          336
+        ],
+        "source_sha256": "58168e5ed237b7c179cefdcd4790980ff64568c357ede5a79a98741a390fc1f2",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 317,
+        "family": "bulk_quota_failure",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          335,
+          336
+        ],
+        "native_code": "E013",
+        "native_span": [
+          335,
+          336
+        ],
+        "source_sha256": "58168e5ed237b7c179cefdcd4790980ff64568c357ede5a79a98741a390fc1f2",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 325,
+        "family": "field_append_quota_alias",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          355,
+          356
+        ],
+        "native_code": "E013",
+        "native_span": [
+          355,
+          356
+        ],
+        "source_sha256": "a741aadd6f475c5958e7af59cb305c2342a663a7d13af1c9b6fcf1a68275995c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 325,
+        "family": "field_append_quota_alias",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          355,
+          356
+        ],
+        "native_code": "E013",
+        "native_span": [
+          355,
+          356
+        ],
+        "source_sha256": "a741aadd6f475c5958e7af59cb305c2342a663a7d13af1c9b6fcf1a68275995c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 329,
+        "family": "nested_builder_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          390,
+          391
+        ],
+        "native_code": "E013",
+        "native_span": [
+          390,
+          391
+        ],
+        "source_sha256": "cc18abfac3a56155df6f7b59c82f4dfa9d4afc2a64746d2254a06aa8de579aef",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 329,
+        "family": "nested_builder_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          390,
+          391
+        ],
+        "native_code": "E013",
+        "native_span": [
+          390,
+          391
+        ],
+        "source_sha256": "cc18abfac3a56155df6f7b59c82f4dfa9d4afc2a64746d2254a06aa8de579aef",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 341,
+        "family": "module_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          1269,
+          1270
+        ],
+        "native_code": "E013",
+        "native_span": [
+          1269,
+          1270
+        ],
+        "source_sha256": "8307809233499c96041b76a1c162bca9b7359b60ade54e4e3bfd82d4539ba300",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 341,
+        "family": "module_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          1269,
+          1270
+        ],
+        "native_code": "E013",
+        "native_span": [
+          1269,
+          1270
+        ],
+        "source_sha256": "8307809233499c96041b76a1c162bca9b7359b60ade54e4e3bfd82d4539ba300",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 343,
+        "family": "module_quota_boundary",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          679,
+          680
+        ],
+        "native_code": "E013",
+        "native_span": [
+          679,
+          680
+        ],
+        "source_sha256": "fc858ad3cb9f62c9438f57f7f621a6d276c85cac47f800a964b87e1f949df687",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 343,
+        "family": "module_quota_boundary",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          679,
+          680
+        ],
+        "native_code": "E013",
+        "native_span": [
+          679,
+          680
+        ],
+        "source_sha256": "fc858ad3cb9f62c9438f57f7f621a6d276c85cac47f800a964b87e1f949df687",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 364,
+        "family": "host_env_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          336,
+          337
+        ],
+        "native_code": "E013",
+        "native_span": [
+          336,
+          337
+        ],
+        "source_sha256": "c89b90a739e645d6cd8619c9c8936bb091d5f008f7d3a4c8d4244cace5d635a3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 364,
+        "family": "host_env_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          336,
+          337
+        ],
+        "native_code": "E013",
+        "native_span": [
+          336,
+          337
+        ],
+        "source_sha256": "c89b90a739e645d6cd8619c9c8936bb091d5f008f7d3a4c8d4244cace5d635a3",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 381,
+        "family": "host_directory_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "f1eb5179d79f5310def26f79d2b45660b6ae099771efd997a511dcfdeec249e4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 381,
+        "family": "host_directory_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "f1eb5179d79f5310def26f79d2b45660b6ae099771efd997a511dcfdeec249e4",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 402,
+        "family": "hof_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          331,
+          332
+        ],
+        "native_code": "E013",
+        "native_span": [
+          331,
+          332
+        ],
+        "source_sha256": "abb2d5bb2de4a45cf79dbdccc57a70def0c5cfcf78db04f3b84d1566efa11804",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 402,
+        "family": "hof_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          331,
+          332
+        ],
+        "native_code": "E013",
+        "native_span": [
+          331,
+          332
+        ],
+        "source_sha256": "abb2d5bb2de4a45cf79dbdccc57a70def0c5cfcf78db04f3b84d1566efa11804",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 428,
+        "family": "std_callback_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          325,
+          326
+        ],
+        "native_code": "E013",
+        "native_span": [
+          325,
+          326
+        ],
+        "source_sha256": "4cb5084aeca97c35e4421b3f62a47fe662ea53b3b3b9704d1a09502ae26a43ed",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 428,
+        "family": "std_callback_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          325,
+          326
+        ],
+        "native_code": "E013",
+        "native_span": [
+          325,
+          326
+        ],
+        "source_sha256": "4cb5084aeca97c35e4421b3f62a47fe662ea53b3b3b9704d1a09502ae26a43ed",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 447,
+        "family": "transfer_quota_partial",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          342
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          342
+        ],
+        "source_sha256": "013f5134deda70f667384f31f52d4cbabe0edae5df8fbd590e34dc5b0cc20c48",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 447,
+        "family": "transfer_quota_partial",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          342
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          342
+        ],
+        "source_sha256": "013f5134deda70f667384f31f52d4cbabe0edae5df8fbd590e34dc5b0cc20c48",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 464,
+        "family": "reconcile_quota_failure",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          353,
+          358
+        ],
+        "native_code": "E013",
+        "native_span": [
+          353,
+          358
+        ],
+        "source_sha256": "e76d4b2e47e53281ad7a90a58d4c8387f438200bb28a3bbad328e5b03c2c7b10",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 464,
+        "family": "reconcile_quota_failure",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          353,
+          358
+        ],
+        "native_code": "E013",
+        "native_span": [
+          353,
+          358
+        ],
+        "source_sha256": "e76d4b2e47e53281ad7a90a58d4c8387f438200bb28a3bbad328e5b03c2c7b10",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 470,
+        "family": "inline_push_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          186,
+          187
+        ],
+        "native_code": "OK",
+        "native_span": null,
+        "source_sha256": "be6d90316e6df052c70eaf4eb567cf9902d2e3990a89c7da190cea976a16c2f1",
+        "native_stdout_bytes": 33554395,
+        "native_stdout_sha256": "c7df117216260c3c7c3b1f6b6530376fd8e7331f7e5c14bfdae8130879377cea",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": false,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 470,
+        "family": "inline_push_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          186,
+          187
+        ],
+        "native_code": "OK",
+        "native_span": null,
+        "source_sha256": "be6d90316e6df052c70eaf4eb567cf9902d2e3990a89c7da190cea976a16c2f1",
+        "native_stdout_bytes": 33554395,
+        "native_stdout_sha256": "c7df117216260c3c7c3b1f6b6530376fd8e7331f7e5c14bfdae8130879377cea",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": false,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 639,
+        "family": "binding_live_quota",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          338,
+          339
+        ],
+        "native_code": "E013",
+        "native_span": [
+          338,
+          339
+        ],
+        "source_sha256": "6295a70c1e46e08ccce11f020f3e14fb495c20b004dbced69551d26956adf973",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 639,
+        "family": "binding_live_quota",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          338,
+          339
+        ],
+        "native_code": "E013",
+        "native_span": [
+          338,
+          339
+        ],
+        "source_sha256": "6295a70c1e46e08ccce11f020f3e14fb495c20b004dbced69551d26956adf973",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 655,
+        "family": "g2_quota_before_read",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          347
+        ],
+        "source_sha256": "a4b54677a56f9572f2d3b245ba19c33aa2659f73658e05d2aca1b42d4c44d2e8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 655,
+        "family": "g2_quota_before_read",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          341,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          341,
+          347
+        ],
+        "source_sha256": "a4b54677a56f9572f2d3b245ba19c33aa2659f73658e05d2aca1b42d4c44d2e8",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 660,
+        "family": "g2_allocation_barrier",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          347,
+          348
+        ],
+        "native_code": "E013",
+        "native_span": [
+          347,
+          348
+        ],
+        "source_sha256": "ce32dbfbf20268994372f2832f752742fe7d6ed8823d2f7adb94b5bef4fd7219",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 660,
+        "family": "g2_allocation_barrier",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          347,
+          348
+        ],
+        "native_code": "E013",
+        "native_span": [
+          347,
+          348
+        ],
+        "source_sha256": "ce32dbfbf20268994372f2832f752742fe7d6ed8823d2f7adb94b5bef4fd7219",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 702,
+        "family": "io_quota_real_read",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "339bcde47837d1b016d0c4f6f97ca8de92e57d36f8e65387c073eeb99f1d7492",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 702,
+        "family": "io_quota_real_read",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "339bcde47837d1b016d0c4f6f97ca8de92e57d36f8e65387c073eeb99f1d7492",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 704,
+        "family": "io_quota_before_late_fault",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "756ae29ad0a60967280f946a041c4b8f8e1d27adf0323918e1a591d2be1d5c5d",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 704,
+        "family": "io_quota_before_late_fault",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "756ae29ad0a60967280f946a041c4b8f8e1d27adf0323918e1a591d2be1d5c5d",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 705,
+        "family": "io_buffer_retention",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "2723afde919c62463d8ef1f4de35ee1e55b645fbb876218c716263a974e10ef9",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 705,
+        "family": "io_buffer_retention",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          337,
+          338
+        ],
+        "native_code": "E013",
+        "native_span": [
+          337,
+          338
+        ],
+        "source_sha256": "2723afde919c62463d8ef1f4de35ee1e55b645fbb876218c716263a974e10ef9",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 706,
+        "family": "io_record_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "0a2c6b7777f5f8f393bad16263180a74a8209afc74ef3c2c348a1bf79c288870",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 706,
+        "family": "io_record_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          345,
+          346
+        ],
+        "native_code": "E013",
+        "native_span": [
+          345,
+          346
+        ],
+        "source_sha256": "0a2c6b7777f5f8f393bad16263180a74a8209afc74ef3c2c348a1bf79c288870",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 707,
+        "family": "io_record_buffer_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          362,
+          363
+        ],
+        "native_code": "E013",
+        "native_span": [
+          362,
+          363
+        ],
+        "source_sha256": "de420b13cd4a7c5195365db3fe00b96039112a9459d8b27ed4244f2c42dc0a1f",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 707,
+        "family": "io_record_buffer_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          362,
+          363
+        ],
+        "native_code": "E013",
+        "native_span": [
+          362,
+          363
+        ],
+        "source_sha256": "de420b13cd4a7c5195365db3fe00b96039112a9459d8b27ed4244f2c42dc0a1f",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 708,
+        "family": "io_map_and_child",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          346,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          346,
+          347
+        ],
+        "source_sha256": "75be91654b046cd87a0d5d7ac6c3b0d4ea7d10fb6cd4136095213127bc2cf83c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 708,
+        "family": "io_map_and_child",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          346,
+          347
+        ],
+        "native_code": "E013",
+        "native_span": [
+          346,
+          347
+        ],
+        "source_sha256": "75be91654b046cd87a0d5d7ac6c3b0d4ea7d10fb6cd4136095213127bc2cf83c",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 709,
+        "family": "io_selected_lazy",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          342,
+          343
+        ],
+        "native_code": "E013",
+        "native_span": [
+          342,
+          343
+        ],
+        "source_sha256": "0112dab435b0c2116b299a8b25964601abe5f9292f156520d9294d564a94694e",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 709,
+        "family": "io_selected_lazy",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          342,
+          343
+        ],
+        "native_code": "E013",
+        "native_span": [
+          342,
+          343
+        ],
+        "source_sha256": "0112dab435b0c2116b299a8b25964601abe5f9292f156520d9294d564a94694e",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 710,
+        "family": "io_callee_retention",
+        "optimization": "O0",
+        "reference_code": "E013",
+        "reference_span": [
+          352,
+          353
+        ],
+        "native_code": "E013",
+        "native_span": [
+          352,
+          353
+        ],
+        "source_sha256": "fddd6031053a29794885b8e51c1c30c666c9fc506890236345d62a4bd5ea2f05",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      },
+      {
+        "seed": 23602,
+        "family_index": 710,
+        "family": "io_callee_retention",
+        "optimization": "O2",
+        "reference_code": "E013",
+        "reference_span": [
+          352,
+          353
+        ],
+        "native_code": "E013",
+        "native_span": [
+          352,
+          353
+        ],
+        "source_sha256": "fddd6031053a29794885b8e51c1c30c666c9fc506890236345d62a4bd5ea2f05",
+        "native_stdout_bytes": 0,
+        "native_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "reference_stdout_bytes": 0,
+        "stdout_equal": true,
+        "native_output_file_equal": true
+      }
+    ]
+  },
+  "raw_artifacts": {
+    "matrix_directory": "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-committed",
+    "auxiliary_directory": "/Users/ninjacornix/.local/share/nil/round23-memory/depth-admission-final",
+    "matrix_sha256": "7cec23a73a09afcc04920e513d21e9cc91a93b4d85ae4e11c2e02e0c12dac1f2",
+    "sanitizer_stderr_sha256": "8e60d052b0a0d64aaaa1e6c8d85fd987992985f33005d9d83ac9c2cc987466a2",
+    "resource_audit_sha256": "d190cca7fd6621d400fd53ffea37d740e3246788ea1895e304200fe2eb36658a"
+  },
+  "limitations": [
+    "No B4 compiler fix shipped",
+    "Default differential seeds do not exercise E008",
+    "Object frame measurements are not a complete final linked stack bound",
+    "Existing sanitizer suites do not cover the failing large-record recursion",
+    "Retrospective output-file audit has only final native O2 bytes; original fuzzer checked O0 effects during execution"
+  ]
+}
