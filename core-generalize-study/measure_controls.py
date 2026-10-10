@@ -4,7 +4,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent;SUITE=HERE.parent;ROOT=SUITE.parent
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--repeats',type=int,default=25);p.add_argument('--compiler',type=Path);p.add_argument('--compiler-revision');p.add_argument('--baseline-compiler',type=Path);p.add_argument('--baseline-revision');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--repeats',type=int,default=25);p.add_argument('--compiler',type=Path);p.add_argument('--compiler-revision');p.add_argument('--baseline-compiler',type=Path);p.add_argument('--baseline-revision');p.add_argument('--only',choices=['append','scan','transform']);p.add_argument('--scan-bytes',type=int);a=p.parse_args()
  if bool(a.baseline_compiler)!=bool(a.baseline_revision):p.error('--baseline-compiler and --baseline-revision must be supplied together')
  if bool(a.compiler)!=bool(a.compiler_revision):p.error('--compiler and --compiler-revision must be supplied together')
  if a.repeats<25 or a.output.resolve().is_relative_to(ROOT):p.error('25+ repetitions and outside output required')
@@ -14,8 +14,12 @@ def main():
  results={}
  with tempfile.TemporaryDirectory(prefix='nil-control-memory-') as directory:
   folder=Path(directory);data=bytes(range(256))*65536;lines=b'alpha,beta,gamma\n'*1048576
+  if a.scan_bytes is not None:
+   if not 0<a.scan_bytes<=len(lines):p.error('--scan-bytes must be within the historical fixture')
+   lines=lines[:a.scan_bytes]
   (folder/'bytes.bin').write_bytes(data);(folder/'lines.bin').write_bytes(lines)
   for name,source in paths.items():
+   if a.only and name!=a.only:continue
    binaries={m:folder/(m+'-'+name) for m in ['nil','counter','cpp']+(['before'] if a.baseline_compiler else [])}
    for mode in ['nil','counter']+(['before'] if a.baseline_compiler else []):
     env=os.environ.copy()
@@ -27,7 +31,7 @@ def main():
    args=['1048576'] if name=='append' else [str(folder/'lines.bin')] if name=='scan' else [str(folder/'bytes.bin'),str(folder/'transformed.bin')]
    commands={m:[str(b),*args] for m,b in binaries.items()}
    if name in ('append','scan'):commands['cpp'].insert(1,'append' if name=='append' else 'newlines')
-   expected=1048576 if name!='transform' else 16777216
+   expected=lines.count(b'\n') if name=='scan' else 1048576 if name=='append' else 16777216
    def execute(mode,rss=False):
     start=time.perf_counter_ns();r=subprocess.run((['/usr/bin/time','-l'] if rss else [])+commands[mode],capture_output=True,timeout=120);ms=(time.perf_counter_ns()-start)/1e6
     assert r.returncode==0 and r.stdout==f'{expected}\n'.encode(),(name,mode,r.stdout,r.stderr)
@@ -50,7 +54,11 @@ def main():
    timings={m:dict(min_ms=min(v),median_ms=statistics.median(v),max_ms=max(v),samples_ms=v) for m,v in samples.items()}
    results[name]=dict(timings=timings,rss=rss,charge=charge,cpp_time_ratio=timings['nil']['median_ms']/timings['cpp']['median_ms'],cpp_rss_ratio=rss['nil']['median_bytes']/rss['cpp']['median_bytes'])
    print(name,{m:round(v['median_ms'],3) for m,v in timings.items()},'RSS',rss,flush=True)
+  if a.only not in (None,'transform'):return write_report(a,compiler,results,len(lines))
   roundtrip=folder/'roundtrip.bin';r=subprocess.run([str(binaries['nil']),str(folder/'transformed.bin'),str(roundtrip)],capture_output=True)
   assert r.returncode==0 and r.stdout==b'16777216\n' and not r.stderr and roundtrip.read_bytes()==data
- a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(dict(schema=1,compiler_revision=a.compiler_revision or subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),compiler_binary_sha256=hashlib.sha256(compiler.read_bytes()).hexdigest(),baseline_compiler_revision=a.baseline_revision,baseline_binary_sha256=hashlib.sha256(a.baseline_compiler.read_bytes()).hexdigest() if a.baseline_compiler else None,repeats=a.repeats,rss_unit='bytes (macOS)',metric='Whole-process warm medians; exact historical inputs; same clang/O2; counter binaries excluded from timings/RSS; transform byte-exact and double-transform verified',results=results),indent=2)+'\n')
+ write_report(a,compiler,results,len(lines))
+
+def write_report(a,compiler,results,scan_bytes):
+ a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(dict(schema=1,compiler_revision=a.compiler_revision or subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),compiler_binary_sha256=hashlib.sha256(compiler.read_bytes()).hexdigest(),baseline_compiler_revision=a.baseline_revision,baseline_binary_sha256=hashlib.sha256(a.baseline_compiler.read_bytes()).hexdigest() if a.baseline_compiler else None,repeats=a.repeats,rss_unit='bytes (macOS)',scan_bytes=scan_bytes,metric='Whole-process warm medians; historical inputs unless --scan-bytes overrides scan; same clang/O2; counter binaries excluded from timings/RSS; transform when selected byte-exact and double-transform verified',results=results),indent=2)+'\n')
 if __name__=='__main__':main()
