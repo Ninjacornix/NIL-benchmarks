@@ -207,11 +207,40 @@ covers R2's positive and negative shapes under unbounded instrumentation.
 `FAMILY_COUNT` rises 59 → 88. 35 intrinsics; no syntax, type, default-profile or
 earlier-profile change; no runtime C change.
 
+## R3: measured, refused, handed off
+
+R3 was investigated at its witness and **deliberately not shipped**. The
+measurement is recorded in ADR 049's dated R3 section and summarised here.
+
+`course-schedule` copies 800,000 bytes twice per relaxation, at spans 710..727
+(`counts`) and 750..760 (`queue`), so repairing one field caps the gain near 50%
+against an 85–100% forecast. Reading the emitted callee rather than inferring it:
+both child updates already emit `nil_set_unique`, and each child carries exactly
+two roots at its update — the parent field edge plus the projection — because
+redundant re-projections are already rooted and retired after their scalar reads.
+The only missing fact is the parent field-edge surrender, and
+`loop_storage::field_transfer` already implements that primitive for a
+Concat/`UpdateField` builder chain.
+
+The fields are not symmetric. `queue` is never re-projected after its update, so
+an edge surrender alone would be sound, but its update sits inside a selected
+lazy region where ADR 038/039 reconciliation applies. `counts` is scalar-read
+twice *after* its update through different `Field` values of the same parent
+field, so it needs field-path aliasing of re-projections plus snapshots across a
+parent → field → index path — new analysis, not a predicate relaxation.
+
+R3's preregistered precondition, "a record whose last logical use is
+reconstruction", does not hold here for either field: the parent stays live to
+instruction 15 through sibling `tail` and `counts` reads while the updates are at
+5 and 10 and the reconstruction is at 16. That is the same composition gap this
+ADR recorded for R2. Shipping only the `queue` half would modify record root
+groups inside a lazy region while leaving the program a performance miss, so it
+was refused rather than part-proved.
+
 ## Remaining work
 
-R3 parent/child edge transfer is unimplemented, so the course-schedule cliff at
-200.886× is untouched and the natural AVOIDABLE total is unchanged. Map-value and
-record-buffer-row extraction remain deferred. Heap and spiral have no R2
-mechanism and keep their published limits. The two summary precision gaps named
-above (intrinsic provenance, enclosing-local region results) are the cheapest
-places to widen R2 if a later round needs it.
+Course schedule stays at 200.886× and the natural AVOIDABLE total is unchanged.
+Map-value and record-buffer-row extraction remain deferred. Heap and spiral have
+no R2 mechanism and keep their published limits. The cheapest places to widen R2
+are the two named summary precision gaps: intrinsic result provenance and
+region results naming an enclosing local.
