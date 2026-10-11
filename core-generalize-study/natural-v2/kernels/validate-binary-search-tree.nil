@@ -1,0 +1,5 @@
+sum T(N(i,T,T),L)
+sum B(Free,Bound(i))
+(v)=c(b(a,a[1]),Free,Free)?1:0
+(v,i):T=b==-1?L:N(a[2+3*b],b(a,a[3+3*b]),b(a,a[4+3*b]))
+(T,B,B):b=?a(N(v,l,r):(?b(Bound(lo):v>lo,Free:true)?(?c(Bound(hi):v<hi,Free:true)?(c(l,b,Bound(v))?c(r,Bound(v),c):false):false):false),L:true)

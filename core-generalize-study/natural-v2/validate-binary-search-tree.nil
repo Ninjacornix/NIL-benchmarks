@@ -1,0 +1,7 @@
+sum T(N(i,T,T),L)
+sum B(Free,Bound(i))
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=e(d(a,a[1]),Free,Free)?1:0
+(v,i):T=b==-1?L:N(a[2+3*b],d(a,a[3+3*b]),d(a,a[4+3*b]))
+(T,B,B):b=?a(N(v,l,r):(?b(Bound(lo):v>lo,Free:true)?(?c(Bound(hi):v<hi,Free:true)?(e(l,b,Bound(v))?e(r,Bound(v),c):false):false):false),L:true)
