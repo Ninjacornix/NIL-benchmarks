@@ -46,9 +46,33 @@ def helper_manifest():
     return folder / 'Cargo.toml'
 
 
+def helper_path(name):
+    return ROOT / 'target/release/examples' / name
+
+
+def binary_sha256(path):
+    """SHA-256 of a built artifact, so a receipt can name exactly what ran."""
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
 def build_helpers(*names):
+    """Builds the benchmark-only helpers.
+
+    Round 27 P5: with NIL_PREBUILT=1 the Python gates never invoke cargo. They
+    require the artifacts to exist already and record their SHA-256, so a gate
+    run cannot silently measure a binary it rebuilt itself.
+    """
+    if os.environ.get('NIL_PREBUILT') == '1':
+        digests = {}
+        for name in names:
+            path = helper_path(name)
+            if not path.is_file():
+                raise ValueError(f'NIL_PREBUILT=1 but {path} is missing; build it first')
+            digests[name] = binary_sha256(path)
+        return digests
     command = ['cargo', 'build', '--manifest-path', str(helper_manifest()), '--release', '--locked', '--offline',
                '--target-dir', str(ROOT / 'target')]
     for name in names:
         command.extend(['--example', name])
     subprocess.run(command, cwd=ROOT, check=True)
+    return {name: binary_sha256(helper_path(name)) for name in names if helper_path(name).is_file()}
