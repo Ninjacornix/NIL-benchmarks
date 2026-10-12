@@ -56,7 +56,17 @@ fn main() {
     if args[1] == "build-O0" || args[1] == "build-O2" || args[1] == "perf-O2" {
         let options = nil_llvm::Options {
             steps: 1_000_000_000,
-            call_depth: 256,
+            // ADR 041 amendment 2026-10-12. Well above the deepest frozen
+            // fixture (100,000), so the counter stops being the binding
+            // constraint and guarded-stack exhaustion governs instead, which
+            // stays an ordinary E008 resource failure under ADR 047.
+            call_depth: 1_000_000,
+            // Measured: a depth-100,001 chain needs <=587 bytes per frame at
+            // O0 and <=356 at O2 under bounded instrumentation, so 32 MiB was
+            // short and 56 MiB was the smallest passing power-of-two step.
+            // 128 MiB leaves 2.3x headroom over the O0 requirement. The policy
+            // is raised to fit the fixtures, never lowered to fit the stack.
+            stack_bytes: 128 * 1024 * 1024,
             instrumentation: if args[1] == "perf-O2" {
                 nil_llvm::Instrumentation::Unbounded
             } else {
@@ -90,7 +100,9 @@ fn main() {
         &parameters,
         Limits {
             steps: 1_000_000_000,
-            call_depth: 256,
+            // Reference limit stays equal to the native one so the two remain
+            // comparable (ADR 041 amendment 2026-10-12).
+            call_depth: 1_000_000,
             memory_bytes: nil_hir::DEFAULT_MEMORY_BYTES,
         },
         &mut host,
