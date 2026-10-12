@@ -13,13 +13,15 @@ arithmetic are candidates:
 * `validate-binary-search-tree` — v1 is a single in-order loop over an explicit
   stack.
 
+* `course-schedule` — v1 encodes adjacency as three parallel integer-link
+  buffers. v2 uses a wrapper record, `record Row(to:v)` with `v[Row]`, which
+  needed **no new feature**: ADR 030 already supplies nested sequences that way.
+
 Deliberately excluded:
 
 * `reverse-linked-list` — its `a[2+2*c]` offsets parse an index-linked *input
   format* that the Python and C++ references also parse. That is not a
   workaround, so there is nothing to remove.
-* `course-schedule` — its adjacency needs sequences of sequences (`v[v]`),
-  which is B3 and not implemented.
 
 Written naturally, without tuning for compiler behaviour.
 
@@ -34,6 +36,16 @@ depth 100,000, and the qualification harness builds with `call_depth: 256`
 reports `E008 call depth limit exceeded` at O0 and O2 on that fixture. This is
 why v1 simulates recursion with an explicit heap stack: recursive types remove
 the encoding but not the reason for it.
+
+`course-schedule` is the clearest negative result of the round. Its v2 is 26
+kernel tokens shorter (−7.4%) and **3.75× slower**: 16,680.95 ms against v1's
+4,448.40 ms on the largest fixture at O2, where C++ takes 22.55 ms, so
+739.807× versus v1's 197.288×. Appending to a sequence held in a field of a
+still-live record-buffer row remains quadratic (ADR 030's published debt),
+while integer links prepend in O(1). O0 and O2 both pass every fixture; only
+the reference evaluator exceeds its deadline on the largest one. The useful
+work is therefore not a new type but proving in-place append for a child
+inside a live row.
 
 `kernels/` holds the kernel-cut copies counted in the token table, matching the
 cut defined by `benchmarks/corpora/neetcode150/density-cuts/README.md`.
