@@ -1,5 +1,6 @@
 """Verify authored references, using the existing generation evaluator/native harness."""
 import argparse
+import concurrent.futures
 import hashlib
 import json
 import os
@@ -61,11 +62,87 @@ def baseline(task, path, folder, language):
     return {'semantic_ok': passed == len(task['inputs']), 'tests_passed': passed}
 
 
+def run_task(frozen, goldens, directory):
+    """One task's results and its output lines.
+
+    Round 27 P3: tasks share nothing but a read-only frozen corpus and get
+    their own folder, so they parallelize. Output is returned rather than
+    printed so the caller can keep task order whatever the completion order.
+    """
+    golden = goldens[frozen['id']]
+    task = frozen | {'inputs': frozen['inputs'] + [golden['input']]}
+    if 'environments' in frozen:
+        task['environments'] = frozen['environments'] + [golden['environment']]
+    assert expected(task['id'], bytes.fromhex(golden['input']), golden['environment']) == bytes.fromhex(golden['output'])
+    folder = directory / task['id']
+    folder.mkdir(exist_ok=True)
+    results, lines = [], []
+    for language, extension in [('expr-v5', 'nil'), ('python', 'py'), ('cpp', 'cpp')]:
+        if (language == 'expr-v5' and task['nil_status'] == 'unsupported') or (language != 'expr-v5' and task.get('baseline_status') == 'unsupported'):
+            results.append({'task': task['id'], 'language': language, 'status': 'unsupported', 'reason': task['unsupported_reason']})
+            continue
+        path = HERE / 'programs' / f"{task['id']}.{extension}"
+        verdict = application.evaluate(path.read_text(), language, task, folder) if language == 'expr-v5' else baseline(task, path, folder, language)
+        results.append({'task': task['id'], 'language': language, 'source_sha256': digest(path), **verdict})
+        lines.append(f"{task['id']}/{language}: {'PASS' if verdict['semantic_ok'] else 'FAIL'} {verdict}")
+    return results, lines
+
+
+def run_tasks(tasks, goldens, directory, jobs):
+    if jobs <= 1:
+        gathered = [run_task(task, goldens, directory) for task in tasks]
+    else:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+            gathered = list(pool.map(lambda task: run_task(task, goldens, directory), tasks))
+    results = []
+    for task_results, lines in gathered:
+        for line in lines:
+            print(line, flush=True)
+        results.extend(task_results)
+    return results
+
+
+def totals_of(tasks, results):
+    return dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r['language'] == 'expr-v5' and r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'), inconclusive_checks=sum(len(r.get('inconclusive_checks', [])) for r in results))
+
+
+def emit_derived_original(args, results, goldens, report):
+    """Emits the original group without a second full run (Round 27 P3).
+
+    The groups differ only where SUPPORT.json overrides a task definition, so
+    every original task without an override has the same result in both and can
+    be reused verbatim. Only the overridden ones are re-evaluated, which in
+    practice is env_lookup. The 610 check total is asserted, because that number
+    is the point of the group.
+    """
+    if args.group != 'all':
+        raise SystemExit('--original-output derives from an --group all run')
+    overrides = set(json.loads((HERE / 'SUPPORT.json').read_text())['overrides'])
+    original = load_tasks('original')
+    reused = [r for r in results if r['task'] in {t['id'] for t in original} - overrides]
+    redo = [t for t in original if t['id'] in overrides]
+    with tempfile.TemporaryDirectory(prefix='nil-corpus-original-') as directory:
+        fresh = run_tasks(redo, goldens, Path(directory), args.jobs)
+    derived = reused + fresh
+    totals = totals_of(original, derived)
+    checks = totals['reference_checks'] + totals['native_checks'] + totals['python_checks'] + totals['cpp_checks']
+    if checks != 610:
+        raise SystemExit(f'original group must total 610 checks, derived {checks}')
+    output = args.original_output.expanduser().resolve()
+    if output.is_relative_to(SUITE) or output.is_relative_to(application.ROOT):
+        raise SystemExit('Results must be outside source checkouts.')
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report | {'group': 'original', 'totals': totals, 'results': derived, 'derived_from': 'all', 're_evaluated': sorted(t['id'] for t in redo)}, indent=2) + '\n')
+    print('TOTALS-ORIGINAL ' + json.dumps(totals), flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--task', action='append', help='Optional task IDs for development checks')
     parser.add_argument('--group', choices=['all', 'original', 'external'], default='all')
+    parser.add_argument('--jobs', type=int, default=1, help='tasks to run concurrently; output stays in task order')
+    parser.add_argument('--original-output', type=Path, help='also emit the original group, derived from this run')
     args = parser.parse_args()
     output = args.output.expanduser().resolve()
     if output.is_relative_to(SUITE) or output.is_relative_to(application.ROOT):
@@ -77,30 +154,16 @@ def main():
         tasks = [t for t in tasks if t['id'] in args.task]
         if {t['id'] for t in tasks} != set(args.task):
             parser.error('Unknown task ID')
-    results = []
     goldens = load_goldens()
     with tempfile.TemporaryDirectory(prefix='nil-corpus-') as directory:
-        for frozen in tasks:
-            golden = goldens[frozen['id']]
-            task = frozen | {'inputs': frozen['inputs'] + [golden['input']]}
-            if 'environments' in frozen:
-                task['environments'] = frozen['environments'] + [golden['environment']]
-            assert expected(task['id'], bytes.fromhex(golden['input']), golden['environment']) == bytes.fromhex(golden['output'])
-            folder = Path(directory) / task['id']
-            folder.mkdir()
-            for language, extension in [('expr-v5', 'nil'), ('python', 'py'), ('cpp', 'cpp')]:
-                if (language == 'expr-v5' and task['nil_status'] == 'unsupported') or (language != 'expr-v5' and task.get('baseline_status') == 'unsupported'):
-                    results.append({'task': task['id'], 'language': language, 'status': 'unsupported', 'reason': task['unsupported_reason']})
-                    continue
-                path = HERE / 'programs' / f"{task['id']}.{extension}"
-                verdict = application.evaluate(path.read_text(), language, task, folder) if language == 'expr-v5' else baseline(task, path, folder, language)
-                results.append({'task': task['id'], 'language': language, 'source_sha256': digest(path), **verdict})
-                print(f"{task['id']}/{language}: {'PASS' if verdict['semantic_ok'] else 'FAIL'} {verdict}", flush=True)
-    totals = dict(tasks=len(tasks), nil_programs=sum(r['language'] == 'expr-v5' and r.get('semantic_ok', False) for r in results), unsupported=sum(r['language'] == 'expr-v5' and r.get('status') == 'unsupported' for r in results), reference_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'expr-v5'), native_checks=sum(r.get('native_tests_passed', 0) for r in results), python_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'python'), cpp_checks=sum(r.get('tests_passed', 0) for r in results if r['language'] == 'cpp'), inconclusive_checks=sum(len(r.get('inconclusive_checks', [])) for r in results))
+        results = run_tasks(tasks, goldens, Path(directory), args.jobs)
+    totals = totals_of(tasks, results)
     report = {'schema': 1, 'group': args.group, 'compiler_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=application.ROOT, text=True).strip(), 'source_hashes': fingerprint(), 'totals': totals, 'results': results}
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + '\n')
     print('TOTALS ' + json.dumps(totals), flush=True)
+    if args.original_output:
+        emit_derived_original(args, results, goldens, report)
     if any(not r.get('semantic_ok', False) and r.get('failure_reason') != 'resource_inconclusive' for r in results if r.get('status') != 'unsupported'):
         raise SystemExit(1)
 
