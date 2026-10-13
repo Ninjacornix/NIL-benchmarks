@@ -18,6 +18,15 @@ from resource_outcomes import clean_resource
 import fixtures
 import reference
 TIMEOUT=120
+# Round 27 step 4: the per-check budget is CPU seconds, not wall seconds, so a
+# cohort can run beside other gates without false timeouts. A concurrent gate
+# run previously reported 1,067/1,070 and 1,069/1,070 purely from load. Wall
+# time keeps a generous backstop for a process that blocks rather than spins.
+WALL_BACKSTOP=TIMEOUT*8
+
+def _cpu_budget():
+    import resource
+    resource.setrlimit(resource.RLIMIT_CPU,(TIMEOUT,TIMEOUT))
 
 def sha(data): return hashlib.sha256(data).hexdigest()
 def tasks(): return json.loads((HERE/'tasks.json').read_text())['tasks']
@@ -29,7 +38,10 @@ def run(command,cwd):
     env={'PATH':os.environ['PATH'],'HOME':str(cwd),'TMPDIR':str(cwd),'PYTHONDONTWRITEBYTECODE':'1'}
     if 'NIL_CLANG' in os.environ:env['NIL_CLANG']=os.environ['NIL_CLANG']
     try:
-        p=subprocess.run(command,cwd=cwd,env=env,capture_output=True,timeout=TIMEOUT)
+        p=subprocess.run(command,cwd=cwd,env=env,capture_output=True,timeout=WALL_BACKSTOP,preexec_fn=_cpu_budget)
+        # SIGKILL/SIGXCPU from the CPU rlimit reads as a timeout, same verdict
+        # as before, but now triggered by work done rather than by load.
+        if p.returncode in (-9,-24): return -999,b'',b'timeout'
         return p.returncode,p.stdout,p.stderr
     except subprocess.TimeoutExpired: return -999,b'',b'timeout'
 def observed(command,work,data,answer,ref=False):
@@ -133,7 +145,7 @@ def main():
         print(slug,result['status'],result['nil_status'],sum(x['pass'] for x in result['checks']),flush=True)
         return result
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:results=list(pool.map(verify,selected))
-    report={'schema':1,'clang_version':subprocess.check_output([clang,'--version'],text=True).splitlines()[0],'python_version':sys.version,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':1000000,'stack_bytes':134217728,'timeout_seconds':TIMEOUT},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks']),'inconclusive_checks':sum(x['inconclusive'] for r in results for x in r['checks'])}}
+    report={'schema':1,'clang_version':subprocess.check_output([clang,'--version'],text=True).splitlines()[0],'python_version':sys.version,'compiler_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'benchmarks_revision':subprocess.check_output(['git','rev-parse','HEAD'],cwd=SUITE,text=True).strip(),'limits':{'steps':1000000000,'depth':1000000,'stack_bytes':134217728,'cpu_seconds':TIMEOUT,'wall_backstop_seconds':WALL_BACKSTOP},'tasks_sha256':sha((HERE/'tasks.json').read_bytes()),'goldens_sha256':sha((HERE/'goldens.json').read_bytes()),'results':results,'totals':{'tasks':len(results),'verified_nil':sum(r.get('nil_status')=='verified' for r in results),'checks':sum(len(r['checks']) for r in results),'passed_checks':sum(x['pass'] for r in results for x in r['checks']),'inconclusive_checks':sum(x['inconclusive'] for r in results for x in r['checks'])}}
     args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(json.dumps(report,indent=2)+'\n');print('TOTALS',json.dumps(report['totals']))
     if any(r['status'] not in ('pass','resource-inconclusive') for r in results):raise SystemExit(1)
 if __name__=='__main__':main()
