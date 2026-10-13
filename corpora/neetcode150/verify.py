@@ -86,7 +86,7 @@ def main():
     if args.verified_only:selected=[t for t in selected if (HERE/'programs'/(t['id']+'.nil')).exists()]
     if args.task and set(args.task)!={t['id'] for t in selected}:ap.error('unknown task')
     if not args.baselines_only:build_helpers('core_check')
-    helper=ROOT/'target/release/examples/core_check'
+    helper=Path(os.environ.get('NIL_BIN') or (ROOT/'target/release'))/'examples/core_check'
     clang=os.environ.get('NIL_CLANG','clang')
     def verify(t):
         slug=t['id']; source=HERE/'programs'/f'{slug}.nil'

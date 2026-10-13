@@ -6,6 +6,12 @@ import sys
 import tempfile
 
 HERE = Path(__file__).resolve().parent
+
+
+def _bin():
+    """Frozen artifact directory; see benchmarks/support.binaries."""
+    import os
+    return Path(os.environ.get('NIL_BIN') or (ROOT / 'target/release'))
 sys.path.insert(0, str(HERE.parents[1]))
 from support import ROOT, build_helpers
 from resource_outcomes import clean_resource
@@ -92,7 +98,7 @@ def evaluate(source, language, task, folder, manifests=()):
             # Compile/check once before building native variants, even for bad sources.
             with tempfile.TemporaryDirectory(dir=folder) as directory:
                 work=Path(directory);(work/'input.bin').write_bytes(bytes.fromhex(task['inputs'][0]))
-                ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(work/'input.bin'),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**task.get('environments',[{}])[0]},capture_output=True,text=True,timeout=5)
+                ref=subprocess.run([str(_bin()/'examples/application_check'),str(path),str(work/'input.bin'),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**task.get('environments',[{}])[0]},capture_output=True,text=True,timeout=5)
             if ref.returncode:
                 return outcome | dict(failure_reason='checker',feedback='Reference checker process failed.')
             if ref.stdout.startswith('ERR\t'):
@@ -102,7 +108,7 @@ def evaluate(source, language, task, folder, manifests=()):
             outcome.update(parse_ok=True,typecheck_ok=True)
             for level in ['O0','O2']:
                 binary=folder/('candidate-'+level)
-                built=subprocess.run([str(ROOT/'target/release/nil'),'--profile','expr-v5',*import_options,'--bounded','build',str(path),'-o',str(binary),'-'+level],capture_output=True,text=True,timeout=60)
+                built=subprocess.run([str(_bin()/'nil'),'--profile','expr-v5',*import_options,'--bounded','build',str(path),'-o',str(binary),'-'+level],capture_output=True,text=True,timeout=60)
                 if built.returncode:
                     return outcome | dict(compile_ok=False,failure_reason='backend',feedback='Native compilation failed: '+built.stderr[:800])
                 binaries.append(binary)
@@ -116,7 +122,7 @@ def evaluate(source, language, task, folder, manifests=()):
                 work=Path(directory); inp=work/'input.bin'; output=work/'output.bin'
                 inp.write_bytes(data)
                 if language == 'expr-v5':
-                    ref=subprocess.run([str(ROOT/'target/release/examples/application_check'),str(path),str(inp),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**environment},capture_output=True,timeout=5)
+                    ref=subprocess.run([str(_bin()/'examples/application_check'),str(path),str(inp),str(work/'reference.bin'),str(work/'stdout.bin'),*manifests],env={'PATH':os.environ.get('PATH','/usr/bin:/bin'),'HOME':str(work),'TMPDIR':str(work),**environment},capture_output=True,timeout=5)
                     ref_ok=ref.returncode==0 and not ref.stderr and ref.stdout==f'VALUE\t{len(answer)}\n'.encode() and (work/'reference.bin').exists() and (work/'reference.bin').read_bytes()==answer and (work/'stdout.bin').read_bytes()==b''
                     outcome['tests_passed']+=int(ref_ok)
                     if clean_resource(ref, reference=True):

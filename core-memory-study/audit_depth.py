@@ -53,11 +53,12 @@ def main():
     if out.is_relative_to(ROOT):
         parser.error("raw artifacts must be outside the checkout")
     out.mkdir(parents=True, exist_ok=False)
-    deps = ROOT / "target/release/deps"
+    bin_dir = Path(os.environ.get("NIL_BIN") or (ROOT / "target/release"))
+    deps = bin_dir / "deps"
     driver = out / "depth-driver"
     build_driver = ["rustc", "--edition=2024", str(HERE / "reference_depth.rs"), "-L", f"dependency={deps}"]
     for crate in ("nil_compiler", "nil_hir", "nil_llvm"):
-        build_driver += ["--extern", f"{crate}={ROOT}/target/release/lib{crate}.rlib"]
+        build_driver += ["--extern", f"{crate}={bin_dir}/lib{crate}.rlib"]
     build_driver += ["-o", str(driver)]
     subprocess.run(build_driver, cwd=ROOT, check=True, capture_output=True)
     rows = []

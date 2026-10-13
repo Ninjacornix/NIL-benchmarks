@@ -46,8 +46,18 @@ def helper_manifest():
     return folder / 'Cargo.toml'
 
 
+def binaries():
+    """Directory holding the artifacts a gate reads.
+
+    Round 28: gates read from a frozen copy, named by NIL_BIN, so no gate can
+    read a file another gate's cargo is rewriting. Defaults to the build
+    directory for ordinary use.
+    """
+    return Path(os.environ.get('NIL_BIN') or (ROOT / 'target/release'))
+
+
 def helper_path(name):
-    return ROOT / 'target/release/examples' / name
+    return binaries() / 'examples' / name
 
 
 def binary_sha256(path):
