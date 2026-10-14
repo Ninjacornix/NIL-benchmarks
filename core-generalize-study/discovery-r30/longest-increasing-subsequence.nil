@@ -1,0 +1,5 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(d(!slice(c(a),1,c(a)[0]))),"\n")
+(s):v=@(a,!buffer(0,0),0,1,0,0;f<=#a;a,(f==#a||a[f]==32||a[f]==10)&&e==1?!concat(b,!buffer(1,c*d)):b,(f<#a&&a[f]>=48&&a[f]<=57)?c*10+a[f]-48:(f==#a||a[f]==32||a[f]==10)?0:c,(f<#a&&a[f]==45)?0-1:(f==#a||a[f]==32||a[f]==10)?1:d,(f<#a&&a[f]>=48&&a[f]<=57)?1:(f==#a||a[f]==32||a[f]==10)?0:e,f+1;b)
+(v)=#@(a,!buffer(0,0),0;c<#a;a,e(b,a[c])==#b?!concat(b,!buffer(1,a[c])):b[e(b,a[c]):a[c]],c+1;b)
+(v,i)=@(a,b,0,#a;c<d;a,b,a[(c+d)/2]>=b?c:(c+d)/2+1,a[(c+d)/2]>=b?(c+d)/2:d;c)
