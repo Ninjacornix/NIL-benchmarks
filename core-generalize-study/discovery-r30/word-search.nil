@@ -1,0 +1,6 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(a)),"\n")
+(s)=(t=!split(a,"\n");p=!parsebuf(!slice(a,t[0],t[1])," ");f(d(a,t,p[0],p[1]),!slice(a,t[2*(1+p[0])],t[2*(1+p[0])+1]),p[1],p[0]))
+(s,v,i,i):s=@(a,b,c,d,"",0;f<c;a,b,c,d,!concat(e,!slice(a,b[2*(1+f)],d)),f+1;e)
+(s,s,k,i,i,i,i,i)=h==#b?1:(f<0||f>=e||g<0||g>=d||!has(c,f*d+g)||a[f*d+g]!=b[h]?0:(s=!add(c,f*d+g);e(a,b,s,d,e,f+1,g,h+1)==1||e(a,b,s,d,e,f-1,g,h+1)==1||e(a,b,s,d,e,f,g-1,h+1)==1||e(a,b,s,d,e,f,g+1,h+1)==1?1:0))
+(s,s,i,i)=#b==0?1:@(a,b,c,d,0,0;e<#a&&f==0;a,b,c,d,e+1,e(a,b,!set(),c,d,e/c,e-e/c*c,0);f)

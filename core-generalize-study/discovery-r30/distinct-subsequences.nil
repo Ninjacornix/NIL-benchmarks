@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(a)),"\n")
+(s)=(t=!split(a,"\n");d(!slice(a,t[0],t[1]),!slice(a,t[2],t[3])))
+(s,s)=@(a,b,!buffer(#b+1,0)[0:1],0;d<#a;a,b,@(c,b,a[d],#b;d>=1;b[d-1]==c?a[d:a[d]+a[d-1]]:a,b,c,d-1;a),d+1;c[#b])
