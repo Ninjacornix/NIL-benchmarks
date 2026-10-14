@@ -1,6 +1,6 @@
 (s,s)=!write(b,b(!read(a)))
 (s):s=c(!parsebuf(a," \n"))
 (v):s=d(e(a))
-(v):s=@(a,"",0;c<#a;a,!concat(b,!concat(c==0?"":" ",!format(a[c]))),c+1;!concat(b,"\n"))
+(v):s=!format(a," ","\n")
 (v):v=f(!sort(@(@(a,!imap(),1;c<=a[0];a,!put(b,a[c],!has(b,a[c])?!get(b,a[c])+1:1),c+1;b),!buffer(0,0),0;c<!size(a);a,!concat(b,!buffer(1,(1000000-!get(a,!key(a,c)))*4000001+!key(a,c)+2000000)),c+1;b),0),a[a[0]+1])
 (v,i):v=@(a,b,!buffer(0,0),0;d<b;a,b,!concat(c,!buffer(1,a[d]-a[d]/4000001*4000001-2000000)),d+1;c)

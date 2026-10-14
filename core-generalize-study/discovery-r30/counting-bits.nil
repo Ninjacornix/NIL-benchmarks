@@ -1,5 +1,5 @@
 (s,s)=!write(b,b(!read(a)))
 (s):s=c(!parsebuf(a," \n"))
 (v):s=d(e(a))
-(v):s=@(a,"",0;c<#a;a,!concat(b,!concat(c==0?"":" ",!format(a[c]))),c+1;!concat(b,"\n"))
+(v):s=!format(a," ","\n")
 (v):v=@(a,!buffer(a[0]+1,0),1;c<=a[0];a,b[c:b[c/2]+c-c/2*2],c+1;b)
