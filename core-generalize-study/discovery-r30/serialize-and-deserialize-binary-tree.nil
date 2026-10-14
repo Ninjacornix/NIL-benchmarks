@@ -1,0 +1,3 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"))
+(v):s=@(a,!buffer(1,a[1]),"";#b>0;a,b[#b-1]==0-1?!slice(b,0,#b-1):!concat(!concat(!slice(b,0,#b-1),!buffer(1,a[4+3*b[#b-1]])),!buffer(1,a[3+3*b[#b-1]])),!concat(!concat(c,#c==0?"":" "),b[#b-1]==0-1?"#":!format(a[2+3*b[#b-1]]));!concat(c,"\n"))
