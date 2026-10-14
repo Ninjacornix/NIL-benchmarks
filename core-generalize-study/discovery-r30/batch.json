@@ -1,0 +1,155 @@
+{
+  "count": 25,
+  "batch": [
+    {
+      "id": "longest-increasing-subsequence",
+      "category": "1-D Dynamic Programming",
+      "held_out_in_category": 10,
+      "order_key": "20ef92abfe7c16e7"
+    },
+    {
+      "id": "climbing-stairs",
+      "category": "1-D Dynamic Programming",
+      "held_out_in_category": 10,
+      "order_key": "26984c2d89454e5c"
+    },
+    {
+      "id": "distinct-subsequences",
+      "category": "2-D Dynamic Programming",
+      "held_out_in_category": 9,
+      "order_key": "0889a92b5bf50b70"
+    },
+    {
+      "id": "interleaving-string",
+      "category": "2-D Dynamic Programming",
+      "held_out_in_category": 9,
+      "order_key": "12aef43793b7c2b7"
+    },
+    {
+      "id": "swim-in-rising-water",
+      "category": "Advanced Graphs",
+      "held_out_in_category": 4,
+      "order_key": "1fcfc58a426e806d"
+    },
+    {
+      "id": "valid-anagram",
+      "category": "Arrays & Hashing",
+      "held_out_in_category": 7,
+      "order_key": "06a35432787f332d"
+    },
+    {
+      "id": "top-k-frequent-elements",
+      "category": "Arrays & Hashing",
+      "held_out_in_category": 7,
+      "order_key": "6a78cac0d2992443"
+    },
+    {
+      "id": "combination-sum",
+      "category": "Backtracking",
+      "held_out_in_category": 7,
+      "order_key": "694b639ef4657a2f"
+    },
+    {
+      "id": "word-search",
+      "category": "Backtracking",
+      "held_out_in_category": 7,
+      "order_key": "7b4b8bb208e89289"
+    },
+    {
+      "id": "time-based-key-value-store",
+      "category": "Binary Search",
+      "held_out_in_category": 5,
+      "order_key": "07bcbd88e1820d46"
+    },
+    {
+      "id": "counting-bits",
+      "category": "Bit Manipulation",
+      "held_out_in_category": 5,
+      "order_key": "653e93694661b957"
+    },
+    {
+      "id": "redundant-connection",
+      "category": "Graphs",
+      "held_out_in_category": 11,
+      "order_key": "2d22a554581c553e"
+    },
+    {
+      "id": "rotting-oranges",
+      "category": "Graphs",
+      "held_out_in_category": 11,
+      "order_key": "48dc60163c9b42df"
+    },
+    {
+      "id": "jump-game-ii",
+      "category": "Greedy",
+      "held_out_in_category": 6,
+      "order_key": "33cb421ae0a777ed"
+    },
+    {
+      "id": "design-twitter",
+      "category": "Heap / Priority Queue",
+      "held_out_in_category": 5,
+      "order_key": "2e56de930bc7406f"
+    },
+    {
+      "id": "merge-intervals",
+      "category": "Intervals",
+      "held_out_in_category": 4,
+      "order_key": "11abd1959232445b"
+    },
+    {
+      "id": "remove-nth-node-from-end-of-list",
+      "category": "Linked List",
+      "held_out_in_category": 9,
+      "order_key": "066a6db7aec0c76f"
+    },
+    {
+      "id": "merge-two-sorted-lists",
+      "category": "Linked List",
+      "held_out_in_category": 9,
+      "order_key": "17dfd5e479f200a2"
+    },
+    {
+      "id": "multiply-strings",
+      "category": "Math & Geometry",
+      "held_out_in_category": 6,
+      "order_key": "05df5eaa4bcc152a"
+    },
+    {
+      "id": "sliding-window-maximum",
+      "category": "Sliding Window",
+      "held_out_in_category": 4,
+      "order_key": "42cd8ad9338350f3"
+    },
+    {
+      "id": "evaluate-reverse-polish-notation",
+      "category": "Stack",
+      "held_out_in_category": 5,
+      "order_key": "46df524ec006eada"
+    },
+    {
+      "id": "subtree-of-another-tree",
+      "category": "Trees",
+      "held_out_in_category": 13,
+      "order_key": "42e890a87ab48326"
+    },
+    {
+      "id": "serialize-and-deserialize-binary-tree",
+      "category": "Trees",
+      "held_out_in_category": 13,
+      "order_key": "4591b9a8261ab7cc"
+    },
+    {
+      "id": "design-add-and-search-words-data-structure",
+      "category": "Tries",
+      "held_out_in_category": 1,
+      "order_key": "00663cfd66ae537f"
+    },
+    {
+      "id": "two-sum-ii-input-array-is-sorted",
+      "category": "Two Pointers",
+      "held_out_in_category": 3,
+      "order_key": "633c19523d129a4c"
+    }
+  ]
+}
