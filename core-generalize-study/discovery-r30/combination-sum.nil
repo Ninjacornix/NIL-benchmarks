@@ -1,0 +1,4 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"))
+(v):s=d(!sort(!slice(a,1,a[0]),0),a[a[0]+1],0,!buffer(0,0))
+(v,i,i,v):s=b==0?!format(d," ","\n"):(c>=#a||b<0?"":!concat(b-a[c]>=0?d(a,b-a[c],c,!concat(d,!buffer(1,a[c]))):"",d(a,b,c+1,d)))

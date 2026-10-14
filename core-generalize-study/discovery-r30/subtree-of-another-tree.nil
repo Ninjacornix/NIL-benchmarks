@@ -1,0 +1,8 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=!concat(!format(c(!parsebuf(a," \n"))),"\n")
+(v)=(o=2+3*a[0];a[o+1]==0-1?1:f(d(a,2,a[1]),d(a,o+2,a[o+1])))
+(v,i,i):v=@(a,b,!buffer(1,c),!buffer(0,0);#c>0;a,b,c[#c-1]==0-1?!slice(c,0,#c-1):!concat(!concat(!slice(c,0,#c-1),!buffer(1,a[b+3*c[#c-1]+2])),!buffer(1,a[b+3*c[#c-1]+1])),!concat(d,!buffer(1,c[#c-1]==0-1?2000000:a[b+3*c[#c-1]]));d)
+(v):v=@(a,!buffer(#a,0),1,0;c<#a;a,b[c:a[c]==a[g(a,b,c,d)]?g(a,b,c,d)+1:g(a,b,c,d)],c+1,a[c]==a[g(a,b,c,d)]?g(a,b,c,d)+1:g(a,b,c,d);b)
+(v,v)=@(a,b,e(b),0,0;d<#a&&e<#b;a,b,c,d+1,a[d]==b[h(a,b,c,d,e)]?h(a,b,c,d,e)+1:h(a,b,c,d,e);e==#b?1:0)
+(v,v,i,i)=@(a,b,c,d;d>0&&a[c]!=a[d];a,b,c,b[d-1];d)
+(v,v,v,i,i)=@(a,b,c,d,e;e>0&&a[d]!=b[e];a,b,c,d,c[e-1];e)
