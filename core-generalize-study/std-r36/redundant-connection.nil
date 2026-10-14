@@ -1,0 +1,7 @@
+(s,s)=!write(b,b(!read(a)))
+(s):s=c(!parsebuf(a," \n"))
+(v):s=d(e(a))
+(v):s=!format(a," ","\n")
+(v):v=@(a,!buffer(0,0),@(a[0],!buffer(a[0],0),0;c<#b;a,b[c:c],c+1;b),0;d<a[1];a,g(c,a[2+d*2])==g(c,a[2+d*2+1])?!concat(!buffer(1,a[2+d*2]),!buffer(1,a[2+d*2+1])):b,f(c,a[2+d*2],a[2+d*2+1]),d+1;b)
+(v,i,i):v=g(a,b)==g(a,c)?a:a[g(a,b):g(a,c)]
+(v,i)=@(a,b;a[b]!=b;a,a[b];b)
