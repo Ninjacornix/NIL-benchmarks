@@ -23,6 +23,7 @@ fn main() {
                 steps: u64::MAX,
                 call_depth: depth,
                 memory_bytes: 0,
+                defer_slot_writes: false,
             },
         ) {
             Ok(Value::I64(n)) => println!("{n}"),

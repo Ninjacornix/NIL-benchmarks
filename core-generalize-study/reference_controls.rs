@@ -31,6 +31,7 @@ fn main() {
             steps: 1_000_000_000,
             call_depth: 256,
             memory_bytes: nil_hir::MAX_DYNAMIC_BYTES,
+            defer_slot_writes: false,
         },
         &mut FileHost::default(),
     );
