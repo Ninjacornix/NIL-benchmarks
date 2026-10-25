@@ -104,7 +104,7 @@ fn main() {
             // comparable (ADR 041 amendment 2026-10-12).
             call_depth: 1_000_000,
             memory_bytes: nil_hir::DEFAULT_MEMORY_BYTES,
-            defer_slot_writes: false,
+            defer_slot_writes: true,
         },
         &mut host,
     ) {

@@ -74,7 +74,7 @@ fn main() {
             steps: 100_000,
             call_depth: 256,
             memory_bytes: nil_hir::DEFAULT_MEMORY_BYTES,
-            defer_slot_writes: false,
+            defer_slot_writes: true,
         },
         &mut host,
     ) {
